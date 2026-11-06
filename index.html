@@ -980,13 +980,9 @@ mark { background: color-mix(in srgb, var(--gold) 40%, transparent); }
 @media (max-width: 520px) { .deep-dive { box-shadow: none; margin-right: 0; } }
 
 footer .credit { color: var(--ink); font-size: 0.95rem; margin-bottom: 10px; }
-.tile.tile-logo { grid-template-columns: 116px minmax(0, 1fr); }
-.tile-logo-img { display: block; width: 116px; max-width: 100%; border: 1px solid var(--rule); border-radius: 4px; overflow: hidden; background: #16181c; }
-.tile-logo-img img { width: 100%; height: auto; }
-@media (max-width: 520px) { .tile.tile-logo { grid-template-columns: 92px minmax(0, 1fr); } .tile-logo-img { width: 92px; } }
-.group-head-logo { flex-direction: column; align-items: stretch; gap: 8px; }
-.group-head-logo .sf6-logo { width: 100%; height: auto; border-radius: 4px; border: 1px solid var(--rule); background: #16181c; }
-.group-head-logo .gt small { color: var(--tone); }
+.face.face-logo { background: color-mix(in srgb, var(--a-midrange) 28%, var(--sheet)); padding: 5px; }
+.tile .face.face-logo { padding: 8px; }
+.face.face-logo img { object-fit: contain; }
 /* ---------- v20: universal / SF6 module markers ---------- */
 .scope-note {
   display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: baseline;
@@ -1035,8 +1031,8 @@ h3 .sf6-tag { align-self: center; }
 <span class="tile-blurb"><span class="l-en" lang="en">Other fighting game families, 3D fighters, a searchable glossary, a tournament set breakdown and resources.</span><span class="l-pt" lang="pt-BR">Outras famílias de jogos de luta, jogos 3D, glossário com busca, análise de um set de torneio e recursos.</span></span>
 <small><span class="l-en" lang="en">Reference</span><span class="l-pt" lang="pt-BR">Referência</span> · <span class="l-en" lang="en">6 chapters</span><span class="l-pt" lang="pt-BR">6 capítulos</span> · Akuma</small></span>
 </button>
-<button class="tile tile-logo" type="button" data-group="roster" data-go="drive">
-<span class="tile-logo-img"><img src="img/sf6-logo.webp" width="560" height="339" alt=""></span>
+<button class="tile" type="button" data-group="roster" data-go="drive">
+<span class="face face-logo"><img src="img/sf6-emblem.webp" width="256" height="256" alt="Street Fighter 6"></span>
 <span class="tile-text"><span class="tile-top"><span class="k" aria-hidden="true">闘</span><b>Street Fighter 6</b></span>
 <span class="tile-blurb"><span class="l-en" lang="en">The game module: the Drive System, ranked, matchups, a guide for every fighter and the punish finder.</span><span class="l-pt" lang="pt-BR">O módulo do jogo: o Sistema Drive, o ranked, os matchups, um guia para cada personagem e a calculadora de punish.</span></span>
 <small><span class="l-en" lang="en">Game module</span><span class="l-pt" lang="pt-BR">Módulo do jogo</span> · <span class="l-en" lang="en">5 chapters</span><span class="l-pt" lang="pt-BR">5 capítulos</span> · <span class="l-en" lang="en">32 fighters</span><span class="l-pt" lang="pt-BR">32 personagens</span></small></span>
@@ -1086,7 +1082,7 @@ h3 .sf6-tag { align-self: center; }
 <button class="chap" type="button" data-go="resources" aria-current="false"><span class="lbl"><span class="l-en" lang="en">Resources</span><span class="l-pt" lang="pt-BR">Recursos</span></span><span class="qs" data-qs="resources"></span></button>
 </div>
 <div class="group" data-group="roster">
-<div class="group-head group-head-logo"><img class="sf6-logo" src="img/sf6-logo.webp" width="560" height="339" alt="Street Fighter 6"><span class="gt"><small><span class="l-en" lang="en">Game module</span><span class="l-pt" lang="pt-BR">Módulo do jogo</span> · <span class="l-en" lang="en">32 fighters</span><span class="l-pt" lang="pt-BR">32 personagens</span></small></span></div>
+<div class="group-head"><span class="face face-logo"><img src="img/sf6-emblem.webp" width="256" height="256" alt="Street Fighter 6"></span><span class="k" aria-hidden="true">闘</span><span class="gt"><b>Street Fighter 6</b><small><span class="l-en" lang="en">Game module</span><span class="l-pt" lang="pt-BR">Módulo do jogo</span> · <span class="l-en" lang="en">32 fighters</span><span class="l-pt" lang="pt-BR">32 personagens</span></small></span></div>
 <button class="chap" type="button" data-go="drive" aria-current="false"><span class="lbl"><span class="l-en" lang="en">Drive System</span><span class="l-pt" lang="pt-BR">Sistema Drive</span></span><span class="qs" data-qs="drive"></span></button>
 <button class="chap" type="button" data-go="ranked" aria-current="false"><span class="lbl"><span class="l-en" lang="en">Ranked & Online</span><span class="l-pt" lang="pt-BR">Ranked e Online</span></span><span class="qs" data-qs="ranked"></span></button>
 <button class="chap" type="button" data-go="matchups" aria-current="false"><span class="lbl"><span class="l-en" lang="en">Matchup Chart</span><span class="l-pt" lang="pt-BR">Tabela de Matchups</span></span><span class="qs" data-qs="matchups"></span></button>
