@@ -3935,5 +3935,94 @@
     "pt": "Uma contagem em vários knockdowns dá porcentagens aproximadas, muito melhores que um momento marcante."
    }
   }
+ ],
+ "adv-data": [
+  {
+   "q": {
+    "en": "Two sources give different on-block values for the same move. What do you do?",
+    "pt": "Duas fontes dão valores diferentes no block para o mesmo golpe. O que você faz?"
+   },
+   "options": [
+    {
+     "en": "Trust the newest video",
+     "pt": "Confiar no vídeo mais recente"
+    },
+    {
+     "en": "Use the average",
+     "pt": "Usar a média"
+    },
+    {
+     "en": "Set it up in training mode and measure it with the frame meter",
+     "pt": "Montar a situação no training mode e medir com o frame meter"
+    },
+    {
+     "en": "Ignore the move",
+     "pt": "Ignorar o golpe"
+    }
+   ],
+   "answer": 2,
+   "why": {
+    "en": "When sources disagree, the game decides. The frame meter measures exactly what happened.",
+    "pt": "Quando as fontes discordam, quem decide é o jogo. O frame meter mede exatamente o que aconteceu."
+   }
+  },
+  {
+   "q": {
+    "en": "What does \"KD +23*38\" mean in frame data?",
+    "pt": "O que quer dizer \"KD +23*38\" no frame data?"
+   },
+   "options": [
+    {
+     "en": "Two values for different hits of the same move",
+     "pt": "Dois valores para hits diferentes do mesmo golpe"
+    },
+    {
+     "en": "A range between 23 and 38",
+     "pt": "Uma faixa entre 23 e 38"
+    },
+    {
+     "en": "23 on block, 38 on hit",
+     "pt": "23 no block, 38 no hit"
+    },
+    {
+     "en": "A Punish Counter version",
+     "pt": "Uma versão de Punish Counter"
+    }
+   ],
+   "answer": 0,
+   "why": {
+    "en": "The * separates values of different hits; ~ marks a range and parentheses an alternate version.",
+    "pt": "O * separa valores de hits diferentes; o ~ marca uma faixa e os parênteses uma versão alternativa."
+   }
+  },
+  {
+   "q": {
+    "en": "Why should you note the patch version next to each setup in your lab notebook?",
+    "pt": "Por que anotar a versão do patch ao lado de cada setup no caderno de laboratório?"
+   },
+   "options": [
+    {
+     "en": "Setups never change",
+     "pt": "Setups nunca mudam"
+    },
+    {
+     "en": "So you know which setups to test again when a move changes",
+     "pt": "Para saber quais setups testar de novo quando um golpe muda"
+    },
+    {
+     "en": "The game requires it",
+     "pt": "O jogo exige"
+    },
+    {
+     "en": "To compare ranks",
+     "pt": "Para comparar ranks"
+    }
+   ],
+   "answer": 1,
+   "why": {
+    "en": "Balance patches change frames. Knowing when you tested tells you what to re-check.",
+    "pt": "Patches de balanceamento mudam frames. Saber quando você testou diz o que conferir de novo."
+   }
+  }
  ]
 };

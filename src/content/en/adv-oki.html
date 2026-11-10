@@ -3,7 +3,7 @@
 
 <p class="scope-note"><span class="scope-badge">Universal</span><span>The method works in any game where wakeup timing is fixed. The calculator uses the Street Fighter 6 frame data in this hub.</span></p>
 
-<p>The Mechanics chapter explains <a href="#offense">what a meaty is</a> and why it matters. This chapter is the next step: working out, for your character and each of your knockdowns, which buttons can hit meaty, how long to wait before pressing them and how much advantage you end up with.</p>
+<p>The Mechanics chapter explains <a href="#offense">what a meaty is</a> and why it matters. This chapter is the next step: working out, for your character and each of your knockdowns, which buttons can hit meaty, how long to wait before pressing them and how much advantage you end up with. It uses the numbers and the testing method from <a href="#adv-data">Reading and Measuring Frame Data</a>.</p>
 
 <h3 id="adv-kd">Reading Knockdown Advantage</h3>
 
@@ -53,7 +53,31 @@
     <li><strong>Invincible reversals</strong> beat every meaty. Against a character with a fast invincible reversal, a meaty is a bet; <a href="#adv-decisions">Decisions by the Numbers</a> shows how to price it.</li>
     <li><strong>Special cases.</strong> For multi-hit moves the calculator uses the first group of active frames, and it leaves out held, charged, stance, follow-up and air versions, and projectiles.</li>
 </ul>
-<p>Test every setup before you use it in a match: record the dummy pressing a 4-frame normal on wakeup in one slot and a reversal in another, turn on the frame meter and check that your meaty hits on the frame you expected.</p>
+<p>Test every setup before you use it in a match, following the <a href="#adv-test">testing protocol</a>: record the dummy pressing a 4-frame normal on wakeup in one slot and a reversal in another, turn on the frame meter and check that your meaty hits on the frame you expected.</p>
+
+<h3 id="adv-oki-sf6">What the Defender Has on Wakeup in SF6<span class="sf6-tag">SF6</span></h3>
+
+<p>Your oki only works if it accounts for every option the opponent has when they stand up. In SF6 that list is longer than in older games, because the Drive System adds options to every character:</p>
+<div class="table-wrap"><table>
+    <tr><th>Their wakeup option</th><th>What a meaty does against it</th><th>What beats it instead</th></tr>
+    <tr><td>Block</td><td>Blocked: you keep the turn, more plus than usual</td><td>Throw</td></tr>
+    <tr><td>Throw tech or fast button</td><td>Hits them, usually as a Counter Hit</td><td>The meaty itself, or a shimmy against the tech</td></tr>
+    <tr><td>Invincible reversal (OD special or Super Art)</td><td>Loses</td><td>Safe jump, or block and bait</td></tr>
+    <tr><td>Drive Reversal on wakeup</td><td>Loses</td><td>Block it: it's −6 on block and costs them 2 bars</td></tr>
+    <tr><td>Drive Impact on wakeup</td><td>A single-hit meaty is absorbed by the armor</td><td>Your own Drive Impact, a throw, or simply waiting and blocking</td></tr>
+    <tr><td>Drive Parry</td><td>A strike is parried</td><td>Throw, which hits a parrying player with a Punish Counter</td></tr>
+</table></div>
+<p>A good oki routine has an answer for each row and uses them in a mix, so the defender can't settle on one option. <a href="#adv-decisions">Decisions by the Numbers</a> shows how to choose that mix.</p>
+
+<h3 id="adv-oki-train">Training the Timing</h3>
+
+<p>A setup that works in training mode still has to come out under pressure. Practice it like a combo:</p>
+<ul>
+    <li><strong>Find a cue.</strong> Tie the timing to something you can see or hear: the moment the dash ends, the sound of the opponent hitting the floor, a specific animation frame. A cue is easier to repeat than counting.</li>
+    <li><strong>Twenty clean reps on each side</strong>, with the dummy set to block, so you hear whether the meaty connects on the frame you wanted.</li>
+    <li><strong>Then with a recorded reversal and jab</strong> on random playback, so you practice reacting to what happens next, not only the setup.</li>
+    <li><strong>Finally in matches</strong>, one setup at a time. Add the next one only when the first comes out without thinking.</li>
+</ul>
 
 <h3 id="adv-safe-jump-math">Safe Jumps in Numbers</h3>
 
@@ -62,7 +86,14 @@
     <li>The jumping attack is active on frame N + 1, when they wake up.</li>
     <li>You're back on the ground and able to block before frame N + R, when a reversal with startup R, pressed on their first frame, becomes active.</li>
 </ul>
-<p>Checking this needs your character's jump length (pre-jump, time in the air and landing), which isn't in this hub's frame data yet. It's being added for Ryu and Akuma first. Until then, take safe jumps from your character's community resources and confirm them with the frame meter.</p>
+<p>To check one yourself:</p>
+<ol>
+    <li>Measure your forward jump with the frame meter: pre-jump, frames in the air and landing (<a href="#adv-frame-meter">how to measure</a>).</li>
+    <li>Find the startup R of the reversal you're worried about in that character's frame data. For shotos in SF6, that's usually the OD uppercut.</li>
+    <li>Work out when you have to jump so the attack is active on frame N + 1, then check that you land with time to block before frame N + R.</li>
+    <li>Test it: record the dummy doing that reversal on wakeup. If you block it every time, the jump is safe. If it hits you, you're landing late; if your jump-in whiffs, you're early.</li>
+</ol>
+<p>The same safe jump can work against one reversal and fail against a faster one, so note which reversals each safe jump covers.</p>
 
 <div class="card success">
     <h4>Build One Setup This Week</h4>

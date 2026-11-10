@@ -383,7 +383,7 @@
   "chapter.adv-pressure": "Pressão e Defesa",
   "chapter.adv-decisions": "Decisões em Números",
   "ui.go-deeper": "Aprofundar",
-  "ui.advanced-blurb": "Okizeme, pressão e decisões calculadas em frames e números, com calculadoras que usam o frame data.",
+  "ui.advanced-blurb": "Como achar, medir, calcular e testar sozinho: frame data, okizeme, pressão e decisões, com calculadoras.",
   "adv.oki.knockdown": "Knockdown",
   "adv.oki.dashes": "Dashes para frente",
   "adv.oki.dash.0": "Nenhum",
@@ -434,5 +434,6 @@
   "adv.be.need-in": "umas {0} vezes em 10",
   "adv.be.ev-good": "Com {0}%, ela rende em média uns <b>{1}</b> por tentativa: <b>{2}</b> a cada 10 tentativas.",
   "adv.be.ev-bad": "Com {0}%, ela custa em média uns <b>{1}</b> por tentativa: <b>{2}</b> a cada 10 tentativas.",
-  "adv.be.note": "Só dano. Barras de Drive, Super e posição na tela também fazem parte do custo."
+  "adv.be.note": "Só dano. Barras de Drive, Super e posição na tela também fazem parte do custo.",
+  "chapter.adv-data": "Ler e Medir"
 };

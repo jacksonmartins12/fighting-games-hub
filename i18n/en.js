@@ -383,7 +383,7 @@
   "chapter.adv-pressure": "Pressure and Defense",
   "chapter.adv-decisions": "Decisions by the Numbers",
   "ui.go-deeper": "Go deeper",
-  "ui.advanced-blurb": "Okizeme, pressure and decisions worked out in frames and numbers, with calculators that use the frame data.",
+  "ui.advanced-blurb": "How to find, measure, calculate and test it yourself: frame data, okizeme, pressure and decisions, with calculators.",
   "adv.oki.knockdown": "Knockdown",
   "adv.oki.dashes": "Forward dashes",
   "adv.oki.dash.0": "None",
@@ -434,5 +434,6 @@
   "adv.be.need-in": "about {0} times in 10",
   "adv.be.ev-good": "At {0}%, it earns you about <b>{1}</b> per attempt on average: <b>{2}</b> every 10 attempts.",
   "adv.be.ev-bad": "At {0}%, it costs you about <b>{1}</b> per attempt on average: <b>{2}</b> every 10 attempts.",
-  "adv.be.note": "Damage only. Drive bars, meter and screen position are part of the cost too."
+  "adv.be.note": "Damage only. Drive bars, meter and screen position are part of the cost too.",
+  "chapter.adv-data": "Reading and Measuring"
 };

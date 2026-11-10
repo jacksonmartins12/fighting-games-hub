@@ -3,7 +3,7 @@
 
 <p class="scope-note"><span class="scope-badge">Universal</span><span>O método vale para qualquer jogo em que o tempo para levantar é fixo. A calculadora usa o frame data de Street Fighter 6 deste hub.</span></p>
 
-<p>O capítulo de Mecânicas explica <a href="#offense-pt">o que é um meaty</a> e por que ele importa. Este capítulo é o passo seguinte: descobrir, para o seu personagem e para cada knockdown dele, quais botões acertam meaty, quanto esperar antes de apertar e com quanta vantagem você fica.</p>
+<p>O capítulo de Mecânicas explica <a href="#offense-pt">o que é um meaty</a> e por que ele importa. Este capítulo é o passo seguinte: descobrir, para o seu personagem e para cada knockdown dele, quais botões acertam meaty, quanto esperar antes de apertar e com quanta vantagem você fica. Ele usa os números e o método de teste de <a href="#adv-data">Lendo e Medindo Frame Data</a>.</p>
 
 <h3 id="adv-kd-pt">Lendo a Vantagem do Knockdown</h3>
 
@@ -53,7 +53,31 @@
     <li><strong>Reversals invencíveis</strong> vencem qualquer meaty. Contra um personagem com reversal invencível rápido, o meaty é uma aposta; <a href="#adv-decisions">Decisões em Números</a> mostra como calcular o preço dela.</li>
     <li><strong>Casos especiais.</strong> Nos golpes de vários hits a calculadora usa o primeiro grupo de frames ativos, e deixa de fora as versões seguradas, carregadas, de postura, de continuação e aéreas, e os projéteis.</li>
 </ul>
-<p>Teste cada setup antes de usar em partida: grave o dummy apertando um normal de 4 frames no wakeup em um slot e um reversal em outro, ligue o frame meter e confira se o seu meaty acerta no frame esperado.</p>
+<p>Teste cada setup antes de usar em partida, seguindo o <a href="#adv-test-pt">protocolo de teste</a>: grave o dummy apertando um normal de 4 frames no wakeup em um slot e um reversal em outro, ligue o frame meter e confira se o seu meaty acerta no frame esperado.</p>
+
+<h3 id="adv-oki-sf6-pt">O Que Quem Defende Tem no Wakeup no SF6<span class="sf6-tag">SF6</span></h3>
+
+<p>O seu oki só funciona se levar em conta todas as opções que o oponente tem quando levanta. No SF6 essa lista é maior que nos jogos antigos, porque o Sistema Drive dá opções a todos os personagens:</p>
+<div class="table-wrap"><table>
+    <tr><th>Opção dele no wakeup</th><th>O que um meaty faz contra ela</th><th>O que vence ela</th></tr>
+    <tr><td>Defender</td><td>Defendido: você continua com a vez, com mais vantagem que o normal</td><td>Throw</td></tr>
+    <tr><td>Tech de throw ou botão rápido</td><td>Acerta, normalmente como Counter Hit</td><td>O próprio meaty, ou um shimmy contra o tech</td></tr>
+    <tr><td>Reversal invencível (especial OD ou Super Art)</td><td>Perde</td><td>Safe jump, ou defender e fazer bait</td></tr>
+    <tr><td>Drive Reversal no wakeup</td><td>Perde</td><td>Defender: ele fica −6 no block e custa 2 barras</td></tr>
+    <tr><td>Drive Impact no wakeup</td><td>Um meaty de um hit é absorvido pela armadura</td><td>O seu próprio Drive Impact, um throw, ou simplesmente esperar e defender</td></tr>
+    <tr><td>Drive Parry</td><td>O golpe é aparado</td><td>Throw, que pega quem está no parry com Punish Counter</td></tr>
+</table></div>
+<p>Uma boa rotina de oki tem uma resposta para cada linha e mistura todas, para quem defende não se acomodar numa opção só. <a href="#adv-decisions">Decisões em Números</a> mostra como escolher essa mistura.</p>
+
+<h3 id="adv-oki-train-pt">Treinando o Tempo</h3>
+
+<p>Um setup que funciona no training mode ainda precisa sair sob pressão. Treine como um combo:</p>
+<ul>
+    <li><strong>Ache uma referência.</strong> Amarre o tempo a algo que você vê ou ouve: o momento em que o dash termina, o som do oponente batendo no chão, um quadro específico da animação. Uma referência é mais fácil de repetir do que contar.</li>
+    <li><strong>Vinte repetições limpas de cada lado</strong>, com o dummy defendendo, para você ouvir se o meaty conecta no frame que queria.</li>
+    <li><strong>Depois com um reversal e um jab gravados</strong> em reprodução aleatória, para treinar a reação ao que vem em seguida, não só o setup.</li>
+    <li><strong>Por fim nas partidas</strong>, um setup por vez. Acrescente o próximo só quando o primeiro sair sem pensar.</li>
+</ul>
 
 <h3 id="adv-safe-jump-math-pt">Safe Jump em Números</h3>
 
@@ -62,7 +86,14 @@
     <li>O golpe aéreo está ativo no frame N + 1, quando ele levanta.</li>
     <li>Você já está no chão e pode defender antes do frame N + R, quando um reversal de startup R, apertado no primeiro frame dele, fica ativo.</li>
 </ul>
-<p>Para conferir isso é preciso saber a duração do pulo do seu personagem (pré-pulo, tempo no ar e pouso), que ainda não está no frame data do hub. Ela está sendo adicionada primeiro para Ryu e Akuma. Até lá, pegue os safe jumps dos recursos da comunidade do seu personagem e confirme com o frame meter.</p>
+<p>Para conferir um você mesmo:</p>
+<ol>
+    <li>Meça o seu pulo para frente com o frame meter: pré-pulo, frames no ar e pouso (<a href="#adv-frame-meter-pt">como medir</a>).</li>
+    <li>Ache no frame data daquele personagem o startup R do reversal que te preocupa. Para os shotos no SF6, normalmente é o uppercut OD.</li>
+    <li>Calcule quando você precisa pular para o golpe estar ativo no frame N + 1 e confira se você cai com tempo de defender antes do frame N + R.</li>
+    <li>Teste: grave o dummy fazendo esse reversal no wakeup. Se você defende toda vez, o pulo é seguro. Se o reversal te acerta, você está caindo tarde; se o seu golpe aéreo erra, você está cedo.</li>
+</ol>
+<p>O mesmo safe jump pode funcionar contra um reversal e falhar contra outro mais rápido, então anote quais reversals cada safe jump cobre.</p>
 
 <div class="card success">
     <h4>Monte Um Setup Esta Semana</h4>

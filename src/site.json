@@ -9,20 +9,20 @@
       "numbered": true
     },
     {
-      "id": "advanced",
-      "kanji": "極",
-      "face": "<span class=\"face face-num face-kanji\" aria-hidden=\"true\">極</span>",
-      "plainLabel": false,
-      "small": "{{t:ui.go-deeper}}",
-      "numbered": true
-    },
-    {
       "id": "training",
       "kanji": "鍛",
       "face": "<span class=\"face\"><img src=\"img/ken.webp\" width=\"200\" height=\"200\" alt=\"Ken\"></span>",
       "plainLabel": false,
       "small": "{{t:ui.practice}} · Ken",
       "numbered": false
+    },
+    {
+      "id": "advanced",
+      "kanji": "極",
+      "face": "<span class=\"face\"><img src=\"img/gouken.webp\" width=\"200\" height=\"200\" alt=\"Gouken\"></span>",
+      "plainLabel": false,
+      "small": "{{t:ui.go-deeper}} · Gouken",
+      "numbered": true
     },
     {
       "id": "archive",
@@ -75,18 +75,6 @@
       "group": "path"
     },
     {
-      "id": "adv-oki",
-      "group": "advanced"
-    },
-    {
-      "id": "adv-pressure",
-      "group": "advanced"
-    },
-    {
-      "id": "adv-decisions",
-      "group": "advanced"
-    },
-    {
       "id": "training",
       "group": "training"
     },
@@ -115,6 +103,22 @@
       "id": "review",
       "group": "training",
       "app": "<div id=\"review-app\" class=\"review-app\"></div>"
+    },
+    {
+      "id": "adv-data",
+      "group": "advanced"
+    },
+    {
+      "id": "adv-oki",
+      "group": "advanced"
+    },
+    {
+      "id": "adv-pressure",
+      "group": "advanced"
+    },
+    {
+      "id": "adv-decisions",
+      "group": "advanced"
     },
     {
       "id": "families",

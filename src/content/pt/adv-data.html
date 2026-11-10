@@ -1,0 +1,64 @@
+
+<h2>Lendo e Medindo Frame Data</h2>
+
+<p class="scope-note"><span class="scope-badge">Universal</span><span>O método vale para qualquer jogo de luta. As fontes e ferramentas citadas aqui são as de Street Fighter 6.</span></p>
+
+<p>Os capítulos do Avançado não te entregam uma lista de setups para decorar. Setups mudam a cada patch, e uma lista só existe para os personagens que alguém já escreveu. O que dura é saber chegar neles sozinho: onde estão os números, como ler, como medir o que nenhuma tabela mostra e como testar o resultado. Este capítulo é a base dos outros três.</p>
+
+<h3 id="adv-sources-pt">De Onde Vêm os Números</h3>
+
+<div class="table-wrap"><table>
+    <tr><th>Fonte</th><th>O que ela dá</th><th>Cuidado com</th></tr>
+    <tr><td><strong>Frame data oficial da Capcom</strong> (a página Frame Data de cada personagem no site de Street Fighter)</td><td>Startup, ativos, recovery, vantagem no hit e no block, vantagem de knockdown, cancels e dano de todos os golpes</td><td>As notas são curtas; algumas situações (distância, versões seguradas) não aparecem separadas</td></tr>
+    <tr><td><strong>O frame meter</strong> do training mode</td><td>Os frames exatos de qualquer situação que você montar, incluindo combos, setups e coisas que nenhuma tabela mostra</td><td>Ele só mede o que você realmente fez, na distância em que você fez</td></tr>
+    <tr><td><strong>Dados da comunidade</strong> (FAT, wiki do SuperCombo)</td><td>Colunas e notas extras, dados de pulo e dash, combos, setups conhecidos e explicações</td><td>Confira o patch ou a data da página; as edições podem atrasar depois de uma atualização de balanceamento</td></tr>
+    <tr><td><strong>Este hub</strong></td><td>Guias de personagem e calculadoras feitos a partir desses dados, com a data em que cada guia foi conferido</td><td>É uma fonte secundária como qualquer outra: depois de um patch, confirme no jogo</td></tr>
+</table></div>
+<p>Quando as fontes discordam, quem decide é o jogo. Monte a situação no training mode e meça.</p>
+
+<h3 id="adv-notation-pt">Lendo a Notação</h3>
+
+<ul>
+    <li><strong>Startup</strong> conta até o primeiro frame ativo, inclusive: um golpe de 5 frames fica ativo no frame 5. Por isso o buraco é só startup menos vantagem.</li>
+    <li><strong>No hit / no block</strong> comparam quando você e o oponente voltam a agir: +2 quer dizer que você age 2 frames antes, −6 quer dizer que ele age.</li>
+    <li><strong>KD +40 / HKD +40</strong>: o oponente é derrubado e você age 40 frames antes dele. HKD quer dizer que ele não pode dar back rise.</li>
+    <li><strong>A*B</strong>: valores de hits diferentes do mesmo golpe. <strong>A~B</strong>: uma faixa, normalmente dependendo da distância ou do tempo. <strong>A(B)</strong>: uma versão alternativa, como o valor com distância, segurado ou em Punish Counter.</li>
+    <li><strong>Cancel</strong>: em que o golpe pode ser cancelado (neste hub: SP especiais, SA Super Arts, TC target combo, Chain em golpes fracos).</li>
+</ul>
+<p>Quando um valor tem várias partes, leia a nota do golpe antes de confiar nele. Um golpe que é −4 colado e −1 na distância máxima é uma decisão diferente em cada distância.</p>
+
+<h3 id="adv-frame-meter-pt">O Frame Meter: Medindo o Que Não Está na Tabela</h3>
+
+<p>O frame meter do training mode do SF6 desenha cada frame dos dois personagens como uma barra: startup, ativos, recovery, hitstun e blockstun, e mostra a vantagem de frames quando os dois podem agir. Ele transforma qualquer situação em números. Coisas que vale medir você mesmo:</p>
+<ul>
+    <li><strong>O seu pulo.</strong> Pule para frente com o medidor ligado e anote três números: frames de pré-pulo, frames no ar e frames de pouso. A fórmula do safe jump precisa deles.</li>
+    <li><strong>A vantagem de knockdown depois de um combo.</strong> A tabela dá o valor de golpes isolados. Depois de um juggle ou de um combo longo, o número real pode ser outro. Termine o seu combo principal e leia a vantagem quando o oponente levantar.</li>
+    <li><strong>O buraco real de uma sequência.</strong> Deixe o dummy defendendo, faça a sequência e conte os frames entre o fim do primeiro blockstun e o próximo frame ativo.</li>
+    <li><strong>A duração de um frame kill.</strong> Erre de propósito o normal que você quer usar e conte o total de frames.</li>
+</ul>
+
+<h3 id="adv-test-pt">Testando um Setup: um Protocolo Simples</h3>
+
+<ol>
+    <li><strong>Escreva a afirmação.</strong> "Depois do meu throw, dash e Crouch MK acerta meaty e vence um jab de 4 frames." Uma afirmação que você não consegue escrever é uma que você não consegue testar.</li>
+    <li><strong>Grave a resposta que ele deve vencer.</strong> Grave o dummy fazendo essa resposta (um jab, um tech de throw, um reversal invencível) e use as configurações de reversal do training mode para reproduzir na hora em que o dummy levanta ou depois que ele defende.</li>
+    <li><strong>Teste todas as versões.</strong> Os dois lados da tela, meio da tela e canto, e contra back rise.</li>
+    <li><strong>Repita dez vezes.</strong> Se falhar, olhe o frame meter: ele mostra quantos frames cedo ou tarde você estava.</li>
+    <li><strong>Teste contra os personagens que você mais enfrenta.</strong> O tempo é o mesmo contra todos; se o golpe alcança, ou acerta alguém agachado, não é.</li>
+    <li><strong>Anote o patch.</strong> Escreva em qual versão do jogo você testou.</li>
+</ol>
+
+<h3 id="adv-notebook-pt">Seu Caderno de Laboratório</h3>
+
+<p>Tenha uma anotação por situação: a situação inicial (qual knockdown, qual golpe defendido), o que você faz, o que vence, para o que perde, onde foi testado e em qual patch. Dez boas anotações valem mais que cem setups copiados de vídeos, porque você sabe por que cada um funciona e quando para de funcionar.</p>
+<p>Depois de cada patch de balanceamento, leia as notas do patch do seu personagem e dos personagens que você mais enfrenta, e teste de novo toda anotação que usa um golpe que mudou. É esse hábito que impede o seu conhecimento de ficar desatualizado.</p>
+
+<div class="card success">
+    <h4>Meça Três Coisas Esta Semana</h4>
+    <ol>
+        <li>O pulo para frente do seu personagem: pré-pulo, tempo no ar e pouso.</li>
+        <li>A vantagem de knockdown depois do seu combo principal, no meio da tela e no canto.</li>
+        <li>O buraco real da sua sequência de pressão favorita.</li>
+    </ol>
+    <p>Compare cada número com o frame data oficial e com as calculadoras do hub. Onde eles forem diferentes, descubra por quê.</p>
+</div>

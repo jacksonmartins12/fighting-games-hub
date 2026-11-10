@@ -1,0 +1,64 @@
+
+<h2>Reading and Measuring Frame Data</h2>
+
+<p class="scope-note"><span class="scope-badge">Universal</span><span>The method applies to any fighting game. The sources and tools named here are the ones for Street Fighter 6.</span></p>
+
+<p>The Advanced chapters don't hand you a list of setups to memorize. Setups change with every patch, and a list only exists for the characters someone already wrote it for. What lasts is knowing how to work them out: where the numbers are, how to read them, how to measure what no table lists and how to test the result. This chapter is the base for the other three.</p>
+
+<h3 id="adv-sources">Where the Numbers Come From</h3>
+
+<div class="table-wrap"><table>
+    <tr><th>Source</th><th>What it gives you</th><th>Watch out for</th></tr>
+    <tr><td><strong>Capcom's official frame data</strong> (each character's Frame Data page on the Street Fighter site)</td><td>Startup, active, recovery, advantage on hit and block, knockdown advantage, cancels and damage for every move</td><td>Notes are short; some situations (spacing, held versions) aren't separated</td></tr>
+    <tr><td><strong>The frame meter</strong> in training mode</td><td>Exact frames of any situation you set up, including combos, setups and things no table lists</td><td>It only measures what you actually did, at the distance you did it</td></tr>
+    <tr><td><strong>Community data</strong> (FAT, SuperCombo wiki)</td><td>Extra columns and notes, jump and dash data, combos, known setups and explanations</td><td>Check the patch or date of the page; edits can lag behind a balance update</td></tr>
+    <tr><td><strong>This hub</strong></td><td>Character guides and calculators built from that data, with the date each guide was checked</td><td>It's a secondary source like any other: after a patch, confirm in the game</td></tr>
+</table></div>
+<p>When sources disagree, the game decides. Set the situation up in training mode and measure it.</p>
+
+<h3 id="adv-notation">Reading the Notation</h3>
+
+<ul>
+    <li><strong>Startup</strong> counts up to and including the first active frame: a 5-frame move is active on frame 5. That's why the gap is simply startup minus advantage.</li>
+    <li><strong>On hit / on block</strong> compare when you and the opponent can act again: +2 means you act 2 frames earlier, −6 means they do.</li>
+    <li><strong>KD +40 / HKD +40</strong>: the opponent is knocked down and you act 40 frames before they can. HKD means they can't back rise.</li>
+    <li><strong>A*B</strong>: values of different hits of the same move. <strong>A~B</strong>: a range, usually depending on distance or timing. <strong>A(B)</strong>: an alternate version, such as a spaced, held or Punish Counter value.</li>
+    <li><strong>Cancel</strong>: what the move can be cancelled into (in this hub: SP specials, SA Super Arts, TC target combo, Chain into lights).</li>
+</ul>
+<p>When a value has several parts, read the move's note before trusting it. A move that is −4 point blank and −1 at max range is a different decision at each distance.</p>
+
+<h3 id="adv-frame-meter">The Frame Meter: Measuring What Isn't Listed</h3>
+
+<p>The frame meter in SF6's training mode draws every frame of both characters as a bar: startup, active, recovery, hitstun and blockstun, and shows the frame advantage once both can act. It turns any situation into numbers. Things worth measuring yourself:</p>
+<ul>
+    <li><strong>Your jump.</strong> Jump forward with the meter on and note three numbers: pre-jump frames, frames in the air and landing frames. The safe jump formula needs them.</li>
+    <li><strong>Knockdown advantage after a combo.</strong> The table gives it for single moves. After a juggle or a long combo, the real number can differ. Finish your main combo and read the advantage when the opponent stands up.</li>
+    <li><strong>The real gap in a string.</strong> Set the dummy to block, do the string and count the frames between the end of the first blockstun and the next active frame.</li>
+    <li><strong>The length of a frame kill.</strong> Whiff the normal you want to use and count its total frames.</li>
+</ul>
+
+<h3 id="adv-test">Testing a Setup: a Simple Protocol</h3>
+
+<ol>
+    <li><strong>Write the claim.</strong> "After my throw, dash and Crouch MK hits meaty and beats a 4-frame jab." A claim you can't write down is one you can't test.</li>
+    <li><strong>Record the answer it should beat.</strong> Record the dummy doing that answer (a jab, a throw tech, an invincible reversal) and use the training mode's reversal settings to play it back right when the dummy wakes up or after it blocks.</li>
+    <li><strong>Test every version.</strong> Both sides of the screen, midscreen and corner, and against back rise.</li>
+    <li><strong>Repeat it ten times.</strong> If it fails, look at the frame meter: it tells you how many frames early or late you were.</li>
+    <li><strong>Test against the characters you meet most.</strong> Timing is the same against everyone; whether a move reaches, or hits a crouching opponent, is not.</li>
+    <li><strong>Note the patch.</strong> Write down which game version you tested on.</li>
+</ol>
+
+<h3 id="adv-notebook">Your Lab Notebook</h3>
+
+<p>Keep one entry per situation: the starting situation (which knockdown, which blocked move), what you do, what it beats, what it loses to, where it was tested and on which patch. Ten good entries are worth more than a hundred setups copied from videos, because you know why each one works and when it stops working.</p>
+<p>After each balance patch, read the patch notes for your character and the characters you play against most, and test again any entry that uses a changed move. That's the habit that keeps your knowledge from going out of date.</p>
+
+<div class="card success">
+    <h4>Measure Three Things This Week</h4>
+    <ol>
+        <li>Your character's forward jump: pre-jump, air time and landing.</li>
+        <li>The knockdown advantage after your main combo, midscreen and in the corner.</li>
+        <li>The real gap of your favorite pressure string.</li>
+    </ol>
+    <p>Compare each number with the official frame data and this hub's calculators. Where they differ, find out why.</p>
+</div>
