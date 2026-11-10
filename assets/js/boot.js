@@ -40,6 +40,13 @@ function routeHash(initial) {
     setTimeout(function () { reader.scrollIntoView({ block: 'start' }); }, 0);
     return;
   }
+  var mm = hash.match(/^matchup\/([a-z0-9-]+)\/([a-z0-9-]+)$/);   // #matchup/<me>/<opponent>
+  if (mm && ROSTER[mm[1]] && ROSTER[mm[2]]) {
+    muSet(mm[1], mm[2]);
+    show('matchup', false, true);
+    setTimeout(function () { reader.scrollIntoView({ block: 'start' }); }, 0);
+    return;
+  }
   var target = resolveTarget(hash);
   if (target) {
     var sec = target.tagName === 'SECTION' ? target : target.closest('section');

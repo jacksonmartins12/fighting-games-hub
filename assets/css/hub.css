@@ -997,3 +997,13 @@ footer .credit { color: var(--ink); font-size: 0.95rem; margin-bottom: 10px; }
 }
 .scope-note .sf6-tag { margin-left: 0; }
 h3 .sf6-tag { align-self: center; }
+
+/* matchup tool */
+.matchup-app > h3 { margin-top: 34px; }
+.matchup-app > h4 { margin-top: 18px; }
+.mu-bar { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: center; }
+.mu-bar .mu-msg { overflow-wrap: anywhere; }
+.mu-stats th[scope="row"] { text-align: left; font-weight: 500; }
+.mu-keys { list-style: none; padding: 0; margin: 0; }
+.mu-keys li { margin: 0 0 12px; max-width: none; }
+.mu-ft { padding: 0 14px 14px; }

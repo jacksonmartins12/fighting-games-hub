@@ -9,6 +9,27 @@ function punishers(slug) {
     return /[nsut]/.test(m[3]) && !m[11] && !isAir(num) && !/[>~]|during|after|\(hold|hold\)/i.test(num) && suEff(m[4]) != null && suEff(m[4]) > 0 && dmgVal(m[9]) > 0;
   }).filter(function (m) { return !/critical art|\(CA\)/i.test(m[0] + ' ' + (m[1] || '')); }).map(function (m) { return { name: m[0], num: m[1], type: m[3], su: suEff(m[4]), dmg: dmgVal(m[9]), xx: String(m[10] || '') }; });
 }
+// Moves of a fighter that are -4 or worse on block (ground moves; uses the least punishable version listed).
+function unsafeMoves(slug) {
+  return (FRAMES[slug] ? FRAMES[slug].m : []).filter(function (m) {
+    var b = safestBlock(m[8]); return b != null && b <= -4 && !isAir(m[1]) && m[11] !== 'air' && m[3] !== 't' && !/critical art|\(CA\)/i.test(m[0] + ' ' + (m[1] || ''));
+  }).map(function (m) { return { name: m[0], num: m[1], type: m[3], blk: safestBlock(m[8]), raw: m[8], m: m }; })
+    .sort(function (a, b) { return a.blk - b.blk; });
+}
+function punishCell(m) { return m ? '<b>' + esc(m.name) + '</b><br><span class="inp muted">' + esc(m.num || '') + ' · ' + m.su + 'f · ' + m.dmg + '</span>' : '<span class="muted">' + B('punish.nothing-fast-enough') + '</span>'; }
+function isODMove(m) { return /^OD\b/.test(m.name) || /PP|KK/.test(String(m.num || '')); }
+function bestByDamage(arr) { return arr.slice().sort(function (a, b) { return b.dmg - a.dmg || a.su - b.su; })[0]; }
+// Best answers among `mine` (from punishers()) to a move that is `blk` on block.
+function bestPunishes(mine, blk) {
+  var w = -blk;
+  var ok = mine.filter(function (m) { return m.su <= w; });
+  var norms = ok.filter(function (m) { return m.type === 'n'; });
+  var comboable = norms.filter(function (m) { return /sp|tc/.test(m.xx); });
+  var bn = bestByDamage(comboable.length ? comboable : norms);
+  var bs = bestByDamage(ok.filter(function (m) { return m.type === 's' && !isODMove(m); }));
+  var bm = bestByDamage(ok.filter(function (m) { return m.type === 'u' || (m.type === 's' && isODMove(m)); }));
+  return { normal: bn, special: bs, meter: bm };
+}
 function renderPunish() {
   if (!punishApp) return;
   var list = rosterList();
@@ -27,26 +48,14 @@ function renderPunish() {
     return;
   }
   var mine = punishers(pf.me);
-  var theirs = (FRAMES[pf.opp] ? FRAMES[pf.opp].m : []).filter(function (m) {
-    var b = safestBlock(m[8]); return b != null && b <= -4 && !isAir(m[1]) && m[11] !== 'air' && m[3] !== 't' && !/critical art|\(CA\)/i.test(m[0] + ' ' + (m[1] || ''));
-  }).map(function (m) { return { name: m[0], num: m[1], type: m[3], blk: safestBlock(m[8]), raw: m[8], m: m }; })
-    .sort(function (a, b) { return a.blk - b.blk; });
+  var theirs = unsafeMoves(pf.opp);
   var me = ROSTER[pf.me].name, opp = ROSTER[pf.opp].name;
   h += '<p class="pf-summary">' + B('punish.moves-of-are-4-or-worse', [theirs.length, esc(opp), esc(me), esc((FRAMES[pf.me].s || {}).fastestNormal || '—')]) + '</p>';
   h += '<div class="table-wrap"><table class="pf-table"><thead><tr><th>' + B('punish.s-move', [esc(opp)]) + '</th><th>' + B('widgets.on-block') + '</th><th>' + B('punish.your-best-normal') + '</th><th>' + B('punish.your-best-special-no-meter') + '</th>' + (pf.sa ? '<th>' + B('punish.with-meter-od-super-art') + '</th>' : '') + '</tr></thead><tbody>';
-  function cell(m) { return m ? '<b>' + esc(m.name) + '</b><br><span class="inp muted">' + esc(m.num || '') + ' · ' + m.su + 'f · ' + m.dmg + '</span>' : '<span class="muted">' + B('punish.nothing-fast-enough') + '</span>'; }
-  function isOD(m) { return /^OD\b/.test(m.name) || /PP|KK/.test(String(m.num || '')); }
-  function best(arr) { return arr.slice().sort(function (a, b) { return b.dmg - a.dmg || a.su - b.su; })[0]; }
   theirs.forEach(function (t) {
-    var w = -t.blk;
-    var ok = mine.filter(function (m) { return m.su <= w; });
-    var norms = ok.filter(function (m) { return m.type === 'n'; });
-    var comboable = norms.filter(function (m) { return /sp|tc/.test(m.xx); });
-    var bn = best(comboable.length ? comboable : norms);
-    var bs = best(ok.filter(function (m) { return m.type === 's' && !isOD(m); }));
-    var bm = best(ok.filter(function (m) { return m.type === 'u' || (m.type === 's' && isOD(m)); }));
+    var bp = bestPunishes(mine, t.blk), bn = bp.normal, bs = bp.special, bm = bp.meter;
     h += '<tr><td><b>' + esc(t.name) + '</b>' + condTag(t.m) + (t.m[12] ? ' <span class="ft-tag">' + B('punish.projectile-punish-only-up-close') + '</span>' : '') + '<br><span class="inp muted">' + esc(t.num || '') + '</span></td><td class="inp">' + fmtCell(t.raw) + (String(t.raw).match(/[^\d\s+-]/) ? '<br><span class="small muted">' + B('punish.using') + t.blk + '</span>' : '') +
-      '</td><td>' + cell(bn) + '</td><td>' + cell(bs) + '</td>' + (pf.sa ? '<td>' + cell(bm) + '</td>' : '') + '</tr>';
+      '</td><td>' + punishCell(bn) + '</td><td>' + punishCell(bs) + '</td>' + (pf.sa ? '<td>' + punishCell(bm) + '</td>' : '') + '</tr>';
   });
   if (!theirs.length) h += '<tr><td colspan="5" class="muted">' + B('punish.no-unsafe-moves-found') + '</td></tr>';
   h += '</tbody></table></div><p class="small muted">' + B('punish.each-cell-shows-the-move-its') +

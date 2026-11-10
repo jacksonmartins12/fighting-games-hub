@@ -24,6 +24,7 @@ function show(id, scroll, keepHash) {
   if (!keepHash) { try { history.replaceState(null, '', '#' + id); } catch (e) {} }
   if (id === 'roster' && !keepHash) { roster.open = null; renderRoster(); }
   if (id === 'punish') renderPunish();   // loads the two fighters it needs the first time it is shown
+  if (id === 'matchup') renderMatchup();
   closeMenu();
   if (scroll) reader.scrollIntoView({ behavior: behavior, block: 'start' });
 }

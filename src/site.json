@@ -131,6 +131,11 @@
       "id": "punish",
       "group": "roster",
       "app": "<div id=\"punish-app\" class=\"punish-app\"></div>"
+    },
+    {
+      "id": "matchup",
+      "group": "roster",
+      "app": "<div id=\"matchup-app\" class=\"matchup-app\"></div>"
     }
   ]
 }
