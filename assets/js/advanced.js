@@ -6,7 +6,7 @@
 var adv = LS.get('fgc-adv') || {};
 function advSave() { LS.set('fgc-adv', adv); }
 function advDefault(key, val) { if (adv[key] == null) adv[key] = val; }
-advDefault('okiChar', 'ryu'); advDefault('okiDash', 0); advDefault('okiWalk', 0);
+advDefault('okiChar', 'ryu'); advDefault('okiDash', 0); advDefault('okiWalk', 0); advDefault('okiRev', '');
 advDefault('strChar', 'ryu'); advDefault('strOpp', 'ken'); advDefault('strDr', false); advDefault('strBo', false); advDefault('strExtra', 0);
 advDefault('beGain', 1400); advDefault('beLoss', 3000); advDefault('beP', 60);
 
@@ -66,7 +66,8 @@ function renderOki() {
     '<div class="field wide"><label for="oki-kd">' + B('adv.oki.knockdown') + '</label><select id="oki-kd"></select></div>' +
     '<div class="field"><label for="oki-dash">' + B('adv.oki.dashes') + '</label><select id="oki-dash">' +
     [0, 1, 2].map(function (n) { return '<option value="' + n + '"' + (+adv.okiDash === n ? ' selected' : '') + '>' + esc(tr('adv.oki.dash.' + n)) + '</option>'; }).join('') + '</select></div>' +
-    '<div class="field"><label for="oki-walk">' + B('adv.oki.walk') + '</label><input id="oki-walk" type="number" inputmode="numeric" min="0" max="120" step="1" value="' + (+adv.okiWalk || 0) + '"><span class="hint">' + B('adv.oki.walk-hint') + '</span></div></div>' +
+    '<div class="field"><label for="oki-walk">' + B('adv.oki.walk') + '</label><input id="oki-walk" type="number" inputmode="numeric" min="0" max="120" step="1" value="' + (+adv.okiWalk || 0) + '"><span class="hint">' + B('adv.oki.walk-hint') + '</span></div>' +
+    '<div class="field"><label for="oki-rev">' + B('adv.oki.rev') + '</label><input id="oki-rev" type="number" inputmode="numeric" min="1" max="60" step="1" value="' + esc(String(adv.okiRev == null ? '' : adv.okiRev)) + '"><span class="hint">' + B('adv.oki.rev-hint') + '</span></div></div>' +
     '<div class="adv-out" aria-live="polite"></div>';
   var out = w.querySelector('.adv-out');
   if (!advNeed([slug], out, renderOki)) return;
@@ -94,16 +95,26 @@ function okiResults() {
     var S = suEff(m[4]), A = advActive(m[5]), r = okiMeaty(kd.n, spent, S, A.n);
     if (!r) { tooSlow++; return; }
     var blk = advNum(m[8]), hit = advNum(m[7]);
-    rows.push({ m: m, S: S, A: A, r: r, blk: blk == null ? null : blk + r.k - 1, hit: hit == null ? null : hit + r.k - 1 });
+    var rec = advNum(m[6]);   // safe meaty: frames you stay stuck = active frames left after the hit + recovery
+    rows.push({ m: m, S: S, A: A, r: r, blk: blk == null ? null : blk + r.k - 1, hit: hit == null ? null : hit + r.k - 1,
+      stuck: rec == null || A.multi ? null : A.n - r.k + rec });
   });
   rows.sort(function (a, b) { return a.r.delay - b.r.delay || (b.blk == null ? -99 : b.blk) - (a.blk == null ? -99 : a.blk); });
   if (!rows.length) { out.innerHTML = h + '<p class="tr-empty">' + B('adv.oki.none') + '</p>'; return; }
-  h += '<div class="table-wrap"><table class="pf-table adv-table"><thead><tr><th>' + B('roster.move') + '</th><th>Startup</th><th>' + B('adv.oki.press') + '</th><th>' + B('adv.oki.hits-on') + '</th><th>' + B('widgets.on-block') + '</th><th>' + B('widgets.on-hit') + '</th></tr></thead><tbody>';
+  var rev = Math.round(+adv.okiRev);
+  if (!(adv.okiRev !== '' && rev >= 1 && rev <= 60)) rev = null;
+  if (rev) {
+    var known = rows.filter(function (x) { return x.stuck != null; });
+    h += '<p class="adv-sum">' + B('adv.oki.safe-sum', [known.filter(function (x) { return x.stuck + 1 <= rev; }).length, known.length, rev]) + '</p>';
+  }
+  h += '<div class="table-wrap"><table class="pf-table adv-table"><thead><tr><th>' + B('roster.move') + '</th><th>Startup</th><th>' + B('adv.oki.press') + '</th><th>' + B('adv.oki.hits-on') + '</th><th>' + B('widgets.on-block') + '</th><th>' + B('widgets.on-hit') + '</th><th>' + B('adv.oki.stuck') + '</th></tr></thead><tbody>';
   rows.forEach(function (x) {
     h += '<tr' + (x.r.delay === 0 ? ' class="adv-easy"' : '') + '><td><b>' + esc(x.m[0]) + '</b><br><span class="inp muted">' + esc(x.m[1] || '') + '</span></td><td class="inp">' + x.S + 'f</td>' +
       '<td>' + (x.r.delay === 0 ? B('adv.oki.asap') : B('adv.oki.wait', [x.r.delay])) + '</td>' +
       '<td class="inp">' + B('adv.oki.active-of', [x.r.k, x.A.n]) + (x.A.multi ? '<br><span class="small muted">' + B('adv.oki.multi') + '</span>' : '') + '</td>' +
-      '<td class="inp">' + (x.blk == null ? '<span class="muted">' + B('mu.no-data') + '</span>' : fmtAdv(x.blk)) + '</td><td class="inp">' + (x.hit == null ? fmtCell(x.m[7]) : fmtAdv(x.hit)) + '</td></tr>';
+      '<td class="inp">' + (x.blk == null ? '<span class="muted">' + B('mu.no-data') + '</span>' : fmtAdv(x.blk)) + '</td><td class="inp">' + (x.hit == null ? fmtCell(x.m[7]) : fmtAdv(x.hit)) + '</td>' +
+      '<td class="inp">' + (x.stuck == null ? '<span class="muted">' + B('mu.no-data') + '</span>' : x.stuck + 'f' +
+        (rev ? '<br><span class="small ' + (x.stuck + 1 <= rev ? 'adv-ok">' + B('adv.oki.safe', [rev]) : 'adv-bad">' + B('adv.oki.unsafe', [rev])) + '</span>' : '')) + '</td></tr>';
   });
   h += '</tbody></table></div>';
   if (tooSlow) h += '<p class="small muted">' + B('adv.oki.too-slow', [tooSlow]) + '</p>';
@@ -116,7 +127,7 @@ widgets['adv-oki'].addEventListener('change', function (e) {
   if (id === 'oki-kd') adv.okiKd = e.target.value; else if (id === 'oki-dash') adv.okiDash = +e.target.value; else return;
   advSave(); okiResults();
 });
-widgets['adv-oki'].addEventListener('input', function (e) { if (e.target.id === 'oki-walk') { adv.okiWalk = e.target.value; advSave(); okiResults(); } });
+widgets['adv-oki'].addEventListener('input', function (e) { if (e.target.id === 'oki-walk') adv.okiWalk = e.target.value; else if (e.target.id === 'oki-rev') adv.okiRev = e.target.value; else return; advSave(); okiResults(); });
 
 // ----- string checker -----
 widgets['adv-string'] = el('<div class="widget adv-tool" data-group="advanced"></div>');

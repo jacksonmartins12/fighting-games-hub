@@ -1068,6 +1068,8 @@ h3 .sf6-tag { align-self: center; }
 .adv-checks { align-content: end; gap: 8px; }
 .adv-sum { margin: 6px 0 10px; max-width: none; }
 .adv-table tr.adv-easy td:first-child { box-shadow: inset 3px 0 0 var(--ok); }
+.adv-table .adv-ok { color: var(--ok); }
+.adv-table .adv-bad { color: var(--bad); }
 .adv-g { margin: 22px 0 2px; }
 .adv-g-trap { color: var(--ok); }
 .adv-g-true { color: var(--link); }

@@ -3756,6 +3756,35 @@
     "en": "An invincible reversal goes through the meaty. That's what safe jumps and baits are for.",
     "pt": "Um reversal invencível atravessa o meaty. É para isso que existem safe jumps e baits."
    }
+  },
+  {
+   "q": {
+    "en": "Your meaty hits on its last active frame and has 7 frames of recovery. Against which reversal does the safe meaty rule say you block in time?",
+    "pt": "O seu meaty acerta no último frame ativo e tem 7 frames de recovery. Contra qual reversal a regra do meaty seguro diz que você defende a tempo?"
+   },
+   "options": [
+    {
+     "en": "A 4f reversal",
+     "pt": "Um reversal de 4f"
+    },
+    {
+     "en": "A 6f reversal",
+     "pt": "Um reversal de 6f"
+    },
+    {
+     "en": "A 7f reversal",
+     "pt": "Um reversal de 7f"
+    },
+    {
+     "en": "An 8f reversal",
+     "pt": "Um reversal de 8f"
+    }
+   ],
+   "answer": 3,
+   "why": {
+    "en": "The rule is recovery + 1 ≤ the reversal's startup: 7 + 1 = 8. Faster reversals hit you before you can block. Test it in training mode, because one frame decides it.",
+    "pt": "A regra é recovery + 1 ≤ startup do reversal: 7 + 1 = 8. Reversals mais rápidos te acertam antes de você conseguir defender. Teste no training mode, porque um frame decide."
+   }
   }
  ],
  "adv-pressure": [
@@ -3844,6 +3873,64 @@
    "why": {
     "en": "A frame trap hits your late throw attempt, and a shimmy makes it whiff in front of them.",
     "pt": "Um frame trap acerta o seu throw atrasado, e um shimmy faz ele errar na frente do oponente."
+   }
+  },
+  {
+   "q": {
+    "en": "You block, then press throw a few frames after the earliest moment the attacker could throw. What does this fuzzy throw lose to?",
+    "pt": "Você defende e aperta throw alguns frames depois do primeiro momento em que o atacante poderia dar throw. Para o que esse throw fuzzy perde?"
+   },
+   "options": [
+    {
+     "en": "A meaty strike",
+     "pt": "Um golpe meaty"
+    },
+    {
+     "en": "A throw",
+     "pt": "Um throw"
+    },
+    {
+     "en": "A shimmy or a delayed strike",
+     "pt": "Um shimmy ou um golpe atrasado"
+    },
+    {
+     "en": "Nothing",
+     "pt": "Nada"
+    }
+   ],
+   "answer": 2,
+   "why": {
+    "en": "Strikes are blocked and throws are teched, but if they step back or wait, your throw whiffs or gets hit.",
+    "pt": "Golpes são defendidos e throws levam tech, mas se ele recuar ou esperar, o seu throw erra ou é acertado."
+   }
+  },
+  {
+   "q": {
+    "en": "You enter a special move's motion while a cancelable normal comes out. When does the special come out?",
+    "pt": "Você digita o comando de um especial enquanto sai um normal cancelável. Quando o especial sai?"
+   },
+   "options": [
+    {
+     "en": "Always",
+     "pt": "Sempre"
+    },
+    {
+     "en": "Only when the normal hits or is blocked",
+     "pt": "Só quando o normal acerta ou é defendido"
+    },
+    {
+     "en": "Only when the normal whiffs",
+     "pt": "Só quando o normal erra"
+    },
+    {
+     "en": "Only on counter hit",
+     "pt": "Só no counter hit"
+    }
+   ],
+   "answer": 1,
+   "why": {
+    "en": "Cancels only happen on contact, so the buffered special never comes out on whiff: that's what makes it an option select.",
+    "pt": "Cancels só acontecem no contato, então o especial no buffer nunca sai no vazio: é isso que faz dele um option select."
    }
   }
  ],

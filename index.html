@@ -8930,6 +8930,7 @@ PERGUNTA: Qual a diferença entre o timing de DP contra crossup e o timing de DP
     <tr><td><strong>Capcom's official frame data</strong> (each character's Frame Data page on the Street Fighter site)</td><td>Startup, active, recovery, advantage on hit and block, knockdown advantage, cancels and damage for every move</td><td>Notes are short; some situations (spacing, held versions) aren't separated</td></tr>
     <tr><td><strong>The frame meter</strong> in training mode</td><td>Exact frames of any situation you set up, including combos, setups and things no table lists</td><td>It only measures what you actually did, at the distance you did it</td></tr>
     <tr><td><strong>Community data</strong> (FAT, SuperCombo wiki)</td><td>Extra columns and notes, jump and dash data, combos, known setups and explanations</td><td>Check the patch or date of the page; edits can lag behind a balance update</td></tr>
+    <tr><td><strong>dood.gg</strong> (Japanese database, also in English and Portuguese)</td><td>Move search across all characters, each character's punishes and invincible moves, what you get after every throw and every invincible reversal, community setplays, and short guides on frame data, safe meaties, fuzzy guard and option selects</td><td>Setplays and strings are sent in by players; the site doesn't show which patch the data is from</td></tr>
     <tr><td><strong>This hub</strong></td><td>Character guides and calculators built from that data, with the date each guide was checked</td><td>It's a secondary source like any other: after a patch, confirm in the game</td></tr>
 </table></div>
 <p>When sources disagree, the game decides. Set the situation up in training mode and measure it.</p>
@@ -8995,6 +8996,7 @@ PERGUNTA: Qual a diferença entre o timing de DP contra crossup e o timing de DP
     <tr><td><strong>Frame data oficial da Capcom</strong> (a página Frame Data de cada personagem no site de Street Fighter)</td><td>Startup, ativos, recovery, vantagem no hit e no block, vantagem de knockdown, cancels e dano de todos os golpes</td><td>As notas são curtas; algumas situações (distância, versões seguradas) não aparecem separadas</td></tr>
     <tr><td><strong>O frame meter</strong> do training mode</td><td>Os frames exatos de qualquer situação que você montar, incluindo combos, setups e coisas que nenhuma tabela mostra</td><td>Ele só mede o que você realmente fez, na distância em que você fez</td></tr>
     <tr><td><strong>Dados da comunidade</strong> (FAT, wiki do SuperCombo)</td><td>Colunas e notas extras, dados de pulo e dash, combos, setups conhecidos e explicações</td><td>Confira o patch ou a data da página; as edições podem atrasar depois de uma atualização de balanceamento</td></tr>
+    <tr><td><strong>dood.gg</strong> (banco de dados japonês, também em inglês e português)</td><td>Busca de golpes entre todos os personagens, os punishes e golpes invencíveis de cada personagem, o que você consegue depois de cada throw e de cada reversal invencível, setups enviados pela comunidade, e guias curtos de frame data, meaty seguro, fuzzy e option select</td><td>Setups e sequências são enviados pelos jogadores; o site não mostra de qual patch são os dados</td></tr>
     <tr><td><strong>Este hub</strong></td><td>Guias de personagem e calculadoras feitos a partir desses dados, com a data em que cada guia foi conferido</td><td>É uma fonte secundária como qualquer outra: depois de um patch, confirme no jogo</td></tr>
 </table></div>
 <p>Quando as fontes discordam, quem decide é o jogo. Monte a situação no training mode e meça.</p>
@@ -9095,6 +9097,16 @@ PERGUNTA: Qual a diferença entre o timing de DP contra crossup e o timing de DP
     <li><strong>A projectile</strong> thrown while they're down, which also covers their wakeup from the front.</li>
 </ul>
 <p>Whatever you use, add its length to the frames you spend and check that the meaty still lands where the calculator says.</p>
+
+<h3 id="adv-safe-meaty">Safe Meaties: Beating the Reversal Without Jumping</h3>
+
+<p>A safe jump isn't the only way to stay safe against an invincible reversal. A meaty on the ground can be safe too, if you recover fast enough to block the reversal after your attack goes through it. It works because the reversal's invincibility makes your meaty whiff: what matters is how long you stay stuck after that.</p>
+<div class="deep-dive">
+    <h4>The rule</h4>
+    <p>dood.gg's rule of thumb: when your meaty hits on its <strong>last</strong> active frame, it's safe if <strong>its recovery + 1 is no more than the startup of their invincible reversal</strong>. If it hits on an earlier active frame, the active frames left over also count as time you're stuck.</p>
+    <p>An example with this hub's data: Ryu's Stand LP has 7 frames of recovery, so, hitting on its last active frame, it's safe against a reversal of 8 frames or slower, such as Luke's SA3 (10 frames). It isn't safe against a 6-frame reversal, and that's the startup of most of the cast's OD uppercuts and of Luke's SA1. dood.gg notes that no move in the game recovers fast enough to be safe against those, so against a 6-frame reversal the answers are a safe jump or blocking and baiting.</p>
+</div>
+<p>That's why the same meaty can be safe against one character and not another: it depends on their fastest invincible move, which you find in their frame data. The calculator below shows, for each meaty, how many frames you stay stuck after it hits, and checks it against a reversal startup you type in. One frame decides whether it's safe, so confirm every result with a recorded reversal in training mode.</p>
 
 <div class="widget-slot" data-widget="adv-oki"></div>
 
@@ -9203,6 +9215,16 @@ PERGUNTA: Qual a diferença entre o timing de DP contra crossup e o timing de DP
     <li><strong>Um projétil</strong> soltado enquanto ele está no chão, que ainda cobre o wakeup dele pela frente.</li>
 </ul>
 <p>Seja o que for, some a duração aos frames gastos e confira se o meaty continua caindo onde a calculadora diz.</p>
+
+<h3 id="adv-safe-meaty-pt">Meaty Seguro: Vencendo o Reversal Sem Pular</h3>
+
+<p>O safe jump não é o único jeito de ficar seguro contra um reversal invencível. Um meaty no chão também pode ser seguro, se você recuperar rápido o bastante para defender o reversal depois que ele atravessar o seu golpe. Funciona porque a invencibilidade do reversal faz o seu meaty errar: o que importa é quanto tempo você fica preso depois disso.</p>
+<div class="deep-dive">
+    <h4>A regra</h4>
+    <p>A regra prática do dood.gg: quando o seu meaty acerta no <strong>último</strong> frame ativo, ele é seguro se <strong>o recovery dele + 1 não passar do startup do reversal invencível do oponente</strong>. Se ele acertar num frame ativo anterior, os frames ativos que sobram também contam como tempo preso.</p>
+    <p>Um exemplo com os dados deste hub: o Stand LP do Ryu tem 7 frames de recovery, então, acertando no último frame ativo, ele é seguro contra um reversal de 8 frames ou mais lento, como a SA3 do Luke (10 frames). Ele não é seguro contra um reversal de 6 frames, que é o startup da maioria dos uppercuts OD do elenco e da SA1 do Luke. O dood.gg observa que nenhum golpe do jogo recupera rápido o bastante para ser seguro contra esses, então, contra um reversal de 6 frames, as respostas são o safe jump ou defender e fazer bait.</p>
+</div>
+<p>Por isso o mesmo meaty pode ser seguro contra um personagem e não contra outro: depende do golpe invencível mais rápido dele, que você acha no frame data dele. A calculadora abaixo mostra, para cada meaty, quantos frames você fica preso depois do acerto, e compara com o startup de reversal que você digitar. Um frame decide se é seguro, então confirme cada resultado com um reversal gravado no training mode.</p>
 
 <div class="widget-slot" data-widget="adv-oki"></div>
 
@@ -9332,6 +9354,41 @@ PERGUNTA: Qual a diferença entre o timing de DP contra crossup e o timing de DP
 <p>Delay tech is an option select: you block for the first few frames after the attacker's plus move, then press throw. If they went for a strike, you were already blocking. If they went for a throw, your late tech catches it.</p>
 <p>It loses to anything that's happening when you press throw. A frame trap with a small gap hits your throw attempt as a Counter Hit, and a shimmy leaves your throw whiffing in front of them. That's why frame traps and shimmies get stronger the more an opponent delay techs. Run the checker on your opponent's character to find which of their plus moves lead to frame traps: those are the moments when delay tech is most dangerous for you.</p>
 
+<h3 id="adv-fuzzy">Fuzzy Defense: Block First, Act Second</h3>
+
+<p>Delay tech belongs to a family. dood.gg calls them fuzzy techniques: you hold back to block, and you time a second action so it only comes out in the frames where the attacker didn't attack. One input keeps you safe against the obvious strike and still answers something else. The attacker's counterpart is the delayed attack: waiting a moment longer before pressing, to catch whatever the defender's fuzzy does.</p>
+<div class="table-wrap"><table>
+    <tr><th>Fuzzy option</th><th>How</th><th>Answers</th><th>Loses to</th></tr>
+    <tr><td><strong>Fuzzy throw</strong> (delay tech)</td><td>Block, then throw a few frames after their earliest possible throw</td><td>Meaty strikes (blocked) and throws (teched)</td><td>Shimmy, a deliberately late jump-in, a delayed strike</td></tr>
+    <tr><td><strong>Fuzzy light</strong></td><td>Block, then a light attack when their strike would have landed</td><td>After a safe jump, an empty jump into a throw or a low; in light-attack pressure, throws and mediums in the gaps</td><td>A delayed strike; on safe jumps, characters who can change their jump's timing in the air</td></tr>
+    <tr><td><strong>Fuzzy medium</strong> (usually Crouch MK)</td><td>Block, then a medium when their strike would have landed</td><td>Shimmies, backdashes and delayed attacks</td><td>Neutral jump (an invincible anti-air can still catch it)</td></tr>
+    <tr><td><strong>Fuzzy heavy</strong></td><td>The same with a heavy, when you're minus at a range where they can't walk back</td><td>Backdashes and shimmies</td><td>Neutral jump</td></tr>
+    <tr><td><strong>Fuzzy forward jump</strong></td><td>Block, then jump forward when their strike would have landed</td><td>An attacker who waits, delayed strikes; escaping the corner against a close shimmy</td><td>A delayed light attack, a shimmy</td></tr>
+    <tr><td><strong>Fuzzy crouch</strong></td><td>Walk back, then crouch-block when their low medium would hit</td><td>Walk-up throws (you walked out of range) and the low medium</td><td>Very little: overheads, which are almost impossible to react to while doing this</td></tr>
+    <tr><td><strong>Fuzzy parry</strong> <span class="sf6-tag">SF6</span></td><td>When very minus, parry only when their next strike would land</td><td>Punish Counter throws (you aren't parrying early) and strikes, with a chance at a Perfect Parry</td><td>Shimmy, delayed throw</td></tr>
+</table></div>
+
+<h4>The attacker's answer: delayed attacks</h4>
+<p>From the attacker's side, the trick is to wait as if you were blocking their invincible reversal, and only then act. If they reversal, you were blocking. If they fuzzed or pressed their fastest button, your late attack catches it.</p>
+<div class="table-wrap"><table>
+    <tr><th>Delayed option</th><th>Beats</th><th>Loses to</th></tr>
+    <tr><td><strong>Delayed throw</strong></td><td>Fuzzy throws; you still block an OD reversal</td><td>Neutral jump; walking back (midscreen)</td></tr>
+    <tr><td><strong>Delayed heavy</strong></td><td>Their fastest action and fuzzy throws, with a big reward; you still block an OD reversal</td><td>A fast forward jump; a fuzzy medium</td></tr>
+    <tr><td><strong>Delayed medium or light</strong></td><td>The same, with less reward but a shorter recovery, so you can still anti-air a jump</td><td>A reversal timed to meet it</td></tr>
+</table></div>
+<p>None of these is a trick that always works. They're layers of timing, and each one has an answer. Learn them in this order: delay tech first, then one fuzzy button for your character, then the delayed versions so you know what beats you. Practice each one against the dummy with the protocol from <a href="#adv-test">Reading and Measuring</a>, recording the attacker's options at different timings.</p>
+
+<h3 id="adv-os">Option Selects: One Input, Two Outcomes</h3>
+
+<p>An option select is an input that does different things depending on what the opponent did. In SF6 most of them come from buffering: you enter a command during another action, and it only comes out if a certain condition happens. dood.gg's input buffering guide lists many; these are the ones most characters can use:</p>
+<ul>
+    <li><strong>Cancel buffer.</strong> Enter a special (or Drive Rush, with the parry button) while a cancelable normal comes out. Cancels only happen when the normal connects, so the special comes out on hit or block and never on whiff. Use it with specials that are safe on block.</li>
+    <li><strong>Super Art against Drive Reversal.</strong> During the second light attack of a meaty light string, enter your Super Art motion. If they Drive Reversal, the Super comes out and punishes; if they block, nothing happens.</li>
+    <li><strong>After parrying a fireball.</strong> Buffer an attack, a jump or a Drive Rush so it only comes out if the parry was a Perfect Parry.</li>
+    <li><strong>Target combo buffer.</strong> Enter the special move's motion first, then press the target combo's next button. If you confirm in time, you get the special cancel; if your confirm is late, the target combo still comes out (dood.gg's example is Manon's À Terre).</li>
+</ul>
+<p>Two cautions. First, check what else the buffered motion can trigger: a motion that's harmless for one character can leak a special for another (dood.gg's example is A.K.I., whose OD Snake Step can come out of a Super Art buffer). Second, build your own the same way they were found: pick two situations, find an input that does nothing in one and the right thing in the other, and test both in training mode.</p>
+
 <h3 id="adv-escape">Getting Out: When to Spend Resources</h3>
 
 <p>Against pressure with no holes, the only exits cost something: a Drive Reversal (2 bars), an OD reversal (2 bars) or a reversal Super Art. Before spending, compare what the pressure is likely to cost you if you keep blocking with what you lose if your escape is baited. The calculator in <a href="#adv-decisions">Decisions by the Numbers</a> gives you the success rate you need.</p>
@@ -9410,6 +9467,41 @@ PERGUNTA: Qual a diferença entre o timing de DP contra crossup e o timing de DP
 
 <p>O delay tech é um option select: você defende nos primeiros frames depois do golpe com vantagem do atacante e então aperta throw. Se ele foi de golpe, você já estava defendendo. Se foi de throw, o seu tech atrasado pega.</p>
 <p>Ele perde para qualquer coisa que esteja acontecendo na hora em que você aperta throw. Um frame trap com buraco pequeno acerta a sua tentativa de throw como Counter Hit, e um shimmy deixa o seu throw errando na frente dele. Por isso frame traps e shimmies ficam mais fortes quanto mais o oponente usa delay tech. Use o verificador com o personagem do seu oponente para achar quais golpes com vantagem dele levam a frame traps: são os momentos em que o delay tech é mais perigoso para você.</p>
+
+<h3 id="adv-fuzzy-pt">Defesa Fuzzy: Defender Primeiro, Agir Depois</h3>
+
+<p>O delay tech faz parte de uma família. O dood.gg chama essas técnicas de fuzzy: você segura para trás para defender e coloca uma segunda ação no tempo certo, para ela só sair nos frames em que o atacante não atacou. Um único comando te deixa seguro contra o golpe óbvio e ainda responde a outra coisa. A resposta do atacante é o ataque atrasado: esperar um pouco mais antes de apertar, para pegar o que o fuzzy de quem defende fizer.</p>
+<div class="table-wrap"><table>
+    <tr><th>Opção fuzzy</th><th>Como</th><th>Responde a</th><th>Perde para</th></tr>
+    <tr><td><strong>Throw fuzzy</strong> (delay tech)</td><td>Defender e apertar throw alguns frames depois do primeiro momento em que ele poderia dar throw</td><td>Golpes meaty (defendidos) e throws (com tech)</td><td>Shimmy, um pulo atrasado de propósito, um golpe atrasado</td></tr>
+    <tr><td><strong>Fraco fuzzy</strong></td><td>Defender e soltar um golpe fraco quando o golpe dele teria chegado</td><td>Depois de um safe jump, um pulo vazio seguido de throw ou golpe baixo; na pressão de golpes fracos, throws e médios nos buracos</td><td>Um golpe atrasado; nos safe jumps, personagens que conseguem mudar o tempo do pulo no ar</td></tr>
+    <tr><td><strong>Médio fuzzy</strong> (normalmente o Crouch MK)</td><td>Defender e soltar um médio quando o golpe dele teria chegado</td><td>Shimmies, backdashes e golpes atrasados</td><td>Pulo neutro (um anti-air invencível ainda pode pegar)</td></tr>
+    <tr><td><strong>Forte fuzzy</strong></td><td>O mesmo com um golpe forte, quando você está em desvantagem numa distância em que ele não consegue andar para trás</td><td>Backdashes e shimmies</td><td>Pulo neutro</td></tr>
+    <tr><td><strong>Pulo para frente fuzzy</strong></td><td>Defender e pular para frente quando o golpe dele teria chegado</td><td>Um atacante que espera, golpes atrasados; sair do canto contra um shimmy de perto</td><td>Um golpe fraco atrasado, um shimmy</td></tr>
+    <tr><td><strong>Agachar fuzzy</strong></td><td>Andar para trás e agachar defendendo quando o médio baixo dele acertaria</td><td>Throws andando (você saiu do alcance) e o médio baixo</td><td>Quase nada: overheads, que são quase impossíveis de reagir enquanto você faz isso</td></tr>
+    <tr><td><strong>Parry fuzzy</strong> <span class="sf6-tag">SF6</span></td><td>Com muita desvantagem, dar parry só quando o próximo golpe dele chegaria</td><td>Throws com Punish Counter (você não fica no parry cedo) e golpes, com chance de Perfect Parry</td><td>Shimmy, throw atrasado</td></tr>
+</table></div>
+
+<h4>A resposta do atacante: ataques atrasados</h4>
+<p>Do lado de quem ataca, o truque é esperar como se estivesse defendendo o reversal invencível dele, e só então agir. Se ele soltar o reversal, você estava defendendo. Se ele fez fuzzy ou apertou o botão mais rápido, o seu golpe atrasado pega.</p>
+<div class="table-wrap"><table>
+    <tr><th>Opção atrasada</th><th>Vence</th><th>Perde para</th></tr>
+    <tr><td><strong>Throw atrasado</strong></td><td>Throws fuzzy; você ainda defende um reversal OD</td><td>Pulo neutro; andar para trás (no meio da tela)</td></tr>
+    <tr><td><strong>Forte atrasado</strong></td><td>A ação mais rápida dele e throws fuzzy, com uma recompensa grande; você ainda defende um reversal OD</td><td>Um pulo para frente rápido; um médio fuzzy</td></tr>
+    <tr><td><strong>Médio ou fraco atrasado</strong></td><td>O mesmo, com menos recompensa mas recovery menor, então você ainda consegue dar anti-air num pulo</td><td>Um reversal no tempo certo contra ele</td></tr>
+</table></div>
+<p>Nada disso é um truque que sempre funciona. São camadas de tempo, e cada uma tem resposta. Aprenda nesta ordem: primeiro o delay tech, depois um botão fuzzy do seu personagem, depois as versões atrasadas, para saber o que te vence. Treine cada uma contra o dummy com o protocolo de <a href="#adv-test-pt">Ler e Medir</a>, gravando as opções do atacante em tempos diferentes.</p>
+
+<h3 id="adv-os-pt">Option Selects: Um Comando, Dois Resultados</h3>
+
+<p>Um option select é um comando que faz coisas diferentes dependendo do que o oponente fez. No SF6 a maioria vem do buffer: você digita um comando durante outra ação, e ele só sai se uma condição acontecer. O guia de buffer do dood.gg lista vários; estes são os que a maioria dos personagens consegue usar:</p>
+<ul>
+    <li><strong>Buffer de cancel.</strong> Digite um especial (ou o Drive Rush, com o botão de parry) enquanto sai um normal cancelável. O cancel só acontece quando o normal conecta, então o especial sai no hit ou no block e nunca no vazio. Use com especiais seguros no block.</li>
+    <li><strong>Super Art contra Drive Reversal.</strong> Durante o segundo golpe fraco de uma sequência meaty de fracos, digite o comando da sua Super Art. Se ele der Drive Reversal, a Super sai e pune; se ele defender, nada acontece.</li>
+    <li><strong>Depois de aparar uma bola de fogo.</strong> Deixe no buffer um golpe, um pulo ou um Drive Rush, para só sair se o parry for um Perfect Parry.</li>
+    <li><strong>Buffer de target combo.</strong> Digite primeiro o comando do especial e depois aperte o botão seguinte do target combo. Se você confirmar a tempo, sai o cancel no especial; se confirmar tarde, o target combo ainda sai (o exemplo do dood.gg é o À Terre da Manon).</li>
+</ul>
+<p>Dois cuidados. Primeiro, confira o que mais o comando no buffer pode disparar: um comando inofensivo para um personagem pode soltar um especial em outro (o exemplo do dood.gg é a A.K.I., cujo OD Snake Step pode sair de um buffer de Super Art). Segundo, monte os seus do mesmo jeito que esses foram descobertos: escolha duas situações, ache um comando que não faz nada numa e faz a coisa certa na outra, e teste as duas no training mode.</p>
 
 <h3 id="adv-escape-pt">Saindo da Pressão: Quando Gastar Recursos</h3>
 
@@ -11722,6 +11814,7 @@ PERGUNTA: Qual a diferença entre o timing de DP contra crossup e o timing de DP
             <div class="deep-dive">
                 <h4>Frame Data and Lab Tools</h4>
                 <ul style="margin-top: 15px;">
+                    <li><strong>dood.gg:</strong> Japanese SF6 database, also in English and Portuguese. Move search across all characters, punishes and invincible moves per character, the situation after every throw and every invincible reversal, and short guides on frame data, safe meaties, fuzzy guard and option selects.</li>
                     <li><strong>SuperCombo Wiki (wiki.supercombo.gg):</strong> Community wiki with frame data, move properties and combos for Street Fighter 6 and many other games. The main reference for SF frame data.</li>
                     <li><strong>Dustloop Wiki:</strong> The equivalent wiki for Arc System Works games such as Guilty Gear and Granblue Fantasy Versus. Use it if you play those games, not for Street Fighter.</li>
                     <li><strong>SF6 training mode frame meter:</strong> SF6's training mode can display a frame meter showing startup, active frames, recovery and advantage in real time. It's the fastest way to check whether something is safe.</li>
@@ -11880,6 +11973,7 @@ PERGUNTA: Qual a diferença entre o timing de DP contra crossup e o timing de DP
             <div class="deep-dive">
                 <h4>Frame Data e Ferramentas de Lab</h4>
                 <ul style="margin-top: 15px;">
+                    <li><strong>dood.gg:</strong> Banco de dados japonês de SF6, também em inglês e português. Busca de golpes entre todos os personagens, punishes e golpes invencíveis de cada personagem, a situação depois de cada throw e de cada reversal invencível, e guias curtos de frame data, meaty seguro, fuzzy e option select.</li>
                     <li><strong>SuperCombo Wiki (wiki.supercombo.gg):</strong> Wiki da comunidade (em inglês) com frame data, propriedades dos golpes e combos de Street Fighter 6 e muitos outros jogos. A principal referência de frame data de SF.</li>
                     <li><strong>Dustloop Wiki:</strong> A wiki equivalente para os jogos da Arc System Works, como Guilty Gear e Granblue Fantasy Versus. Use se você joga esses jogos, não para Street Fighter.</li>
                     <li><strong>Frame meter do training mode do SF6:</strong> O training mode do SF6 pode mostrar um frame meter com startup, frames ativos, recuperação e vantagem em tempo real. É o jeito mais rápido de checar se algo é seguro.</li>
