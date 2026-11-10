@@ -1,0 +1,498 @@
+
+            <h2>Mecânicas Avançadas</h2>
+
+            <p class="scope-note"><span class="scope-badge">Universal</span><span>As ideias deste capítulo valem para qualquer jogo de luta. Os exemplos vêm do SF6, e as seções marcadas com <span class="sf6-tag">SF6</span> só valem para ele. Para ver como outros jogos diferem, veja <a href="#families">Famílias de Jogos de Luta</a>.</span></p>
+
+            <div class="toc">
+                <h3>Estrutura</h3>
+                <ul>
+                    <li><a href="#meter-systems-pt">Sistemas de Barra</a></li>
+                    <li><a href="#resource-management-pt">Gestão de Recursos</a></li>
+                    <li><a href="#cancels-pt">Cancels e Conversões</a></li>
+                    <li><a href="#combos-pt">Combos: Links vs Cancels vs Chains</a></li>
+                    <li><a href="#damage-scaling-pt">Damage Scaling</a></li>
+                    <li><a href="#invincibility-pt">Invencibilidade e Vulnerabilidade</a></li>
+                    <li><a href="#knockdown-pt">Knockdown e Okizeme</a></li>
+                    <li><a href="#offense-pt">Ofensiva com Vantagem</a></li>
+                    <li><a href="#pressure-strings-pt">Montando Sequências de Pressão</a></li>
+                    <li><a href="#wakeup-defense-pt">Defesa no Wakeup</a></li>
+                </ul>
+            </div>
+
+            <h3 id="meter-systems-pt">Sistemas de Barra: A Economia de Recursos dos Jogos de Luta</h3>
+
+            <p>A barra (o "meter") é a moeda dos jogos de luta. Diferente da vida (que reseta a cada round) ou da posição (que também reseta), a barra representa o seu capital de decisão. Todo uso tem consequências de longo prazo. No Street Fighter 6 você administra dois recursos: a <strong>barra de Super Art</strong> (3 barras, que passam de um round para o outro) e a <strong>Drive Gauge</strong> (6 barras, que enche de novo a cada round e se regenera com o tempo).</p>
+
+            <div class="deep-dive">
+                <h4>Barra de Super Art: O Recurso Principal</h4>
+                <p>Ela enche principalmente com o seu próprio ataque: golpes que acertam ou são defendidos, e golpes especiais. A velocidade com que enche varia por golpe e por personagem. No SF6 é a barra de Super Art de 3 níveis.</p>
+                <p><strong>Formas de Gastar (SF6):</strong></p>
+                <ul>
+                    <li><strong>Super Art Nível 1 / 2 / 3:</strong> Custam 1, 2 ou 3 barras. Níveis mais altos causam mais dano; costumam ser usados para fechar um combo com muito dano.</li>
+                    <li><strong>Critical Art:</strong> Quando sua vida está em 25% ou menos, seu Nível 3 vira uma Critical Art (mesmo custo de 3 barras, mais dano e uma cinemática especial).</li>
+                    <li><strong>Super de Reversal:</strong> Muitas Super Arts são invencíveis no startup, então dá para usá-las para interromper a pressão do oponente. Risco alto (você fica aberto se for baitado), recompensa alta (volta ao neutral).</li>
+                </ul>
+                <p><strong>Observação:</strong> Os especiais turbinados (chamados de golpes EX nos Street Fighter mais antigos) são os <strong>golpes OD (Overdrive)</strong> no SF6. Eles são pagos com a Drive Gauge (2 barras), não com a barra de Super Art. Dependendo do golpe, são mais rápidos, dão mais hits ou são invencíveis no startup.</p>
+                <p><strong>Exemplo de Árvore de Decisão:</strong> Você tem 1 barra de Super Art. O oponente te derrubou e está montando o setup do wakeup. Você:</p>
+                <ul>
+                    <li>A) Gasta a barra numa super de reversal no wakeup? (Risco: o oponente baita e você fica aberto)</li>
+                    <li>B) Guarda a barra para punir um golpe inseguro do oponente? (Risco: você apanha enquanto o oponente está seguro)</li>
+                    <li>C) Não gasta nada: só defende (ou faz back rise) e espera a pressão acabar? (Risco: você continua na defesa e precisa adivinhar o mixup dele)</li>
+                </ul>
+                <p><strong>Jogo Ideal:</strong> Depende da vida de cada um, do round e dos hábitos do oponente. Nenhuma decisão é "a certa" — é uma leitura.</p>
+            </div>
+
+            <div class="deep-dive">
+                <h4>Barra de Ultra/Revenge: O Recurso de Virada</h4>
+                <p>Jogos mais antigos tinham uma barra de virada separada: a Revenge gauge do Street Fighter IV enchia quando você tomava dano (não quando defendia — só quando apanhava), e alimentava o seu Ultra Combo. Na prática é uma recompensa por estar perdendo. O SF6 não tem uma barra de revenge separada; a ferramenta de virada dele é a Critical Art, disponível com 25% de vida ou menos se você tiver 3 barras de Super Art.</p>
+                <p><strong>Propósito:</strong> Dar ao jogador que está atrás uma mecânica de virada. Se você está com 10% de vida e o oponente com 80%, um Ultra ou uma Critical Art bem encaixada pode tirar um pedaço grande da vida dele e mudar o momentum.</p>
+                <p><strong>Implicação Estratégica:</strong></p>
+                <ul>
+                    <li><strong>Jogador na frente:</strong> Precisa tomar cuidado. Nada de golpes arriscados. Uma única brecha pode deixar o oponente encaixar a super de virada.</li>
+                    <li><strong>Jogador atrás:</strong> Se acertar um golpe, talvez consiga encaixar uma Critical Art com dano enorme. É isso que torna a virada possível.</li>
+                </ul>
+                <p><strong>Ferramenta de Equilíbrio:</strong> Sem uma mecânica de virada, quem fica para trás cedo teria muito mais dificuldade de se recuperar. Essas mecânicas mantêm mais rounds em aberto até o fim — elas não garantem a virada.</p>
+            </div>
+
+            <div class="deep-dive">
+                <h4>Focus Attack (Street Fighter IV)</h4>
+                <p>O Street Fighter IV tinha o Focus Attack, uma ferramenta universal (sem custo de meter) que absorve um golpe com armadura e depois contra-ataca. Os equivalentes mais próximos no SF6 são o Drive Impact (absorve dois golpes, custa 1 barra de Drive) e o Drive Parry.</p>
+                <p><strong>Propriedades:</strong> Segurar os botões carrega o golpe por três níveis. O Nível 1 pode ser defendido; um Nível 2 que acerta deixa o oponente em crumple (desabando); o Nível 3, carregado ao máximo, é indefensável e causa crumple. Ele absorve só um golpe em qualquer nível, então ataques de vários hits o quebram.</p>
+                <p><strong>Uso Estratégico:</strong></p>
+                <ul>
+                    <li><strong>Anti-Poke:</strong> O oponente fica cutucando? Focus > absorve o poke > contra-ataca</li>
+                    <li><strong>Escape de Oki:</strong> Focus no wakeup para escapar do mixup (funciona contra alguns setups)</li>
+                    <li><strong>Movimentação:</strong> Dá para sair do Focus Attack com um dash (focus dash cancel) e, com barra, cancelar golpes especiais nele para deixá-los seguros</li>
+                </ul>
+                <p><strong>Counter:</strong> Se o oponente espera o Focus, ele pode te dar um throw (agarrão) durante o startup ou usar um ataque de vários hits ou que quebra armadura. O Focus não é invencível a throw. (O mesmo vale para o Drive Impact do SF6.)</p>
+            </div>
+
+            <div class="deep-dive">
+                <h4>Barra de Guarda/Stamina (Anime Fighters)</h4>
+                <p>Alguns jogos limitam a defesa contínua. Blockstun em excesso esvazia uma barra. Quando ela zera = Guard Break = você fica atordoado e vulnerável. O SF6 tem uma versão disso com a Drive Gauge: defender ataques drena a barra e, se ela zerar, você entra em <strong>Burnout</strong> (sem ações de Drive, especiais e Super Arts defendidos tiram vida com chip damage, e cada golpe defendido te deixa 4 frames a mais em blockstun). Um Drive Impact que prende um oponente em Burnout contra a parede deixa ele atordoado (stun).</p>
+                <p><strong>Implicação Estratégica:</strong></p>
+                <ul>
+                    <li><strong>Só Defender Não Funciona:</strong> Você não pode defender para sempre. Uma hora vem o guard break (ou, no SF6, o Burnout).</li>
+                    <li><strong>Defesa Ativa é Obrigatória:</strong> Você precisa atacar às vezes, se mover ou gastar barra para escapar do blockstun (no SF6, o Drive Reversal custa 2 barras de Drive). Defesa dinâmica.</li>
+                    <li><strong>Risco no Ataque:</strong> O oponente vê a sua barra de guarda. Se ela estiver baixa, ele pode pressionar mais para quebrá-la.</li>
+                </ul>
+            </div>
+
+            <div class="card warning">
+                <h4>A Economia da Barra: Visão Geral</h4>
+                <p>A qualquer momento, você tem N barras e o oponente tem M. Toda troca de barra importa. Se você gasta 1 barra numa super de reversal e ela erra, você perdeu 1 barra e o oponente continua com M. Agora você está em desvantagem (N-1 contra M), e isso vai se acumulando.</p>
+                <p><strong>Gestão de Barra em Alto Nível:</strong> Os profissionais administram a barra com precisão. Eles não "desperdiçam" barra em ações de pouco valor. Cada barra gasta precisa se justificar em dano, posicionamento ou reset.</p>
+            </div>
+
+            <h3 id="resource-management-pt">Gestão de Recursos: Vida, Barra, Posição e Tempo</h3>
+
+            <p>No SF6 você administra mais do que duas barras. O gootecks conta cinco recursos, e o oponente tem os mesmos: a vida, a barra de Super Art, a Drive Gauge, a posição na tela e o tempo.</p>
+
+            <div class="deep-dive">
+                <h4>Vida: o recurso mais e menos importante</h4>
+                <ul>
+                    <li><strong>Só o zero importa.</strong> Até lá a virada é possível, então não entre em pânico quando ficar para trás.</li>
+                    <li><strong>Use o primeiro round para aprender.</strong> A regra do John Choi é que o primeiro round serve para aprender os hábitos do oponente. Vale gastar um pouco de vida para ver o que ele faz no wakeup e em que gasta a barra. Num set de melhor de três, você tem entre quatro e nove rounds para entender o oponente.</li>
+                    <li><strong>Ficar para trás gera erros:</strong> pular na hora errada, forçar uma vantagem que não existe, reversal no wakeup. São exatamente os erros que um oponente calmo espera.</li>
+                    <li><strong>Na frente na vida, não se exponha.</strong> Devagar e seguro costuma fechar o round.</li>
+                    <li><strong>Estar um pouco atrás não é motivo para apostar.</strong> Se você está 5 a 10% atrás, uma opção arriscada que tira um pedaço grande quando falha só piora as coisas.</li>
+                    <li><strong>Atrás na vida, mas com ele no canto?</strong> A posição muitas vezes vale mais que a diferença de vida.</li>
+                </ul>
+            </div>
+
+            <div class="deep-dive">
+                <h4>Barra: gaste com um plano</h4>
+                <ul>
+                    <li>Tente manter a sua barra igual ou maior que a do oponente.</li>
+                    <li>Perder com a barra de Super Art cheia continua sendo perder. No SF6 a barra de Super Art passa para o round seguinte, então guardar pode ser certo, mas no último round, gaste.</li>
+                    <li>Gastar uma Super Art para fechar um round apertado é melhor do que perder o round para economizar.</li>
+                    <li>Dois golpes OD num mesmo combo raramente acrescentam dano suficiente para justificar 4 barras de Drive.</li>
+                    <li>Saiba mais ou menos quanta barra a sua pressão e os seus combos rendem, e quão rápido o personagem do oponente enche a dele.</li>
+                </ul>
+            </div>
+
+            <div class="deep-dive">
+                <h4>Posição na tela: o recurso escondido</h4>
+                <p>Não existe barra para ela, mas ela é real. Com o oponente no canto e bastante espaço atrás de você, não precisa forçar nada: a maioria dos jogadores encurralados tenta escapar com um pulo óbvio ou um reversal arriscado, e você pune. Mesmo um oponente forte precisa vencer várias trocas para empurrar você de volta ao seu canto. Pouquíssimos personagens têm uma saída segura do canto, e os teleportes têm risco toda vez que são usados.</p>
+            </div>
+
+            <div class="deep-dive">
+                <h4>O tempo</h4>
+                <p>Os rounds do SF6 usam um cronômetro de 99, e quando ele zera vence quem tem mais vida. Quando você está na frente e o tempo está acabando, o oponente precisa vir até você, o que o torna mais fácil de ler. Quando você está atrás, o tempo é mais um motivo para tomar a iniciativa em vez de esperar.</p>
+            </div>
+
+            <h3 id="cancels-pt">Cancels e Conversões: Encadeamento Avançado</h3>
+
+            <p>Um cancel (cancelamento) é interromper um golpe antes de ele terminar e começar outro imediatamente.</p>
+
+            <div class="table-wrap"><table>
+                <tr>
+                    <th>Tipo de Cancel</th>
+                    <th>Definição</th>
+                    <th>Uso Prático</th>
+                    <th>Risco</th>
+                </tr>
+                <tr>
+                    <td><strong>Special Cancel</strong></td>
+                    <td>Cancelar um golpe em um especial ou super quando ele conecta (a maioria dos cancels em especial funciona no hit ou no block)</td>
+                    <td>Estender o combo (Normal → Especial → Super)</td>
+                    <td>Se o oponente defende e você cancela mesmo assim, o especial pode ser inseguro — faça o hit-confirm antes</td>
+                </tr>
+                <tr>
+                    <td><strong>Block Cancel</strong></td>
+                    <td>Cancelar durante a defesa (guard cancel; Drive Reversal no SF6)</td>
+                    <td>Reversal no meio da defesa (escape)</td>
+                    <td>Custa barra, pode ser baitado ou defendido</td>
+                </tr>
+                <tr>
+                    <td><strong>Recovery Cancel</strong></td>
+                    <td>Cancelar os frames de recuperação com uma mecânica do sistema (ex.: Roman Cancel no Guilty Gear)</td>
+                    <td>Deixar seguro um golpe inseguro ou que errou</td>
+                    <td>Custa barra, e o oponente pode esperar você ficar aberto</td>
+                </tr>
+                <tr>
+                    <td><strong>Chain Cancel</strong></td>
+                    <td>Cancelar um golpe normal em outro normal</td>
+                    <td>Combos simples (apertar botões em sequência)</td>
+                    <td>Rotas limitadas; chains como fraco-em-fraco costumam dar pouco dano e escalam rápido</td>
+                </tr>
+            </table></div>
+
+            <h3 id="combos-pt">Combos: A Progressão de Complexidade</h3>
+
+            <div class="deep-dive">
+                <h4>Tipo 1: Chains (O Mais Simples)</h4>
+                <p><strong>Mecânica:</strong> Você aperta os botões em sequência. O sistema encadeia automaticamente.</p>
+                <p><strong>Exemplo:</strong> LP → MP → HP em jogos com sistema de chain (anime fighters); no SF6, principalmente golpes fracos encadeados entre si (c.LP → c.LP)</p>
+                <p><strong>Risco:</strong> Baixo, é um input simples</p>
+                <p><strong>Dano:</strong> Baixo (3-4 hits)</p>
+            </div>
+
+            <div class="deep-dive">
+                <h4>Tipo 2: Cancels (Moderado)</h4>
+                <p><strong>Mecânica:</strong> Normal → Especial. Você cancela o normal em um especial antes de ele se recuperar.</p>
+                <p><strong>Exemplo:</strong> c.MK → Hadoken (chute médio agachado, cancelado em fireball)</p>
+                <p><strong>Risco:</strong> A janela de cancel é curta, então faça o comando do especial durante o normal. Se atrasar, o especial sai depois da recuperação e não combina.</p>
+                <p><strong>Dano:</strong> Moderado (o especial dá bastante dano)</p>
+            </div>
+
+            <div class="deep-dive">
+                <h4>Tipo 3: Links (O Mais Difícil)</h4>
+                <p><strong>Mecânica:</strong> O Normal A termina, você espera e então aperta o Normal B. Nada de encadeamento automático. Um link só funciona quando a vantagem de frames de A no hit é pelo menos igual ao startup de B.</p>
+                <p><strong>Exemplo:</strong> Um normal médio ou forte que fica +5 no hit, seguido de um normal de 4 frames (janela de 2 frames: 5 - 4 + 1 = 2)</p>
+                <p><strong>Risco:</strong> O maior. A janela é a vantagem de frames menos o startup mais um, então muitos links têm só 1 a 3 frames.</p>
+                <p><strong>Dano:</strong> Muitas vezes maior, porque os links permitem conectar normais mais fortes que não entram em chain</p>
+                <p style="margin-top: 10px;"><strong>Por que existe:</strong> Links nascem da própria vantagem de frames, não de um sistema especial. Dominá-los exige prática e abre combos mais fortes.</p>
+            </div>
+
+            <h3 id="damage-scaling-pt">Damage Scaling: Por Que Combo Longo Rende Menos</h3>
+
+            <p>Todo jogo de luta reduz o dano de cada hit extra num combo, para que uma única abertura não tire uma barra de vida inteira. Isso é o <strong>damage scaling</strong>, e entender mais ou menos como ele funciona mostra quais combos valem a pena aprender.</p>
+
+            <div class="deep-dive">
+                <h4>A sequência básica no SF6<span class="sf6-tag">SF6</span></h4>
+                <p>Os testes da comunidade mostram que o SF6 aplica dano total nos dois primeiros hits e depois corta mais 10% a cada hit seguinte, até um piso:</p>
+                <div class="table-wrap"><table>
+                    <tr><th>Hit no combo</th><th>1º</th><th>2º</th><th>3º</th><th>4º</th><th>5º</th><th>6º</th><th>7º</th><th>8º</th><th>9º</th><th>10º+</th></tr>
+                    <tr><td><strong>Dano causado</strong></td><td>100%</td><td>100%</td><td>80%</td><td>70%</td><td>60%</td><td>50%</td><td>40%</td><td>30%</td><td>20%</td><td>10%</td></tr>
+                </table></div>
+                <p>A partir do sexto hit, cada hit extra vale metade do que valeria sozinho. É por isso que um combo de 12 hits muitas vezes causa só um pouco mais de dano do que um de 6 hits que termina num golpe forte.</p>
+            </div>
+
+            <div class="deep-dive">
+                <h4>Penalidades extras que se somam</h4>
+                <ul>
+                    <li><strong>Começar com golpe fraco:</strong> combos que começam com um normal fraco levam uma penalidade extra de 20%. Golpes fracos são rápidos e seguros, então rendem menos.</li>
+                    <li><strong>Drive Impact e throws como starter:</strong> também 20% a mais.</li>
+                    <li><strong>Muitos golpes OD e reversals invencíveis</strong> (como o shoryuken dos shotos) adicionam a própria penalidade de starter, que varia por golpe.</li>
+                    <li><strong>Drive Rush no meio do combo:</strong> o resto do combo causa 15% menos (uma vez por combo).</li>
+                    <li><strong>Punição depois de um Perfect Parry:</strong> a punição inteira causa 50%.</li>
+                </ul>
+            </div>
+
+            <div class="deep-dive">
+                <h4>Super Arts mantêm o valor<span class="sf6-tag">SF6</span></h4>
+                <p>As Super Arts têm um dano mínimo que sempre mantêm, não importa o quanto o combo esteja escalado: <strong>SA1 pelo menos 30%, SA2 pelo menos 40%, SA3 e Critical Art pelo menos 50%</strong> do próprio dano total. É por isso que terminar um combo longo numa Super Art é tão eficiente: os hits antes dela estão muito escalados, mas a super não.</p>
+            </div>
+
+            <div class="card success">
+                <h4>O que isso significa para o seu treino</h4>
+                <ul>
+                    <li><strong>Comece os combos com o seu hit confiável mais forte</strong> quando puder: um confirm de médio ou forte rende muito mais do que um de fraco.</li>
+                    <li><strong>Prefira combos curtos que terminam em knockdown</strong> a combos longos que quase não aumentam o dano. O knockdown te dá okizeme, que muitas vezes vale mais do que o dano extra.</li>
+                    <li><strong>Aprenda uma punição de dano alto</strong> que começa com um normal forte (por exemplo, depois de defender um golpe inseguro). Starters fortes não carregam a penalidade de golpe fraco, então a mesma rota causa bem mais dano.</li>
+                </ul>
+            </div>
+
+            <div class="deep-dive">
+                <h4>Juggles e target combos</h4>
+                <p>Um <strong>juggle</strong> é um combo que continua com o oponente no ar, por exemplo depois de um anti-air ou de um launcher. Cada golpe tem as próprias regras de juggle, e é por isso que alguns combos só funcionam depois de starters específicos. Um <strong>target combo</strong> é uma sequência de normais que o personagem consegue encadear apertando os botões numa ordem fixa (por exemplo, um fraco, depois um médio, depois um forte que só combinam nessa ordem). Eles aparecem na lista de golpes de cada personagem e muitas vezes são os combos mais fáceis de aprender primeiro.</p>
+            </div>
+            <h3 id="invincibility-pt">Frames de Invencibilidade e Vulnerabilidade: Propriedades que Quebram as Regras</h3>
+
+            <p>Durante certos golpes, os personagens têm propriedades especiais que passam por cima das interações normais de hit e block. Elas estão entre as ferramentas mais poderosas dos jogos de luta.</p>
+
+            <div class="deep-dive">
+                <h4>Invencibilidade Total: Estado Intocável</h4>
+                <p>Você não pode ser atingido por nenhum ataque (normais, especiais, supers, throws). É raro, e só dura alguns frames.</p>
+                <p><strong>Quem Tem:</strong> Geralmente supers de reversal e alguns especiais turbinados. O Dragon Punch é o exemplo clássico; no SF6, normalmente a versão OD (Overdrive) é a totalmente invencível, enquanto a versão normal costuma ser só parcialmente invencível.</p>
+                <p><strong>Aplicações:</strong></p>
+                <ul>
+                    <li><strong>Reversal no Wakeup:</strong> O oponente está pressionando. Você solta um Dragon Punch invencível no wakeup, que atravessa todos os ataques dele e acerta.</li>
+                    <li><strong>Quebra de Pressão:</strong> No corner, você está defendendo uma sequência. Uma super invencível num buraco entre os ataques interrompe a pressão e abre espaço. (Ela não quebra um combo de verdade — você não pode agir em hitstun.)</li>
+                </ul>
+                <p><strong>Counter:</strong> Se o oponente espera o reversal, ele pode baitar defendendo, recuando ou usando um safe jump. A invencibilidade só dura os primeiros frames do startup; quando acaba e o golpe erra, ele é punível.</p>
+            </div>
+
+            <div class="deep-dive">
+                <h4>Invencibilidade a Throw: Defesa Anti-Grab</h4>
+                <p>Você não pode levar throw durante esse golpe, mas ataques ainda conectam.</p>
+                <p><strong>Quem Tem:</strong> Muitos reversals e golpes anti-air têm invencibilidade a throw no começo do startup.</p>
+                <p><strong>Aplicações:</strong></p>
+                <ul>
+                    <li><strong>Wakeup vs Mixup de Throw:</strong> O oponente está montando um throw depois do knockdown. Você usa um golpe invencível a throw, que ganha do throw, mas perde para ataques.</li>
+                    <li><strong>Segurança no Footsies:</strong> O personagem tem um golpe invencível a throw. Ele não leva throw: só pode ser defendido ou atingido.</li>
+                </ul>
+                <p><strong>Hierarquia:</strong> Invencibilidade a throw &lt; Invencibilidade a ataques. Se o oponente ataca enquanto você só tem invencibilidade a throw, você apanha.</p>
+            </div>
+
+            <div class="deep-dive">
+                <h4>Invencibilidade Seletiva: Propriedades de Esquiva</h4>
+                <p>Você não pode ser atingido por certos tipos de ataque (baixos, altos, projéteis), mas os outros tipos conectam normalmente.</p>
+                <p><strong>Exemplos:</strong></p>
+                <ul>
+                    <li><strong>Invencibilidade a Golpes Baixos:</strong> Rasteiras erram, mas ataques em pé conectam</li>
+                    <li><strong>Invencibilidade a Golpes Altos:</strong> Ataques em pé erram, mas ataques agachados conectam</li>
+                    <li><strong>Invencibilidade a Projéteis:</strong> Fireballs atravessam, mas normais acertam</li>
+                </ul>
+                <p><strong>Uso Estratégico:</strong> Um personagem com golpe invencível a baixos consegue "pular por cima" de rasteiras. Quem tem um golpe invencível a projéteis não tem medo de zoners.</p>
+            </div>
+
+            <div class="deep-dive">
+                <h4>Estados de Vulnerabilidade: Dano Anormal</h4>
+                <p>O oposto da invencibilidade. Você está num estado em que toma dano extra ou efeitos adicionais.</p>
+                <p><strong>Exemplos:</strong></p>
+                <ul>
+                    <li><strong>Counter / Punish Counter:</strong> Ser atingido durante o startup do seu próprio golpe (Counter) ou durante a recuperação dele (Punish Counter no SF6) dá ao atacante vantagem e dano extras.</li>
+                    <li><strong>Tonto/Atordoado:</strong> Você fica imobilizado. Qualquer ataque conecta na hora (não dá para defender).</li>
+                    <li><strong>Guard Break:</strong> Você defendeu demais. Fica vulnerável a qualquer ataque (sem blockstun).</li>
+                </ul>
+                <p><strong>Janela de Okizeme:</strong> Depois de um knockdown, você não pode ser atingido enquanto está no chão (no Street Fighter), mas também não pode agir até se levantar. O atacante usa esse tempo para se posicionar e cronometrar o ataque para acertar no seu primeiro frame de wakeup (um meaty). É aí que o oponente faz o mixup no wakeup.</p>
+            </div>
+
+            <div class="card critical">
+                <h4>Timing de Reversal: A Armadilha da Execução</h4>
+                <p>Um Reversal é fazer um golpe no primeiro frame possível depois que o blockstun, o hitstun ou um knockdown termina (frame 1 em que você pode agir). Se o timing for perfeito:</p>
+                <ul style="margin-top: 10px;">
+                    <li>Seu golpe invencível sai antes de o oponente poder agir</li>
+                    <li>Você interrompe a pressão dele</li>
+                    <li>Você escapa da situação ruim</li>
+                </ul>
+                <p><strong>O Risco:</strong> O timing do reversal é rigoroso. Jogos modernos, incluindo o SF6, guardam (buffer) um input de reversal feito nos últimos frames antes de você poder agir, o que facilita — mas se apertar cedo demais (fora desse buffer) nada sai; tarde demais e o ataque do oponente te acerta primeiro. É por isso que reversals exigem muita prática.</p>
+                <p><strong>Se o Oponente Esperar:</strong> Ele pode baitar o reversal defendendo, recuando ou usando um safe jump. Aí o seu reversal erra (ou é defendido) e ele te pune pesado.</p>
+            </div>
+
+            <h3 id="knockdown-pt">Knockdown e Okizeme: O Jogo do Wakeup</h3>
+
+            <p>Okizeme (oki) é o setup depois do knockdown. Você derrubou o oponente. Agora você tem vantagem de timing.</p>
+
+            <div class="card success">
+                <h4>Fases do Okizeme</h4>
+                <p><strong>1) Timing do Knockdown:</strong> Você escolhe onde derrubar (corner ou meio da tela, perto ou longe)</p>
+                <p><strong>2) Posicionamento:</strong> Você anda até a posição ideal enquanto o oponente está no chão</p>
+                <p><strong>3) Leitura do Wakeup:</strong> O oponente tem 3 opções: defender, dar tech no throw ou atacar. Qual ele vai escolher?</p>
+                <p><strong>4) Mixup:</strong> Você usa um golpe que cobre várias das opções dele</p>
+            </div>
+
+            <div class="example-box">Cenário: Você derrubou o oponente com uma rasteira
+Frames 1-20: Oponente no chão, você anda até a posição
+Frame 21: Oponente pode agir
+
+Você pode fazer:
+A) Pulo com crossup (o oponente precisa defender alto, para o outro lado)
+B) Throw normal (o oponente precisa dar tech)
+C) Poke baixo (o oponente precisa defender baixo)
+D) Esperar (baitar o tech e punir o throw que sai no whiff)
+
+Qual escolher? Depende do oponente.</div>
+
+            <div class="table-wrap"><table>
+                <tr>
+                    <th>Situação</th>
+                    <th>Setup Recomendado</th>
+                    <th>Por quê</th>
+                </tr>
+                <tr>
+                    <td>Oponente sempre defende alto</td>
+                    <td>Poke baixo ou rasteira</td>
+                    <td>Obriga ele a defender baixo ou tomar dano</td>
+                </tr>
+                <tr>
+                    <td>Oponente sempre tenta dar throw</td>
+                    <td>Ataque meaty (cronometrado para acertar no primeiro frame de wakeup dele)</td>
+                    <td>O golpe conecta antes de o throw dele sair</td>
+                </tr>
+                <tr>
+                    <td>Oponente imprevisível</td>
+                    <td>Crossup (ambíguo)</td>
+                    <td>Força um 50/50</td>
+                </tr>
+                <tr>
+                    <td>Setup no corner</td>
+                    <td>Mixup de golpe/throw com pressão meaty</td>
+                    <td>O oponente não pode recuar e escapar do corner é difícil, então todas as opções ficam de curta distância</td>
+                </tr>
+            </table></div>
+
+
+
+            <h3 id="offense-pt">Ataque com Vantagem: Mantendo a Sua Vez</h3>
+
+            <p>Os footsies decidem quem acerta o primeiro golpe. O que acontece depois disso, quando você está plus, o oponente defendeu ou você derrubou ele, decide quanto esse golpe vale. Esta seção cobre as ferramentas para manter a sua vez: frames de vantagem, frame traps, Counter Hits, meaties, shimmies e safe jumps.</p>
+
+            <div class="deep-dive">
+                <h4>Frames de vantagem e block strings</h4>
+                <p>Quando um golpe fica <strong>plus no block</strong> (por exemplo +2), você se recupera 2 frames antes do oponente. Se os dois apertarem o botão mais rápido na hora, o seu sai primeiro. É isso que "é a sua vez" quer dizer nos jogos de luta.</p>
+                <p>Uma <strong>block string</strong> é uma sequência de ataques que mantém o oponente defendendo. Se não há buraco entre os hits, o oponente não consegue fazer nada além de defender (uma block string "verdadeira"). Block strings são pressão segura, mas não abrem ninguém sozinhas: você precisa de algo que ganhe de quem só fica defendendo (um throw) e de algo que ganhe de quem tenta apertar botão (um frame trap).</p>
+                <p>Uma boa block string <strong>termina num golpe seguro ou plus</strong>, e não num forte que te deixa −6. Se você termina a pressão em −6, acabou de entregar a sua vez.</p>
+            </div>
+
+            <div class="deep-dive">
+                <h4>Frame traps: pegando o botão apertado</h4>
+                <p>Um <strong>frame trap</strong> é um buraco pequeno e proposital na sua pressão. O buraco é curto demais para o ataque do oponente sair a tempo, mas longo o bastante para dar vontade de apertar. Se ele aperta, o seu próximo ataque acerta durante o startup dele, como <strong>Counter Hit</strong>.</p>
+                <p><strong>Exemplo na prática:</strong> você está +2 depois de um ataque defendido, e o seu próximo golpe tem 5 frames de startup, então fica ativo no frame 5. O oponente pode agir a partir do frame 3. O jab mais rápido dele tem 4 frames de startup, então se ele apertar no frame 3, o jab fica ativo no frame 6, um frame atrasado. O seu ataque chega primeiro, como Counter Hit.</p>
+                <p>Frame traps funcionam porque os jogadores odeiam ser pressionados e querem apertar botão. Quando eles aprendem a respeitar e continuam defendendo, aí é a hora do throw.</p>
+            </div>
+
+            <div class="deep-dive">
+                <h4>Counter Hit e Punish Counter</h4>
+                <p>O SF6 recompensa acertar um oponente que está ocupado apertando botão:</p>
+                <div class="table-wrap"><table>
+                    <tr><th></th><th>Quando acontece</th><th>Bônus</th></tr>
+                    <tr><td><strong>Counter Hit</strong></td><td>Você acerta durante os frames de startup ou ativos do ataque dele (ou durante um Drive Rush)</td><td>+2 frames de hitstun e +20% de dano</td></tr>
+                    <tr><td><strong>Punish Counter</strong></td><td>Você acerta durante a recuperação de um golpe: um golpe inseguro defendido, um ataque no whiff, um throw no whiff ou um parry que não pegou nada</td><td>+4 frames de hitstun, dano extra, e ele perde Drive Gauge</td></tr>
+                </table></div>
+                <p>Os frames extras importam mais do que o dano: um médio que normalmente não combina num forte pode combinar no Counter Hit, e muitos ataques fortes ganham efeitos especiais no Punish Counter (crumples, giros, launches), que variam por personagem. Procure os combos de Counter Hit do seu personagem quando estiver confortável com o básico; eles transformam frame traps de "um pouquinho de dano" em "um combo completo".</p>
+                <p>Um <strong>throw de Punish Counter</strong>, agarrar alguém durante um throw no whiff ou enquanto ele está no parry, causa 70% de dano extra, não dá para dar tech e dá hard knockdown.</p>
+            </div>
+
+            <div class="deep-dive">
+                <h4>Golpe, throw e o shimmy</h4>
+                <p>De perto, o ataque é um triângulo de três opções:</p>
+                <ul>
+                    <li><strong>Golpe</strong> (um frame trap ou um meaty) ganha de quem aperta botão ou tenta dar tech no throw.</li>
+                    <li><strong>Throw</strong> ganha de quem só defende.</li>
+                    <li><strong>Shimmy</strong> ganha de quem tenta dar tech no seu throw: você anda para frente como se fosse agarrar e depois anda para trás, saindo do alcance do throw. A tentativa de tech dele sai como um throw no whiff, e a recuperação de um throw no whiff é estado de Punish Counter. Você pune com um ataque forte e tira muito dano.</li>
+                </ul>
+                <p>O shimmy é uma das técnicas mais importantes do SF6, porque dar tech em throw é um hábito, e hábitos podem ser explorados. Na defesa, também é por isso que "sempre dar tech" não é seguro: misture com defender parado e, às vezes, com um botão rápido.</p>
+            </div>
+
+            <div class="deep-dive">
+                <h4>Ataques meaty: acertando atrasado de propósito</h4>
+                <p>Quando o oponente está derrubado, ele não pode ser atingido até levantar, e você sabe exatamente quando isso vai acontecer. Um <strong>meaty</strong> é um ataque cronometrado para que os últimos frames ativos coincidam com o primeiro frame dele em pé. Como o hit entra no fim do ataque, sobram menos frames de recuperação depois que ele conecta, então você fica mais plus do que o normal.</p>
+                <div class="widget-slot" data-widget="meaty"></div>
+                <p>Um meaty ganha de um botão mashado ou de uma tentativa de throw no wakeup, porque o seu ataque já está ativo quando ele pode agir. Ele perde para um <strong>reversal invencível</strong> (um shoryuken de shoto, um reversal OD, uma Super Art de reversal ou um Drive Reversal no wakeup), que passa por ele. Contra personagens com um reversal forte, o meaty é um risco; contra personagens sem um, é um ótimo hábito.</p>
+            </div>
+
+            <div class="deep-dive">
+                <h4>Safe jumps</h4>
+                <p>Um <strong>safe jump</strong> é um ataque no pulo cronometrado para acertar meaty no wakeup, mas com você aterrissando cedo o bastante para defender se o oponente fizer um reversal invencível. Se ele defende, você ganha um jump-in e a pressão. Se ele solta o reversal, você defende e pune. Safe jumps dependem de quanta vantagem de knockdown você tem e do startup do reversal, então são específicos de cada personagem e de cada knockdown. Os guias do seu personagem e os materiais da comunidade listam os mais comuns.</p>
+            </div>
+
+            <h3 id="pressure-strings-pt">Montando Sequências de Pressão com Frame Data</h3>
+
+            <p>Em vez de copiar a pressão de outra pessoa, você pode montar a sua a partir do frame data do seu personagem. O método vem do <em>Fighting Game Fundamentals</em>, do gootecks; os números abaixo são do SF6, em que os normais mais rápidos têm 4 frames de startup e o throw tem 5.</p>
+
+            <div class="card">
+                <h4>O gap: uma subtração</h4>
+                <p>Depois de um golpe defendido que deixa você <strong>+A</strong>, um golpe seguinte com <strong>S</strong> frames de startup deixa um <strong>gap de S − A frames</strong>. Qualquer golpe do oponente com startup menor que o gap vence o seu golpe seguinte; um com startup igual ao gap acerta no mesmo frame.</p>
+                <div class="table-wrap"><table>
+                    <tr><th>Gap</th><th>O que significa no SF6</th></tr>
+                    <tr><td><strong>0 ou menos</strong></td><td>Sem gap: ele ainda está em blockstun quando o próximo golpe chega. Uma sequência de block verdadeira; só o Drive Reversal, feito durante o blockstun, tira ele dali.</td></tr>
+                    <tr><td><strong>1 a 3</strong></td><td>Um frame trap. Nenhum normal é rápido o bastante para vencer, então quem apertar botão apanha, geralmente em Counter Hit. Reversals invencíveis e Drive Parry ainda vencem.</td></tr>
+                    <tr><td><strong>4</strong></td><td>Troca golpes com jabs de 4 frames.</td></tr>
+                    <tr><td><strong>5 ou mais</strong></td><td>Os jabs de 4 frames dele acertam você primeiro, e a partir de mais ou menos 5 frames o throw também começa a vencer.</td></tr>
+                </table></div>
+            </div>
+
+            <div class="deep-dive">
+                <h4>Montando uma sequência, passo a passo</h4>
+                <ol>
+                    <li>Ordene os seus normais pela vantagem no block, do mais positivo ao mais negativo. Os positivos são a espinha dorsal da sua pressão.</li>
+                    <li>Ordene-os pelo startup. Os botões mais rápidos começam e continuam as sequências.</li>
+                    <li>Combine os dois com a regra do gap: depois de um golpe +A, um golpe com startup de A ou menos mantém o oponente defendendo; startup de A+1 a A+3 vira frame trap.</li>
+                    <li>Confira o que os números não mostram: todo golpe alcança um oponente agachado? Quantos golpes cabem antes de o empurrão do block tirar você do alcance? Algum golpe erra se ele defender em pé?</li>
+                    <li>Termine seguro: um golpe positivo ou seguro, um especial seguro, ou simplesmente pare e ande para trás para um shimmy.</li>
+                    <li>Coloque um golpe que inicia target combo, ou um que dá para confirmar, no espaço do frame trap, para um Counter Hit virar dano de verdade.</li>
+                    <li>Teste: grave o dummy fazendo a sua sequência e tente todos os seus normais contra ela. Se nada sair, ela é segura. Se algo sair, existe um gap que você não queria.</li>
+                </ol>
+            </div>
+
+            <div class="deep-dive">
+                <h4>Um exemplo na prática</h4>
+                <p>Imagine que o seu golpe fraco fica +2 no block (alguns personagens têm um assim, como o 5LP do Zangief). A partir dele:</p>
+                <ul>
+                    <li><strong>Um golpe fraco de 4 frames:</strong> gap 2, um frame trap que vence qualquer jab.</li>
+                    <li><strong>Um médio de 5 frames:</strong> gap 3, ainda frame trap, e um médio em Counter Hit muitas vezes combina em mais golpes.</li>
+                    <li><strong>Um forte de 7 frames:</strong> gap 5, lento demais: o jab de 4 frames dele acerta você antes.</li>
+                </ul>
+                <p>A maioria dos golpes fracos do SF6 fica entre −2 e +1 no block, então as janelas são mais apertadas que no exemplo. É aí que entra o Drive Rush: o primeiro normal depois dele ganha +4 frames, então um golpe −2 vira +2 e abre exatamente esses frame traps.</p>
+            </div>
+
+            <div class="card warning">
+                <h4>Tenha uma sequência para cada tipo de defesa</h4>
+                <ul>
+                    <li><strong>Oponente sem defender:</strong> uma sequência que também é combo, para o acerto virar dano.</li>
+                    <li><strong>Oponente defendendo agachado:</strong> todo golpe precisa alcançar um oponente agachado.</li>
+                    <li><strong>Oponente defendendo em pé:</strong> confira se todo golpe ainda conecta; o empurrão contra um oponente em pé pode fazer golpes posteriores errarem.</li>
+                    <li><strong>Oponente que aperta botão ou dá tech:</strong> um frame trap com um botão confirmável no gap.</li>
+                </ul>
+                <p>Teste no canto também: sem espaço para o empurrão, sequências seguras no meio da tela podem ficar puníveis lá.</p>
+            </div>
+
+            <h3 id="wakeup-defense-pt">Do Outro Lado: Defendendo no Wakeup</h3>
+
+            <div class="deep-dive">
+                <h4>Suas opções de wakeup no SF6<span class="sf6-tag">SF6</span></h4>
+                <ul>
+                    <li><strong>Levantar normal:</strong> levantar no lugar (sem input).</li>
+                    <li><strong>Back rise:</strong> aperte dois botões de ataque quando cair para rolar para trás antes de levantar. Te dá um pouco de distância e muda o timing de quem está atacando. Alguns knockdowns (como throws de Punish Counter e certos golpes) são <strong>hard knockdowns</strong> que não permitem isso.</li>
+                </ul>
+                <p>Os dois levam mais ou menos o mesmo tempo, então o back rise muda a sua posição, não o seu timing. Não existe quick rise nem wakeup atrasado.</p>
+            </div>
+
+            <div class="table-wrap"><table>
+                <tr>
+                    <th>Escolha no wakeup</th>
+                    <th>Ganha de</th>
+                    <th>Perde para</th>
+                </tr>
+                <tr>
+                    <td><strong>Defender</strong></td>
+                    <td>Golpes meaty, safe jumps</td>
+                    <td>Throws</td>
+                </tr>
+                <tr>
+                    <td><strong>Tech de throw</strong></td>
+                    <td>Throws</td>
+                    <td>Shimmies, golpes meaty, frame traps</td>
+                </tr>
+                <tr>
+                    <td><strong>Botão rápido</strong></td>
+                    <td>Throws, pressão mal feita com gaps</td>
+                    <td>Meaties, frame traps, shimmies (seu botão erra e é punido)</td>
+                </tr>
+                <tr>
+                    <td><strong>Reversal invencível</strong> (shoryuken, golpe OD, Super Art, Drive Reversal)</td>
+                    <td>Meaties, throws, quase toda pressão</td>
+                    <td>Safe jumps, defender e baitar; caro se for defendido</td>
+                </tr>
+                <tr>
+                    <td><strong>Drive Parry</strong></td>
+                    <td>Golpes</td>
+                    <td>Throws (com 70% de dano extra)</td>
+                </tr>
+            </table></div>
+
+            <p>Nenhuma opção é sempre a certa. Defender no wakeup é sobre não ser previsível: quem ataca está chutando o que você vai fazer tanto quanto você está chutando o que ele vai fazer.</p>
+

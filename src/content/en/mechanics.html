@@ -1,0 +1,499 @@
+
+            <h2>Advanced Mechanics</h2>
+
+            <p class="scope-note"><span class="scope-badge">Universal</span><span>The ideas in this chapter apply to any fighting game. Examples come from SF6, and sections marked <span class="sf6-tag">SF6</span> only apply to it. For how other games differ, see <a href="#families">Fighting Game Families</a>.</span></p>
+
+            <div class="toc">
+                <h3>Structure</h3>
+                <ul>
+                    <li><a href="#meter-systems">Meter Systems</a></li>
+                    <li><a href="#resource-management">Resource Management</a></li>
+                    <li><a href="#cancels">Cancels & Conversions</a></li>
+                    <li><a href="#combos">Combos: Links vs Cancels vs Chains</a></li>
+                    <li><a href="#damage-scaling">Damage Scaling</a></li>
+                    <li><a href="#invincibility">Invincibility & Vulnerability</a></li>
+                    <li><a href="#knockdown">Knockdown & Okizeme</a></li>
+                    <li><a href="#offense">Offense With Advantage</a></li>
+                    <li><a href="#pressure-strings">Building Pressure Strings</a></li>
+                    <li><a href="#wakeup-defense">Defending on Wakeup</a></li>
+                </ul>
+            </div>
+
+            <h3 id="meter-systems">Meter Systems: The Resource Economy of Fighting Games</h3>
+
+            <p>Meter is the currency of fighting games. Unlike health (which resets every round) or position (which resets), meter represents your decision-making capital. Every use has long-term consequences. In Street Fighter 6 you manage two resources: the <strong>Super Art gauge</strong> (3 bars, carries over between rounds) and the <strong>Drive Gauge</strong> (6 bars, refills every round and regenerates over time).</p>
+
+            <div class="deep-dive">
+                <h4>Super Meter: The Primary Resource</h4>
+                <p>Accumulates mainly through your own offense: attacks that hit or are blocked, and special moves. How fast it fills varies by move and character. In SF6 it is the 3-bar Super Art gauge.</p>
+                <p><strong>Spending Options (SF6):</strong></p>
+                <ul>
+                    <li><strong>Super Art Level 1 / 2 / 3:</strong> Cost 1, 2 or 3 bars. Higher levels do more damage; they are often used to end a combo for big damage.</li>
+                    <li><strong>Critical Art:</strong> When your health is at 25% or less, your Level 3 becomes a Critical Art (same 3-bar cost, more damage and a special cinematic).</li>
+                    <li><strong>Reversal Super:</strong> Many Super Arts are invincible on startup, so you can use them to interrupt opponent's pressure. High risk (you're open if baited), high reward (reset to neutral).</li>
+                </ul>
+                <p><strong>Note:</strong> Enhanced special moves (called EX moves in older Street Fighter games) are <strong>OD (Overdrive) moves</strong> in SF6. They are paid from the Drive Gauge (2 bars), not from the Super Art gauge. They are faster, do more hits, or are invincible on startup depending on the move.</p>
+                <p><strong>Decision Tree Example:</strong> You have 1 bar of meter. Opponent knocked you down and is setting up wakeup. Do you:</p>
+                <ul>
+                    <li>A) Spend meter on reversal wake-up super? (Risk: opponent baits, you're open)</li>
+                    <li>B) Save meter to punish opponent's unsafe move? (Risk: you get hit while opponent is safe)</li>
+                    <li>C) Spend nothing: just block (or back rise) and wait for their pressure to end? (Risk: you stay on defense and have to guess their mixup)</li>
+                </ul>
+                <p><strong>Optimal Play:</strong> Depends on life totals, round number, and opponent habits. No one decision is "right"—it's a read.</p>
+            </div>
+
+            <div class="deep-dive">
+                <h4>Ultra/Revenge Meter: The Comeback Resource</h4>
+                <p>Older games had a separate comeback meter: Street Fighter IV's Revenge gauge accumulated when you took damage (not when you blocked—only when you got hit), powering your Ultra Combo. It's essentially a reward for losing. SF6 has no separate revenge meter; its comeback tool is the Critical Art, available at 25% health or less if you have 3 Super Art bars.</p>
+                <p><strong>Purpose:</strong> To give behind player a comeback mechanic. If you're down to 10% health and opponent is at 80%, one landed Ultra or Critical Art can take a large chunk of their health and shift momentum.</p>
+                <p><strong>Strategic Implication:</strong></p>
+                <ul>
+                    <li><strong>Ahead player:</strong> Must be careful. Don't take risky moves. One opening could let the opponent land their comeback super.</li>
+                    <li><strong>Behind player:</strong> If you land one hit, you might land a Critical Art for massive damage. Makes comeback possible.</li>
+                </ul>
+                <p><strong>Balancing Tool:</strong> Without a comeback mechanic, the player who falls behind early would have a much harder time recovering. These mechanics keep more rounds winnable to the end—they don't guarantee a comeback.</p>
+            </div>
+
+            <div class="deep-dive">
+                <h4>Focus Attack (Street Fighter IV)</h4>
+                <p>Street Fighter IV had the Focus Attack, a universal tool (no meter cost) that absorbs one hit with armor and then counter-attacks. SF6's closest equivalents are Drive Impact (absorbs two hits, costs 1 Drive bar) and Drive Parry.</p>
+                <p><strong>Properties:</strong> Holding the buttons charges it through three levels. Level 1 can be blocked; a Level 2 hit crumples the opponent; a fully charged Level 3 is unblockable and crumples. It absorbs only one hit regardless of level, so multi-hit attacks break it.</p>
+                <p><strong>Strategic Use:</strong></p>
+                <ul>
+                    <li><strong>Anti-Poke:</strong> Opponent pokes repeatedly? Focus > absorb poke > counter-attack</li>
+                    <li><strong>Oki Escape:</strong> Wake-up focus to escape wakeup mixup (works on some setups)</li>
+                    <li><strong>Movement:</strong> Can dash out of a Focus Attack (focus dash cancel), and with meter you could cancel special moves into it to make them safe</li>
+                </ul>
+                <p><strong>Counter:</strong> If opponent expects focus, they can throw you during startup or use a multi-hit / armor-breaking attack. Focus is not invincible to throws. (The same is true of SF6's Drive Impact.)</p>
+            </div>
+
+            <div class="deep-dive">
+                <h4>Guard Meter/Stamina (Anime Fighters)</h4>
+                <p>Some games limit continuous blocking. Excessive blockstun depletes a meter. When depleted = Guard Break = you're stunned and vulnerable. SF6 has a version of this through the Drive Gauge: blocking attacks drains it, and if it empties you enter <strong>Burnout</strong> (no Drive actions, blocked specials and Super Arts chip your health, and every blocked hit leaves you 4 extra frames in blockstun). A Drive Impact that pins a Burnout opponent against the wall stuns them.</p>
+                <p><strong>Strategic Implication:</strong></p>
+                <ul>
+                    <li><strong>Pure Blocking Doesn't Work:</strong> You can't just block forever. Eventually you'll guard break (or, in SF6, Burnout).</li>
+                    <li><strong>Active Defense Required:</strong> You must attack sometimes, move, or use meter to escape blockstun (in SF6, Drive Reversal costs 2 Drive bars). Dynamic defense.</li>
+                    <li><strong>Offense Risk:</strong> Opponent can see your guard meter. If it's low, they can apply more block pressure to break it.</li>
+                </ul>
+            </div>
+
+            <div class="card warning">
+                <h4>The Meter Economy: Big Picture</h4>
+                <p>At any point in time, you have N bars of meter. Your opponent has M bars. Every exchange of meter matters. If you spend 1 bar on a reversal super and it misses, you lost 1 bar and opponent is still at M bars. You're now at disadvantage (N-1 vs M). This compounds.</p>
+                <p><strong>High-Level Meter Play:</strong> Pros meter manage with precision. They don't "waste" meter on low-value actions. Every bar spent must justify itself through damage/positioning/reset.</p>
+            </div>
+
+            <h3 id="resource-management">Resource Management: Health, Meter, Position and Time</h3>
+
+            <p>You manage more than two gauges in SF6. gootecks counts five resources, and your opponent has the same ones: health, the Super Art gauge, the Drive Gauge, screen position and the timer.</p>
+
+            <div class="deep-dive">
+                <h4>Health: the most and least important resource</h4>
+                <ul>
+                    <li><strong>Only zero matters.</strong> Until then a comeback is possible, so don't panic when you fall behind.</li>
+                    <li><strong>Use the first round to learn.</strong> John Choi's rule is that round one is for learning the opponent's habits. It's worth spending a little health to see what they do on wakeup and what they spend their meter on. In a best-of-three set, you have between four and nine rounds to figure them out.</li>
+                    <li><strong>Falling behind breeds mistakes:</strong> jumping at the wrong moment, chasing an advantage that isn't there, reversals on wakeup. Those are exactly the mistakes a calm opponent waits for.</li>
+                    <li><strong>Ahead on health, don't overextend.</strong> Slow and safe usually closes the round.</li>
+                    <li><strong>Slightly behind is not a reason to gamble.</strong> If you're 5 to 10% down, a risky option that costs you a big chunk when it fails makes things worse.</li>
+                    <li><strong>Behind on health with them in the corner?</strong> The position is often worth more than the health gap.</li>
+                </ul>
+            </div>
+
+            <div class="deep-dive">
+                <h4>Meter: spend it with a plan</h4>
+                <ul>
+                    <li>Try to stay even with or ahead of your opponent's meter.</li>
+                    <li>Losing with a full Super Art gauge still means you lost. In SF6 the Super Art gauge carries over to the next round, so saving it can be correct, but in the last round, spend it.</li>
+                    <li>Spending a Super Art to close a tight round beats losing the round to save it.</li>
+                    <li>Two OD moves in one combo rarely add enough damage to justify 4 Drive bars.</li>
+                    <li>Know roughly how much gauge your usual pressure and combos build, and how fast your opponent's character builds it.</li>
+                </ul>
+            </div>
+
+            <div class="deep-dive">
+                <h4>Screen position: the hidden resource</h4>
+                <p>There's no bar for it, but it's real. With the opponent cornered and plenty of room behind you, you don't need to force anything: most cornered players try to escape with an obvious jump or a reckless reversal, and you punish it. Even a strong opponent has to win several exchanges to push you back to your own corner. Very few characters have a safe way out of the corner, and teleports still carry risk every time they're used.</p>
+            </div>
+
+            <div class="deep-dive">
+                <h4>The timer</h4>
+                <p>SF6 rounds run on a 99-count timer, and when it reaches zero the player with more health wins. When you're ahead and the clock is low, the opponent has to come to you, which makes them easier to read. When you're behind, the clock is one more reason to take your turn instead of waiting.</p>
+            </div>
+
+            <h3 id="cancels">Cancels & Conversions: Advanced Chaining</h3>
+
+            <p>A cancel means stopping a move before it ends and starting another immediately.</p>
+
+            <div class="table-wrap"><table>
+                <tr>
+                    <th>Cancel Type</th>
+                    <th>Definition</th>
+                    <th>Practical Use</th>
+                    <th>Risk</th>
+                </tr>
+                <tr>
+                    <td><strong>Special Cancel</strong></td>
+                    <td>Cancel a move into a special or super when it connects (most special cancels work on hit or on block)</td>
+                    <td>Combo extension (Normal → Special → Super)</td>
+                    <td>If opponent blocks and you cancel anyway, the special may be unsafe—hit-confirm first</td>
+                </tr>
+                <tr>
+                    <td><strong>Block Cancel</strong></td>
+                    <td>Cancel during block (guard cancel; Drive Reversal in SF6)</td>
+                    <td>Reversal in middle of defense (escape)</td>
+                    <td>Meter cost, can be baited or blocked</td>
+                </tr>
+                <tr>
+                    <td><strong>Recovery Cancel</strong></td>
+                    <td>Cancel recovery frames with a system mechanic (e.g. Roman Cancel in Guilty Gear)</td>
+                    <td>Make an unsafe or whiffed move safe</td>
+                    <td>Meter cost, if opponent expects you're open</td>
+                </tr>
+                <tr>
+                    <td><strong>Chain Cancel</strong></td>
+                    <td>Cancel normal move into another normal</td>
+                    <td>Simple combos (press buttons in sequence)</td>
+                    <td>Limited routes; chains like light-into-light usually do low damage and scale quickly</td>
+                </tr>
+            </table></div>
+
+            <h3 id="combos">Combos: The Progression of Complexity</h3>
+
+            <div class="deep-dive">
+                <h4>Type 1: Chains (Simplest)</h4>
+                <p><strong>Mechanic:</strong> You press buttons in sequence. System auto-chains them.</p>
+                <p><strong>Example:</strong> LP → MP → HP in games with a chain system (anime fighters); in SF6, mostly light attacks chained into each other (c.LP → c.LP)</p>
+                <p><strong>Risk:</strong> Low, it's a simple input</p>
+                <p><strong>Damage:</strong> Low (3-4 hits)</p>
+            </div>
+
+            <div class="deep-dive">
+                <h4>Type 2: Cancels (Moderate)</h4>
+                <p><strong>Mechanic:</strong> Normal → Special. You cancel the normal into a special before it recovers.</p>
+                <p><strong>Example:</strong> c.MK → Hadoken (crouch medium kick, cancel into fireball)</p>
+                <p><strong>Risk:</strong> The cancel window is short, so input the special motion during the normal. If you're too late, the special comes out after recovery and doesn't combo.</p>
+                <p><strong>Damage:</strong> Moderate (special has high damage)</p>
+            </div>
+
+            <div class="deep-dive">
+                <h4>Type 3: Links (Hardest)</h4>
+                <p><strong>Mechanic:</strong> Normal A ends, you wait, then press Normal B. NO auto-chaining. A link only works when A's frame advantage on hit is at least as large as B's startup.</p>
+                <p><strong>Example:</strong> A medium or heavy normal that is +5 on hit, followed by a 4-frame normal (2-frame window: 5 - 4 + 1 = 2)</p>
+                <p><strong>Risk:</strong> Highest. The window equals frame advantage minus startup plus one, so many links are only 1-3 frames.</p>
+                <p><strong>Damage:</strong> Often higher, because links let you connect stronger normals that can't be chained</p>
+                <p style="margin-top: 10px;"><strong>Why it exists:</strong> Links come from frame advantage itself, not from a special system. Mastering them takes practice and opens up stronger combos.</p>
+            </div>
+
+            <h3 id="damage-scaling">Damage Scaling: Why Long Combos Pay Less</h3>
+
+            <p>Every fighting game reduces the damage of each extra hit in a combo, so that one opening can't take a whole health bar. This is <strong>damage scaling</strong>, and knowing roughly how it works tells you which combos are worth learning.</p>
+
+            <div class="deep-dive">
+                <h4>The basic sequence in SF6<span class="sf6-tag">SF6</span></h4>
+                <p>Community testing shows SF6 applies full damage to the first two hits, then cuts each following hit by another 10%, down to a floor:</p>
+                <div class="table-wrap"><table>
+                    <tr><th>Hit in the combo</th><th>1st</th><th>2nd</th><th>3rd</th><th>4th</th><th>5th</th><th>6th</th><th>7th</th><th>8th</th><th>9th</th><th>10th+</th></tr>
+                    <tr><td><strong>Damage dealt</strong></td><td>100%</td><td>100%</td><td>80%</td><td>70%</td><td>60%</td><td>50%</td><td>40%</td><td>30%</td><td>20%</td><td>10%</td></tr>
+                </table></div>
+                <p>By the sixth hit, each extra hit is worth half of what it would be on its own. That's why a 12-hit combo often does only slightly more damage than a 6-hit one that ends in a strong move.</p>
+            </div>
+
+            <div class="deep-dive">
+                <h4>Extra penalties that stack on top</h4>
+                <ul>
+                    <li><strong>Light-attack starters:</strong> combos that begin with a light normal take an extra 20% penalty. Lights are fast and safe, so they pay less.</li>
+                    <li><strong>Drive Impact and throws as starters:</strong> also an extra 20%.</li>
+                    <li><strong>Many OD moves and invincible reversals</strong> (like the shoto uppercut) add their own starter penalty, which varies by move.</li>
+                    <li><strong>Drive Rush in the middle of a combo:</strong> the rest of the combo deals 15% less (once per combo).</li>
+                    <li><strong>Punish after a Perfect Parry:</strong> the whole punish deals 50%.</li>
+                </ul>
+            </div>
+
+            <div class="deep-dive">
+                <h4>Super Arts keep their value<span class="sf6-tag">SF6</span></h4>
+                <p>Super Arts have a minimum damage they always keep, no matter how scaled the combo is: <strong>SA1 at least 30%, SA2 at least 40%, SA3 and Critical Art at least 50%</strong> of their full damage. That's why ending a long combo in a Super Art is so effective: the hits before it are heavily scaled, but the super isn't.</p>
+            </div>
+
+            <div class="card success">
+                <h4>What this means for your practice</h4>
+                <ul>
+                    <li><strong>Start combos with your strongest reliable hit</strong> when you can: a medium or heavy confirm pays much more than a light one.</li>
+                    <li><strong>Prefer short combos that end in a knockdown</strong> over long combos that barely add damage. The knockdown gives you okizeme, which is often worth more than the extra damage.</li>
+                    <li><strong>Learn one high-damage punish</strong> starting from a heavy normal (for example, after blocking an unsafe move). Heavy starters don't carry the light-attack penalty, so the same route deals noticeably more.</li>
+                </ul>
+            </div>
+
+            <div class="deep-dive">
+                <h4>Juggles and target combos</h4>
+                <p>A <strong>juggle</strong> is a combo that continues while the opponent is in the air, for example after an anti-air or a launcher. Each move has its own juggle rules, which is why some combos only work after specific starters. A <strong>target combo</strong> is a sequence of normals a character can chain into each other by pressing buttons in a fixed order (for example, a light, then a medium, then a heavy that only combo in that order). They're listed in each character's move list and are often the easiest combos to learn first.</p>
+            </div>
+
+            <h3 id="invincibility">Invincibility Frames & Vulnerability: Game-Breaking Properties</h3>
+
+            <p>During certain moves, characters have special hit properties that override normal hit/block interactions. These are some of the most powerful tools in fighting games.</p>
+
+            <div class="deep-dive">
+                <h4>Full Invincibility: Untouchable State</h4>
+                <p>You cannot be hit by ANY attack (normals, specials, supers, throws). Rare, and only for a few frames.</p>
+                <p><strong>Who Has It:</strong> Usually reversal supers and some enhanced specials. Dragon Punch is the classic example; in SF6 the OD (Overdrive) version is typically the fully invincible one, while the normal version is often only partly invincible.</p>
+                <p><strong>Applications:</strong></p>
+                <ul>
+                    <li><strong>Wakeup Reversal:</strong> Opponent is applying pressure. You do invincible Dragon Punch on wakeup. It goes through all their attacks and hits them.</li>
+                    <li><strong>Pressure Breaker:</strong> In corner, you're blocking a string. An invincible super in a gap between their attacks interrupts it and creates space. (It can't break a true combo—you can't act while in hitstun.)</li>
+                </ul>
+                <p><strong>Counter:</strong> If opponent EXPECTS the reversal, they can bait it by blocking, backing off, or using a safe jump. Invincibility only lasts during the first few frames of startup; after it ends and the move whiffs, it's punishable.</p>
+            </div>
+
+            <div class="deep-dive">
+                <h4>Throw Invincibility: Anti-Grab Defense</h4>
+                <p>You cannot be grabbed by throws during this move, but attacks still connect.</p>
+                <p><strong>Who Has It:</strong> Many reversals and anti-air moves have throw invincibility early in startup.</p>
+                <p><strong>Applications:</strong></p>
+                <ul>
+                    <li><strong>Wakeup vs Throw Mixup:</strong> Opponent is setting up throw after knockdown. You do throw-invincible move. It beats throw but loses to attacks.</li>
+                    <li><strong>Footsies Safety:</strong> Character has a move that's throw-invincible. Can't be thrown, only blocked or hit.</li>
+                </ul>
+                <p><strong>Hierarchy:</strong> Throw invincibility &lt; Attack invincibility. If opponent attacks while you have throw invincibility, you get hit.</p>
+            </div>
+
+            <div class="deep-dive">
+                <h4>Hit Invincibility (Selective): Dodge-Like Properties</h4>
+                <p>You cannot be hit by specific attack types (lows, highs, projectiles) but other types connect normally.</p>
+                <p><strong>Examples:</strong></p>
+                <ul>
+                    <li><strong>Low Invincibility:</strong> Sweeps whiff, but standing attacks connect</li>
+                    <li><strong>High Invincibility:</strong> Standing attacks whiff, but crouching attacks connect</li>
+                    <li><strong>Projectile Invincibility:</strong> Fireballs pass through, but normals hit</li>
+                </ul>
+                <p><strong>Strategic Use:</strong> Character with low-invincible move can "jump over" sweeps. Character with projectile-invincible move doesn't fear zoners.</p>
+            </div>
+
+            <div class="deep-dive">
+                <h4>Vulnerability States: Abnormal Damage</h4>
+                <p>Opposite of invincibility. You're in a state where you take extra damage or additional effects.</p>
+                <p><strong>Examples:</strong></p>
+                <ul>
+                    <li><strong>Counter / Punish Counter:</strong> Getting hit during your own move's startup (Counter) or recovery (Punish Counter in SF6) gives the attacker extra advantage and damage.</li>
+                    <li><strong>Spinning/Stunned:</strong> You're immobilized. Any attack connects instantly (no block possible).</li>
+                    <li><strong>Guard Break:</strong> You've blocked too much. You're vulnerable to any attack (no blockstun).</li>
+                </ul>
+                <p><strong>Okizeme Window:</strong> After a knockdown, you can't be hit while you're on the ground (in Street Fighter), but you also can't act until you get up. The attacker uses that time to get into position and time their attack to hit on your first frame of wakeup (a meaty). This is when opponent applies wakeup mixup.</p>
+            </div>
+
+            <div class="card critical">
+                <h4>Reversal Timing: The Execution Trap</h4>
+                <p>A Reversal is doing a move on the first possible frame after blockstun, hitstun, or a knockdown ends (frame 1 of actionability). If timed perfectly:</p>
+                <ul style="margin-top: 10px;">
+                    <li>Your invincible move comes out before opponent can act</li>
+                    <li>You interrupt their pressure</li>
+                    <li>You escape bad situation</li>
+                </ul>
+                <p><strong>The Risk:</strong> Reversal timing is strict. Modern games, SF6 included, buffer a reversal input made in the last few frames before you can act, which makes it easier—but input too early (outside that buffer) and nothing comes out; too late and the opponent's attack hits you first. This is why reversals take a lot of practice.</p>
+                <p><strong>If Opponent Expects It:</strong> They can bait the reversal by blocking, backing off, or using a safe jump. Then your reversal whiffs (or is blocked) and they punish you hard.</p>
+            </div>
+
+            <h3 id="knockdown">Knockdown & Okizeme: The Wakeup Game</h3>
+
+            <p>Okizeme refers to post-knockdown setup. You knocked down opponent. Now you have timing advantage.</p>
+
+            <div class="card success">
+                <h4>Okizeme Phases</h4>
+                <p><strong>1) Knockdown Timing:</strong> You choose where to knock down (corner vs mid-stage, near vs far)</p>
+                <p><strong>2) Walk Position:</strong> You walk to optimal position while opponent is on ground</p>
+                <p><strong>3) Wakeup Read:</strong> Opponent has 3 options: block, throw tech, attack. Which will they do?</p>
+                <p><strong>4) Mixup:</strong> You do move that covers multiple of their options</p>
+            </div>
+
+            <div class="example-box">Scenario: You knocked down opponent with sweep
+Frame 1-20: Opponent on ground, you walk into position
+Frame 21: Opponent can act
+
+You can do:
+A) Crossup jump attack (opponent must block high, in the other direction)
+B) Normal throw (opponent must tech throw)
+C) Low poke (opponent must block low)
+D) Wait (bait throw tech, then punish the whiffed throw)
+
+Which to choose? Depends on opponent.</div>
+
+            <div class="table-wrap"><table>
+                <tr>
+                    <th>Situation</th>
+                    <th>Recommended Setup</th>
+                    <th>Why</th>
+                </tr>
+                <tr>
+                    <td>Opponent always blocks high</td>
+                    <td>Low poke or sweep</td>
+                    <td>Forces them to block low or take damage</td>
+                </tr>
+                <tr>
+                    <td>Opponent always tries throw</td>
+                    <td>Meaty attack (timed to hit on their first wakeup frame)</td>
+                    <td>Move connects before they can throw</td>
+                </tr>
+                <tr>
+                    <td>Opponent unpredictable</td>
+                    <td>Crossup (ambiguous)</td>
+                    <td>Forces 50/50 guess</td>
+                </tr>
+                <tr>
+                    <td>Corner setup</td>
+                    <td>Strike/throw mixup with meaty pressure</td>
+                    <td>Opponent can't back away and escaping the corner is hard, so every option stays close-range</td>
+                </tr>
+            </table></div>
+
+
+
+            <h3 id="offense">Offense With Advantage: Keeping Your Turn</h3>
+
+            <p>Footsies decide who gets the first hit. What happens after that, when you're plus, your opponent has blocked or you've knocked them down, decides how much that hit is worth. This section covers the tools for keeping your turn: plus frames, frame traps, counter hits, meaties, shimmies and safe jumps.</p>
+
+            <div class="deep-dive">
+                <h4>Plus frames and block strings</h4>
+                <p>When a move is <strong>plus on block</strong> (for example +2), you recover 2 frames before your opponent does. If you both press your fastest button right away, yours comes out first. That's what "it's your turn" means in fighting games.</p>
+                <p>A <strong>block string</strong> is a sequence of attacks that keeps your opponent blocking. If there's no gap between the hits, the opponent can't do anything but block (a "true" block string). Block strings are safe pressure, but they don't open anyone up by themselves: you need something that beats a player who just keeps blocking (a throw) and something that beats a player who tries to press a button (a frame trap).</p>
+                <p>A good block string <strong>ends in a move that is safe or plus</strong>, not in a heavy that leaves you −6. If you end your pressure at −6, you've just given your turn away.</p>
+            </div>
+
+            <div class="deep-dive">
+                <h4>Frame traps: catching the button press</h4>
+                <p>A <strong>frame trap</strong> is a deliberate small gap in your pressure. The gap is too short for the opponent's attack to come out in time, but long enough to tempt them. If they press, your next attack hits them during their startup, as a <strong>Counter Hit</strong>.</p>
+                <p><strong>Worked example:</strong> you're +2 after a blocked attack, and your next move has 5 frames of startup, so it becomes active on frame 5. Your opponent can act from frame 3. Their fastest jab has 4 frames of startup, so if they press it on frame 3, it becomes active on frame 6, one frame too late. Your attack lands first, as a Counter Hit.</p>
+                <p>Frame traps work because players hate being pressured and want to press a button. Once they learn to respect them and keep blocking, that's when a throw works.</p>
+            </div>
+
+            <div class="deep-dive">
+                <h4>Counter Hit and Punish Counter</h4>
+                <p>SF6 rewards hitting an opponent who is busy pressing buttons:</p>
+                <div class="table-wrap"><table>
+                    <tr><th></th><th>When it happens</th><th>Bonus</th></tr>
+                    <tr><td><strong>Counter Hit</strong></td><td>You hit them during the startup or active frames of their attack (or during a Drive Rush)</td><td>+2 frames of hitstun and +20% damage</td></tr>
+                    <tr><td><strong>Punish Counter</strong></td><td>You hit them during the recovery of a move: a blocked unsafe move, a whiffed attack, a whiffed throw or a parry that caught nothing</td><td>+4 frames of hitstun, extra damage, and they lose Drive Gauge</td></tr>
+                </table></div>
+                <p>The extra frames matter more than the damage: a medium that normally doesn't combo into a heavy might combo on Counter Hit, and many heavy attacks get special effects on Punish Counter (crumples, spins, launches), which vary by character. Look up your character's counter-hit combos once you're comfortable with the basics; they turn frame traps from "a little damage" into "a full combo".</p>
+                <p>A <strong>Punish Counter throw</strong>, throwing someone during a whiffed throw or while they're parrying, deals 70% extra damage, can't be teched and gives a hard knockdown.</p>
+            </div>
+
+            <div class="deep-dive">
+                <h4>Strike, throw and the shimmy</h4>
+                <p>Up close, offense is a triangle of three options:</p>
+                <ul>
+                    <li><strong>Strike</strong> (a frame trap or meaty) beats a player who presses buttons or tries to tech a throw.</li>
+                    <li><strong>Throw</strong> beats a player who just blocks.</li>
+                    <li><strong>Shimmy</strong> beats a player who tries to tech your throw: you walk forward as if to throw, then walk back out of throw range. Their throw-tech attempt comes out as a whiffed throw, and a whiffed throw's recovery is a Punish Counter state. You punish it with a heavy attack for big damage.</li>
+                </ul>
+                <p>The shimmy is one of the most important SF6 techniques because teching throws is a habit, and habits can be exploited. Defensively, it's also why "always tech" isn't safe: mix in plain blocking, and sometimes a fast button.</p>
+            </div>
+
+            <div class="deep-dive">
+                <h4>Meaty attacks: hitting late on purpose</h4>
+                <p>When the opponent is knocked down, they can't be hit until they stand up, and you know exactly when that will be. A <strong>meaty</strong> is an attack timed so that its later active frames overlap with their first frame of standing. Because the hit lands late in the attack, you have fewer frames of recovery left after it connects, so you're more plus than usual.</p>
+                <div class="widget-slot" data-widget="meaty"></div>
+                <p>A meaty beats a mashed button or a throw attempt on wakeup, because your attack is already active when they can act. It loses to an <strong>invincible reversal</strong> (a shoto uppercut, an OD reversal, a reversal Super Art or a wakeup Drive Reversal), which goes through it. Against characters with a strong reversal, a meaty is a risk; against characters without one, it's a strong habit.</p>
+            </div>
+
+            <div class="deep-dive">
+                <h4>Safe jumps</h4>
+                <p>A <strong>safe jump</strong> is a jumping attack timed to hit meaty on wakeup but with you landing early enough to block if the opponent does an invincible reversal. If they block, you get a jump-in and pressure. If they reversal, you block it and punish. Safe jumps depend on how much knockdown advantage you have and the reversal's startup, so they're specific to each character and knockdown. Your character's guides and community resources list the common ones.</p>
+            </div>
+
+            <h3 id="pressure-strings">Building Pressure Strings from Frame Data</h3>
+
+            <p>Instead of copying someone else's pressure, you can build your own from your character's frame data. This method comes from gootecks' <em>Fighting Game Fundamentals</em>; the numbers below are SF6's, where the fastest normals start in 4 frames and throws in 5.</p>
+
+            <div class="card">
+                <h4>The gap: one subtraction</h4>
+                <p>After a blocked move that leaves you <strong>+A</strong>, a follow-up with <strong>S</strong> frames of startup leaves a <strong>gap of S − A frames</strong>. Any move of theirs with less startup than the gap beats your follow-up; one with exactly the gap hits on the same frame.</p>
+                <div class="table-wrap"><table>
+                    <tr><th>Gap</th><th>What it means in SF6</th></tr>
+                    <tr><td><strong>0 or less</strong></td><td>No gap: they're still in blockstun when your next hit arrives. A true block string; only Drive Reversal, done from blockstun, gets them out.</td></tr>
+                    <tr><td><strong>1 to 3</strong></td><td>A frame trap. No normal is fast enough to beat it, so anyone who presses a button gets hit, usually as a Counter Hit. Invincible reversals and Drive Parry still beat it.</td></tr>
+                    <tr><td><strong>4</strong></td><td>Trades with 4-frame jabs.</td></tr>
+                    <tr><td><strong>5 or more</strong></td><td>Their 4-frame jabs hit you first, and from about 5 frames throws start to beat you too.</td></tr>
+                </table></div>
+            </div>
+
+            <div class="deep-dive">
+                <h4>Building a string, step by step</h4>
+                <ol>
+                    <li>Sort your normals by block advantage, from most plus to most minus. The plus ones are the backbone of your pressure.</li>
+                    <li>Sort them by startup. Your fastest buttons start and continue strings.</li>
+                    <li>Combine them with the gap rule: from a +A move, a follow-up with startup of A or less keeps them blocking; startup A+1 to A+3 makes a frame trap.</li>
+                    <li>Check what the numbers don't show: does every hit reach a crouching opponent? How many hits fit before pushback leaves you out of range? Does any move whiff if they block standing?</li>
+                    <li>End safe: a plus or safe move, a safe special, or simply stop and walk back for a shimmy.</li>
+                    <li>Put a target combo starter or a move you can confirm in the frame-trap slot, so a Counter Hit turns into real damage.</li>
+                    <li>Test it: record the dummy doing your string and try every normal you have against it. If nothing gets out, it's safe. If something does, that's a gap you didn't intend.</li>
+                </ol>
+            </div>
+
+            <div class="deep-dive">
+                <h4>A worked example</h4>
+                <p>Say your light attack is +2 on block (a few characters have one, such as Zangief's 5LP). From there:</p>
+                <ul>
+                    <li><strong>A 4-frame light:</strong> gap 2, a frame trap that beats every jab.</li>
+                    <li><strong>A 5-frame medium:</strong> gap 3, still a frame trap, and a medium Counter Hit often combos into more.</li>
+                    <li><strong>A 7-frame heavy:</strong> gap 5, too slow: their 4-frame jab hits you first.</li>
+                </ul>
+                <p>Most SF6 lights are −2 to +1 on block, so these windows are tighter than the example. That's where SF6's Drive Rush comes in: the first normal out of it gets +4 frames, so a −2 move becomes +2 and opens up exactly these frame traps.</p>
+            </div>
+
+            <div class="card warning">
+                <h4>Have a string for each kind of defense</h4>
+                <ul>
+                    <li><strong>Opponent not blocking:</strong> a string that's also a combo, so a hit turns into damage.</li>
+                    <li><strong>Opponent crouch blocking:</strong> every hit must reach a crouching opponent.</li>
+                    <li><strong>Opponent stand blocking:</strong> check that every hit still connects; pushback against a standing opponent can make later hits whiff.</li>
+                    <li><strong>Opponent pressing buttons or teching throws:</strong> a frame trap with a confirmable button in the gap.</li>
+                </ul>
+                <p>Test them in the corner too: with no room for pushback, strings that are safe mid-screen can become punishable there.</p>
+            </div>
+
+            <h3 id="wakeup-defense">On the Other Side: Defending on Wakeup</h3>
+
+            <div class="deep-dive">
+                <h4>Your wakeup options in SF6<span class="sf6-tag">SF6</span></h4>
+                <ul>
+                    <li><strong>Normal rise:</strong> stand up in place (no input).</li>
+                    <li><strong>Back rise:</strong> press two attack buttons as you land to roll back before standing. It gives you a little distance and changes your attacker's timing. Some knockdowns (such as Punish Counter throws and certain moves) are <strong>hard knockdowns</strong> that don't allow it.</li>
+                </ul>
+                <p>Both take about the same time, so back rise changes your position, not your timing. There is no quick rise or delayed wakeup.</p>
+            </div>
+
+            <div class="table-wrap"><table>
+                <tr>
+                    <th>Wakeup choice</th>
+                    <th>Beats</th>
+                    <th>Loses to</th>
+                </tr>
+                <tr>
+                    <td><strong>Block</strong></td>
+                    <td>Meaty strikes, safe jumps</td>
+                    <td>Throws</td>
+                </tr>
+                <tr>
+                    <td><strong>Throw tech</strong></td>
+                    <td>Throws</td>
+                    <td>Shimmies, meaty strikes, frame traps</td>
+                </tr>
+                <tr>
+                    <td><strong>Fast button</strong></td>
+                    <td>Throws, sloppy pressure with gaps</td>
+                    <td>Meaties, frame traps, shimmies (your button whiffs and gets punished)</td>
+                </tr>
+                <tr>
+                    <td><strong>Invincible reversal</strong> (uppercut, OD move, Super Art, Drive Reversal)</td>
+                    <td>Meaties, throws, almost all pressure</td>
+                    <td>Safe jumps, blocking and baiting it; costly if blocked</td>
+                </tr>
+                <tr>
+                    <td><strong>Drive Parry</strong></td>
+                    <td>Strikes</td>
+                    <td>Throws (for 70% extra damage)</td>
+                </tr>
+            </table></div>
+
+            <p>No option is always correct. Defense on wakeup is about not being predictable: the attacker is guessing what you'll do just as much as you're guessing what they'll do.</p>
+

@@ -1,0 +1,136 @@
+{
+  "groups": [
+    {
+      "id": "path",
+      "kanji": "道",
+      "face": "<span class=\"face\"><img src=\"img/ryu.webp\" width=\"200\" height=\"200\" alt=\"Ryu\"></span>",
+      "plainLabel": false,
+      "small": "{{t:ui.learn}} · Ryu",
+      "numbered": true
+    },
+    {
+      "id": "training",
+      "kanji": "鍛",
+      "face": "<span class=\"face\"><img src=\"img/ken.webp\" width=\"200\" height=\"200\" alt=\"Ken\"></span>",
+      "plainLabel": false,
+      "small": "{{t:ui.practice}} · Ken",
+      "numbered": false
+    },
+    {
+      "id": "archive",
+      "kanji": "天",
+      "face": "<span class=\"face\"><img src=\"img/akuma.webp\" width=\"200\" height=\"200\" alt=\"Akuma\"></span>",
+      "plainLabel": false,
+      "small": "{{t:ui.reference}} · Akuma",
+      "numbered": false
+    },
+    {
+      "id": "roster",
+      "kanji": "闘",
+      "face": "<span class=\"face face-logo\"><img src=\"img/sf6-emblem.webp\" width=\"256\" height=\"256\" alt=\"Street Fighter 6\"></span>",
+      "plainLabel": true,
+      "small": "{{t:ui.game-module}} · {{t:ui.32-fighters}}",
+      "numbered": false
+    }
+  ],
+  "chapters": [
+    {
+      "id": "intro",
+      "group": "path"
+    },
+    {
+      "id": "fundamentals",
+      "group": "path"
+    },
+    {
+      "id": "mechanics",
+      "group": "path"
+    },
+    {
+      "id": "execution",
+      "group": "path"
+    },
+    {
+      "id": "footsies",
+      "group": "path"
+    },
+    {
+      "id": "strategy",
+      "group": "path"
+    },
+    {
+      "id": "mindset",
+      "group": "path"
+    },
+    {
+      "id": "progression",
+      "group": "path"
+    },
+    {
+      "id": "training",
+      "group": "training"
+    },
+    {
+      "id": "lab",
+      "group": "training"
+    },
+    {
+      "id": "diagnosis",
+      "group": "training"
+    },
+    {
+      "id": "mistakes",
+      "group": "training"
+    },
+    {
+      "id": "tracker",
+      "group": "training"
+    },
+    {
+      "id": "families",
+      "group": "archive"
+    },
+    {
+      "id": "three-d",
+      "group": "archive"
+    },
+    {
+      "id": "visual-map",
+      "group": "archive"
+    },
+    {
+      "id": "casestudy",
+      "group": "archive"
+    },
+    {
+      "id": "glossary",
+      "group": "archive"
+    },
+    {
+      "id": "resources",
+      "group": "archive"
+    },
+    {
+      "id": "drive",
+      "group": "roster"
+    },
+    {
+      "id": "ranked",
+      "group": "roster"
+    },
+    {
+      "id": "matchups",
+      "group": "roster"
+    },
+    {
+      "id": "roster",
+      "group": "roster",
+      "app": "<div id=\"roster-app\" class=\"roster-app\"></div>"
+    },
+    {
+      "id": "punish",
+      "group": "roster",
+      "app": "<div id=\"punish-app\" class=\"punish-app\"></div>"
+    }
+  ]
+}

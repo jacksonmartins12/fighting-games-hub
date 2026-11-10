@@ -1,0 +1,303 @@
+
+            <h2>Execution: From Input to Output</h2>
+
+            <p class="scope-note"><span class="scope-badge">Universal</span><span>The ideas in this chapter apply to any fighting game. Examples come from SF6, and sections marked <span class="sf6-tag">SF6</span> only apply to it. For how other games differ, see <a href="#families">Fighting Game Families</a>.</span></p>
+
+            <div class="toc">
+                <h3>Structure</h3>
+                <ul>
+                    <li><a href="#button-layout">6-Button Layout</a></li>
+                    <li><a href="#motion-notation">Motion Notation</a></li>
+                    <li><a href="#control-types">Classic or Modern</a></li>
+                    <li><a href="#charge-inputs">Charge Inputs</a></li>
+                    <li><a href="#execution-techniques">Execution Techniques</a></li>
+                    <li><a href="#training-drills">Training Mode Setup and Drills</a></li>
+                    <li><a href="#consistency">Consistency Training</a></li>
+                </ul>
+            </div>
+
+            <h3 id="button-layout">The Universal 6-Button Layout</h3>
+
+            <div class="pad-diagram" role="img" aria-label="Six buttons: light, medium and heavy punch on the top row; light, medium and heavy kick on the bottom row">
+                <div class="pad-row"><span class="pad-label">Punch</span><span class="pad-btn p">LP</span><span class="pad-btn p">MP</span><span class="pad-btn p">HP</span></div>
+                <div class="pad-row"><span class="pad-label">Kick</span><span class="pad-btn k">LK</span><span class="pad-btn k">MK</span><span class="pad-btn k">HK</span></div>
+                <p class="pad-caption">Light, Medium, Heavy: lighter attacks are faster and weaker, heavier ones are slower and stronger.</p>
+            </div>
+
+            <p><strong>Why 6?</strong> Pressing multiple buttons simultaneously creates special actions (SF6 Classic controls shown):</p>
+
+            <div class="table-wrap"><table>
+                <tr>
+                    <th>Combination</th>
+                    <th>Name</th>
+                    <th>Effect</th>
+                </tr>
+                <tr>
+                    <td>LP + LK</td>
+                    <td>Throw</td>
+                    <td>Initiates grab (short range)</td>
+                </tr>
+                <tr>
+                    <td>MP + MK</td>
+                    <td>Drive Parry</td>
+                    <td>Parries incoming attacks (Drive Gauge cost); press forward twice out of it for a Drive Rush</td>
+                </tr>
+                <tr>
+                    <td>HP + HK</td>
+                    <td>Drive Impact</td>
+                    <td>Armored attack that absorbs 2 hits (1 Drive bar); forward + HP + HK while blocking = Drive Reversal (2 bars)</td>
+                </tr>
+                <tr>
+                    <td>Special motion + 2 Punches or 2 Kicks</td>
+                    <td>OD (Overdrive) Move</td>
+                    <td>Special move powered-up (2 Drive bars)</td>
+                </tr>
+                <tr>
+                    <td>Super motion (e.g. ↓↘→↓↘→) + Punch or Kick</td>
+                    <td>Super Art</td>
+                    <td>Maximum damage (1-3 Super Art bars depending on level)</td>
+                </tr>
+            </table></div>
+
+            <h3 id="motion-notation">Motion Notation: The Technical Language</h3>
+
+            <p>Fighting games use standard notation to describe inputs:</p>
+
+            <div class="numpad-wrap"><div class="numpad"><span class="np-cell"><b>7</b><i aria-hidden="true">↖</i><small>up-back</small></span><span class="np-cell"><b>8</b><i aria-hidden="true">↑</i><small>up</small></span><span class="np-cell"><b>9</b><i aria-hidden="true">↗</i><small>up-forward</small></span><span class="np-cell"><b>4</b><i aria-hidden="true">←</i><small>back</small></span><span class="np-cell"><b>5</b><i aria-hidden="true">•</i><small>neutral</small></span><span class="np-cell"><b>6</b><i aria-hidden="true">→</i><small>forward</small></span><span class="np-cell"><b>1</b><i aria-hidden="true">↙</i><small>down-back</small></span><span class="np-cell"><b>2</b><i aria-hidden="true">↓</i><small>down</small></span><span class="np-cell"><b>3</b><i aria-hidden="true">↘</i><small>down-forward</small></span></div><p class="small">Numpad notation, for a character facing right: the numbers follow a computer keyboard's number pad. 6 is always <strong>forward</strong> (toward the opponent) and 4 is always <strong>back</strong>, so when your character is on the right side of the screen, the physical directions swap but the numbers don't.</p></div>
+            <div class="table-wrap"><table class="motion-table"><tr><th>Motion</th><th>Arrows</th><th>Numpad</th><th>Classic</th><th>Example</th></tr><tr><td><strong>Quarter-circle forward</strong></td><td class="arrows">↓ ↘ →</td><td class="inp">236</td><td class="inp">QCF</td><td>Hadoken: 236P</td></tr><tr><td><strong>Quarter-circle back</strong></td><td class="arrows">↓ ↙ ←</td><td class="inp">214</td><td class="inp">QCB</td><td>Tatsumaki: 214K</td></tr><tr><td><strong>Dragon punch</strong></td><td class="arrows">→ ↓ ↘</td><td class="inp">623</td><td class="inp">DP</td><td>Shoryuken: 623P</td></tr><tr><td><strong>Reverse dragon punch</strong></td><td class="arrows">← ↓ ↙</td><td class="inp">421</td><td class="inp">RDP</td><td>Less common; appears in some move lists</td></tr><tr><td><strong>Half-circle forward</strong></td><td class="arrows">← ↙ ↓ ↘ →</td><td class="inp">41236</td><td class="inp">HCF</td><td>Some specials and supers</td></tr><tr><td><strong>Half-circle back</strong></td><td class="arrows">→ ↘ ↓ ↙ ←</td><td class="inp">63214</td><td class="inp">HCB</td><td>Some specials and supers</td></tr><tr><td><strong>Double quarter-circle forward</strong></td><td class="arrows">↓ ↘ → ↓ ↘ →</td><td class="inp">236236</td><td class="inp">QCF×2</td><td>Most Super Arts use this or 214214</td></tr><tr><td><strong>Double quarter-circle back</strong></td><td class="arrows">↓ ↙ ← ↓ ↙ ←</td><td class="inp">214214</td><td class="inp">QCB×2</td><td>Super Arts</td></tr><tr><td><strong>Full circle</strong></td><td class="arrows">→ ↘ ↓ ↙ ← ↖ ↑ ↗</td><td class="inp">360</td><td class="inp">360 / SPD</td><td>Zangief's Screw Piledriver: 360P</td></tr><tr><td><strong>Down, down</strong></td><td class="arrows">↓ ↓</td><td class="inp">22</td><td class="inp">DD</td><td>Jamie's drink (The Devil Inside): 22P</td></tr><tr><td><strong>Charge back, then forward</strong></td><td class="arrows">[←] →</td><td class="inp">[4]6</td><td class="inp">Charge B,F</td><td>Guile's Sonic Boom: [4]6P</td></tr><tr><td><strong>Charge down, then up</strong></td><td class="arrows">[↓] ↑</td><td class="inp">[2]8</td><td class="inp">Charge D,U</td><td>Guile's Somersault Kick: [2]8K</td></tr></table></div>
+            <p>Buttons are written after the motion: <strong>P</strong> = any punch, <strong>K</strong> = any kick, or a specific one like <strong>LP</strong> or <strong>HK</strong>. "[ ]" means hold: [4] is hold back. In the older classic style you will also see <strong>c.MK</strong> (crouching medium kick), <strong>s.HP</strong> (standing heavy punch) and <strong>j.HK</strong> (jumping heavy kick); in numpad notation those are <strong>2MK</strong>, <strong>5HP</strong> and <strong>j.HK</strong>. The character guides list numpad notation first with classic alongside; the chapters mostly use classic notation such as c.MK.</p>
+
+            <div class="deep-dive">
+                <h4>Reading combo notation</h4>
+                <p>Combos are written as a sequence of moves, and the separators tell you how each move connects:</p>
+                <ul>
+                    <li><strong>Link</strong> (a comma or a space, as in 5MP, 2MP): the first move finishes completely and the second hits while the opponent is still in hitstun. Timing matters.</li>
+                    <li><strong>Chain</strong> (usually lights, as in 2LP 2LP): a light attack canceled into another light. Easy, but chained lights do little damage.</li>
+                    <li><strong>Cancel</strong> ("xx" in older guides, "&gt;" in this one, as in 2MK &gt; 236P): the first move's recovery is cut short by a special, a Super Art or a Drive Rush. Do the motion during the normal and press the button as it connects.</li>
+                </ul>
+                <p>Only moves that make contact, on hit or on block, can be canceled into specials; a whiffed normal generally can't. In this guide's character pages, a space between moves means a link or chain, "&gt;" means a cancel and "DR" means a Drive Rush.</p>
+            </div>
+
+            <h3 id="control-types">Classic or Modern Controls<span class="sf6-tag">SF6</span></h3>
+
+            <p>SF6 lets you choose between two control types for each character, and the choice changes how you practice execution. It's set per character on the character select screen, so you can try both.</p>
+
+            <div class="comparison-table">
+                <div class="comparison-item">
+                    <h4>Classic</h4>
+                    <ul>
+                        <li>Six attack buttons: LP, MP, HP, LK, MK, HK.</li>
+                        <li>Special moves use motion inputs (236P, 623P, [4]6P…).</li>
+                        <li>Every normal the character has is available.</li>
+                        <li>Full damage on everything.</li>
+                    </ul>
+                </div>
+                <div class="comparison-item">
+                    <h4>Modern</h4>
+                    <ul>
+                        <li>Three attack buttons (Light, Medium, Heavy) plus a <strong>Special (SP)</strong> button, an <strong>Assist</strong> button, and dedicated Drive Impact and Drive Parry buttons.</li>
+                        <li>Specials come out with <strong>SP + a direction</strong> (neutral, forward, back or down). Since the August 2026 update, for many characters, down + SP lets you pick the strength with down-back, down or down-forward.</li>
+                        <li><strong>Holding Assist</strong> turns Light, Medium and Heavy into preset combos, some of which spend gauge.</li>
+                        <li>Some normals are missing (for example, Modern Ryu doesn't have all of Classic Ryu's standing kicks and jumping attacks).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="deep-dive">
+                <h4>The trade-off</h4>
+                <p>Specials and Super Arts done with the SP button deal <strong>20% less damage</strong>. The same move done with its normal motion input on Modern deals full damage, and motion inputs still work on Modern.</p>
+                <p>What you get in exchange is reliability: a Modern player's uppercut comes out on the exact frame they want, every time, with no chance of a wrong motion. That's a real advantage for anti-airs and reversals, which is why Modern is used at every level of play, including top tournaments.</p>
+            </div>
+
+            <div class="card success">
+                <h4>Which one should you pick?</h4>
+                <ul>
+                    <li><strong>Pick Modern</strong> if motion inputs are holding you back, you want to focus on footsies and decisions first, or you play on a pad and struggle with charge or dragon punch motions.</li>
+                    <li><strong>Pick Classic</strong> if you want every normal and full damage, or you plan to play other fighting games where motion inputs are the norm.</li>
+                    <li>Either way, <strong>the fundamentals in this guide are the same</strong>: spacing, anti-airs, frame data and decision-making don't change with the control type. You can always switch later; what you learn about the game carries over.</li>
+                </ul>
+            </div>
+
+            <h3 id="charge-inputs">Charge Inputs</h3>
+
+            <p>Some characters use <strong>charge inputs</strong> instead of motions: you hold a direction for a short moment, then press the opposite direction with a button. In numpad notation, <strong>[4]6P</strong> means hold back, then press forward + punch, and <strong>[2]8K</strong> means hold down, then press up + kick.</p>
+
+            <p>In the current roster, Guile, Blanka, E. Honda, Dee Jay, M. Bison and Chun-Li all have charge moves (Guile's Sonic Boom and Somersault Kick are the classic examples). Super Arts for charge characters often use a longer pattern such as [4]646P: hold back, then forward, back, forward + punch.</p>
+
+            <div class="deep-dive">
+                <h4>How to make charge feel natural</h4>
+                <ul>
+                    <li><strong>Charge while you do other things.</strong> Walking back, blocking and crouch-blocking all hold back or down, so you're always charging while defending.</li>
+                    <li><strong>Down-back charges both directions at once.</strong> Crouch-blocking (holding down-back) builds charge for [4]6 and [2]8 moves at the same time, which is why charge characters spend so much time crouching.</li>
+                    <li><strong>Charge during your normals.</strong> Holding back or down-back while pressing a normal keeps the charge, so you can do a crouching normal and cancel it into a charge special.</li>
+                    <li><strong>The cost is mobility.</strong> Walking forward releases your charge, so charge characters tend to play patiently and let opponents come to them. That's part of their gameplan, not a limitation to fight against.</li>
+                </ul>
+            </div>
+
+            <h3 id="execution-techniques">Execution Techniques: The Details Matter</h3>
+
+            <div class="deep-dive">
+                <h4>Buffering (Pre-input)</h4>
+                <p><strong>Concept:</strong> You start the input while still in previous animation.</p>
+                <p><strong>Example:</strong> While c.MK is coming out, you already start the ↓ ↘ → motion, then press Punch as c.MK connects—inside its cancel window.</p>
+                <p><strong>Advantage:</strong> The special comes out as a cancel at the earliest possible moment instead of after the normal recovers. Tighter combo.</p>
+                <p><strong>Training:</strong> Practice starting the motion before (or during) the normal, so only the final button press has to be timed.</p>
+            </div>
+
+            <div class="deep-dive">
+                <h4>Plinking (Input Augmentation)</h4>
+                <p><strong>Concept:</strong> Press the button you want, then a weaker button one frame later. Because of the game's button-priority rules, the game reads the first button twice, giving you two chances to hit a tight link.</p>
+                <p><strong>Example:</strong> For a link into c.MP, press MP then LP one frame later (written MP~LP).</p>
+                <p><strong>Use:</strong> Make tight links more consistent. It is game-specific—famous from Street Fighter IV—and not a standard technique in SF6.</p>
+            </div>
+
+            <div class="deep-dive">
+                <h4>Animation Canceling</h4>
+                <p><strong>Concept:</strong> Some moves can be cancelled before they visually end.</p>
+                <p><strong>Example:</strong> A cancelable normal can be cancelled into a special when it connects (on hit or block), skipping its recovery frames entirely.</p>
+                <p><strong>Knowledge:</strong> Each character and each move has different cancel properties. Check the frame data (the cancel column) and learn the ones you use.</p>
+            </div>
+
+            <h3 id="training-drills">Training Mode Setup and Core Drills</h3>
+
+            <p>Before practicing combos, make sure the basics come out every time, on both sides of the screen. These drills are adapted from gootecks' <em>Simplifying Street Fighter</em> and <em>Fighting Game Fundamentals</em>; five minutes a day is enough to start.</p>
+
+            <div class="card">
+                <h4>Set up training mode once</h4>
+                <ul>
+                    <li><strong>Input display on:</strong> it shows exactly what you pressed, so you can see why a move didn't come out.</li>
+                    <li><strong>Frame meter on:</strong> it shows startup, advantage and gaps in real time.</li>
+                    <li><strong>Gauges set to refill:</strong> so you can practice Drive and Super Art moves without waiting.</li>
+                    <li><strong>Dummy guard on Random:</strong> once you move on to confirms and pressure.</li>
+                </ul>
+            </div>
+
+            <div class="deep-dive">
+                <h4>The drills</h4>
+                <ol>
+                    <li><strong>Dash laps:</strong> dash from one corner to the other and back. If you can't do it 10 times in a row without effort, start every session here. Most players have a weaker side; train that one more.</li>
+                    <li><strong>Motion drill (236 and 214):</strong> do only the motion for 10 seconds on each side, aiming for accuracy, not speed. Then add the button right after the motion, then speed up, then bring the button closer to the end of the motion. Goal: 10 fireballs in a row on each side. When one fails, check the input display; a common mistake is pressing the button on down-forward instead of forward.</li>
+                    <li><strong>Dragon punch motion (623):</strong> five minutes a day once your fireball is consistent on both sides.</li>
+                    <li><strong>Max-range poke and cancel:</strong> hit the dummy with your main poke from as far as it reaches, canceled into your special. You're training your eye for the range where it connects without whiffing.</li>
+                    <li><strong>Throw range:</strong> find how far from the dummy your throw still connects. A whiffed throw has long recovery and gets punished.</li>
+                    <li><strong>Whiff punish:</strong> record the dummy doing a sweep while holding down-back. Find the sweep's maximum range, walk in and out of it, and hit the leg as it retracts. If the dummy blocks, you pressed too late.</li>
+                    <li><strong>Anti-air with a special:</strong> record a jump-in that would hit your character around the shoulders. Do your uppercut late, just before the attack lands, so its invincible startup lines up with the jump-in.</li>
+                    <li><strong>Anti-air with normals:</strong> find one normal for jumps from far away and one for close jumps. If you trade or get hit, press earlier.</li>
+                </ol>
+            </div>
+
+            <div class="deep-dive">
+                <h4>Learning a combo in segments</h4>
+                <p>Break any combo into pieces and practice each piece until it comes out 10 times in a row before joining them. A jump-in combo, for example:</p>
+                <ol>
+                    <li><strong>Jump-in into the medium normal.</strong> Hit deep, between the opponent's waist and shoulders: too low and it whiffs, too high and you lose frame advantage if they block.</li>
+                    <li><strong>Medium normal canceled into the special.</strong></li>
+                    <li><strong>The whole combo.</strong></li>
+                </ol>
+                <p>Small details drop combos. From too far away, the link after a jump-in whiffs; after some normals, certain specials miss a crouching opponent. For 214 motions after a crouching normal, try holding down-forward while you press the normal and rolling to back from there, so the motion doesn't start from down-back by accident.</p>
+                <p>A determined beginner should land a basic combo like this about half the time after 5 to 10 minutes. Getting to 90% takes much longer, and that's normal.</p>
+            </div>
+
+            <h3 id="consistency">Consistency Training: Converting to Automatic</h3>
+
+            <div class="card success">
+                <h4>The 4 Stages of Training</h4>
+                <p><strong>1) Slowly:</strong> Do input very slowly, no pressure. Focus on correct form.</p>
+                <p><strong>2) Progressively Faster:</strong> Increase speed 10% each day.</p>
+                <p><strong>3) Under Pressure:</strong> Practice in CPU vs mode while taking damage.</p>
+                <p><strong>4) In Match:</strong> Execute against real player while adapting strategy.</p>
+            </div>
+
+            <div class="example-box">Example: Learning a combo with a 2-frame link (illustrative numbers)
+
+Day 1: Do 50x very slowly. Focus on FORM.
+Success rate: 100%
+
+Day 2-5: Gradually increase speed.
+Success rate: 95% → 90% → 85% → 80%
+
+Day 6-10: Practice in CPU vs mode. Take hits between combos.
+Success rate: 70% → 75% → 80%
+
+Day 11+: Use in real matches.
+Success rate: 60% in chaos, 75% when calm</div>
+
+            <div class="card critical">
+                <h4>The Consistency Plateau</h4>
+                <p>Many players practice 50x and think they've mastered it. Actually, under real pressure (adrenaline, match stress), execution drops noticeably.</p>
+                <p><strong>Solution:</strong> Practice MORE in pressure environment. Not just training mode.</p>
+            </div>
+
+            <h3 id="progressive-practice">Degrees of Resistance: Progressive Practice Methodology</h3>
+
+            <div class="card success">
+                <h4>Core Principle: Gradually Increase Cognitive Load</h4>
+                <p>Don't jump from training mode practice dummy straight to live human opponents. Instead, systematically increase resistance through controlled stages. This prevents frustration while building genuine skill transfer.</p>
+            </div>
+
+            <div class="deep-dive">
+                <h4>Stage 1: Idle Training Dummy</h4>
+                <p><strong>Dummy State:</strong> Stands still, blocking nothing, taking all hits</p>
+                <p><strong>Goal:</strong> Execute combo 5 times in a row without dropping on each side</p>
+                <p><strong>Focus:</strong> Pure muscle memory. Get the timing right.</p>
+                <p><strong>Success Metric:</strong> 5 in a row on the left side and 5 in a row on the right side</p>
+            </div>
+
+            <div class="deep-dive">
+                <h4>Stage 2: Random Block Dummy</h4>
+                <p><strong>Dummy State:</strong> Random blocks some hits (you'll see which ones connect clean)</p>
+                <p><strong>Goal:</strong> Practice doing full combo ONLY on clean hits</p>
+                <p><strong>Focus:</strong> Visual confirmation that combo is actually connecting, not just practicing motions</p>
+                <p><strong>Success Metric:</strong> 5 correct confirms in a row on each side (full combo on hit, stop safely on block)</p>
+            </div>
+
+            <div class="deep-dive">
+                <h4>Stage 3: Low CPU Difficulty</h4>
+                <p><strong>CPU State:</strong> Level 1-3 CPU opposition, moving and attacking</p>
+                <p><strong>Goal:</strong> Land combo 3-5 times during a full match</p>
+                <p><strong>Focus:</strong> Combo still works in real gameplay context with opponent moving</p>
+                <p><strong>Success Metric:</strong> Consistently land combos even when opponent moves between rounds</p>
+            </div>
+
+            <div class="deep-dive">
+                <h4>Stage 4: Medium CPU Difficulty</h4>
+                <p><strong>CPU State:</strong> Level 5-7 difficulty, attacking and defending intelligently</p>
+                <p><strong>Goal:</strong> Land combo 2-3 times per match, adapt strategy around it</p>
+                <p><strong>Focus:</strong> Now your opponent is fighting back. You're learning pressure and setups.</p>
+                <p><strong>Success Metric:</strong> Win match despite not being optimal, through consistent execution and adaptation</p>
+            </div>
+
+            <div class="deep-dive">
+                <h4>Stage 5: Human Opponents (Casual)</h4>
+                <p><strong>Opponent:</strong> Real player at similar skill level</p>
+                <p><strong>Goal:</strong> Land combo sometimes, but primary focus is having fun and learning matchup</p>
+                <p><strong>Focus:</strong> Under extreme pressure. Your execution will drop. That's OK and expected.</p>
+                <p><strong>Success Metric:</strong> Successfully execute combo at least once, and keep playing without rage-quitting</p>
+            </div>
+
+            <div class="card warning">
+                <h4>Critical Insight: Skip Stages at Your Own Peril</h4>
+                <p>Many new players try to skip straight from training mode to human opponents. This causes frustration because:</p>
+                <ul>
+                    <li>Combo drops happen unexpectedly (opponent moved)</li>
+                    <li>No clear feedback on why it failed (vs. training mode feedback)</li>
+                    <li>Emotional stakes feel high (player vs. player)</li>
+                    <li>Leads to quitting or "combos are too hard" conclusion</li>
+                </ul>
+                <p><strong>Reality:</strong> The combo isn't too hard. You just skipped essential practice stages.</p>
+            </div>
+
+            <div class="example-box">Recommended Practice Session (this guide's plan, built on Patrick Miller's degrees-of-resistance idea):
+
+1. Open notes and remind yourself what you're practicing (10 min review)
+2. Training mode with idle dummy: Get combo clean 5x on each side (5-10 min)
+3. Training mode with random block: Land clean combos 5x (5-10 min)
+4. VS CPU Level 3: Play full match, note moments (15 min)
+5. Watch footage or read strategy related to combo situation (5 min)
+6. VS CPU Level 5: Apply learning (20 min)
+7. Optional: Play casual online matches (30 min)
+8. End session: Update notes with progress and next focus
+
+Total: about 60-70 minutes without step 7, 90-100 minutes with it. Stop earlier if you're tired—focus drops fast.</div>
+        
+

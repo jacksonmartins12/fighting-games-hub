@@ -1,0 +1,302 @@
+
+            <h2>Fundamentos Universais</h2>
+
+            <p class="scope-note"><span class="scope-badge">Universal</span><span>As ideias deste capítulo valem para qualquer jogo de luta. Os exemplos vêm do SF6, e as seções marcadas com <span class="sf6-tag">SF6</span> só valem para ele. Para ver como outros jogos diferem, veja <a href="#families">Famílias de Jogos de Luta</a>.</span></p>
+
+            <div class="toc">
+                <h3>Estrutura</h3>
+                <ul>
+                    <li><a href="#attack-block-throw-pt">Ataque, Defesa, Throw</a></li>
+                    <li><a href="#hitboxes-pt">Hitboxes e Hurtboxes</a></li>
+                    <li><a href="#frames-pt">Frames e Timing</a></li>
+                    <li><a href="#block-mechanics-pt">Mecânicas de Defesa</a></li>
+                    <li><a href="#defense-habits-pt">Hábitos de Defesa</a></li>
+                    <li><a href="#special-moves-pt">Golpes Especiais</a></li>
+                </ul>
+            </div>
+
+            <h3 id="attack-block-throw-pt">Ataque, Defesa, Throw: O Triângulo Essencial</h3>
+
+            <div class="card success">
+                <h4>Fundamento #1: Tudo gira em torno dessas 3 ações</h4>
+                <p>Quase toda interação num jogo de luta é construída em cima dessas 3 ações básicas. Movimentação, espaçamento e recursos mudam quando e onde você as usa, mas o núcleo é sempre atacar, defender e dar throw (o agarrão).</p>
+            </div>
+
+            <div class="comparison-table">
+                <div class="comparison-item comparison-do">
+                    <h4>ATAQUE</h4>
+                    <p><strong>Ação:</strong> Você aperta um botão de ataque</p>
+                    <p><strong>Resultado:</strong> Sua hitbox é criada. Se ela encostar na hurtbox do oponente = dano</p>
+                    <p><strong>Resposta:</strong> Defender</p>
+                    <p><strong>Frame Data:</strong> Startup (quando o golpe ativa), Active (quanto tempo fica ativo), Recovery (quando você pode fazer outra coisa)</p>
+                </div>
+
+                <div class="comparison-item comparison-do">
+                    <h4>DEFESA</h4>
+                    <p><strong>Ação:</strong> Você segura para trás (defesa em pé) ou na diagonal para baixo e para trás (defesa agachada)</p>
+                    <p><strong>Resultado:</strong> Você entra em blockstun e leva pouco ou nenhum dano. No SF6, defender não tira vida nenhuma enquanto você ainda tem Drive Gauge: nem de normais, nem de especiais, nem de Super Arts. Em vez disso, especiais e supers defendidos drenam a sua Drive Gauge. Só em Burnout é que especiais e Super Arts causam chip damage (o dano residual na defesa, 25% do dano do golpe), e esse chip pode te dar KO. Cada golpe defendido também drena um pouco da sua Drive Gauge</p>
+                    <p><strong>Resposta:</strong> Throw</p>
+                    <p><strong>Risco:</strong> Você não avança. Está cedendo posição</p>
+                </div>
+            </div>
+
+            <div class="card warning">
+                <h4>THROW</h4>
+                <p><strong>Ação:</strong> Você faz um comando específico quando está perto</p>
+                <p><strong>Resultado:</strong> Você agarra o oponente. Não dá para defender!</p>
+                <p><strong>Resposta:</strong> Atacar (um golpe rápido acerta quem tenta o throw durante o startup), dar tech no throw (apertar throw ao mesmo tempo para escapar) ou sair do alcance (backstep, pulo)</p>
+                <p><strong>Timing:</strong> O throw é rápido (5 frames de startup no SF6), mas tem alcance muito curto, então o oponente já precisa estar dentro do alcance do throw</p>
+            </div>
+
+            <div class="deep-dive">
+                <h4>Análise: Pedra-Papel-Tesoura Competitivo</h4>
+                <p>Pedra-Papel-Tesoura é uma simplificação perfeita do ciclo de combate:</p>
+                <ul>
+                    <li><strong>Ataque vence Throw:</strong> Um golpe rápido acerta o oponente durante o startup do throw dele, e um jogador em hitstun ou blockstun não pode levar throw de jeito nenhum</li>
+                    <li><strong>Throw vence Defesa:</strong> O throw ignora a defesa completamente. Você fica totalmente indefeso.</li>
+                    <li><strong>Defesa vence Ataque:</strong> A defesa anula/reduz o dano. O ataque do oponente é parado.</li>
+                </ul>
+                <p style="margin-top: 15px;"><strong>Mas os jogos de luta adicionam camadas que transformam isso em profundidade infinita:</strong></p>
+                <ul>
+                    <li><strong>Timing:</strong> O momento em que você faz o ataque/throw importa demais. Throw colado no oponente? Sucesso. Throw a um corpo de distância? Whiff (erra no vazio).</li>
+                    <li><strong>Posicionamento:</strong> Onde você está na tela muda tudo. Canto = poucas opções de fuga = throw fica mais forte. Centro = mais opções = throw fica mais fraco.</li>
+                    <li><strong>Frame Data:</strong> Depois da defesa, quem age primeiro? Se você está +3 no block, ataca antes de o oponente conseguir dar throw. A dinâmica muda a cada momento.</li>
+                    <li><strong>Barras:</strong> A barra de Super Art e outros recursos mudam a situação. O inimigo tem barra? Seu ataque fica mais arriscado (ele pode responder com um reversal: um golpe OD ou Super Art invencível ou, no SF6, um Drive Reversal enquanto defende). Você tem barra? Ganha mais opções ofensivas (no SF6, Drive Rush para estender a pressão).</li>
+                    <li><strong>Interações de Hitbox/Hurtbox:</strong> A hitbox do seu ataque pode errar um oponente agachado mesmo acertando um oponente em pé. As mesmas três ferramentas, resultados completamente diferentes dependendo do posicionamento.</li>
+                    <li><strong>Leituras e Previsão:</strong> Você não está só jogando pedra-papel-tesoura: está lendo as tendências do oponente e se ajustando. "Ele sempre defende depois do poke" muda o jeito como você joga.</li>
+                </ul>
+                <p style="margin-top: 15px;">Isso transforma um pedra-papel-tesoura de puro chute num jogo profundamente estratégico de informação, posicionamento, timing e leituras.</p>
+            </div>
+
+            <h3>Dominando o Triângulo: Aplicações Práticas</h3>
+
+            <div class="deep-dive">
+                <h4>Quando Atacar (Não Quando Você Tem Vontade)</h4>
+                <p>Atacar é a opção dominante quando:</p>
+                <ul>
+                    <li>O oponente está em blockstun por causa do seu ataque anterior (vantagem de frames)</li>
+                    <li>O oponente acabou de usar um golpe unsafe (frames de recuperação)</li>
+                    <li>Você está no meio de um combo (hitstun)</li>
+                    <li>O oponente está encurralado no canto (poucas opções de fuga)</li>
+                </ul>
+                <p><strong>Por Que Essas Situações:</strong> Nesses momentos o oponente ou não consegue agir (hitstun, blockstun, recuperação) ou tem pouquíssimas opções (no canto). O ataque domina.</p>
+                <p><strong>Erro:</strong> Atacar quando o oponente está no neutral sem nada a seu favor = um chute. Ele pode dar throw, defender o ataque ou atacar também. Você está apostando.</p>
+            </div>
+
+            <div class="deep-dive">
+                <h4>Quando Defender (Defesa Ativa)</h4>
+                <p>Defender é o ideal quando:</p>
+                <ul>
+                    <li>O oponente está claramente se comprometendo com um ataque (dá para ver o startup)</li>
+                    <li>Você está numa posição desvantajosa (no canto, com pouca vida, pouca barra)</li>
+                    <li>Você está lendo o padrão do oponente (espera um ataque nesse momento)</li>
+                    <li>Você precisa preservar a vida para ganhar o round</li>
+                </ul>
+                <p><strong>Custo de Defender:</strong> Você pode levar chip damage (no SF6, só em Burnout, de especiais e Super Arts), perde Drive Gauge (no SF6), entra em blockstun (o oponente continua com o turno) e é empurrado para trás (perde posição). Isso sai caro.</p>
+                <p><strong>Quando Defender É Errado:</strong> Defender todo ataque sem pensar = você leva throw várias vezes. Defender quando você podia ter atacado = você abre mão do seu turno.</p>
+            </div>
+
+            <div class="deep-dive">
+                <h4>Quando Dar Throw (Ofensiva de Curta Distância)</h4>
+                <p>O throw é o ideal quando:</p>
+                <ul>
+                    <li>O oponente está defendendo (throw vence defesa)</li>
+                    <li>Você está a curta distância (o alcance do throw é bem curto, praticamente colado)</li>
+                    <li>O oponente está na recuperação de um golpe que errou</li>
+                    <li>Você condicionou o oponente a defender com pokes repetidos</li>
+                </ul>
+                <p><strong>Setup de Throw:</strong> O padrão clássico: dê pokes repetidos (3-4 vezes) com c.LP ou algo parecido. O oponente aprende a defender para não ser acertado. Aí você anda para frente e dá throw. Ele está condicionado a defender = não está pronto para dar tech no throw.</p>
+                <p><strong>Quando o Throw Falha:</strong> Fora de alcance (whiff), o oponente pula (fica no ar, não pode levar throw), o oponente ataca (um golpe mais rápido interrompe o startup do seu throw), o oponente dá tech no throw.</p>
+            </div>
+
+            <h3 id="hitboxes-pt">Hitboxes e Hurtboxes: A Geometria do Combate</h3>
+
+            <div class="card">
+                <h4>Definições Precisas:</h4>
+                <ul>
+                    <li><strong>Hitbox:</strong> A caixa invisível que o seu ataque ocupa. Se ela cruzar a hurtbox do oponente = o golpe conecta</li>
+                    <li><strong>Hurtbox:</strong> A caixa invisível que representa o seu corpo vulnerável</li>
+                    <li><strong>Whiff:</strong> Um ataque em que a sua hitbox nunca encosta na hurtbox do oponente</li>
+                </ul>
+            </div>
+
+            <p><strong>Ponto Crítico:</strong> Hitboxes e hurtboxes mudam o tempo todo conforme a animação avança. Um ataque tem hitboxes de tamanhos e posições diferentes em frames diferentes.</p>
+
+            <div class="example-box">Exemplo: c.MK (Chute Médio Agachado) - Ryu, SF6: 8f de startup, 3 active, 19 de recovery
+Frames 1-7: Startup - a hitbox ainda não existe, você está vulnerável
+Frames 8-10: Active - hitbox criada, pode conectar
+Frames 11-29: Recovery - a hitbox sumiu, você está se recompondo
+
+Conectou nos frames 8-10 = dano
+Oponente defendeu nos frames 8-10 = blockstun
+Oponente não estava lá = whiff</div>
+
+            <h3 id="frames-pt">Frames e Timing: A Matemática Invisível</h3><div class="widget-slot" data-widget="framebar"></div>
+
+            <p>Um frame é 1/60 de segundo (o SF6 roda a 60fps, então 1 frame ≈ 16,7 ms). Muitas decisões importantes acontecem em diferenças de 1-5 frames.</p>
+
+            <div class="table-wrap"><table>
+                <tr>
+                    <th>Frame Data</th>
+                    <th>Definição</th>
+                    <th>Exemplo</th>
+                    <th>Importância</th>
+                </tr>
+                <tr>
+                    <td><strong>Startup</strong></td>
+                    <td>Frames até o golpe poder conectar (na frame data do SF6, essa contagem inclui o primeiro frame ativo)</td>
+                    <td>Um c.LP típico tem 4 frames de startup</td>
+                    <td>Rápido = difícil de reagir. Lento = pode ser interrompido</td>
+                </tr>
+                <tr>
+                    <td><strong>Active</strong></td>
+                    <td>Frames em que a hitbox está ativa</td>
+                    <td>Uma rasteira pode ter 3 frames ativos</td>
+                    <td>Longo = mais fácil de conectar. Curto = precisa ser exato</td>
+                </tr>
+                <tr>
+                    <td><strong>Recovery</strong></td>
+                    <td>Frames depois que os frames ativos acabam, antes de você poder agir de novo</td>
+                    <td>O c.MK do Ryu tem 19 frames de recuperação</td>
+                    <td>Curto = safe. Longo = pode ser punido</td>
+                </tr>
+                <tr>
+                    <td><strong>Vantagem de Frames</strong></td>
+                    <td>Quem age primeiro depois que o golpe é defendido (ou acerta)</td>
+                    <td>A maioria dos golpes fracos do SF6 fica entre −2 e +1 no block; o c.MK do Ryu fica −6</td>
+                    <td>Positivo = você controla. Negativo = turno do oponente</td>
+                </tr>
+                <tr>
+                    <td><strong>Hitstun</strong></td>
+                    <td>Por quantos frames o oponente fica atordoado quando é acertado</td>
+                    <td>Um golpe médio pode causar algo como 15-20 frames de hitstun</td>
+                    <td>Longo = mais tempo para combos. Curto = brecha para escapar</td>
+                </tr>
+            </table></div>
+
+            <div class="card critical">
+                <h4>Execução Frame Perfect</h4>
+                <p>Alguns golpes precisam ser feitos num frame específico para conectar. Isso se chama "frame perfect" (uma janela de 1 frame) e é extremamente difícil.</p>
+                <p><strong>Exemplo:</strong> Num combo de link, você pode ter só 1-3 frames para fazer o próximo ataque. Uma janela de 2 frames é 2/60 de segundo = 0,033 segundo.</p>
+                <p>É por isso que treinar com consistência é essencial - seu corpo precisa desenvolver memória muscular.</p>
+            </div>
+
+            <h3 id="block-mechanics-pt">Mecânicas de Defesa: Defesa Ativa (Não Passividade)</h3>
+
+            <p>Defender não é "não fazer nada" — é uma ação ativa e estratégica, com custos significativos. Toda vez que você defende, está tomando uma decisão com consequências:</p>
+
+            <div class="deep-dive">
+                <h4>Blockstun: Perda da Iniciativa</h4>
+                <p>Quando você defende um ataque, entra em "blockstun" — fica travado por N frames, sem poder agir. Durante esse tempo, o oponente está no controle.</p>
+                <p><strong>Exemplo (números simplificados):</strong> O oponente faz um c.MK (3 frames ativos, 12 de recuperação). Você defende no primeiro frame ativo e fica em blockstun por 16 frames. O atacante ainda precisa de 2 + 12 = 14 frames para terminar o golpe, então ele se recupera 2 frames antes de você poder agir. Durante o seu blockstun, você não consegue interromper.</p>
+                <p><strong>Vantagem de Frames:</strong> É por isso que "vantagem de frames no block" importa. Se o oponente está +2 no block, ele age 2 frames antes de você. Ele consegue atacar de novo antes de você conseguir dar throw. Ele controla a troca.</p>
+                <p><strong>Resposta:</strong> Se o oponente continua atacando com golpes -2 (negativos no block), é você quem consegue atacar primeiro e recuperar a iniciativa. Essa é a sua brecha para dar throw, contra-atacar ou fazer outra coisa.</p>
+            </div>
+
+            <div class="deep-dive">
+                <h4>Guard Bar/Medidor de Guarda: O Custo Escondido</h4>
+                <p>Muitos jogos de luta associam um medidor à defesa (o guard crush do Street Fighter Alpha, o medidor R.I.S.C. do Guilty Gear Strive). No SF6, esse papel é da Drive Gauge: cada golpe defendido drena um pouco dela. Quando ela zera, você entra em Burnout: sem golpes de Drive (Drive Parry, Drive Rush, Drive Impact, Drive Reversal, golpes OD), 4 frames extras de blockstun, chip damage dos golpes especiais e Super Arts (que pode te dar KO) e um Drive Impact que te alcança perto da parede te deixa atordoado (stun), mesmo se você defender.</p>
+                <p><strong>Implicação Estratégica:</strong> Você não pode defender para sempre. Precisa atacar às vezes, escapar ou criar espaço para a barra se recuperar (ela enche com o tempo). Isso impede que o "turtling" (defesa pura) seja viável.</p>
+                <p><strong>Jogo de Alto Nível:</strong> Jogadores experientes administram a Drive Gauge ativamente. Eles defendem as coisas perigosas e depois retomam o turno ou resetam a situação para deixar a barra recuperar. Iniciantes defendem tudo = Burnout = perdem.</p>
+            </div>
+
+            <div class="deep-dive">
+                <h4>Defesa Alta vs Defesa Baixa: Dois Tipos de Defesa</h4>
+                <p>A maioria dos jogos de luta tem duas posturas de defesa:</p>
+                <ul>
+                    <li><strong>Defesa Alta (Defesa em Pé):</strong> Você segura para trás (←). Defende golpes altos e médios. Não defende golpes baixos (rasteiras, pokes baixos).</li>
+                    <li><strong>Defesa Baixa (Defesa Agachada):</strong> Você segura para trás agachado (↙). Defende golpes baixos e médios. Não defende overheads (golpes que precisam ser defendidos em pé).</li>
+                </ul>
+                <p><strong>O Mixup:</strong> O oponente pode atacar com um overhead (vence a sua defesa baixa) ou com um golpe baixo (rasteira ou poke baixo, vence a sua defesa alta). Isso cria um mixup alto/baixo. Se você chutar errado, leva o golpe. É por isso que defender agachado para sempre não funciona — o oponente faz um overhead e te acerta.</p>
+                <p><strong>Mecânica Avançada:</strong> Além do alto/baixo, throws não podem ser defendidos de jeito nenhum, e crossups (ataques que acertam pelo outro lado) mudam qual direção conta como "trás". Isso obriga você a alternar o tempo todo entre opções defensivas.</p>
+            </div>
+
+            <div class="deep-dive">
+                <h4>Pular: Totalmente Indefeso</h4>
+                <p>No Street Fighter, quando você está no ar (pulando), não pode defender (alguns outros jogos, como Guilty Gear, têm defesa aérea). Você fica vulnerável a qualquer golpe que acerte oponentes no ar, e não consegue mudar a trajetória do pulo depois de sair do chão.</p>
+                <p><strong>Por Que Isso Importa:</strong> Pular é uma opção de fuga (sair da pressão), mas é muito arriscado se o oponente estiver esperando. Um anti-air = você leva um golpe forte e muitas vezes um knockdown.</p>
+                <p><strong>Situações de Pulo:</strong></p>
+                <ul>
+                    <li><strong>Pulos Bons:</strong> Você pula quando lê que o oponente não vai dar anti-air (ele está atacando, não defendendo)</li>
+                    <li><strong>Pulos Ruins:</strong> Você pula aleatoriamente. O oponente dá anti-air e te destrói.</li>
+                </ul>
+                <p><strong>Dependência de Leitura:</strong> Pular é pura leitura. Você está apostando que o oponente está num estado em que o anti-air não vai vir. Errou = punição pesada.</p>
+            </div>
+
+            <div class="card critical">
+                <h4>A Psicologia da Defesa</h4>
+                <p>Iniciantes defendem porque estão com medo. Jogadores intermediários defendem de forma estratégica. Jogadores avançados defendem bem, mas também sabem exatamente quando o turno do oponente acaba e o retomam com movimentação, um contra-ataque ou (no SF6) Drive Parry ou Drive Reversal. Defender sai caro, então bons jogadores não defendem por mais tempo do que precisam.</p>
+            </div>
+
+            <h3 id="defense-habits-pt">Hábitos de Defesa: Defender Agachado, Dar Tech no Throw, Ler o Crossup</h3>
+
+            <p>A maioria dos jogadores novos perde rounds na defesa, não no ataque: toma knockdown, entra em pânico e aperta um botão. Os hábitos abaixo vêm do <em>Fighting Game Fundamentals</em>, do gootecks, adaptados para o SF6. Nenhum deles é chamativo, mas juntos deixam você muito mais difícil de abrir.</p>
+
+            <div class="card success">
+                <h4>O seu padrão: defender agachado</h4>
+                <p>Quando você não sabe o que vem, segure baixo-trás. Defender agachado para golpes baixos e médios, que são a maior parte do que o oponente pode fazer. Só duas coisas vencem essa defesa:</p>
+                <ul>
+                    <li><strong>Throws</strong> (throws normais e command grabs), que você responde dando tech ou ficando fora do alcance.</li>
+                    <li><strong>Overheads</strong>, que precisam ser defendidos em pé. A maioria é lenta (entre 16 e 22 frames de startup, como o Collarbone Breaker do Ryu, de 20 frames) e rende pouco dano sem barra, então dá para aprender a reagir a eles a partir da defesa agachada.</li>
+                </ul>
+                <p>Crie o reflexo de voltar para baixo-trás depois de cada golpe seu. Se você errar um botão e o oponente demorar para punir, você ainda defende o ataque dele em vez de tomar.</p>
+            </div>
+
+            <div class="deep-dive">
+                <h4>No wakeup: primeiro defenda, depois decida</h4>
+                <p>O wakeup mais comum de iniciante é apertar botão ou soltar um Shoryuken. Contra um oponente que espera isso, o resultado é um Counter Hit, ou um reversal defendido e um punish completo. Em vez disso:</p>
+                <ol>
+                    <li>Levante defendendo agachado e observe o que ele faz: um meaty, um throw, um shimmy, nada.</li>
+                    <li>Reaja ao que a defesa não segura: dê tech no throw, levante para o overhead.</li>
+                    <li>Quando a pressão acabar (um golpe negativo, um gap que você confirmou no lab), retome o seu turno ou saia andando. Saia do canto assim que puder.</li>
+                </ol>
+                <p>Os seus reversals (Shoryuken, golpe OD, Drive Reversal, Super Art) continuam fazendo parte da defesa. Eles só funcionam muito melhor depois que você mostrou que defende, porque aí o oponente precisa respeitar as duas coisas.</p>
+            </div>
+
+            <div class="deep-dive">
+                <h4>Por que o seu tech de throw falha</h4>
+                <p>Dar tech no throw é apertar throw (LP+LK) no instante em que você está sendo agarrado, o que cancela o throw. Iniciantes costumam errar o tech por um destes quatro motivos:</p>
+                <div class="table-wrap"><table>
+                    <tr><th>Causa</th><th>O que está acontecendo</th><th>Correção</th></tr>
+                    <tr><td><strong>Você não esperava o throw</strong></td><td>Você ainda não reconhece os momentos em que o throw acontece, então nunca tenta dar tech.</td><td>Dê muito throw você mesmo por um tempo: por cinco partidas, tente pelo menos um throw por round. Você vai começar a enxergar as situações em que ele vem.</td></tr>
+                    <tr><td><strong>Você reagiu tarde</strong></td><td>A janela é minúscula: testes da comunidade apontam algo entre 7 e 9 frames depois que o agarrão conecta, cerca de um sétimo de segundo, e o atraso do online come parte disso. Muitos techs nem são reação: os dois jogadores só apertaram throw ao mesmo tempo.</td><td>Dê tech por previsão nas situações de throw (depois de um golpe fraco defendido, no wakeup), não reagindo à animação do agarrão.</td></tr>
+                    <tr><td><strong>Você não percebeu que estava no alcance</strong></td><td>O throw de cada personagem alcança uma distância diferente, e command grabs alcançam mais longe.</td><td>No training mode, meça o alcance máximo do throw dos personagens que você mais enfrenta, em pé e agachado, e compare com o seu.</td></tr>
+                    <tr><td><strong>Erro de comando</strong></td><td>Apertar dois botões juntos sob pressão é fácil de errar.</td><td>Nas configurações de controle, coloque LP+LK num botão só. O throw de um botão é mais fácil de acertar, e dois toques rápidos nele dão duas chances.</td></tr>
+                </table></div>
+                <p>Lembre do shimmy: uma tentativa de tech que não encontra throw vira um throw errado, e a recuperação dele é punida como Punish Counter. Dar tech é uma leitura, não uma ação gratuita.</p>
+            </div>
+
+            <div class="deep-dive">
+                <h4>Crossups: como defender e como usar bem</h4>
+                <p>Para defender um crossup, segure a direção contrária a onde o atacante vai cair, ou seja, o oposto do que você segurava antes de ele passar por cima de você.</p>
+                <ul>
+                    <li><strong>Não se encurrale por um crossup.</strong> Pular por cima de um oponente encurralado coloca você no canto, e a posição na tela vale mais que a surpresa.</li>
+                    <li><strong>Condicione antes.</strong> Depois de alguns knockdowns em que você ataca pela frente, o crossup tem muito mais chance de entrar.</li>
+                    <li><strong>Respeite o reversal.</strong> Um reversal invencível vence o crossup no wakeup; contra esses personagens, prefira um safe jump ou fique no chão.</li>
+                    <li><strong>Use para escapar.</strong> Quando você é quem está no canto, um jump-in em crossup que ele precisa defender coloca você do outro lado.</li>
+                    <li><strong>A ameaça muitas vezes basta.</strong> Fazer o oponente achar que vem crossup faz ele hesitar, e é aí que as suas outras opções funcionam.</li>
+                </ul>
+            </div>
+
+            <div class="deep-dive">
+                <h4>Se mover no neutral sem entregar espaço</h4>
+                <p>Backdash e pulo para trás tiram você de um momento de pressão, mas entregam posição na tela ao oponente, e cada passo cedido aproxima você do canto. Para avançar, passos curtos que deixam você defender a qualquer momento são mais seguros que dash ou pulo. No SF6, andar para frente também enche a sua Drive Gauge mais rápido.</p>
+            </div>
+
+            <h3 id="special-moves-pt">Golpes Especiais: Além dos Normais</h3>
+
+            <p>Enquanto os "golpes normais" (LP, MP, LK etc.) saem só apertando um botão, os golpes especiais exigem um input específico no controle Clássico (no controle Moderno do SF6, o botão SP mais uma direção também faz os especiais):</p>
+
+            <div class="table-wrap"><table class="motion-table"><tr><th>Golpe</th><th>Setas</th><th>Numérica</th><th>Clássica</th></tr>
+<tr><td><strong>Bola de fogo</strong> (Hadoken)</td><td class="arrows">↓ ↘ → + P</td><td class="inp">236P</td><td class="inp">QCF+P</td></tr>
+<tr><td><strong>Dragon Punch</strong> (Shoryuken)</td><td class="arrows">→ ↓ ↘ + P</td><td class="inp">623P</td><td class="inp">DP+P</td></tr>
+<tr><td><strong>Hurricane Kick</strong> (Tatsumaki)</td><td class="arrows">↓ ↙ ← + K</td><td class="inp">214K</td><td class="inp">QCB+K</td></tr></table></div>
+
+            <p>Os golpes especiais geralmente:</p>
+            <ul>
+                <li>Muitas vezes têm mais startup que os normais (mais arriscados)</li>
+                <li>Causam mais dano que os normais (maior recompensa)</li>
+                <li>Muitas vezes podem ser cancelados em Super Arts (gastando barra de Super Art), e no SF6 a maioria tem uma versão OD (dois botões, custa 2 barras de Drive)</li>
+                <li>Têm propriedades únicas (invencibilidade, knockdown etc.)</li>
+            </ul>
+
