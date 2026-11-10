@@ -7,9 +7,9 @@ A bilingual (English / Português do Brasil) study guide for fighting games, wit
 ## O que tem aqui
 
 - **O Caminho:** fundamentos universais — espaço, frames, defesa, estratégia, psicologia e progressão.
-- **O Treino:** planos de treino, exercícios de lab, autodiagnóstico, erros comuns e um tracker de progresso.
+- **O Treino:** planos de treino, um plano de 30 dias, exercícios de lab, autodiagnóstico, erros comuns, um tracker de progresso e uma ficha de revisão de replay.
 - **O Arquivo:** famílias de jogos de luta (2D, anime, tag, 3D), jogos 3D, mapa visual, estudo de caso, glossário com 150+ termos e recursos.
-- **Street Fighter 6:** Sistema Drive, ranked, matchups, guias dos 32 personagens, uma calculadora de punish e uma ferramenta de matchup (link direto: `#matchup/ryu/ken`).
+- **Street Fighter 6:** Sistema Drive, ranked, matchups, guias dos 32 personagens, uma calculadora de punish, flashcards de punish e uma ferramenta de matchup (link direto: `#matchup/ryu/ken`).
 - **Busca:** uma busca única para capítulos, personagens, golpes e glossário (tecla `/`).
 
 ## Como usar
@@ -27,15 +27,19 @@ Acesse a versão publicada no GitHub Pages ou abra `index.html` no navegador. O 
 | `i18n/en.js`, `i18n/pt.js` | Todos os textos de interface, por chave. As duas listas têm sempre as mesmas chaves. |
 | `data/roster.js`, `data/quiz.js`, `data/upcoming.js` | Índice de personagens, perguntas dos quizzes e próximos lançamentos. |
 | `data/chars/<personagem>.js` | Guia e frame data de cada personagem. Só é baixado quando alguém abre o personagem. |
+| `data/plan30.js` | Os 30 dias do plano de treino. |
 | `data/moves-index.js` | Nomes e comandos de todos os golpes, para a busca. **Gerado pelo `build.py`.** |
 | `assets/css/hub.css`, `assets/js/*.js` | Visual e comportamento (navegação, quizzes, tracker, guias, calculadora de punish). |
 | `img/` | Imagens. |
+| `sw.js`, `manifest.webmanifest` | Fazem o hub abrir sem internet e ser instalável no celular. O `sw.js` é **gerado pelo `build.py`** a partir de `src/sw.template.js`. |
 
 Depois de editar qualquer arquivo em `src/`, `i18n/` ou `data/chars/`, rode:
 
 ```
 python3 build.py
 ```
+
+O `build.py` também gera o `sw.js` com uma versão nova a cada mudança. É essa versão que faz os visitantes receberem a atualização, então **sempre rode o build antes de publicar**; quem já tem o hub salvo offline vê a versão nova na segunda vez que abrir.
 
 Todos os caminhos são relativos, então o site funciona em qualquer pasta (o GitHub Pages serve em `/fighting-games-hub/`) e não depende de nenhum serviço externo.
 

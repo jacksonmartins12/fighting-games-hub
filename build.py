@@ -10,14 +10,14 @@ index.html is generated: edit the sources and run this script again.
   src/content/<lang>/*.html chapter text, one file per chapter and language
   i18n/<lang>.js            interface strings
 """
-import json, os, re, sys
+import hashlib, json, os, re, sys
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 LANGS = [('en', 'en'), ('pt', 'pt-BR')]
 SCRIPTS = ['i18n/en.js', 'i18n/pt.js', 'data/roster.js', 'data/upcoming.js', 'data/quiz.js',
            'assets/js/core.js', 'assets/js/store.js', 'assets/js/nav.js', 'assets/js/widgets.js',
            'assets/js/checklists.js', 'assets/js/quiz.js', 'assets/js/roster.js', 'assets/js/frames.js',
-           'assets/js/punish.js', 'assets/js/matchup.js', 'assets/js/sheet.js', 'assets/js/tracker.js', 'assets/js/search.js', 'assets/js/boot.js']
+           'assets/js/punish.js', 'assets/js/matchup.js', 'assets/js/sheet.js', 'assets/js/tracker.js', 'assets/js/plan.js', 'assets/js/review.js', 'assets/js/flashcards.js', 'assets/js/search.js', 'assets/js/boot.js']
 
 
 def read(p):
@@ -45,6 +45,11 @@ def t(key):
 
 def expand(html):
     return re.sub(r'\{\{t:([^}]+)\}\}', lambda m: t(m.group(1)), html)
+
+
+def count_label(key, n):
+    """{{chapters:group}} / {{chapters:all}}: an i18n string with {0} = number of chapters."""
+    return ''.join('<span class="l-%s" lang="%s">%s</span>' % (l, code, I18N[l][key].replace('{0}', str(n))) for l, code in LANGS)
 
 
 def build():
@@ -92,7 +97,10 @@ def build():
                    % (c['id'], c['group'], ' class="active"' if n == 0 else '', tag, body, app, nav))
 
     scripts = '\n'.join('<script src="%s"></script>' % p for p in SCRIPTS)
-    html = expand(read('src/shell.html'))
+    html = read('src/shell.html')
+    html = html.replace('{{chapters:all}}', count_label('ui.hero-line', len(chapters)))
+    html = re.sub(r'\{\{chapters:([a-z]+)\}\}', lambda m: count_label('ui.n-chapters', len(by_group[m.group(1)])), html)
+    html = expand(html)
     html = html.replace('{{sidebar}}', '\n'.join(side)).replace('{{chapters}}', ''.join(out)).replace('{{scripts}}', scripts)
     return html
 
@@ -116,6 +124,27 @@ def moves_index():
     print('data/moves-index.js', sum(len(v) for v in out.values()), 'moves')
 
 
+def service_worker():
+    """sw.js: list of every file the hub needs, plus a version that changes whenever any of them changes."""
+    files = ['index.html', 'manifest.webmanifest']
+    for top in ('assets', 'i18n', 'data', 'img'):
+        for folder, _, names in os.walk(os.path.join(ROOT, top)):
+            for n in names:
+                files.append(os.path.relpath(os.path.join(folder, n), ROOT).replace(os.sep, '/'))
+    files = sorted(f for f in files if f != 'img/og.jpg' and not f.endswith('.pyc'))
+    h = hashlib.sha1()
+    for f in files:
+        with open(os.path.join(ROOT, f), 'rb') as fh:
+            h.update(f.encode()); h.update(fh.read())
+    h.update(read('src/sw.template.js').encode())
+    later = [f for f in files if f.startswith(('data/chars/', 'img/fighters/'))]
+    core = [f for f in files if f not in later]
+    sw = read('src/sw.template.js').replace('__VERSION__', h.hexdigest()[:12]).replace('__CORE__', json.dumps(core)).replace('__REST__', json.dumps(later))
+    with open(os.path.join(ROOT, 'sw.js'), 'w', encoding='utf-8') as f:
+        f.write(sw)
+    print('sw.js', len(core), 'core files +', len(later), 'on demand, version', h.hexdigest()[:12])
+
+
 def main():
     moves_index()
     html = build()
@@ -123,6 +152,7 @@ def main():
     with open(os.path.join(ROOT, 'index.html'), 'w', encoding='utf-8') as f:
         f.write(page)
     print('index.html', len(page), 'bytes')
+    service_worker()
     if '--artifact' in sys.argv:
         dst = sys.argv[sys.argv.index('--artifact') + 1]
         body = html[html.index('<!--head-end-->\n') + 16:].replace('<!--body-start-->\n', '').replace('<!--body-end-->\n', '')

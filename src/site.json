@@ -71,6 +71,11 @@
       "group": "training"
     },
     {
+      "id": "plan30",
+      "group": "training",
+      "app": "<div id=\"plan-app\" class=\"plan-app\"></div>"
+    },
+    {
       "id": "lab",
       "group": "training"
     },
@@ -85,6 +90,11 @@
     {
       "id": "tracker",
       "group": "training"
+    },
+    {
+      "id": "review",
+      "group": "training",
+      "app": "<div id=\"review-app\" class=\"review-app\"></div>"
     },
     {
       "id": "families",
@@ -131,6 +141,11 @@
       "id": "punish",
       "group": "roster",
       "app": "<div id=\"punish-app\" class=\"punish-app\"></div>"
+    },
+    {
+      "id": "flashcards",
+      "group": "roster",
+      "app": "<div id=\"flash-app\" class=\"flash-app\"></div>"
     },
     {
       "id": "matchup",

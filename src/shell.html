@@ -5,6 +5,26 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="description" content="Fighting game study guide: universal fundamentals, training plans, other fighting game families and an in-depth Street Fighter 6 module. English and Brazilian Portuguese.">
 <meta name="author" content="Jackson">
+<meta name="theme-color" content="#101216">
+<link rel="canonical" href="https://jacksonmartins12.github.io/fighting-games-hub/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Fighting Games Resource Hub">
+<meta property="og:title" content="Fighting Games Resource Hub">
+<meta property="og:description" content="Guia de estudo de jogos de luta em português e inglês: fundamentos, footsies, frame data, planos de treino e um guia para cada um dos 32 personagens de Street Fighter 6.">
+<meta property="og:url" content="https://jacksonmartins12.github.io/fighting-games-hub/">
+<meta property="og:image" content="https://jacksonmartins12.github.io/fighting-games-hub/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Fighting Games Resource Hub, with Ryu and Ken">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Fighting Games Resource Hub">
+<meta name="twitter:description" content="Fighting game study guide in English and Portuguese: fundamentals, footsies, frame data and a guide for all 32 Street Fighter 6 fighters.">
+<meta name="twitter:image" content="https://jacksonmartins12.github.io/fighting-games-hub/img/og.jpg">
+<link rel="icon" type="image/png" sizes="192x192" href="img/icon-192.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
 <!--head-end-->
 <title>Fighting Games Resource Hub</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,7 +35,7 @@
 <!--body-start-->
 <header class="hero">
   <div class="hero-text">
-    <div class="hero-top"><p class="eyebrow">{{t:ui.fighting-game-study-guide-sf6-in}}</p><div class="hero-tools"><button class="open-search" type="button" data-search-open>{{t:search.open}}<kbd aria-hidden="true">/</kbd></button><div class="lang-switch" role="group" aria-label="Language / Idioma"><button type="button" data-lang-set="pt" aria-pressed="false">PT</button><button type="button" data-lang-set="en" aria-pressed="true">EN</button></div></div></div>
+    <div class="hero-top"><p class="eyebrow">{{chapters:all}}</p><div class="hero-tools"><button class="open-search" type="button" data-search-open>{{t:search.open}}<kbd aria-hidden="true">/</kbd></button><div class="lang-switch" role="group" aria-label="Language / Idioma"><button type="button" data-lang-set="pt" aria-pressed="false">PT</button><button type="button" data-lang-set="en" aria-pressed="true">EN</button></div></div></div>
     <h1>Fighting Games <span class="hl">Resource&nbsp;Hub</span></h1>
     <p class="lede">{{t:ui.from-your-first-blocked-jump-in}}</p>
     <p class="frame-note">{{t:ui.1-frame-1-60-s-16}}</p>
@@ -25,25 +45,25 @@
 <span class="face"><img src="img/ryu.webp" width="200" height="200" alt="Ryu"></span>
 <span class="tile-text"><span class="tile-top"><span class="k" aria-hidden="true">道</span><b>{{t:ui.the-path}}</b></span>
 <span class="tile-blurb">{{t:ui.learn-fighting-games-in-order-from}}</span>
-<small>{{t:ui.learn}} · {{t:ui.8-chapters}} · Ryu</small></span>
+<small>{{t:ui.learn}} · {{chapters:path}} · Ryu</small></span>
 </button>
 <button class="tile" type="button" data-group="training" data-go="training">
 <span class="face"><img src="img/ken.webp" width="200" height="200" alt="Ken"></span>
 <span class="tile-text"><span class="tile-top"><span class="k" aria-hidden="true">鍛</span><b>{{t:ui.the-training}}</b></span>
 <span class="tile-blurb">{{t:ui.weekly-plans-lab-drills-self-diagnosis}}</span>
-<small>{{t:ui.practice}} · {{t:ui.5-chapters}} · Ken</small></span>
+<small>{{t:ui.practice}} · {{chapters:training}} · Ken</small></span>
 </button>
 <button class="tile" type="button" data-group="archive" data-go="visual-map">
 <span class="face"><img src="img/akuma.webp" width="200" height="200" alt="Akuma"></span>
 <span class="tile-text"><span class="tile-top"><span class="k" aria-hidden="true">天</span><b>{{t:ui.the-archive}}</b></span>
 <span class="tile-blurb">{{t:ui.other-fighting-game-families-3d-fighters}}</span>
-<small>{{t:ui.reference}} · {{t:ui.6-chapters}} · Akuma</small></span>
+<small>{{t:ui.reference}} · {{chapters:archive}} · Akuma</small></span>
 </button>
 <button class="tile" type="button" data-group="roster" data-go="drive">
 <span class="face face-logo"><img src="img/sf6-emblem.webp" width="256" height="256" alt="Street Fighter 6"></span>
 <span class="tile-text"><span class="tile-top"><span class="k" aria-hidden="true">闘</span><b>Street Fighter 6</b></span>
 <span class="tile-blurb">{{t:ui.the-game-module-the-drive-system}}</span>
-<small>{{t:ui.game-module}} · {{t:ui.6-chapters}} · {{t:ui.32-fighters}}</small></span>
+<small>{{t:ui.game-module}} · {{chapters:roster}} · {{t:ui.32-fighters}}</small></span>
 </button>
     </div>
   </div>
@@ -66,6 +86,7 @@
 <p class="credit">{{t:ui.created-and-maintained-by-jackson}}</p>
 <p>{{t:ui.fighting-games-resource-hub-built-on}}</p>
 <p>{{t:ui.street-fighter-and-its-characters-are}}</p>
+<p class="offline-note small muted" id="offline-note" hidden>{{t:ui.offline-ready}}</p>
 </footer>
   </main>
 </div>

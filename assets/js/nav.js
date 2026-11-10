@@ -10,6 +10,7 @@ function closeMenu() {
 }
 
 // ---------- chapters ----------
+var onShow = {};   // chapter id -> function called every time that chapter is shown
 function show(id, scroll, keepHash) {
   if (ORDER.indexOf(id) === -1) return;
   current = id;
@@ -25,6 +26,7 @@ function show(id, scroll, keepHash) {
   if (id === 'roster' && !keepHash) { roster.open = null; renderRoster(); }
   if (id === 'punish') renderPunish();   // loads the two fighters it needs the first time it is shown
   if (id === 'matchup') renderMatchup();
+  if (onShow[id]) onShow[id]();
   closeMenu();
   if (scroll) reader.scrollIntoView({ behavior: behavior, block: 'start' });
 }
@@ -44,6 +46,9 @@ function setLang(l, persist) {
   });
   document.querySelectorAll('[data-i18n-ph]').forEach(function (i) {
     i.setAttribute('placeholder', tr(i.getAttribute('data-i18n-ph')));
+  });
+  document.querySelectorAll('[data-i18n-text]').forEach(function (i) {
+    i.textContent = tr(i.getAttribute('data-i18n-text'));
   });
   document.querySelectorAll('[data-i18n-aria]').forEach(function (i) {
     i.setAttribute('aria-label', tr(i.getAttribute('data-i18n-aria')));
