@@ -9,6 +9,14 @@
       "numbered": true
     },
     {
+      "id": "advanced",
+      "kanji": "極",
+      "face": "<span class=\"face face-num face-kanji\" aria-hidden=\"true\">極</span>",
+      "plainLabel": false,
+      "small": "{{t:ui.go-deeper}}",
+      "numbered": true
+    },
+    {
       "id": "training",
       "kanji": "鍛",
       "face": "<span class=\"face\"><img src=\"img/ken.webp\" width=\"200\" height=\"200\" alt=\"Ken\"></span>",
@@ -65,6 +73,18 @@
     {
       "id": "progression",
       "group": "path"
+    },
+    {
+      "id": "adv-oki",
+      "group": "advanced"
+    },
+    {
+      "id": "adv-pressure",
+      "group": "advanced"
+    },
+    {
+      "id": "adv-decisions",
+      "group": "advanced"
     },
     {
       "id": "training",

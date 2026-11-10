@@ -1,0 +1,76 @@
+
+<h2>Okizeme em Frames</h2>
+
+<p class="scope-note"><span class="scope-badge">Universal</span><span>O método vale para qualquer jogo em que o tempo para levantar é fixo. A calculadora usa o frame data de Street Fighter 6 deste hub.</span></p>
+
+<p>O capítulo de Mecânicas explica <a href="#offense-pt">o que é um meaty</a> e por que ele importa. Este capítulo é o passo seguinte: descobrir, para o seu personagem e para cada knockdown dele, quais botões acertam meaty, quanto esperar antes de apertar e com quanta vantagem você fica.</p>
+
+<h3 id="adv-kd-pt">Lendo a Vantagem do Knockdown</h3>
+
+<p>O frame data mostra os knockdowns como "KD +40" ou "HKD +39". O número funciona como vantagem de frames: você pode agir 40 frames antes do oponente. Conte o seu primeiro frame livre como frame 1; o primeiro frame dele de pé é o frame 41.</p>
+<p>O HKD (hard knockdown) não permite back rise, então você sabe exatamente onde ele vai levantar. Depois de um knockdown normal ele pode dar back rise, que, como explica <a href="#knockdown-pt">Knockdown e Okizeme</a>, leva o mesmo tempo mas muda a distância.</p>
+<p>Alguns golpes têm mais de um número, como "KD +23*38" (hits diferentes do mesmo golpe) ou "KD +46(52)" (uma variação). A calculadora mostra cada valor separado; a tabela completa de frame data no guia do personagem diz qual vale em cada caso.</p>
+
+<h3 id="adv-meaty-math-pt">A Fórmula do Meaty</h3>
+
+<div class="deep-dive">
+    <h4>Quatro números decidem um meaty</h4>
+    <p>A vantagem do knockdown <strong>N</strong>, os frames que você gasta se movendo antes de apertar o botão <strong>D</strong> (um dash, andar), e o startup <strong>S</strong> e os frames ativos <strong>A</strong> do golpe.</p>
+    <ul>
+        <li>Apertado no frame p, um golpe fica ativo do frame p + S − 1 até o frame p + S + A − 2.</li>
+        <li>Para ser meaty, essa janela precisa incluir o frame N + 1, o primeiro frame em que o oponente está de pé.</li>
+        <li>O último momento para apertar é o frame N + 2 − S. Se nessa hora você ainda estiver se movendo (D grande demais), o golpe é lento demais para esse setup.</li>
+        <li>Acertar no frame ativo k em vez do primeiro melhora os números do golpe no block e no hit em k − 1.</li>
+    </ul>
+</div>
+
+<div class="card">
+    <h4>Exemplo: o throw para frente do Akuma</h4>
+    <p>O Goshoha (throw para frente do Akuma) é KD +28, e o dash para frente dele leva 19 frames, então depois do dash você está livre no frame 20. O Crouch MK (8 frames de startup, 3 ativos) apertado na hora fica ativo nos frames 27 a 29, e o oponente levanta no frame 29. Ele acerta no terceiro frame ativo: o −6 no block vira −4, e o 0 no hit vira +2. Não precisa esperar: throw, dash e aperta.</p>
+    <p class="small muted">Essa é a conta. Se o Crouch MK ainda alcança depois do dash, só o training mode vai dizer.</p>
+</div>
+
+<p>O mesmo método mostra quando um setup é desconfortável. O Crouch HK do Ryu é KD +40. Depois de um dash para frente sobram 21 frames, então um Crouch MK meaty exige esperar 12 frames depois que o dash termina. Esperar 12 frames no olho não sai igual toda vez, e é por isso que os jogadores preenchem esse tempo com algo de duração fixa.</p>
+
+<h3 id="adv-frame-kill-pt">Frame Kill: Preenchendo os Frames que Sobram</h3>
+
+<p>Em vez de esperar, gaste os frames que sobram com algo que sempre leva o mesmo tempo, para o meaty cair no mesmo frame toda vez:</p>
+<ul>
+    <li><strong>Andar para frente.</strong> A calculadora deixa você somar frames andando. É o mais fácil de ajustar e o mais difícil de repetir com exatidão.</li>
+    <li><strong>Um segundo dash</strong>, quando os números permitem.</li>
+    <li><strong>Um normal no vazio</strong> de duração conhecida (startup + ativos + recovery), apertado de propósito fora do alcance.</li>
+    <li><strong>Um projétil</strong> soltado enquanto ele está no chão, que ainda cobre o wakeup dele pela frente.</li>
+</ul>
+<p>Seja o que for, some a duração aos frames gastos e confira se o meaty continua caindo onde a calculadora diz.</p>
+
+<div class="widget-slot" data-widget="adv-oki"></div>
+
+<h3 id="adv-oki-limits-pt">O Que os Números Não Conferem</h3>
+
+<ul>
+    <li><strong>Distância.</strong> A calculadora sabe de tempo, não de distância. Um meaty no tempo perfeito ainda pode errar porque o dash te levou longe demais ou porque o knockdown deixou o oponente longe.</li>
+    <li><strong>Back rise.</strong> Depois de um knockdown normal ele pode dar back rise: mesmo tempo, mais distância. Tenha uma versão do setup para os dois casos.</li>
+    <li><strong>Reversals invencíveis</strong> vencem qualquer meaty. Contra um personagem com reversal invencível rápido, o meaty é uma aposta; <a href="#adv-decisions">Decisões em Números</a> mostra como calcular o preço dela.</li>
+    <li><strong>Casos especiais.</strong> Nos golpes de vários hits a calculadora usa o primeiro grupo de frames ativos, e deixa de fora as versões seguradas, carregadas, de postura, de continuação e aéreas, e os projéteis.</li>
+</ul>
+<p>Teste cada setup antes de usar em partida: grave o dummy apertando um normal de 4 frames no wakeup em um slot e um reversal em outro, ligue o frame meter e confira se o seu meaty acerta no frame esperado.</p>
+
+<h3 id="adv-safe-jump-math-pt">Safe Jump em Números</h3>
+
+<p>Um safe jump é um pulo meaty no tempo certo para você cair e conseguir defender antes de o reversal invencível do oponente ficar ativo. Em frames, duas coisas precisam ser verdade:</p>
+<ul>
+    <li>O golpe aéreo está ativo no frame N + 1, quando ele levanta.</li>
+    <li>Você já está no chão e pode defender antes do frame N + R, quando um reversal de startup R, apertado no primeiro frame dele, fica ativo.</li>
+</ul>
+<p>Para conferir isso é preciso saber a duração do pulo do seu personagem (pré-pulo, tempo no ar e pouso), que ainda não está no frame data do hub. Ela está sendo adicionada primeiro para Ryu e Akuma. Até lá, pegue os safe jumps dos recursos da comunidade do seu personagem e confirme com o frame meter.</p>
+
+<div class="card success">
+    <h4>Monte Um Setup Esta Semana</h4>
+    <ol>
+        <li>Escolha o knockdown que você mais consegue (throw para frente, rasteira, o fim do seu combo principal).</li>
+        <li>Na calculadora, ache um botão que acerte meaty sem esperar, ou acrescente um frame kill até achar.</li>
+        <li>Teste no training mode contra um jab gravado e um reversal gravado, com o frame meter ligado.</li>
+        <li>Monte uma versão para o back rise.</li>
+        <li>Use em dez partidas e anote na ficha de revisão o que o oponente fez contra ele.</li>
+    </ol>
+</div>

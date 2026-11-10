@@ -11,6 +11,7 @@ function closeMenu() {
 
 // ---------- chapters ----------
 var onShow = {};   // chapter id -> function called every time that chapter is shown
+var onLang = [];   // functions called after every language switch
 function show(id, scroll, keepHash) {
   if (ORDER.indexOf(id) === -1) return;
   current = id;
@@ -55,6 +56,7 @@ function setLang(l, persist) {
   });
   if (mTitle) mTitle.textContent = tr('chapter.' + current);
   placeWidgets();
+  onLang.forEach(function (f) { try { f(); } catch (e) {} });
   if (persist) LS.set('fgc-lang', lang);
   renderChart();
   if (dg.el) drawGauge();

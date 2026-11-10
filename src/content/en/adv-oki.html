@@ -1,0 +1,76 @@
+
+<h2>Okizeme in Frames</h2>
+
+<p class="scope-note"><span class="scope-badge">Universal</span><span>The method works in any game where wakeup timing is fixed. The calculator uses the Street Fighter 6 frame data in this hub.</span></p>
+
+<p>The Mechanics chapter explains <a href="#offense">what a meaty is</a> and why it matters. This chapter is the next step: working out, for your character and each of your knockdowns, which buttons can hit meaty, how long to wait before pressing them and how much advantage you end up with.</p>
+
+<h3 id="adv-kd">Reading Knockdown Advantage</h3>
+
+<p>Frame data lists knockdowns as "KD +40" or "HKD +39". The number works like frame advantage: you can act 40 frames before your opponent. Count your first free frame as frame 1; their first frame awake is frame 41.</p>
+<p>HKD (hard knockdown) doesn't allow back rise, so you know exactly where they'll stand up. After a normal knockdown they can back rise, which, as <a href="#knockdown">Knockdown &amp; Okizeme</a> explains, takes the same time but changes the distance.</p>
+<p>Some entries carry more than one number, such as "KD +23*38" (different hits of the same move) or "KD +46(52)" (a variant). The calculator lists each value separately; the full frame data table in the character guide tells you which one applies.</p>
+
+<h3 id="adv-meaty-math">The Meaty Formula</h3>
+
+<div class="deep-dive">
+    <h4>Four numbers decide a meaty</h4>
+    <p>The knockdown advantage <strong>N</strong>, the frames you spend moving before you press the button <strong>D</strong> (a dash, walking), and the move's startup <strong>S</strong> and active frames <strong>A</strong>.</p>
+    <ul>
+        <li>Pressed on frame p, a move is active from frame p + S − 1 to frame p + S + A − 2.</li>
+        <li>To hit meaty, that window must include frame N + 1, the first frame your opponent is awake.</li>
+        <li>The latest you can press is frame N + 2 − S. If you're still moving at that point (D is too big), the move is too slow for this setup.</li>
+        <li>Hitting on active frame k instead of the first one improves the move's on-block and on-hit numbers by k − 1.</li>
+    </ul>
+</div>
+
+<div class="card">
+    <h4>Worked example: Akuma's forward throw</h4>
+    <p>Goshoha (Akuma's forward throw) is KD +28, and his forward dash takes 19 frames, so after the dash you're free on frame 20. Crouch MK (8 frames of startup, 3 active) pressed right away is active on frames 27 to 29, and the opponent wakes up on frame 29. It hits on its third active frame: −6 on block becomes −4, and 0 on hit becomes +2. No waiting needed: throw, dash, press.</p>
+    <p class="small muted">That's the calculation. Whether Crouch MK still reaches after the dash is something only training mode can tell you.</p>
+</div>
+
+<p>The same method shows when a setup is awkward. Ryu's Crouch HK is KD +40. After a forward dash he has 21 frames left, so a meaty Crouch MK means waiting 12 frames after the dash ends. Waiting 12 frames by feel won't be the same every time, which is why players fill that time with something of a fixed length.</p>
+
+<h3 id="adv-frame-kill">Frame Kill: Filling the Extra Frames</h3>
+
+<p>Instead of waiting, spend the extra frames on something that always takes the same time, so the meaty lands on the same frame every time:</p>
+<ul>
+    <li><strong>Walking forward.</strong> The calculator lets you add walking frames. It's the easiest to adjust and the hardest to repeat exactly.</li>
+    <li><strong>A second dash</strong>, when the numbers allow it.</li>
+    <li><strong>A whiffed normal</strong> with a known total length (startup + active + recovery), pressed out of range on purpose.</li>
+    <li><strong>A projectile</strong> thrown while they're down, which also covers their wakeup from the front.</li>
+</ul>
+<p>Whatever you use, add its length to the frames you spend and check that the meaty still lands where the calculator says.</p>
+
+<div class="widget-slot" data-widget="adv-oki"></div>
+
+<h3 id="adv-oki-limits">What the Numbers Don't Check</h3>
+
+<ul>
+    <li><strong>Range.</strong> The calculator knows time, not distance. A perfectly timed meaty can still whiff because the dash took you too far or the knockdown left them too far away.</li>
+    <li><strong>Back rise.</strong> After a normal knockdown they can back rise: same timing, more distance. Have a version of your setup for both.</li>
+    <li><strong>Invincible reversals</strong> beat every meaty. Against a character with a fast invincible reversal, a meaty is a bet; <a href="#adv-decisions">Decisions by the Numbers</a> shows how to price it.</li>
+    <li><strong>Special cases.</strong> For multi-hit moves the calculator uses the first group of active frames, and it leaves out held, charged, stance, follow-up and air versions, and projectiles.</li>
+</ul>
+<p>Test every setup before you use it in a match: record the dummy pressing a 4-frame normal on wakeup in one slot and a reversal in another, turn on the frame meter and check that your meaty hits on the frame you expected.</p>
+
+<h3 id="adv-safe-jump-math">Safe Jumps in Numbers</h3>
+
+<p>A safe jump is a meaty jump-in timed so that you land and can block before the opponent's invincible reversal becomes active. In frames, two things must be true:</p>
+<ul>
+    <li>The jumping attack is active on frame N + 1, when they wake up.</li>
+    <li>You're back on the ground and able to block before frame N + R, when a reversal with startup R, pressed on their first frame, becomes active.</li>
+</ul>
+<p>Checking this needs your character's jump length (pre-jump, time in the air and landing), which isn't in this hub's frame data yet. It's being added for Ryu and Akuma first. Until then, take safe jumps from your character's community resources and confirm them with the frame meter.</p>
+
+<div class="card success">
+    <h4>Build One Setup This Week</h4>
+    <ol>
+        <li>Pick the knockdown you get most often (forward throw, sweep, the end of your main combo).</li>
+        <li>In the calculator, find a button that hits meaty without waiting, or add a frame kill until one does.</li>
+        <li>Test it in training mode against a recorded jab and a recorded reversal, with the frame meter on.</li>
+        <li>Make a back rise version.</li>
+        <li>Use it in ten matches and write in your replay review what the opponent did against it.</li>
+    </ol>
+</div>

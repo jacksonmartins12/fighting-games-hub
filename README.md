@@ -7,6 +7,7 @@ A bilingual (English / Português do Brasil) study guide for fighting games, wit
 ## O que tem aqui
 
 - **O Caminho:** fundamentos universais — espaço, frames, defesa, estratégia, psicologia e progressão.
+- **Avançado:** okizeme, pressão e decisões em frames e números, com uma calculadora de okizeme, um verificador de sequências e uma calculadora de risco.
 - **O Treino:** planos de treino, um plano de 30 dias, exercícios de lab, autodiagnóstico, erros comuns, um tracker de progresso e uma ficha de revisão de replay.
 - **O Arquivo:** famílias de jogos de luta (2D, anime, tag, 3D), jogos 3D, mapa visual, estudo de caso, glossário com 150+ termos e recursos.
 - **Street Fighter 6:** Sistema Drive, ranked, matchups, guias dos 32 personagens, uma calculadora de punish, flashcards de punish e uma ferramenta de matchup (link direto: `#matchup/ryu/ken`).

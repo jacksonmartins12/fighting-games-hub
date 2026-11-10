@@ -3668,5 +3668,272 @@
     "pt": "Observe qual braço avança: braço esquerdo, escape com 1; braço direito, com 2; os dois braços, com 1+2."
    }
   }
+ ],
+ "adv-oki": [
+  {
+   "q": {
+    "en": "A knockdown is KD +30 and your first free frame is frame 1. On which frame can the opponent first act?",
+    "pt": "Um knockdown é KD +30 e o seu primeiro frame livre é o frame 1. Em que frame o oponente pode agir pela primeira vez?"
+   },
+   "options": [
+    {
+     "en": "Frame 29",
+     "pt": "Frame 29"
+    },
+    {
+     "en": "Frame 30",
+     "pt": "Frame 30"
+    },
+    {
+     "en": "Frame 31",
+     "pt": "Frame 31"
+    },
+    {
+     "en": "Frame 60",
+     "pt": "Frame 60"
+    }
+   ],
+   "answer": 2,
+   "why": {
+    "en": "KD +30 means you act 30 frames earlier: their first frame awake is 30 + 1.",
+    "pt": "KD +30 quer dizer que você age 30 frames antes: o primeiro frame dele de pé é 30 + 1."
+   }
+  },
+  {
+   "q": {
+    "en": "A move listed as −4 on block hits meaty on its 3rd active frame. How much is it on block now?",
+    "pt": "Um golpe que é −4 no block acerta meaty no 3º frame ativo. Quanto ele fica no block agora?"
+   },
+   "options": [
+    {
+     "en": "−6",
+     "pt": "−6"
+    },
+    {
+     "en": "−4",
+     "pt": "−4"
+    },
+    {
+     "en": "−2",
+     "pt": "−2"
+    },
+    {
+     "en": "+3",
+     "pt": "+3"
+    }
+   ],
+   "answer": 2,
+   "why": {
+    "en": "Hitting on active frame k adds k − 1: −4 + 2 = −2.",
+    "pt": "Acertar no frame ativo k soma k − 1: −4 + 2 = −2."
+   }
+  },
+  {
+   "q": {
+    "en": "What does a perfectly timed meaty still lose to?",
+    "pt": "Para o que um meaty no tempo perfeito ainda perde?"
+   },
+   "options": [
+    {
+     "en": "A throw tech",
+     "pt": "Um tech de throw"
+    },
+    {
+     "en": "A mashed jab",
+     "pt": "Um jab apertado na loucura"
+    },
+    {
+     "en": "An invincible reversal",
+     "pt": "Um reversal invencível"
+    },
+    {
+     "en": "Blocking",
+     "pt": "Defender"
+    }
+   ],
+   "answer": 2,
+   "why": {
+    "en": "An invincible reversal goes through the meaty. That's what safe jumps and baits are for.",
+    "pt": "Um reversal invencível atravessa o meaty. É para isso que existem safe jumps e baits."
+   }
+  }
+ ],
+ "adv-pressure": [
+  {
+   "q": {
+    "en": "You're +1 after a blocked move and your next move has 4 frames of startup. What is the gap?",
+    "pt": "Você está +1 depois de um golpe defendido e o próximo golpe tem 4 frames de startup. Qual é o buraco?"
+   },
+   "options": [
+    {
+     "en": "0: a true block string",
+     "pt": "0: sequência verdadeira"
+    },
+    {
+     "en": "3: a frame trap against a 4-frame jab",
+     "pt": "3: um frame trap contra um jab de 4 frames"
+    },
+    {
+     "en": "4: a trade",
+     "pt": "4: uma troca"
+    },
+    {
+     "en": "5: a hole",
+     "pt": "5: um buraco"
+    }
+   ],
+   "answer": 1,
+   "why": {
+    "en": "Gap = startup − advantage = 4 − 1 = 3, smaller than a 4-frame jab.",
+    "pt": "Buraco = startup − vantagem = 4 − 1 = 3, menor que um jab de 4 frames."
+   }
+  },
+  {
+   "q": {
+    "en": "Your opponent is in Burnout. What happens to your frame traps?",
+    "pt": "O oponente está em Burnout. O que acontece com os seus frame traps?"
+   },
+   "options": [
+    {
+     "en": "Nothing changes",
+     "pt": "Nada muda"
+    },
+    {
+     "en": "Every gap grows by 4 frames",
+     "pt": "Todo buraco aumenta 4 frames"
+    },
+    {
+     "en": "Every gap shrinks by 4 frames",
+     "pt": "Todo buraco diminui 4 frames"
+    },
+    {
+     "en": "They stop working",
+     "pt": "Eles param de funcionar"
+    }
+   ],
+   "answer": 2,
+   "why": {
+    "en": "In Burnout every blocked hit adds 4 frames of blockstun, so your gaps shrink by 4.",
+    "pt": "Em Burnout cada golpe defendido soma 4 frames de blockstun, então os seus buracos diminuem 4."
+   }
+  },
+  {
+   "q": {
+    "en": "Delay tech loses to which two options?",
+    "pt": "O delay tech perde para quais duas opções?"
+   },
+   "options": [
+    {
+     "en": "Throws and meaties",
+     "pt": "Throws e meaties"
+    },
+    {
+     "en": "Frame traps and shimmies",
+     "pt": "Frame traps e shimmies"
+    },
+    {
+     "en": "Blocking and baits",
+     "pt": "Defender e baits"
+    },
+    {
+     "en": "Safe jumps and throws",
+     "pt": "Safe jumps e throws"
+    }
+   ],
+   "answer": 1,
+   "why": {
+    "en": "A frame trap hits your late throw attempt, and a shimmy makes it whiff in front of them.",
+    "pt": "Um frame trap acerta o seu throw atrasado, e um shimmy faz ele errar na frente do oponente."
+   }
+  }
+ ],
+ "adv-decisions": [
+  {
+   "q": {
+    "en": "An option gains 2,000 when it works and costs 1,000 when it fails. How often must it work to pay off?",
+    "pt": "Uma opção ganha 2.000 quando funciona e custa 1.000 quando falha. Com que frequência ela precisa funcionar para compensar?"
+   },
+   "options": [
+    {
+     "en": "More than about 33%",
+     "pt": "Mais de uns 33%"
+    },
+    {
+     "en": "More than 50%",
+     "pt": "Mais de 50%"
+    },
+    {
+     "en": "More than about 67%",
+     "pt": "Mais de uns 67%"
+    },
+    {
+     "en": "Every time",
+     "pt": "Todas as vezes"
+    }
+   ],
+   "answer": 0,
+   "why": {
+    "en": "L / (G + L) = 1,000 / 3,000, about 33%.",
+    "pt": "L / (G + L) = 1.000 / 3.000, uns 33%."
+   }
+  },
+  {
+   "q": {
+    "en": "Throwing is your best option against a player who blocks a lot. Why not throw every time?",
+    "pt": "O throw é a sua melhor opção contra um jogador que defende muito. Por que não dar throw toda vez?"
+   },
+   "options": [
+    {
+     "en": "Throws do too little damage",
+     "pt": "Throw dá pouco dano"
+    },
+    {
+     "en": "They'll start teching, and the throw becomes your worst option",
+     "pt": "Ele vai começar a dar tech, e o throw vira a sua pior opção"
+    },
+    {
+     "en": "The game punishes repeated throws",
+     "pt": "O jogo pune throws repetidos"
+    },
+    {
+     "en": "Throws can't be used on wakeup",
+     "pt": "Não dá para usar throw no wakeup"
+    }
+   ],
+   "answer": 1,
+   "why": {
+    "en": "Mixups are about frequencies: always choosing one option lets the opponent pick the single answer that beats it.",
+    "pt": "Mixup é questão de frequência: escolher sempre a mesma opção deixa o oponente achar a resposta única que vence ela."
+   }
+  },
+  {
+   "q": {
+    "en": "What's the most reliable way to estimate an opponent's wakeup habits?",
+    "pt": "Qual é o jeito mais confiável de estimar os hábitos de wakeup de um oponente?"
+   },
+   "options": [
+    {
+     "en": "Remember the last thing they did",
+     "pt": "Lembrar da última coisa que ele fez"
+    },
+    {
+     "en": "Assume everyone mashes",
+     "pt": "Supor que todo mundo aperta botão"
+    },
+    {
+     "en": "Count what they did over about ten knockdowns",
+     "pt": "Contar o que ele fez em uns dez knockdowns"
+    },
+    {
+     "en": "Look at their rank",
+     "pt": "Olhar o rank dele"
+    }
+   ],
+   "answer": 2,
+   "why": {
+    "en": "A count over several knockdowns gives rough percentages, much better than one memorable moment.",
+    "pt": "Uma contagem em vários knockdowns dá porcentagens aproximadas, muito melhores que um momento marcante."
+   }
+  }
  ]
 };
