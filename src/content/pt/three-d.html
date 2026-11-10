@@ -1,0 +1,144 @@
+
+            <h2>Jogos de Luta 3D: Lutando em Profundidade</h2>
+
+            <p class="scope-note"><span class="scope-badge">Famílias</span><span>Um panorama de como funcionam outros jogos de luta, escrito para quem joga SF6. Os sistemas dos outros jogos também mudam com patches e continuações, então confirme os detalhes no training mode ou na wiki de cada jogo.</span></p>
+
+            <p>Tekken, Virtua Fighter, Soulcalibur e Dead or Alive compartilham tudo o que está em O Caminho: espaçamento, vantagem de frames, leituras, condicionamento, treino. O que muda é o formato da luta. Os personagens podem dar um passo para dentro ou para fora da tela, o principal mixup é médio contra baixo em vez de baixo contra overhead, e pular raramente é uma forma de se aproximar. Este capítulo explica essas diferenças do ponto de vista de quem joga SF6.</p>
+
+            <div class="toc">
+                <h3>Estrutura</h3>
+                <ul>
+                    <li><a href="#td-axis-pt">O Terceiro Eixo</a></li>
+                    <li><a href="#td-heights-pt">Alto, Médio e Baixo</a></li>
+                    <li><a href="#td-frames-pt">Frame Data no Estilo 3D</a></li>
+                    <li><a href="#td-ground-pt">O Chão, as Paredes e o Ring Out</a></li>
+                    <li><a href="#td-throws-pt">Throws e Escapes de Throw</a></li>
+                    <li><a href="#td-games-pt">As Principais Séries 3D</a></li>
+                    <li><a href="#td-from-sf6-pt">Vindo do SF6</a></li>
+                </ul>
+            </div>
+
+            <h3 id="td-axis-pt">O Terceiro Eixo: Sidesteps e Golpes que Rastreiam</h3>
+
+            <p>No SF6 existem duas formas de evitar um ataque: defender ou estar fora do alcance. Num jogo 3D existe uma terceira: dar um passo para o lado. Os golpes são <strong>lineares</strong>, que vão reto para frente, ou <strong>rastreiam</strong>, cobrindo algum movimento lateral. Um sidestep faz um golpe linear errar, e um golpe que erra pode ser punido como no SF6.</p>
+
+            <div class="deep-dive">
+                <h4>Como o Movimento Vira Defesa</h4>
+                <ul>
+                    <li><strong>Sidestep:</strong> um passo curto para dentro ou para fora da tela. No Tekken dá para continuar andando de lado (sidewalk). No Virtua Fighter isso se chama evade, feito com um toque para cima ou para baixo na hora certa; alguns ataques não podem ser evitados assim.</li>
+                    <li><strong>Golpes que rastreiam</strong> acertam você mesmo que você dê o passo, normalmente para um lado só. Golpes que rastreiam para os dois lados são chamados de homing no Tekken. Eles são a resposta para o oponente que dá sidestep demais, do mesmo jeito que o throw é a resposta para quem só defende.</li>
+                    <li><strong>O Soulcalibur</strong> vai além com o 8-way run: você corre livremente em oito direções, e os ataques horizontais (A) pegam o movimento lateral, enquanto os verticais (B) são lineares e perdem para ele.</li>
+                    <li><strong>O backdash</strong> também importa. Jogadores de Tekken cancelam o backdash para recuar rápido (o Korean backdash), que faz o papel que andar para trás faz no footsies do SF6.</li>
+                </ul>
+                <p>Isso cria um novo triângulo de adivinhação em cima do de sempre: o golpe linear vence quem defende ou ataca, o sidestep vence o golpe linear, o golpe que rastreia vence o sidestep.</p>
+            </div>
+
+            <h3 id="td-heights-pt">Alto, Médio e Baixo: A Defesa Invertida</h3>
+
+            <p>No SF6 você defende agachado por padrão, porque golpes baixos são comuns e overheads são lentos. Nos jogos 3D o padrão se inverte. A maioria dos ataques é <strong>médio</strong>, que acerta quem está agachado, então o padrão é defender em pé. A adivinhação do defensor é médio contra baixo:</p>
+
+            <div class="table-wrap">
+            <table>
+                <tr><th>Altura do ataque</th><th>Defendido</th><th>O que acontece se você agachar</th></tr>
+                <tr><td><strong>Alto</strong></td><td>Em pé</td><td>Ele passa por cima da sua cabeça, e você pode punir</td></tr>
+                <tr><td><strong>Médio</strong></td><td>Em pé</td><td>Ele acerta você</td></tr>
+                <tr><td><strong>Baixo</strong></td><td>Agachado</td><td>Você defende, muitas vezes com um punish grande depois</td></tr>
+            </table>
+            </div>
+
+            <p>Os golpes baixos normalmente dão pouco dano e costumam ser muito inseguros quando defendidos, então o atacante mistura alguns baixos num ataque feito principalmente de médios. O defensor fica em pé, observa as animações dos golpes baixos e agacha na reação ou na leitura. Abaixar de um golpe alto e punir com um golpe feito levantando é uma habilidade central do 3D sem equivalente direto no SF6. O Tekken acrescenta o <strong>low parry</strong> (baixo-frente na hora certa), que rebate alguns golpes baixos por completo.</p>
+
+            <h3 id="td-frames-pt">Frame Data no Estilo 3D</h3>
+
+            <p>A lógica da vantagem de frames é exatamente a mesma do SF6: se você defende um golpe e se recupera frames suficientes antes do atacante, você pune. As convenções mudam. O Tekken escreve o startup como "i10" para um golpe de 10 frames, e a comunidade pensa em faixas:</p>
+
+            <div class="table-wrap">
+            <table>
+                <tr><th>No block</th><th>O que significa no Tekken</th></tr>
+                <tr><td><strong>0 a −9</strong></td><td>Seguro. O defensor não pune e normalmente precisa respeitar o próximo golpe do atacante</td></tr>
+                <tr><td><strong>−10</strong></td><td>Punível com jab: pouco dano, mas a vez passa para o outro lado</td></tr>
+                <tr><td><strong>−12 a −14</strong></td><td>Punishes mais fortes, muitas vezes com knockdown</td></tr>
+                <tr><td><strong>−15 ou pior</strong></td><td>Punível com launcher: a maioria dos personagens consegue um combo completo</td></tr>
+            </table>
+            </div>
+
+            <p>Mais duas diferenças. Golpes baixos defendidos deixam você agachado, então você os pune com golpes que saem de uma posição agachada, que são diferentes dos seus punishes em pé. E como cada personagem de Tekken tem uma lista de golpes enorme, os jogadores aprendem os principais golpes inseguros de cada oponente em vez de tudo o que ele pode fazer. O método é o mesmo do Exercício de Lab 6: grave o golpe, defenda e teste suas opções mais rápidas.</p>
+
+            <h3 id="td-ground-pt">O Chão, as Paredes e o Ring Out</h3>
+
+            <div class="deep-dive">
+                <h4>Levando Knockdown no 3D</h4>
+                <p>No SF6, um knockdown leva a um wakeup bem definido: você levanta no lugar ou dá back rise. Nos jogos 3D, quem está no chão tem muito mais opções: ficar deitado, rolar para trás ou para o lado, dar tech roll no momento em que cai (ukemi, P+K+G no Virtua Fighter) ou atacar enquanto levanta. O atacante, por sua vez, tem golpes que só acertam o oponente no chão. O okizeme vira um jogo de adivinhação sobre o que o defensor faz no chão, e não só sobre acertar o tempo de um meaty.</p>
+            </div>
+
+            <div class="deep-dive">
+                <h4>Paredes e Ring Out</h4>
+                <ul>
+                    <li><strong>As paredes</strong> fazem o papel do canto. Jogar o oponente contra a parede o prende e permite combos grandes; no Tekken 8, algumas paredes e pisos quebram e abrem novas rotas de combo.</li>
+                    <li><strong>O ring out</strong> existe no Soulcalibur e em alguns cenários do Virtua Fighter: empurre o oponente para fora da borda e você vence o round na hora, não importa o que digam as barras de vida. A posição vira condição de vitória, não só uma vantagem.</li>
+                </ul>
+            </div>
+
+            <h3 id="td-throws-pt">Throws e Escapes de Throw</h3>
+
+            <p>O throw continua vencendo quem defende, mas o escape funciona de um jeito diferente em cada série. Em vez de um botão universal de tech, o defensor muitas vezes precisa identificar o throw:</p>
+            <ul>
+                <li><strong>Tekken:</strong> observe qual braço avança. Um throw puxado pelo braço esquerdo se escapa com 1, pelo braço direito com 2, e com os dois braços juntos com 1+2. Muitos throws de comando têm escapes próprios.</li>
+                <li><strong>Virtua Fighter:</strong> aperte P+G na mesma direção do comando do throw do oponente, então o escape é uma adivinhação entre direções.</li>
+                <li><strong>Dead or Alive:</strong> construído em torno de um triângulo. Golpes vencem throws, throws vencem holds, e holds (contra-ataques que agarram golpes) vencem golpes. Pegar o oponente no meio da opção que perde dá dano extra.</li>
+            </ul>
+
+            <h3 id="td-games-pt">As Principais Séries 3D em Resumo</h3>
+
+            <div class="concept-grid">
+                <div class="concept-item">
+                    <h4>Tekken 8</h4>
+                    <p>Quatro membros, um botão para cada (1, 2, 3, 4). O sistema Heat pode ser ativado uma vez por round, por 10 segundos, com o Heat Burst (2+3) ou acertando o golpe Heat Engager do personagem. O dano deixa uma parte recuperável da barra de vida, que você ganha de volta acertando ataques, mesmo defendidos. A Rage Art fica disponível abaixo de 25% de vida. Listas de golpes enormes, sidesteps e combos na parede.</p>
+                </div>
+                <div class="concept-item">
+                    <h4>Virtua Fighter 5</h4>
+                    <p>Soco, Chute e um botão próprio de Defesa. Evades, escapes de throw por direção, ring out em alguns cenários. Conhecido por situações de frames muito precisas e por um foco forte nos fundamentos: a série recompensa saber exatamente de quem é a vez.</p>
+                </div>
+                <div class="concept-item">
+                    <h4>Soulcalibur VI</h4>
+                    <p>Armas, 8-way run, ataques horizontais (A) e verticais (B), Guard Impact como parry no tempo certo, Reversal Edge como jogo de adivinhação em câmera lenta, Soul Charge como fortalecimento temporário e Critical Edge como super. O ring out torna a posição no cenário decisiva.</p>
+                </div>
+                <div class="concept-item">
+                    <h4>Dead or Alive 6</h4>
+                    <p>Golpes rápidos e um sistema de holds: o defensor pode agarrar um golpe que está vindo com o hold certo. O triângulo de golpe, throw e hold é o centro de toda interação, com 150% de dano para quem pega o oponente na opção que perde.</p>
+                </div>
+            </div>
+
+            <h3 id="td-from-sf6-pt">Vindo do SF6: O Que Serve e O Que Não Serve</h3>
+
+            <div class="comparison-table">
+                <div class="comparison-item comparison-do">
+                    <h4>Leve com você</h4>
+                    <p>Espaçamento e whiff punish</p>
+                    <p>Vantagem de frames e punish de golpes inseguros</p>
+                    <p>Condicionamento, leituras e camadas de yomi</p>
+                    <p>O método do lab, a revisão de replays e os hábitos de treino</p>
+                    <p>Tudo o que está no capítulo de Psicologia</p>
+                </div>
+                <div class="comparison-item comparison-dont">
+                    <h4>Deixe para trás</h4>
+                    <p>Defender agachado por padrão: fique em pé e observe os golpes baixos</p>
+                    <p>Jump-in: os pulos são lentos e raramente servem para se aproximar</p>
+                    <p>Anti-air como habilidade central: importa muito menos</p>
+                    <p>Comandos de movimento para tudo: a maioria dos golpes é direção mais botão</p>
+                    <p>Pensar só em duas dimensões: sempre se pergunte se um golpe é linear</p>
+                </div>
+            </div>
+
+            <div class="card success">
+                <h4>Um Plano para a Primeira Semana num Jogo 3D</h4>
+                <ul style="margin-top: 10px;">
+                    <li>Aprenda de 10 a 15 golpes principais do seu personagem, não a lista inteira: um jab rápido, um médio rápido, um baixo, um launcher, um golpe que rastreia e seus principais punishes.</li>
+                    <li>Treine defender em pé e agachar só nos golpes baixos que você reconhece.</li>
+                    <li>Aprenda seus punishes para −10, −12 e −15, em pé e agachado.</li>
+                    <li>Passe uma sessão só dando sidestep num golpe linear gravado e punindo o erro.</li>
+                    <li>Consulte a wiki da comunidade do seu jogo antes de confiar no que você lembra do SF6.</li>
+                </ul>
+            </div>
+
+

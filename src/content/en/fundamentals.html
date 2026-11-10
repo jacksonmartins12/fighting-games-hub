@@ -1,0 +1,303 @@
+
+            <h2>Universal Fundamentals</h2>
+
+            <p class="scope-note"><span class="scope-badge">Universal</span><span>The ideas in this chapter apply to any fighting game. Examples come from SF6, and sections marked <span class="sf6-tag">SF6</span> only apply to it. For how other games differ, see <a href="#families">Fighting Game Families</a>.</span></p>
+
+            <div class="toc">
+                <h3>Structure</h3>
+                <ul>
+                    <li><a href="#attack-block-throw">Attack, Block, Throw</a></li>
+                    <li><a href="#hitboxes">Hitboxes & Hurtboxes</a></li>
+                    <li><a href="#frames">Frames & Timing</a></li>
+                    <li><a href="#block-mechanics">Block Mechanics</a></li>
+                    <li><a href="#defense-habits">Defensive Habits</a></li>
+                    <li><a href="#special-moves">Special Moves</a></li>
+                </ul>
+            </div>
+
+            <h3 id="attack-block-throw">Attack, Block, Throw: The Essential Triangle</h3>
+
+            <div class="card success">
+                <h4>Fundamental #1: Everything revolves around these 3 actions</h4>
+                <p>Almost every interaction in a fighting game is built on top of these 3 base actions. Movement, spacing and resources change when and where you use them, but the core is always attack, block, throw.</p>
+            </div>
+
+            <div class="comparison-table">
+                <div class="comparison-item comparison-do">
+                    <h4>ATTACK</h4>
+                    <p><strong>Action:</strong> You press an attack button</p>
+                    <p><strong>Result:</strong> Your hitbox is created. If it touches opponent's hurtbox = damage</p>
+                    <p><strong>Counter-play:</strong> Block</p>
+                    <p><strong>Frame Data:</strong> Startup (when it activates), Active (how long it's active), Recovery (when you can do something else)</p>
+                </div>
+
+                <div class="comparison-item comparison-do">
+                    <h4>BLOCK</h4>
+                    <p><strong>Action:</strong> You hold back (standing block) or down-back (crouching block)</p>
+                    <p><strong>Result:</strong> You enter blockstun and take little or no damage. In SF6, blocking takes no health at all as long as you still have Drive Gauge: not from normals, specials or even Super Arts. Instead, blocked specials and supers drain your Drive Gauge. Only in Burnout do specials and Super Arts chip your health (25% of their damage), and that chip can KO you. Every blocked hit also drains some of your Drive Gauge</p>
+                    <p><strong>Counter-play:</strong> Throw</p>
+                    <p><strong>Risk:</strong> You're not advancing. You're giving up position</p>
+                </div>
+            </div>
+
+            <div class="card warning">
+                <h4>THROW</h4>
+                <p><strong>Action:</strong> You input a specific command when close</p>
+                <p><strong>Result:</strong> You grab the opponent. Cannot be blocked!</p>
+                <p><strong>Counter-play:</strong> Attack (a fast strike hits the thrower during throw startup), throw tech (press throw at the same time), or get out of range (backstep, jump)</p>
+                <p><strong>Timing:</strong> Throw is fast (5 frames of startup in SF6) but has very short range, so opponent must already be in throw range</p>
+            </div>
+
+            <div class="deep-dive">
+                <h4>Analysis: Competitive RPS (Rock-Paper-Scissors)</h4>
+                <p>Rock-Paper-Scissors is a perfect simplification of the combat loop:</p>
+                <ul>
+                    <li><strong>Attack beats Throw:</strong> A fast strike hits the opponent out of their throw startup, and a player in hitstun or blockstun can't be thrown at all</li>
+                    <li><strong>Throw beats Block:</strong> Throw ignores block entirely. You're completely defenseless.</li>
+                    <li><strong>Block beats Attack:</strong> Block negates/reduces damage. Opponent's attack is stopped.</li>
+                </ul>
+                <p style="margin-top: 15px;"><strong>But fighting games add layers that transform this into infinite depth:</strong></p>
+                <ul>
+                    <li><strong>Timing:</strong> When you do the attack/throw matters intensely. Throw from point-blank range? Success. Throw from 1 character-length away? Whiff.</li>
+                    <li><strong>Positioning:</strong> Where you are on stage changes everything. Corner = limited escape options = throw is stronger. Center = more options = throw is weaker.</li>
+                    <li><strong>Frame Data:</strong> After block, who acts first? If you're +3 on block, you attack before they can throw. Dynamic shifts moment to moment.</li>
+                    <li><strong>Meter:</strong> Super meter and other resources change the matchup. Enemy has meter? Your offense becomes riskier (they can answer with a reversal: an invincible OD move or Super Art or, in SF6, a Drive Reversal while blocking). You have meter? You have more offensive options (in SF6, Drive Rush to extend pressure).</li>
+                    <li><strong>Hitbox/Hurtbox Interactions:</strong> Your attack hitbox might whiff on crouch even though it would hit standing. Same three tools, completely different outcomes based on positioning.</li>
+                    <li><strong>Reads & Prediction:</strong> You're not just playing RPS. You're reading opponent's tendencies and adjusting. "He always blocks after poke" changes how you play.</li>
+                </ul>
+                <p style="margin-top: 15px;">This transforms pure RPS guessing into a deeply strategic game of information, positioning, timing, and reads.</p>
+            </div>
+
+            <h3>Mastering the Triangle: Practical Applications</h3>
+
+            <div class="deep-dive">
+                <h4>When to Attack (Not When You Want To)</h4>
+                <p>Attacking is dominant when:</p>
+                <ul>
+                    <li>Opponent is in blockstun from your previous attack (frame advantage)</li>
+                    <li>Opponent just finished an unsafe move (recovery frames)</li>
+                    <li>You're in combo sequence (hitstun)</li>
+                    <li>Opponent is cornered (limited escape options)</li>
+                </ul>
+                <p><strong>Why These Situations:</strong> In these moments the opponent either can't act at all (hitstun, blockstun, recovery) or has very few options (cornered). Attack dominates.</p>
+                <p><strong>Mistake:</strong> Attacking when opponent is in neutral stance with nothing working in your favor = a guess. They can throw back OR block your attack OR attack themselves. You're gambling.</p>
+            </div>
+
+            <div class="deep-dive">
+                <h4>When to Block (Active Defense)</h4>
+                <p>Blocking is optimal when:</p>
+                <ul>
+                    <li>Opponent is clearly committing to attack (you can see startup)</li>
+                    <li>You're in a disadvantageous position (cornered, low health, low meter)</li>
+                    <li>You're reading opponent's pattern (you expect attack here)</li>
+                    <li>You need to preserve health to win round</li>
+                </ul>
+                <p><strong>Cost of Blocking:</strong> You may take chip damage (in SF6, only while in Burnout, from specials and Super Arts), you lose Drive Gauge (in SF6), you enter blockstun (opponent keeps their turn), you get pushed backward (lose position). This is expensive.</p>
+                <p><strong>When Block is Wrong:</strong> Blocking every attack mindlessly = you get thrown multiple times. Blocking when you could have attacked = you give up your turn.</p>
+            </div>
+
+            <div class="deep-dive">
+                <h4>When to Throw (Close-Range Offense)</h4>
+                <p>Throw is optimal when:</p>
+                <ul>
+                    <li>Opponent is blocking (throw beats block)</li>
+                    <li>You're at close range (throw range is very short, roughly point-blank)</li>
+                    <li>Opponent is in recovery from whiffed move</li>
+                    <li>You've conditioned opponent to block via repeated pokes</li>
+                </ul>
+                <p><strong>Setup Throw (Throw Setup):</strong> The classic pattern: poke repeatedly (3-4 times) with c.LP or similar. Opponent learns to block to avoid getting hit. Then walk in and throw. They're conditioned to block = they're not ready to tech the throw.</p>
+                <p><strong>When Throw Fails:</strong> Out of range (whiffs), opponent jumps (becomes airborne, can't be thrown), opponent attacks (a faster strike interrupts your throw startup), opponent techs it.</p>
+            </div>
+
+            <h3 id="hitboxes">Hitboxes & Hurtboxes: The Geometry of Combat</h3>
+
+            <div class="card">
+                <h4>Precise Definitions:</h4>
+                <ul>
+                    <li><strong>Hitbox:</strong> The invisible box your attack occupies. If it crosses opponent's hurtbox = connects</li>
+                    <li><strong>Hurtbox:</strong> The invisible box that represents your vulnerable body</li>
+                    <li><strong>Whiff:</strong> An attack where your hitbox never touches opponent's hurtbox</li>
+                </ul>
+            </div>
+
+            <p><strong>Critical Point:</strong> Hitboxes and hurtboxes constantly change as the animation progresses. An attack has different hitbox sizes and positions at different frames.</p>
+
+            <div class="example-box">Example: c.MK (Crouch Medium Kick) - Ryu, SF6: 8f startup, 3 active, 19 recovery
+Frame 1-7: Startup - hitbox doesn't exist yet, you're vulnerable
+Frame 8-10: Active - hitbox created, can connect
+Frame 11-29: Recovery - hitbox disappeared, you're repositioning
+
+Connect on frame 8-10 = damage
+Opponent blocks on frame 8-10 = blockstun
+Opponent not there = whiff</div>
+
+            <h3 id="frames">Frames & Timing: The Invisible Mathematics</h3><div class="widget-slot" data-widget="framebar"></div>
+
+            <p>One frame is 1/60 of a second (SF6 runs at 60fps, so 1 frame ≈ 16.7 ms). Many important decisions happen in differences of 1-5 frames.</p>
+
+            <div class="table-wrap"><table>
+                <tr>
+                    <th>Frame Data</th>
+                    <th>Definition</th>
+                    <th>Example</th>
+                    <th>Importance</th>
+                </tr>
+                <tr>
+                    <td><strong>Startup</strong></td>
+                    <td>Frames until the move can connect (in SF6 data, this count includes the first active frame)</td>
+                    <td>A typical c.LP has 4 frames startup</td>
+                    <td>Fast = hard to react. Slow = can be interrupted</td>
+                </tr>
+                <tr>
+                    <td><strong>Active</strong></td>
+                    <td>Frames where hitbox is active</td>
+                    <td>A sweep might have 3 active frames</td>
+                    <td>Long = easier to connect. Short = must be exact</td>
+                </tr>
+                <tr>
+                    <td><strong>Recovery</strong></td>
+                    <td>Frames after the active frames end, before you can act again</td>
+                    <td>Ryu's c.MK has 19 recovery frames</td>
+                    <td>Short = safe. Long = can be punished</td>
+                </tr>
+                <tr>
+                    <td><strong>Frame Advantage</strong></td>
+                    <td>Who acts first after the move is blocked (or hits)</td>
+                    <td>Most SF6 light attacks are between −2 and +1 on block; Ryu's c.MK is −6</td>
+                    <td>Positive = you control. Negative = opponent's turn</td>
+                </tr>
+                <tr>
+                    <td><strong>Hit Stun</strong></td>
+                    <td>How many frames opponent is stunned on hit</td>
+                    <td>A medium attack might cause around 15-20 frames of hitstun</td>
+                    <td>Long = more time for combos. Short = gap to escape</td>
+                </tr>
+            </table></div>
+
+            <div class="card critical">
+                <h4>Frame Perfect Execution</h4>
+                <p>Some moves must be done on one specific frame to connect. This is called "frame perfect" (a 1-frame window) and is extremely difficult.</p>
+                <p><strong>Example:</strong> In a link combo, you may have only 1-3 frames to do the next attack. A 2-frame window is 2/60 of a second = 0.033 seconds.</p>
+                <p>This is why consistent practice is essential - your body needs to develop muscle memory.</p>
+            </div>
+
+            <h3 id="block-mechanics">Block Mechanics: Active Defense (Not Passivity)</h3>
+
+            <p>Blocking is NOT "doing nothing"—it's an active, strategic action with significant costs. Every time you block, you're making a decision with consequences:</p>
+
+            <div class="deep-dive">
+                <h4>Block Stun: Loss of Initiative</h4>
+                <p>When you block an attack, you enter "block stun"—you're frozen for N frames, unable to act. During this time, your opponent has control.</p>
+                <p><strong>Example (simplified numbers):</strong> Opponent does c.MK (3 active frames, 12 recovery). You block it on its first active frame and are put in block stun for 16 frames. The attacker still needs 2 + 12 = 14 frames to finish the move, so they recover 2 frames before you can act. During your block stun you cannot interrupt.</p>
+                <p><strong>Frame Advantage:</strong> This is why "frame advantage on block" matters. If opponent has +2 on block, they act 2 frames before you can. They can attack again before you can throw. They control the exchange.</p>
+                <p><strong>Counter-Play:</strong> If opponent keeps attacking with -2 frame moves (negative on block), YOU can attack first. You regain initiative. This is your opening to throw, attack back, or do something else.</p>
+            </div>
+
+            <div class="deep-dive">
+                <h4>Guard Bar/Guard Meter: The Hidden Cost</h4>
+                <p>Many fighting games attach a gauge to blocking (Street Fighter Alpha's guard crush, Guilty Gear Strive's R.I.S.C. gauge). In SF6 this role is played by the Drive Gauge: every blocked hit drains it. When it is empty you enter Burnout: no Drive moves (Drive Parry, Drive Rush, Drive Impact, Drive Reversal, OD moves), 4 extra frames of blockstun, chip damage from special moves and Super Arts (which can KO you), and a Drive Impact that reaches you near the wall stuns you even if you block it.</p>
+                <p><strong>Strategic Implication:</strong> You cannot block FOREVER. You must attack sometimes, escape, or create space so your gauge can recover (it refills over time). This prevents "turtling" (pure defense) from being viable.</p>
+                <p><strong>High-Level Play:</strong> Experienced players manage their Drive Gauge actively. They block dangerous stuff, then take their turn back or reset the situation to let the gauge recover. Beginners block everything = Burnout = they lose.</p>
+            </div>
+
+            <div class="deep-dive">
+                <h4>High Block vs Low Block: Two Defense Types</h4>
+                <p>Most fighting games have two blocking stances:</p>
+                <ul>
+                    <li><strong>High Block (Standing Block):</strong> You hold back (←). Blocks high and mid attacks. Cannot block lows (sweeps, low pokes).</li>
+                    <li><strong>Low Block (Crouch Block):</strong> You hold back while crouching (↙). Blocks low and mid attacks. Cannot block overhead attacks.</li>
+                </ul>
+                <p><strong>The Mix:</strong> Opponent can attack with an overhead (beats your low block) or a low (sweep or low poke, beats your high block). This creates a high/low mixup. If you guess wrong, you get hit. This is why crouch-blocking forever doesn't work—opponent does overhead and hits you.</p>
+                <p><strong>Advanced Mechanic:</strong> On top of high/low, throws can't be blocked at all, and crossups (attacks that hit from the other side) change which direction counts as "back." This forces constant switching between defensive options.</p>
+            </div>
+
+            <div class="deep-dive">
+                <h4>Jumping: Complete Defenselessness</h4>
+                <p>In Street Fighter, when you're airborne (jumping), you CANNOT block (some other games, like Guilty Gear, have air blocking). You're vulnerable to any attack that hits airborne opponents, and you can't change your jump arc once you've left the ground.</p>
+                <p><strong>Why This Matters:</strong> Jumping is an escape option (get away from pressure), but it's VERY risky if opponent expects it. One anti-air move = you take a big hit and often a knockdown.</p>
+                <p><strong>Jump Situations:</strong></p>
+                <ul>
+                    <li><strong>Good Jumps:</strong> You jump when you read opponent won't anti-air (they're attacking, not defending)</li>
+                    <li><strong>Bad Jumps:</strong> You jump randomly. Opponent anti-airs and destroys you.</li>
+                </ul>
+                <p><strong>Read Dependency:</strong> Jumping is a pure read. You're betting that opponent is in a state where anti-air isn't coming. Get it wrong = massive punish.</p>
+            </div>
+
+            <div class="card critical">
+                <h4>The Block Psychology</h4>
+                <p>Beginners block because they're scared. Intermediate players block strategically. Advanced players block well, but they also know exactly when the opponent's turn ends and take it back with movement, a counterattack or (in SF6) Drive Parry or Drive Reversal. Blocking is expensive, so good players don't block longer than they need to.</p>
+            </div>
+
+            <h3 id="defense-habits">Defensive Habits: Block Low, Tech Throws, Read Crossups</h3>
+
+            <p>Most new players lose rounds on defense, not offense: they get knocked down, panic and press a button. The habits below come from gootecks' <em>Fighting Game Fundamentals</em>, adapted to SF6. None of them is flashy, and together they make you much harder to open up.</p>
+
+            <div class="card success">
+                <h4>Your default: crouch block</h4>
+                <p>When you don't know what's coming, hold down-back. Crouch blocking stops lows and mids, which is most of what your opponent can do. Only two things beat it:</p>
+                <ul>
+                    <li><strong>Throws</strong> (normal throws and command grabs), which you answer with a throw tech or by staying out of range.</li>
+                    <li><strong>Overheads</strong>, which must be blocked standing. Most overheads are slow (around 16 to 22 frames of startup, like Ryu's 20-frame Collarbone Breaker) and lead to little damage without meter, so you can learn to react to them from a crouch block.</li>
+                </ul>
+                <p>Make it a reflex to go back to down-back after every move you do. If you whiff a button and your opponent is late to punish, you'll still block their attack instead of eating it.</p>
+            </div>
+
+            <div class="deep-dive">
+                <h4>Waking up: block first, then decide</h4>
+                <p>The most common beginner wakeup is a mashed button or an uppercut. Against an opponent who expects it, that means a Counter Hit, or a blocked reversal and a full punish. Instead:</p>
+                <ol>
+                    <li>Wake up crouch blocking and watch what they do: a meaty, a throw, a shimmy, nothing.</li>
+                    <li>React to what blocking can't stop: tech the throw, stand up for the overhead.</li>
+                    <li>When their pressure ends (a minus move, a gap you've confirmed in the lab), take your turn back or walk out. Leave the corner as soon as you can.</li>
+                </ol>
+                <p>Your reversals (uppercut, OD move, Drive Reversal, Super Art) are still part of your defense. They just work much better after you've shown that you block, because then the opponent has to respect both.</p>
+            </div>
+
+            <div class="deep-dive">
+                <h4>Why your throw techs fail</h4>
+                <p>A throw tech means pressing throw (LP+LK) right as you're being grabbed, which cancels the throw. Beginners usually miss techs for one of four reasons:</p>
+                <div class="table-wrap"><table>
+                    <tr><th>Cause</th><th>What's happening</th><th>Fix</th></tr>
+                    <tr><td><strong>You didn't expect the throw</strong></td><td>You don't yet recognize the moments when throws happen, so you never try to tech.</td><td>Throw a lot yourself for a while: for five matches, try at least one throw per round. You'll start seeing the situations where throws come.</td></tr>
+                    <tr><td><strong>You reacted too late</strong></td><td>The window is tiny: community testing puts it at roughly 7 to 9 frames after the grab connects, about a seventh of a second, and online delay eats into it. Many techs aren't reactions at all: both players simply pressed throw at the same time.</td><td>Tech by prediction in throw situations (after a blocked light attack, on wakeup), not by reacting to the grab animation.</td></tr>
+                    <tr><td><strong>You didn't realize you were in range</strong></td><td>Every character's throw reaches a different distance, and command grabs reach further.</td><td>In training mode, measure the maximum throw range of the characters you meet most, standing and crouching, and compare it with yours.</td></tr>
+                    <tr><td><strong>Input error</strong></td><td>Two buttons at once is easy to miss under pressure.</td><td>In the control settings, assign LP+LK to a single button. A one-button throw is easier to hit, and tapping it twice gives you two chances.</td></tr>
+                </table></div>
+                <p>Remember the shimmy: a tech attempt that meets no throw comes out as a whiffed throw, and its recovery is punished as a Punish Counter. Teching is a read, not a free action.</p>
+            </div>
+
+            <div class="deep-dive">
+                <h4>Crossups: defending them and using them well</h4>
+                <p>To block a crossup, hold the direction away from where the attacker will land, which is the opposite of what you were holding before they jumped over you.</p>
+                <ul>
+                    <li><strong>Don't corner yourself for a crossup.</strong> Jumping over a cornered opponent puts you in the corner, and screen position is worth more than the surprise.</li>
+                    <li><strong>Condition first.</strong> After a few knockdowns where you attack from the front, the crossup is much more likely to land.</li>
+                    <li><strong>Respect reversals.</strong> An invincible reversal beats a crossup on wakeup; against those characters, prefer a safe jump or stay on the ground.</li>
+                    <li><strong>Use it to escape.</strong> When you're the one in the corner, a crossup jump-in that they have to block puts you on the other side.</li>
+                    <li><strong>The threat is often enough.</strong> Making them think a crossup is coming makes them hesitate, and that's when your other options work.</li>
+                </ul>
+            </div>
+
+            <div class="deep-dive">
+                <h4>Moving in neutral without giving up ground</h4>
+                <p>Backdashing and jumping back get you out of a moment of pressure, but they hand your opponent screen position, and every step you give up brings you closer to the corner. To move forward, small steps that let you block at any moment are safer than dashing or jumping. In SF6, walking forward also refills your Drive Gauge faster.</p>
+            </div>
+
+            <h3 id="special-moves">Special Moves: Beyond Normals</h3>
+
+            <p>While "Normal moves" (LP, MP, LK, etc) come out by simply pressing a button, Special moves require specific input on Classic controls (on SF6's Modern controls, the SP button plus a direction also does them):</p>
+
+            <div class="table-wrap"><table class="motion-table"><tr><th>Move</th><th>Arrows</th><th>Numpad</th><th>Classic</th></tr>
+<tr><td><strong>Fireball</strong> (Hadoken)</td><td class="arrows">↓ ↘ → + P</td><td class="inp">236P</td><td class="inp">QCF+P</td></tr>
+<tr><td><strong>Dragon Punch</strong> (Shoryuken)</td><td class="arrows">→ ↓ ↘ + P</td><td class="inp">623P</td><td class="inp">DP+P</td></tr>
+<tr><td><strong>Hurricane Kick</strong> (Tatsumaki)</td><td class="arrows">↓ ↙ ← + K</td><td class="inp">214K</td><td class="inp">QCB+K</td></tr></table></div>
+
+            <p>Special moves generally:</p>
+            <ul>
+                <li>Often have more startup than normals (more risky)</li>
+                <li>Have more damage than normals (greater reward)</li>
+                <li>Can often be cancelled into Super Arts (meter usage), and in SF6 most have an OD version (two buttons, costs 2 Drive bars)</li>
+                <li>Have unique properties (invincibility, knockdown, etc)</li>
+            </ul>
+        
+

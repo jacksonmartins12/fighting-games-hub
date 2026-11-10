@@ -1,0 +1,293 @@
+
+            <h2>O Sistema Drive: A Segunda Barra de Vida do SF6</h2>
+
+            <p class="scope-note module"><span class="scope-badge sf6">Módulo SF6</span><span>Conferido no Street Fighter 6 em outubro de 2026. Patches de balanceamento podem mudar números e sistemas; quando isso acontecer, os fundamentos de O Caminho continuam valendo.</span></p>
+
+            <div class="toc">
+                <h3>Estrutura</h3>
+                <ul>
+                    <li><a href="#drive-gauge-pt">A Barra</a></li>
+                    <li><a href="#drive-tools-pt">As Cinco Ferramentas de Drive</a></li>
+                    <li><a href="#drive-impact-pt">Drive Impact</a></li>
+                    <li><a href="#drive-parry-pt">Drive Parry e Perfect Parry</a></li>
+                    <li><a href="#drive-rush-pt">Drive Rush</a></li>
+                    <li><a href="#drive-reversal-pt">Drive Reversal e Golpes OD</a></li>
+                    <li><a href="#burnout-pt">Burnout</a></li>
+                    <li><a href="#drive-budget-pt">Administrando a Barra</a></li>
+                </ul>
+            </div>
+
+            <p>Todo Street Fighter tem um recurso que decide mais partidas do que o dano puro. No SF6 esse recurso é a <strong>Drive Gauge</strong>: as seis barras verdes embaixo da sua vida. Quase toda ferramenta do sistema depende dela, do parry aos especiais turbinados, e ficar sem ela te coloca em <strong>Burnout</strong>, um estado tão perigoso que muitas vezes decide o round sozinho. Um jeito útil de pensar nela é como uma segunda barra de vida: o oponente não te dá KO zerando a Drive Gauge, mas, com ela vazia, fica muito mais fácil ele te dar KO.</p>
+
+            <div class="card success">
+                <p>Se for lembrar de uma coisa só deste capítulo: <strong>quem tem mais Drive Gauge normalmente tem mais opções.</strong> Gastar não tem problema quando compra dano, um knockdown ou a sua vez de atacar. Gastar no desespero é o caminho mais curto para o Burnout.</p>
+            </div>
+
+            <h3 id="drive-gauge-pt">A Barra: Como Ela Enche e Esvazia</h3>
+
+            <p>Todo round começa com as <strong>6 barras</strong> cheias. Diferente da barra de Super Art (3 barras, que passa de um round para o outro), a Drive Gauge reseta a cada round.</p>
+
+            <div class="comparison-table">
+                <div class="comparison-item comparison-do">
+                    <h4>O que enche</h4>
+                    <ul>
+                        <li><strong>Tempo.</strong> Ela enche sozinha. Andar para frente enche bem mais rápido (cerca de 50% mais rápido do que ficar parado); andar para trás ou ficar parado enche mais ou menos na taxa base; no ar, ela enche mais devagar.</li>
+                        <li><strong>Seus ataques.</strong> Seus golpes geram barra tanto no hit quanto quando são defendidos.</li>
+                        <li><strong>Parries bem-sucedidos.</strong> Dar parry num golpe devolve 1 barra; num projétil, 0,5; numa Super Art ou num Drive Impact, 2 barras.</li>
+                        <li><strong>Dar tech no throw.</strong> Escapar de um throw te dá meia barra.</li>
+                    </ul>
+                </div>
+                <div class="comparison-item comparison-dont">
+                    <h4>O que esvazia</h4>
+                    <ul>
+                        <li><strong>Gastar</strong> em ferramentas de Drive e golpes OD.</li>
+                        <li><strong>Defender.</strong> Ataques defendidos, principalmente especiais e Super Arts, tiram da Drive Gauge, e não da vida. É por isso que o SF6 não tem chip damage enquanto você ainda tem barra.</li>
+                        <li><strong>Punish Counters e Drive Impacts</strong> que te acertam tiram barra.</li>
+                        <li><strong>Segurar o Drive Parry</strong> vai drenando a barra enquanto você segura.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <p>A regeneração também para por um instante depois que você gasta barra e enquanto você está defendendo, então quem gasta e logo depois vai para a defesa pode afundar surpreendentemente rápido. Mais um detalhe: se você der Drive Rush no meio de um combo, para de gerar barra pelo resto daquele combo.</p>
+
+            <h3 id="drive-tools-pt">As Cinco Ferramentas de Drive em Resumo</h3>
+
+            <div class="widget-slot" data-widget="drive-gauge"></div>
+
+            <div class="table-wrap"><table>
+                <tr>
+                    <th>Ferramenta</th>
+                    <th>Input (Classic)</th>
+                    <th>Custo</th>
+                    <th>O que faz</th>
+                    <th>Risco principal</th>
+                </tr>
+                <tr>
+                    <td><strong>Drive Impact</strong></td>
+                    <td>HP+HK</td>
+                    <td>1 barra</td>
+                    <td>Golpe lento com armadura que absorve dois hits; dá wall splat perto da parede</td>
+                    <td>Perde para o Drive Impact do próprio oponente, throws, pulos e golpes de vários hits</td>
+                </tr>
+                <tr>
+                    <td><strong>Drive Parry</strong></td>
+                    <td>MP+MK</td>
+                    <td>0,5 barra + dreno enquanto segura</td>
+                    <td>Para golpes e projéteis, altos e baixos, e devolve barra quando apara alguma coisa</td>
+                    <td>Perde para throw, que então causa 70% a mais de dano</td>
+                </tr>
+                <tr>
+                    <td><strong>Drive Rush</strong></td>
+                    <td>Do Parry: 66. De um normal cancelável: cancele em MP+MK e depois 66</td>
+                    <td>1 barra do Parry, 3 barras de um normal</td>
+                    <td>Dash rápido para frente; o próximo normal ganha +4 frames no hit e no block</td>
+                    <td>O dash em si é estado de Counter Hit; gastar 3 barras de uma vez te drena rápido</td>
+                </tr>
+                <tr>
+                    <td><strong>Drive Reversal</strong></td>
+                    <td>6+HP+HK enquanto defende (ou no wakeup)</td>
+                    <td>2 barras</td>
+                    <td>Contra-ataque invencível que empurra o oponente para longe</td>
+                    <td>−6 no block, dano baixo que não dá KO, caro</td>
+                </tr>
+                <tr>
+                    <td><strong>Golpes OD</strong></td>
+                    <td>Comando do especial + dois botões do mesmo tipo</td>
+                    <td>2 barras</td>
+                    <td>Versões mais fortes dos golpes especiais (hits extras, invencibilidade, frame data melhor)</td>
+                    <td>Fácil de usar demais; dois golpes OD custam um terço da sua barra</td>
+                </tr>
+            </table></div>
+
+            <h3 id="drive-impact-pt">Drive Impact: A Pergunta com Armadura</h3>
+
+            <div class="deep-dive">
+                <h4>Como funciona</h4>
+                <p>O Drive Impact tem <strong>26 frames de startup</strong>, o que é lento, mas tem <strong>armadura que absorve dois hits</strong>. Se o oponente aperta um normal em cima dele, o Drive Impact engole o golpe e acerta mesmo assim. Você ainda toma metade do dano absorvido como vida recuperável (cinza).</p>
+                <ul>
+                    <li><strong>No hit:</strong> cerca de 800 de dano, um knockdown, e o oponente perde uma barra da Drive Gauge.</li>
+                    <li><strong>Defendido no meio da tela:</strong> ele empurra o oponente para trás e você fica só −3, então é relativamente seguro.</li>
+                    <li><strong>Perto da parede:</strong> causa <strong>wall splat</strong>, no hit e no block, o que te dá um combo de graça na sequência.</li>
+                    <li><strong>Contra um oponente em Burnout perto da parede:</strong> mesmo que ele defenda, ele fica <strong>em stun</strong> e você ganha um combo de graça. Esse é o principal jeito de o Burnout virar round perdido.</li>
+                    <li><strong>Como Punish Counter ou depois de absorver um hit:</strong> o oponente entra em crumple, o que também te dá um combo completo.</li>
+                </ul>
+                <p>Combos que começam com Drive Impact levam uma penalidade de 20% no dano, então o valor dele está mais no knockdown, no wall splat e na barra que ele drena do que no dano puro.</p>
+            </div>
+
+            <div class="deep-dive">
+                <h4>Como ganhar dele</h4>
+                <ul>
+                    <li><strong>Seu próprio Drive Impact.</strong> A melhor resposta por reação: ele passa com armadura pelo do oponente e o Drive Impact que sai depois ganha como Punish Counter. Treine isso no training mode até virar automático.</li>
+                    <li><strong>Dê throw</strong> se estiver perto o bastante.</li>
+                    <li><strong>Pule por cima</strong> se você vir cedo.</li>
+                    <li><strong>Golpes com 3 hits ou mais, ou golpes que quebram armadura:</strong> a maioria das Super Arts, o Drive Reversal e alguns golpes OD ganham da armadura.</li>
+                    <li><strong>Dê parry.</strong> Um parry bem-sucedido devolve 2 barras.</li>
+                </ul>
+                <p>A maioria dos iniciantes perde para o Drive Impact porque continua apertando botão em cima dele. A solução não é uma técnica, é um hábito: quando você vir o flash escuro e aquela preparação enorme, responda com o seu próprio Drive Impact.</p>
+            </div>
+
+            <div class="card warning">
+                <p><strong>Não solte Drive Impact de longe à toa.</strong> Jogadores experientes reagem com o próprio Drive Impact toda vez. Ele funciona melhor quando o oponente está apertando botões que não dá para cancelar, quando está encurralado e, acima de tudo, quando está em Burnout.</p>
+            </div>
+
+            <h3 id="drive-parry-pt">Drive Parry e Perfect Parry</h3>
+
+            <div class="deep-dive">
+                <h4>Drive Parry</h4>
+                <p>Segurar MP+MK te coloca numa postura de parry que para <strong>todo golpe e projétil, alto ou baixo</strong>, desde o primeiro frame. A janela de parry é de 12 frames e continua enquanto você segura. Um parry bem-sucedido te deixa mais ou menos na mesma situação de ter defendido aquele golpe, mas em vez de perder barra, você ganha barra de volta: 1 barra por golpe, 0,5 por projétil, 2 por Super Art ou Drive Impact.</p>
+                <p><strong>O problema: parry perde para throw.</strong> Se você leva throw enquanto está no parry (ou durante a recuperação de um parry que não pegou nada), é um <strong>throw de Punish Counter</strong>: 70% de dano extra, um hard knockdown sem back rise, não dá para dar tech, e você perde mais uma barra de Drive. Quem vê você dando muito parry simplesmente anda até você e dá throw. Dar parry numa fireball previsível de longe é seguro; dar parry colado no oponente é chute.</p>
+            </div>
+
+            <div class="deep-dive">
+                <h4>Perfect Parry</h4>
+                <p>Se o seu parry pega um ataque nos <strong>primeiros 2 frames</strong>, e, contra golpes, você também está segurando a direção certa de defesa (baixo-trás contra golpes baixos, trás contra médios e overheads), você consegue um <strong>Perfect Parry</strong>. A tela congela, o oponente não consegue cancelar o golpe e você se recupera quase na hora, o que normalmente significa uma punição garantida.</p>
+                <p>Dois limites impedem que ele fique forte demais:</p>
+                <ul>
+                    <li>Uma punição depois de um Perfect Parry causa só <strong>50% do dano</strong>.</li>
+                    <li>Contra projéteis, o Perfect Parry tem uma recuperação fixa, então normalmente não dá punição de longe.</li>
+                </ul>
+                <p>O Perfect Parry funciona melhor como leitura: você espera um ataque específico (uma fireball, um poke previsível, um jump-in) e dá parry bem na hora que ele chega. Não construa sua defesa em cima dele.</p>
+            </div>
+
+            <div class="deep-dive">
+                <h4>Quando o parry compensa, e quando não</h4>
+                <p>Estas regras práticas foram adaptadas dos conselhos do gootecks sobre golpes de parry e conferidas com o funcionamento do Drive Parry no SF6:</p>
+                <ul>
+                    <li><strong>Projéteis do meio da tela ou de mais longe:</strong> bom uso. Você vê o projétil vindo, o parry devolve a meia barra que custou e você pode avançar com Drive Rush saindo dele.</li>
+                    <li><strong>Jump-ins:</strong> um parry normal deixa você mais ou menos onde a defesa deixaria. Compensa quando você busca o Perfect Parry ou quer a barra de volta.</li>
+                    <li><strong>Golpes fracos:</strong> pouca recompensa. Raramente sobra um punish, e o oponente pode misturar um throw.</li>
+                    <li><strong>No wakeup, de perto:</strong> arriscado. Um throw meaty vence o parry e vira throw em Punish Counter.</li>
+                    <li><strong>Entre os golpes de uma sequência:</strong> só quando você sabe que existe um gap e o que vem depois; um golpe atrasado ou um throw pega você.</li>
+                </ul>
+                <p>Dica: dá para colocar o Drive Parry (MP+MK) num botão só nas configurações de controle, o que facilita apertar na hora certa.</p>
+            </div>
+
+            <h3 id="drive-rush-pt">Drive Rush: O Motor do Ataque no SF6</h3>
+
+            <div class="deep-dive">
+                <h4>Dois jeitos de dar Drive Rush</h4>
+                <ul>
+                    <li><strong>Do Parry (1 barra no total):</strong> aperte MP+MK e logo em seguida toque frente duas vezes. Um jeito rápido e relativamente barato de avançar pela tela no neutral.</li>
+                    <li><strong>Cancelado de um normal (3 barras):</strong> cancele um normal cancelável (por exemplo, 2MK) em Drive Rush. É assim que os jogadores estendem combos e mantêm a pressão depois de um ataque defendido.</li>
+                </ul>
+                <p>A vantagem principal: <strong>o primeiro normal que você faz saindo de um Drive Rush ganha +4 frames no hit e no block</strong>. Um golpe que normalmente fica −2 no block vira +2, então você continua com a vez. Um golpe que normalmente não combina pode combinar depois de um Drive Rush.</p>
+            </div>
+
+            <div class="deep-dive">
+                <h4>Os custos que você não vê</h4>
+                <ul>
+                    <li><strong>Barra:</strong> dois cancels de Drive Rush custam as 6 barras inteiras. Quem cancela em Drive Rush toda vez que o golpe é defendido costuma estar em Burnout lá pelo meio do round.</li>
+                    <li><strong>Estado de Counter Hit:</strong> o dash inteiro conta como estado de Counter Hit. Se você toma um golpe ou um throw durante ele, toma dano extra, e um throw durante o Drive Rush não dá para dar tech.</li>
+                    <li><strong>Damage scaling:</strong> dar Drive Rush no meio de um combo aplica uma penalidade extra de 15% no dano do resto do combo (uma vez por combo), e você para de gerar barra pelo resto daquele combo.</li>
+                </ul>
+            </div>
+
+            <h3 id="drive-reversal-pt">Drive Reversal e Golpes OD</h3>
+
+            <div class="deep-dive">
+                <h4>Drive Reversal (2 barras)</h4>
+                <p>Aperte frente + HP+HK enquanto está em blockstun (ou logo depois de um parry bem-sucedido) e seu personagem faz um contra-ataque invencível que joga o oponente para longe. Desde 2024, também dá para fazer no wakeup. É o jeito padrão de escapar da pressão para personagens sem um shoryuken invencível, ou quando você não pode se dar ao luxo de chutar.</p>
+                <ul>
+                    <li>Ele causa só 500 de dano, tudo como vida recuperável (cinza), então <strong>não dá KO</strong>.</li>
+                    <li>Ele fica <strong>−6 no block</strong>, então um Drive Reversal defendido ou baitado pode ser punido.</li>
+                    <li>Você <strong>não pode usar em Burnout</strong>, que é justamente quando você mais ia querer.</li>
+                </ul>
+                <p>Pense nele como "pagar para sair" da pressão: custa um terço da sua barra e te devolve ao neutral, não uma recompensa grande.</p>
+            </div>
+
+            <div class="deep-dive">
+                <h4>Golpes OD (2 barras)</h4>
+                <p>Fazer um golpe especial com dois botões do mesmo tipo (por exemplo 236 + LP+MP) te dá a versão <strong>Overdrive</strong> dele, o que os jogos anteriores chamavam de golpe EX. As versões OD normalmente ganham hits extras, invencibilidade, mais dano ou frame data melhor. Um shoryuken OD muitas vezes é o reversal invencível mais confiável do personagem; uma fireball OD muitas vezes ganha da fireball normal do oponente.</p>
+                <p>Como cada golpe OD custa 2 barras, três deles zeram a sua barra. Use quando eles garantem algo específico: um reversal de que você precisa, uma extensão de combo que leva a um knockdown, uma guerra de fireballs que você precisa vencer.</p>
+            </div>
+
+            <h3 id="burnout-pt">Burnout: Por Que Barra Vazia Perde Round</h3>
+
+            <p>Quando a sua Drive Gauge chega a zero, você entra em Burnout. Até a barra encher de novo, você está jogando com uma versão muito mais fraca do seu personagem.</p>
+
+            <div class="table-wrap"><table>
+                <tr>
+                    <th>Em Burnout</th>
+                    <th>O que significa na prática</th>
+                </tr>
+                <tr>
+                    <td><strong>Sem ferramentas de Drive</strong></td>
+                    <td>Nada de Drive Impact, Parry, Rush, Reversal ou golpes OD. Sua defesa se resume a defender, seus reversals normais e Super Arts.</td>
+                </tr>
+                <tr>
+                    <td><strong>+4 frames de blockstun</strong> em tudo que você defende</td>
+                    <td>Todo golpe do atacante fica 4 frames melhor contra você. Golpes em que era seguro apertar botão viram frame traps, e o oponente continua com a vez.</td>
+                </tr>
+                <tr>
+                    <td><strong>Chip damage</strong></td>
+                    <td>Especiais e Super Arts defendidos agora tiram 25% do dano deles da sua vida, e esse chip pode te dar KO. Normais continuam sem dar chip.</td>
+                </tr>
+                <tr>
+                    <td><strong>Stun por Drive Impact perto da parede</strong></td>
+                    <td>Um Drive Impact que te empurra contra a parede te deixa em stun mesmo que você defenda, dando ao oponente um combo de graça.</td>
+                </tr>
+            </table></div>
+
+            <div class="deep-dive">
+                <h4>Saindo dele</h4>
+                <p>O Burnout acaba quando a barra enche sozinha, o que leva algo entre 15 e 20 segundos. Andar para frente, acertar golpes e defender aceleram isso. Faça o que fizer, <strong>saia do canto</strong>: Burnout no meio da tela é desconfortável; Burnout no canto é onde acontecem os stuns de Drive Impact.</p>
+            </div>
+
+            <div class="deep-dive">
+                <h4>Quando o oponente está em Burnout</h4>
+                <ul>
+                    <li><strong>Empurre ele para o canto</strong> e procure um Drive Impact que dê wall splat e vire stun.</li>
+                    <li><strong>Pressione com especiais:</strong> todo especial defendido agora tira chip da vida dele.</li>
+                    <li><strong>Use sua vantagem de +4 de blockstun</strong> para manter a pressão com botões que normalmente são inseguros.</li>
+                    <li><strong>Não deixe ele respirar:</strong> quanto mais o round se arrasta, mais perto ele fica de ter a barra cheia de novo.</li>
+                </ul>
+            </div>
+
+            <h3 id="drive-budget-pt">Administrando a Barra: Um Orçamento Simples</h3>
+
+            <p>Os melhores jogadores não seguem uma regra fixa, mas iniciantes melhoram rápido com um orçamento simples:</p>
+
+            <div class="table-wrap"><table>
+                <tr>
+                    <th>Sua barra</th>
+                    <th>Como jogar</th>
+                </tr>
+                <tr>
+                    <td><strong>5–6 barras</strong></td>
+                    <td>Gaste à vontade no que ganha luta: combos com Drive Rush, golpes OD em combos, pressão com Drive Rush.</td>
+                </tr>
+                <tr>
+                    <td><strong>3–4 barras</strong></td>
+                    <td>Gaste em recompensas claras: um combo que termina em knockdown, um reversal OD de que você precisa. Evite cancels de Drive Rush de 3 barras no block.</td>
+                </tr>
+                <tr>
+                    <td><strong>1–2 barras</strong></td>
+                    <td>Zona de perigo. Guarde 2 barras para um Drive Reversal ou um reversal OD se estiver sendo pressionado. Ande para frente e acerte pokes para recuperar.</td>
+                </tr>
+                <tr>
+                    <td><strong>Burnout</strong></td>
+                    <td>Saia do canto, defenda com cuidado, procure seus próprios reversals e Super Arts, e evite defender especiais se der para pular ou se afastar.</td>
+                </tr>
+            </table></div>
+
+            <div class="card warning">
+                <h4>Erros comuns com o Drive</h4>
+                <ul>
+                    <li><strong>Apertar botão em cima do Drive Impact</strong> em vez de responder com o seu.</li>
+                    <li><strong>Cancelar em Drive Rush depois de todo poke defendido.</strong> Dois cancels e sua barra acabou.</li>
+                    <li><strong>Segurar parry de perto.</strong> O oponente anda até você e dá throw com 70% de dano extra.</li>
+                    <li><strong>Usar Drive Reversal com pouca barra.</strong> Ele te salva uma vez e te deixa a um passo do Burnout.</li>
+                    <li><strong>Ignorar a barra do oponente.</strong> Olhe a dele com a mesma atenção que a sua: um jogador com 1 barra não pode se dar ao luxo de dar parry ou Drive Reversal, e um jogador em Burnout é a sua melhor chance de abrir vantagem grande.</li>
+                </ul>
+            </div>
+
+            <div class="deep-dive">
+                <h4>Treino no lab: respondendo ao Drive Impact (10 minutos)</h4>
+                <ol>
+                    <li>No training mode, grave o dummy fazendo um Drive Impact da média distância, com alguns segundos andando antes.</li>
+                    <li>Configure a gravação para tocar em intervalos aleatórios, misturada com o dummy só andando, para você não conseguir prever.</li>
+                    <li>Toda vez que você vir o flash, responda com o seu próprio Drive Impact (HP+HK). Conte quantos acertos você tem em 20.</li>
+                    <li>Quando passar de 15 em 20, mude o dummy para fazer o Drive Impact logo depois de um dos seus pokes defendidos, a situação em que ele costuma pegar as pessoas.</li>
+                </ol>
+            </div>
+

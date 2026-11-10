@@ -1,0 +1,293 @@
+
+            <h2>The Drive System: SF6's Second Health Bar</h2>
+
+            <p class="scope-note module"><span class="scope-badge sf6">SF6 module</span><span>Checked against Street Fighter 6 in October 2026. Balance patches can change numbers and systems; when they do, the fundamentals in The Path still apply.</span></p>
+
+            <div class="toc">
+                <h3>Structure</h3>
+                <ul>
+                    <li><a href="#drive-gauge">The Gauge</a></li>
+                    <li><a href="#drive-tools">The Five Drive Tools</a></li>
+                    <li><a href="#drive-impact">Drive Impact</a></li>
+                    <li><a href="#drive-parry">Drive Parry and Perfect Parry</a></li>
+                    <li><a href="#drive-rush">Drive Rush</a></li>
+                    <li><a href="#drive-reversal">Drive Reversal and OD Moves</a></li>
+                    <li><a href="#burnout">Burnout</a></li>
+                    <li><a href="#drive-budget">Managing the Gauge</a></li>
+                </ul>
+            </div>
+
+            <p>Every Street Fighter has a resource that decides more matches than raw damage. In SF6 it is the <strong>Drive Gauge</strong>: the six green bars under your health. Almost every system tool runs on it, from your parry to your enhanced specials, and running out of it puts you in <strong>Burnout</strong>, a state so dangerous that it often decides the round by itself. A useful way to think about it is as a second health bar: your opponent can't KO you by draining it, but once it's empty, they can KO you much more easily.</p>
+
+            <div class="card success">
+                <p>If you only remember one thing from this chapter: <strong>the player with more Drive Gauge usually has more options.</strong> Spending it is fine when it buys damage, a knockdown or your turn. Spending it out of panic is how players walk into Burnout.</p>
+            </div>
+
+            <h3 id="drive-gauge">The Gauge: How It Fills and Empties</h3>
+
+            <p>Each round starts with all <strong>6 bars</strong> full. Unlike the Super Art gauge (3 bars, which carries over between rounds), the Drive Gauge resets every round.</p>
+
+            <div class="comparison-table">
+                <div class="comparison-item comparison-do">
+                    <h4>What refills it</h4>
+                    <ul>
+                        <li><strong>Time.</strong> It refills on its own. Walking forward refills it noticeably faster (roughly 50% faster than standing still); walking back or standing refill it at about the base rate; being in the air slows it down.</li>
+                        <li><strong>Your attacks.</strong> Your moves build gauge whether they hit or are blocked.</li>
+                        <li><strong>Successful parries.</strong> Parrying a strike refunds 1 bar, a projectile 0.5, and a Super Art or Drive Impact 2 bars.</li>
+                        <li><strong>Throw techs.</strong> Escaping a throw gives you half a bar.</li>
+                    </ul>
+                </div>
+                <div class="comparison-item comparison-dont">
+                    <h4>What drains it</h4>
+                    <ul>
+                        <li><strong>Spending it</strong> on Drive tools and OD moves.</li>
+                        <li><strong>Blocking.</strong> Blocked attacks, especially specials and Super Arts, drain your gauge instead of your health. That's why SF6 has no chip damage while you still have gauge.</li>
+                        <li><strong>Punish Counters and Drive Impacts</strong> that hit you take gauge away.</li>
+                        <li><strong>Holding Drive Parry</strong> keeps draining it for as long as you hold.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <p>Regeneration also pauses briefly after you spend gauge and while you're blocking, so a player who spends and then gets put on defense can sink surprisingly fast. One more detail: if you Drive Rush in the middle of a combo, you stop building gauge for the rest of that combo.</p>
+
+            <h3 id="drive-tools">The Five Drive Tools at a Glance</h3>
+
+            <div class="widget-slot" data-widget="drive-gauge"></div>
+
+            <div class="table-wrap"><table>
+                <tr>
+                    <th>Tool</th>
+                    <th>Input (Classic)</th>
+                    <th>Cost</th>
+                    <th>What it does</th>
+                    <th>Main risk</th>
+                </tr>
+                <tr>
+                    <td><strong>Drive Impact</strong></td>
+                    <td>HP+HK</td>
+                    <td>1 bar</td>
+                    <td>Slow armored strike that absorbs two hits; wall splats near the wall</td>
+                    <td>Countered by your opponent's own Drive Impact, throws, jumps and multi-hit moves</td>
+                </tr>
+                <tr>
+                    <td><strong>Drive Parry</strong></td>
+                    <td>MP+MK</td>
+                    <td>0.5 bar + drain while held</td>
+                    <td>Stops strikes and projectiles, high and low, and refunds gauge when it parries something</td>
+                    <td>Loses to throws, which then deal 70% more damage</td>
+                </tr>
+                <tr>
+                    <td><strong>Drive Rush</strong></td>
+                    <td>From Parry: 66. From a cancelable normal: cancel into MP+MK then 66</td>
+                    <td>1 bar from Parry, 3 bars from a normal</td>
+                    <td>Fast forward dash; the next normal gets +4 frames on hit and on block</td>
+                    <td>The dash itself is a counter-hit state; spending 3 bars at a time drains you fast</td>
+                </tr>
+                <tr>
+                    <td><strong>Drive Reversal</strong></td>
+                    <td>6+HP+HK while blocking (or on wakeup)</td>
+                    <td>2 bars</td>
+                    <td>Invincible counterattack that pushes the opponent away</td>
+                    <td>−6 on block, low damage that can't KO, expensive</td>
+                </tr>
+                <tr>
+                    <td><strong>OD moves</strong></td>
+                    <td>Special input + two buttons of the same type</td>
+                    <td>2 bars</td>
+                    <td>Stronger versions of special moves (extra hits, invincibility, better frame data)</td>
+                    <td>Easy to overuse; two OD moves cost a third of your gauge</td>
+                </tr>
+            </table></div>
+
+            <h3 id="drive-impact">Drive Impact: The Armored Question</h3>
+
+            <div class="deep-dive">
+                <h4>How it works</h4>
+                <p>Drive Impact has <strong>26 frames of startup</strong>, which is slow, but it has <strong>armor that absorbs two hits</strong>. If your opponent presses a normal button into it, the Drive Impact eats the hit and connects anyway. You still take half of the absorbed damage as recoverable (grey) health.</p>
+                <ul>
+                    <li><strong>On hit:</strong> roughly 800 damage, a knockdown, and the opponent loses a bar of Drive Gauge.</li>
+                    <li><strong>On block in the middle of the screen:</strong> it pushes them back and you're only −3, so it's relatively safe.</li>
+                    <li><strong>Near the wall:</strong> it causes a <strong>wall splat</strong>, on hit and on block, which gives you a free follow-up combo.</li>
+                    <li><strong>Against a Burnout opponent near the wall:</strong> even if they block it, they are <strong>stunned</strong> for a free combo. This is the main way Burnout turns into a lost round.</li>
+                    <li><strong>As a Punish Counter or after absorbing a hit:</strong> the opponent crumples, which also gives you a full combo.</li>
+                </ul>
+                <p>Combos that start from Drive Impact take a 20% damage penalty, so its value comes more from the knockdown, the wall splat and the gauge it drains than from raw damage.</p>
+            </div>
+
+            <div class="deep-dive">
+                <h4>How to beat it</h4>
+                <ul>
+                    <li><strong>Your own Drive Impact.</strong> The best reaction answer: it armors through theirs and the later Drive Impact wins as a Punish Counter. Practice this in training mode until it is automatic.</li>
+                    <li><strong>Throw it</strong> if you are close enough.</li>
+                    <li><strong>Jump over it</strong> if you see it early.</li>
+                    <li><strong>Moves with 3 or more hits, or armor-breaking moves:</strong> most Super Arts, Drive Reversal, and some OD moves beat the armor.</li>
+                    <li><strong>Parry it.</strong> A successful parry refunds 2 bars.</li>
+                </ul>
+                <p>Most beginners lose to Drive Impact because they keep pressing buttons into it. The fix is not a technique but a habit: when you see the dark flash and the big wind-up, answer with your own Drive Impact.</p>
+            </div>
+
+            <div class="card warning">
+                <p><strong>Don't throw Drive Impact out from far away for no reason.</strong> Experienced players react to it with their own Drive Impact every time. It works best when the opponent is pressing buttons they can't cancel, when they're cornered, and above all when they're in Burnout.</p>
+            </div>
+
+            <h3 id="drive-parry">Drive Parry and Perfect Parry</h3>
+
+            <div class="deep-dive">
+                <h4>Drive Parry</h4>
+                <p>Holding MP+MK puts you in a parry stance that stops <strong>every strike and projectile, high or low</strong>, from its first frame. The parry window is 12 frames and continues while you hold it. A successful parry puts you in about the same situation as blocking that move, but instead of losing gauge, you get gauge back: 1 bar for a strike, 0.5 for a projectile, 2 for a Super Art or Drive Impact.</p>
+                <p><strong>The catch: parry loses to throws.</strong> If you're thrown while parrying (or during the recovery of a parry that didn't catch anything), it's a <strong>Punish Counter throw</strong>: 70% extra damage, a hard knockdown you can't back rise from, it can't be teched, and you lose another Drive bar. Opponents who see you parrying a lot will simply walk up and throw you. Parrying a predictable fireball from a distance is safe; parrying at point-blank range is a guess.</p>
+            </div>
+
+            <div class="deep-dive">
+                <h4>Perfect Parry</h4>
+                <p>If your parry catches an attack in its <strong>first 2 frames</strong>, and, against strikes, you're also holding the correct block direction (down-back against lows, back against mids and overheads), you get a <strong>Perfect Parry</strong>. The screen freezes, the opponent can't cancel their move, and you recover almost instantly, which usually means a guaranteed punish.</p>
+                <p>Two limits keep it from being overwhelming:</p>
+                <ul>
+                    <li>A punish after a Perfect Parry deals only <strong>50% damage</strong>.</li>
+                    <li>Against projectiles, a Perfect Parry has a fixed recovery, so it usually doesn't give you a punish from far away.</li>
+                </ul>
+                <p>Perfect Parry works best as a read: you expect a specific attack (a fireball, a predictable poke, a jump-in) and parry it right as it arrives. Don't build your defense around it.</p>
+            </div>
+
+            <div class="deep-dive">
+                <h4>When parrying pays off, and when it doesn't</h4>
+                <p>These rules of thumb are adapted from gootecks' advice on parry-type moves and checked against how Drive Parry works in SF6:</p>
+                <ul>
+                    <li><strong>Projectiles from mid-screen or further:</strong> good. You see them coming, the parry refunds the half bar it cost, and you can Drive Rush forward out of it.</li>
+                    <li><strong>Jump-ins:</strong> a normal parry leaves you about where blocking would. It's worth it when you're going for a Perfect Parry or want the gauge back.</li>
+                    <li><strong>Light attacks:</strong> little reward. You rarely get a punish, and the opponent can mix in a throw.</li>
+                    <li><strong>On wakeup at close range:</strong> risky. A meaty throw beats it and becomes a Punish Counter throw.</li>
+                    <li><strong>Between the hits of a block string:</strong> only when you know there's a gap and what comes next; a delayed hit or a throw catches you.</li>
+                </ul>
+                <p>Tip: you can assign Drive Parry (MP+MK) to a single button in the control settings, which makes it easier to press on time.</p>
+            </div>
+
+            <h3 id="drive-rush">Drive Rush: The Engine of SF6 Offense</h3>
+
+            <div class="deep-dive">
+                <h4>Two ways to Drive Rush</h4>
+                <ul>
+                    <li><strong>From Parry (1 bar total):</strong> press MP+MK, then quickly double-tap forward. A fast, relatively cheap way to cover ground in neutral.</li>
+                    <li><strong>Canceled from a normal (3 bars):</strong> cancel a cancelable normal (for example, 2MK) into Drive Rush. This is how players extend combos and keep pressure after a blocked attack.</li>
+                </ul>
+                <p>The key benefit: <strong>the first normal you do out of a Drive Rush gets +4 frames on hit and on block</strong>. A move that is normally −2 on block becomes +2, so you keep your turn. A move that normally doesn't combo might combo after a Drive Rush.</p>
+            </div>
+
+            <div class="deep-dive">
+                <h4>The costs you don't see</h4>
+                <ul>
+                    <li><strong>Gauge:</strong> two Drive Rush cancels are a full 6 bars. Players who cancel into Drive Rush every time they're blocked are often in Burnout by the middle of the round.</li>
+                    <li><strong>Counter-hit state:</strong> the whole dash counts as a counter-hit state. If you get hit or thrown during it, you take extra damage, and a throw during Drive Rush can't be teched.</li>
+                    <li><strong>Combo scaling:</strong> Drive Rushing in the middle of a combo applies an extra 15% damage penalty to the rest of the combo (once per combo), and you stop building gauge for the rest of that combo.</li>
+                </ul>
+            </div>
+
+            <h3 id="drive-reversal">Drive Reversal and OD Moves</h3>
+
+            <div class="deep-dive">
+                <h4>Drive Reversal (2 bars)</h4>
+                <p>Press forward + HP+HK while you're in blockstun (or right after a successful parry), and your character does an invincible counterattack that knocks the opponent away. Since 2024, you can also do it on wakeup. It is the standard way to escape pressure for characters without an invincible uppercut, or when you can't afford a guess.</p>
+                <ul>
+                    <li>It deals only 500 damage, all of it recoverable (grey) health, so <strong>it can't KO</strong>.</li>
+                    <li>It is <strong>−6 on block</strong>, so a blocked or baited Drive Reversal can be punished.</li>
+                    <li>You <strong>can't use it in Burnout</strong>, which is exactly when you'd want it most.</li>
+                </ul>
+                <p>Think of it as "buying your way out" of pressure: it costs a third of your gauge and gets you back to neutral, not a big reward.</p>
+            </div>
+
+            <div class="deep-dive">
+                <h4>OD moves (2 bars)</h4>
+                <p>Doing a special move with two buttons of the same type (for example 236 + LP+MP) gives you its <strong>Overdrive</strong> version, which is what earlier games called an EX move. OD versions usually get extra hits, invincibility, more damage or better frame data. An OD uppercut is often a character's most reliable invincible reversal; an OD fireball often beats your opponent's normal fireball.</p>
+                <p>Because each OD move costs 2 bars, three of them empty your gauge. Use them when they win something specific: a reversal you need, a combo extension that leads to a knockdown, a fireball war you need to win.</p>
+            </div>
+
+            <h3 id="burnout">Burnout: Why an Empty Gauge Loses Rounds</h3>
+
+            <p>When your Drive Gauge hits zero, you enter Burnout. Until the gauge refills, you are playing a much weaker version of your character.</p>
+
+            <div class="table-wrap"><table>
+                <tr>
+                    <th>In Burnout</th>
+                    <th>What it means in practice</th>
+                </tr>
+                <tr>
+                    <td><strong>No Drive tools</strong></td>
+                    <td>No Drive Impact, Parry, Rush, Reversal or OD moves. Your defense is down to blocking, your normal reversals and Super Arts.</td>
+                </tr>
+                <tr>
+                    <td><strong>+4 frames of blockstun</strong> on everything you block</td>
+                    <td>Every attacker's move is 4 frames better against you. Moves that were safe to press against become frame traps, and your opponent keeps their turn.</td>
+                </tr>
+                <tr>
+                    <td><strong>Chip damage</strong></td>
+                    <td>Blocked specials and Super Arts now take 25% of their damage from your health, and that chip can KO you. Normals still don't chip.</td>
+                </tr>
+                <tr>
+                    <td><strong>Stun from Drive Impact near the wall</strong></td>
+                    <td>A Drive Impact that pushes you into the wall stuns you even if you block it, giving your opponent a free combo.</td>
+                </tr>
+            </table></div>
+
+            <div class="deep-dive">
+                <h4>Getting out</h4>
+                <p>Burnout ends when the gauge refills on its own, which takes somewhere around 15 to 20 seconds. Walking forward, landing hits and blocking all speed it up. Whatever you do, <strong>get out of the corner</strong>: Burnout in the middle of the screen is uncomfortable; Burnout in the corner is where Drive Impact stuns happen.</p>
+            </div>
+
+            <div class="deep-dive">
+                <h4>When your opponent is in Burnout</h4>
+                <ul>
+                    <li><strong>Push them to the corner</strong> and look for a Drive Impact that wall splats into a stun.</li>
+                    <li><strong>Pressure with specials:</strong> every blocked special now chips their health.</li>
+                    <li><strong>Use your +4 blockstun advantage</strong> to keep pressure going with buttons that are normally unsafe.</li>
+                    <li><strong>Don't let them breathe:</strong> the longer the round goes, the closer they are to a full gauge again.</li>
+                </ul>
+            </div>
+
+            <h3 id="drive-budget">Managing the Gauge: A Simple Budget</h3>
+
+            <p>Top players don't follow a fixed rule, but beginners improve quickly with a simple budget:</p>
+
+            <div class="table-wrap"><table>
+                <tr>
+                    <th>Your gauge</th>
+                    <th>How to play</th>
+                </tr>
+                <tr>
+                    <td><strong>5–6 bars</strong></td>
+                    <td>Spend freely on things that win: Drive Rush combos, OD moves in combos, Drive Rush pressure.</td>
+                </tr>
+                <tr>
+                    <td><strong>3–4 bars</strong></td>
+                    <td>Spend on clear rewards: a combo that ends in a knockdown, an OD reversal you need. Avoid 3-bar Drive Rush cancels on block.</td>
+                </tr>
+                <tr>
+                    <td><strong>1–2 bars</strong></td>
+                    <td>Danger zone. Keep 2 bars for one Drive Reversal or OD reversal if you're being pressured. Walk forward and land pokes to rebuild.</td>
+                </tr>
+                <tr>
+                    <td><strong>Burnout</strong></td>
+                    <td>Leave the corner, block carefully, look for your own reversals and Super Arts, and avoid blocking specials if you can jump or walk away.</td>
+                </tr>
+            </table></div>
+
+            <div class="card warning">
+                <h4>Common Drive mistakes</h4>
+                <ul>
+                    <li><strong>Pressing buttons into Drive Impact</strong> instead of answering it with your own.</li>
+                    <li><strong>Canceling into Drive Rush after every blocked poke.</strong> Two cancels and your gauge is gone.</li>
+                    <li><strong>Holding parry at close range.</strong> Your opponent walks up and throws you for 70% extra damage.</li>
+                    <li><strong>Using Drive Reversal at low gauge.</strong> It saves you once and puts you one step from Burnout.</li>
+                    <li><strong>Ignoring your opponent's gauge.</strong> Watch theirs as closely as yours: a player at 1 bar can't afford to parry or Drive Reverse, and a player in Burnout is your best chance at a big lead.</li>
+                </ul>
+            </div>
+
+            <div class="deep-dive">
+                <h4>Lab drill: answering Drive Impact (10 minutes)</h4>
+                <ol>
+                    <li>In training mode, record the dummy doing a Drive Impact from mid range, with a few seconds of walking before it.</li>
+                    <li>Set the recording to play back at random intervals mixed with plain walking, so you can't predict it.</li>
+                    <li>Every time you see the flash, answer with your own Drive Impact (HP+HK). Count successes out of 20.</li>
+                    <li>Once you're above 15 out of 20, switch the dummy to do Drive Impact right after one of your blocked pokes, the situation where it usually catches people.</li>
+                </ol>
+            </div>
+

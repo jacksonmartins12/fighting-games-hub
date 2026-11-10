@@ -1,0 +1,313 @@
+
+            <h2>Execução: Do Input ao Resultado</h2>
+
+            <p class="scope-note"><span class="scope-badge">Universal</span><span>As ideias deste capítulo valem para qualquer jogo de luta. Os exemplos vêm do SF6, e as seções marcadas com <span class="sf6-tag">SF6</span> só valem para ele. Para ver como outros jogos diferem, veja <a href="#families">Famílias de Jogos de Luta</a>.</span></p>
+
+            <div class="toc">
+                <h3>Estrutura</h3>
+                <ul>
+                    <li><a href="#button-layout-pt">Layout de 6 Botões</a></li>
+                    <li><a href="#motion-notation-pt">Notação de Comandos</a></li>
+                    <li><a href="#control-types-pt">Clássico ou Modern</a></li>
+                    <li><a href="#charge-inputs-pt">Comandos de Carga</a></li>
+                    <li><a href="#execution-techniques-pt">Técnicas de Execução</a></li>
+                    <li><a href="#training-drills-pt">Training Mode e Exercícios Básicos</a></li>
+                    <li><a href="#consistency-pt">Treino de Consistência</a></li>
+                </ul>
+            </div>
+
+            <h3 id="button-layout-pt">O Layout Universal de 6 Botões</h3>
+
+            <div class="pad-diagram" role="img" aria-label="Seis botões: soco fraco, médio e forte na fileira de cima; chute fraco, médio e forte na fileira de baixo">
+                <div class="pad-row"><span class="pad-label">Soco</span><span class="pad-btn p">LP</span><span class="pad-btn p">MP</span><span class="pad-btn p">HP</span></div>
+                <div class="pad-row"><span class="pad-label">Chute</span><span class="pad-btn k">LK</span><span class="pad-btn k">MK</span><span class="pad-btn k">HK</span></div>
+                <p class="pad-caption">Fraco (L), Médio (M), Forte (H): os ataques fracos são mais rápidos e tiram menos dano; os fortes são mais lentos e tiram mais.</p>
+            </div>
+
+            <p><strong>Por que 6?</strong> Apertar vários botões ao mesmo tempo gera ações especiais (controles Classic do SF6):</p>
+
+            <div class="table-wrap"><table>
+                <tr>
+                    <th>Combinação</th>
+                    <th>Nome</th>
+                    <th>Efeito</th>
+                </tr>
+                <tr>
+                    <td>LP + LK</td>
+                    <td>Throw (agarrão)</td>
+                    <td>Agarra o oponente (curto alcance)</td>
+                </tr>
+                <tr>
+                    <td>MP + MK</td>
+                    <td>Drive Parry</td>
+                    <td>Apara os ataques que chegam (gasta a Drive Gauge); aperte frente duas vezes a partir dele para fazer um Drive Rush</td>
+                </tr>
+                <tr>
+                    <td>HP + HK</td>
+                    <td>Drive Impact</td>
+                    <td>Ataque com armadura que absorve 2 golpes (1 barra de Drive); frente + HP + HK enquanto defende = Drive Reversal (2 barras)</td>
+                </tr>
+                <tr>
+                    <td>Comando de especial + 2 Socos ou 2 Chutes</td>
+                    <td>Golpe OD (Overdrive)</td>
+                    <td>Golpe especial turbinado (2 barras de Drive)</td>
+                </tr>
+                <tr>
+                    <td>Comando de super (ex.: ↓↘→↓↘→) + Soco ou Chute</td>
+                    <td>Super Art</td>
+                    <td>Dano máximo (1 a 3 barras de Super Art, conforme o nível)</td>
+                </tr>
+            </table></div>
+
+            <h3 id="motion-notation-pt">Notação de Comandos: A Linguagem Técnica</h3>
+
+            <p>Jogos de luta usam uma notação padrão para descrever os inputs:</p>
+
+            <div class="numpad-wrap"><div class="numpad"><span class="np-cell"><b>7</b><i aria-hidden="true">↖</i><small>cima-trás</small></span><span class="np-cell"><b>8</b><i aria-hidden="true">↑</i><small>cima</small></span><span class="np-cell"><b>9</b><i aria-hidden="true">↗</i><small>cima-frente</small></span><span class="np-cell"><b>4</b><i aria-hidden="true">←</i><small>trás</small></span><span class="np-cell"><b>5</b><i aria-hidden="true">•</i><small>neutro</small></span><span class="np-cell"><b>6</b><i aria-hidden="true">→</i><small>frente</small></span><span class="np-cell"><b>1</b><i aria-hidden="true">↙</i><small>baixo-trás</small></span><span class="np-cell"><b>2</b><i aria-hidden="true">↓</i><small>baixo</small></span><span class="np-cell"><b>3</b><i aria-hidden="true">↘</i><small>baixo-frente</small></span></div><p class="small">Notação numérica, para um personagem virado para a direita: os números seguem o teclado numérico do computador. 6 é sempre <strong>frente</strong> (na direção do oponente) e 4 é sempre <strong>trás</strong>; quando o seu personagem está do lado direito da tela, as direções físicas se invertem, mas os números não.</p></div>
+            <div class="table-wrap"><table class="motion-table"><tr><th>Movimento</th><th>Setas</th><th>Numérica</th><th>Clássica</th><th>Exemplo</th></tr><tr><td><strong>Meia-lua para frente</strong></td><td class="arrows">↓ ↘ →</td><td class="inp">236</td><td class="inp">QCF</td><td>Hadoken: 236P</td></tr><tr><td><strong>Meia-lua para trás</strong></td><td class="arrows">↓ ↙ ←</td><td class="inp">214</td><td class="inp">QCB</td><td>Tatsumaki: 214K</td></tr><tr><td><strong>Shoryuken (Dragon Punch)</strong></td><td class="arrows">→ ↓ ↘</td><td class="inp">623</td><td class="inp">DP</td><td>Shoryuken: 623P</td></tr><tr><td><strong>Shoryuken invertido</strong></td><td class="arrows">← ↓ ↙</td><td class="inp">421</td><td class="inp">RDP</td><td>Menos comum; aparece em alguns move lists</td></tr><tr><td><strong>Meio círculo para frente</strong></td><td class="arrows">← ↙ ↓ ↘ →</td><td class="inp">41236</td><td class="inp">HCF</td><td>Alguns especiais e supers</td></tr><tr><td><strong>Meio círculo para trás</strong></td><td class="arrows">→ ↘ ↓ ↙ ←</td><td class="inp">63214</td><td class="inp">HCB</td><td>Alguns especiais e supers</td></tr><tr><td><strong>Duas meias-luas para frente</strong></td><td class="arrows">↓ ↘ → ↓ ↘ →</td><td class="inp">236236</td><td class="inp">QCF×2</td><td>A maioria das Super Arts usa este ou o 214214</td></tr><tr><td><strong>Duas meias-luas para trás</strong></td><td class="arrows">↓ ↙ ← ↓ ↙ ←</td><td class="inp">214214</td><td class="inp">QCB×2</td><td>Super Arts</td></tr><tr><td><strong>Volta completa</strong></td><td class="arrows">→ ↘ ↓ ↙ ← ↖ ↑ ↗</td><td class="inp">360</td><td class="inp">360 / SPD</td><td>Screw Piledriver do Zangief: 360P</td></tr><tr><td><strong>Baixo, baixo</strong></td><td class="arrows">↓ ↓</td><td class="inp">22</td><td class="inp">DD</td><td>Bebida do Jamie (The Devil Inside): 22P</td></tr><tr><td><strong>Carga trás, depois frente</strong></td><td class="arrows">[←] →</td><td class="inp">[4]6</td><td class="inp">Charge B,F</td><td>Sonic Boom do Guile: [4]6P</td></tr><tr><td><strong>Carga baixo, depois cima</strong></td><td class="arrows">[↓] ↑</td><td class="inp">[2]8</td><td class="inp">Charge D,U</td><td>Somersault Kick do Guile: [2]8K</td></tr></table></div>
+            <p>Os botões vêm depois do movimento: <strong>P</strong> = qualquer soco, <strong>K</strong> = qualquer chute, ou um específico como <strong>LP</strong> ou <strong>HK</strong>. "[ ]" significa segurar: [4] é segurar para trás. No estilo clássico, mais antigo, você também vai ver <strong>c.MK</strong> (chute médio agachado), <strong>s.HP</strong> (soco forte em pé) e <strong>j.HK</strong> (chute forte no ar); na notação numérica eles são <strong>2MK</strong>, <strong>5HP</strong> e <strong>j.HK</strong>. Os guias de personagens mostram primeiro a notação numérica e a clássica ao lado; os capítulos usam principalmente a notação clássica, como c.MK.</p>
+
+            <div class="deep-dive">
+                <h4>Lendo a notação de combo</h4>
+                <p>Combos são escritos como uma sequência de golpes, e os separadores dizem como cada golpe se liga ao próximo:</p>
+                <ul>
+                    <li><strong>Link</strong> (vírgula ou espaço, como em 5MP, 2MP): o primeiro golpe termina por completo e o segundo acerta enquanto o oponente ainda está em hitstun. O timing importa.</li>
+                    <li><strong>Chain</strong> (geralmente golpes fracos, como em 2LP 2LP): um golpe fraco cancelado em outro fraco. Fácil, mas golpes fracos encadeados dão pouco dano.</li>
+                    <li><strong>Cancel</strong> ("xx" em guias antigos, "&gt;" neste guia, como em 2MK &gt; 236P): a recuperação do primeiro golpe é cortada por um especial, uma Super Art ou um Drive Rush. Faça o movimento durante o normal e aperte o botão quando ele conectar.</li>
+                </ul>
+                <p>Só golpes que fazem contato, no hit ou no block, podem ser cancelados em especiais; um normal que erra geralmente não pode. Nas páginas de personagem deste guia, um espaço entre os golpes indica link ou chain, "&gt;" indica cancel e "DR" indica Drive Rush.</p>
+            </div>
+
+            <h3 id="control-types-pt">Controles Classic ou Modern<span class="sf6-tag">SF6</span></h3>
+
+            <p>O SF6 deixa você escolher entre dois tipos de controle para cada personagem, e a escolha muda como você treina a execução. Ela é definida por personagem na tela de seleção, então dá para testar os dois.</p>
+
+            <div class="comparison-table">
+                <div class="comparison-item">
+                    <h4>Classic</h4>
+                    <ul>
+                        <li>Seis botões de ataque: LP, MP, HP, LK, MK, HK.</li>
+                        <li>Os golpes especiais usam comandos de movimento (236P, 623P, [4]6P…).</li>
+                        <li>Todos os normais do personagem estão disponíveis.</li>
+                        <li>Dano total em tudo.</li>
+                    </ul>
+                </div>
+                <div class="comparison-item">
+                    <h4>Modern</h4>
+                    <ul>
+                        <li>Três botões de ataque (fraco, médio e forte: Light, Medium, Heavy) mais um botão de <strong>Special (SP)</strong>, um botão de <strong>Assist</strong> e botões dedicados de Drive Impact e Drive Parry.</li>
+                        <li>Os especiais saem com <strong>SP + uma direção</strong> (neutro, frente, trás ou baixo). Desde a atualização de agosto de 2026, para muitos personagens, baixo + SP deixa você escolher a força com baixo-trás, baixo ou baixo-frente.</li>
+                        <li><strong>Segurar o Assist</strong> transforma os botões fraco, médio e forte em combos prontos, e alguns deles gastam barra.</li>
+                        <li>Alguns normais ficam de fora (por exemplo, o Ryu no Modern não tem todos os chutes em pé e ataques no pulo do Ryu no Classic).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="deep-dive">
+                <h4>A troca</h4>
+                <p>Especiais e Super Arts feitos com o botão SP causam <strong>20% menos dano</strong>. O mesmo golpe feito com o comando de movimento normal no Modern causa dano total, e os comandos de movimento continuam funcionando no Modern.</p>
+                <p>Em troca, você ganha confiabilidade: o shoryuken de um jogador de Modern sai exatamente no frame que ele quer, toda vez, sem chance de errar o comando. Isso é uma vantagem real para anti-airs e reversals, e é por isso que o Modern é usado em todos os níveis, inclusive nos maiores torneios.</p>
+            </div>
+
+            <div class="card success">
+                <h4>Qual escolher?</h4>
+                <ul>
+                    <li><strong>Escolha o Modern</strong> se os comandos de movimento estão te travando, se quer focar primeiro em footsies e decisões, ou se joga no controle e tem dificuldade com comandos de carga ou de shoryuken.</li>
+                    <li><strong>Escolha o Classic</strong> se você quer todos os normais e dano total, ou se pretende jogar outros jogos de luta em que comandos de movimento são o padrão.</li>
+                    <li>De um jeito ou de outro, <strong>os fundamentos deste guia são os mesmos</strong>: espaçamento, anti-airs, frame data e tomada de decisão não mudam com o tipo de controle. Dá para trocar depois; o que você aprende sobre o jogo vai junto.</li>
+                </ul>
+            </div>
+
+            <h3 id="charge-inputs-pt">Comandos de Carga</h3>
+
+            <p>Alguns personagens usam <strong>comandos de carga</strong> em vez de movimentos: você segura uma direção por um instante e depois aperta a direção oposta com um botão. Na notação numérica, <strong>[4]6P</strong> quer dizer segurar trás e depois apertar frente + soco, e <strong>[2]8K</strong> quer dizer segurar baixo e depois apertar cima + chute.</p>
+
+            <p>No elenco atual, Guile, Blanka, E. Honda, Dee Jay, M. Bison e Chun-Li têm golpes de carga (o Sonic Boom e o Somersault Kick do Guile são os exemplos clássicos). As Super Arts dos personagens de carga muitas vezes usam um padrão mais longo, como [4]646P: segurar trás, depois frente, trás, frente + soco.</p>
+
+            <div class="deep-dive">
+                <h4>Como deixar a carga natural</h4>
+                <ul>
+                    <li><strong>Carregue enquanto faz outras coisas.</strong> Andar para trás, defender em pé e defender agachado seguram trás ou baixo, então você está sempre carregando enquanto defende.</li>
+                    <li><strong>Baixo-trás carrega as duas direções ao mesmo tempo.</strong> Defender agachado (segurando baixo-trás) gera carga para golpes [4]6 e [2]8 ao mesmo tempo, e é por isso que personagens de carga passam tanto tempo agachados.</li>
+                    <li><strong>Carregue durante os seus normais.</strong> Segurar trás ou baixo-trás enquanto aperta um normal mantém a carga, então você pode fazer um normal agachado e cancelar num especial de carga.</li>
+                    <li><strong>O custo é a mobilidade.</strong> Andar para frente solta a carga, então personagens de carga tendem a jogar com paciência e deixar o oponente vir até eles. Isso faz parte do plano de jogo deles, e não é uma limitação que você precisa combater.</li>
+                </ul>
+            </div>
+            <div class="deep-dive">
+                <h4>Quando o Especial Não Sai</h4>
+                <p>Quase todo comando que falha cai em um de três erros. Ligue a exibição de comandos no training mode, faça o golpe dez vezes e compare o que aparece com a lista:</p>
+                <ul>
+                    <li><strong>Botão cedo demais.</strong> Você aperta antes de terminar o movimento, então sai um normal, ou a exibição mostra o botão na diagonal baixo-frente em vez de frente. Termine o movimento e só então aperte.</li>
+                    <li><strong>Botão tarde demais.</strong> O movimento sai limpo, mas o botão chega depois que o jogo parou de esperar, e sai só um normal. Aperte quando o direcional chegar na última direção, não depois.</li>
+                    <li><strong>Movimento incompleto.</strong> Falta uma direção: o quarto de círculo pula a diagonal baixo-frente, ou o movimento do Dragon Punch termina em baixo. Faça mais devagar até todas as direções aparecerem e depois acelere de novo.</li>
+                </ul>
+                <p>Segurar o controle frouxo piora os três. Segure o arcade ou o controle sempre do mesmo jeito e corrija um erro de cada vez.</p>
+            </div>
+
+            <h3 id="execution-techniques-pt">Técnicas de Execução: Os Detalhes Importam</h3>
+
+            <div class="deep-dive">
+                <h4>Buffering (Input Antecipado)</h4>
+                <p><strong>Conceito:</strong> Você começa o input enquanto ainda está na animação anterior.</p>
+                <p><strong>Exemplo:</strong> Enquanto o c.MK está saindo, você já começa o movimento ↓ ↘ → e aperta Soco quando o c.MK acerta — dentro da janela de cancel dele.</p>
+                <p><strong>Vantagem:</strong> O especial sai como cancel no momento mais cedo possível, em vez de sair depois que o normal se recupera. Combo mais firme.</p>
+                <p><strong>Treino:</strong> Pratique começar o movimento antes do normal (ou durante ele), para que só o aperto final do botão precise de timing.</p>
+            </div>
+
+            <div class="deep-dive">
+                <h4>Plinking (Reforço de Input)</h4>
+                <p><strong>Conceito:</strong> Aperte o botão que você quer e, um frame depois, um botão mais fraco. Pelas regras de prioridade de botões, o jogo lê o primeiro botão duas vezes, o que te dá duas chances de acertar um link apertado.</p>
+                <p><strong>Exemplo:</strong> Para um link em c.MP, aperte MP e depois LP um frame mais tarde (escrito MP~LP).</p>
+                <p><strong>Uso:</strong> Deixar links apertados mais consistentes. É algo específico de cada jogo — ficou famoso no Street Fighter IV — e não é uma técnica padrão no SF6.</p>
+            </div>
+
+            <div class="deep-dive">
+                <h4>Cancelamento de Animação</h4>
+                <p><strong>Conceito:</strong> Alguns golpes podem ser cancelados antes de terminarem visualmente.</p>
+                <p><strong>Exemplo:</strong> Um normal cancelável pode ser cancelado em um especial quando conecta (no hit ou no block), pulando totalmente os frames de recuperação.</p>
+                <p><strong>Conhecimento:</strong> Cada personagem e cada golpe têm propriedades de cancel diferentes. Confira a frame data (a coluna de cancel) e aprenda as dos golpes que você usa.</p>
+            </div>
+
+            <h3 id="training-drills-pt">Configuração do Training Mode e Exercícios Básicos</h3>
+
+            <p>Antes de treinar combos, garanta que o básico sai sempre, dos dois lados da tela. Estes exercícios foram adaptados do <em>Simplifying Street Fighter</em> e do <em>Fighting Game Fundamentals</em>, do gootecks; cinco minutos por dia bastam para começar.</p>
+
+            <div class="card">
+                <h4>Configure o training mode uma vez</h4>
+                <ul>
+                    <li><strong>Input display ligado:</strong> mostra exatamente o que você apertou, para você ver por que um golpe não saiu.</li>
+                    <li><strong>Frame meter ligado:</strong> mostra startup, vantagem e gaps em tempo real.</li>
+                    <li><strong>Barras enchendo sozinhas:</strong> para treinar golpes de Drive e Super Arts sem esperar.</li>
+                    <li><strong>Defesa do dummy em Aleatório:</strong> quando você passar para confirms e pressão.</li>
+                </ul>
+            </div>
+
+            <div class="deep-dive">
+                <h4>Os exercícios</h4>
+                <ol>
+                    <li><strong>Voltas de dash:</strong> dê dash de um canto ao outro e volte. Se você não consegue fazer isso 10 vezes seguidas sem esforço, comece toda sessão por aqui. A maioria dos jogadores tem um lado mais fraco; treine mais esse lado.</li>
+                    <li><strong>Exercício de movimento (236 e 214):</strong> faça só o movimento por 10 segundos de cada lado, buscando precisão, não velocidade. Depois acrescente o botão logo depois do movimento, depois acelere, depois aproxime o botão do fim do movimento. Meta: 10 fireballs seguidos de cada lado. Quando um falhar, confira o input display; um erro comum é apertar o botão em baixo-frente em vez de frente.</li>
+                    <li><strong>Movimento do Shoryuken (623):</strong> cinco minutos por dia, depois que o fireball estiver consistente dos dois lados.</li>
+                    <li><strong>Poke no alcance máximo com cancel:</strong> acerte o dummy com o seu poke principal da maior distância que ele alcança, cancelando no seu especial. Você está treinando o olho para a distância em que ele encosta sem errar.</li>
+                    <li><strong>Alcance do throw:</strong> descubra a que distância do dummy o seu throw ainda pega. Um throw errado tem recuperação longa e é punido.</li>
+                    <li><strong>Whiff punish:</strong> grave o dummy dando uma rasteira e segurando baixo-trás. Descubra o alcance máximo da rasteira, entre e saia dele andando e acerte a perna enquanto ela recolhe. Se o dummy defender, você apertou tarde.</li>
+                    <li><strong>Anti-air com especial:</strong> grave um jump-in que acertaria o seu personagem na altura dos ombros. Solte o Shoryuken tarde, logo antes de o golpe chegar, para o startup invencível coincidir com o jump-in.</li>
+                    <li><strong>Anti-air com normais:</strong> encontre um normal para pulos de longe e outro para pulos de perto. Se você trocar golpes ou apanhar, aperte mais cedo.</li>
+                </ol>
+            </div>
+
+            <div class="deep-dive">
+                <h4>Aprendendo um combo por partes</h4>
+                <p>Divida qualquer combo em pedaços e treine cada pedaço até ele sair 10 vezes seguidas antes de juntar. Um combo de jump-in, por exemplo:</p>
+                <ol>
+                    <li><strong>Jump-in até o normal médio.</strong> Acerte fundo, entre a cintura e os ombros do oponente: muito baixo e o golpe erra, muito alto e você perde vantagem se ele defender.</li>
+                    <li><strong>Normal médio cancelado no especial.</strong></li>
+                    <li><strong>O combo inteiro.</strong></li>
+                </ol>
+                <p>Detalhes pequenos derrubam combos. De muito longe, o link depois do jump-in erra; depois de alguns normais, certos especiais não acertam um oponente agachado. Para movimentos 214 depois de um normal agachado, experimente segurar baixo-frente ao apertar o normal e rolar até trás a partir dali, para o movimento não começar de baixo-trás sem querer.</p>
+                <p>Um iniciante dedicado deve acertar um combo básico assim metade das vezes depois de 5 a 10 minutos. Chegar a 90% leva bem mais tempo, e isso é normal.</p>
+            </div>
+
+            <h3 id="consistency-pt">Treino de Consistência: Tornando Automático</h3>
+
+            <div class="card success">
+                <h4>As 4 Etapas do Treino</h4>
+                <p><strong>1) Devagar:</strong> Faça o input bem devagar, sem pressão. Foque na forma correta.</p>
+                <p><strong>2) Cada Vez Mais Rápido:</strong> Aumente a velocidade 10% por dia.</p>
+                <p><strong>3) Sob Pressão:</strong> Pratique no modo versus contra a CPU, levando dano.</p>
+                <p><strong>4) Em Partida:</strong> Use contra um jogador de verdade enquanto adapta a estratégia.</p>
+            </div>
+
+            <div class="example-box">Exemplo: Aprendendo um combo com um link de 2 frames (números ilustrativos)
+
+Dia 1: Faça 50x bem devagar. Foque na forma.
+Taxa de acerto: 100%
+
+Dias 2-5: Aumente a velocidade aos poucos.
+Taxa de acerto: 95% → 90% → 85% → 80%
+
+Dias 6-10: Pratique no versus contra a CPU. Leve golpes entre os combos.
+Taxa de acerto: 70% → 75% → 80%
+
+Dia 11 em diante: Use em partidas reais.
+Taxa de acerto: 60% no caos, 75% com calma</div>
+
+            <div class="card critical">
+                <h4>O Platô de Consistência</h4>
+                <p>Muitos jogadores praticam 50x e acham que dominaram. Na verdade, sob pressão real (adrenalina, estresse de partida), a execução cai bastante.</p>
+                <p><strong>Solução:</strong> Pratique mais sob pressão, e não só no training mode.</p>
+            </div>
+
+            <h3 id="progressive-practice-pt">Graus de Resistência: Metodologia de Prática Progressiva</h3>
+
+            <div class="card success">
+                <h4>Princípio Central: Aumente a Carga Cognitiva Aos Poucos</h4>
+                <p>Não pule do dummy (o boneco do training mode) direto para oponentes humanos. Aumente a resistência aos poucos, em etapas controladas. Isso evita frustração e faz a habilidade realmente passar para as partidas.</p>
+            </div>
+
+            <div class="deep-dive">
+                <h4>Etapa 1: Dummy Parado</h4>
+                <p><strong>Estado do Dummy:</strong> Fica parado, não defende nada, toma todos os golpes</p>
+                <p><strong>Objetivo:</strong> Acertar o combo 5 vezes seguidas sem dropar, de cada lado</p>
+                <p><strong>Foco:</strong> Memória muscular pura. Acerte o timing.</p>
+                <p><strong>Métrica de Sucesso:</strong> 5 seguidas do lado esquerdo e 5 seguidas do lado direito</p>
+            </div>
+
+            <div class="deep-dive">
+                <h4>Etapa 2: Dummy com Defesa Aleatória</h4>
+                <p><strong>Estado do Dummy:</strong> Defende alguns golpes aleatoriamente (você vê quais conectam limpo)</p>
+                <p><strong>Objetivo:</strong> Praticar fazer o combo completo só nos hits limpos</p>
+                <p><strong>Foco:</strong> Confirmação visual de que o combo está realmente conectando, não só treinar os movimentos</p>
+                <p><strong>Métrica de Sucesso:</strong> 5 hit-confirms corretos seguidos de cada lado (combo completo no hit, parar com segurança no block)</p>
+            </div>
+
+            <div class="deep-dive">
+                <h4>Etapa 3: CPU em Dificuldade Baixa</h4>
+                <p><strong>Estado da CPU:</strong> CPU de nível 1-3, se movendo e atacando</p>
+                <p><strong>Objetivo:</strong> Acertar o combo 3-5 vezes durante uma partida completa</p>
+                <p><strong>Foco:</strong> Ver se o combo ainda funciona num contexto real de jogo, com o oponente se movendo</p>
+                <p><strong>Métrica de Sucesso:</strong> Acertar combos com consistência mesmo quando o oponente se move entre os rounds</p>
+            </div>
+
+            <div class="deep-dive">
+                <h4>Etapa 4: CPU em Dificuldade Média</h4>
+                <p><strong>Estado da CPU:</strong> Dificuldade 5-7, atacando e defendendo de forma inteligente</p>
+                <p><strong>Objetivo:</strong> Acertar o combo 2-3 vezes por partida e adaptar a estratégia em torno dele</p>
+                <p><strong>Foco:</strong> Agora o oponente revida. Você está aprendendo pressão e setups.</p>
+                <p><strong>Métrica de Sucesso:</strong> Vencer a partida mesmo sem jogar de forma ideal, com execução consistente e adaptação</p>
+            </div>
+
+            <div class="deep-dive">
+                <h4>Etapa 5: Oponentes Humanos (Casual)</h4>
+                <p><strong>Oponente:</strong> Jogador de verdade, de nível parecido</p>
+                <p><strong>Objetivo:</strong> Acertar o combo de vez em quando, mas o foco principal é se divertir e aprender o matchup</p>
+                <p><strong>Foco:</strong> Pressão extrema. Sua execução vai cair. Isso é normal e esperado.</p>
+                <p><strong>Métrica de Sucesso:</strong> Acertar o combo pelo menos uma vez e continuar jogando sem dar rage-quit</p>
+            </div>
+
+            <div class="card warning">
+                <h4>Ponto Crítico: Pule Etapas Por Sua Conta e Risco</h4>
+                <p>Muitos jogadores novos tentam pular direto do training mode para oponentes humanos. Isso gera frustração porque:</p>
+                <ul>
+                    <li>Os combos dropam de forma inesperada (o oponente se moveu)</li>
+                    <li>Não fica claro por que o combo falhou (ao contrário do training mode)</li>
+                    <li>A carga emocional é maior (jogador contra jogador)</li>
+                    <li>Leva a desistir ou a concluir que "combos são difíceis demais"</li>
+                </ul>
+                <p><strong>Realidade:</strong> O combo não é difícil demais. Você só pulou etapas essenciais da prática.</p>
+            </div>
+
+            <div class="example-box">Sessão de Treino Recomendada (plano deste guia, baseado na ideia de graus de resistência de Patrick Miller):
+
+1. Abra as anotações e relembre o que está praticando (10 min de revisão)
+2. Training mode com dummy parado: acerte o combo limpo 5x de cada lado (5-10 min)
+3. Training mode com defesa aleatória: acerte combos limpos 5x (5-10 min)
+4. VS CPU nível 3: jogue uma partida completa, anote momentos (15 min)
+5. Assista gameplay ou leia estratégia ligada à situação do combo (5 min)
+6. VS CPU nível 5: aplique o que aprendeu (20 min)
+7. Opcional: jogue partidas casuais online (30 min)
+8. Fim da sessão: atualize as anotações com o progresso e o próximo foco
+
+Total: cerca de 60-70 minutos sem o passo 7, 90-100 minutos com ele. Pare antes se estiver cansado — o foco cai rápido.</div>
+
+

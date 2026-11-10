@@ -1,0 +1,299 @@
+// Blanka: guide + full frame data.
+(window.HUB_DATA = window.HUB_DATA || {});
+(HUB_DATA.chars = HUB_DATA.chars || {})["blanka"] = {
+  "guide": {
+    "slug": "blanka",
+    "name": "Blanka",
+    "release": {
+      "en": "Base game (June 2023)",
+      "pt": "Jogo base (junho de 2023)"
+    },
+    "archetype": "rushdown",
+    "difficulty": 3,
+    "difficulty_why": {
+      "en": "Blanka uses charge inputs: you must hold back (or down) for 40 frames before Rolling Attack or Vertical Rolling, which means planning moves ahead and keeping charge while you walk, block and press buttons. His gameplan is unusual (hops, rolls, dolls), but his basic combos are short.",
+      "pt": "O Blanka usa comandos de carga: é preciso segurar para trás (ou para baixo) por 40 frames antes do Rolling Attack ou do Vertical Rolling, o que exige planejar os golpes e manter a carga enquanto anda, defende e aperta botões. O gameplan é diferente (saltos, rolagens, bonecos), mas os combos básicos são curtos."
+    },
+    "summary": {
+      "en": "Blanka is a wild, unpredictable rushdown character who changes the range of the fight in a flash. He uses Rolling Attacks, hops and slides to get in, then pressures with fast buttons, Electric Thunder and tricky Blanka-chan doll setups. He wins by making the opponent guess where and when he will attack next.",
+      "pt": "O Blanka é um rushdown selvagem e imprevisível que muda a distância da luta num instante. Ele usa Rolling Attacks, saltos e slides para entrar, e depois pressiona com botões rápidos, Electric Thunder e setups com os bonecos Blanka-chan. Ele vence fazendo o oponente adivinhar onde e quando vai atacar."
+    },
+    "strengths": [
+      {
+        "en": "Great mobility and many ways to approach: Rolling Attack, Amazon River Run (3HP slide), Surprise Hops and Backstep Rolling.",
+        "pt": "Ótima mobilidade e várias formas de aproximação: Rolling Attack, Amazon River Run (slide 3HP), Surprise Hops e Backstep Rolling."
+      },
+      {
+        "en": "Strong normals for pressure: 4MK (Wild Edge) is +2 on block and an anti-air, 5LK starts in 4 frames, and OD Electric Thunder is +4 on block.",
+        "pt": "Ótimos normais para pressão: o 4MK (Wild Edge) é +2 no block e serve de anti-air, o 5LK sai em 4 frames e o OD Electric Thunder é +4 no block."
+      },
+      {
+        "en": "Blanka-chan doll setups and SA2 (Lightning Beast) create layered mixups that are hard to read.",
+        "pt": "Os setups com os bonecos Blanka-chan e o SA2 (Lightning Beast) criam mixups em camadas difíceis de ler."
+      }
+    ],
+    "weaknesses": [
+      {
+        "en": "Charge moves need 40 frames of charge, so Blanka cannot always use Rolling Attack or Vertical Rolling right away, especially while moving forward.",
+        "pt": "Os golpes de carga precisam de 40 frames de carga, então o Blanka nem sempre pode usar Rolling Attack ou Vertical Rolling na hora, principalmente andando para frente."
+      },
+      {
+        "en": "Rolling Attacks are unsafe on block (L and M -23, H -15) and are punished hard if the opponent blocks or anti-airs them.",
+        "pt": "Os Rolling Attacks são inseguros no block (L e M -23, H -15) e são punidos com força se o oponente defender ou fizer anti-air."
+      },
+      {
+        "en": "Many of his normals are minus on block (2MK -5, 2HP -5, 5MP -4), and his meterless reversal (Vertical Rolling) is only invincible to airborne attacks.",
+        "pt": "Vários normais são minus no block (2MK -5, 2HP -5, 5MP -4), e o reversal sem barra (Vertical Rolling) só é invencível a ataques aéreos."
+      }
+    ],
+    "gameplan": {
+      "en": "Charge inputs: Rolling Attack is [4]6P (hold back for 40 frames, then forward + punch) and Vertical Rolling is [2]8K (hold down for 40 frames, then up + kick). Charge is kept for a short time after you release it, so you can crouch-block, walk back or use crouching normals while charging. In neutral, Blanka pokes with long buttons like 2MP and 2HP, uses Amazon River Run (3HP) or Coward Crouch (2PP) to go under projectiles, and uses Rolling Attack, hops and Drive Rush to suddenly get in. Up close, he uses 5LK and 2LP to confirm into Electric Thunder (214P) or Rolling Attack, and 4MK (+2 on block) to keep his turn. In the corner, Blanka-chan Bomb (22P) dolls can be charged by his electricity to extend combos and create mixups. On defense, he uses 4MK and Vertical Rolling as anti-airs, and OD Vertical Rolling (fully invincible frames 1-10) or SA3 as a reversal.",
+      "pt": "Comandos de carga: o Rolling Attack é [4]6P (segure para trás por 40 frames, depois frente + soco) e o Vertical Rolling é [2]8K (segure para baixo por 40 frames, depois cima + chute). A carga fica guardada por pouco tempo depois de soltar, então dá para defender agachado, andar para trás ou usar normais agachados enquanto carrega. No neutral, o Blanka faz poke com botões longos como 2MP e 2HP, usa o Amazon River Run (3HP) ou o Coward Crouch (2PP) para passar por baixo de projéteis, e usa Rolling Attack, saltos e Drive Rush para entrar de repente. De perto, usa 5LK e 2LP para confirmar em Electric Thunder (214P) ou Rolling Attack, e o 4MK (+2 no block) para manter o turno. No canto, os bonecos do Blanka-chan Bomb (22P) podem ser ativados pela eletricidade dele para estender combos e criar mixups. Na defesa, usa o 4MK e o Vertical Rolling como anti-air, e o OD Vertical Rolling (totalmente invencível nos frames 1-10) ou o SA3 como reversal."
+    },
+    "key_moves": [
+      {
+        "name": "Rolling Attack",
+        "input": "[4]6P",
+        "classic": "charge B,F+P",
+        "role": {
+          "en": "Charge 40 frames. Fast forward roll used to approach, punish and end combos (L starts in 10 frames). Unsafe on block (L/M -23, H -15, OD -7), so use it in combos or as a calculated surprise.",
+          "pt": "Carga de 40 frames. Rolagem rápida para frente usada para entrar, punir e terminar combos (a L sai em 10 frames). Insegura no block (L/M -23, H -15, OD -7), então use em combos ou como surpresa calculada."
+        }
+      },
+      {
+        "name": "Vertical Rolling",
+        "input": "[2]8K",
+        "classic": "charge D,U+K",
+        "role": {
+          "en": "Charge 40 frames. Anti-air that is invincible to airborne attacks frames 8-26 (L/M/H start in 8 frames). OD version is fully invincible frames 1-10 and is his meter reversal. Very unsafe on block (-27, OD -40).",
+          "pt": "Carga de 40 frames. Anti-air invencível a ataques aéreos nos frames 8-26 (L/M/H saem em 8 frames). A versão OD é totalmente invencível nos frames 1-10 e é o reversal com barra. Muito inseguro no block (-27, OD -40)."
+        }
+      },
+      {
+        "name": "Electric Thunder",
+        "input": "214P",
+        "classic": "QCB+P",
+        "role": {
+          "en": "No charge needed. 10-frame electric attack used as a combo ender and pressure tool; -3 on block, and the OD version is +4 on block and launches on hit. It also activates Blanka-chan dolls.",
+          "pt": "Não precisa de carga. Ataque elétrico de 10 frames usado como finalizador de combo e ferramenta de pressão; -3 no block, e a versão OD é +4 no block e lança no hit. Também ativa os bonecos Blanka-chan."
+        }
+      },
+      {
+        "name": "Coward Crouch / Wild Lift",
+        "input": "2PP > P",
+        "classic": "D+PP > P",
+        "role": {
+          "en": "Coward Crouch ducks under projectiles and high attacks; Wild Lift (P) is a launcher follow-up used in combos (2PP > P) that leads to juggles.",
+          "pt": "O Coward Crouch abaixa por baixo de projéteis e golpes altos; o Wild Lift (P) é uma continuação que lança, usada em combos (2PP > P) e leva a juggles."
+        }
+      },
+      {
+        "name": "Blanka-chan Bomb",
+        "input": "22P",
+        "classic": "D,D+P",
+        "role": {
+          "en": "Places a Blanka-chan doll (LP close, MP mid, HP far; 3 dolls per round). Hitting it with electricity turns it into a projectile for combo extensions and mixups.",
+          "pt": "Coloca um boneco Blanka-chan (LP perto, MP no meio, HP longe; 3 bonecos por round). Acertar o boneco com eletricidade transforma ele em projétil para estender combos e fazer mixups."
+        }
+      },
+      {
+        "name": "SA2 Lightning Beast",
+        "input": "214214P",
+        "classic": "QCBx2+P",
+        "role": {
+          "en": "25-second install: powers up his specials, adds the Rolling Cannon air roll and lets him use charge specials without charge.",
+          "pt": "Install de 25 segundos: fortalece os especiais, adiciona a rolagem aérea Rolling Cannon e permite usar especiais de carga sem carregar."
+        }
+      }
+    ],
+    "key_normals": [
+      {
+        "move": "5LK",
+        "classic": "s.LK",
+        "startup": 4,
+        "on_block": -2,
+        "on_hit": 5,
+        "role": {
+          "en": "His fastest normal; chains into lights and starts his basic confirms.",
+          "pt": "O normal mais rápido; faz chain em golpes fracos e inicia os confirms básicos."
+        }
+      },
+      {
+        "move": "4MK",
+        "classic": "b+MK (Wild Edge)",
+        "startup": 9,
+        "on_block": 2,
+        "on_hit": 8,
+        "role": {
+          "en": "Plus on block and a good anti-air (his head is invincible to airborne strikes on frames 4-14). A key pressure and combo button.",
+          "pt": "Plus no block e um bom anti-air (a cabeça fica invencível a golpes aéreos nos frames 4-14). Botão chave de pressão e combo."
+        }
+      },
+      {
+        "move": "2MK",
+        "classic": "c.MK",
+        "startup": 8,
+        "on_block": -5,
+        "on_hit": 5,
+        "role": {
+          "en": "Cancelable low with good advantage on hit; buffers into Rolling Attack if you have charge.",
+          "pt": "Golpe baixo cancelável com boa vantagem no hit; faz buffer em Rolling Attack se tiver carga."
+        }
+      },
+      {
+        "move": "5HK",
+        "classic": "s.HK",
+        "startup": 7,
+        "on_block": -4,
+        "on_hit": 6,
+        "role": {
+          "en": "Fast heavy that forces stand; combo tool, meaty option and anti-air with its later active frames.",
+          "pt": "Golpe forte rápido que força o oponente a ficar em pé; ferramenta de combo, opção meaty e anti-air nos últimos frames ativos."
+        }
+      }
+    ],
+    "anti_air": {
+      "en": "4MK (Wild Edge) is his most reliable normal anti-air: his head is invincible to airborne strikes on frames 4-14, and it is +2 if blocked. Vertical Rolling ([2]8K) is invincible to airborne attacks on frames 8-26 and gives a knockdown, but you need down charge. 5HK can anti-air with its later active frames, and 2MP or 2HP can catch jumps at specific angles. Use OD Vertical Rolling (fully invincible frames 1-10) when you need a true reversal.",
+      "pt": "O 4MK (Wild Edge) é o anti-air normal mais confiável: a cabeça fica invencível a golpes aéreos nos frames 4-14, e ele é +2 se for defendido. O Vertical Rolling ([2]8K) é invencível a ataques aéreos nos frames 8-26 e dá knockdown, mas exige carga para baixo. O 5HK pode fazer anti-air com os últimos frames ativos, e o 2MP ou o 2HP pegam pulos em ângulos específicos. Use o OD Vertical Rolling (totalmente invencível nos frames 1-10) quando precisar de um reversal de verdade."
+    },
+    "combos": [
+      {
+        "label": {
+          "en": "Basic light confirm (no charge)",
+          "pt": "Confirm básico de golpes fracos (sem carga)"
+        },
+        "route": "5LK, 5LP > 214P",
+        "notes": {
+          "en": "No charge needed. Electric Thunder ends the combo; it is only -3 if the lights were blocked.",
+          "pt": "Não precisa de carga. O Electric Thunder termina o combo; ele é só -3 se os golpes fracos forem defendidos."
+        }
+      },
+      {
+        "label": {
+          "en": "Low confirm with charge",
+          "pt": "Confirm baixo com carga"
+        },
+        "route": "2MK, 5LP > [4]6MP",
+        "notes": {
+          "en": "Hold back (charge) before the 2MK, then cancel 5LP into M Rolling Attack. Rolling Attack is -23 on block, so confirm the hit first.",
+          "pt": "Segure para trás (carga) antes do 2MK e depois cancele o 5LP em M Rolling Attack. O Rolling Attack é -23 no block, então confirme o hit antes."
+        }
+      },
+      {
+        "label": {
+          "en": "Poke conversion with Drive Rush",
+          "pt": "Conversão de poke com Drive Rush"
+        },
+        "route": "5MK > DR 5HK, 5HP > 2PP > P, [2]8LK",
+        "notes": {
+          "en": "Costs 3 Drive bars. Coward Crouch > Wild Lift launches, and L Vertical Rolling (needs down charge) finishes the juggle.",
+          "pt": "Custa 3 barras de Drive. Coward Crouch > Wild Lift lança, e o L Vertical Rolling (precisa de carga para baixo) termina o juggle."
+        }
+      }
+    ],
+    "tips": [
+      {
+        "en": "Get used to charging while you do other things: crouch-block, walk back or press 2LP/2MK while holding down-back so both Rolling Attack and Vertical Rolling are ready.",
+        "pt": "Acostume-se a carregar enquanto faz outras coisas: defenda agachado, ande para trás ou aperte 2LP/2MK segurando diagonal para trás e para baixo, assim Rolling Attack e Vertical Rolling ficam prontos."
+      },
+      {
+        "en": "Electric Thunder (214P) needs no charge, so use it as your default combo ender when you have no charge.",
+        "pt": "O Electric Thunder (214P) não precisa de carga, então use como finalizador padrão quando estiver sem carga."
+      },
+      {
+        "en": "Do not throw out raw Rolling Attacks too often; an opponent who blocks or anti-airs them gets a big punish.",
+        "pt": "Não solte Rolling Attacks crus com frequência; um oponente que defende ou faz anti-air consegue um punish grande."
+      }
+    ],
+    "counterplay": {
+      "en": "Block Rolling Attack and punish (L and M are -23, H is -15); learn the timing to punish them with your best combo. Watch whether Blanka is holding charge: if he has been walking forward, he cannot do Rolling Attack or Vertical Rolling immediately. Anti-air his hops and Backstep Rolling, and stay patient against his unpredictable movement instead of guessing wildly. Most of his normals are minus on block, but respect 4MK (+2) and OD Electric Thunder (+4).",
+      "pt": "Defenda o Rolling Attack e puna (L e M são -23, H é -15); aprenda o timing para punir com seu melhor combo. Observe se o Blanka está segurando carga: se ele vinha andando para frente, não pode fazer Rolling Attack ou Vertical Rolling na hora. Faça anti-air nos saltos e no Backstep Rolling, e tenha paciência contra a movimentação imprevisível em vez de chutar opções. A maioria dos normais dele é minus no block, mas respeite o 4MK (+2) e o OD Electric Thunder (+4)."
+    },
+    "sources": [
+      "https://www.streetfighter.com/6/character/blanka/frame",
+      "https://github.com/D4RKONION/FAT (src/js/constants/framedata/SF6FrameData.json, v5.9.0, commit 7f93cb8, 2026-06-14)",
+      "https://github.com/D4RKONION/FAT (src/js/constants/combos/SF6Combos.json, v5.9.0, 2026-06-14)",
+      "https://www.ggrecon.com/guides/street-fighter-6-blanka-moves-combos-backstory/"
+    ],
+    "data_note": {
+      "en": "Startup and on-block values for the key normals were read from the official Capcom frame data page (Classic controls) on 2 Oct 2026, after the 3 Aug 2026 balance patch, and cross-checked with FAT v5.9.0 (June 2026). Special-move frame numbers quoted in the text come from FAT (pre-patch) unless stated otherwise. Combo routes come from the FAT combo list (June 2026); damage values were left out because they predate the patch. Values may change with future patches. The 40-frame charge time comes from FAT. The official page (Oct 2026) lists 5MP at 9 frames and Backstep Rolling at +3 on block, while FAT (June 2026) lists 10 frames and +2, so those moves changed in the Aug 2026 patch; this file uses the official values. Rechecked on October 23, 2026 against FAT's post-patch data (October 22 update): every key normal value matches, and the combos that use moves changed by the August 2026 patch were checked against the new numbers.",
+      "pt": "Os valores de startup e no block dos normais principais foram lidos na página oficial de frame data da Capcom (controle Clássico) em 2 out. 2026, depois do patch de balanceamento de 3 ago. 2026, e conferidos com o FAT v5.9.0 (junho 2026). Os números de frames de especiais citados no texto vêm do FAT (pré-patch), salvo indicação. As rotas de combo vêm da lista de combos do FAT (junho 2026); o dano foi omitido porque é anterior ao patch. Os valores podem mudar com patches futuros. O tempo de carga de 40 frames vem do FAT. A página oficial (out. 2026) mostra o 5MP com 9 frames e o Backstep Rolling com +3 no block, enquanto o FAT (junho 2026) mostra 10 frames e +2, então esses golpes mudaram no patch de ago. 2026; este arquivo usa os valores oficiais. Revisado em 23 de outubro de 2026 com os dados pós-patch do FAT (atualização de 22 de outubro): todos os valores dos normais principais conferem, e os combos que usam golpes alterados pelo patch de agosto de 2026 foram conferidos com os números novos."
+    }
+  },
+  "frames": {
+    "m": [
+      ["Stand LP","5LP","LP","n",5,3,10,3,-3,300,"sp su","",0],
+      ["Stand MP","5MP","MP","n",9,3,15,3,-4,700,"su","",0],
+      ["Stand HP","5HP","HP","n",10,7,"17(22)",3,-3,800,"sp su","",0],
+      ["Stand LK","5LK","LK","n",4,4,7,5,-2,300,"ch sp su","",0],
+      ["Stand MK","5MK","MK","n",8,3,"17(20)",5,-2,600,"sp su","",0],
+      ["Stand HK","5HK","HK","n",7,9,"18(15)",6,-4,800,"","",0],
+      ["Crouch LP","2LP","d+LP","n",6,3,8,5,-2,300,"ch sp su","",0],
+      ["Crouch MP","2MP","d+MP","n",9,5,16,-1,-5,600,"sp su","",0],
+      ["Crouch HP","2HP","d+HP","n",15,5,"20(21)",0,-5,900,"","",0],
+      ["Crouch LK","2LK","d+LK","n",5,2,10,3,-3,200,"ch","",0],
+      ["Crouch MK","2MK","d+MK","n",8,3,"16(18)",5,-5,500,"sp su","",0],
+      ["Crouch HK","2HK","d+HK","n",11,4,23,"KD +25",-12,900,"","",0],
+      ["Jump LP","8LP","u+LP","n",4,5,null,"3~9","-1~5",300,"","",0],
+      ["Jump MP","8MP","u+MP","n",7,7,null,"5~11 (KD)","1~7",700,"sp","",0],
+      ["Jump HP","7 or 9HP","ub or uf+HP","n",9,4,null,"5~15 (KD)","1~11",800,"","",0],
+      ["Neutral Jump HP","8HP","u+HP","n",7,3,null,"10~15 (KD)","6~11",800,"","",0],
+      ["Jump LK","8LK","u+LK","n",5,6,null,"5~9","1~5",300,"","",0],
+      ["Jump MK","8MK","u+MK","n",7,6,null,"7~13","3~9",500,"","",0],
+      ["Jump HK","8HK","u+HK","n",11,6,null,"8~15","4~11",800,"","",0],
+      ["Rock Crusher","6MP","f+MP","n",20,"2*1",20,3,-3,"600 (300*300)","","",0],
+      ["Double Knee Bombs","6MK","f+MK","n",9,"3(7)2",18,6,-2,"600 (300*300)","","",0],
+      ["Wild Edge","4MK","b+MK","n",9,6,"12(16)",8,2,600,"sp su","",0],
+      ["Wild Nail","6HP","f+HP","n",18,4,"28(31)","KD +27(30)","-15(-12)",1100,"","",0],
+      ["Amazon River Run","3HP","df+HP","n",14,10,22,"KD +29(38)","-18(-9)",1000,"","",0],
+      ["Coward Crouch","2PP","d+PP","s",18,"1~102",28,null,null,null,"","",0],
+      ["Wild Lift","2PP > P","d+PP > P","s",8,7,31,"KD +55",-21,600,"","",0],
+      ["Raid Jump","2PP > K","d+PP > K","s",18,null,12,null,null,null,"","",0],
+      ["Surprise Forward Hop","6 or 3KKK","f or df+KKK","s",null,null,"27(30)",null,null,null,"","",0],
+      ["Surprise Back Hop","4 or 1KKK","b or db+KKK","s",null,null,"32(35)",null,null,null,"","",0],
+      ["Wild Fang","LPLK","LP+LK","t",5,3,23,"KD +30",null,"1200(2040)","","",0],
+      ["Jungle Flip","4LPLK","b+LP+LK","t",5,3,23,"KD +27",null,"1200(2040)","","",0],
+      ["Wild Bites","LPLK (air)","LP+LK (air)","t",5,3,null,"KD +22",null,"1200(2040)","","air",0],
+      ["Drive Impact: Wild Scratch","HPHK","HP+HK","d",26,2,35,"KD (notes)",-3,800,"","",0],
+      ["Drive Reversal: Quick Rolling Attack","6HPHK","f+HP+HK","d","20(18)",3,26,"KD +23",-6,500,"","",0],
+      ["Drive Parry","MPMK","MP+MK","d",1,"12(2)","33(1)notes",null,null,null,"","",0],
+      ["Drive Rush","MPMK / 66 (cancel)","MP+MK / f,f (cancel)","d","9(11)","45(46)","24(23)",null,null,null,"","var",0],
+      ["Electric Thunder","214P","qcb+P","s",10,"2(3)2(3)2~","15(17)","KD +39",-3,800,"su3","",0],
+      ["Electric Thunder (hold)","214P (hold)","qcb+P (hold)","s","10(23~)","2(3)2(3)2(1)2(3)2(3)2(3)2(2)3(3)2(3)2(3)2(3)2(3)2(3)2(3)2",16,"KD +41",2,"1000 (400*600)","su3","var",1],
+      ["OD Electric Thunder","214PP","qcb+PP","s",10,"2(3)2(3)2~","15(17)","KD +40",4,"1000 (400*600)","su2 su3","",0],
+      ["LP Rolling Attack","[4]6LP","b,f+LP","s",10,11,"3+8","KD +13",-23,1000,"su3","",0],
+      ["MP Rolling Attack","[4]6MP","b,f+MP","s",12,19,"3+8","KD +14",-23,1200,"su3","",0],
+      ["HP Rolling Attack","[4]6HP","b,f+HP","s",22,20,"2+23","KD +30",-15,1300,"su3","",0],
+      ["OD Rolling Attack","[4]6PP","b,f+PP","s",18,22,"2+15","KD +57",-7,800,"su2 su3","",0],
+      ["LK Vertical Rolling Attack","[2]8LK","d,u+LK","s",8,19,"31+17","KD +35",-27,1200,"","",0],
+      ["MK Vertical Rolling Attack","[2]8MK","d,u+MK","s",8,19,"31+17","KD +42",-27,1300,"","",0],
+      ["HK Vertical Rolling Attack","[2]8HK","d,u+HK","s",8,19,"31+17","KD +42",-27,1400,"","",0],
+      ["OD Vertical Rolling Attack","[2]8KK","d,u+KK","s",7,"8(2)6","31+17","KD + 28",-40,"1600 (800*800)","","",0],
+      ["LK Backstep Rolling Attack","624LK","hcb+LK","s",41,24,5,"8(14)","2(8)",1000,"","",0],
+      ["MK Backstep Rolling Attack","624MK","hcb+MK","s",41,27,5,"7(14)","1(8)",1000,"","",0],
+      ["HK Backstep Rolling Attack","624HK","hcb+HK","s",41,29,5,"7(13)","3(9)",1000,"","",0],
+      ["OD Backstep Rolling Attack","624KK","hcb+KK","s",8,"5(28)21(1)4",4,"10(13) or KD +55","6(9)","1000 (300*350x2)","su2 su3","",0],
+      ["Aerial Rolling Attack (air)","[4]6P (air)","b,f+P (air)","s",13,"until land",17,"KD +38(45)","-9(-2)",1000,"","air",0],
+      ["OD Aerial Rolling Attack (air)","[4]6PP (air)","b,f+PP (air)","s",13,"until land",15,"KD +29(30)","-3(3)","1200 (600*600)","","air",0],
+      ["LK Wild Hunt","236LK","qcf+LK","s",34,3,57,"HKD +35",null,1600,"","",0],
+      ["MK Wild Hunt","236MK","qcf+MK","s",39,3,57,"HKD +35",null,1700,"","",0],
+      ["HK Wild Hunt","236HK","qcf+HK","s",43,3,57,"HKD +35",null,1800,"","",0],
+      ["OD Wild Hunt","236KK","qcf+KK","s",32,3,57,"HKD +64",null,2000,"","",0],
+      ["Blanka-chan Bomb","22P","d,d+P","s","39+35",1000,11,null,null,null,"","",0],
+      ["Blanka-chan Bomb (Charge)","22P (Charge)","d,d+P (Charge)","s",36,null,null,"KD ~",null,800,"","var",1],
+      ["Blanka-chan Bomb (OD Charge)","22P (OD Charge)","d,d+P (OD Charge)","s",36,null,null,"KD ~",null,"1200 (400x3)","","var",1],
+      ["Blanka-chan Bomb (SA1 Charge)","22P > 236236P","d,d+P > qcb,qcb+P","s",26,null,null,"KD ~",null,"1000 (200x5)","","",1],
+      ["Shout of Earth","236236P","qcf,qcf+P","u",8,9,62,"KD +15",-29,2000,"","",1],
+      ["Lightning Beast","214214P","qcb,qcb+P","u",1,null,9,null,null,null,"","",0],
+      ["Ground Shave Cannonball","236236K","qcf,qcf+K","u",10,3,61,"HKD +50",-46,4000,"","",0],
+      ["Ground Shave Cannonball (Critical Art)","236236K (CA)","qcf,qcf+K (CA)","u",10,3,61,"HKD +14",-46,4500,"","",0]
+    ],
+  "s": {
+      "fastestNormal": "4f",
+      "bestReversal": "OD Vertical Rolling Attack",
+      "fDash": "19",
+      "bDash": "23",
+      "health": "10000"
+    }
+  }
+};
