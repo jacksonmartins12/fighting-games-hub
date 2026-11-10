@@ -305,5 +305,20 @@
   "mu.their-strengths": "{0}: pontos fortes para vigiar",
   "mu.expect-title": "O que {0} vai tentar contra {1}",
   "mu.expect-note": "Esta é a counterplay escrita no guia de {0}: o conselho que o seu oponente está seguindo.",
-  "mu.source-note": "Tudo nesta tela vem dos guias de personagem e do frame data deste hub. Não há dados específicos de matchup: a ferramenta só cruza o que cada guia já diz. Valores que faltam aparecem como \"sem dado\"."
+  "mu.source-note": "Tudo nesta tela vem dos guias de personagem e do frame data deste hub. Não há dados específicos de matchup: a ferramenta só cruza o que cada guia já diz. Valores que faltam aparecem como \"sem dado\".",
+  "search.open": "Buscar",
+  "search.title": "Buscar no hub",
+  "search.placeholder": "Capítulos, personagens, golpes, termos…",
+  "search.hint": "Digite pelo menos duas letras. Tente um conceito (frame trap), um personagem (Zangief), um golpe (Hadoken, 236P) ou dois personagens para ver o matchup (ryu ken).",
+  "search.none": "Nada encontrado. Tente outra palavra, em português ou em inglês.",
+  "search.more": "Mostrar mais {0}",
+  "search.chapter": "Capítulo",
+  "search.fighter-guide": "Guia do personagem",
+  "search.moves-loading": "Carregando os nomes dos golpes…",
+  "search.moves-failed": "Não foi possível carregar os nomes dos golpes. Os outros resultados continuam funcionando.",
+  "search.group.fighter": "Personagens",
+  "search.group.matchup": "Matchup",
+  "search.group.section": "Capítulos e seções",
+  "search.group.term": "Glossário",
+  "search.group.move": "Golpes"
 };

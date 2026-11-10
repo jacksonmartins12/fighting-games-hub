@@ -305,5 +305,20 @@
   "mu.their-strengths": "{0}: strengths to watch",
   "mu.expect-title": "What {0} will try against {1}",
   "mu.expect-note": "This is the counterplay written in {0}’s guide: the advice your opponent is following.",
-  "mu.source-note": "Everything on this screen comes from the fighter guides and the frame data in this hub. There is no matchup-specific data: the tool only crosses what each guide already says. Missing values are marked \"no data\"."
+  "mu.source-note": "Everything on this screen comes from the fighter guides and the frame data in this hub. There is no matchup-specific data: the tool only crosses what each guide already says. Missing values are marked \"no data\".",
+  "search.open": "Search",
+  "search.title": "Search the hub",
+  "search.placeholder": "Chapters, fighters, moves, terms…",
+  "search.hint": "Type at least two letters. Try a concept (frame trap), a fighter (Zangief), a move (Hadoken, 236P) or two fighters for a matchup (ryu ken).",
+  "search.none": "Nothing found. Try another word, in English or in Portuguese.",
+  "search.more": "Show {0} more",
+  "search.chapter": "Chapter",
+  "search.fighter-guide": "Fighter guide",
+  "search.moves-loading": "Loading move names…",
+  "search.moves-failed": "Couldn’t load the move names. The other results still work.",
+  "search.group.fighter": "Fighters",
+  "search.group.matchup": "Matchup",
+  "search.group.section": "Chapters and sections",
+  "search.group.term": "Glossary",
+  "search.group.move": "Moves"
 };

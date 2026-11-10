@@ -15,7 +15,7 @@
 <body>
 <header class="hero">
   <div class="hero-text">
-    <div class="hero-top"><p class="eyebrow"><span class="l-en" lang="en">Fighting game study guide · SF6 in depth · 25 chapters · 32 fighters</span><span class="l-pt" lang="pt-BR">Guia de estudo de jogos de luta · SF6 em profundidade · 25 capítulos · 32 personagens</span></p><div class="lang-switch" role="group" aria-label="Language / Idioma"><button type="button" data-lang-set="pt" aria-pressed="false">PT</button><button type="button" data-lang-set="en" aria-pressed="true">EN</button></div></div>
+    <div class="hero-top"><p class="eyebrow"><span class="l-en" lang="en">Fighting game study guide · SF6 in depth · 25 chapters · 32 fighters</span><span class="l-pt" lang="pt-BR">Guia de estudo de jogos de luta · SF6 em profundidade · 25 capítulos · 32 personagens</span></p><div class="hero-tools"><button class="open-search" type="button" data-search-open><span class="l-en" lang="en">Search</span><span class="l-pt" lang="pt-BR">Buscar</span><kbd aria-hidden="true">/</kbd></button><div class="lang-switch" role="group" aria-label="Language / Idioma"><button type="button" data-lang-set="pt" aria-pressed="false">PT</button><button type="button" data-lang-set="en" aria-pressed="true">EN</button></div></div></div>
     <h1>Fighting Games <span class="hl">Resource&nbsp;Hub</span></h1>
     <p class="lede"><span class="l-en" lang="en">From your first blocked jump-in to reading opponents at a tournament: fundamentals, footsies, frame data, training plans, a guide for every fighter and a full glossary in one place.</span><span class="l-pt" lang="pt-BR">Do seu primeiro jump-in defendido até ler os oponentes num torneio: fundamentos, footsies, frame data, planos de treino, um guia para cada personagem e um glossário completo, tudo num lugar só.</span></p>
     <p class="frame-note"><span class="l-en" lang="en">1 frame = 1/60 s ≈ 16.7 ms</span><span class="l-pt" lang="pt-BR">1 frame = 1/60 s ≈ 16,7 ms</span></p>
@@ -57,10 +57,12 @@
   <div class="mbar">
     <button class="open-menu" id="open-menu" type="button" aria-controls="sidebar" aria-expanded="false"><span class="l-en" lang="en">Chapters</span><span class="l-pt" lang="pt-BR">Capítulos</span></button>
     <span class="mbar-title" id="mbar-title">Introduction</span>
+    <button class="open-search" type="button" data-search-open><span class="l-en" lang="en">Search</span><span class="l-pt" lang="pt-BR">Buscar</span><kbd aria-hidden="true">/</kbd></button>
   </div>
   <div class="scrim" id="scrim" hidden></div>
 <aside class="sidebar" id="sidebar" aria-label="Chapters">
 <div class="side-top"><div class="lang-switch" role="group" aria-label="Language / Idioma"><button type="button" data-lang-set="pt" aria-pressed="false">PT</button><button type="button" data-lang-set="en" aria-pressed="true">EN</button></div><button class="close-menu" id="close-menu" type="button"><span class="l-en" lang="en">Close</span><span class="l-pt" lang="pt-BR">Fechar</span></button></div>
+<button class="open-search side-search" type="button" data-search-open><span class="l-en" lang="en">Search</span><span class="l-pt" lang="pt-BR">Buscar</span><kbd aria-hidden="true">/</kbd></button>
 <div class="group" data-group="path">
 <div class="group-head"><span class="face"><img src="img/ryu.webp" width="200" height="200" alt="Ryu"></span><span class="k" aria-hidden="true">道</span><span class="gt"><b><span class="l-en" lang="en">The Path</span><span class="l-pt" lang="pt-BR">O Caminho</span></b><small><span class="l-en" lang="en">Learn</span><span class="l-pt" lang="pt-BR">Aprender</span> · Ryu</small></span></div>
 <button class="chap" type="button" data-go="intro" aria-current="true"><span class="n">01</span><span class="lbl"><span class="l-en" lang="en">Introduction</span><span class="l-pt" lang="pt-BR">Introdução</span></span><span class="qs" data-qs="intro"></span></button>
@@ -12980,6 +12982,7 @@ PERGUNTA: Qual a diferença entre o timing de DP contra crossup e o timing de DP
 <script src="assets/js/matchup.js"></script>
 <script src="assets/js/sheet.js"></script>
 <script src="assets/js/tracker.js"></script>
+<script src="assets/js/search.js"></script>
 <script src="assets/js/boot.js"></script>
 </body>
 </html>
