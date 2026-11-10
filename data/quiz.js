@@ -1025,6 +1025,35 @@
     "en": "The element changes timing rather than button choice: lingering in range breaks the opponent's defensive rhythm and can bait them into pressing a button.",
     "pt": "O elemento muda o timing, e não a escolha do botão: ficar parado no alcance quebra o ritmo defensivo do oponente e pode baitá-lo a apertar um botão."
    }
+  },
+  {
+   "q": {
+    "en": "Your best poke whiffed and you got swept for it. What does the Footsies Handbook advise?",
+    "pt": "Seu melhor poke errou e você tomou um sweep por isso. O que o Footsies Handbook aconselha?"
+   },
+   "options": [
+    {
+     "en": "Stop using that poke for the rest of the set",
+     "pt": "Parar de usar esse poke pelo resto do set"
+    },
+    {
+     "en": "Keep it in your game and change when or where you use it",
+     "pt": "Manter o poke no seu jogo e mudar quando ou onde você o usa"
+    },
+    {
+     "en": "Start jumping instead",
+     "pt": "Começar a pular em vez disso"
+    },
+    {
+     "en": "Only block until the round ends",
+     "pt": "Só defender até o round acabar"
+    }
+   ],
+   "answer": 1,
+   "why": {
+    "en": "One sweep costs about a tenth of your life. Dropping the poke costs every option it gave you.",
+    "pt": "Um sweep custa mais ou menos um décimo da vida. Largar o poke custa todas as opções que ele dava."
+   }
   }
  ],
  "strategy": [
@@ -2310,6 +2339,35 @@
    "why": {
     "en": "The goal is to see which strategy works and how the opponent reacts; a human adjusts, which makes the test realistic.",
     "pt": "O objetivo é ver qual estratégia funciona e como o oponente reage; uma pessoa se ajusta, o que torna o teste realista."
+   }
+  },
+  {
+   "q": {
+    "en": "Why play whole rounds without jumping or dashing?",
+    "pt": "Por que jogar rounds inteiros sem pular e sem dash?"
+   },
+   "options": [
+    {
+     "en": "Because jumping and dashing are always wrong",
+     "pt": "Porque pular e dar dash é sempre errado"
+    },
+    {
+     "en": "To save Drive Gauge",
+     "pt": "Para economizar Drive Gauge"
+    },
+    {
+     "en": "To force yourself to control space by walking and using normals",
+     "pt": "Para se obrigar a controlar o espaço andando e usando normais"
+    },
+    {
+     "en": "To make the rounds longer",
+     "pt": "Para os rounds durarem mais"
+    }
+   ],
+   "answer": 2,
+   "why": {
+    "en": "Taking away the shortcuts shows you which normals hold your ground and which habit you lean on most.",
+    "pt": "Tirar os atalhos mostra quais normais seguram a sua posição e em qual hábito você mais se apoia."
    }
   }
  ],
