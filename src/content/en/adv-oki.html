@@ -93,14 +93,14 @@
 
 <p>A safe jump is a meaty jump-in timed so that you land and can block before the opponent's invincible reversal becomes active. In frames, two things must be true:</p>
 <ul>
-    <li>The jumping attack is active on frame N + 1, when they wake up.</li>
-    <li>You're back on the ground and able to block before frame N + R, when a reversal with startup R, pressed on their first frame, becomes active.</li>
+    <li>The jumping attack is active when they wake up, so a late jump-in hits on their first frame.</li>
+    <li>You're back on the ground and able to block before their reversal becomes active.</li>
 </ul>
 <p>To check one yourself:</p>
 <ol>
-    <li>Measure your forward jump with the frame meter: pre-jump, frames in the air and landing (<a href="#adv-frame-meter">how to measure</a>).</li>
-    <li>Find the startup R of the reversal you're worried about in that character's frame data. For shotos in SF6, that's usually the OD uppercut.</li>
-    <li>Work out when you have to jump so the attack is active on frame N + 1, then check that you land with time to block before frame N + R.</li>
+    <li>Look up your jump: "Jump Speed" on your character's SuperCombo data page, or measure it with the frame meter (<a href="#adv-frame-meter">how to measure</a>).</li>
+    <li>Add the first two numbers, pre-jump and air time. That's the knockdown advantage your safe jump needs: 4 + 38 = +42 for the standard jump. If the knockdown gives more, spend the extra frames first (a walk, a dash, a delay) so you jump with exactly that much left.</li>
+    <li>Find the startup of the reversal you're worried about in that character's frame data. For most of the cast in SF6, that's an OD uppercut or a Super Art of 6 frames.</li>
     <li>Test it: record the dummy doing that reversal on wakeup. If you block it every time, the jump is safe. If it hits you, you're landing late; if your jump-in whiffs, you're early.</li>
 </ol>
 <p>The same safe jump can work against one reversal and fail against a faster one, so note which reversals each safe jump covers.</p>
@@ -109,9 +109,9 @@
 <p>These come from the SuperCombo wiki's movement page and from a Japanese safe jump guide. Use them to check your own measurements, not as a replacement for them:</p>
 <ul>
     <li><strong>Pre-jump:</strong> 4 frames for almost everyone; 5 for Lily and Zangief, 6 for C. Viper's High Jump. During these frames you can't be thrown, but strikes hit you as if you were on the ground.</li>
-    <li><strong>In the air:</strong> 38 frames for the standard jump, so the whole jump takes 4 + 38 + 3 = 45 frames. Each character's jump is on their SuperCombo data page, under "Jump Speed", written as pre-jump + air + landing: Ryu, Akuma and Arjun 4+38+3, Zangief 5+38+3, Lily 5+39+3, C. Viper 4+38+3 (6+40+3 for her High Jump).</li>
+    <li><strong>In the air:</strong> 38 frames for the standard jump, so the whole jump takes 4 + 38 + 3 = 45 frames. Each character's jump is on their SuperCombo data page, under "Jump Speed", written as pre-jump + air + landing: Ryu, Akuma and Arjun 4+38+3, Zangief 5+38+3, Lily 5+39+3, C. Viper 4+38+3 (6+40+3 for her High Jump), Dhalsim 4+68+3.</li>
     <li><strong>Landing:</strong> 3 frames. After an empty jump you can block and tech throws during them. After a jumping attack you can't block, crouch or tech, and getting hit there is a Punish Counter. That's why a safe jump has to land before the reversal: the jumping attack takes away your block on landing.</li>
-    <li><strong>The +42 reference:</strong> for the standard jump, players use a knockdown of +42 for a safe jump with a jumping attack. Notice that 42 is the standard jump's pre-jump plus air time (4 + 38). Counting the same way, Zangief needs about +43, Lily +44 and C. Viper's High Jump +46, while her normal jump uses the standard +42. Treat these as a starting point and confirm them in training mode. Faster reversals leave less room, so test against the reversal of the character you're facing.</li>
+    <li><strong>The +42 reference:</strong> for the standard jump, players use a knockdown of +42 for a safe jump with a jumping attack. Notice that 42 is the standard jump's pre-jump plus air time (4 + 38). Counting the same way, Zangief needs about +43, Lily +44 and C. Viper's High Jump +46, while her normal jump uses the standard +42. Dhalsim would need about +72, and his own knockdowns in this hub's data reach +51 at most, so he has no forward jump safe jumps from them. In a training mode test, +42 with the standard jump blocked 6-frame reversals, level 1 Supers included, while +41 was hit even by a 5-frame reversal: one frame short is not a safe jump. Faster reversals leave less room, so test against the one you're facing.</li>
     <li><strong>Empty jump:</strong> for most characters, KD +44 sets up an empty jump into a 4f normal, and KD +45 an empty jump into a throw or a 5f normal.</li>
     <li><strong>Dashes cost frames:</strong> everything you do before jumping comes out of the knockdown advantage. With a 19f dash, the most common forward dash, a safe jump after one dash needs about +61, and two dashes from +42 leave only +4: enough for a fast meaty, not for a jump. The calculator above does this subtraction for you.</li>
 </ul>
