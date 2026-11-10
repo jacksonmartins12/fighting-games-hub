@@ -17,7 +17,7 @@ LANGS = [('en', 'en'), ('pt', 'pt-BR')]
 SCRIPTS = ['i18n/en.js', 'i18n/pt.js', 'data/roster.js', 'data/upcoming.js', 'data/quiz.js',
            'assets/js/core.js', 'assets/js/store.js', 'assets/js/nav.js', 'assets/js/widgets.js',
            'assets/js/checklists.js', 'assets/js/quiz.js', 'assets/js/roster.js', 'assets/js/frames.js',
-           'assets/js/punish.js', 'assets/js/matchup.js', 'assets/js/sheet.js', 'assets/js/tracker.js', 'assets/js/search.js', 'assets/js/boot.js']
+           'assets/js/punish.js', 'assets/js/matchup.js', 'assets/js/sheet.js', 'assets/js/tracker.js', 'assets/js/plan.js', 'assets/js/review.js', 'assets/js/flashcards.js', 'assets/js/search.js', 'assets/js/boot.js']
 
 
 def read(p):
@@ -45,6 +45,11 @@ def t(key):
 
 def expand(html):
     return re.sub(r'\{\{t:([^}]+)\}\}', lambda m: t(m.group(1)), html)
+
+
+def count_label(key, n):
+    """{{chapters:group}} / {{chapters:all}}: an i18n string with {0} = number of chapters."""
+    return ''.join('<span class="l-%s" lang="%s">%s</span>' % (l, code, I18N[l][key].replace('{0}', str(n))) for l, code in LANGS)
 
 
 def build():
@@ -92,7 +97,10 @@ def build():
                    % (c['id'], c['group'], ' class="active"' if n == 0 else '', tag, body, app, nav))
 
     scripts = '\n'.join('<script src="%s"></script>' % p for p in SCRIPTS)
-    html = expand(read('src/shell.html'))
+    html = read('src/shell.html')
+    html = html.replace('{{chapters:all}}', count_label('ui.hero-line', len(chapters)))
+    html = re.sub(r'\{\{chapters:([a-z]+)\}\}', lambda m: count_label('ui.n-chapters', len(by_group[m.group(1)])), html)
+    html = expand(html)
     html = html.replace('{{sidebar}}', '\n'.join(side)).replace('{{chapters}}', ''.join(out)).replace('{{scripts}}', scripts)
     return html
 

@@ -1037,3 +1037,26 @@ h3 .sf6-tag { align-self: center; }
 .search-hit { scroll-margin-top: 84px; outline: 2px solid var(--link); outline-offset: 6px; border-radius: 2px; transition: outline-color .4s; }
 .search-top .btn { flex: none; margin: 0; }
 @media (max-width: 520px) { .search-res small { display: block; margin: 2px 0 0; } }
+
+/* 30-day plan */
+.plan-app > h3, .review-app > h3 { margin-top: 32px; }
+.plan-bar { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; }
+.plan-meter { flex: 1; min-width: 160px; height: 10px; background: var(--paper); border: 1px solid var(--line-strong); border-radius: 999px; overflow: hidden; }
+.plan-meter i { display: block; height: 100%; background: var(--tone); }
+.plan-count { font: 500 0.78rem var(--mono); color: var(--ink-soft); }
+.plan-days { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+.plan-day { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 12px; align-items: start; padding: 14px 16px; background: var(--sheet); border: 1px solid var(--rule); border-radius: 6px; max-width: none; scroll-margin-top: 84px; }
+.plan-day.next { border-color: var(--tone); }
+.plan-day input { width: 20px; height: 20px; margin-top: 3px; accent-color: var(--tone); }
+.plan-day label { cursor: pointer; }
+.plan-day p { margin: 6px 0 0; max-width: 70ch; }
+.plan-n { font: 500 0.72rem var(--mono); letter-spacing: 0.1em; text-transform: uppercase; color: var(--tone); margin-right: 6px; }
+.plan-day.done b { color: var(--ink-soft); text-decoration: line-through; text-decoration-color: var(--rule); }
+/* flashcards */
+.flash-card { background: var(--sheet); border: 1px solid var(--line-strong); border-radius: 8px; padding: 22px; margin: 18px 0 12px; min-height: 190px; }
+.flash-meta { font: 500 0.72rem var(--mono); letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft); margin: 0 0 10px; }
+.flash-q { font-size: 1.2rem; margin: 0 0 6px; max-width: none; }
+.flash-ask { color: var(--ink-soft); margin: 0 0 16px; }
+.flash-a { border-top: 1px solid var(--rule); padding-top: 14px; }
+.flash-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr)); gap: 14px; margin: 10px 0 4px; }
+.flash-grid .flabel { display: block; font: 500 0.7rem/1.4 var(--mono); letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 4px; }
