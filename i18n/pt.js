@@ -376,5 +376,6 @@
   "flash.session": "nesta sessão: {0} certos, {1} errados",
   "flash.reset": "Zerar este baralho",
   "flash.reset-confirm": "Esquecer seu progresso neste baralho?",
-  "flash.note": "As respostas seguem as mesmas regras da Calculadora de Punish. Suas caixas ficam salvas só neste navegador."
+  "flash.note": "As respostas seguem as mesmas regras da Calculadora de Punish. Suas caixas ficam salvas só neste navegador.",
+  "ui.offline-ready": "Salvo para uso offline neste dispositivo: o hub abre sem internet."
 };

@@ -61,3 +61,16 @@ function routeHash(initial) {
 routeHash(true);
 window.addEventListener('hashchange', function () { routeHash(false); });
 initCloud();
+
+// ---------- offline: the service worker keeps a copy of the hub on the device ----------
+// Only on a real site (GitHub Pages, localhost). Inside Claude the page is already served by the app.
+if ('serviceWorker' in navigator && !window.claude && /^https?:$/.test(location.protocol)) {
+  navigator.serviceWorker.addEventListener('message', function (e) {
+    if (e.data && e.data.type === 'fgc-offline') { var n = document.getElementById('offline-note'); if (n) n.hidden = !e.data.ready; }
+  });
+  window.addEventListener('load', function () {
+    navigator.serviceWorker.register('sw.js').then(function () { return navigator.serviceWorker.ready; }).then(function (reg) {
+      if (reg.active) reg.active.postMessage('fgc-status');
+    }).catch(function () { /* no offline copy; the site works as usual */ });
+  });
+}

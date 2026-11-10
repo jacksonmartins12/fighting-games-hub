@@ -376,5 +376,6 @@
   "flash.session": "this session: {0} right, {1} wrong",
   "flash.reset": "Reset this deck",
   "flash.reset-confirm": "Forget your progress in this deck?",
-  "flash.note": "The answers follow the same rules as the Punish Finder. Your boxes are saved in this browser only."
+  "flash.note": "The answers follow the same rules as the Punish Finder. Your boxes are saved in this browser only.",
+  "ui.offline-ready": "Saved for offline use on this device: the hub opens without internet."
 };
