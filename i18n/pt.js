@@ -228,7 +228,7 @@
   "dg.tip.parry": "O parry gastou 0,5 barra para começar, e segurar continua drenando. Lembre: parry perde para throw.",
   "dg.tip.pdr": "Drive Rush pelo parry: 1 barra no total. O próximo normal ganha +4.",
   "dg.tip.cdr": "Um Drive Rush cancelado custa 3 barras: dois deles esvaziam a barra cheia.",
-  "dg.tip.rev": "Drive Reversal: 2 barras para sair da pressão. Só dano recuperável, fica −6 no block.",
+  "dg.tip.rev": "Drive Reversal: 2 barras para sair da pressão. Não dá KO e fica −6 no block.",
   "dg.tip.od": "Golpe OD: 2 barras pela versão melhorada de um especial.",
   "arch.shoto": "Shoto",
   "arch.rushdown": "Rushdown",

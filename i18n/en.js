@@ -228,7 +228,7 @@
   "dg.tip.parry": "Parry spent 0.5 bar to start, and holding it keeps draining. Remember: parry loses to throws.",
   "dg.tip.pdr": "Parry Drive Rush: 1 bar in total. The next normal is +4.",
   "dg.tip.cdr": "A Drive Rush cancel costs 3 bars: two of them empty a full gauge.",
-  "dg.tip.rev": "Drive Reversal: 2 bars to get out of pressure. Recoverable damage only, −6 on block.",
+  "dg.tip.rev": "Drive Reversal: 2 bars to get out of pressure. It can’t KO and is −6 on block.",
   "dg.tip.od": "OD move: 2 bars for the enhanced version of a special.",
   "arch.shoto": "Shoto",
   "arch.rushdown": "Rushdown",
