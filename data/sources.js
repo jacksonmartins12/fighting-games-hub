@@ -56,6 +56,11 @@
    "date": "2026-11-11",
    "what": "Drive Reversal does not KO, even against an opponent with less than 500 health left.",
    "where": "drive"
+  },
+  {
+   "date": "2026-11-11",
+   "what": "Meaty count: Akuma forward throw (KD +28), forward dash (19 frames), Crouch MK buffered one frame before the dash ended came out with no idle frame and was −4 on block, so it hit on its third active frame (frame 29 = N + 1). The opponent can be hit from frame N + 1 and not before.",
+   "where": "adv-oki"
   }
  ],
  "flags": {

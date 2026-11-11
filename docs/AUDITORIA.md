@@ -112,7 +112,7 @@ Nenhum valor foi alterado sem confirmação da fonte. Cada linha abaixo aparece 
 ## 7. Problemas não resolvidos
 
 1. **Dados oficiais da Capcom**: comparados em 11/11/2026 (seções 10 a 12); os 65 valores divergentes agora seguem a Capcom. O que ficou sem comparação está descrito na seção 12.
-2. **Contagem do meaty**: rodar o teste do Akuma (throw, dash, Crouch MK; −4 ou −5 no block).
+2. **Contagem do meaty**: confirmada no jogo em 11/11/2026 (−4 no block; seção 15). Falta testar um meaty seguro direto contra um reversal gravado para resolver a diferença de um frame com a regra do dood.gg.
 3. **Safe jump**: testado só contra reversals do Ryu; testar contra um reversal só antiaéreo, um contra-ataque e uma Super que agarra.
 4. **As 25 marcações** precisam de uma segunda fonte ou de teste no jogo.
 5. **dood.gg** só pôde ser comparado para o Ryu.
@@ -323,3 +323,16 @@ As páginas salvas em 11/11/2026 respondem a duas perguntas que estavam abertas.
 
 - **Arjun, melhor reversal:** o hub preencheu o campo com o Howling Destruction (SA1), a partir das notas de golpe do FAT, e marcou "preenchido pelo hub". A Capcom confirma: startup 8, invencível a golpes e agarrões nos frames 1–8. O Instant Oblivion (SA2, startup 9) é totalmente invencível nos frames 1–12, e nenhum especial dele, nem os OD, tem invencibilidade completa. A marcação passou a "✓ confirmado pela Capcom".
 - **Lily, 5LK:** a página lida em 02/10/2026 divergia do FAT no valor no hit. A página salva em 11/11/2026 dá startup 4, +5 no hit e −1 no block, os mesmos valores do hub. O golpe ganhou a marcação "✓ confirmado pela Capcom", e a nota de dados da Lily deixou de pedir teste no jogo.
+
+## 15. Teste da contagem do meaty (11/11/2026)
+
+Feito pelo autor no training mode, com Akuma contra Ken e o frame meter ligado. A sequência foi throw para frente (Goshoha, KD +28), dash para frente (19 frames) e Crouch MK (8 de startup, 3 ativos, −6 no block).
+
+**O que o print mostra:**
+- O histórico de comandos mostra o Crouch MK apertado um frame antes do fim do dash.
+- No frame meter, o startup do Crouch MK começa logo depois do último frame do dash, sem nenhum frame parado entre os dois.
+- O resultado no block foi **−4**: o golpe acertou no terceiro frame ativo (−6 + 2), que é o frame 29 = N + 1.
+
+**Conclusão:** a contagem da fórmula do meaty está certa. O oponente derrubado com KD +N pode ser acertado a partir do frame N + 1, que é o primeiro frame em que ele pode agir, e não antes. A calculadora de oki não muda.
+
+**Meaty seguro:** a regra do hub (preso + 2 ≤ R) parte exatamente dessa suposição, e a regra prática do dood.gg (preso + 1 ≤ R) só coincidiria com ela se o oponente pudesse ser acertado um frame antes de agir, o que o teste descarta. Mesmo assim, a calculadora continua marcando o caso de um frame como "dúvida" até um meaty seguro ser testado direto contra um reversal gravado. O teste foi registrado em `data/sources.js` (`tested`), e os capítulos em inglês e português foram atualizados.
