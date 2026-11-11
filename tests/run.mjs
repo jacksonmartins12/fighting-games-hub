@@ -160,6 +160,10 @@ await test('regression: data notes of Akuma, Dhalsim, JP, Mai, Yasmine and Lily 
     }
     const lk = CHARS.lily.key_normals.find(k => k.move === '5LK'), row = FRAMES.lily.m.find(m => m[0] === 'Stand LK');
     if (lk.on_hit !== row[7]) bad.push('lily 5LK on hit: guide ' + lk.on_hit + ', table ' + row[7]);
+    const F = HUB_DATA.sources.flags;
+    if ((F.lily['Stand LK'] || {}).status !== 'official' || row[7] !== 5) bad.push('lily 5LK: not marked as confirmed by Capcom at +5');
+    if ((F.arjun['(best reversal)'] || {}).status !== 'official') bad.push('arjun best reversal: not marked as confirmed by Capcom');
+    ['en', 'pt'].forEach(l => { if (/so check it in training mode|então confira no training mode/i.test(CHARS.lily.data_note[l])) bad.push('lily ' + l + ': note still asks to test 5LK'); });
     return bad;
   });
   eq(r, [], 'data note contradictions');

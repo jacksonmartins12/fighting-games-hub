@@ -45,10 +45,11 @@ function fmtCell(v) {
 }
 function frameSectionHTML(slug) {
   var f = FRAMES[slug]; if (!f) return '';
-  var st = f.s || {};
+  var st = f.s || {}, rf = moveFlag(slug, '(best reversal)');   // a source note on the best-reversal stat, e.g. Arjun's
   var h = '<details class="ft-details"><summary><span class="ft-sum-t">' + B('frames.full-frame-data') + '</span> <span class="muted small">' +
-    B('frames.moves-fastest-normal-best-reversal', [f.m.length, esc(st.fastestNormal || '—'), esc(st.bestReversal || '—')]) + '</span></summary>' +
-    '<div class="ft" data-ft="' + slug + '"><div class="ft-tools"><div class="chips" role="group">';
+    B('frames.moves-fastest-normal-best-reversal', [f.m.length, esc(st.fastestNormal || '—'), esc(st.bestReversal || '—')]) + '</span>' +
+    (rf ? ' <span class="ft-tag ft-flag-' + rf.status + '">' + B('frames.flag.' + rf.status) + '</span>' : '') + '</summary>' +
+    '<div class="ft" data-ft="' + slug + '">' + (rf ? '<p class="small muted ft-rev-note">' + BO(rf.detail) + '</p>' : '') + '<div class="ft-tools"><div class="chips" role="group">';
   FT_CATS.forEach(function (c) { h += '<button type="button" class="chip" data-ftcat="' + c + '" aria-pressed="' + (ftState.cat === c) + '">' + B('frames.cat.' + c) + '</button>'; });
   h += '</div><div class="search-row"><input type="search" class="ft-q" id="ft-q" autocomplete="off" aria-label="Search moves" data-i18n-ph="frames.search-a-move-or-input" placeholder="' + tr('frames.search-a-move-or-input') + '" value="' + esc(ftState.q) + '">' +
     '<label class="ft-toggle"><input type="checkbox" class="ft-unsafe" id="ft-unsafe"' + (ftState.unsafe ? ' checked' : '') + '> ' + B('frames.only-unsafe-on-block-4-or') + '</label></div></div>' +

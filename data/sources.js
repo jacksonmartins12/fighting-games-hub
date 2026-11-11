@@ -276,6 +276,13 @@
      "en": "Capcom's page (saved 2026-11-11, as \"Desert Storm (3)\") confirms the values shown (startup 20, recovery 39, on block −23, damage 800). FAT's blockstun figure gives −25 by the formula; the hub doesn't display blockstun.",
      "pt": "A página da Capcom (salva em 11/11/2026, como \"Desert Storm (3)\") confirma os valores mostrados (startup 20, recovery 39, no block −23, dano 800). O blockstun do FAT dá −25 pela conta; o hub não mostra o blockstun."
     }
+   },
+   "Stand LK": {
+    "status": "official",
+    "detail": {
+     "en": "Capcom's page (saved 2026-11-11) confirms the values shown: startup 4, on hit +5, on block −1. The official page read on 2026-10-02 had disagreed with FAT on the on-hit value.",
+     "pt": "A página da Capcom (salva em 11/11/2026) confirma os valores mostrados: startup 4, no hit +5, no block −1. A página oficial lida em 02/10/2026 tinha divergido do FAT no valor no hit."
+    }
    }
   },
   "luke": {
@@ -405,10 +412,10 @@
   },
   "arjun": {
    "(best reversal)": {
-    "status": "derived",
+    "status": "official",
     "detail": {
-     "en": "FAT has no best reversal for Arjun. The hub lists Howling Destruction (SA1, 8 frames, strike and throw invincible on frames 1–8 per FAT's move notes); his OD moves have no full invincibility.",
-     "pt": "O FAT não indica o melhor reversal da Arjun. O hub lista o Howling Destruction (SA1, 8 frames, invencível a golpes e throws nos frames 1–8 pelas notas do FAT); os golpes OD dela não têm invencibilidade total."
+     "en": "FAT has no best reversal for Arjun; the hub lists Howling Destruction (SA1). Capcom's page (saved 2026-11-11) confirms it: startup 8, invincible to strikes and throws on frames 1–8. Instant Oblivion (SA2, startup 9) is fully invincible on frames 1–12; none of his special moves, OD included, is fully invincible.",
+     "pt": "O FAT não traz melhor reversal para o Arjun; o hub lista o Howling Destruction (SA1). A página da Capcom (salva em 11/11/2026) confirma: startup 8, invencível a golpes e agarrões nos frames 1–8. O Instant Oblivion (SA2, startup 9) é totalmente invencível nos frames 1–12; nenhum especial dele, nem os OD, tem invencibilidade completa."
     }
    },
    "Justice Beyond": {
