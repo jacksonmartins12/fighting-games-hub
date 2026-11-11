@@ -281,7 +281,7 @@
       ["LP Gou Shoryuken","623LP","f,d,df+LP","s",5,10,"21+12","KD +38",-23,1100,"su3","",0,"0.906 (1st)","20% Start","Invincible to airborne strikes on frames 1-14"],
       ["MP Gou Shoryuken","623MP","f,d,df+MP","s",6,"2*8","30+12","KD +32",-30,"1300 (700*600)","su3","",0,"0.966 (1st)","20% Start","Invincible to airborne strikes on frames 1-9"],
       ["HP Gou Shoryuken","623HP","f,d,df+HP","s",7,"2*3*6","35+15","KD +30","-36(-39)","1500 (600*500*400)","su3","",0,"1.124 (1st)","20% Start","Invincible to airborne strikes on frames 1-8"],
-      ["OD Gou Shoryuken","623PP","f,d,df+PP","s",6,"2*2*7","37+15","KD +14",-41,"1700 (300x3*100*700)","","",0,"1.006 (1st)",null,"Fully invincible on frames 1-8"],
+      ["OD Gou Shoryuken","623PP","f,d,df+PP","s",6,"2*2*7","37+15","KD +14",-39,"1700 (300x3*100*700)","","",0,"1.006 (1st)",null,"Fully invincible on frames 1-8"],
       ["LP Adamant Flame","214LP","qcb+LP","s",15,3,23,1,-8,700,"su3","",0,1.714,null,null],
       ["LP Adamant Flame follow-up","214LP > 6P","qcb+LP > f+P","s",7,4,"18(22)",3,-10,500,"su3","",0,null,null,null],
       ["MP Adamant Flame","214MP","qcb+MP","s",19,3,"20(23)",2,-4,800,"su3","",0,2.064,null,null],
@@ -316,7 +316,7 @@
       ["Empyrean's End","214214P","qcb,qcb+P","u","9(2)",3,52,"KD +29 Tumble (HKD +97 Wall Splat)",-35,"2800 (250*1500*1050)","","",0,1.873,"40% Minimum / 40% Wall Splat","Fully invincible on frames 1-11"],
       ["Sip of Calamity","236236K","qcf,qcf+K","u","8(2)",4,58,"HKD +18",-41,4000,"","",0,1.628,"50% Minimum / 10% Immediate (special)","Fully invincible on frames 1-11"],
       ["Sip of Calamity (Critical Art)","236236K (CA)","qcf,qcf+K (CA)","u","8(2)",4,58,"HKD +18",-41,4500,"","",0,1.628,"50% Minimum / 10% Immediate (special)","Fully invincible on frames 1-11"],
-      ["Shun Goku Satsu","5LP > 5LP > 6LK > 5HP","LP > LP > f+LK > HP","u","6+0",21,57,"HKD +18",null,4700,"","low",0,"0.765 (1st)","50% Minimum / 10% Immediate (special)","Fully invincible on frame 1 only and then Projectile invincible on frames 6-27"],
+      ["Shun Goku Satsu","5LP > 5LP > 6LK > 5HP","LP > LP > f+LK > HP","u","6+0",22,57,"HKD +18",null,4700,"","low",0,"0.765 (1st)","50% Minimum / 10% Immediate (special)","Fully invincible on frame 1 only and then Projectile invincible on frames 6-27"],
       ["Double Zanku Hadoken","214PP (air)","qcb+PP (air)","s","8(21)",null,"9(2)",null,null,"1200 (600*600)","","shin",1,null,"20% Start / Combo (2 hits)","Feet are Projectile invincible from frame 1 and until landing The projectile hitbox counts as an airborne attack and thus can be avoided with moves invincible to airborne attacks, such as Shoryuken or Crouch HP"],
       ["Kongou Kokuretsuzan (KKZ)","22PPP","d,d+PPP","u",8,30,41,"KD +38",-39,3000,"","shin",1,"?","40% Minimum","Fully invincible on frames 1-11"],
       ["Misogi","214214K","qcb,qcb+K","u","5(9~10)",7,88,"KD +25(26)","-58(-57)",2900,"","shin",0,null,"40% Minimum","Fully invincible on frames 1-11 Akuma is not airborne at all (despite approaching high from the air), so this move cannot be blown through by air invincible moves like Shoryuken"]

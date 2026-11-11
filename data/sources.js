@@ -10,7 +10,7 @@
   "commit": "a8101eb",
   "commitDate": "2026-10-22",
   "status": "tool",
-  "note": "Every move of the 32 fighters matches this FAT commit in startup, active, recovery, on hit, on block, damage and cancels (checked with tools/fat_sync.py on 2026-11-11). FAT updated existing fighters on 2026-08-10, a week after the 2026-08-03 balance patch, and again on 2026-10-22."
+  "note": "Every move of the 32 fighters matches this FAT commit in startup, active, recovery, on hit, on block, damage and cancels (checked with tools/fat_sync.py on 2026-11-11). FAT updated existing fighters on 2026-08-10, a week after the 2026-08-03 balance patch, and again on 2026-10-22. On 2026-11-11, 46 values in 41 moves where Capcom's official pages differed from FAT were changed to Capcom's values (listed in data/patches.js and marked in the tables)."
  },
  "otherSources": [
   {
@@ -84,10 +84,10 @@
     }
    },
    "Knee Bazooka": {
-    "status": "conflict",
+    "status": "official",
     "detail": {
-     "en": "Capcom's page (saved 2026-11-11) and FAT differ: active frames: Capcom 4, FAT 5. The table shows FAT's value until this is tested in game.",
-     "pt": "A página da Capcom (salva em 11/11/2026) e o FAT divergem: frames ativos: Capcom 4, FAT 5. A tabela mostra o valor do FAT até isso ser testado no jogo."
+     "en": "Value from Capcom's official page (saved 2026-11-11): active frames 4 (FAT had 5).",
+     "pt": "Valor da página oficial da Capcom (salva em 11/11/2026): frames ativos 4 (o FAT tinha 5)."
     }
    }
   },
@@ -109,31 +109,31 @@
   },
   "jamie": {
    "LK Arrow Kick": {
-    "status": "conflict",
+    "status": "official",
     "detail": {
-     "en": "Capcom's page (saved 2026-11-11) and FAT differ: on block: Capcom −45, FAT −44. The table shows FAT's value until this is tested in game.",
-     "pt": "A página da Capcom (salva em 11/11/2026) e o FAT divergem: no block: Capcom −45, FAT −44. A tabela mostra o valor do FAT até isso ser testado no jogo."
+     "en": "Value from Capcom's official page (saved 2026-11-11): on block −45 (FAT had −44).",
+     "pt": "Valor da página oficial da Capcom (salva em 11/11/2026): no block −45 (o FAT tinha −44)."
     }
    },
    "OD Arrow Kick": {
-    "status": "conflict",
+    "status": "official",
     "detail": {
-     "en": "Capcom's page (saved 2026-11-11) and FAT differ: recovery: Capcom 53, FAT 51. The table shows FAT's value until this is tested in game.",
-     "pt": "A página da Capcom (salva em 11/11/2026) e o FAT divergem: recovery: Capcom 53, FAT 51. A tabela mostra o valor do FAT até isso ser testado no jogo."
+     "en": "Value from Capcom's official page (saved 2026-11-11): recovery 53 (FAT had 51).",
+     "pt": "Valor da página oficial da Capcom (salva em 11/11/2026): recovery 53 (o FAT tinha 51)."
     }
    },
    "OD Freeflow Kicks 2": {
-    "status": "conflict",
+    "status": "official",
     "detail": {
-     "en": "Capcom's page (saved 2026-11-11) and FAT differ: startup: Capcom 14, FAT 16. The table shows FAT's value until this is tested in game.",
-     "pt": "A página da Capcom (salva em 11/11/2026) e o FAT divergem: startup: Capcom 14, FAT 16. A tabela mostra o valor do FAT até isso ser testado no jogo."
+     "en": "Value from Capcom's official page (saved 2026-11-11): startup 14 (FAT had 16).",
+     "pt": "Valor da página oficial da Capcom (salva em 11/11/2026): startup 14 (o FAT tinha 16)."
     }
    },
    "OD Freeflow Kicks 3": {
-    "status": "conflict",
+    "status": "official",
     "detail": {
-     "en": "Capcom's page (saved 2026-11-11) and FAT differ: startup: Capcom 18, FAT 19. The table shows FAT's value until this is tested in game.",
-     "pt": "A página da Capcom (salva em 11/11/2026) e o FAT divergem: startup: Capcom 18, FAT 19. A tabela mostra o valor do FAT até isso ser testado no jogo."
+     "en": "Value from Capcom's official page (saved 2026-11-11): startup 18 (FAT had 19).",
+     "pt": "Valor da página oficial da Capcom (salva em 11/11/2026): startup 18 (o FAT tinha 19)."
     }
    }
   },
@@ -146,17 +146,17 @@
     }
    },
    "Kaisen Dankai Raku": {
-    "status": "conflict",
+    "status": "official",
     "detail": {
-     "en": "Capcom's page (saved 2026-11-11) and FAT differ: on block: Capcom −31, FAT −36. The table shows FAT's value until this is tested in game.",
-     "pt": "A página da Capcom (salva em 11/11/2026) e o FAT divergem: no block: Capcom −31, FAT −36. A tabela mostra o valor do FAT até isso ser testado no jogo."
+     "en": "Value from Capcom's official page (saved 2026-11-11): on block −31 (FAT had −36).",
+     "pt": "Valor da página oficial da Capcom (salva em 11/11/2026): no block −31 (o FAT tinha −36)."
     }
    },
    "Death Crest 1": {
-    "status": "conflict",
+    "status": "official",
     "detail": {
-     "en": "Capcom's page (saved 2026-11-11) and FAT differ: startup: Capcom 12, FAT 16; recovery: Capcom 19, FAT 20. The table shows FAT's value until this is tested in game.",
-     "pt": "A página da Capcom (salva em 11/11/2026) e o FAT divergem: startup: Capcom 12, FAT 16; recovery: Capcom 19, FAT 20. A tabela mostra o valor do FAT até isso ser testado no jogo."
+     "en": "Value from Capcom's official page (saved 2026-11-11): startup 12 (FAT had 16); recovery 19 (FAT had 20).",
+     "pt": "Valor da página oficial da Capcom (salva em 11/11/2026): startup 12 (o FAT tinha 16); recovery 19 (o FAT tinha 20)."
     }
    }
   },
@@ -220,10 +220,10 @@
     }
    },
    "Bushin Hellchain 2": {
-    "status": "conflict",
+    "status": "official",
     "detail": {
-     "en": "Capcom's page (saved 2026-11-11) and FAT differ: startup: Capcom 10, FAT 15; active frames: Capcom 2, FAT 3; recovery: Capcom 25, FAT 24; on block: Capcom −10, FAT −12. The table shows FAT's value until this is tested in game.",
-     "pt": "A página da Capcom (salva em 11/11/2026) e o FAT divergem: startup: Capcom 10, FAT 15; frames ativos: Capcom 2, FAT 3; recovery: Capcom 25, FAT 24; no block: Capcom −10, FAT −12. A tabela mostra o valor do FAT até isso ser testado no jogo."
+     "en": "Value from Capcom's official page (saved 2026-11-11): startup 10 (FAT had 15); active frames 2 (FAT had 3); recovery 25 (FAT had 24); on block −10 (FAT had −12).",
+     "pt": "Valor da página oficial da Capcom (salva em 11/11/2026): startup 10 (o FAT tinha 15); frames ativos 2 (o FAT tinha 3); recovery 25 (o FAT tinha 24); no block −10 (o FAT tinha −12)."
     }
    }
   },
@@ -259,17 +259,17 @@
     }
    },
    "LP Sand Blast": {
-    "status": "conflict",
+    "status": "official",
     "detail": {
-     "en": "Capcom's page (saved 2026-11-11) and FAT differ: active frames: Capcom 5, FAT 6. The table shows FAT's value until this is tested in game.",
-     "pt": "A página da Capcom (salva em 11/11/2026) e o FAT divergem: frames ativos: Capcom 5, FAT 6. A tabela mostra o valor do FAT até isso ser testado no jogo."
+     "en": "Value from Capcom's official page (saved 2026-11-11): active frames 5 (FAT had 6).",
+     "pt": "Valor da página oficial da Capcom (salva em 11/11/2026): frames ativos 5 (o FAT tinha 6)."
     }
    },
    "OD Flash Knuckle": {
-    "status": "conflict",
+    "status": "official",
     "detail": {
-     "en": "Capcom's page (saved 2026-11-11) and FAT differ: active frames: Capcom 1, FAT 3. The table shows FAT's value until this is tested in game.",
-     "pt": "A página da Capcom (salva em 11/11/2026) e o FAT divergem: frames ativos: Capcom 1, FAT 3. A tabela mostra o valor do FAT até isso ser testado no jogo."
+     "en": "Value from Capcom's official page (saved 2026-11-11): active frames 1 (FAT had 3).",
+     "pt": "Valor da página oficial da Capcom (salva em 11/11/2026): frames ativos 1 (o FAT tinha 3)."
     }
    }
   },
@@ -282,10 +282,10 @@
     }
    },
    "Crouch HP": {
-    "status": "conflict",
+    "status": "official",
     "detail": {
-     "en": "Capcom's page (saved 2026-11-11) and FAT differ: recovery: Capcom 22, FAT 21. The table shows FAT's value until this is tested in game.",
-     "pt": "A página da Capcom (salva em 11/11/2026) e o FAT divergem: recovery: Capcom 22, FAT 21. A tabela mostra o valor do FAT até isso ser testado no jogo."
+     "en": "Value from Capcom's official page (saved 2026-11-11): recovery 22 (FAT had 21).",
+     "pt": "Valor da página oficial da Capcom (salva em 11/11/2026): recovery 22 (o FAT tinha 21)."
     }
    },
    "LK High Blade Kick": {
@@ -303,24 +303,24 @@
     }
    },
    "Short Uppercut": {
-    "status": "conflict",
+    "status": "official",
     "detail": {
-     "en": "Capcom's page (saved 2026-11-11) and FAT differ: recovery: Capcom 26, FAT 25. The table shows FAT's value until this is tested in game.",
-     "pt": "A página da Capcom (salva em 11/11/2026) e o FAT divergem: recovery: Capcom 26, FAT 25. A tabela mostra o valor do FAT até isso ser testado no jogo."
+     "en": "Value from Capcom's official page (saved 2026-11-11): recovery 26 (FAT had 25).",
+     "pt": "Valor da página oficial da Capcom (salva em 11/11/2026): recovery 26 (o FAT tinha 25)."
     }
    },
    "HP Shoryuken": {
-    "status": "conflict",
+    "status": "official",
     "detail": {
-     "en": "Capcom's page (saved 2026-11-11) and FAT differ: on block: Capcom −36, FAT −39. The table shows FAT's value until this is tested in game.",
-     "pt": "A página da Capcom (salva em 11/11/2026) e o FAT divergem: no block: Capcom −36, FAT −39. A tabela mostra o valor do FAT até isso ser testado no jogo."
+     "en": "Value from Capcom's official page (saved 2026-11-11): on block −36 (FAT had −39).",
+     "pt": "Valor da página oficial da Capcom (salva em 11/11/2026): no block −36 (o FAT tinha −39)."
     }
    },
    "OD Hashogeki": {
-    "status": "conflict",
+    "status": "official",
     "detail": {
-     "en": "Capcom's page (saved 2026-11-11) and FAT differ: active frames: Capcom 5, FAT 6. The table shows FAT's value until this is tested in game.",
-     "pt": "A página da Capcom (salva em 11/11/2026) e o FAT divergem: frames ativos: Capcom 5, FAT 6. A tabela mostra o valor do FAT até isso ser testado no jogo."
+     "en": "Value from Capcom's official page (saved 2026-11-11): active frames 5 (FAT had 6).",
+     "pt": "Valor da página oficial da Capcom (salva em 11/11/2026): frames ativos 5 (o FAT tinha 6)."
     }
    }
   },
@@ -342,214 +342,214 @@
     }
    },
    "Justice Beyond": {
-    "status": "conflict",
+    "status": "official",
     "detail": {
-     "en": "Capcom's page (saved 2026-11-11) and FAT differ: startup: Capcom 11, FAT 15. The table shows FAT's value until this is tested in game.",
-     "pt": "A página da Capcom (salva em 11/11/2026) e o FAT divergem: startup: Capcom 11, FAT 15. A tabela mostra o valor do FAT até isso ser testado no jogo."
+     "en": "Value from Capcom's official page (saved 2026-11-11): startup 11 (FAT had 15).",
+     "pt": "Valor da página oficial da Capcom (salva em 11/11/2026): startup 11 (o FAT tinha 15)."
     }
    }
   },
   "akuma": {
    "OD Gou Shoryuken": {
-    "status": "conflict",
+    "status": "official",
     "detail": {
-     "en": "Capcom's page (saved 2026-11-11) and FAT differ: on block: Capcom −39, FAT −41. The table shows FAT's value until this is tested in game.",
-     "pt": "A página da Capcom (salva em 11/11/2026) e o FAT divergem: no block: Capcom −39, FAT −41. A tabela mostra o valor do FAT até isso ser testado no jogo."
+     "en": "Value from Capcom's official page (saved 2026-11-11): on block −39 (FAT had −41).",
+     "pt": "Valor da página oficial da Capcom (salva em 11/11/2026): no block −39 (o FAT tinha −41)."
     }
    },
    "Shun Goku Satsu": {
-    "status": "conflict",
+    "status": "official",
     "detail": {
-     "en": "Capcom's page (saved 2026-11-11) and FAT differ: active frames: Capcom 22, FAT 21. The table shows FAT's value until this is tested in game.",
-     "pt": "A página da Capcom (salva em 11/11/2026) e o FAT divergem: frames ativos: Capcom 22, FAT 21. A tabela mostra o valor do FAT até isso ser testado no jogo."
+     "en": "Value from Capcom's official page (saved 2026-11-11): active frames 22 (FAT had 21).",
+     "pt": "Valor da página oficial da Capcom (salva em 11/11/2026): frames ativos 22 (o FAT tinha 21)."
     }
    }
   },
   "alex": {
    "Sweep Combination 1": {
-    "status": "conflict",
+    "status": "official",
     "detail": {
-     "en": "Capcom's page (saved 2026-11-11) and FAT differ: recovery: Capcom 43, FAT 30. The table shows FAT's value until this is tested in game.",
-     "pt": "A página da Capcom (salva em 11/11/2026) e o FAT divergem: recovery: Capcom 43, FAT 30. A tabela mostra o valor do FAT até isso ser testado no jogo."
+     "en": "Value from Capcom's official page (saved 2026-11-11): recovery 43 (FAT had 30).",
+     "pt": "Valor da página oficial da Capcom (salva em 11/11/2026): recovery 43 (o FAT tinha 30)."
     }
    },
    "Sweep Combination 2": {
-    "status": "conflict",
+    "status": "official",
     "detail": {
-     "en": "Capcom's page (saved 2026-11-11) and FAT differ: recovery: Capcom 46, FAT 33. The table shows FAT's value until this is tested in game.",
-     "pt": "A página da Capcom (salva em 11/11/2026) e o FAT divergem: recovery: Capcom 46, FAT 33. A tabela mostra o valor do FAT até isso ser testado no jogo."
+     "en": "Value from Capcom's official page (saved 2026-11-11): recovery 46 (FAT had 33).",
+     "pt": "Valor da página oficial da Capcom (salva em 11/11/2026): recovery 46 (o FAT tinha 33)."
     }
    }
   },
   "blanka": {
    "Jump HP": {
-    "status": "conflict",
+    "status": "official",
     "detail": {
-     "en": "Capcom's page (saved 2026-11-11) and FAT differ: active frames: Capcom 1, FAT 4. The table shows FAT's value until this is tested in game.",
-     "pt": "A página da Capcom (salva em 11/11/2026) e o FAT divergem: frames ativos: Capcom 1, FAT 4. A tabela mostra o valor do FAT até isso ser testado no jogo."
+     "en": "Value from Capcom's official page (saved 2026-11-11): active frames 1 (FAT had 4).",
+     "pt": "Valor da página oficial da Capcom (salva em 11/11/2026): frames ativos 1 (o FAT tinha 4)."
     }
    },
    "LK Vertical Rolling Attack": {
-    "status": "conflict",
+    "status": "official",
     "detail": {
-     "en": "Capcom's page (saved 2026-11-11) and FAT differ: active frames: Capcom 20, FAT 19. The table shows FAT's value until this is tested in game.",
-     "pt": "A página da Capcom (salva em 11/11/2026) e o FAT divergem: frames ativos: Capcom 20, FAT 19. A tabela mostra o valor do FAT até isso ser testado no jogo."
+     "en": "Value from Capcom's official page (saved 2026-11-11): active frames 20 (FAT had 19).",
+     "pt": "Valor da página oficial da Capcom (salva em 11/11/2026): frames ativos 20 (o FAT tinha 19)."
     }
    },
    "MK Vertical Rolling Attack": {
-    "status": "conflict",
+    "status": "official",
     "detail": {
-     "en": "Capcom's page (saved 2026-11-11) and FAT differ: active frames: Capcom 20, FAT 19. The table shows FAT's value until this is tested in game.",
-     "pt": "A página da Capcom (salva em 11/11/2026) e o FAT divergem: frames ativos: Capcom 20, FAT 19. A tabela mostra o valor do FAT até isso ser testado no jogo."
+     "en": "Value from Capcom's official page (saved 2026-11-11): active frames 20 (FAT had 19).",
+     "pt": "Valor da página oficial da Capcom (salva em 11/11/2026): frames ativos 20 (o FAT tinha 19)."
     }
    },
    "HK Vertical Rolling Attack": {
-    "status": "conflict",
+    "status": "official",
     "detail": {
-     "en": "Capcom's page (saved 2026-11-11) and FAT differ: active frames: Capcom 20, FAT 19. The table shows FAT's value until this is tested in game.",
-     "pt": "A página da Capcom (salva em 11/11/2026) e o FAT divergem: frames ativos: Capcom 20, FAT 19. A tabela mostra o valor do FAT até isso ser testado no jogo."
+     "en": "Value from Capcom's official page (saved 2026-11-11): active frames 20 (FAT had 19).",
+     "pt": "Valor da página oficial da Capcom (salva em 11/11/2026): frames ativos 20 (o FAT tinha 19)."
     }
    }
   },
   "chun-li": {
    "Jump HK": {
-    "status": "conflict",
+    "status": "official",
     "detail": {
-     "en": "Capcom's page (saved 2026-11-11) and FAT differ: active frames: Capcom 7, FAT 5. The table shows FAT's value until this is tested in game.",
-     "pt": "A página da Capcom (salva em 11/11/2026) e o FAT divergem: frames ativos: Capcom 7, FAT 5. A tabela mostra o valor do FAT até isso ser testado no jogo."
+     "en": "Value from Capcom's official page (saved 2026-11-11): active frames 7 (FAT had 5).",
+     "pt": "Valor da página oficial da Capcom (salva em 11/11/2026): frames ativos 7 (o FAT tinha 5)."
     }
    },
    "Neutral Jump HK": {
-    "status": "conflict",
+    "status": "official",
     "detail": {
-     "en": "Capcom's page (saved 2026-11-11) and FAT differ: active frames: Capcom 5, FAT 7. The table shows FAT's value until this is tested in game.",
-     "pt": "A página da Capcom (salva em 11/11/2026) e o FAT divergem: frames ativos: Capcom 5, FAT 7. A tabela mostra o valor do FAT até isso ser testado no jogo."
+     "en": "Value from Capcom's official page (saved 2026-11-11): active frames 5 (FAT had 7).",
+     "pt": "Valor da página oficial da Capcom (salva em 11/11/2026): frames ativos 5 (o FAT tinha 7)."
     }
    },
    "Soaring Eagle Punches": {
-    "status": "conflict",
+    "status": "official",
     "detail": {
-     "en": "Capcom's page (saved 2026-11-11) and FAT differ: startup: Capcom 6, FAT 16. The table shows FAT's value until this is tested in game.",
-     "pt": "A página da Capcom (salva em 11/11/2026) e o FAT divergem: startup: Capcom 6, FAT 16. A tabela mostra o valor do FAT até isso ser testado no jogo."
+     "en": "Value from Capcom's official page (saved 2026-11-11): startup 6 (FAT had 16).",
+     "pt": "Valor da página oficial da Capcom (salva em 11/11/2026): startup 6 (o FAT tinha 16)."
     }
    },
    "Lightning Kick Barrage": {
-    "status": "conflict",
+    "status": "official",
     "detail": {
-     "en": "Capcom's page (saved 2026-11-11) and FAT differ: startup: Capcom 11, FAT 10. The table shows FAT's value until this is tested in game.",
-     "pt": "A página da Capcom (salva em 11/11/2026) e o FAT divergem: startup: Capcom 11, FAT 10. A tabela mostra o valor do FAT até isso ser testado no jogo."
+     "en": "Value from Capcom's official page (saved 2026-11-11): startup 11 (FAT had 10).",
+     "pt": "Valor da página oficial da Capcom (salva em 11/11/2026): startup 11 (o FAT tinha 10)."
     }
    }
   },
   "dhalsim": {
    "MP Yoga Flame": {
-    "status": "conflict",
+    "status": "official",
     "detail": {
-     "en": "Capcom's page (saved 2026-11-11) and FAT differ: active frames: Capcom 16, FAT 15. The table shows FAT's value until this is tested in game.",
-     "pt": "A página da Capcom (salva em 11/11/2026) e o FAT divergem: frames ativos: Capcom 16, FAT 15. A tabela mostra o valor do FAT até isso ser testado no jogo."
+     "en": "Value from Capcom's official page (saved 2026-11-11): active frames 16 (FAT had 15).",
+     "pt": "Valor da página oficial da Capcom (salva em 11/11/2026): frames ativos 16 (o FAT tinha 15)."
     }
    },
    "HK Yoga Blast": {
-    "status": "conflict",
+    "status": "official",
     "detail": {
-     "en": "Capcom's page (saved 2026-11-11) and FAT differ: on block: Capcom −3, FAT −1. The table shows FAT's value until this is tested in game.",
-     "pt": "A página da Capcom (salva em 11/11/2026) e o FAT divergem: no block: Capcom −3, FAT −1. A tabela mostra o valor do FAT até isso ser testado no jogo."
+     "en": "Value from Capcom's official page (saved 2026-11-11): on block −3 (FAT had −1).",
+     "pt": "Valor da página oficial da Capcom (salva em 11/11/2026): no block −3 (o FAT tinha −1)."
     }
    }
   },
   "jp": {
    "LK Torbalan": {
-    "status": "conflict",
+    "status": "official",
     "detail": {
-     "en": "Capcom's page (saved 2026-11-11) and FAT differ: startup: Capcom 22, FAT 14. The table shows FAT's value until this is tested in game.",
-     "pt": "A página da Capcom (salva em 11/11/2026) e o FAT divergem: startup: Capcom 22, FAT 14. A tabela mostra o valor do FAT até isso ser testado no jogo."
+     "en": "Value from Capcom's official page (saved 2026-11-11): startup 22 (FAT had 14).",
+     "pt": "Valor da página oficial da Capcom (salva em 11/11/2026): startup 22 (o FAT tinha 14)."
     }
    },
    "MK Torbalan": {
-    "status": "conflict",
+    "status": "official",
     "detail": {
-     "en": "Capcom's page (saved 2026-11-11) and FAT differ: startup: Capcom 26, FAT 14. The table shows FAT's value until this is tested in game.",
-     "pt": "A página da Capcom (salva em 11/11/2026) e o FAT divergem: startup: Capcom 26, FAT 14. A tabela mostra o valor do FAT até isso ser testado no jogo."
+     "en": "Value from Capcom's official page (saved 2026-11-11): startup 26 (FAT had 14).",
+     "pt": "Valor da página oficial da Capcom (salva em 11/11/2026): startup 26 (o FAT tinha 14)."
     }
    },
    "HK Torbalan": {
-    "status": "conflict",
+    "status": "official",
     "detail": {
-     "en": "Capcom's page (saved 2026-11-11) and FAT differ: startup: Capcom 26, FAT 14. The table shows FAT's value until this is tested in game.",
-     "pt": "A página da Capcom (salva em 11/11/2026) e o FAT divergem: startup: Capcom 26, FAT 14. A tabela mostra o valor do FAT até isso ser testado no jogo."
+     "en": "Value from Capcom's official page (saved 2026-11-11): startup 26 (FAT had 14).",
+     "pt": "Valor da página oficial da Capcom (salva em 11/11/2026): startup 26 (o FAT tinha 14)."
     }
    },
    "OD Torbalan": {
-    "status": "conflict",
+    "status": "official",
     "detail": {
-     "en": "Capcom's page (saved 2026-11-11) and FAT differ: startup: Capcom 22, FAT 14. The table shows FAT's value until this is tested in game.",
-     "pt": "A página da Capcom (salva em 11/11/2026) e o FAT divergem: startup: Capcom 22, FAT 14. A tabela mostra o valor do FAT até isso ser testado no jogo."
+     "en": "Value from Capcom's official page (saved 2026-11-11): startup 22 (FAT had 14).",
+     "pt": "Valor da página oficial da Capcom (salva em 11/11/2026): startup 22 (o FAT tinha 14)."
     }
    },
    "Lovushka": {
-    "status": "conflict",
+    "status": "official",
     "detail": {
-     "en": "Capcom's page (saved 2026-11-11) and FAT differ: startup: Capcom 29, FAT 1. The table shows FAT's value until this is tested in game.",
-     "pt": "A página da Capcom (salva em 11/11/2026) e o FAT divergem: startup: Capcom 29, FAT 1. A tabela mostra o valor do FAT até isso ser testado no jogo."
+     "en": "Value from Capcom's official page (saved 2026-11-11): startup 29 (FAT had 1).",
+     "pt": "Valor da página oficial da Capcom (salva em 11/11/2026): startup 29 (o FAT tinha 1)."
     }
    }
   },
   "marisa": {
    "MP Dimachaerus": {
-    "status": "conflict",
+    "status": "official",
     "detail": {
-     "en": "Capcom's page (saved 2026-11-11) and FAT differ: active frames: Capcom 5, FAT 4. The table shows FAT's value until this is tested in game.",
-     "pt": "A página da Capcom (salva em 11/11/2026) e o FAT divergem: frames ativos: Capcom 5, FAT 4. A tabela mostra o valor do FAT até isso ser testado no jogo."
+     "en": "Value from Capcom's official page (saved 2026-11-11): active frames 5 (FAT had 4).",
+     "pt": "Valor da página oficial da Capcom (salva em 11/11/2026): frames ativos 5 (o FAT tinha 4)."
     }
    }
   },
   "mai": {
    "Kagerou no Mai": {
-    "status": "conflict",
+    "status": "official",
     "detail": {
-     "en": "Capcom's page (saved 2026-11-11) and FAT differ: recovery: Capcom 51, FAT 59. The table shows FAT's value until this is tested in game.",
-     "pt": "A página da Capcom (salva em 11/11/2026) e o FAT divergem: recovery: Capcom 51, FAT 59. A tabela mostra o valor do FAT até isso ser testado no jogo."
+     "en": "Value from Capcom's official page (saved 2026-11-11): recovery 51 (FAT had 59).",
+     "pt": "Valor da página oficial da Capcom (salva em 11/11/2026): recovery 51 (o FAT tinha 59)."
     }
    }
   },
   "rashid": {
    "OD Spinning Mixer": {
-    "status": "conflict",
+    "status": "official",
     "detail": {
-     "en": "Capcom's page (saved 2026-11-11) and FAT differ: on block: Capcom −42, FAT −53. The table shows FAT's value until this is tested in game.",
-     "pt": "A página da Capcom (salva em 11/11/2026) e o FAT divergem: no block: Capcom −42, FAT −53. A tabela mostra o valor do FAT até isso ser testado no jogo."
+     "en": "Value from Capcom's official page (saved 2026-11-11): on block −42 (FAT had −53).",
+     "pt": "Valor da página oficial da Capcom (salva em 11/11/2026): no block −42 (o FAT tinha −53)."
     }
    }
   },
   "terry": {
    "Jump MP": {
-    "status": "conflict",
+    "status": "official",
     "detail": {
-     "en": "Capcom's page (saved 2026-11-11) and FAT differ: active frames: Capcom 6, FAT 4. The table shows FAT's value until this is tested in game.",
-     "pt": "A página da Capcom (salva em 11/11/2026) e o FAT divergem: frames ativos: Capcom 6, FAT 4. A tabela mostra o valor do FAT até isso ser testado no jogo."
+     "en": "Value from Capcom's official page (saved 2026-11-11): active frames 6 (FAT had 4).",
+     "pt": "Valor da página oficial da Capcom (salva em 11/11/2026): frames ativos 6 (o FAT tinha 4)."
     }
    },
    "Jump MK": {
-    "status": "conflict",
+    "status": "official",
     "detail": {
-     "en": "Capcom's page (saved 2026-11-11) and FAT differ: active frames: Capcom 4, FAT 6. The table shows FAT's value until this is tested in game.",
-     "pt": "A página da Capcom (salva em 11/11/2026) e o FAT divergem: frames ativos: Capcom 4, FAT 6. A tabela mostra o valor do FAT até isso ser testado no jogo."
+     "en": "Value from Capcom's official page (saved 2026-11-11): active frames 4 (FAT had 6).",
+     "pt": "Valor da página oficial da Capcom (salva em 11/11/2026): frames ativos 4 (o FAT tinha 6)."
     }
    },
    "LP Rising Tackle": {
-    "status": "conflict",
+    "status": "official",
     "detail": {
-     "en": "Capcom's page (saved 2026-11-11) and FAT differ: on block: Capcom −25, FAT −23. The table shows FAT's value until this is tested in game.",
-     "pt": "A página da Capcom (salva em 11/11/2026) e o FAT divergem: no block: Capcom −25, FAT −23. A tabela mostra o valor do FAT até isso ser testado no jogo."
+     "en": "Value from Capcom's official page (saved 2026-11-11): on block −25 (FAT had −23).",
+     "pt": "Valor da página oficial da Capcom (salva em 11/11/2026): no block −25 (o FAT tinha −23)."
     }
    }
   },
   "zangief": {
    "Tundra Storm": {
-    "status": "conflict",
+    "status": "official",
     "detail": {
-     "en": "Capcom's page (saved 2026-11-11) and FAT differ: startup: Capcom 5, FAT 6; active frames: Capcom 51, FAT 50. The table shows FAT's value until this is tested in game.",
-     "pt": "A página da Capcom (salva em 11/11/2026) e o FAT divergem: startup: Capcom 5, FAT 6; frames ativos: Capcom 51, FAT 50. A tabela mostra o valor do FAT até isso ser testado no jogo."
+     "en": "Value from Capcom's official page (saved 2026-11-11): startup 5 (FAT had 6); active frames 51 (FAT had 50).",
+     "pt": "Valor da página oficial da Capcom (salva em 11/11/2026): startup 5 (o FAT tinha 6); frames ativos 51 (o FAT tinha 50)."
     }
    }
   }

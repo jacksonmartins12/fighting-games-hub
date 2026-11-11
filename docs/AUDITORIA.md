@@ -111,7 +111,7 @@ Nenhum valor foi alterado sem confirmação da fonte. Cada linha abaixo aparece 
 
 ## 7. Problemas não resolvidos
 
-1. **Dados oficiais da Capcom**: comparados em 11/11/2026 (seção 10); 46 valores em 41 golpes divergem e esperam decisão.
+1. **Dados oficiais da Capcom**: comparados em 11/11/2026 (seção 10); os 46 valores divergentes agora seguem a Capcom (seção 11). Cerca de 700 linhas da Capcom (dashes, parries, continuações, estados) não foram comparadas.
 2. **Contagem do meaty**: rodar o teste do Akuma (throw, dash, Crouch MK; −4 ou −5 no block).
 3. **Safe jump**: testado só contra reversals do Ryu; testar contra um reversal só antiaéreo, um contra-ataque e uma Super que agarra.
 4. **As 25 marcações** precisam de uma segunda fonte ou de teste no jogo.
@@ -212,3 +212,17 @@ Quatro problemas apontados depois do relatório foram conferidos no estado do re
 | Terry Bogard | LP Rising Tackle | L Rising Tackle | no block | -23 | -25 |
 | Zangief | Tundra Storm | Tundra Storm | startup | 6 | 5 |
 | Zangief | Tundra Storm | Tundra Storm | frames ativos | 50 | 51 |
+
+## 11. Valores alinhados com a Capcom (11/11/2026)
+
+Por decisão do autor do hub, a fonte oficial prevalece. Os **46 valores em 41 golpes** listados na seção 10 passaram a usar o número da Capcom.
+
+- **Dados:** `data/chars/*.js` (19 personagens). Cada troca está registrada em `data/patches.js` (valor antigo do FAT, valor novo, fonte, data) e marcada nas tabelas como "✓ confirmado pela Capcom", com o valor antigo do FAT na explicação.
+- **Proteção:** o `tools/fat_sync.py apply` não sobrescreve golpes com status `official`, então uma atualização futura do FAT não desfaz essas trocas. O `check` vai continuar listando esses 46 valores como diferentes do FAT, o que é esperado.
+- **Textos dos guias ajustados para os novos números:**
+  - Ryu: HP Shoryuken volta a −36 no counterplay, desfazendo a mudança da seção 9, que tinha seguido o FAT.
+  - Jamie: Arrow Kick "−43/−45".
+  - Zangief: Tundra Storm "ativo nos frames 5–55".
+  - Akuma: o guia já dizia −39 para o OD Gou Shoryuken, igual à Capcom.
+- **Verificação:** `tools/capcom_compare.py` agora encontra 0 diferenças. 23 de 23 testes passam, incluindo o novo "regression: values that differed from Capcom follow Capcom and are logged" e os testes do Ryu e do quadro de frame data atualizados para os valores da Capcom.
+- **Pendências:** as 7 marcações que a Capcom não lista com nome comparável continuam "a conferir"; as linhas não comparadas da Capcom (seção 10) continuam apoiadas só no FAT.

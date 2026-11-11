@@ -42,8 +42,8 @@
         "pt": "Beber (22P) leva tempo e pode ser punido se feito na hora errada, principalmente de longe contra fireballs."
       },
       {
-        "en": "Most of his specials are unsafe on block (Freeflow Strikes enders, Arrow Kick around -43/-44), so careless pressure gets punished.",
-        "pt": "A maioria dos especiais é insegura no block (finais do Freeflow Strikes, Arrow Kick em torno de -43/-44), então pressão descuidada é punida."
+        "en": "Most of his specials are unsafe on block (Freeflow Strikes enders, Arrow Kick around -43/-45), so careless pressure gets punished.",
+        "pt": "A maioria dos especiais é insegura no block (finais do Freeflow Strikes, Arrow Kick em torno de -43/-45), então pressão descuidada é punida."
       }
     ],
     "gameplan": {
@@ -278,16 +278,16 @@
       ["OD Freeflow Strikes","236PP","qcf+PP","s",13,2,24,1,-3,405,"su2 su3","",0,1.987,"25% Start / Combo (2 hits)",null],
       ["OD Freeflow Strikes 2","236PP > 6P","qcf+PP > f+P","s",13,2,22,-1,-3,405,"","",0,2.641,"25% Start",null],
       ["OD Freeflow Strikes 3","236PP > 6P > 6P","qcf+PP > f+P > f+P","s",13,2,30,"KD +34",-13,675,"","",0,3.462,"25% Start",null],
-      ["OD Freeflow Kicks 2","236PP > 6K","qcf+PP > f+K","s",16,2,32,-7,-15,315,"","",0,"?",null,null],
-      ["OD Freeflow Kicks 3","236PP > 6K > 6K","qcf+PP > f+K > f+K","s",19,2,64,"KD +1",-49,540,"","",0,"?",null,null],
+      ["OD Freeflow Kicks 2","236PP > 6K","qcf+PP > f+K","s",14,2,32,-7,-15,315,"","",0,"?",null,null],
+      ["OD Freeflow Kicks 3","236PP > 6K > 6K","qcf+PP > f+K > f+K","s",18,2,64,"KD +1",-49,540,"","",0,"?",null,null],
       ["LP Swagger Step","214LP","qcb+LP","s",17,9,17,"KD +39",-6,810,"su3","",0,"1.939~2.29",null,null],
       ["MP Swagger Step","214MP","qcb+MP","s",20,9,17,"KD +39",-6,900,"su3","",0,"2.264~2.77",null,null],
       ["HP Swagger Step","214HP","qcb+HP","s",25,9,16,"KD +42",-3,1080,"su3","",0,"2.669~3.13",null,null],
       ["OD Swagger Step","214PP","qcb+PP","s",20,9,15,"KD +73 (Tumble)",-1,990,"su2 su3","",0,"2.744~3.25","20% Start",null],
-      ["LK Arrow Kick","623LK","f,d,df+LK","s",5,10,52,"KD +42",-44,"900 (450*450)","","",0,"1.147 (1st)","30% Start","Invincible to airborne strikes on frames 1-11 Jamie becomes fully invincible for the follow-up strike on frames 15-41"],
+      ["LK Arrow Kick","623LK","f,d,df+LK","s",5,10,52,"KD +42",-45,"900 (450*450)","","",0,"1.147 (1st)","30% Start","Invincible to airborne strikes on frames 1-11 Jamie becomes fully invincible for the follow-up strike on frames 15-41"],
       ["MK Arrow Kick","623MK","f,d,df+MK","s",8,9,51,"KD +34",-43,"1080 (450*630)","","",0,"1.197 (1st)",null,"Invincible to airborne strikes on frames 1-14 Jamie becomes fully invincible for the follow-up strike on frames 17-40"],
       ["HK Arrow Kick","623HK","f,d,df+HK","s",10,9,51,"KD +39",-43,"1260 (450*360*450)","","",0,"1.247 (1st)",null,"Invincible to airborne strikes on frames 1-16 Jamie becomes fully invincible for the follow-up strike on frames 19-42"],
-      ["OD Arrow Kick","623KK","f,d,df+KK","s",6,9,51,"KD +40",-43,"1350 (450*405*495)","","",0,"1.147 (1st)",null,"Fully invincible on frames 1-9 Invincible to airborne strikes on frames 10-12 Jamie becomes fully invincible again for the follow-up strike on frames 15-38"],
+      ["OD Arrow Kick","623KK","f,d,df+KK","s",6,9,53,"KD +40",-43,"1350 (450*405*495)","","",0,"1.147 (1st)",null,"Fully invincible on frames 1-9 Invincible to airborne strikes on frames 10-12 Jamie becomes fully invincible again for the follow-up strike on frames 15-38"],
       ["Breakin'","236236K","qcf,qcf+K","u",8,"2*7(6)5(6)2(7)2(7)2(6)2(6)2(6)2(29)2(9)2(6)2(5)2","74(107)","KD +12(4)","-60(-93)","1980(1665)","","",0,"1.836~3.93","30% Minimum","Strike and Throw invincible on frames 1-12 Jamie's fastest startup invincible Super Art makes this the ideal Reversal option while in Burnout"],
       ["The Devil's Song","214214P","qcb,qcb+P","u",1,null,5,null,null,null,"","",0,null,null,null],
       ["Getsuga Saiho","236236P","qcf,qcf+P","u",10,"3(13)3",42,"HKD +71",-27,2340,"","",0,"1.945~2.525","50% Minimum / 10% Immediate (special)","Fully invincible on frames 1-12"],

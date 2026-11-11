@@ -277,7 +277,7 @@
       ["MP Spinning Mixer (Wind)","236MP (wind)","qcf+MP (wind)","s",5,"1*2(2)2(4)2(3)2(6)2(3)2(5)2(3)2(5)2(3)2","37+24","KD +37","-75(-88)","1400 (200x2*100x8*200)","su3","var",0,"0.956 (1st)",null,"Invincible to airborne strikes on frames 3-17"],
       ["HP Spinning Mixer","236HP","qcf+HP","s",6,"2(2)3(3)3(4)3(4)3(4)3","24+14","KD +33",-55,"1200 (100x5*700)","","",0,"0.98 (1st)",null,"Invincible to airborne strikes on frames 6-12 Throw invincible on frames 8-10"],
       ["HP Spinning Mixer (Wind)","236HP (wind)","qcf+HP(wind)","s",5,"2(2)3(3)3(4)3(3)3(2)3(2)3(2)3(3)3","39+14","KD +27",-83,"1800 (125x8*800)","","var",0,"0.98 (1st)",null,"Invincible to airborne strikes on frames 5-11 Throw invincible on frames 7-9"],
-      ["OD Spinning Mixer","236PP","qcf+PP","s",6,"1*2(2)3(2)4(2)4(2)4(2)4(2)4(2)3","38+24(34+20)","KD +9",-53,"1400 (300x2*100x6*200)","","",0,"0.956 (1st)","20% Start","Fully invincible on frames 1-8 and also invincible to airborne strikes on frames 9-13"],
+      ["OD Spinning Mixer","236PP","qcf+PP","s",6,"1*2(2)3(2)4(2)4(2)4(2)4(2)4(2)3","38+24(34+20)","KD +9",-42,"1400 (300x2*100x6*200)","","",0,"0.956 (1st)","20% Start","Fully invincible on frames 1-8 and also invincible to airborne strikes on frames 9-13"],
       ["OD Spinning Mixer (Wind)","236PP (wind)","qcf+PP (wind)","s",4,"1*2(2)3(2)4(2)4(2)4(2)4(2)4(2)4(2)4","36+24","KD +42","-77(-89)","1400 (200x2*100x8*200)","sp","var",0,"0.956 (1st)","20% Start","Fully invincible on frames 1-6"],
       ["LK Eagle Spike","214LK","qcb+LK","s",15,13,"11+20","KD +30(42)",-36,1100,"su3","",0,"1.298~2.723",null,null],
       ["LK Eagle Spike (Wind)","214LK (wind)","qcb+LK (wind)","s",14,13,"11+22","KD +35(47)",-24,1300,"su3","var",0,"1.873~4.318",null,null],

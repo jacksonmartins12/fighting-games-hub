@@ -242,7 +242,7 @@
       ["Full Bullet Magnum","6MP","f+MP","n",20,3,19,2,-3,800,"","",0,1.465,null,null],
       ["Spinning Back Knuckle","6HP","f+HP","n",16,3,20,5,3,800,"","",0,"1.856~1.921",null,null],
       ["Burning Straight","4HP","b+HP","n",9,3,21,1,-4,800,"sp su","",0,1.49,null,null],
-      ["Knee Bazooka","4LK","b+LK","n",8,5,15,"0(4)","-4(0)",500,"","",0,"1.323~1.587",null,null],
+      ["Knee Bazooka","4LK","b+LK","n",8,4,15,"0(4)","-4(0)",500,"","",0,"1.323~1.587",null,null],
       ["Rolling Sobat","4 or 6+MK","b or f+MK","n",11,3,"18(21)",3,-6,700,"","",0,"1.863 Fwd / 0.767 Back",null,null],
       ["Reverse Spin Kick","6HK","f+HK","n",17,3,26,"-1 (KD +29)",-8,1000,"","",0,2.086,null,"Throw invincible and crushes lows on frames 4-28 The brief extended leg hurtbox on frame 16 of start-up (1F before active) is strike invincible (cannot counter-poke projectiles)"],
       ["Guile High Kick","3HK","df+HK","n",10,3,23,0,-9,1000,"sp su","",0,1.559,null,"The brief extended leg hurtbox on frame 9 of start-up (1F before active) is strike invincible (cannot counter-poke projectiles)"],

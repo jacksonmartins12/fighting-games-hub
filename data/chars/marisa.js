@@ -280,7 +280,7 @@
       ["OD Gladius","236PP","qcf+PP","s",19,4,21,"KD +36",-2,1700,"su2 su3","",0,"1.899~2.105","30% Start",null],
       ["OD Gladius (hold)","236PP (hold)","qcf+PP (hold)","s","35(6-8)",4,20,"HKD +40",4,"2900 (1700*1000*200)","su2 su3","var",0,"2.169~2.269","30% Start",null],
       ["LP Dimachaerus","214LP","qcb+LP","s",12,4,30,-3,-16,600,"su3","",0,"1.395~1.535",null,"Invincible to airborne strikes on frames 5-15"],
-      ["MP Dimachaerus","214MP","qcb+MP","s",16,4,30,0,-16,700,"su3","",0,"1.266~1.356",null,"Invincible to airborne strikes on frames 6-19 on head and upper body"],
+      ["MP Dimachaerus","214MP","qcb+MP","s",16,5,30,0,-16,700,"su3","",0,"1.266~1.356",null,"Invincible to airborne strikes on frames 6-19 on head and upper body"],
       ["HP Dimachaerus","214HP","qcb+HP","s",22,4,30,"KD +38",-16,800,"su3","",0,"1.266~1.356",null,"Invincible to airborne strikes on frames 10-25 on head and shoulders only"],
       ["OD Dimachaerus","214PP","qcb+PP","s",16,4,26,"KD +42",-12,600,"su2 su3","",0,"1.266~1.356",null,"Invincible to airborne strikes on frames 5-19"],
       ["LP Dimachaerus Follow-up","214LP > 6P","qcb+LP > f+P","s",13,5,23,"KD +31",null,"1200 (600*600)","","",0,"2.375~2.397",null,null],

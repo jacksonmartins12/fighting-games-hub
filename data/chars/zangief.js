@@ -206,8 +206,8 @@
         "pt": "Bufferize o 360 dentro de um jab (5LP ou 2LP) ou faça cancelando o pulo: vá para 2, gire terminando em cima e aperte P antes de sair do chão."
       },
       {
-        "en": "Tundra Storm (22HK) counters grounded kicks (active frames 6-55); use it only as a read against an opponent who loves low kicks.",
-        "pt": "O Tundra Storm (22HK) dá counter em chutes no chão (ativo nos frames 6-55); use só como leitura contra quem abusa de chute baixo."
+        "en": "Tundra Storm (22HK) counters grounded kicks (active frames 5-55); use it only as a read against an opponent who loves low kicks.",
+        "pt": "O Tundra Storm (22HK) dá counter em chutes no chão (ativo nos frames 5-55); use só como leitura contra quem abusa de chute baixo."
       },
       {
         "en": "After a Screw Piledriver (HKD +28 to +30), walk forward and meaty 5LP or repeat the guess; the opponent has to respect both.",
@@ -286,7 +286,7 @@
       ["OD Siberian Express (near)","624KK (near)","hcb+KK (near)","s",23,2,44,"HKD +29",null,"3000(3450)","","",0,2.93,null,null],
       ["Siberian Express (far)","624K (far)","hcb+K (far)","s","55(81)",2,40,"HKD +29",null,"2700(3105)","","var",0,"Run + 1.64",null,null],
       ["OD Siberian Express (far)","624KK (far)","hcb+KK (far)","s","54(81)",2,40,"HKD +29",null,"3000(3450)","","var",0,"Run + 1.64",null,null],
-      ["Tundra Storm","22HK","d,d+HK","s",6,50,24,"HKD +5",null,2400,"","ctr",0,null,null,"A successful counter results in a throw hitbox, which can make this attack whiff on airborne or throw invincible opponents)"],
+      ["Tundra Storm","22HK","d,d+HK","s",5,51,24,"HKD +5",null,2400,"","ctr",0,null,null,"A successful counter results in a throw hitbox, which can make this attack whiff on airborne or throw invincible opponents)"],
       ["Aerial Russian Slam","236236K","qcf,qcf+K","u",11,7,"13+47","HKD +29",null,"3500 (1100*2400)","","",0,"2.215~2.764","30% Minimum / 20% Immediate","Fully invincible on frames 1-17"],
       ["Cyclone Lariat","236236P","qcf,qcf+P","u",18,"91(8)3",52,"HKD +5(1)",-35,"3160 (3060)","","",0,"2.913~3.00","40% Minimum","Fully invincible on frames 1-18 Projectile invincible on frames 19-119"],
       ["Cyclone Lariat (hold)","236236P (hold)","qcf,qcf+P","u",18,"94(8)3","52(25)","KD +87",-35,"1100 (0*60x9*560)","","var",0,"2.913~3.00","40% Minimum","Fully invincible on frames 1-18 Projectile invincible on frames 19-122"],

@@ -142,7 +142,7 @@ await test('regression: Ryu counterplay quotes the Shoryuken block values of the
     const g = CHARS.ryu.counterplay, got = l => { const m = g[l].match(/-(\d+)\/-(\d+)\/-(\d+)[^-]*-(\d+)/); return m ? m.slice(1).map(x => '-' + x).join(' ') : null; };
     return { want, en: got('en'), pt: got('pt'), sa3: [/-50 \(-54/.test(g.en), /-50 \(-54/.test(g.pt), tab('Shin Shoryuken')] };
   });
-  eq(r.en, r.want, 'EN'); eq(r.pt, r.want, 'PT'); eq(r.want, '-23 -32 -39 -40', 'table');
+  eq(r.en, r.want, 'EN'); eq(r.pt, r.want, 'PT'); eq(r.want, '-23 -32 -36 -40', 'table');   // HP Shoryuken -36 per Capcom's official page
   eq(r.sa3, [true, true, '-50(-54)'], 'Shin Shoryuken quoted as in the table');
 });
 await test('regression: data notes of Akuma, Dhalsim, JP, Mai, Yasmine and Lily match their tables', async page => {
@@ -184,12 +184,23 @@ await test('data: all 32 fighters load with 16-field moves, stats and source fla
   eq(r.n, 32, 'fighters');
   eq(r.bad, [], 'data problems');
 });
-await test('data: frame table shows range, scaling and the four flagged Ryu moves', async page => {
+await test('data: frame table shows range, scaling and Capcom-confirmed marks on Ryu', async page => {
   await open(page, '#roster');
   await page.evaluate(() => document.querySelector('[data-char="ryu"]').click());
   await page.waitForFunction(() => document.querySelector('.ft-table tbody tr'));
-  const r = await page.evaluate(() => ({ heads: document.querySelectorAll('.ft-table th').length, flagged: document.querySelectorAll('.ft-table tr.ft-flagged').length }));
-  eq(r, { heads: 11, flagged: 4 }, 'frame table');
+  const r = await page.evaluate(() => ({ heads: document.querySelectorAll('.ft-table th').length, flagged: document.querySelectorAll('.ft-table tr.ft-flagged').length, official: document.querySelectorAll('.ft-table .ft-flag-official').length }));
+  eq(r, { heads: 11, flagged: 0, official: 7 }, 'frame table');
+});
+
+await test('regression: values that differed from Capcom follow Capcom and are logged', async page => {
+  await open(page);
+  const r = await page.evaluate(async () => {
+    const v = async (slug, name, i) => { await needChar(slug); return FRAMES[slug].m.find(m => m[0] === name)[i]; };
+    const log = (HUB_DATA.patches || []).length;
+    return [await v('ryu', 'HP Shoryuken', 8), await v('akuma', 'OD Gou Shoryuken', 8), await v('juri', 'Kaisen Dankai Raku', 8), await v('rashid', 'OD Spinning Mixer', 8),
+      await v('chun-li', 'Soaring Eagle Punches', 4), await v('alex', 'Sweep Combination 1', 6), await v('zangief', 'Tundra Storm', 4), log];
+  });
+  eq(r, [-36, -39, -31, -42, 6, 43, 5, 1], 'Capcom values');
 });
 
 // ---------- features ----------

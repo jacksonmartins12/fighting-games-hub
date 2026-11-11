@@ -283,7 +283,7 @@
       ["OD Breathing Shockwave","236KK > 6P","qcf+KK > f+P","s",15,"10~",18,"KD +38(+41/+48)",-7,"800(1000)","su2 su3","",1,"?","Combo (2 hits)",null],
       ["Divine Pillar","214K","qcb+K","s","25 (77~101)","10*10",21,"KD +42",-6,"800*800","su3","",1,null,"20% Start / Combo (2 hits)","Upper head hurtbox is Projectile invincible on frames 24-53 (extended leg hurtbox is also Projectile invincible until the end of Recovery on frame 55)"],
       ["OD Divine Pillar","214KK","qcb+KK","s","20 (62~96)","10*10",21,"KD +42",-6,"800*800","su2 su3","",1,null,"20% Start / Combo (2 hits)","Upper head hurtbox is Projectile invincible on frames 19-48 (extended leg hurtbox is also Projectile invincible until the end of Recovery on frame 50)"],
-      ["Justice Beyond","623P (Pillar)","f,d,df+P (Pillar)","s",15,16,27,"KD +95",-7,1600,"","var",0,"?",null,null],
+      ["Justice Beyond","623P (Pillar)","f,d,df+P (Pillar)","s",11,16,27,"KD +95",-7,1600,"","var",0,"?",null,null],
       ["Ghastly Interrogation","63214P","hcb+P","s",8,3,35,"HKD +8",null,"1600 rec / 1800","","",0,1,null,null],
       ["OD Ghastly Interrogation","63214PP","hcb+PP","s",26,3,38,"HKD +8",null,"2200 rec / 2400","","",0,2.02,null,null],
       ["Indomitable Defense","22HK","d,d+HK","s",3,"28~",30,"KD +29",null,"1500 rec","","ctr",0,1.83,null,null],

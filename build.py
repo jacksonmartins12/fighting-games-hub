@@ -14,7 +14,7 @@ import hashlib, json, os, re, sys
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 LANGS = [('en', 'en'), ('pt', 'pt-BR')]
-SCRIPTS = ['i18n/en.js', 'i18n/pt.js', 'data/roster.js', 'data/upcoming.js', 'data/quiz.js', 'data/sources.js',
+SCRIPTS = ['i18n/en.js', 'i18n/pt.js', 'data/roster.js', 'data/upcoming.js', 'data/quiz.js', 'data/sources.js', 'data/patches.js',
            'assets/js/core.js', 'assets/js/store.js', 'assets/js/nav.js', 'assets/js/widgets.js',
            'assets/js/checklists.js', 'assets/js/quiz.js', 'assets/js/roster.js', 'assets/js/frames.js',
            'assets/js/punish.js', 'assets/js/matchup.js', 'assets/js/sheet.js', 'assets/js/tracker.js', 'assets/js/plan.js', 'assets/js/review.js', 'assets/js/flashcards.js', 'assets/js/search.js', 'assets/js/advanced.js', 'assets/js/boot.js']

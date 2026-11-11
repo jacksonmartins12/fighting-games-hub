@@ -133,7 +133,7 @@
   "frames.active": "Active",
   "frames.recovery": "Recovery",
   "frames.damage": "Damage",
-  "frames.source-fat-frame-assistant-tool-community": "Source: FAT (Frame Assistant Tool) community frame data, update of October 22, 2026 (commit a8101eb), which includes the August 2026 patch. Every move was compared with that file on November 11, 2026, and with Capcom's official pages saved the same day. Rows marked ⚠ have a problem in the source, explained under the move; see <a href=\"#adv-method\">how the data is checked</a>. Values in parentheses are alternate versions (spaced, held, Punish Counter…). Cancel: SP = into specials, SA = into Super Arts, TC = target combo, Chain = chains into lights. Range is in game units. Scaling is FAT's note on the move's own damage scaling (Start = when it starts a combo).",
+  "frames.source-fat-frame-assistant-tool-community": "Source: FAT (Frame Assistant Tool) community frame data, update of October 22, 2026 (commit a8101eb), which includes the August 2026 patch. Every move was compared with that file on November 11, 2026, and with Capcom's official pages saved the same day; where they differed (46 values), the table uses Capcom's value. Rows marked ⚠ have a problem in the source, explained under the move; see <a href=\"#adv-method\">how the data is checked</a>. Values in parentheses are alternate versions (spaced, held, Punish Counter…). Cancel: SP = into specials, SA = into Super Arts, TC = target combo, Chain = chains into lights. Range is in game units. Scaling is FAT's note on the move's own damage scaling (Start = when it starts a combo).",
   "frames.range": "Range",
   "frames.scaling": "Scaling",
   "frames.inv": "Invincibility (FAT note, in English):",

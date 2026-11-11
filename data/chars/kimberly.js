@@ -251,7 +251,7 @@
       ["Bushin Prism Strikes 2","5LP > MP > 5HP","LP > MP > HP","n",12,2,25,"KD +47",-10,440,"","",0,"1.405~1.436",null,null],
       ["Bushin Prism Strikes 3","5LP > MP > 5HP > HK","LP > MP > HP > HK","n",26,3,"19(24)","KD +49",-12,520,"","",0,"1.802~1.857",null,null],
       ["Bushin Hellchain 1","5LP > MP > 2HP","LP > MP > d+HP","n",10,2,25,2,-10,580,"","",0,1.259,null,null],
-      ["Bushin Hellchain 2","5LP > MP > 2HP > 5HK","LP > MP > d+HP > HK","n",15,3,24,"KD +26",-12,750,"","",0,1.624,null,null],
+      ["Bushin Hellchain 2","5LP > MP > 2HP > 5HK","LP > MP > d+HP > HK","n",10,2,25,"KD +26",-10,750,"","",0,1.624,null,null],
       ["Bushin Hellchain Throw","5LP > MP > 2HP > 2HK","LP > MP > d+HP > d+HK","n",15,3,23,"KD +16",-12,750,"","",0,1.19,null,null],
       ["Bushin Tiger Fangs","5MP > HP","MP > HP","n",10,3,26,"KD +28",-12,360,"sp su","",0,1.406,null,null],
       ["Ripcord Throw","LPLK","LP+LK","t",5,3,23,"KD +17",null,"1082 (1838)","","",0,0.8,"20% Start / 20% Immediate",null],

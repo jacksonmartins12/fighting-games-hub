@@ -215,8 +215,8 @@
       }
     ],
     "counterplay": {
-      "en": "Approach in small steps with low guard instead of jumping at fireball range, because that's where Shoryuken waits. Mix neutral jumps with blocking. Learn what's punishable: L/M/H Shoryuken are -23/-32/-39 on block and OD Shoryuken -40, and Shin Shoryuken (SA3) is -50 (-54 in its alternate version). Watch for 2MK > Drive Rush and test each Hashogeki version separately in training before trying to punish.",
-      "pt": "Avance em passos curtos defendendo agachado em vez de pular na distância do fireball, porque é ali que o Shoryuken espera. Misture pulo neutro com defesa. Saiba o que é punível: os L/M/H Shoryuken ficam -23/-32/-39 no block e o OD Shoryuken -40, e o Shin Shoryuken (SA3) fica -50 (-54 na versão alternativa). Fique atento ao 2MK > Drive Rush e teste cada versão do Hashogeki no training mode antes de tentar punir."
+      "en": "Approach in small steps with low guard instead of jumping at fireball range, because that's where Shoryuken waits. Mix neutral jumps with blocking. Learn what's punishable: L/M/H Shoryuken are -23/-32/-36 on block and OD Shoryuken -40, and Shin Shoryuken (SA3) is -50 (-54 in its alternate version). Watch for 2MK > Drive Rush and test each Hashogeki version separately in training before trying to punish.",
+      "pt": "Avance em passos curtos defendendo agachado em vez de pular na distância do fireball, porque é ali que o Shoryuken espera. Misture pulo neutro com defesa. Saiba o que é punível: os L/M/H Shoryuken ficam -23/-32/-36 no block e o OD Shoryuken -40, e o Shin Shoryuken (SA3) fica -50 (-54 na versão alternativa). Fique atento ao 2MK > Drive Rush e teste cada versão do Hashogeki no training mode antes de tentar punir."
     },
     "sources": [
       "https://www.streetfighter.com/6/character/ryu/frame",
@@ -239,7 +239,7 @@
       ["Stand HK","5HK","HK","n",12,4,20,9,1,900,"","",0,1.572,null,"The brief extended leg hurtbox on frame 11 of start-up (1F before active) is strike invincible (cannot counter-poke projectiles)"],
       ["Crouch LP","2LP","d+LP","n",4,2,9,4,-1,300,"ch sp su","",0,0.94,"20% Start",null],
       ["Crouch MP","2MP","d+MP","n",6,4,"13(15)",5,0,600,"sp su","",0,1.14,null,null],
-      ["Crouch HP","2HP","d+HP","n",9,6,21,1,-7,800,"sp su","",0,1.137,null,"Extended fist hurtbox is invincible to airborne strikes on frame 9 Head hurtbox is invincible to airborne strikes on frames 10-14"],
+      ["Crouch HP","2HP","d+HP","n",9,6,22,1,-7,800,"sp su","",0,1.137,null,"Extended fist hurtbox is invincible to airborne strikes on frame 9 Head hurtbox is invincible to airborne strikes on frames 10-14"],
       ["Crouch LK","2LK","d+LK","n",5,2,10,3,-1,200,"ch","",0,1.05,"20% Start",null],
       ["Crouch MK","2MK","d+MK","n",8,3,19,1,-6,500,"sp su","",0,1.482,"20% Start",null],
       ["Crouch HK","2HK","d+HK","n",9,3,"23(29)","KD +40",-12,900,"","",0,1.793,null,null],
@@ -250,7 +250,7 @@
       ["Jump MK","8MK","u+MK","n",7,6,null,"8~13","4~9",500,"","",0,1.15,null,null],
       ["Jump HK","8HK","u+HK","n",10,8,null,"9~15","5~11",800,"","",0,1.2,null,null],
       ["Collarbone Breaker","6MP","f+MP","n",20,"1*3",19,3,-3,"600 (300*300)","","",0,"1.552~1.701",null,null],
-      ["Short Uppercut","4HP","b+HP","n",7,4,25,1,-13,800,"sp su","",0,0.88,null,null],
+      ["Short Uppercut","4HP","b+HP","n",7,4,26,1,-13,800,"sp su","",0,0.88,null,null],
       ["Solar Plexus Strike","6HP","f+HP","n",20,"2*3",16,6,3,"800 (400*400)","","",0,"1.728~1.877",null,null],
       ["Axe Kick","4HK","b+HK","n","10*20","5(5)3",21,"0 (KD +14)",-4,"800 (400*400)","sp su","",0,"0.766~1.564",null,null],
       ["Whirlwind Kick","6HK","f+HK","n",16,4,20,2,-4,800,"","",0,1.924,null,null],
@@ -272,7 +272,7 @@
       ["OD Denjin Charge Hadoken","236PP","qcf+PP","s",12,null,26,"KD +57",2,"1200 (400x3)","su2 su3","",1,null,"20% Start / Combo (2 hits)",null],
       ["LP Shoryuken","623LP","f,d,df+LP","s",5,10,"21+12","KD +38",-23,1100,"su3","",0,"0.906 (1st)","30% Start","Invincible to airborne strikes on frames 1-14"],
       ["MP Shoryuken","623MP","f,d,df+MP","s",6,10,"30+12","KD +34",-32,1200,"su3","",0,"0.966 (1st)","30% Start","Invincible to airborne strikes on frames 1-9"],
-      ["HP Shoryuken","623HP","f,d,df+HP","s",7,10,"34+12","KD +37",-39,1400,"su3","",0,"1.186 (1st)","30% Start","Invincible to airborne strikes on frames 1-8"],
+      ["HP Shoryuken","623HP","f,d,df+HP","s",7,10,"34+12","KD +37",-36,1400,"su3","",0,"1.186 (1st)","30% Start","Invincible to airborne strikes on frames 1-8"],
       ["OD Shoryuken","623PP","f,d,df+PP","s",6,"2*8","37+15","KD +29",-40,"1600 (800*800)","","",0,"1.006 (1st)",null,"Fully invincible on frames 1-8"],
       ["LK Tatsumaki Senpukyaku","214LK","qcb+LK","s",12,3,"14+18","KD +35",-15,900,"","",0,"1.84~1.96",null,null],
       ["MK Tatsumaki Senpukyaku","214MK","qcb+MK","s",14,"2(13)2","11+20","KD +23*38","-13(-28)",1000,"","",0,"1.94~2.98",null,"Projectile invincible on lower body on frames 10-41"],
@@ -287,7 +287,7 @@
       ["LP Hashogeki","214LP","qcb+LP","s",12,6,18,2,-3,700,"su3","",1,"?",null,null],
       ["MP Hashogeki","214MP","qcb+MP","s",19,6,17,2,-6,800,"su3","",1,"?",null,null],
       ["HP Hashogeki","214HP","qcb+HP","s",30,6,19,"KD +61",2,"800 (400*400)","su3","",1,"?",null,null],
-      ["OD Hashogeki","214PP","qcb+PP","s",18,6,20,3,3,1100,"su2 su3","",1,"?","Combo (2 hits)",null],
+      ["OD Hashogeki","214PP","qcb+PP","s",18,5,20,3,3,1100,"su2 su3","",1,"?","Combo (2 hits)",null],
       ["Denjin Charge Hashogeki","214P (charged)","qcb+P (charged)","s",20,6,19,"KD +61",3,"800 (400*400)","su3","var",1,"?",null,null],
       ["OD Denjin Charge Hashogeki","214PP (charged)","qcb+PP (charged)","s",18,6,19,"Crumple +87",4,800,"su2 su3","var",1,"?",null,null],
       ["Shinku Hadoken","236236P","qcf,qcf+P","u",7,null,79,"KD +26",-24,"2000 (400x5)","","",1,null,"30% Minimum","Strike and Throw invincible on frames 1-7"],

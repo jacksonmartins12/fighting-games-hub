@@ -247,7 +247,7 @@
       ["Senkai Kick","6MK","f+MK","n",21,2,"21(23)",2,-3,600,"","",0,"1.837~1.845",null,null],
       ["Renko Kicks","6HP","f+HP","n","15*23","3(5)3","20(23)",2,-4,"1000 (500*500)","sp su","",0,"1.78~1.90",null,null],
       ["Korenzan","4HK","b+HK","n","10*19","3(6)3",19,3,-6,"800 (400*400)","sp su","",0,"1.187~1.72",null,null],
-      ["Death Crest 1","5MP > 4HP","MP > b+HP","n",16,3,20,"KD +33",-3,500,"","",0,null,null,null],
+      ["Death Crest 1","5MP > 4HP","MP > b+HP","n",12,3,19,"KD +33",-3,500,"","",0,null,null,null],
       ["Death Crest 2","5MP > 4HP > HP","MP > b+HP > HP","n",17,3,27,"KD +30",-16,600,"su","",0,null,null,null],
       ["Spider Fang Throw","LPLK","LP+LK","t",5,3,23,"KD +25",null,"1200(2040)","","",0,0.8,"20% Immediate",null],
       ["Shadow Kick Throw","4LPLK","b+LP+LK","t",5,3,23,"KD +18",null,"1200(2040)","","",0,0.8,"20% Immediate",null],
@@ -281,7 +281,7 @@
       ["Sakkai Fuhazan (1 stock)","236236K (hold)","qcf,qcf+K (hold)","u",7,"43(13)35(42)~",58,"KD +26(49)",-32,2100,"","var",1,null,"30% Minimum","Strike and Throw invincible on frames 1-8"],
       ["Feng Shui Engine","214214P","qcb,qcb+P","u",1,null,6,null,null,null,"","",0,null,null,null],
       ["Feng Shui Engine (dash)","214214P (hold)","qcb,qcb+P (hold)","u",9,11,26,"-4(6)","-17(-7)",300,"","var",0,"1.894~3.113","40% Minimum",null],
-      ["Kaisen Dankai Raku","214214K","qcb,qcb+K","u",10,4,52,"HKD +22",-36,4000,"","",0,"2.096~2.199","50% Minimum / 10% Immediate (special)","Fully invincible on frames 1-13"],
+      ["Kaisen Dankai Raku","214214K","qcb,qcb+K","u",10,4,52,"HKD +22",-31,4000,"","",0,"2.096~2.199","50% Minimum / 10% Immediate (special)","Fully invincible on frames 1-13"],
       ["Kaisen Dankai Raku (Critical Art)","214214K (CA)","qcb,qcb+K (CA)","u",10,4,52,"HKD +20",-36,4500,"","",0,"2.096~2.199","50% Minimum / 10% Immediate (special)","Fully invincible on frames 1-13"]
     ],
   "s": {
