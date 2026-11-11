@@ -11,6 +11,10 @@ function muSet(me, opp) {
   LS.set('fgc-matchup', mu);
 }
 function muMissing() { return '<span class="muted">' + B('mu.no-data') + '</span>'; }
+// Knockdown advantage a safe jump needs with this fighter's jump: pre-jump + air time (see Okizeme in Frames).
+function safeJumpNeed(jump) { var m = String(jump || '').match(/(\d+)\+(\d+)\+\d+/); return m ? '+' + (+m[1] + +m[2]) : null; }
+// Which side a stat favours: 1 = higher is better, -1 = lower is better. Returns 'a', 'b' or ''.
+function muBetter(a, b, dir) { var x = parseFloat(a), y = parseFloat(b); if (isNaN(x) || isNaN(y) || x === y || !dir) return ''; return (x - y) * dir > 0 ? 'a' : 'b'; }
 function muVal(v, suffix) { return v == null || v === '' ? muMissing() : esc(v) + (suffix && /^\d+$/.test(String(v)) ? suffix : ''); }
 // Ground moves the opponent can use without being punished on block (better than -4).
 function muSafeMoves(slug) {
@@ -74,9 +78,12 @@ function renderMatchup() {
 
   // at a glance
   h += '<h3>' + B('mu.at-a-glance') + '</h3><div class="table-wrap"><table class="mu-stats"><thead><tr><th></th><th>' + meN + '</th><th>' + oppN + '</th></tr></thead><tbody>' +
-    [['mu.health', 'health', ''], ['mu.fastest-normal', 'fastestNormal', ''], ['mu.best-reversal', 'bestReversal', ''], ['mu.forward-dash', 'fDash', 'f'], ['mu.back-dash', 'bDash', 'f']].map(function (r) {
-      return '<tr><th scope="row">' + B(r[0]) + '</th><td class="inp">' + muVal(fm[r[1]], r[2]) + '</td><td class="inp">' + muVal(fo[r[1]], r[2]) + '</td></tr>';
-    }).join('') + '</tbody></table></div>';
+    [['mu.health', 'health', '', 1], ['mu.fastest-normal', 'fastestNormal', '', -1], ['mu.best-reversal', 'bestReversal', '', 0], ['mu.forward-dash', 'fDash', 'f', -1], ['mu.back-dash', 'bDash', 'f', 0],
+     ['mu.jump', 'jump', '', 0], ['mu.safe-jump', 'sj', '', -1], ['mu.throw-range', 'throwRange', '', 1]].map(function (r) {
+      var a = r[1] === 'sj' ? safeJumpNeed(fm.jump) : fm[r[1]], b = r[1] === 'sj' ? safeJumpNeed(fo.jump) : fo[r[1]], w = muBetter(a, b, r[3]);
+      var cell = function (v, side) { return '<td class="inp' + (w === side ? ' mu-edge' : '') + '">' + muVal(v, r[2]) + (w === side ? ' <span class="mu-edge-mark" aria-label="' + esc(tr('mu.edge')) + '">▲</span>' : '') + '</td>'; };
+      return '<tr><th scope="row">' + B(r[0]) + '</th>' + cell(a, 'a') + cell(b, 'b') + '</tr>';
+    }).join('') + '</tbody></table></div><p class="small muted">' + B('mu.edge-note') + '</p>';
 
   // what to punish
   var mine = punishers(mu.me), theirs = unsafeMoves(mu.opp);

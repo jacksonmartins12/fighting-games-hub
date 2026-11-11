@@ -732,8 +732,8 @@ Opponent not there = whiff</div>
 
             <div class="deep-dive">
                 <h4>Block Stun: Loss of Initiative</h4>
-                <p>When you block an attack, you enter "block stun"—you're frozen for N frames, unable to act. During this time, your opponent has control.</p>
-                <p><strong>Example (simplified numbers):</strong> Opponent does c.MK (3 active frames, 12 recovery). You block it on its first active frame and are put in block stun for 16 frames. The attacker still needs 2 + 12 = 14 frames to finish the move, so they recover 2 frames before you can act. During your block stun you cannot interrupt.</p>
+                <p>When you block an attack, you enter "blockstun"—you're frozen for N frames, unable to act. During this time, your opponent has control.</p>
+                <p><strong>Example (simplified numbers):</strong> Opponent does c.MK (3 active frames, 12 recovery). You block it on its first active frame and are put in blockstun for 17 frames. Blockstun starts on the frame the hit connects, so count that frame on both sides: from it, the attacker needs 3 + 12 = 15 frames (that frame, the 2 active frames left and 12 of recovery) and you need 17, so they recover 2 frames before you can act. That is the formula behind every on-block number in SF6 frame data: blockstun − active frames − recovery, for a hit on the first active frame. During your blockstun you cannot interrupt.</p>
                 <p><strong>Frame Advantage:</strong> This is why "frame advantage on block" matters. If opponent has +2 on block, they act 2 frames before you can. They can attack again before you can throw. They control the exchange.</p>
                 <p><strong>Counter-Play:</strong> If opponent keeps attacking with -2 frame moves (negative on block), YOU can attack first. You regain initiative. This is your opening to throw, attack back, or do something else.</p>
             </div>
@@ -1037,7 +1037,7 @@ Oponente não estava lá = whiff</div>
             <div class="deep-dive">
                 <h4>Blockstun: Perda da Iniciativa</h4>
                 <p>Quando você defende um ataque, entra em "blockstun" — fica travado por N frames, sem poder agir. Durante esse tempo, o oponente está no controle.</p>
-                <p><strong>Exemplo (números simplificados):</strong> O oponente faz um c.MK (3 frames ativos, 12 de recuperação). Você defende no primeiro frame ativo e fica em blockstun por 16 frames. O atacante ainda precisa de 2 + 12 = 14 frames para terminar o golpe, então ele se recupera 2 frames antes de você poder agir. Durante o seu blockstun, você não consegue interromper.</p>
+                <p><strong>Exemplo (números simplificados):</strong> O oponente faz um c.MK (3 frames ativos, 12 de recuperação). Você defende no primeiro frame ativo e fica em blockstun por 17 frames. O blockstun começa no frame em que o golpe encosta, então conte esse frame dos dois lados: a partir dele, o atacante precisa de 3 + 12 = 15 frames (esse frame, os 2 frames ativos que sobram e 12 de recuperação) e você precisa de 17, então ele se recupera 2 frames antes de você poder agir. Essa é a conta por trás de todo número de vantagem no block do frame data do SF6: blockstun − frames ativos − recovery, para um acerto no primeiro frame ativo. Durante o seu blockstun, você não consegue interromper.</p>
                 <p><strong>Vantagem de Frames:</strong> É por isso que "vantagem de frames no block" importa. Se o oponente está +2 no block, ele age 2 frames antes de você. Ele consegue atacar de novo antes de você conseguir dar throw. Ele controla a troca.</p>
                 <p><strong>Resposta:</strong> Se o oponente continua atacando com golpes -2 (negativos no block), é você quem consegue atacar primeiro e recuperar a iniciativa. Essa é a sua brecha para dar throw, contra-atacar ou fazer outra coisa.</p>
             </div>
@@ -11041,6 +11041,8 @@ PERGUNTA: Qual a diferença entre o timing de DP contra crossup e o timing de DP
                     <dt><strong>Recovery:</strong></dt>
                     <dd>The frames after the active frames during which the character can't act and is vulnerable. <span class="gl-jp" lang="ja">硬直 (kouchoku)</span></dd>
 
+                    <dt><strong>Frame Data:</strong></dt>
+                    <dd>The table of every move's numbers: startup, active frames, recovery, advantage on hit and on block, damage and cancels. It comes from the developer or from community tools; check its patch or date, because balance updates change it. <a href="#adv-method">How this hub checks its frame data</a>. <span class="gl-jp" lang="ja">フレームデータ (furēmu dēta)</span></dd>
                     <dt><strong>Frame Advantage:</strong></dt>
                     <dd>How many frames sooner (+) or later (−) you can act than your opponent after your attack hits or is blocked. Positive means your turn; negative means theirs. <span class="gl-jp" lang="ja">有利フレーム (yūri furēmu)</span></dd>
 
@@ -11224,6 +11226,8 @@ PERGUNTA: Qual a diferença entre o timing de DP contra crossup e o timing de DP
 
                     <dt><strong>Plink:</strong></dt>
                     <dd>Pressing the button you want and then a weaker one a frame later, so the game reads the first press twice and you get two chances at a tight link. Famous from SF4; not a standard technique in SF6. <span class="gl-jp" lang="ja">辻式入力 (tsujishiki nyūryoku)</span></dd>
+                    <dt><strong>Fuzzy Guard:</strong></dt>
+                    <dd>Blocking first and timing a second action (a throw, a button, a jump) so it only comes out in the frames where the attacker didn't attack. Delay tech is the most common one. The attacker's answer is a delayed attack. <a href="#adv-fuzzy">Fuzzy defense</a>. <span class="gl-jp" lang="ja">ファジー (fajī)</span></dd>
                     <dt><strong>Option Select (OS):</strong></dt>
                     <dd>An input that produces the right action for more than one situation, with the game choosing the outcome based on what the opponent did. Many older option selects don't work in modern games, and any of them can be beaten once the opponent recognizes it. <span class="gl-jp" lang="ja">自動二択 (jidou nitaku)</span></dd>
 
@@ -11542,6 +11546,8 @@ PERGUNTA: Qual a diferença entre o timing de DP contra crossup e o timing de DP
                     <dt><strong>Recovery (recuperação):</strong></dt>
                     <dd>Os frames depois dos frames ativos, em que o personagem não pode agir e fica vulnerável. <span class="gl-jp" lang="ja">硬直 (kouchoku)</span></dd>
 
+                    <dt><strong>Frame Data:</strong></dt>
+                    <dd>A tabela com os números de cada golpe: startup, frames ativos, recovery, vantagem no hit e no block, dano e cancels. Ela vem da desenvolvedora ou de ferramentas da comunidade; confira o patch ou a data, porque os balance updates mudam os números. <a href="#adv-method-pt">Como este hub confere o frame data</a>. <span class="gl-jp" lang="ja">フレームデータ (furēmu dēta)</span></dd>
                     <dt><strong>Frame Advantage (vantagem de frames):</strong></dt>
                     <dd>Quantos frames antes (+) ou depois (−) você pode agir em relação ao oponente depois que o seu ataque acerta ou é defendido. Positivo significa que a vez é sua; negativo, que a vez é dele. <span class="gl-jp" lang="ja">有利フレーム (yūri furēmu)</span></dd>
 
@@ -11725,6 +11731,8 @@ PERGUNTA: Qual a diferença entre o timing de DP contra crossup e o timing de DP
 
                     <dt><strong>Plink:</strong></dt>
                     <dd>Apertar o botão que você quer e, um frame depois, um botão mais fraco, para o jogo ler o primeiro botão duas vezes e você ganhar duas chances num link apertado. Famoso no SF4; não é técnica padrão no SF6. <span class="gl-jp" lang="ja">辻式入力 (tsujishiki nyūryoku)</span></dd>
+                    <dt><strong>Fuzzy Guard:</strong></dt>
+                    <dd>Defender primeiro e soltar uma segunda ação no tempo certo (um throw, um botão, um pulo), para ela só sair nos frames em que o atacante não atacou. O delay tech é o mais comum. A resposta do atacante é o ataque atrasado. <a href="#adv-fuzzy-pt">Defesa fuzzy</a>. <span class="gl-jp" lang="ja">ファジー (fajī)</span></dd>
                     <dt><strong>Option Select (OS):</strong></dt>
                     <dd>Um comando que produz a ação certa para mais de uma situação, com o jogo escolhendo o resultado conforme o que o oponente fez. Muitos option selects antigos não funcionam nos jogos atuais, e qualquer um deles pode ser vencido quando o oponente o reconhece. <span class="gl-jp" lang="ja">自動二択 (jidou nitaku)</span></dd>
 
