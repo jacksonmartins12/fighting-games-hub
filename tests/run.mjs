@@ -117,6 +117,54 @@ await test('damage scaling table matches the documented base sequence in both la
   for (const row of r) eq(row, ['100%', '100%', '80%', '70%', '60%', '50%', '40%', '30%', '20%', '10%'], 'scaling row');
 });
 
+await test('regression: multi-hit damage totals (dmgVal) on the real data rows', async page => {
+  await open(page);
+  const r = await page.evaluate(async () => {
+    const pick = async (slug, name) => { await needChar(slug); const m = FRAMES[slug].m.find(x => x[0] === name); return m ? dmgVal(m[9]) : 'missing'; };
+    return [await pick('ken', 'HP Shoryuken'), await pick('jamie', 'Stand HP'), await pick('sagat', 'Tiger Monolith'), await pick('yasmine', 'HK Lipad ng Agila'),
+      await pick('sagat', 'HP Tiger Uppercut (hold)'), await pick('arjun', 'OD Divine Pillar'),
+      dmgVal('1400 (800*300x2)'), dmgVal('810 (90x2*630)'), dmgVal('200*600'), dmgVal('1300 (800*60*30x3*350)'), dmgVal('300x3'), dmgVal('2500\n(300*200x6*1000)'), dmgVal(null)];
+  });
+  // Ken 1400 = 800+300x2, Jamie 810 = 90x2+630, Sagat 800 = 200+600, Yasmine 1300; Tiger Uppercut held 1800+1000; OD Divine Pillar 800+800
+  eq(r, [1400, 810, 800, 1300, 2800, 1600, 1400, 810, 800, 1300, 900, 2500, 0], 'damage totals');
+});
+await test('regression: Ed Stand HP 10(4~8) counts as 10 frames for punishes (suEff)', async page => {
+  await open(page);
+  const r = await page.evaluate(async () => { await needChar('ed'); const m = FRAMES.ed.m.find(x => x[0] === 'Stand HP'); const p = punishers('ed').find(x => x.name === 'Stand HP');
+    return [m[4], suEff(m[4]), p ? p.su : 'not a punisher', suEff('10(4~8)'), suEff('5(9~10)')]; });
+  eq(r, ['10(4~8)', 10, 10, 10, 10], 'Ed Stand HP startup');
+});
+await test('regression: Ryu counterplay quotes the Shoryuken block values of the table (EN and PT)', async page => {
+  await open(page);
+  const r = await page.evaluate(async () => {
+    await needChar('ryu'); const tab = n => String(FRAMES.ryu.m.find(x => x[0] === n)[8]);
+    const want = ['LP Shoryuken', 'MP Shoryuken', 'HP Shoryuken', 'OD Shoryuken'].map(tab).join(' ');
+    const g = CHARS.ryu.counterplay, got = l => { const m = g[l].match(/-(\d+)\/-(\d+)\/-(\d+)[^-]*-(\d+)/); return m ? m.slice(1).map(x => '-' + x).join(' ') : null; };
+    return { want, en: got('en'), pt: got('pt'), sa3: [/-50 \(-54/.test(g.en), /-50 \(-54/.test(g.pt), tab('Shin Shoryuken')] };
+  });
+  eq(r.en, r.want, 'EN'); eq(r.pt, r.want, 'PT'); eq(r.want, '-23 -32 -39 -40', 'table');
+  eq(r.sa3, [true, true, '-50(-54)'], 'Shin Shoryuken quoted as in the table');
+});
+await test('regression: data notes of Akuma, Dhalsim, JP, Mai, Yasmine and Lily match their tables', async page => {
+  await open(page);
+  const r = await page.evaluate(async () => {
+    const named = { akuma: ['Ashura Senku'], dhalsim: ['Yoga Blast', 'Yoga Teleport'], jp: ['Departure', 'Torbalan', 'Embrace'], mai: ['Kachousen', 'Ryuuenbu', 'Shinobi Bachi'], yasmine: ['Lipad ng Agila', 'Pangil sa Likuran', 'Mukha ng Langit'], lily: ['Stand LK'] };
+    const bad = [];
+    for (const slug of Object.keys(named)) {
+      await needChar(slug); const note = CHARS[slug].data_note;
+      named[slug].forEach(n => { if (!FRAMES[slug].m.some(m => m[0].includes(n))) bad.push(slug + ': table lacks ' + n); });
+      ['en', 'pt'].forEach(l => {
+        if (/left out|no numbers are given|is not given|left blank|ficou de fora|não há números para eles|não aparece aqui|fica em branco/i.test(note[l])) bad.push(slug + ' ' + l + ': note still says data is missing');
+        if (!/a8101eb/.test(note[l])) bad.push(slug + ' ' + l + ': note does not name the table source');
+      });
+    }
+    const lk = CHARS.lily.key_normals.find(k => k.move === '5LK'), row = FRAMES.lily.m.find(m => m[0] === 'Stand LK');
+    if (lk.on_hit !== row[7]) bad.push('lily 5LK on hit: guide ' + lk.on_hit + ', table ' + row[7]);
+    return bad;
+  });
+  eq(r, [], 'data note contradictions');
+});
+
 // ---------- data ----------
 await test('data: all 32 fighters load with 16-field moves, stats and source flags that exist', async page => {
   await open(page);

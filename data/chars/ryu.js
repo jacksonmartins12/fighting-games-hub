@@ -215,8 +215,8 @@
       }
     ],
     "counterplay": {
-      "en": "Approach in small steps with low guard instead of jumping at fireball range, because that's where Shoryuken waits. Mix neutral jumps with blocking. Learn what's punishable: L/M/H Shoryuken are -23/-32/-36 on block and OD Shoryuken -40, and SF6 Lab lists Shin Shoryuken (SA3) at -52. Watch for 2MK > Drive Rush and test each Hashogeki version separately in training before trying to punish.",
-      "pt": "Avance em passos curtos defendendo agachado em vez de pular na distância do fireball, porque é ali que o Shoryuken espera. Misture pulo neutro com defesa. Saiba o que é punível: os L/M/H Shoryuken ficam -23/-32/-36 no block e o OD Shoryuken -40, e o SF6 Lab lista o Shin Shoryuken (SA3) em -52. Fique atento ao 2MK > Drive Rush e teste cada versão do Hashogeki no training mode antes de tentar punir."
+      "en": "Approach in small steps with low guard instead of jumping at fireball range, because that's where Shoryuken waits. Mix neutral jumps with blocking. Learn what's punishable: L/M/H Shoryuken are -23/-32/-39 on block and OD Shoryuken -40, and Shin Shoryuken (SA3) is -50 (-54 in its alternate version). Watch for 2MK > Drive Rush and test each Hashogeki version separately in training before trying to punish.",
+      "pt": "Avance em passos curtos defendendo agachado em vez de pular na distância do fireball, porque é ali que o Shoryuken espera. Misture pulo neutro com defesa. Saiba o que é punível: os L/M/H Shoryuken ficam -23/-32/-39 no block e o OD Shoryuken -40, e o Shin Shoryuken (SA3) fica -50 (-54 na versão alternativa). Fique atento ao 2MK > Drive Rush e teste cada versão do Hashogeki no training mode antes de tentar punir."
     },
     "sources": [
       "https://www.streetfighter.com/6/character/ryu/frame",

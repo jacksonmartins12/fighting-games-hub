@@ -9,16 +9,23 @@ function safestBlock(v) { // least punishable value listed for a move (e.g. its 
   var ms = String(v).match(/[-+]?\d+/g); if (!ms) return null;
   return Math.max.apply(null, ms.map(Number));
 }
+// Total damage of a move. A leading number is the total ("1400 (800*300x2)" = 1400; the parentheses only break it
+// down). Without one, the hits are added: "200*600" = 800, "300x3" = 900, "90x2*630" = 810.
 function dmgVal(v) {
   if (typeof v === 'number') return v; if (v == null) return 0;
-  var s = String(v), x = s.match(/(\d+)\s*x\s*(\d+)/i); if (x) return +x[1] * +x[2];
-  var m = s.match(/\d+/); return m ? +m[0] : 0;
+  var lead = String(v).trim().split(/[\s({]/)[0];
+  if (/^\d+$/.test(lead)) return +lead;
+  if (/^[\dx*]+$/i.test(lead)) return lead.split('*').reduce(function (t, h) { var p = h.split(/x/i); return t + (+p[0] || 0) * (p[1] ? +p[1] : 1); }, 0);
+  var m = lead.match(/\d+/) || String(v).match(/\d+/); return m ? +m[0] : 0;
 }
-function suEff(v) { // startup that actually connects: sums "8+15", takes the slow end of "5(9~10)"
+// Startup that actually connects, for punish math: sums "8+15"; takes the slow end of a later range ("5(9~10)" = 10,
+// "20 (62~96)" = 96) but never goes below the listed startup ("10(4~8)" = 10: Ed's 5HP is 10f; 4~8 only after a hold).
+function suEff(v) {
   if (typeof v === 'number') return v; if (v == null) return null;
   var s = String(v), lead = s.split(/[(\s]/)[0];
   if (/\+/.test(lead)) return lead.match(/\d+/g).reduce(function (a, b) { return a + +b; }, 0);
-  var r = s.match(/\((\d+)~(\d+)\)/); if (r) return +r[2];
+  var base = firstInt(lead), r = s.match(/\((\d+)~(\d+)\)/);
+  if (r) return base == null ? +r[2] : Math.max(base, +r[2]);
   return firstInt(s);
 }
 // Source problems recorded in data/sources.js (flags[fighter][move]): check, conflict, derived, tested.

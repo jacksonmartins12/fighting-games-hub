@@ -103,7 +103,7 @@ Nenhum valor foi alterado sem confirmação da fonte. Cada linha abaixo aparece 
 
 ## 6. Testes executados
 
-- `tests/run.mjs`: **18 de 18 passaram** localmente e no GitHub Actions (run 43067544886, sucesso). Na primeira execução, 4 falharam por erro meu nas expectativas dos testes, não no site: uma conta errada do momento de apertar (35, não 37), o startup de um golpe com faixa (o código usa de propósito o lado lento), um seletor de tabela e a chamada de troca de idioma sem o parâmetro que salva a escolha. Corrigi os testes, não o código.
+- `tests/run.mjs`: **18 de 18 passaram** (22 de 22 depois das confirmações da seção 9) localmente e no GitHub Actions (run 43067544886, sucesso). Na primeira execução, 4 falharam por erro meu nas expectativas dos testes, não no site: uma conta errada do momento de apertar (35, não 37), o startup de um golpe com faixa (o código usa de propósito o lado lento), um seletor de tabela e a chamada de troca de idioma sem o parâmetro que salva a escolha. Corrigi os testes, não o código.
 - Scripts de regressão anteriores: navegação e links (64 visões de capítulo, 299 links internos, 0 quebrados), largura a 390 e 1280 px, modo offline, flashcards (40 cartões), ferramentas do Avançado, tracker: sem erros.
 - Buscador de punish comparado com a versão anterior do site: mesmas escolhas para todos os pares testados.
 - `tools/validate.py`: 0 erros, 1 aviso (Blanka-chan Bomb com 1000 frames ativos, que é real).
@@ -126,3 +126,18 @@ Nenhum valor foi alterado sem confirmação da fonte. Cada linha abaixo aparece 
 - Trazer os dados oficiais da Capcom para o hub (copiar ou exportar as páginas por personagem) e comparar com o mesmo script.
 - Registrar em `data/sources.js` cada teste feito no jogo, com data e situação.
 - Se quiser o hub 100% offline, hospedar as fontes junto com o site.
+
+## 9. Confirmações complementares (11/11/2026)
+
+Quatro problemas apontados depois do relatório foram conferidos no estado do repositório. Nenhum deles tinha sido corrigido pela auditoria anterior: os quatro estavam pendentes e foram corrigidos agora. Cada correção tem um teste de regressão em `tests/run.mjs`. Rodei os quatro testes contra o código anterior e os quatro falharam; contra o código atual, os 22 testes passam.
+
+| # | Problema | Estado antes | Correção | Arquivo | Teste | Pendência |
+|---|---|---|---|---|---|---|
+| 1 | `dmgVal()` com dano de vários hits | Errado: lia só o primeiro "AxB" ou o primeiro número. Ken HP Shoryuken dava 600, Jamie Stand HP 180, Sagat Tiger Monolith 200, Yasmine HK Lipad ng Agila 90 | Um número inicial é o total ("1400 (800*300x2)" = 1400); sem ele, os hits são somados ("200*600" = 800, "300x3" = 900). Agora: Ken 1400, Jamie 810, Sagat 800, Yasmine 1300 | `assets/js/frames.js` | "regression: multi-hit damage totals (dmgVal) on the real data rows" | Nenhuma |
+| 2 | `suEff()` com `10(4~8)` (Ed Stand HP) | Errado: tratava como 8 frames, porque pegava o lado lento de qualquer faixa entre parênteses | O valor entre parênteses só aumenta o startup, nunca diminui: `10(4~8)` = 10 (4~8 só vale depois de segurar o botão, segundo o FAT), `5(9~10)` = 10, `20 (62~96)` = 96 | `assets/js/frames.js` | "regression: Ed Stand HP 10(4~8) counts as 10 frames for punishes (suEff)" | Nenhuma |
+| 3 | Counterplay do Ryu citava HP Shoryuken −36 | Errado nos dois idiomas; a tabela diz −39. A mesma frase citava o Shin Shoryuken em −52 (SF6 Lab), enquanto a tabela diz −50(−54) | Texto agora diz −23/−32/−39 e OD −40, e Shin Shoryuken −50 (−54 na versão alternativa), em EN e PT | `data/chars/ryu.js` | "regression: Ryu counterplay quotes the Shoryuken block values of the table (EN and PT)" | Nenhuma |
+| 4 | `data_note` de Akuma, Dhalsim, JP, Mai, Yasmine e Lily | Contraditório: as notas diziam que golpes "ficaram de fora" ou "não têm números", mas todos estão na tabela completa (que vem do FAT). A nota da Lily dizia que o 5LK no hit estava em branco, mas o guia e a tabela mostram +5, e citava só o snapshot de junho do FAT | Cada nota agora diz que o texto do guia não traz números para esses golpes e que a tabela completa usa os valores do FAT (commit a8101eb, 22/10/2026). A da Lily diz que a página oficial divergia do FAT no 5LK no hit e que o hub mostra o +5 do FAT | `data/chars/akuma.js`, `dhalsim.js`, `jp.js`, `mai.js`, `yasmine.js`, `lily.js` | "regression: data notes of Akuma, Dhalsim, JP, Mai, Yasmine and Lily match their tables" | O +5 do 5LK da Lily continua precisando de teste no jogo |
+
+**Efeito da correção do dano:** 127 golpes tinham o dano total lido errado; o startup mudou só no Ed Stand HP. Como o buscador de punish escolhe o golpe de maior dano, algumas sugestões mudaram, agora para melhor. Exemplo: Chun-Li contra M. Bison passa a sugerir HK Spinning Bird Kick (1400) em vez de HK Hazanshu (1200). O dano mostrado também mudou, por exemplo Tainted Talons da A.K.I., de 1200 para 2500. Na comparação com a versão anterior do site, 6 tabelas de punish mudaram, todas por esse motivo.
+
+**Observação sobre as notas:** outras notas mencionam algo "deixado de fora", mas se referem a combos ou ao texto do guia, não à tabela: Blanka, Cammy, Ed, Jamie e Kimberly (danos de combos anteriores ao patch), Ingrid (comando do Vanishing Sun), Juri (invencibilidade do Tensenrin), Manon (2MK fora dos normais principais) e Marisa (5HP carregado). Não mexi nelas. A da Marisa é a única ambígua: diz que o valor "ficou de fora" sem dizer de onde, e a tabela completa mostra o valor do FAT.
