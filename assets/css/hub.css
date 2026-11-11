@@ -878,6 +878,9 @@ section > .l-en > p, section > .l-pt > p, section > .l-en > ul li, section > .l-
 .sheet-box { background: var(--sheet); border: 2px solid var(--ink); padding: 16px; max-width: min(560px, 100%); max-height: 92vh; overflow: auto; }
 .sheet-box img { width: 100%; height: auto; border: 1px solid var(--rule); }
 .ft-tag { display: inline-block; margin-left: 6px; padding: 1px 6px; font: 500 11px/1.5 var(--mono); letter-spacing: .02em; color: var(--warn); border: 1px solid currentColor; white-space: nowrap; vertical-align: 1px; }
+.ft-note { display: block; margin-top: 4px; font: 400 12px/1.45 var(--body); color: var(--ink-soft); max-width: 46ch; white-space: normal; }
+.ft-flagged td:first-child { box-shadow: inset 3px 0 0 var(--warn); }
+.ft-flag-derived { color: var(--ink-soft); }
 .gl-jp { display: block; margin-top: 2px; font-size: .85em; color: var(--ink-soft); letter-spacing: .01em; }
 .gl-jp::before { content: "JP · "; font: 500 .8em var(--mono); letter-spacing: .06em; opacity: .75; }
 

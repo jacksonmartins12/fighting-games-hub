@@ -21,6 +21,8 @@ function suEff(v) { // startup that actually connects: sums "8+15", takes the sl
   var r = s.match(/\((\d+)~(\d+)\)/); if (r) return +r[2];
   return firstInt(s);
 }
+// Source problems recorded in data/sources.js (flags[fighter][move]): check, conflict, derived, tested.
+function moveFlag(slug, name) { var s = (window.HUB_DATA || {}).sources; return s && s.flags && s.flags[slug] ? s.flags[slug][name] || null : null; }
 function condTag(m) { var k = 'frames.cond.' + m[11]; return m[11] && hasKey(k) ? ' <span class="ft-tag">' + B(k) + '</span>' : ''; }
 function isAir(num) { return /(^|\s)j\.|^[789]/.test(String(num || '')); }
 function fmtCell(v) {
@@ -41,7 +43,7 @@ function frameSectionHTML(slug) {
   FT_CATS.forEach(function (c) { h += '<button type="button" class="chip" data-ftcat="' + c + '" aria-pressed="' + (ftState.cat === c) + '">' + B('frames.cat.' + c) + '</button>'; });
   h += '</div><div class="search-row"><input type="search" class="ft-q" id="ft-q" autocomplete="off" aria-label="Search moves" data-i18n-ph="frames.search-a-move-or-input" placeholder="' + tr('frames.search-a-move-or-input') + '" value="' + esc(ftState.q) + '">' +
     '<label class="ft-toggle"><input type="checkbox" class="ft-unsafe" id="ft-unsafe"' + (ftState.unsafe ? ' checked' : '') + '> ' + B('frames.only-unsafe-on-block-4-or') + '</label></div></div>' +
-    '<div class="table-wrap"><table class="ft-table"><thead><tr><th>' + B('roster.move') + '</th><th>' + B('roster.input') + '</th><th>Startup</th><th>' + B('frames.active') + '</th><th>' + B('frames.recovery') + '</th><th>' + B('widgets.on-hit') + '</th><th>' + B('widgets.on-block') + '</th><th>' + B('frames.damage') + '</th><th>Cancel</th></tr></thead><tbody></tbody></table></div>' +
+    '<div class="table-wrap"><table class="ft-table"><thead><tr><th>' + B('roster.move') + '</th><th>' + B('roster.input') + '</th><th>Startup</th><th>' + B('frames.active') + '</th><th>' + B('frames.recovery') + '</th><th>' + B('widgets.on-hit') + '</th><th>' + B('widgets.on-block') + '</th><th>' + B('frames.damage') + '</th><th>Cancel</th><th>' + B('frames.range') + '</th><th>' + B('frames.scaling') + '</th></tr></thead><tbody></tbody></table></div>' +
     '<p class="small muted ft-count"></p>' +
     '<p class="small muted">' + B('frames.source-fat-frame-assistant-tool-community') + '</p></div></details>';
   return h;
@@ -56,11 +58,13 @@ function fillFrameTable(box) {
     if (ftState.unsafe) { var b = safestBlock(m[8]); if (b == null || b > -4 || isAir(m[1]) || m[11] === 'air') return; }
     n++;
     var xx = (m[10] || '').split(/\s+/).filter(Boolean).map(function (k) { return XX[k] || k.toUpperCase(); }).join(' ');
-    rows += '<tr><td><b>' + esc(m[0]) + '</b>' + condTag(m) + '</td><td class="inp">' + esc(m[1] || '') + '</td><td class="inp">' + (m[4] == null ? '<span class="muted">—</span>' : esc(m[4])) +
+    var fl = moveFlag(box.getAttribute('data-ft'), m[0]);
+    rows += '<tr' + (fl && fl.status !== 'derived' ? ' class="ft-flagged"' : '') + '><td><b>' + esc(m[0]) + '</b>' + condTag(m) + (fl ? ' <span class="ft-tag ft-flag-' + fl.status + '">' + B('frames.flag.' + fl.status) + '</span><span class="ft-note">' + BO(fl.detail) + '</span>' : '') +
+      (m[15] ? '<span class="ft-note"><span>' + B('frames.inv') + '</span> <span lang="en">' + esc(m[15]) + '</span></span>' : '') + '</td><td class="inp">' + esc(m[1] || '') + '</td><td class="inp">' + (m[4] == null ? '<span class="muted">—</span>' : esc(m[4])) +
       '</td><td class="inp">' + esc(m[5] == null ? '—' : m[5]) + '</td><td class="inp">' + esc(m[6] == null ? '—' : m[6]) + '</td><td class="inp">' + fmtCell(m[7]) +
-      '</td><td class="inp">' + fmtCell(m[8]) + '</td><td class="inp">' + esc(m[9] == null ? '—' : m[9]) + '</td><td class="inp small">' + esc(xx) + '</td></tr>';
+      '</td><td class="inp">' + fmtCell(m[8]) + '</td><td class="inp">' + esc(m[9] == null ? '—' : m[9]) + '</td><td class="inp small">' + esc(xx) + '</td><td class="inp">' + (m[13] == null ? '<span class="muted">—</span>' : esc(m[13])) + '</td><td class="small">' + (m[14] ? esc(m[14]) : '<span class="muted">—</span>') + '</td></tr>';
   });
-  box.querySelector('tbody').innerHTML = rows || '<tr><td colspan="9" class="muted">' + tr('frames.no-moves-match-these-filters') + '</td></tr>';
+  box.querySelector('tbody').innerHTML = rows || '<tr><td colspan="11" class="muted">' + tr('frames.no-moves-match-these-filters') + '</td></tr>';
   box.querySelector('.ft-count').innerHTML = B('frames.of-moves-shown', [n, f.m.length]);
   box.querySelectorAll('[data-ftcat]').forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-ftcat') === ftState.cat)); });
 }

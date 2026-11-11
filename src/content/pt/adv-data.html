@@ -17,6 +17,27 @@
 </table></div>
 <p>Quando as fontes discordam, quem decide é o jogo. Monte a situação no training mode e meça.</p>
 
+<h3 id="adv-method-pt">Como os Dados do Hub São Conferidos</h3>
+<p>Cada número do hub tem um destes rótulos, do mais forte para o mais fraco:</p>
+<div class="table-wrap"><table>
+    <tr><th>Rótulo</th><th>Significado</th><th>No hub</th></tr>
+    <tr><td><strong>Testado</strong></td><td>Conferido no training mode, com a data e a situação</td><td>Os resultados de safe jump (+42 e +41 contra reversals de 5 e 6 frames) e o Drive Reversal não dar KO</td></tr>
+    <tr><td><strong>Oficial</strong></td><td>As páginas de frame data da Capcom</td><td>Ainda não comparado: as páginas oficiais não podem ser lidas automaticamente, então esse é o próximo passo</td></tr>
+    <tr><td><strong>Ferramenta</strong></td><td>FAT (Frame Assistant Tool), o arquivo de frame data da comunidade</td><td>Todas as tabelas de frame data, o buscador de punish, a ferramenta de matchup, os flashcards e as calculadoras</td></tr>
+    <tr><td><strong>Comunidade</strong></td><td>SuperCombo wiki, dood.gg, guias de jogadores</td><td>Frames de pulo, regras de damage scaling, buffer de input, a regra do meaty seguro, fuzzy guard e option selects</td></tr>
+    <tr><td><strong>A conferir</strong></td><td>Uma fonte contradiz a si mesma ou outra fonte</td><td>Marcado com ⚠ nas tabelas de frame data, com o motivo embaixo do golpe</td></tr>
+</table></div>
+<h4>O que foi feito em 11 de novembro de 2026</h4>
+<ul>
+    <li><strong>Cada golpe dos 32 personagens</strong> (2.133 golpes) foi comparado com o arquivo do FAT no commit a8101eb (22 de outubro de 2026) em startup, active, recovery, vantagem no hit, no block, dano e cancels. Todos batem. O FAT atualizou os personagens existentes em 10 de agosto, uma semana depois do balance patch de 3 de agosto, e de novo em 22 de outubro.</li>
+    <li><strong>O FAT foi conferido contra ele mesmo.</strong> Nos dados do SF6, a vantagem no block é o blockstun menos os frames ativos menos o recovery. 23 golpes que não são projéteis nem Drive Reversal quebram essa regra; eles estão marcados "a conferir", porque um dos dois números da fonte deve estar errado, ou o golpe tem uma propriedade que a conta não pega.</li>
+    <li><strong>Uma segunda fonte</strong> foi comparada onde deu para ler: a lista do dood.gg para o Ryu (15 golpes) concorda com o FAT em 12; diverge no OD High Blade Kick (−18 contra −11), marcado "fontes divergem", e lista um OD Hashogeki com Denjin Charge que o hub não tem. Os outros personagens ainda precisam dessa comparação.</li>
+    <li><strong>Pulos, dashes e vida</strong> dos 32 personagens batem com o FAT e com a SuperCombo wiki.</li>
+</ul>
+<p>O que isso prova e o que não prova: as tabelas são uma cópia fiel do FAT. Isso não prova que o FAT está certo. Trate qualquer número que decide algo importante como hipótese e confirme com o frame meter.</p>
+<h4>Depois de um balance patch</h4>
+<p>O hub guarda um histórico de patches (<code>data/patches.js</code>) com o valor antigo e o novo de cada mudança, a fonte e a data, para que números antigos nunca sejam confundidos com os atuais. O script <code>tools/fat_sync.py</code> lista todas as diferenças entre o hub e um arquivo do FAT mais novo antes de mudar qualquer coisa, e o <code>tools/validate.py</code> confere os dados a cada build: campos faltando, valores impossíveis, golpes duplicados e marcações que apontam para golpes que não existem.</p>
+
 <h3 id="adv-notation-pt">Lendo a Notação</h3>
 
 <ul>

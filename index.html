@@ -8937,6 +8937,27 @@ PERGUNTA: Qual a diferença entre o timing de DP contra crossup e o timing de DP
 </table></div>
 <p>When sources disagree, the game decides. Set the situation up in training mode and measure it.</p>
 
+<h3 id="adv-method">How the Hub's Data Is Checked</h3>
+<p>Every number in the hub has one of these labels, from strongest to weakest:</p>
+<div class="table-wrap"><table>
+    <tr><th>Label</th><th>Meaning</th><th>In the hub</th></tr>
+    <tr><td><strong>Tested</strong></td><td>Checked in training mode, with the date and the situation</td><td>The safe jump results (+42 and +41 against 5- and 6-frame reversals) and Drive Reversal not being able to KO</td></tr>
+    <tr><td><strong>Official</strong></td><td>Capcom's frame data pages</td><td>Not compared yet: the official pages can't be read automatically, so this is the next step</td></tr>
+    <tr><td><strong>Tool</strong></td><td>FAT (Frame Assistant Tool), the community frame data file</td><td>All frame data tables, the punish finder, the matchup tool, the flashcards and the calculators</td></tr>
+    <tr><td><strong>Community</strong></td><td>SuperCombo wiki, dood.gg, guides by players</td><td>Jump frames, damage scaling rules, input buffer, the safe meaty rule, fuzzy guard and option selects</td></tr>
+    <tr><td><strong>To check</strong></td><td>A source contradicts itself or another source</td><td>Marked with ⚠ in the frame tables, with the reason under the move</td></tr>
+</table></div>
+<h4>What was done on November 11, 2026</h4>
+<ul>
+    <li><strong>Every move of the 32 fighters</strong> (2,133 moves) was compared with FAT's file at commit a8101eb (October 22, 2026) in startup, active, recovery, on hit, on block, damage and cancels. All of them match. FAT updated the existing fighters on August 10, a week after the August 3 balance patch, and again on October 22.</li>
+    <li><strong>FAT was checked against itself.</strong> In SF6 data, advantage on block equals blockstun minus active frames minus recovery. 23 moves that aren't projectiles or Drive Reversals break that rule; they are marked "to check", because one of the two numbers in the source must be wrong, or the move has a property the formula misses.</li>
+    <li><strong>A second source</strong> was compared where it could be read: dood.gg's list for Ryu (15 moves) agrees with FAT on 12; it disagrees on OD High Blade Kick (−18 against −11), marked "sources disagree", and lists a Denjin-charged OD Hashogeki the hub doesn't have. The other fighters still need this comparison.</li>
+    <li><strong>Jumps, dashes and health</strong> of all 32 fighters match both FAT and the SuperCombo wiki.</li>
+</ul>
+<p>What this does and doesn't prove: the tables are a faithful copy of FAT. It doesn't prove FAT is right. Treat any single number that decides something important as a hypothesis and confirm it with the frame meter.</p>
+<h4>After a balance patch</h4>
+<p>The hub keeps a patch log (<code>data/patches.js</code>) with the old and new value of every change, its source and date, so old numbers are never mistaken for current ones. The script <code>tools/fat_sync.py</code> lists every difference between the hub and a newer FAT file before anything changes, and <code>tools/validate.py</code> checks the data on every build: missing fields, impossible values, duplicate moves and flags that point at moves that don't exist.</p>
+
 <h3 id="adv-notation">Reading the Notation</h3>
 
 <ul>
@@ -9002,6 +9023,27 @@ PERGUNTA: Qual a diferença entre o timing de DP contra crossup e o timing de DP
     <tr><td><strong>Este hub</strong></td><td>Guias de personagem e calculadoras feitos a partir desses dados, com a data em que cada guia foi conferido</td><td>É uma fonte secundária como qualquer outra: depois de um patch, confirme no jogo</td></tr>
 </table></div>
 <p>Quando as fontes discordam, quem decide é o jogo. Monte a situação no training mode e meça.</p>
+
+<h3 id="adv-method-pt">Como os Dados do Hub São Conferidos</h3>
+<p>Cada número do hub tem um destes rótulos, do mais forte para o mais fraco:</p>
+<div class="table-wrap"><table>
+    <tr><th>Rótulo</th><th>Significado</th><th>No hub</th></tr>
+    <tr><td><strong>Testado</strong></td><td>Conferido no training mode, com a data e a situação</td><td>Os resultados de safe jump (+42 e +41 contra reversals de 5 e 6 frames) e o Drive Reversal não dar KO</td></tr>
+    <tr><td><strong>Oficial</strong></td><td>As páginas de frame data da Capcom</td><td>Ainda não comparado: as páginas oficiais não podem ser lidas automaticamente, então esse é o próximo passo</td></tr>
+    <tr><td><strong>Ferramenta</strong></td><td>FAT (Frame Assistant Tool), o arquivo de frame data da comunidade</td><td>Todas as tabelas de frame data, o buscador de punish, a ferramenta de matchup, os flashcards e as calculadoras</td></tr>
+    <tr><td><strong>Comunidade</strong></td><td>SuperCombo wiki, dood.gg, guias de jogadores</td><td>Frames de pulo, regras de damage scaling, buffer de input, a regra do meaty seguro, fuzzy guard e option selects</td></tr>
+    <tr><td><strong>A conferir</strong></td><td>Uma fonte contradiz a si mesma ou outra fonte</td><td>Marcado com ⚠ nas tabelas de frame data, com o motivo embaixo do golpe</td></tr>
+</table></div>
+<h4>O que foi feito em 11 de novembro de 2026</h4>
+<ul>
+    <li><strong>Cada golpe dos 32 personagens</strong> (2.133 golpes) foi comparado com o arquivo do FAT no commit a8101eb (22 de outubro de 2026) em startup, active, recovery, vantagem no hit, no block, dano e cancels. Todos batem. O FAT atualizou os personagens existentes em 10 de agosto, uma semana depois do balance patch de 3 de agosto, e de novo em 22 de outubro.</li>
+    <li><strong>O FAT foi conferido contra ele mesmo.</strong> Nos dados do SF6, a vantagem no block é o blockstun menos os frames ativos menos o recovery. 23 golpes que não são projéteis nem Drive Reversal quebram essa regra; eles estão marcados "a conferir", porque um dos dois números da fonte deve estar errado, ou o golpe tem uma propriedade que a conta não pega.</li>
+    <li><strong>Uma segunda fonte</strong> foi comparada onde deu para ler: a lista do dood.gg para o Ryu (15 golpes) concorda com o FAT em 12; diverge no OD High Blade Kick (−18 contra −11), marcado "fontes divergem", e lista um OD Hashogeki com Denjin Charge que o hub não tem. Os outros personagens ainda precisam dessa comparação.</li>
+    <li><strong>Pulos, dashes e vida</strong> dos 32 personagens batem com o FAT e com a SuperCombo wiki.</li>
+</ul>
+<p>O que isso prova e o que não prova: as tabelas são uma cópia fiel do FAT. Isso não prova que o FAT está certo. Trate qualquer número que decide algo importante como hipótese e confirme com o frame meter.</p>
+<h4>Depois de um balance patch</h4>
+<p>O hub guarda um histórico de patches (<code>data/patches.js</code>) com o valor antigo e o novo de cada mudança, a fonte e a data, para que números antigos nunca sejam confundidos com os atuais. O script <code>tools/fat_sync.py</code> lista todas as diferenças entre o hub e um arquivo do FAT mais novo antes de mudar qualquer coisa, e o <code>tools/validate.py</code> confere os dados a cada build: campos faltando, valores impossíveis, golpes duplicados e marcações que apontam para golpes que não existem.</p>
 
 <h3 id="adv-notation-pt">Lendo a Notação</h3>
 
@@ -13834,6 +13876,7 @@ PERGUNTA: Qual a diferença entre o timing de DP contra crossup e o timing de DP
 <script src="data/roster.js"></script>
 <script src="data/upcoming.js"></script>
 <script src="data/quiz.js"></script>
+<script src="data/sources.js"></script>
 <script src="assets/js/core.js"></script>
 <script src="assets/js/store.js"></script>
 <script src="assets/js/nav.js"></script>
