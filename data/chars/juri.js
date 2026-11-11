@@ -282,7 +282,7 @@
       ["Feng Shui Engine","214214P","qcb,qcb+P","u",1,null,6,null,null,null,"","",0,null,null,null],
       ["Feng Shui Engine (dash)","214214P (hold)","qcb,qcb+P (hold)","u",9,11,26,"-4(6)","-17(-7)",300,"","var",0,"1.894~3.113","40% Minimum",null],
       ["Kaisen Dankai Raku","214214K","qcb,qcb+K","u",10,4,52,"HKD +22",-31,4000,"","",0,"2.096~2.199","50% Minimum / 10% Immediate (special)","Fully invincible on frames 1-13"],
-      ["Kaisen Dankai Raku (Critical Art)","214214K (CA)","qcb,qcb+K (CA)","u",10,4,52,"HKD +20",-36,4500,"","",0,"2.096~2.199","50% Minimum / 10% Immediate (special)","Fully invincible on frames 1-13"]
+      ["Kaisen Dankai Raku (Critical Art)","214214K (CA)","qcb,qcb+K (CA)","u",10,4,52,"HKD +20",-31,4500,"","",0,"2.096~2.199","50% Minimum / 10% Immediate (special)","Fully invincible on frames 1-13"]
     ],
   "s": {
       "fastestNormal": "4f",

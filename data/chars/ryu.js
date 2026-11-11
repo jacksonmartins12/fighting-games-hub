@@ -215,8 +215,8 @@
       }
     ],
     "counterplay": {
-      "en": "Approach in small steps with low guard instead of jumping at fireball range, because that's where Shoryuken waits. Mix neutral jumps with blocking. Learn what's punishable: L/M/H Shoryuken are -23/-32/-36 on block and OD Shoryuken -40, and Shin Shoryuken (SA3) is -50 (-54 in its alternate version). Watch for 2MK > Drive Rush and test each Hashogeki version separately in training before trying to punish.",
-      "pt": "Avance em passos curtos defendendo agachado em vez de pular na distância do fireball, porque é ali que o Shoryuken espera. Misture pulo neutro com defesa. Saiba o que é punível: os L/M/H Shoryuken ficam -23/-32/-36 no block e o OD Shoryuken -40, e o Shin Shoryuken (SA3) fica -50 (-54 na versão alternativa). Fique atento ao 2MK > Drive Rush e teste cada versão do Hashogeki no training mode antes de tentar punir."
+      "en": "Approach in small steps with low guard instead of jumping at fireball range, because that's where Shoryuken waits. Mix neutral jumps with blocking. Learn what's punishable: L/M/H Shoryuken are -23/-32/-36 on block and OD Shoryuken -40, and Shin Shoryuken (SA3) is -52 (-54 in its alternate version). Watch for 2MK > Drive Rush and test each Hashogeki version separately in training before trying to punish.",
+      "pt": "Avance em passos curtos defendendo agachado em vez de pular na distância do fireball, porque é ali que o Shoryuken espera. Misture pulo neutro com defesa. Saiba o que é punível: os L/M/H Shoryuken ficam -23/-32/-36 no block e o OD Shoryuken -40, e o Shin Shoryuken (SA3) fica -52 (-54 na versão alternativa). Fique atento ao 2MK > Drive Rush e teste cada versão do Hashogeki no training mode antes de tentar punir."
     },
     "sources": [
       "https://www.streetfighter.com/6/character/ryu/frame",
@@ -294,8 +294,8 @@
       ["Denjin Hadoken","236236P (charged)","qcf,qcf+P (charged)","u",7,null,82,"KD +27",-24,"2400 (200x7*1000)","","var",1,null,"30% Minimum","Strike and Throw invincible on frames 1-7"],
       ["Shin Hashogeki","214214P","qcb,qcb+P","u","12(18/50)",6,39,"KD +20 (Tumble +78)",-20,"2800 (2900~3000)","","",1,"?","40% Minimum","Fully invincible on frames 1-13 (extended to 1-18 if you hold the button up to 5F after Super freeze ends) Only invincible on frames 1-9 if you charge for a higher level version (as low as 1-7F if you release the button on the fastest possible level 2 SA2 charge)"],
       ["Denjin Hashogeki","214214P (charged)","qcb,qcb+P (charged)","u","12(18/50)",6,39,"KD +20 (Tumble +78)",-20,"3200 (3300~3400)","","var",1,"?","40% Minimum / Lv.2: Combo (2 hits)","Fully invincible on frames 1-13 (extended to 1-18 if you hold the button up to 5F after Super freeze ends) Only invincible on frames 1-9 if you charge for a higher level version (as low as 1-7F if you release the button on the fastest possible level 2 SA2 charge)"],
-      ["Shin Shoryuken","236236K","qcf,qcf+K","u",5,12,"32+39","HKD +14","-50(-54)","4000(3000~3600)","","",0,"1.10 (1st)","50% Minimum / 10% Immediate (special)","Fully invincible on frames 1-16"],
-      ["Shin Shoryuken (Critical Art)","236236K (CA)","qcf,qcf+K (CA)","u",5,12,"32+39","HKD +14","-50(-54)","4500(4000~4400)","","",0,"1.10 (1st)","50% Minimum / 10% Immediate (special)","Fully invincible on frames 1-16"]
+      ["Shin Shoryuken","236236K","qcf,qcf+K","u",5,12,"32+39","HKD +14","-52(-54)","4000(3000~3600)","","",0,"1.10 (1st)","50% Minimum / 10% Immediate (special)","Fully invincible on frames 1-16"],
+      ["Shin Shoryuken (Critical Art)","236236K (CA)","qcf,qcf+K (CA)","u",5,12,"32+39","HKD +14","-52(-54)","4500(4000~4400)","","",0,"1.10 (1st)","50% Minimum / 10% Immediate (special)","Fully invincible on frames 1-16"]
     ],
   "s": {
       "fastestNormal": "4f",

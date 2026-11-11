@@ -111,7 +111,7 @@ Nenhum valor foi alterado sem confirmação da fonte. Cada linha abaixo aparece 
 
 ## 7. Problemas não resolvidos
 
-1. **Dados oficiais da Capcom**: comparados em 11/11/2026 (seção 10); os 46 valores divergentes agora seguem a Capcom (seção 11). Cerca de 700 linhas da Capcom (dashes, parries, continuações, estados) não foram comparadas.
+1. **Dados oficiais da Capcom**: comparados em 11/11/2026 (seções 10 a 12); os 65 valores divergentes agora seguem a Capcom. O que ficou sem comparação está descrito na seção 12.
 2. **Contagem do meaty**: rodar o teste do Akuma (throw, dash, Crouch MK; −4 ou −5 no block).
 3. **Safe jump**: testado só contra reversals do Ryu; testar contra um reversal só antiaéreo, um contra-ataque e uma Super que agarra.
 4. **As 25 marcações** precisam de uma segunda fonte ou de teste no jogo.
@@ -226,3 +226,49 @@ Por decisão do autor do hub, a fonte oficial prevalece. Os **46 valores em 41 g
   - Akuma: o guia já dizia −39 para o OD Gou Shoryuken, igual à Capcom.
 - **Verificação:** `tools/capcom_compare.py` agora encontra 0 diferenças. 23 de 23 testes passam, incluindo o novo "regression: values that differed from Capcom follow Capcom and are logged" e os testes do Ryu e do quadro de frame data atualizados para os valores da Capcom.
 - **Pendências:** as 7 marcações que a Capcom não lista com nome comparável continuam "a conferir"; as linhas não comparadas da Capcom (seção 10) continuam apoiadas só no FAT.
+
+## 12. Segunda passada: os golpes que ficaram sem comparação (11/11/2026)
+
+O `tools/capcom_compare.py` ganhou uma segunda passada para as linhas que a primeira não casou. Ela casa:
+- versões de Critical Art ("CA X" ↔ "X (Critical Art)");
+- Drive Reversal saindo da defesa e da recuperação (o hub escreve "20(18)");
+- níveis e versões carregadas ("(Lv2)" ↔ "(lvl 2)", "(Charged)" ↔ "(hold)");
+- continuações (o hub escreve "Jus Cool > Waning Moon", a Capcom só "Waning Moon"); quando o hub soma os startups, compara a parte da continuação;
+- versões aéreas, OD com direção ("OD M Yoga Fire") e golpes com mesmo comando e força, mas nome diferente;
+- dashes, comparados com os números de dash do hub.
+
+A segunda passada também compara as células do hub que listam várias versões (ex.: −50(−54)): o valor da Capcom concorda quando aparece entre os listados.
+
+**Resultado:**
+- Golpes do hub comparados: de 1.648 para **1.856 de 2.133** (87%).
+- Valores comparados: de 5.106 para **6.542**.
+- **19 valores novos divergiam e agora seguem a Capcom.** Onde a célula do hub lista versões, só o valor principal mudou e as alternativas entre parênteses continuam sendo do FAT. Todos estão em `data/patches.js` (segunda entrada) e marcados "✓ confirmado pela Capcom". Entre eles:
+  - Ryu: Shin Shoryuken (SA3 e CA) passa de −50 para −52 no block. O texto de counterplay foi ajustado para −52.
+  - Juri: Kaisen Dankai Raku (CA) passa de −36 para −31.
+  - Yasmine: Pamumukadkad ng Sampaguita (CA) passa de −48 para −45.
+  - Luke: Impaler com 1 frame ativo.
+  - Kimberly: Aerial Bushin Senpukyaku +1 no block, Bushin Scramble −25.
+  - Blanka: Backstep Rolling Attack e HP Rolling Attack.
+  - E. Honda: OD Sumo Headbutt.
+- **5 marcações "a conferir" resolvidas:** a Capcom confirma Dee Jay OD Jus Cool > Waning Moon, Ken Chin Buster 2nd, Kimberly (OD) Arc Step > Bushin Hojin Kick e Bushin Beats (0 stock).
+- **6 golpes ficaram marcados "a conferir", sem troca**, porque a Capcom mede outra coisa e não dá para comparar um a um:
+  - Akuma Demon Low Slash: startup contado a partir da continuação.
+  - Kimberly (OD) Arc Step: idem.
+  - Manon Grand Fouetté: idem.
+  - Mai Midare Kachousen: hits separados.
+  - M. Bison Somersault Skull Diver: recovery total contra recovery na aterrissagem.
+- Continuam "a conferir", por não aparecerem na página da Capcom: Kimberly Bushin Beats (1 stock) e Lily Desert Storm Final.
+
+**O que continua sem comparação, e por quê:**
+
+| Lado | Quantidade | O que é |
+|---|---|---|
+| Capcom | 137 | Estados de personagem que o hub não lista separadamente (Denjin Charge, Lightning Beast, Sumo Spirit…) |
+| Capcom | 128 | Variantes de parry e Drive Rush (Perfect Parry contra golpe e contra projétil, Parry Drive Rush, Cancel Drive Rush) |
+| Capcom | 37 | Etapas de Supers e combos (ex.: cada golpe do Sunrise Festival da Dee Jay) |
+| Capcom | ~165 | Golpes que o hub não tem como linha própria: versões carregadas (Cammy), projéteis listados à parte (Arjun), tempos perfeitos (Guile), golpes que o FAT agrupa |
+| Hub | 277 | Golpes do hub sem linha correspondente na Capcom (versões que o FAT separa e a Capcom não, linhas genéricas como Drive Rush) |
+
+Para cobrir esses, o caminho é **acrescentar ao hub as linhas que só a Capcom tem** (por exemplo, os golpes com Denjin Charge do Ryu), com a Capcom como fonte. Isso acrescenta dados novos ao hub, em vez de conferir os existentes, e ficou para uma próxima etapa.
+
+Testes: 23 de 23 passam. Os testes do Ryu, do quadro de frame data e dos valores da Capcom foram atualizados para os novos números.

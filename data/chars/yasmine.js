@@ -294,7 +294,7 @@
       ["Hiwa ng Kalangitan","236236K","qcf,qcf+K","u",7,6,"19+31","KD +24",-34,2000,"","",0,"?","30% Minimum","Strike and Throw invincible on frames 1-9 Active frames 1-3 transition into a fully invincible cinematic on hit (can trade with projectiles for 500 damage) Fast but short range strike invincible option"],
       ["Nakatagong Lakas","214214P","qcb,qcb+P","u",1,null,9,null,null,null,"","",0,null,null,null],
       ["Pamumukadkad ng Sampaguita","236236P","qcf,qcf+P","u","10(2)",3,70,"HKD +42",-48,4000,"","",0,1.921,"50% Minimum / 10% Immediate (special)","Fully invincible on frames 1-12"],
-      ["Pamumukadkad ng Sampaguita (Critical Art)","236236P (CA)","qcf,qcf+P (CA)","u","10(2)",3,70,"HKD +20",-48,4500,"","",0,1.921,"50% Minimum / 10% Immediate (special)","Fully invincible on frames 1-12"],
+      ["Pamumukadkad ng Sampaguita (Critical Art)","236236P (CA)","qcf,qcf+P (CA)","u","10(2)",3,70,"HKD +20",-45,4500,"","",0,1.921,"50% Minimum / 10% Immediate (special)","Fully invincible on frames 1-12"],
       ["Linya ng Liwanag","4KK","b+KK","s","22(30)","2(6)5","20(24)","KD +49(+53)","-3(5)","1100 (300*800)","","",0,"4.603~4.731","20% Start / Combo (2 hits)",null]
     ],
   "s": {

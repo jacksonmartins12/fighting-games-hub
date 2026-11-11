@@ -269,7 +269,7 @@
       ["LP Sumo Headbutt","[4]6LP","b,f+LP","s",10,"1~22","2+18(19)","KD +40",-3,"1400(1000)","su3","",0,"0.84~2.861","30% Start","Invincible to airborne strikes on frames 4-13"],
       ["MP Sumo Headbutt","[4]6MP","b,f+MP","s",10,"1~24","2+18(22)","KD +40",-3,"1400(1100)","su3","",0,"0.84~3.877","30% Start","Invincible to airborne strikes on frames 5-13"],
       ["HP Sumo Headbutt","[4]6HP","b,f+HP","s",14,"1~32","2+18(22)","KD +40",-3,"1500(1300)","su3","",0,"0.777~6.85","30% Start","Invincible to airborne strikes on frames 6-16"],
-      ["OD Sumo Headbutt","[4]6PP","b,f+PP","s",9,"5*1~30","30(37)","KD +36(37)",-20,"600*1000 (1600)","","",0,"0.797~6.793",null,null],
+      ["OD Sumo Headbutt","[4]6PP","b,f+PP","s",9,"5*1~30","20(37)","KD +36(37)",-20,"600*1000 (1600)","","",0,"0.797~6.793",null,null],
       ["LK Sumo Smash","[2]8LK","d,u+LK","s","11*41","4(26)8",17,"HKD +23(27)",1,"1400 (400*1000)","","",0,null,"25% Start",null],
       ["MK Sumo Smash","[2]8MK","d,u+MK","s","11*39","4(24)7",17,"HKD +23(27)",1,"1400 (400*1000)","","",0,null,"25% Start",null],
       ["HK Sumo Smash","[2]8HK","d,u+HK","s","11*37","4(22)6",17,"HKD +23(27)",1,"1400 (400*1000)","","",0,null,"25% Start",null],

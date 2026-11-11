@@ -16,7 +16,7 @@
   {
    "name": "Capcom – official frame data pages",
    "url": "https://www.streetfighter.com/6/",
-   "used": "compared move by move with tools/capcom_compare.py: 1648 moves matched, 5106 values compared, 46 differences in 41 moves",
+   "used": "compared move by move with tools/capcom_compare.py: 1856 of 2133 hub moves matched, 6542 values compared; the 65 that differed now follow Capcom",
    "saved": "2026-11-11",
    "controls": "Classic",
    "status": "official"
@@ -68,10 +68,10 @@
     }
    },
    "OD Jus Cool > Waning Moon": {
-    "status": "check",
+    "status": "official",
     "detail": {
-     "en": "FAT lists on block -2, but blockstun 18 − active 5 − recovery 17 = -4. One of the two FAT values is wrong, or the move has a property the formula misses (multi-hit, teleport, counter). Not found on Capcom's page under a matching name, so it stays to check.",
-     "pt": "O FAT lista no block -2, mas blockstun 18 − ativos 5 − recovery 17 = -4. Um dos dois valores do FAT está errado, ou o golpe tem uma propriedade que a conta não pega (vários hits, teleporte, contra-ataque). Não aparece na página da Capcom com um nome correspondente, então continua a conferir."
+     "en": "Capcom's page (saved 2026-11-11, as \"OD Waning Moon\") confirms the values shown (on block −2, on hit +7). The inconsistency was only in FAT's stun value, which the hub doesn't display.",
+     "pt": "A página da Capcom (salva em 11/11/2026, como \"OD Waning Moon\") confirma os valores mostrados (no block −2, no hit +7). A inconsistência estava só no valor de stun do FAT, que o hub não mostra."
     }
    }
   },
@@ -158,14 +158,21 @@
      "en": "Value from Capcom's official page (saved 2026-11-11): startup 12 (FAT had 16); recovery 19 (FAT had 20).",
      "pt": "Valor da página oficial da Capcom (salva em 11/11/2026): startup 12 (o FAT tinha 16); recovery 19 (o FAT tinha 20)."
     }
+   },
+   "Kaisen Dankai Raku (Critical Art)": {
+    "status": "official",
+    "detail": {
+     "en": "Value from Capcom's official page (saved 2026-11-11): on block −31 (was −36). Where the cell lists versions, the alternates in parentheses are still FAT's.",
+     "pt": "Valor da página oficial da Capcom (salva em 11/11/2026): no block −31 (era −36). Onde a célula lista versões, as alternativas entre parênteses continuam sendo do FAT."
+    }
    }
   },
   "ken": {
    "Chin Buster 2nd": {
-    "status": "check",
+    "status": "official",
     "detail": {
-     "en": "FAT lists on block -14, but blockstun 15 − active 3 − recovery 27 = -15. One of the two FAT values is wrong, or the move has a property the formula misses (multi-hit, teleport, counter). Not found on Capcom's page under a matching name, so it stays to check.",
-     "pt": "O FAT lista no block -14, mas blockstun 15 − ativos 3 − recovery 27 = -15. Um dos dois valores do FAT está errado, ou o golpe tem uma propriedade que a conta não pega (vários hits, teleporte, contra-ataque). Não aparece na página da Capcom com um nome correspondente, então continua a conferir."
+     "en": "Capcom's page (saved 2026-11-11, as \"Chin Buster\") confirms the values shown (on block −14). The inconsistency was only in FAT's stun value, which the hub doesn't display.",
+     "pt": "A página da Capcom (salva em 11/11/2026, como \"Chin Buster\") confirma os valores mostrados (no block −14). A inconsistência estava só no valor de stun do FAT, que o hub não mostra."
     }
    }
   },
@@ -192,24 +199,24 @@
     }
    },
    "Arc Step > Bushin Hojin Kick": {
-    "status": "check",
+    "status": "official",
     "detail": {
-     "en": "FAT lists on block -8, but blockstun 15 − active 6 − recovery 20 = -11. One of the two FAT values is wrong, or the move has a property the formula misses (multi-hit, teleport, counter). Not found on Capcom's page under a matching name, so it stays to check.",
-     "pt": "O FAT lista no block -8, mas blockstun 15 − ativos 6 − recovery 20 = -11. Um dos dois valores do FAT está errado, ou o golpe tem uma propriedade que a conta não pega (vários hits, teleporte, contra-ataque). Não aparece na página da Capcom com um nome correspondente, então continua a conferir."
+     "en": "Capcom's page (saved 2026-11-11, as \"Bushin Hojin Kick\") confirms the values shown (on block −8). The inconsistency was only in FAT's stun value, which the hub doesn't display.",
+     "pt": "A página da Capcom (salva em 11/11/2026, como \"Bushin Hojin Kick\") confirma os valores mostrados (no block −8). A inconsistência estava só no valor de stun do FAT, que o hub não mostra."
     }
    },
    "OD Arc Step > Bushin Hojin Kick": {
-    "status": "check",
+    "status": "official",
     "detail": {
-     "en": "FAT lists on block -8, but blockstun 15 − active 6 − recovery 20 = -11. One of the two FAT values is wrong, or the move has a property the formula misses (multi-hit, teleport, counter). Not found on Capcom's page under a matching name, so it stays to check.",
-     "pt": "O FAT lista no block -8, mas blockstun 15 − ativos 6 − recovery 20 = -11. Um dos dois valores do FAT está errado, ou o golpe tem uma propriedade que a conta não pega (vários hits, teleporte, contra-ataque). Não aparece na página da Capcom com um nome correspondente, então continua a conferir."
+     "en": "Capcom's page (saved 2026-11-11, as \"OD Bushin Hojin Kick\") confirms the values shown (on block −8). The inconsistency was only in FAT's stun value, which the hub doesn't display.",
+     "pt": "A página da Capcom (salva em 11/11/2026, como \"OD Bushin Hojin Kick\") confirma os valores mostrados (no block −8). A inconsistência estava só no valor de stun do FAT, que o hub não mostra."
     }
    },
    "Bushin Beats (0 stock)": {
-    "status": "check",
+    "status": "official",
     "detail": {
-     "en": "FAT lists on block -25, but blockstun 16 − active 15 − recovery 40 = -39. One of the two FAT values is wrong, or the move has a property the formula misses (multi-hit, teleport, counter). Not found on Capcom's page under a matching name, so it stays to check.",
-     "pt": "O FAT lista no block -25, mas blockstun 16 − ativos 15 − recovery 40 = -39. Um dos dois valores do FAT está errado, ou o golpe tem uma propriedade que a conta não pega (vários hits, teleporte, contra-ataque). Não aparece na página da Capcom com um nome correspondente, então continua a conferir."
+     "en": "Capcom's page (saved 2026-11-11, as \"SA1 Bushin Beats\") confirms the values shown (on block −25). The inconsistency was only in FAT's stun value, which the hub doesn't display.",
+     "pt": "A página da Capcom (salva em 11/11/2026, como \"SA1 Bushin Beats\") confirma os valores mostrados (no block −25). A inconsistência estava só no valor de stun do FAT, que o hub não mostra."
     }
    },
    "Bushin Beats (1 stock)": {
@@ -224,6 +231,41 @@
     "detail": {
      "en": "Value from Capcom's official page (saved 2026-11-11): startup 10 (FAT had 15); active frames 2 (FAT had 3); recovery 25 (FAT had 24); on block −10 (FAT had −12).",
      "pt": "Valor da página oficial da Capcom (salva em 11/11/2026): startup 10 (o FAT tinha 15); frames ativos 2 (o FAT tinha 3); recovery 25 (o FAT tinha 24); no block −10 (o FAT tinha −12)."
+    }
+   },
+   "Aerial Bushin Senpukyaku": {
+    "status": "official",
+    "detail": {
+     "en": "Value from Capcom's official page (saved 2026-11-11): on hit 5(8) / KD +38(42) (was 4(8) / KD +38(42)); on block 1(4) (was −1(4)). Where the cell lists versions, the alternates in parentheses are still FAT's.",
+     "pt": "Valor da página oficial da Capcom (salva em 11/11/2026): no hit 5(8) / KD +38(42) (era 4(8) / KD +38(42)); no block 1(4) (era −1(4)). Onde a célula lista versões, as alternativas entre parênteses continuam sendo do FAT."
+    }
+   },
+   "OD Aerial Bushin Senpukyaku": {
+    "status": "official",
+    "detail": {
+     "en": "Value from Capcom's official page (saved 2026-11-11): on hit 5(8) / KD +46(51) (was 4(8) / KD +46(51)); on block 1(4) (was −1(4)). Where the cell lists versions, the alternates in parentheses are still FAT's.",
+     "pt": "Valor da página oficial da Capcom (salva em 11/11/2026): no hit 5(8) / KD +46(51) (era 4(8) / KD +46(51)); no block 1(4) (era −1(4)). Onde a célula lista versões, as alternativas entre parênteses continuam sendo do FAT."
+    }
+   },
+   "Bushin Scramble": {
+    "status": "official",
+    "detail": {
+     "en": "Value from Capcom's official page (saved 2026-11-11): on block −25(−20) (was −26(−20)). Where the cell lists versions, the alternates in parentheses are still FAT's.",
+     "pt": "Valor da página oficial da Capcom (salva em 11/11/2026): no block −25(−20) (era −26(−20)). Onde a célula lista versões, as alternativas entre parênteses continuam sendo do FAT."
+    }
+   },
+   "Sprint > Arc Step": {
+    "status": "check",
+    "detail": {
+     "en": "Capcom counts this startup differently (from the follow-up itself, or as several separate hits), so the numbers were not compared one to one and the table keeps FAT's value.",
+     "pt": "A Capcom conta esse startup de outro jeito (a partir da própria continuação, ou como vários hits separados), então os números não foram comparados um a um e a tabela mantém o valor do FAT."
+    }
+   },
+   "OD Sprint > Arc Step": {
+    "status": "check",
+    "detail": {
+     "en": "Capcom counts this startup differently (from the follow-up itself, or as several separate hits), so the numbers were not compared one to one and the table keeps FAT's value.",
+     "pt": "A Capcom conta esse startup de outro jeito (a partir da própria continuação, ou como vários hits separados), então os números não foram comparados um a um e a tabela mantém o valor do FAT."
     }
    }
   },
@@ -270,6 +312,20 @@
     "detail": {
      "en": "Value from Capcom's official page (saved 2026-11-11): active frames 1 (FAT had 3).",
      "pt": "Valor da página oficial da Capcom (salva em 11/11/2026): frames ativos 1 (o FAT tinha 3)."
+    }
+   },
+   "Avenger > Impaler": {
+    "status": "official",
+    "detail": {
+     "en": "Value from Capcom's official page (saved 2026-11-11): active frames 1 (was 8). Where the cell lists versions, the alternates in parentheses are still FAT's.",
+     "pt": "Valor da página oficial da Capcom (salva em 11/11/2026): frames ativos 1 (era 8). Onde a célula lista versões, as alternativas entre parênteses continuam sendo do FAT."
+    }
+   },
+   "OD Avenger > Impaler": {
+    "status": "official",
+    "detail": {
+     "en": "Value from Capcom's official page (saved 2026-11-11): active frames 1 (was 8). Where the cell lists versions, the alternates in parentheses are still FAT's.",
+     "pt": "Valor da página oficial da Capcom (salva em 11/11/2026): frames ativos 1 (era 8). Onde a célula lista versões, as alternativas entre parênteses continuam sendo do FAT."
     }
    }
   },
@@ -322,6 +378,20 @@
      "en": "Value from Capcom's official page (saved 2026-11-11): active frames 5 (FAT had 6).",
      "pt": "Valor da página oficial da Capcom (salva em 11/11/2026): frames ativos 5 (o FAT tinha 6)."
     }
+   },
+   "Shin Shoryuken": {
+    "status": "official",
+    "detail": {
+     "en": "Value from Capcom's official page (saved 2026-11-11): on block −52(−54) (was −50(−54)). Where the cell lists versions, the alternates in parentheses are still FAT's.",
+     "pt": "Valor da página oficial da Capcom (salva em 11/11/2026): no block −52(−54) (era −50(−54)). Onde a célula lista versões, as alternativas entre parênteses continuam sendo do FAT."
+    }
+   },
+   "Shin Shoryuken (Critical Art)": {
+    "status": "official",
+    "detail": {
+     "en": "Value from Capcom's official page (saved 2026-11-11): on block −52(−54) (was −50(−54)). Where the cell lists versions, the alternates in parentheses are still FAT's.",
+     "pt": "Valor da página oficial da Capcom (salva em 11/11/2026): no block −52(−54) (era −50(−54)). Onde a célula lista versões, as alternativas entre parênteses continuam sendo do FAT."
+    }
    }
   },
   "sagat": {
@@ -362,6 +432,13 @@
     "detail": {
      "en": "Value from Capcom's official page (saved 2026-11-11): active frames 22 (FAT had 21).",
      "pt": "Valor da página oficial da Capcom (salva em 11/11/2026): frames ativos 22 (o FAT tinha 21)."
+    }
+   },
+   "Demon Raid > Demon Low Slash": {
+    "status": "check",
+    "detail": {
+     "en": "Capcom counts this startup differently (from the follow-up itself, or as several separate hits), so the numbers were not compared one to one and the table keeps FAT's value.",
+     "pt": "A Capcom conta esse startup de outro jeito (a partir da própria continuação, ou como vários hits separados), então os números não foram comparados um a um e a tabela mantém o valor do FAT."
     }
    }
   },
@@ -408,6 +485,34 @@
     "detail": {
      "en": "Value from Capcom's official page (saved 2026-11-11): active frames 20 (FAT had 19).",
      "pt": "Valor da página oficial da Capcom (salva em 11/11/2026): frames ativos 20 (o FAT tinha 19)."
+    }
+   },
+   "HP Rolling Attack": {
+    "status": "official",
+    "detail": {
+     "en": "Value from Capcom's official page (saved 2026-11-11): recovery 26 (was 2+23). Where the cell lists versions, the alternates in parentheses are still FAT's.",
+     "pt": "Valor da página oficial da Capcom (salva em 11/11/2026): recovery 26 (era 2+23). Onde a célula lista versões, as alternativas entre parênteses continuam sendo do FAT."
+    }
+   },
+   "LK Backstep Rolling Attack": {
+    "status": "official",
+    "detail": {
+     "en": "Value from Capcom's official page (saved 2026-11-11): on hit 9(14) (was 8(14)); on block 3(8) (was 2(8)). Where the cell lists versions, the alternates in parentheses are still FAT's.",
+     "pt": "Valor da página oficial da Capcom (salva em 11/11/2026): no hit 9(14) (era 8(14)); no block 3(8) (era 2(8)). Onde a célula lista versões, as alternativas entre parênteses continuam sendo do FAT."
+    }
+   },
+   "MK Backstep Rolling Attack": {
+    "status": "official",
+    "detail": {
+     "en": "Value from Capcom's official page (saved 2026-11-11): on hit 8(14) (was 7(14)); on block 2(8) (was 1(8)). Where the cell lists versions, the alternates in parentheses are still FAT's.",
+     "pt": "Valor da página oficial da Capcom (salva em 11/11/2026): no hit 8(14) (era 7(14)); no block 2(8) (era 1(8)). Onde a célula lista versões, as alternativas entre parênteses continuam sendo do FAT."
+    }
+   },
+   "HK Backstep Rolling Attack": {
+    "status": "official",
+    "detail": {
+     "en": "Value from Capcom's official page (saved 2026-11-11): on hit 8(13) (was 7(13)); on block 4(9) (was 3(9)). Where the cell lists versions, the alternates in parentheses are still FAT's.",
+     "pt": "Valor da página oficial da Capcom (salva em 11/11/2026): no hit 8(13) (era 7(13)); no block 4(9) (era 3(9)). Onde a célula lista versões, as alternativas entre parênteses continuam sendo do FAT."
     }
    }
   },
@@ -510,6 +615,13 @@
      "en": "Value from Capcom's official page (saved 2026-11-11): recovery 51 (FAT had 59).",
      "pt": "Valor da página oficial da Capcom (salva em 11/11/2026): recovery 51 (o FAT tinha 59)."
     }
+   },
+   "Midare Kachousen": {
+    "status": "check",
+    "detail": {
+     "en": "Capcom counts this startup differently (from the follow-up itself, or as several separate hits), so the numbers were not compared one to one and the table keeps FAT's value.",
+     "pt": "A Capcom conta esse startup de outro jeito (a partir da própria continuação, ou como vários hits separados), então os números não foram comparados um a um e a tabela mantém o valor do FAT."
+    }
    }
   },
   "rashid": {
@@ -550,6 +662,42 @@
     "detail": {
      "en": "Value from Capcom's official page (saved 2026-11-11): startup 5 (FAT had 6); active frames 51 (FAT had 50).",
      "pt": "Valor da página oficial da Capcom (salva em 11/11/2026): startup 5 (o FAT tinha 6); frames ativos 51 (o FAT tinha 50)."
+    }
+   }
+  },
+  "e-honda": {
+   "OD Sumo Headbutt": {
+    "status": "official",
+    "detail": {
+     "en": "Value from Capcom's official page (saved 2026-11-11): recovery 20(37) (was 30(37)). Where the cell lists versions, the alternates in parentheses are still FAT's.",
+     "pt": "Valor da página oficial da Capcom (salva em 11/11/2026): recovery 20(37) (era 30(37)). Onde a célula lista versões, as alternativas entre parênteses continuam sendo do FAT."
+    }
+   }
+  },
+  "yasmine": {
+   "Pamumukadkad ng Sampaguita (Critical Art)": {
+    "status": "official",
+    "detail": {
+     "en": "Value from Capcom's official page (saved 2026-11-11): on block −45 (was −48). Where the cell lists versions, the alternates in parentheses are still FAT's.",
+     "pt": "Valor da página oficial da Capcom (salva em 11/11/2026): no block −45 (era −48). Onde a célula lista versões, as alternativas entre parênteses continuam sendo do FAT."
+    }
+   }
+  },
+  "m-bison": {
+   "Somersault Skull Diver": {
+    "status": "check",
+    "detail": {
+     "en": "Capcom lists 29 frames of recovery; FAT lists 10 frames of landing recovery. They measure different things, so the table keeps FAT's value.",
+     "pt": "A Capcom lista 29 frames de recovery; o FAT lista 10 frames de recovery na aterrissagem. Eles medem coisas diferentes, então a tabela mantém o valor do FAT."
+    }
+   }
+  },
+  "manon": {
+   "Grand Fouetté": {
+    "status": "check",
+    "detail": {
+     "en": "Capcom counts this startup differently (from the follow-up itself, or as several separate hits), so the numbers were not compared one to one and the table keeps FAT's value.",
+     "pt": "A Capcom conta esse startup de outro jeito (a partir da própria continuação, ou como vários hits separados), então os números não foram comparados um a um e a tabela mantém o valor do FAT."
     }
    }
   }

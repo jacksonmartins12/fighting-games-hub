@@ -330,5 +330,146 @@
     "new": 51
    }
   ]
+ },
+ {
+  "date": "2026-11-11",
+  "source": "Capcom official frame data pages (Classic), saved 2026-11-11; second comparison pass (moves the hub names differently and values that list several versions)",
+  "status": "official",
+  "note": "Where the hub listed several versions, only the main value was replaced and FAT's alternates in parentheses were kept. \"old\" is the previous value.",
+  "changes": [
+   {
+    "char": "blanka",
+    "move": "HP Rolling Attack",
+    "field": "recovery",
+    "old": "2+23",
+    "new": 26
+   },
+   {
+    "char": "blanka",
+    "move": "LK Backstep Rolling Attack",
+    "field": "onHit",
+    "old": "8(14)",
+    "new": "9(14)"
+   },
+   {
+    "char": "blanka",
+    "move": "LK Backstep Rolling Attack",
+    "field": "onBlock",
+    "old": "2(8)",
+    "new": "3(8)"
+   },
+   {
+    "char": "blanka",
+    "move": "MK Backstep Rolling Attack",
+    "field": "onHit",
+    "old": "7(14)",
+    "new": "8(14)"
+   },
+   {
+    "char": "blanka",
+    "move": "MK Backstep Rolling Attack",
+    "field": "onBlock",
+    "old": "1(8)",
+    "new": "2(8)"
+   },
+   {
+    "char": "blanka",
+    "move": "HK Backstep Rolling Attack",
+    "field": "onHit",
+    "old": "7(13)",
+    "new": "8(13)"
+   },
+   {
+    "char": "blanka",
+    "move": "HK Backstep Rolling Attack",
+    "field": "onBlock",
+    "old": "3(9)",
+    "new": "4(9)"
+   },
+   {
+    "char": "e-honda",
+    "move": "OD Sumo Headbutt",
+    "field": "recovery",
+    "old": "30(37)",
+    "new": "20(37)"
+   },
+   {
+    "char": "juri",
+    "move": "Kaisen Dankai Raku (Critical Art)",
+    "field": "onBlock",
+    "old": -36,
+    "new": -31
+   },
+   {
+    "char": "kimberly",
+    "move": "Aerial Bushin Senpukyaku",
+    "field": "onHit",
+    "old": "4(8) / KD +38(42)",
+    "new": "5(8) / KD +38(42)"
+   },
+   {
+    "char": "kimberly",
+    "move": "Aerial Bushin Senpukyaku",
+    "field": "onBlock",
+    "old": "-1(4)",
+    "new": "1(4)"
+   },
+   {
+    "char": "kimberly",
+    "move": "OD Aerial Bushin Senpukyaku",
+    "field": "onHit",
+    "old": "4(8) / KD +46(51)",
+    "new": "5(8) / KD +46(51)"
+   },
+   {
+    "char": "kimberly",
+    "move": "OD Aerial Bushin Senpukyaku",
+    "field": "onBlock",
+    "old": "-1(4)",
+    "new": "1(4)"
+   },
+   {
+    "char": "kimberly",
+    "move": "Bushin Scramble",
+    "field": "onBlock",
+    "old": "-26(-20)",
+    "new": "-25(-20)"
+   },
+   {
+    "char": "luke",
+    "move": "Avenger > Impaler",
+    "field": "active",
+    "old": 8,
+    "new": 1
+   },
+   {
+    "char": "luke",
+    "move": "OD Avenger > Impaler",
+    "field": "active",
+    "old": 8,
+    "new": 1
+   },
+   {
+    "char": "ryu",
+    "move": "Shin Shoryuken",
+    "field": "onBlock",
+    "old": "-50(-54)",
+    "new": "-52(-54)"
+   },
+   {
+    "char": "ryu",
+    "move": "Shin Shoryuken (Critical Art)",
+    "field": "onBlock",
+    "old": "-50(-54)",
+    "new": "-52(-54)"
+   },
+   {
+    "char": "yasmine",
+    "move": "Pamumukadkad ng Sampaguita (Critical Art)",
+    "field": "onBlock",
+    "old": -48,
+    "new": -45
+   }
+  ]
  }
 ];
