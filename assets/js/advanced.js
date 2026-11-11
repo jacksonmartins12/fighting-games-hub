@@ -51,6 +51,10 @@ function okiKnockdowns(slug) {
   });
   return out;
 }
+// Safe meaty: after a whiffed meaty you block again `stuck` + 1 frames after their first frame; a reversal with startup
+// `rev` pressed on that first frame is active rev - 1 frames after it. Safe if stuck + 2 <= rev. dood.gg's rule
+// (stuck + 1 <= rev) is one frame more generous; that frame is reported as a doubt until it's tested in game.
+function safeMeaty(stuck, rev) { return stuck + 2 <= rev ? 'safe' : (stuck + 1 <= rev ? 'doubt' : 'unsafe'); }
 function okiMeaty(N, spent, S, A) {
   var pmin = spent + 1, plo = N + 3 - S - A, phi = N + 2 - S;
   if (phi < pmin) return null;
@@ -105,7 +109,9 @@ function okiResults() {
   if (!(adv.okiRev !== '' && rev >= 1 && rev <= 60)) rev = null;
   if (rev) {
     var known = rows.filter(function (x) { return x.stuck != null; });
-    h += '<p class="adv-sum">' + B('adv.oki.safe-sum', [known.filter(function (x) { return x.stuck + 1 <= rev; }).length, known.length, rev]) + '</p>';
+    var cnt = { safe: 0, doubt: 0, unsafe: 0 };
+    known.forEach(function (x) { cnt[safeMeaty(x.stuck, rev)]++; });
+    h += '<p class="adv-sum">' + B('adv.oki.safe-sum', [cnt.safe, known.length, rev, cnt.doubt]) + '</p>';
   }
   h += '<div class="table-wrap"><table class="pf-table adv-table"><thead><tr><th>' + B('roster.move') + '</th><th>Startup</th><th>' + B('adv.oki.press') + '</th><th>' + B('adv.oki.hits-on') + '</th><th>' + B('widgets.on-block') + '</th><th>' + B('widgets.on-hit') + '</th><th>' + B('adv.oki.stuck') + '</th></tr></thead><tbody>';
   rows.forEach(function (x) {
@@ -114,7 +120,7 @@ function okiResults() {
       '<td class="inp">' + B('adv.oki.active-of', [x.r.k, x.A.n]) + (x.A.multi ? '<br><span class="small muted">' + B('adv.oki.multi') + '</span>' : '') + '</td>' +
       '<td class="inp">' + (x.blk == null ? '<span class="muted">' + B('mu.no-data') + '</span>' : fmtAdv(x.blk)) + '</td><td class="inp">' + (x.hit == null ? fmtCell(x.m[7]) : fmtAdv(x.hit)) + '</td>' +
       '<td class="inp">' + (x.stuck == null ? '<span class="muted">' + B('mu.no-data') + '</span>' : x.stuck + 'f' +
-        (rev ? '<br><span class="small ' + (x.stuck + 1 <= rev ? 'adv-ok">' + B('adv.oki.safe', [rev]) : 'adv-bad">' + B('adv.oki.unsafe', [rev])) + '</span>' : '')) + '</td></tr>';
+        (rev ? '<br><span class="small adv-' + safeMeaty(x.stuck, rev) + '">' + B('adv.oki.' + safeMeaty(x.stuck, rev), [rev]) + '</span>' : '')) + '</td></tr>';
   });
   h += '</tbody></table></div>';
   if (tooSlow) h += '<p class="small muted">' + B('adv.oki.too-slow', [tooSlow]) + '</p>';

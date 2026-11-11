@@ -29,6 +29,9 @@
     <p>O Goshoha (throw para frente do Akuma) é KD +28, e o dash para frente dele leva 19 frames, então depois do dash você está livre no frame 20. O Crouch MK (8 frames de startup, 3 ativos) apertado na hora fica ativo nos frames 27 a 29, e o oponente levanta no frame 29. Ele acerta no terceiro frame ativo: o −6 no block vira −4, e o 0 no hit vira +2. Não precisa esperar: throw, dash e aperta.</p>
     <p class="small muted">Essa é a conta. Se o Crouch MK ainda alcança depois do dash, só o training mode vai dizer.</p>
 </div>
+<div class="card warning">
+    <p><strong>Este exemplo também é o teste da contagem.</strong> A fórmula supõe que o oponente pode ser acertado a partir do frame N + 1, o primeiro frame em que ele pode agir. Isso ainda não foi confirmado no training mode. Faça o exemplo acima com o frame meter ligado, apertando o Crouch MK perto do fim do dash para o buffer de input fazer ele sair no primeiro frame livre, e veja a melhor vantagem que aparece no block. −4 quer dizer que a contagem está certa. −5, e nunca −4, quer dizer que o oponente pode ser acertado um frame antes, e todos os tempos deste capítulo andam um frame para trás.</p>
+</div>
 
 <p>O mesmo método mostra quando um setup é desconfortável. O Crouch HK do Ryu é KD +40. Depois de um dash para frente sobram 21 frames, então um Crouch MK meaty exige esperar 12 frames depois que o dash termina. Esperar 12 frames no olho não sai igual toda vez, e é por isso que os jogadores preenchem esse tempo com algo de duração fixa.</p>
 
@@ -47,9 +50,11 @@
 
 <p>O safe jump não é o único jeito de ficar seguro contra um reversal invencível. Um meaty no chão também pode ser seguro, se você recuperar rápido o bastante para defender o reversal depois que ele atravessar o seu golpe. Funciona porque a invencibilidade do reversal faz o seu meaty errar: o que importa é quanto tempo você fica preso depois disso.</p>
 <div class="deep-dive">
-    <h4>A regra</h4>
-    <p>A regra prática do dood.gg: quando o seu meaty acerta no <strong>último</strong> frame ativo, ele é seguro se <strong>o recovery dele + 1 não passar do startup do reversal invencível do oponente</strong>. Se ele acertar num frame ativo anterior, os frames ativos que sobram também contam como tempo preso.</p>
-    <p>Um exemplo com os dados deste hub: o Stand LP do Ryu tem 7 frames de recovery, então, acertando no último frame ativo, ele é seguro contra um reversal de 8 frames ou mais lento, como a SA3 do Luke (10 frames). Ele não é seguro contra um reversal de 6 frames, que é o startup da maioria dos uppercuts OD do elenco e da SA1 do Luke. O dood.gg observa que nenhum golpe do jogo recupera rápido o bastante para ser seguro contra esses, então, contra um reversal de 6 frames, as respostas são o safe jump ou defender e fazer bait.</p>
+    <h4>A regra, e de onde ela vem</h4>
+    <p>Chame de <strong>preso</strong> os frames em que você não consegue defender depois que o meaty encontra o primeiro frame dele: os frames ativos que sobram depois do que encosta nele, mais o recovery do golpe. Se ele aperta um reversal invencível nesse primeiro frame, o seu meaty atravessa sem acertar, você volta a defender no frame primeiro + preso + 1, e o reversal dele fica ativo no frame primeiro + R − 1, onde R é o startup. Você defende se primeiro + R − 1 ≥ primeiro + preso + 1, ou seja, <strong>preso + 2 ≤ R</strong>.</p>
+    <p>A regra prática do dood.gg é um frame mais generosa: <strong>preso + 1 ≤ R</strong> (para um meaty no último frame ativo, recovery + 1 ≤ R). As duas concordam se o oponente puder ser acertado um frame antes de poder agir, que é justamente o que o teste do Akuma em <a href="#adv-meaty-math-pt">A Fórmula do Meaty</a> confere. Até o teste, a calculadora usa a conta mais rígida e marca a diferença de um frame como dúvida.</p>
+    <p>Condições: o reversal é apertado no primeiro frame possível e é invencível durante os seus frames ativos; ele pode ser defendido (uma Super que agarra, como a SA3 do Zangief, não pode, então nenhum meaty é seguro contra ela); e você segura a defesa assim que recupera.</p>
+    <p>Um exemplo com os dados deste hub: o Stand LP do Ryu tem 7 frames de recovery, então, acertando no último frame ativo, fica 7 frames preso. Pela conta do hub ele é seguro contra reversals de 9 frames ou mais lentos (8 pela regra do dood.gg), como a SA3 do Luke (10 frames). Ele não é seguro contra um reversal de 6 frames, que é o startup da maioria dos uppercuts OD do elenco e da SA1 do Luke. O dood.gg observa que nenhum golpe do jogo recupera rápido o bastante para ser seguro contra esses, então, contra um reversal de 6 frames, as respostas são o safe jump ou defender e fazer bait.</p>
 </div>
 <p>Por isso o mesmo meaty pode ser seguro contra um personagem e não contra outro: depende do golpe invencível mais rápido dele, que você acha no frame data dele. A calculadora abaixo mostra, para cada meaty, quantos frames você fica preso depois do acerto, e compara com o startup de reversal que você digitar. Um frame decide se é seguro, então confirme cada resultado com um reversal gravado no training mode.</p>
 
@@ -104,6 +109,22 @@
     <li>Teste: grave o dummy fazendo esse reversal no wakeup. Se você defende toda vez, o pulo é seguro. Se o reversal te acerta, você está caindo tarde; se o seu golpe aéreo erra, você está cedo.</li>
 </ol>
 <p>O mesmo safe jump pode funcionar contra um reversal e falhar contra outro mais rápido, então anote quais reversals cada safe jump cobre.</p>
+<div class="deep-dive">
+    <h4>+41 contra +42, em frames</h4>
+    <p>Quatro resultados de training mode com o pulo padrão (4 + 38 + 3) contra os reversals do Ryu, onde N é a vantagem do knockdown e R o startup do reversal:</p>
+    <div class="table-wrap"><table>
+        <tr><th>Knockdown</th><th>Reversal</th><th>N + R</th><th>Resultado</th></tr>
+        <tr><td>+42</td><td>Shoryuken fraco, 5f</td><td>47</td><td>Defendido</td></tr>
+        <tr><td>+42</td><td>OD Shoryuken, 6f (e Supers de nível 1)</td><td>48</td><td>Defendido</td></tr>
+        <tr><td>+41</td><td>Shoryuken fraco, 5f</td><td>46</td><td>Te acertou</td></tr>
+        <tr><td>+41</td><td>OD Shoryuken, 6f</td><td>47</td><td>Defendido</td></tr>
+    </table></div>
+    <p>Os quatro seguem uma regra: <strong>o safe jump funciona quando N + R ≥ J + 5</strong>, onde J é o pré-pulo mais o tempo no ar (42 no pulo padrão). Na contagem do hub isso quer dizer: você aperta para cima no seu primeiro frame livre (frame 1), o pulo começa no frame 2, você fica no ar até o frame J + 1 e aterrissa nos frames J + 2 a J + 4, então pode defender a partir do frame J + 5. O reversal dele, apertado no primeiro frame dele (N + 1), fica ativo no frame N + R. Você defende se N + R ≥ J + 5. O golpe no ar também precisa encontrar o primeiro frame dele enquanto você ainda está no ar, então N + 1 ≤ J + 1: com mais vantagem que J, espere os frames de sobra antes de pular.</p>
+    <p>A parte de "o pulo começa um frame depois do comando" é o que os testes exigem, não algo que uma fonte documenta, então trate como uma contagem ajustada aos testes. Ela prevê os números do resto do elenco: o Zangief (J = 43) precisa de +43 contra um reversal de 5 frames e +42 contra um de 6; a Chun-Li (J = 46) precisa de +46 e +45.</p>
+    <p>Por que um pulo vazio em +41 ainda defende o reversal de 5 frames: sem golpe, você pode defender durante os frames de aterrissagem, a partir do frame J + 2.</p>
+    <p><strong>Para reproduzir:</strong> o HP Flash Knuckle da Luke dá KD +42; pule para frente na hora e aperte HP o mais tarde possível, com o dummy (Ryu) gravado dando Shoryuken fraco e depois OD Shoryuken. Para +41, use o HK Tiger Knee Crush do Sagat, cujo knockdown varia entre +40 e +41: confira se o frame meter mostra +41 antes de confiar no resultado.</p>
+    <p>Esses testes usaram só os reversals do Ryu. Um reversal invencível só a golpes aéreos, um contra-ataque ou um com hitbox diferente pode se comportar de outro jeito, então teste o safe jump contra o personagem que você está enfrentando.</p>
+</div>
 
 <h4 id="adv-jump-ref-pt">Números de Referência para Conferir a Sua Conta</h4>
 <p>Estes vêm da página de movimentação da SuperCombo wiki e de um guia japonês de safe jump. Use para conferir as suas medidas, não para substituir elas:</p>

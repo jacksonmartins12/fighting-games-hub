@@ -87,9 +87,10 @@ function renderMatchup() {
     theirs.forEach(function (t) {
       var bp = bestPunishes(mine, t.blk);
       h += '<tr><td>' + muMoveCell(t) + '</td><td class="inp">' + fmtCell(t.raw) + (String(t.raw).match(/[^\d\s+-]/) ? '<br><span class="small muted">' + B('punish.using') + t.blk + '</span>' : '') +
-        '</td><td>' + punishCell(bp.normal) + '</td><td>' + punishCell(bp.special) + '</td>' + (mu.sa ? '<td>' + punishCell(bp.meter) + '</td>' : '') + '</tr>';
+        '</td><td>' + punishCell(bp.normal, -t.blk) + '</td><td>' + punishCell(bp.special, -t.blk) + '</td>' + (mu.sa ? '<td>' + punishCell(bp.meter, -t.blk) + '</td>' : '') + '</tr>';
     });
     h += '</tbody></table></div>';
+    h += '<p class="small muted">' + B('punish.reach-short') + '</p>';
   } else h += '<p class="muted">' + B('punish.no-unsafe-moves-found') + '</p>';
   h += '<p class="small muted">' + B('mu.punish-note') + '</p>';
 

@@ -64,9 +64,9 @@ function renderFlash() {
     else {
       var bp = bestPunishes(punishers(flash.me), t.blk);
       h += '<div class="flash-a"><p class="small muted">' + B('flash.window', [-t.blk]) + '</p><div class="flash-grid">' +
-        '<div><span class="flabel">' + B('punish.your-best-normal') + '</span>' + punishCell(bp.normal) + '</div>' +
-        '<div><span class="flabel">' + B('punish.your-best-special-no-meter') + '</span>' + punishCell(bp.special) + '</div>' +
-        '<div><span class="flabel">' + B('punish.with-meter-od-super-art') + '</span>' + punishCell(bp.meter) + '</div></div>' +
+        '<div><span class="flabel">' + B('punish.your-best-normal') + '</span>' + punishCell(bp.normal, -t.blk) + '</div>' +
+        '<div><span class="flabel">' + B('punish.your-best-special-no-meter') + '</span>' + punishCell(bp.special, -t.blk) + '</div>' +
+        '<div><span class="flabel">' + B('punish.with-meter-od-super-art') + '</span>' + punishCell(bp.meter, -t.blk) + '</div></div>' + '<p class="small muted">' + B('punish.reach-short') + '</p>' +
         '<div class="tr-actions"><button type="button" class="btn danger" data-flash-grade="0">' + B('flash.wrong') + '</button><button type="button" class="btn" data-flash-grade="1">' + B('flash.right') + '</button></div></div>';
     }
   }
