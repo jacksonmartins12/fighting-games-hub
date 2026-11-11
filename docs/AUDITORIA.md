@@ -111,7 +111,7 @@ Nenhum valor foi alterado sem confirmação da fonte. Cada linha abaixo aparece 
 
 ## 7. Problemas não resolvidos
 
-1. **Dados oficiais da Capcom** não foram comparados. É o próximo passo para mudar o rótulo de "Ferramenta" para "Oficial".
+1. **Dados oficiais da Capcom**: comparados em 11/11/2026 (seção 10); 46 valores em 41 golpes divergem e esperam decisão.
 2. **Contagem do meaty**: rodar o teste do Akuma (throw, dash, Crouch MK; −4 ou −5 no block).
 3. **Safe jump**: testado só contra reversals do Ryu; testar contra um reversal só antiaéreo, um contra-ataque e uma Super que agarra.
 4. **As 25 marcações** precisam de uma segunda fonte ou de teste no jogo.
@@ -141,3 +141,74 @@ Quatro problemas apontados depois do relatório foram conferidos no estado do re
 **Efeito da correção do dano:** 127 golpes tinham o dano total lido errado; o startup mudou só no Ed Stand HP. Como o buscador de punish escolhe o golpe de maior dano, algumas sugestões mudaram, agora para melhor. Exemplo: Chun-Li contra M. Bison passa a sugerir HK Spinning Bird Kick (1400) em vez de HK Hazanshu (1200). O dano mostrado também mudou, por exemplo Tainted Talons da A.K.I., de 1200 para 2500. Na comparação com a versão anterior do site, 6 tabelas de punish mudaram, todas por esse motivo.
 
 **Observação sobre as notas:** outras notas mencionam algo "deixado de fora", mas se referem a combos ou ao texto do guia, não à tabela: Blanka, Cammy, Ed, Jamie e Kimberly (danos de combos anteriores ao patch), Ingrid (comando do Vanishing Sun), Juri (invencibilidade do Tensenrin), Manon (2MK fora dos normais principais) e Marisa (5HP carregado). Não mexi nelas. A da Marisa é a única ambígua: diz que o valor "ficou de fora" sem dizer de onde, e a tabela completa mostra o valor do FAT.
+
+## 10. Comparação com as páginas oficiais da Capcom (11/11/2026)
+
+**Fonte:** páginas de frame data dos 32 personagens no site da Capcom (streetfighter.com/6), controle Clássico, salvas em HTML pelo autor do hub em 11/11/2026. As páginas não mostram versão nem data de patch. A comparação é refeita com `python3 tools/capcom_compare.py PASTA` e não altera nenhum dado.
+
+**Resultado:**
+- 2.518 linhas nas páginas da Capcom; 1.648 golpes casados com o hub (77% dos 2.133 golpes do hub).
+- 5.106 valores comparados (startup, frames ativos, recovery, no hit, no block), sempre que os dois lados têm um número simples.
+- **5.060 iguais e 46 diferentes, em 41 golpes.**
+- 137 linhas da Capcom são estados de personagem que o hub não lista separadamente (Denjin Charge, Lightning Beast, Sumo Spirit etc.) e cerca de 700 não foram casadas (dashes, parries, continuações, versões de Critical Art e golpes com nome diferente). Esses não foram comparados.
+
+**O que mudou no site, sem alterar nenhum valor:**
+- **15 das 25 marcações anteriores passaram a "✓ confirmado pela Capcom".** A Capcom confirma os valores mostrados, incluindo o OD High Blade Kick do Ryu em −18; o −11 do dood.gg era o valor fora. Nesses golpes, a inconsistência estava só no valor de stun do FAT, que o hub não mostra.
+- **As 46 diferenças estão marcadas "⚠ fontes divergem"** nas tabelas, com os dois números (2 dessas marcações já existiam: Crouch HP do Ryu e LK Arrow Kick da Jamie). A tabela continua mostrando o valor do FAT até a decisão.
+- 7 marcações continuam "a conferir", porque a Capcom não lista esses golpes com um nome correspondente.
+- A metodologia (capítulo Ler e Medir), a linha de fonte das tabelas, o README e `data/sources.js` registram a comparação.
+
+**Decisão pendente: Ryu, HP Shoryuken.** A Capcom diz −36 no block e o FAT, −39. Na seção 9, o texto de counterplay foi alterado de −36 para −39 para bater com a tabela. Pela fonte oficial, o −36 original estava certo, e quem está diferente é a tabela.
+
+**Por que nenhum valor foi trocado:** parte das diferenças pode ser de definição e não de número. Exemplos: o startup de golpes com projétil ou contra-ataque (JP Torbalan 14 contra 22/26, JP Lovushka 1 contra 29), os frames ativos de golpes no ar e de golpes com vários hits, e o recovery de sequências. Para cada uma, a escolha é: seguir a Capcom, seguir o FAT ou testar no frame meter.
+
+### As 46 diferenças
+
+| Personagem | Golpe (hub) | Golpe (Capcom) | Campo | FAT / hub | Capcom |
+|---|---|---|---|---|---|
+| Akuma | OD Gou Shoryuken | OD Gou Shoryuken | no block | -41 | -39 |
+| Akuma | Shun Goku Satsu | CA Shun Goku Satsu | frames ativos | 21 | 22 |
+| Alex | Sweep Combination 1 | Sweep Combination(1) | recovery | 30 | 43 |
+| Alex | Sweep Combination 2 | Sweep Combination(2) | recovery | 33 | 46 |
+| Arjun | Justice Beyond | Justice Beyond | startup | 15 | 11 |
+| Blanka | Jump HP | Jumping Heavy Punch | frames ativos | 4 | 1 |
+| Blanka | LK Vertical Rolling Attack | L Vertical Rolling Attack | frames ativos | 19 | 20 |
+| Blanka | MK Vertical Rolling Attack | M Vertical Rolling Attack | frames ativos | 19 | 20 |
+| Blanka | HK Vertical Rolling Attack | H Vertical Rolling Attack | frames ativos | 19 | 20 |
+| Chun-Li | Jump HK | Jumping Heavy Kick | frames ativos | 5 | 7 |
+| Chun-Li | Neutral Jump HK | Neutral Jumping Heavy Kick | frames ativos | 7 | 5 |
+| Chun-Li | Soaring Eagle Punches | Soaring Eagle Punches | startup | 16 | 6 |
+| Chun-Li | Lightning Kick Barrage | Lightning Kick Barrage | startup | 10 | 11 |
+| Dhalsim | MP Yoga Flame | M Yoga Flame | frames ativos | 15 | 16 |
+| Dhalsim | HK Yoga Blast | H Yoga Blast | no block | -1 | -3 |
+| Guile | Knee Bazooka | Knee Bazooka | frames ativos | 5 | 4 |
+| Jamie | LK Arrow Kick | L Arrow Kick | no block | -44 | -45 |
+| Jamie | OD Arrow Kick | OD Arrow Kick | recovery | 51 | 53 |
+| Jamie | OD Freeflow Kicks 2 | OD Freeflow Kicks(2) | startup | 16 | 14 |
+| Jamie | OD Freeflow Kicks 3 | OD Freeflow Kicks(3) | startup | 19 | 18 |
+| JP | LK Torbalan | L Torbalan | startup | 14 | 22 |
+| JP | MK Torbalan | M Torbalan | startup | 14 | 26 |
+| JP | HK Torbalan | H Torbalan | startup | 14 | 26 |
+| JP | OD Torbalan | OD Torbalan | startup | 14 | 22 |
+| JP | Lovushka | SA2 Lovushka | startup | 1 | 29 |
+| Juri | Kaisen Dankai Raku | SA3 Kaisen Dankai Raku | no block | -36 | -31 |
+| Juri | Death Crest 1 | Death Crest(2) | startup | 16 | 12 |
+| Juri | Death Crest 1 | Death Crest(2) | recovery | 20 | 19 |
+| Kimberly | Bushin Hellchain 2 | Bushin Hellchain(3) | startup | 15 | 10 |
+| Kimberly | Bushin Hellchain 2 | Bushin Hellchain(3) | frames ativos | 3 | 2 |
+| Kimberly | Bushin Hellchain 2 | Bushin Hellchain(3) | recovery | 24 | 25 |
+| Kimberly | Bushin Hellchain 2 | Bushin Hellchain(3) | no block | -12 | -10 |
+| Luke | LP Sand Blast | L Sand Blast | frames ativos | 6 | 5 |
+| Luke | OD Flash Knuckle | OD Flash Knuckle | frames ativos | 3 | 1 |
+| Marisa | MP Dimachaerus | M Dimachaerus(1) | frames ativos | 4 | 5 |
+| Mai Shiranui | Kagerou no Mai | SA1 Kagerou no Mai | recovery | 59 | 51 |
+| Rashid | OD Spinning Mixer | OD Spinning Mixer | no block | -53 | -42 |
+| Ryu | Crouch HP | Crouching Heavy Punch | recovery | 21 | 22 |
+| Ryu | Short Uppercut | Short Uppercut | recovery | 25 | 26 |
+| Ryu | HP Shoryuken | H Shoryuken | no block | -39 | -36 |
+| Ryu | OD Hashogeki | OD Hashogeki | frames ativos | 6 | 5 |
+| Terry Bogard | Jump MP | Jumping Medium Punch | frames ativos | 4 | 6 |
+| Terry Bogard | Jump MK | Jumping Medium Kick | frames ativos | 6 | 4 |
+| Terry Bogard | LP Rising Tackle | L Rising Tackle | no block | -23 | -25 |
+| Zangief | Tundra Storm | Tundra Storm | startup | 6 | 5 |
+| Zangief | Tundra Storm | Tundra Storm | frames ativos | 50 | 51 |

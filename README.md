@@ -60,6 +60,7 @@ Depois de um balance patch, com o FAT atualizado clonado em algum lugar:
 python3 tools/fat_sync.py check  CAMINHO/SF6FrameData.json   # lista as diferenças, não muda nada
 python3 tools/fat_sync.py apply  CAMINHO/SF6FrameData.json --commit SHA --date AAAA-MM-DD
 python3 tools/fat_sync.py extras CAMINHO/SF6FrameData.json   # alcance, scaling, invencibilidade, pulo
+python3 tools/capcom_compare.py PASTA_COM_OS_HTML_DA_CAPCOM    # compara com as páginas oficiais salvas, não muda nada
 python3 build.py
 ```
 
@@ -77,6 +78,6 @@ O `tests/run.mjs` sobe um servidor local, abre o site num navegador e confere as
 
 ## Fontes e créditos
 
-O conteúdo foi escrito com base em materiais da comunidade e livros sobre aprendizado e competição, todos creditados dentro do guia (rodapé e capítulo de Recursos), entre eles: *Street Fighter Footsies Handbook*, *From Masher to Master 2*, os materiais de gootecks, *The Fighting Game Glossary* do Infil, *Playing to Win* (David Sirlin), *The Inner Game of Tennis* (W. Timothy Gallwey), *Mastery* (George Leonard) e *Peak* (Anders Ericsson e Robert Pool). Frame data do SF6 do FAT (Frame Assistant Tool); as páginas oficiais da Capcom ainda não foram comparadas (veja a metodologia no capítulo Ler e Medir).
+O conteúdo foi escrito com base em materiais da comunidade e livros sobre aprendizado e competição, todos creditados dentro do guia (rodapé e capítulo de Recursos), entre eles: *Street Fighter Footsies Handbook*, *From Masher to Master 2*, os materiais de gootecks, *The Fighting Game Glossary* do Infil, *Playing to Win* (David Sirlin), *The Inner Game of Tennis* (W. Timothy Gallwey), *Mastery* (George Leonard) e *Peak* (Anders Ericsson e Robert Pool). Frame data do SF6 do FAT (Frame Assistant Tool), comparado com as páginas oficiais da Capcom salvas em 11/11/2026 (veja a metodologia no capítulo Ler e Medir).
 
 Street Fighter, os nomes e as imagens dos personagens são marcas e propriedade da Capcom. Este é um projeto de fã, sem fins lucrativos e sem afiliação com a Capcom ou com os demais jogos citados.

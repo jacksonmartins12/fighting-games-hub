@@ -22,7 +22,7 @@
 <div class="table-wrap"><table>
     <tr><th>Label</th><th>Meaning</th><th>In the hub</th></tr>
     <tr><td><strong>Tested</strong></td><td>Checked in training mode, with the date and the situation</td><td>The safe jump results (+42 and +41 against 5- and 6-frame reversals) and Drive Reversal not being able to KO</td></tr>
-    <tr><td><strong>Official</strong></td><td>Capcom's frame data pages</td><td>Not compared yet: the official pages can't be read automatically, so this is the next step</td></tr>
+    <tr><td><strong>Official</strong></td><td>Capcom's frame data pages</td><td>Compared on November 11, 2026 with the pages saved that day (Classic controls); see below</td></tr>
     <tr><td><strong>Tool</strong></td><td>FAT (Frame Assistant Tool), the community frame data file</td><td>All frame data tables, the punish finder, the matchup tool, the flashcards and the calculators</td></tr>
     <tr><td><strong>Community</strong></td><td>SuperCombo wiki, dood.gg, guides by players</td><td>Jump frames, damage scaling rules, input buffer, the safe meaty rule, fuzzy guard and option selects</td></tr>
     <tr><td><strong>To check</strong></td><td>A source contradicts itself or another source</td><td>Marked with ⚠ in the frame tables, with the reason under the move</td></tr>
@@ -31,10 +31,11 @@
 <ul>
     <li><strong>Every move of the 32 fighters</strong> (2,133 moves) was compared with FAT's file at commit a8101eb (October 22, 2026) in startup, active, recovery, on hit, on block, damage and cancels. All of them match. FAT updated the existing fighters on August 10, a week after the August 3 balance patch, and again on October 22.</li>
     <li><strong>FAT was checked against itself.</strong> In SF6 data, advantage on block equals blockstun minus active frames minus recovery. 23 moves that aren't projectiles or Drive Reversals break that rule; they are marked "to check", because one of the two numbers in the source must be wrong, or the move has a property the formula misses.</li>
-    <li><strong>A second source</strong> was compared where it could be read: dood.gg's list for Ryu (15 moves) agrees with FAT on 12; it disagrees on OD High Blade Kick (−18 against −11), marked "sources disagree", and lists a Denjin-charged OD Hashogeki the hub doesn't have. The other fighters still need this comparison.</li>
+    <li><strong>A second source</strong> was compared where it could be read: dood.gg's list for Ryu (15 moves) agrees with FAT on 12; it disagrees on OD High Blade Kick (−18 against −11), which Capcom settles at −18, and lists a Denjin-charged OD Hashogeki the hub doesn't have. The other fighters still need this comparison.</li>
     <li><strong>Jumps, dashes and health</strong> of all 32 fighters match both FAT and the SuperCombo wiki.</li>
+    <li><strong>Capcom's official pages</strong> for the 32 fighters, saved on November 11, 2026, were compared with <code>tools/capcom_compare.py</code>: 1,648 moves matched and 5,106 values compared (startup, active frames, recovery, on hit, on block). 46 values in 41 moves differ; each one is marked "sources disagree" in the tables, with both numbers, and the table keeps FAT's value until it's tested in game. Of the 25 earlier marks, Capcom confirms the shown values of 15 (including Ryu's OD High Blade Kick at −18, so dood.gg's −11 was the outlier). About 700 Capcom rows weren't compared: dashes, parries, follow-ups and versions the hub lists differently, plus 137 rows for character states (such as Denjin Charge) that the hub doesn't list separately.</li>
 </ul>
-<p>What this does and doesn't prove: the tables are a faithful copy of FAT. It doesn't prove FAT is right. Treat any single number that decides something important as a hypothesis and confirm it with the frame meter.</p>
+<p>What this does and doesn't prove: the tables are a faithful copy of FAT, and Capcom agrees with 5,060 of the 5,106 values compared. It doesn't prove the rest. Treat any single number that decides something important as a hypothesis and confirm it with the frame meter.</p>
 <h4>After a balance patch</h4>
 <p>The hub keeps a patch log (<code>data/patches.js</code>) with the old and new value of every change, its source and date, so old numbers are never mistaken for current ones. The script <code>tools/fat_sync.py</code> lists every difference between the hub and a newer FAT file before anything changes, and <code>tools/validate.py</code> checks the data on every build: missing fields, impossible values, duplicate moves and flags that point at moves that don't exist.</p>
 

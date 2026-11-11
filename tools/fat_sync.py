@@ -150,7 +150,7 @@ def apply(fat, commit, date):
     sources = json.loads(s[s.index('= {') + 2: s.rindex('}') + 1])
     for slug, moves in sources.get('flags', {}).items():
         for move, flag in moves.items():
-            if flag.get('status') in ('tested', 'conflict'):
+            if flag.get('status') in ('tested', 'conflict', 'official'):
                 protected.add((slug, move))
     diffs = [x for x in check(fat, quiet=True) if (x['char'], x['move']) not in protected and x['field'] != 'xx']
     by_char = {}

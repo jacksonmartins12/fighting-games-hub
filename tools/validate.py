@@ -117,7 +117,7 @@ def validate():
             errors.append('sources.js: frameData.status is not a known status')
         for slug, fl in src.get('flags', {}).items():
             for move, flag in fl.items():
-                if flag.get('status') not in ('check', 'conflict', 'derived', 'tested'):
+                if flag.get('status') not in ('check', 'conflict', 'derived', 'tested', 'official'):
                     errors.append('sources.js: %s/%s has unknown status %r' % (slug, move, flag.get('status')))
                 if not move.startswith('(') and move not in moves.get(slug, ()):
                     errors.append('sources.js: flag for unknown move %s/%s' % (slug, move))
