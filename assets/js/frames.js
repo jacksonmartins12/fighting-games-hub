@@ -29,6 +29,8 @@ function suEff(v) {
   return firstInt(s);
 }
 // Source notes recorded in data/sources.js (flags[fighter][move]): check, conflict, derived, tested, official.
+// Rows added from Capcom's pages (sources.capcomRows[fighter]): moves FAT doesn't list.
+function capcomRow(slug, name) { var s = (window.HUB_DATA || {}).sources; return !!(s && s.capcomRows && s.capcomRows[slug] && s.capcomRows[slug].indexOf(name) !== -1); }
 function moveFlag(slug, name) { var s = (window.HUB_DATA || {}).sources; return s && s.flags && s.flags[slug] ? s.flags[slug][name] || null : null; }
 function condTag(m) { var k = 'frames.cond.' + m[11]; return m[11] && hasKey(k) ? ' <span class="ft-tag">' + B(k) + '</span>' : ''; }
 function isAir(num) { return /(^|\s)j\.|^[789]/.test(String(num || '')); }
@@ -66,7 +68,7 @@ function fillFrameTable(box) {
     n++;
     var xx = (m[10] || '').split(/\s+/).filter(Boolean).map(function (k) { return XX[k] || k.toUpperCase(); }).join(' ');
     var fl = moveFlag(box.getAttribute('data-ft'), m[0]);
-    rows += '<tr' + (fl && (fl.status === 'check' || fl.status === 'conflict') ? ' class="ft-flagged"' : '') + '><td><b>' + esc(m[0]) + '</b>' + condTag(m) + (fl ? ' <span class="ft-tag ft-flag-' + fl.status + '">' + B('frames.flag.' + fl.status) + '</span><span class="ft-note">' + BO(fl.detail) + '</span>' : '') +
+    rows += '<tr' + (fl && (fl.status === 'check' || fl.status === 'conflict') ? ' class="ft-flagged"' : '') + '><td><b>' + esc(m[0]) + '</b>' + condTag(m) + (capcomRow(box.getAttribute('data-ft'), m[0]) ? ' <span class="ft-tag ft-flag-official ft-capcom-row">' + B('frames.capcom-row') + '</span>' : '') + (fl ? ' <span class="ft-tag ft-flag-' + fl.status + '">' + B('frames.flag.' + fl.status) + '</span><span class="ft-note">' + BO(fl.detail) + '</span>' : '') +
       (m[15] ? '<span class="ft-note"><span>' + B('frames.inv') + '</span> <span lang="en">' + esc(m[15]) + '</span></span>' : '') + '</td><td class="inp">' + esc(m[1] || '') + '</td><td class="inp">' + (m[4] == null ? '<span class="muted">—</span>' : esc(m[4])) +
       '</td><td class="inp">' + esc(m[5] == null ? '—' : m[5]) + '</td><td class="inp">' + esc(m[6] == null ? '—' : m[6]) + '</td><td class="inp">' + fmtCell(m[7]) +
       '</td><td class="inp">' + fmtCell(m[8]) + '</td><td class="inp">' + esc(m[9] == null ? '—' : m[9]) + '</td><td class="inp small">' + esc(xx) + '</td><td class="inp">' + (m[13] == null ? '<span class="muted">—</span>' : esc(m[13])) + '</td><td class="small">' + (m[14] ? esc(m[14]) : '<span class="muted">—</span>') + '</td></tr>';

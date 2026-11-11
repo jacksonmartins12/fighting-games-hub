@@ -262,6 +262,9 @@
       ["Stomp","22MK","d,d+MK","n",9,3,17,4,-3,500,"sp su tc","",0,1.304,"20% Start",null],
       ["Power Stomps 1","22MK > MK","d,d+MK > MK","n",9,3,19,-3,-4,500,"sp su tc","",0,1.384,null,null],
       ["Power Stomps 2","22MK > MK > MK","d,d+MK > MK > MK","n",10,3,24,-2,-10,700,"sp su","",0,1.646,null,null],
+      ["Stand LP (rapid cancel version)","5LP","LP","n",4,3,9,4,2,400,"sp su","state",0,null,"Starter scaling 20%",null],
+      ["Crouch LP (rapid cancel version)","2LP","d+LP","n",3,2,8,6,1,300,"sp su","state",0,null,"Starter scaling 20%",null],
+      ["Crouch LK (rapid cancel version)","2LK","d+LK","n",3,3,12,0,-3,250,"","state",0,null,"Starter scaling 20%",null],
       ["Bodyslam","5LPLK","LP+LK","t",5,3,23,"KD +22(0)",null,"1200(1200*600)","","",0,1.02,"20% Immediate",null],
       ["German Suplex","6LPLK","f+LP+LK","t",5,3,23,"KD +10",null,1500,"","",0,1.02,"20% Immediate",null],
       ["Capture Suplex","4LPLK","b+LP+LK","t",5,3,23,"KD +8",null,1400,"","",0,1.02,"20% Immediate",null],
@@ -272,6 +275,10 @@
       ["Drive Reversal: Reverse Russian Kick","6HPHK","f+HP+HK","d","20(18)",3,26,"KD +23",-6,500,"","",0,2.1,null,"Fully invincible on frames 1-22 (blockstun) / frames 1-20 (reversal) Guaranteed to interrupt any Drive Rush canceled normal if performed immediately out of blockstun (unless the opponent reacts with an invincible move or counter)"],
       ["Drive Parry","MPMK","MP+MK","d",1,"12(2)","33(1)notes",null,null,null,"","",0,null,"50% Multiplier (Perfect)","Throw invincible during the recovery of a successful parry (just like during blockstun) Fully invincible for 6F after a successful Perfect Parry against a strike, which carries over to any attack you perform (ensuring a 5F or faster punish will always interrupt multi-hit attacks)"],
       ["Drive Rush","MPMK / 66 (cancel)","MP+MK / f,f (cancel)","d","9(11)","45(46)","24(23)",null,null,null,"","var",0,null,"15% Multiplier (Mid-Combo)",null],
+      ["Perfect Parry (strike)","MPMK","MPMK","d",1,null,1,null,null,0,"","",0,null,"Starter scaling 50%","Perfect Parry activates when an attack is absorbed on the frame a parry is input, or on the next frame. (For high and overhead attacks, the player must press the direction away from the opponent. For low attacks, down and back) If no direction is inputted the result will be a regular parry with an additional Drive increase of 3000. Fully invincible for 5 frames once recovery is over (invincibility not granted if you continue the parry) The player on the receiving end of a Perfect Parry cannot cancel and is forced into a Punish Counter state until their move is finished"],
+      ["Perfect Parry (projectile)","MPMK","MPMK","d",1,null,10,null,null,0,"","",0,null,"Starter scaling 50%",null],
+      ["Parry Drive Rush","66","f,f","d",null,null,"45 total",null,null,0,"","",0,null,"Multiplier scaling 15%",null],
+      ["Cancel Drive Rush","66 or (5 or 6) MPMK","66 or (5 or 6) MPMK","d",null,null,"46 total",null,null,0,"","",0,null,"Multiplier scaling 15%",null],
       ["Double Lariat","PP","PP","s",15,"2(3)2(4)2(8)2(6)2",27,"KD +27(56)","-12(-41)",1400,"su3","",0,"1.17~1.38 (5PP) / 1.24~1.90 (6PP)",null,"Invincible to airborne strikes on frames 6-16 (great anti-air tool on the first hit, although slow in start-up) Projectile invincible on frames 6-45"],
       ["OD Double Lariat","PPP","PPP","s",12,"2(1)3(3)2(6)2(4)2",26,"KD +38(57)","-11(-30)","1700 (700*1000)","su2 su3","",0,"1.17~1.38 (5PPP) / 1.32~2.06 (6PPP)",null,"Invincible to airborne strikes on frames 6-13 (great anti-air tool on the first hit) Projectile invincible on frames 1-36"],
       ["LP Screw Piledriver","4268LP","360+LP","s",5,3,54,"HKD +30",null,"2500(2875)","","",0,1.62,"10% Immediate",null],
@@ -291,7 +298,9 @@
       ["Cyclone Lariat","236236P","qcf,qcf+P","u",18,"91(8)3",52,"HKD +5(1)",-35,"3160 (3060)","","",0,"2.913~3.00","40% Minimum","Fully invincible on frames 1-18 Projectile invincible on frames 19-119"],
       ["Cyclone Lariat (hold)","236236P (hold)","qcf,qcf+P","u",18,"94(8)3","52(25)","KD +87",-35,"1100 (0*60x9*560)","","var",0,"2.913~3.00","40% Minimum","Fully invincible on frames 1-18 Projectile invincible on frames 19-122"],
       ["Bolshoi Storm Buster","42684268P","720+P","u","6+0",2,116,"HKD +26",null,4800,"","",0,"1.56~1.60","50% Minimum / 10% Immediate","Fully invincible on frames 1-7"],
-      ["Bolshoi Storm Buster (Critical Art)","42684268P (CA)","720+P (CA)","u","6+0",2,116,"HKD +26",null,5300,"","",0,"1.61~1.65","50% Minimum / 10% Immediate","Fully invincible on frames 1-7"]
+      ["Bolshoi Storm Buster (Critical Art)","42684268P (CA)","720+P (CA)","u","6+0",2,116,"HKD +26",null,5300,"","",0,"1.61~1.65","50% Minimum / 10% Immediate","Fully invincible on frames 1-7"],
+      ["Cyclone Lariat(immediately)","236236P","qcf,qcf+P","u",null,null,null,"KD",null,3100,"","",0,null,null,null],
+      ["Cyclone Lariat(Movement)","236236P","qcf,qcf+P","u",null,null,null,"KD",null,3000,"","",0,null,null,null]
     ],
   "s": {
       "fastestNormal": "4f",

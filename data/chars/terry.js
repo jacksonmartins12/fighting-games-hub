@@ -263,6 +263,10 @@
       ["Drive Reversal: Back Knuckle","6HPHK","f+HP+HK","d","20(18)",3,26,"KD +23",-6,500,"","",0,1.85,null,"Fully invincible on frames 1-22 (blockstun) / frames 1-20 (reversal) Guaranteed to interrupt any Drive Rush canceled normal if performed immediately out of blockstun (unless the opponent reacts with an invincible move or counter)"],
       ["Drive Parry","MPMK","MP+MK","d",1,"12(2)","33(1)notes",null,null,null,"","",0,null,"50% Multiplier (Perfect)","Throw invincible during the recovery of a successful parry (just like during blockstun) Fully invincible for 6F after a successful Perfect Parry against a strike, which carries over to any attack you perform (ensuring a 5F or faster punish will always interrupt multi-hit attacks)"],
       ["Drive Rush","MPMK / 66 (cancel)","MP+MK / f,f (cancel)","d","9(11)","45(46)","24(23)",null,null,null,"","var",0,null,"15% Multiplier (Mid-Combo)",null],
+      ["Perfect Parry (strike)","MPMK","MPMK","d",1,null,1,null,null,0,"","",0,null,"Starter scaling 50%","Perfect Parry activates when an attack is absorbed on the frame a parry is input, or on the next frame. (For high and overhead attacks, the player must press the direction away from the opponent. For low attacks, down and back) If no direction is inputted the result will be a regular parry with an additional Drive increase of 3000. Fully invincible for 5 frames once recovery is over (invincibility not granted if you continue the parry) The player on the receiving end of a Perfect Parry cannot cancel and is forced into a Punish Counter state until their move is finished"],
+      ["Perfect Parry (projectile)","MPMK","MPMK","d",1,null,10,null,null,0,"","",0,null,"Starter scaling 50%",null],
+      ["Parry Drive Rush","66","f,f","d",null,null,"45 total",null,null,0,"","",0,null,"Multiplier scaling 15%",null],
+      ["Cancel Drive Rush","66","f,f","d",null,null,"46 total",null,null,0,"","",0,null,"Multiplier scaling 15%",null],
       ["LP Power Wave","236LP","qcf+LP","s",14,null,35,-3,-9,600,"su3","",1,null,null,"Extended arm hurtbox on frames 14-37 is Projectile invincible"],
       ["MP Power Wave","236MP","qcf+MP","s",16,14,32,0,-6,700,"su3","",1,"?",null,"Extended arm hurtbox on frames 21-39 is Projectile invincible"],
       ["HP Round Wave","236HP","qcf+HP","s",29,9,14,8,5,900,"su3","",1,"?",null,"Extended arm hurtbox on frames 38-46 is NOT projectile invincible (after the active frames are finished)"],
@@ -289,7 +293,8 @@
       ["Twin Geyser","214214P > 5PP","qcb,qcb+P > PP","u","13+22","13*6",43,"KD +55",null,"3040 (2600*440)","","",0,null,"20% Immediate / 40% Minimum","No form of invincibility on this first follow-up hit"],
       ["Triple Geyser","214214P > 5PP","qcb,qcb+P > PP > PP","u","13+22+14",1,125,"KD +18",null,"4040 (2600*440*1000)","","",0,null,"20% Immediate / 40% Minimum","Fully invincible for the entire duration of this final third hit"],
       ["Rising Fang","236236P","qcf,qcf+P","u","8(2)",27,"29+28","HKD +22 (KD +29~31)","-50(-53)",4000,"","",0,"1.585 (1st)","50% Minimum / 10% Immediate (special)","Fully invincible on frames 1-16"],
-      ["Rising Fang (Critical Art)","236236P (CA)","qcf,qcf+P (CA)","u","8(2)",27,"29+28","HKD +37 (KD +29~31)","-50(-53)",4500,"","",0,"1.585 (1st)","50% Minimum / 10% Immediate (special)","Fully invincible on frames 1-16"]
+      ["Rising Fang (Critical Art)","236236P (CA)","qcf,qcf+P (CA)","u","8(2)",27,"29+28","HKD +37 (KD +29~31)","-50(-53)",4500,"","",0,"1.585 (1st)","50% Minimum / 10% Immediate (special)","Fully invincible on frames 1-16"],
+      ["Triple Geyser (Dud)","5PP","PP","u",null,null,"90 total",null,null,0,"","state",0,null,null,null]
     ],
   "s": {
       "fastestNormal": "4f",

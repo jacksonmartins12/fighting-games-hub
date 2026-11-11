@@ -188,8 +188,31 @@ await test('data: frame table shows range, scaling and Capcom-confirmed marks on
   await open(page, '#roster');
   await page.evaluate(() => document.querySelector('[data-char="ryu"]').click());
   await page.waitForFunction(() => document.querySelector('.ft-table tbody tr'));
-  const r = await page.evaluate(() => ({ heads: document.querySelectorAll('.ft-table th').length, flagged: document.querySelectorAll('.ft-table tr.ft-flagged').length, official: document.querySelectorAll('.ft-table .ft-flag-official').length }));
+  const r = await page.evaluate(() => ({ heads: document.querySelectorAll('.ft-table th').length, flagged: document.querySelectorAll('.ft-table tr.ft-flagged').length, official: document.querySelectorAll('.ft-table .ft-flag-official:not(.ft-capcom-row)').length,
+    capcom: document.querySelectorAll('.ft-table .ft-capcom-row').length, want: HUB_DATA.sources.capcomRows.ryu.length }));
+  eq(r.capcom, r.want, 'rows taken from Capcom are tagged'); delete r.capcom; delete r.want;
   eq(r, { heads: 11, flagged: 0, official: 9 }, 'frame table');
+});
+
+await test('data: moves only Capcom lists are in the hub, tagged, and states never count as punishers', async page => {
+  await open(page);
+  const r = await page.evaluate(async () => {
+    const S = HUB_DATA.sources.capcomRows, out = { total: 0, missing: [], dupes: [], statePunisher: [] };
+    for (const slug of Object.keys(S)) {
+      await needChar(slug);
+      const m = FRAMES[slug].m, names = m.map(x => x[0]);
+      S[slug].forEach(n => { out.total++; if (!names.includes(n)) out.missing.push(slug + ': ' + n); });
+      names.forEach((n, i) => { if (names.indexOf(n) !== i) out.dupes.push(slug + ': ' + n); });
+      const cond = {}; m.forEach(x => { cond[x[0]] = x[11]; }); punishers(slug).forEach(p => { if (cond[p.name]) out.statePunisher.push(slug + ': ' + p.name); });
+    }
+    const ryu = FRAMES.ryu.m.find(x => x[0] === 'Hadoken (Denjin Charge)'), gief = FRAMES.zangief.m.find(x => x[0] === 'Crouch LP (rapid cancel version)');
+    out.ryu = ryu && [ryu[11], S.ryu.includes(ryu[0])]; out.gief = gief && gief[11];
+    return out;
+  });
+  eq(r.missing, [], 'every listed row exists'); eq(r.dupes, [], 'no duplicate names');
+  eq(r.statePunisher, [], 'no state-only move offered as a punisher');
+  eq(r.ryu, ['state', true], 'Ryu Denjin Hadoken'); eq(r.gief, 'state', 'Zangief rapid-cancel 2LP');
+  if (r.total < 300) throw new Error('only ' + r.total + ' Capcom rows');
 });
 
 await test('regression: values that differed from Capcom follow Capcom and are logged', async page => {

@@ -271,6 +271,10 @@
       ["Drive Reversal: Love Tap","6HPHK","f+HP+HK","d","20(18)",3,26,"KD +23",-6,500,"","",0,1.798,null,"Fully invincible on frames 1-22 (blockstun) / frames 1-20 (reversal) Guaranteed to interrupt any Drive Rush canceled normal if performed immediately out of blockstun (unless the opponent reacts with an invincible move or counter)"],
       ["Drive Parry","MPMK","MP+MK","d",1,"12(2)","33(1)notes",null,null,null,"","",0,null,"50% Multiplier (Perfect)","Throw invincible during the recovery of a successful parry (just like during blockstun) Fully invincible for 6F after a successful Perfect Parry against a strike, which carries over to any attack you perform (ensuring a 5F or faster punish will always interrupt multi-hit attacks)"],
       ["Drive Rush","MPMK / 66 (cancel)","MP+MK / f,f (cancel)","d","9(11)","45(46)","24(23)",null,null,null,"","var",0,null,"15% Multiplier (Mid-Combo)",null],
+      ["Perfect Parry (strike)","MPMK","MPMK","d",1,null,1,null,null,0,"","",0,null,"Starter scaling 50%","Perfect Parry activates when an attack is absorbed on the frame a parry is input, or on the next frame. (For high and overhead attacks, the player must press the direction away from the opponent. For low attacks, down and back) If no direction is inputted the result will be a regular parry with an additional Drive increase of 3000. Fully invincible for 5 frames once recovery is over (invincibility not granted if you continue the parry) The player on the receiving end of a Perfect Parry cannot cancel and is forced into a Punish Counter state until their move is finished"],
+      ["Perfect Parry (projectile)","MPMK","MPMK","d",1,null,10,null,null,0,"","",0,null,"Starter scaling 50%",null],
+      ["Parry Drive Rush","66","f,f","d",null,null,"45 total",null,null,0,"","",0,null,"Multiplier scaling 15%",null],
+      ["Cancel Drive Rush","66 or (5 or 6) MPMK","66 or (5 or 6) MPMK","d",null,null,"46 total",null,null,0,"","",0,null,"Multiplier scaling 15%",null],
       ["LP Gladius","236LP","qcf+LP","s",17,4,21,"KD +36",-5,1200,"su3","",0,"1.659~1.856",null,null],
       ["LP Gladius (hold)","236LP (hold)","qcf+LP (hold)","s","30(4-5)",4,20,"HKD +40",4,"2400 (1200*1000*200)","su3","var",0,"1.869~2.075",null,null],
       ["MP Gladius","236MP","qcf+MP","s",19,4,21,"KD +36",-5,1400,"su3","",0,"1.779~1.985",null,null],
@@ -303,12 +307,15 @@
       ["Tonitrus 2","214K > P > P","qcb+K > P > P","s","8+15+19","3(19)4",35,"KD +31",-21,"1900 (900*1000)","","",0,null,null,null],
       ["Procella","214K > K","qcb+K > K","s","8+16",3,37,"HKD +22",-24,1200,"","",0,"2.666~2.711",null,null],
       ["Enfold","214K > LPLK","qcb+K > LP+LK","s","8+5",3,54,"HKD +18",null,2500,"","",0,"1.109~1.164",null,null],
+      ["Scutum(Physical counter version)","","","s",7,4,20,-1,-3,700,"","state",0,null,null,null],
+      ["OD Scutum(Physical counter version)","","","s",7,4,20,-1,-3,700,"","state",0,null,null,null],
       ["Javelin of Marisa","236236P","qcf,qcf+P","u",19,5,60,"KD +14",-43,2200,"","",0,"2.694~3.215","30% Minimum","Strike and Throw invincible on frame 1 (during screen freeze)"],
       ["Javelin of Marisa (Hold)","236236P (hold)","qcf,qcf+P (hold)","u","42(6)",6,60,"HKD +35(KD +17)",-42,"2900(2600)","","var",0,"2.504~3.075","30% Minimum","Strike and Throw invincible on frame 1 (during screen freeze)"],
       ["Javelin of Marisa (Counter)","236236P (counter)","qcf,qcf+P (counter)","u",6,3,54,"KD +46",-37,2400,"","var",0,null,"30% Minimum","Fully invincible on frames 1-10"],
       ["Meteorite","214214P","qcb,qcb+P","u",9,"8(32)3",59,"HKD +17","-44(-77)","3000(2500)","","",0,"1.16 / 1.56 / 1.76 (1st)","40% Minimum / 15% Immediate","Fully invincible on frames 1-16"],
       ["Goddess of the Hunt","236236K","qcf,qcf+K","u",13,7,60,"HKD +14","-39(-33)",4000,"","",0,"2.289~2.911","50% Minimum / 10% Immediate (special)","Fully invincible on frames 1-19"],
-      ["Goddess of the Hunt (Critical Art)","236236K (CA)","qcf,qcf+K (CA)","u",13,7,60,"HKD +14","-39(-33)",4500,"","",0,"2.289~2.911","50% Minimum / 10% Immediate (special)","Fully invincible on frames 1-19"]
+      ["Goddess of the Hunt (Critical Art)","236236K (CA)","qcf,qcf+K (CA)","u",13,7,60,"HKD +14","-39(-33)",4500,"","",0,"2.289~2.911","50% Minimum / 10% Immediate (special)","Fully invincible on frames 1-19"],
+      ["Javelin of Marisa(Physical counter version)","236236P","qcf,qcf+P","u",7,3,54,"KD",-37,2400,"","state",0,null,null,"Completely invincible from frames 1 - 10"]
     ],
   "s": {
       "fastestNormal": "4f",

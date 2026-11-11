@@ -30,6 +30,7 @@ Acesse a versão publicada no GitHub Pages ou abra `index.html` no navegador. O 
 | `data/sources.js` | De onde vem o frame data (FAT, commit e data), o status de verificação, os testes feitos no jogo e os golpes marcados como "a conferir". |
 | `data/patches.js` | Histórico de mudanças de frame data por balance patch (valor antigo, novo, fonte, data). |
 | `tools/validate.py`, `tools/fat_sync.py` | Validação dos dados (roda em todo build) e comparação/sincronização com o FAT. |
+| `tools/capcom_compare.py`, `tools/capcom_add.py` | Comparação com as páginas oficiais da Capcom e inclusão dos golpes que só ela lista. |
 | `tests/run.mjs`, `.github/workflows/checks.yml` | Testes no navegador e a integração contínua do GitHub Actions. |
 | `data/chars/<personagem>.js` | Guia e frame data de cada personagem. Só é baixado quando alguém abre o personagem. |
 | `data/plan30.js` | Os 30 dias do plano de treino. |
@@ -61,6 +62,7 @@ python3 tools/fat_sync.py check  CAMINHO/SF6FrameData.json   # lista as diferen�
 python3 tools/fat_sync.py apply  CAMINHO/SF6FrameData.json --commit SHA --date AAAA-MM-DD
 python3 tools/fat_sync.py extras CAMINHO/SF6FrameData.json   # alcance, scaling, invencibilidade, pulo
 python3 tools/capcom_compare.py PASTA_COM_OS_HTML_DA_CAPCOM    # compara com as páginas oficiais salvas, não muda nada
+python3 tools/capcom_add.py PASTA_COM_OS_HTML_DA_CAPCOM [--dry-run]   # acrescenta os golpes que só a Capcom lista
 python3 build.py
 ```
 

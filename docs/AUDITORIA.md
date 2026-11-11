@@ -272,3 +272,47 @@ A segunda passada também compara as células do hub que listam várias versões
 Para cobrir esses, o caminho é **acrescentar ao hub as linhas que só a Capcom tem** (por exemplo, os golpes com Denjin Charge do Ryu), com a Capcom como fonte. Isso acrescenta dados novos ao hub, em vez de conferir os existentes, e ficou para uma próxima etapa.
 
 Testes: 23 de 23 passam. Os testes do Ryu, do quadro de frame data e dos valores da Capcom foram atualizados para os novos números.
+
+## 13. Golpes que só a Capcom lista (11/11/2026)
+
+As linhas da Capcom que não tinham par no hub foram acrescentadas às tabelas com a Capcom como fonte, pelo `tools/capcom_add.py`. Cada uma leva a marca "da Capcom" na tabela e o nome fica registrado em `data/sources.js` (`capcomRows`). A ferramenta pode rodar de novo sem duplicar nada.
+
+**O que entrou: 366 linhas.**
+- **197 só existem num estado do personagem ou como continuação.** Exemplos: as versões com Denjin Charge do Ryu, os golpes de Drink Level 4 da Jamie, os normais de rapid cancel do Zangief, as continuações do Hooligan Combination da Cammy e do Demon Raid do Akuma. Levam a condição nova `state` ("só num estado ou como continuação"). O Buscador de Punições não usa linhas com condição como punição; um teste garante isso.
+- **128 linhas do Drive System**, 4 por personagem: Perfect Parry contra golpe e contra projétil, Parry Drive Rush e Cancel Drive Rush.
+- **4 golpes aéreos**, marcados como aéreos quando o FAT já lista o golpe no ar (ex.: Yoga Comet do Dhalsim).
+- **37 versões que o hub listava juntas**, como os níveis de Super Art (Shin Hashogeki nível 2 e 3, Yoga Sunburst nível 2 e 3) e o Bushin Thunderous Beats.
+
+**O que não entrou, e por quê.** Antes de acrescentar, a ferramenta procura o mesmo golpe com outro nome. Conta como o mesmo golpe quando:
+- o comando e o startup são iguais;
+- o recovery, o no block e o dano batem até onde a Capcom informa. Um recovery "N total" ou um no block vazio não contam como divergência. O dano pode estar dentro do texto do hub ("800(900)", "1350-1950") ou ser o valor da Jamie no Drink Level 0 (90%, a convenção do hub).
+
+Na primeira tentativa, 403 linhas entravam, e uma verificação achou 19 que repetiam golpes do hub com outro nome. Exemplos: Long Sliding Kick / Crouch HK do Dhalsim, Psycho Crusher Attack / Psycho Crusher do M. Bison, Round Wave / HP Round Wave do Terry. Essas repetições foram desfeitas antes do commit.
+
+**Efeito na comparação.** As linhas acrescentadas vieram da própria Capcom, então compará-las com a Capcom não prova nada: o `capcom_compare.py` deixa essas linhas fora das passadas e só as associa pelo nome. Ele ganhou uma terceira passada, que casa as linhas restantes com golpes do hub de mesmo comando e mesmos números, e compara os outros valores. Também foi corrigido um defeito: etapas de combo que o hub numera de outro jeito (ex.: "Desert Storm (3)" da Capcom e "Desert Storm Final" do hub) eram descartadas sem aparecer nem como casadas nem como sem par.
+
+| | Antes | Agora |
+|---|---|---|
+| Golpes do hub vindos do FAT com linha da Capcom | 1.856 de 2.133 | **1.994 de 2.133** |
+| Valores comparados | 6.542 | **6.848** |
+| Diferenças | 6 (de definição, marcadas "a conferir") | **as mesmas 6, nenhuma nova** |
+| Linhas da Capcom sem par | 330 + 137 de estado | **43** |
+
+**Duas marcações "a conferir" resolvidas.** A Capcom confirma os valores mostrados de:
+- Lily Desert Storm Final: na Capcom, "Desert Storm (3)"; −23 no block.
+- Kimberly Bushin Beats (1 stock): na Capcom, "Bushin Thunderous Beats", comando 236236 segurando K; −25 no block, 2200 de dano.
+
+Nos dois casos, a conta com o blockstun do FAT dava outro número, mas o hub não mostra o blockstun. Continuam "a conferir" só os 6 golpes de definição da seção 12.
+
+**As 43 linhas da Capcom que continuam sem par** são etapas que o hub lista como um golpe só:
+- as etapas do Sunrise Festival do Dee Jay (18);
+- as continuações do Alon da Yasmine (9; o hub lista cada Alon com a continuação, e as turbinadas como "Bayani Mode");
+- as etapas do Kasai Thrust Kick do Ken (3);
+- as continuações do Arjun (3);
+- dez etapas avulsas (Chun-Li 2, E. Honda 2, Luke 2, Cammy, Jamie, Kimberly e Zangief).
+
+**Testes:** validação sem erros (2.499 golpes); 24 testes em `tests/run.mjs`. Um teste novo confere que:
+- toda linha listada em `capcomRows` existe;
+- não há nomes repetidos;
+- nenhum golpe com condição aparece como punição;
+- o Hadoken (Denjin Charge) do Ryu e o 2LP de rapid cancel do Zangief têm a condição `state`.

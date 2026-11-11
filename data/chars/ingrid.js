@@ -265,6 +265,10 @@
       ["Drive Reversal: Odd Flight","6HPHK","f+HP+HK","d","20(18)",3,26,"KD +23",-6,500,"","",0,"1.718~1.855",null,"Fully invincible on frames 1-22 (blockstun) / frames 1-20 (reversal) Guaranteed to interrupt any Drive Rush canceled normal if performed immediately out of blockstun (unless the opponent reacts with an invincible move or counter)"],
       ["Drive Parry","MPMK","MP+MK","d",1,"12(2)","33(1)notes",null,null,null,"","",0,null,"50% Multiplier (Perfect)","Throw invincible during the recovery of a successful parry (just like during blockstun) Fully invincible for 6F after a successful Perfect Parry against a strike, which carries over to any attack you perform (ensuring a 5F or faster punish will always interrupt multi-hit attacks)"],
       ["Drive Rush","MPMK / 66 (cancel)","MP+MK / f,f (cancel)","d","9(11)","45(46)","24(23)",null,null,null,"","var",0,null,"15% Multiplier (Mid-Combo)",null],
+      ["Perfect Parry (strike)","MPMK","MPMK","d",1,null,1,null,null,0,"","",0,null,"Starter scaling 50%","Perfect Parry activates when an attack is absorbed on the frame a parry is input, or on the next frame. (For high and overhead attacks, the player must press the direction away from the opponent. For low attacks, down and back) If no direction is inputted the result will be a regular parry with an additional Drive increase of 3000. Fully invincible for 5 frames once recovery is over (invincibility not granted if you continue the parry) The player on the receiving end of a Perfect Parry cannot cancel and is forced into a Punish Counter state until their move is finished"],
+      ["Perfect Parry (projectile)","MPMK","MPMK","d",1,null,10,null,null,0,"","",0,null,"Starter scaling 50%",null],
+      ["Parry Drive Rush","66","f,f","d",null,null,"45 total",null,null,0,"","",0,null,"Multiplier scaling 15%",null],
+      ["Cancel Drive Rush","66","f,f","d",null,null,"46 total",null,null,0,"","",0,null,"Multiplier scaling 15%",null],
       ["LP Sun Shot","236LP","qcf+LP","s",17,null,32,-2,-6,700,"su3","",1,null,"20% Start / Combo (2 hits)","No hurtbox extension at all on frame 17 when initially throwing the fireball, and then slight projectile invincible hurtbox extension on her hand on frames 18-44"],
       ["MP Sun Shot","236MP","qcf+MP","s",17,null,32,-2,-6,700,"su3","",1,null,"20% Start / Combo (2 hits)","No hurtbox extension at all on frame 17 when initially throwing the fireball, and then slight projectile invincible hurtbox extension on her hand on frames 18-44"],
       ["HP Sun Shot","236HP","qcf+HP","s",15,59,"31(33)",-1,-5,700,"su3","",1,null,"20% Start / Combo (2 hits)","No hurtbox extension at all on frame 15 when initially throwing the fireball, and then slight projectile invincible hurtbox extension on her hand on frames 16-45"],
@@ -304,7 +308,13 @@
       ["Monoid Star Thrust","5HP or 5HK (Monoid)","HP or HK (Monoid)","s",30,2,28,"KD +31",-14,600,"","var",0,"1.01~1.64",null,null],
       ["Monoid Beam","5HP+5HK (Monoid)","HP+HK (Monoid)","s",32,6,31,"KD +37",-13,700,"","var",1,"?",null,null],
       ["Monoid Aerial Strike","j.A (Monoid)","j.A (Monoid)","s",13,6,"8+26","KD +19~23","-25~-20",600,"","var",0,"0.55~1.12",null,null],
-      ["Monoid Super","214236HP/HK","qcb,qcf+HP/HK","u",46,12,32,"KD -124(-652)","-24(-13)",3000,"","",0,"1.79~2.45",null,"Fully invincible on frames 31-57"]
+      ["Sun Flare (lvl 1)","214MP M/(No Sun Crests) 214HP","qcb+MP M/(No Sun Crests) 214HP","s",21,6,21,"KD",-4,900,"su","",0,null,"Starter scaling 30% Combo scaling 20%",null],
+      ["Solar Burst (lvl 1)","214MP M/ (No Sun Crests) 214HP (air)","qcb+MP M/ (No Sun Crests) 214HP (air)","s",22,8,"8 frame(s) after landing",null,null,900,"","air",0,null,"Starter scaling 20%",null],
+      ["Monoid Super","214236HP/HK","qcb,qcf+HP/HK","u",46,12,32,"KD -124(-652)","-24(-13)",3000,"","",0,"1.79~2.45",null,"Fully invincible on frames 31-57"],
+      ["Shining Sun (lvl 2)","236236 (hold) K","qcf,qcf+ (hold) K","u",11,"11-50 11-15, 30-36, 48-50",79,null,-99,2300,"","",0,null,null,"Invincible to strikes and throws between frames 1 - 15 Values do not change when the attack lands as a counter or Punish Counter The minimum guaranteed damage is 30% The first hit locks into a cinematic animation Consumes 1 Sun Crest"],
+      ["Shining Sun (lvl 3)","236236 (hold) K","qcf,qcf+ (hold) K","u",11,"11-50 11-15, 30-36, 48-50",79,null,-99,2700,"","",0,null,null,"Invincible to strikes and throws between frames 1 - 15 Values do not change when the attack lands as a counter or Punish Counter The minimum guaranteed damage is 30% The first hit locks into a cinematic animation Consumes 2 Sun Crests"],
+      ["Order of the Sun (lvl 2)","214214 (hold) P","qcb,qcb+ (hold) P","u","*",null,"13 total",null,null,2400,"","",0,null,"Immediate scaling 20%",null],
+      ["Order of the Sun (lvl 3)","214214 (hold) P","qcb,qcb+ (hold) P","u","*",null,"13 total",null,null,3400,"","",0,null,"Immediate scaling 20%",null]
     ],
   "s": {
       "fastestNormal": "4f",

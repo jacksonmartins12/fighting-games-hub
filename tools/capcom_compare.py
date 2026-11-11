@@ -21,8 +21,11 @@ KEYS = {'key-d': '2', 'key-r': '6', 'key-dr': '3', 'key-l': '4', 'key-dl': '1', 
 BTN = {'icon_punch_l': 'LP', 'icon_punch_m': 'MP', 'icon_punch_h': 'HP', 'icon_punch': 'P', 'icon_kick_l': 'LK', 'icon_kick_m': 'MK', 'icon_kick_h': 'HK', 'icon_kick': 'K'}
 
 
+FULLWIDTH = str.maketrans({'（': '(', '）': ')', '％': '%', '～': '~', '＋': '+', '－': '-', '：': ':'})
+
+
 def clean(c):
-    return re.sub(r'\s+', ' ', html.unescape(re.sub(r'<[^>]+>', ' ', c))).strip()
+    return re.sub(r'\s+', ' ', html.unescape(re.sub(r'<[^>]+>', ' ', c)).translate(FULLWIDTH)).strip()
 
 
 def parse(folder):
@@ -35,8 +38,10 @@ def parse(folder):
             continue
         t = s[i:s.find('</table>', i)]
         rows = []
+        section = ''
         for r in re.findall(r'<tr.*?</tr>', t, re.S):
             if 'frame_heading' in r:
+                section = clean(r)
                 continue
             tds = re.findall(r'<td[^>]*>(.*?)</td>', r, re.S)
             if len(tds) < 8:
@@ -51,7 +56,9 @@ def parse(folder):
                     elif tok[1].strip() and tok[1].strip() not in ('L', 'M', 'H'):
                         inp += ' ' + tok[1].strip() + ' '
             rows.append({'name': clean(nm.group(1)) if nm else clean(tds[0]), 'input': re.sub(r'\s+', ' ', inp).strip(),
-                         'startup': clean(tds[1]), 'active': clean(tds[2]), 'recovery': clean(tds[3]), 'hit': clean(tds[4]), 'block': clean(tds[5])})
+                         'startup': clean(tds[1]), 'active': clean(tds[2]), 'recovery': clean(tds[3]), 'hit': clean(tds[4]), 'block': clean(tds[5]),
+                         'cancel': clean(tds[6]), 'damage': clean(tds[7]).strip('| '), 'scaling': clean(tds[8]) if len(tds) > 8 else '',
+                         'misc': clean(tds[-1]) if len(tds) > 14 else '', 'section': section})
         out[name] = rows
     return out
 
@@ -66,6 +73,7 @@ def strength(n):
     return {'L':'L','M':'M','H':'H','OD':'OD','LP':'L','LK':'L','MP':'M','MK':'M','HP':'H','HK':'H'}.get(w,'')
 def core(n):
     n=n.lower(); n=re.sub(r'\[.*?\]','',n)
+    n=re.sub(r'^((?:standing|crouching|jumping|stand|crouch|jump) (?:light|medium|heavy)? ?(?:punch|kick|lp|mp|hp|lk|mk|hk)):.*$',r'\1',n)   # "Standing Light Punch: Magaang na Paglaslas"
     for a,b in REP: n=n.replace(a,b)
     n=re.sub(r'^(lp|lk|mp|mk|hp|hk|l|m|h|od) ','',n) if strength(n) else n
     n=re.sub(r'^(sa[123]|ca) ','',n)
@@ -176,21 +184,39 @@ def alias_pass(r, hub, used, stats):
     return ('variant', k, loose(r, hub[k]))
 
 
+def capcom_rows():
+    s=open(os.path.join(os.path.dirname(HUB),'sources.js'),encoding='utf-8').read()
+    return json.loads(s[s.index('= {')+2:s.rindex(';')]).get('capcomRows',{})
+
+
+CAPCOM_ROWS={}
+
+
 def compare(cap):
+    import capcom_add   # here, not at the top: capcom_add imports this module
+    CAPCOM_ROWS.clear(); CAPCOM_ROWS.update(capcom_rows())
     tot=collections.Counter(); diffs=[]; pairs_all=[]; unmatched=[]
     for cname,rows in cap.items():
         slug=slugify(cname); t=open(os.path.join(HUB,slug+'.js'),encoding='utf-8').read(); hub=json.loads(t[t.index('] = ')+4:t.rindex(';')])['frames']['m']
-        used=set(); pairs=[]; left=[]
+        # rows the hub took from Capcom (tools/capcom_add.py): comparing them with Capcom proves nothing, so they are
+        # left out of the passes below and only paired by name at the end
+        from_capcom={k for k,h in enumerate(hub) if h[0] in CAPCOM_ROWS.get(slug,())}
+        used=set(from_capcom); pairs=[]; left=[]; states=[]
         stats=json.loads(t[t.index('] = ')+4:t.rindex(';')])['frames']['s']
         groups=collections.defaultdict(list)
+        by_name={hub[k][0]:k for k in from_capcom}
         for r in rows:
             tot['capcom rows']+=1
-            if '[' in r['name']: tot['state variants (not in hub)']+=1; continue
+            k=by_name.get(capcom_add.hub_name(r, capcom_add.num_input(r)[0])) if by_name else None
+            if k is not None:
+                tot['taken from Capcom (not compared)']+=1; pairs_all.append((slug, hub[k][0], r['name'])); continue
+            if '[' in r['name']: states.append(r); continue
             m=re.match(r'^(.*?)\((\d+)\)$',r['name'].strip())
             if m: groups[(core(m.group(1)),strength(r['name']))].append((int(m.group(2)),r)); continue
             cs,cc,ci=strength(r['name']),core(r['name']),ncap_in(r['input'])
+            lvl=lambda n: (re.findall(r'\(lv(?:l)?\s?(\d)\)', n.lower()) or ['1'])[0]
             pool=[k for k,h in enumerate(hub) if k not in used and strength(h[0])==cs and core(h[0])==cc]
-            if not pool: pool=[k for k,h in enumerate(hub) if k not in used and strength(h[0])==cs and difflib.SequenceMatcher(None,core(h[0]),cc).ratio()>=0.9]
+            if not pool: pool=[k for k,h in enumerate(hub) if k not in used and strength(h[0])==cs and lvl(h[0])==lvl(r['name']) and difflib.SequenceMatcher(None,core(h[0]),cc).ratio()>=0.9]
             if len(pool)>1:
                 byin=[k for k in pool if nin(hub[k][1])==ci]; pool=byin or pool
             if not pool: left.append(r); continue
@@ -205,6 +231,12 @@ def compare(cap):
                 if best is None or score<best[0]: best=(score,mp)
             if best:
                 for r,k in best[1]: used.add(k); pairs.append((r,k))
+                done={id(r) for r,k in best[1]}
+                for n,r in items:   # steps the hub names differently ("Desert Storm Final", Akuma's "Kikoku" for step 1)
+                    if id(r) in done: continue
+                    k=next((k for k in range(len(hub)) if k not in used and capcom_add.same_move(slug, hub[k], capcom_add.row_from(r, slug))), None)
+                    if k is None: left.append(r)
+                    else: used.add(k); pairs.append((r,k))
             else:
                 left.extend(r for n,r in items)
         # second pass: names the hub writes differently (see alias_pass)
@@ -217,13 +249,25 @@ def compare(cap):
                 if len(same) == 1:
                     used.add(same[0]); hit = ('same input', same[0], loose(r, hub[same[0]]))
             if hit is None:
-                unmatched.append((slug, r['name'], r['input'])); continue
+                states.append(r); continue
             kind, k, checks = hit
             tot['matched (second pass)'] += 1
             pairs_all.append((slug, hub[k][0] if k is not None else kind, r['name']))
             for f, a, b, ok in checks:
                 tot['compared values'] += 1
                 if not ok: diffs.append({'char': slug, 'hub_move': hub[k][0] if k is not None else kind, 'capcom_move': r['name'], 'field': f, 'hub': b, 'capcom': a, 'pass': 2})
+        for r in states:
+            # last try: a hub move with the same input and startup whose recovery, on block and damage agree (the same move
+            # under another name, e.g. "Psycho Crusher Attack" / "Psycho Crusher"); its other values are compared too
+            row=capcom_add.row_from(r, slug)
+            k=None if '[' in r['name'] else next((k for k in range(len(hub)) if k not in from_capcom and capcom_add.same_move(slug, hub[k], row)), None)
+            if k is None:
+                tot['not in hub (state variants)' if '[' in r['name'] else 'not matched']+=1
+                unmatched.append((slug, r['name'], r['input'])); continue
+            tot['matched (same frames, other name)']+=1; pairs_all.append((slug, hub[k][0], r['name']))
+            for f,a,b,ok in loose(r,hub[k]):
+                tot['compared values (same frames, other name)']+=1
+                if not ok: diffs.append({'char':slug,'hub_move':hub[k][0],'capcom_move':r['name'],'field':f,'hub':b,'capcom':a,'pass':3})
         for r,k in pairs:
             tot['matched']+=1; pairs_all.append((slug,hub[k][0],r['name']))
             strict=set()
