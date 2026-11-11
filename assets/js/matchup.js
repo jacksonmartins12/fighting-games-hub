@@ -11,8 +11,9 @@ function muSet(me, opp) {
   LS.set('fgc-matchup', mu);
 }
 function muMissing() { return '<span class="muted">' + B('mu.no-data') + '</span>'; }
-// Knockdown advantage a safe jump needs with this fighter's jump: pre-jump + air time (see Okizeme in Frames).
-function safeJumpNeed(jump) { var m = String(jump || '').match(/(\d+)\+(\d+)\+\d+/); return m ? '+' + (+m[1] + +m[2]) : null; }
+// Knockdown advantage a safe jump with an attack needs with this jump against a reversal of `rev` frames (default 5).
+// From the training-mode results in Okizeme in Frames: safe when N + rev >= J + 5, J = pre-jump + air time.
+function safeJumpNeed(jump, rev) { var m = String(jump || '').match(/(\d+)\+(\d+)\+\d+/); return m ? '+' + (+m[1] + +m[2] + 5 - (rev || 5)) : null; }
 // Which side a stat favours: 1 = higher is better, -1 = lower is better. Returns 'a', 'b' or ''.
 function muBetter(a, b, dir) { var x = parseFloat(a), y = parseFloat(b); if (isNaN(x) || isNaN(y) || x === y || !dir) return ''; return (x - y) * dir > 0 ? 'a' : 'b'; }
 function muVal(v, suffix) { return v == null || v === '' ? muMissing() : esc(v) + (suffix && /^\d+$/.test(String(v)) ? suffix : ''); }

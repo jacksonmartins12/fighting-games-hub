@@ -157,6 +157,10 @@ function renderString() {
   sel.innerHTML = list.map(function (m) { return '<option value="' + esc(m[0]) + '"' + (m[0] === adv.strA ? ' selected' : '') + '>' + esc(m[0] + ' (' + (m[1] || '') + ') · ' + String(m[8])) + '</option>'; }).join('');
   stringResults();
 }
+// Gap between two moves of a string (startup of the next minus advantage), against the opponent's fastest normal F.
+function gapGroup(gap, F) { return gap <= 0 ? 'true' : (F == null || gap < F ? 'trap' : (gap === F ? 'trade' : 'hole')); }
+// Breakeven of a risky option: the success rate it needs (loss / (gain + loss)) and its average value at rate p.
+function breakeven(gain, loss, p) { return { need: loss / (gain + loss), ev: p * gain - (1 - p) * loss }; }
 function stringResults() {
   var w = widgets['adv-string'], out = w.querySelector('.adv-out');
   if (!FRAMES[adv.strChar] || !FRAMES[adv.strOpp]) return;
@@ -169,8 +173,7 @@ function stringResults() {
   if (String(A[8]).replace(/^[-+]?\d+/, '')) h += '<p class="small muted">' + B('adv.str.first-value', [esc(String(A[8])), base]) + '</p>';
   var groups = { 'true': [], trap: [], trade: [], hole: [] };
   advStrikes(adv.strChar).forEach(function (m) {
-    var S = suEff(m[4]), gap = S - a, g;
-    if (gap <= 0) g = 'true'; else if (F == null || gap < F) g = 'trap'; else if (gap === F) g = 'trade'; else g = 'hole';
+    var S = suEff(m[4]), gap = S - a, g = gapGroup(gap, F);
     groups[g].push({ m: m, S: S, gap: gap });
   });
   ['trap', 'true', 'trade', 'hole'].forEach(function (g) {
@@ -210,7 +213,7 @@ function breakevenResults() {
   var w = widgets['adv-breakeven'], out = w.querySelector('.adv-out');
   var g = Math.max(0, +adv.beGain || 0), l = Math.max(0, +adv.beLoss || 0), p = Math.max(0, Math.min(100, +adv.beP || 0)) / 100;
   if (!g && !l) { out.innerHTML = '<p class="muted">' + B('adv.be.empty') + '</p>'; return; }
-  var need = l / (g + l), ev = p * g - (1 - p) * l;
+  var be = breakeven(g, l, p), need = be.need, ev = be.ev;
   var fmt = function (n) { return Math.round(n).toLocaleString(lang === 'pt' ? 'pt-BR' : 'en-US'); };
   var pct = function (x) { return (Math.round(x * 1000) / 10).toString().replace('.', lang === 'pt' ? ',' : '.'); };
   var h = '<div class="adv-big"><span>' + B('adv.be.need') + '</span><b>' + pct(need) + '%</b><small>' + B('adv.be.need-in', [Math.max(1, Math.round(need * 10))]) + '</small></div>' +

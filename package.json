@@ -1,0 +1,13 @@
+{
+  "name": "fighting-games-hub",
+  "private": true,
+  "description": "Static site; the only dependency is Playwright, for the tests.",
+  "scripts": {
+    "build": "python3 build.py",
+    "validate": "python3 tools/validate.py",
+    "test": "python3 build.py && node tests/run.mjs"
+  },
+  "devDependencies": {
+    "playwright": "1.63.0"
+  }
+}
