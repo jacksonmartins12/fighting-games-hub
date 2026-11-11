@@ -1,15 +1,16 @@
-/* Layout: dark reference wiki. A charcoal page, a framed nav panel per fighter group beside one reading panel,
-   flat tables and inset panels; the group colour marks headings and the current chapter, links read in blue. */
+/* Layout: dark reference wiki. A neutral charcoal page (#121212) where panels share the page colour and are framed
+   by grey borders, grey buttons with white text, links in blue; the group colour marks headings and the current chapter. */
 :root {
   color-scheme: dark;
-  --link: #74b4f7;
-  --panel: #1f232a;
-  --line-strong: #3a404b;
-  --paper: #101216;
-  --sheet: #181b21;
-  --ink: #dde1e7;
-  --ink-soft: #98a1ad;
-  --rule: #2b3039;
+  --link: #5b8ff0;
+  --panel: #1c1c1c;
+  --button: #2c2c2c;
+  --line-strong: #363636;
+  --paper: #121212;
+  --sheet: #121212;
+  --ink: #d1d5db;
+  --ink-soft: #9ca3af;
+  --rule: #2a2a2a;
   --crimson: #e5574c;
   --indigo: #8ea4f2;
   --gold: #dba744;
@@ -17,8 +18,8 @@
   --ok: #5fc58d;
   --warn: #e6b350;
   --bad: #f0736a;
-  --term-bg: #0b0d10;
-  --term-fg: #dde1e7;
+  --term-bg: #0b0b0b;
+  --term-fg: #d1d5db;
   --shadow: rgba(0, 0, 0, 0.5);
   --tone: var(--crimson);
   --accent: var(--tone);
@@ -530,7 +531,7 @@ footer p { max-width: 80ch; }
   --a-grappler: #6cc592;
   --a-midrange: #5cc3d8;
   --a-special: #cf8ee0;
-  --chart-grid: #2b3039;
+  --chart-grid: #2a2a2a;
 }
 [data-group="roster"] { --tone: var(--a-midrange); }
 [data-arch="shoto"] { --arch: var(--a-shoto); }
@@ -898,7 +899,7 @@ a:hover { color: color-mix(in srgb, var(--link) 75%, #fff); }
 .tile { border-width: 1px; border-radius: 6px; box-shadow: none; background: var(--sheet); border-left: 3px solid var(--tone); }
 .tile:hover { transform: none; box-shadow: none; background: var(--panel); }
 .tile:active { transform: none; box-shadow: none; }
-.sidebar { background: var(--sheet); border: 1px solid var(--rule); border-radius: 6px; padding: 14px 10px 16px; }
+.sidebar { background: var(--sheet); border: 1px solid var(--line-strong); border-radius: 6px; padding: 14px 10px 16px; }
 .group-head { border-bottom-width: 1px; }
 .chap { border-radius: 4px; color: var(--ink-soft); }
 .chap:hover { background: var(--panel); color: var(--ink); }
@@ -928,7 +929,7 @@ tr:hover td { background: color-mix(in srgb, var(--link) 7%, var(--sheet)); }
 .quiz { border-width: 1px; border-radius: 6px; }
 .qq-opt { background: var(--sheet); border-width: 1px; border-color: var(--line-strong); border-radius: 4px; }
 .qq-opt:hover:not([disabled]) { border-color: var(--link); }
-.pager button { border-width: 1px; border-radius: 6px; background: var(--panel); }
+.pager button { border-width: 1px; border-radius: 6px; background: var(--button); }
 .pager button:hover { transform: none; box-shadow: none; border-color: var(--tone); }
 .rcard { border-width: 1px; border-radius: 6px; background: var(--panel); }
 .rcard:hover { transform: none; box-shadow: none; border-color: var(--arch); }
@@ -937,14 +938,14 @@ tr:hover td { background: color-mix(in srgb, var(--link) 7%, var(--sheet)); }
 .cg-mono, .cg-portrait { box-shadow: none; border-width: 1px; border-radius: 6px; }
 .btn { background: var(--ink); color: var(--paper); border-color: var(--ink); border-radius: 4px; }
 .btn:hover { box-shadow: none; background: color-mix(in srgb, var(--ink) 85%, var(--link)); }
-.btn.ghost { background: var(--panel); color: var(--ink); }
+.btn.ghost { background: var(--button); color: #fff; }
 .btn.danger { color: var(--paper); }
-.chip { border-width: 1px; border-radius: 999px; background: var(--panel); }
+.chip { border-width: 1px; border-radius: 999px; background: var(--button); color: #fff; }
 .chip[aria-pressed="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
 .lang-switch { border-width: 1px; border-radius: 4px; overflow: hidden; }
-.lang-switch button { background: var(--panel); }
+.lang-switch button { background: var(--button); color: #fff; }
 .lang-switch button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
-.open-menu { background: var(--panel); color: var(--ink); border: 1px solid var(--line-strong); border-radius: 4px; }
+.open-menu { background: var(--button); color: #fff; border: 1px solid var(--line-strong); border-radius: 4px; }
 .mbar { background: var(--paper); border-bottom-width: 1px; }
 .sidebar.open { border-radius: 0; }
 .ft-details { border-width: 1px; border-radius: 6px; background: var(--panel); }
@@ -1011,7 +1012,7 @@ h3 .sf6-tag { align-self: center; }
 .mu-ft { padding: 0 14px 14px; }
 
 /* global search */
-.open-search { display: inline-flex; align-items: center; gap: 10px; background: var(--panel); color: var(--ink); border: 1px solid var(--line-strong); border-radius: 4px; padding: 7px 12px; font: 500 12px/1.2 var(--mono); letter-spacing: .08em; text-transform: uppercase; cursor: pointer; }
+.open-search { display: inline-flex; align-items: center; gap: 10px; background: var(--button); color: #fff; border: 1px solid var(--line-strong); border-radius: 4px; padding: 7px 12px; font: 500 12px/1.2 var(--mono); letter-spacing: .08em; text-transform: uppercase; cursor: pointer; }
 .open-search:hover { border-color: var(--link); }
 .open-search kbd { font: 500 11px/1 var(--mono); padding: 3px 6px; border: 1px solid var(--line-strong); border-radius: 3px; color: var(--ink-soft); }
 .hero-tools { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
