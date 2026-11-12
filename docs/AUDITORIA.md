@@ -390,3 +390,18 @@ Cada guia de personagem ganhou a seção "Oki e pressão, calculados" (`assets/j
 - Toda entrada de pressão é coerente com a regra do gap, e os 32 guias mostram a seção.
 
 Os 28 testes passam.
+
+## 19. Revisão da seção avançada nova (12/11/2026)
+
+Revisão do capítulo de teoria dos jogos e das folhas de oki e pressão antes do merge. Quatro problemas encontrados e corrigidos:
+
+1. **Isca contra tech (teoria dos jogos).** No oki de quatro opções, a linha "defender e esperar" valia 0 contra o tech. Mas dar tech é apertar throw: contra quem fica parado defendendo, o throw de quem defende sai e agarra. A célula passou a −1.200 (throw do Ryu, num espelho de Ryu). O equilíbrio mudou: todas as opções dos dois lados entram no mix, e o valor passou de uns 315 para uns 295. O texto, a análise de sensibilidade e a tabela dos dez wakeups foram recalculados, e o teste rejeita os números antigos.
+2. **Knockdowns condicionais.**
+   - A leitura do knockdown pegava "KD +N" em qualquer ponto do valor no hit. Golpes como o Axe Kick do Ryu ("0 (KD +14)") apareciam como knockdown normal, mas esse knockdown só acontece em algumas situações.
+   - Agora, quando o knockdown não é o primeiro valor, ele é marcado como condicional. A calculadora continua listando, com o aviso de mais de um valor; as folhas dos personagens deixam de fora.
+   - Saíram das folhas: o Axe Kick do Ryu, o Reverse Spin Kick do Guile, o Ankensatsu da Juri, o (OD) Aerial Bushin Senpukyaku da Kimberly, o OD Backstep Rolling Attack do Blanka e o OD Tiger Knee Crush do Sagat.
+   - A leitura também passou a aceitar "KD + 28" (OD Vertical Rolling Attack do Blanka) e "HKD +12/17/20" (Shining Sun da Ingrid), que antes ficavam de fora ou só com o primeiro valor.
+3. **Bônus do meaty no knockdown.** Um meaty que acerta no frame ativo k ganha k − 1 no block e no hit, e o mesmo vale para a vantagem de knockdown. A calculadora e as folhas mostravam o "KD +N" da tabela sem esse bônus; agora mostram "KD +(N + k − 1)" quando o valor é simples.
+4. **Pressão.** O texto agora diz que um frame trap ainda perde para reversal invencível e para Drive Parry, e quanto custa o Drive Rush (1 barra saindo de um parry, 3 cancelando um golpe), como no capítulo do Sistema Drive.
+
+Os 28 testes passam.

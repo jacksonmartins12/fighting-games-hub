@@ -10,7 +10,7 @@ function setupNormals(slug) { return advStrikes(slug).filter(function (m) { retu
 // possible after 0, 1 or 2 forward dashes (no manual wait). Knockdowns are grouped by N, since timing depends only on N.
 function okiSheet(slug) {
   var st = FRAMES[slug].s || {}, fd = advNum(st.fDash), norms = setupNormals(slug), groups = {};
-  okiKnockdowns(slug).forEach(function (k) { (groups[k.n] = groups[k.n] || []).push(k); });
+  okiKnockdowns(slug).forEach(function (k) { if (!k.cond) (groups[k.n] = groups[k.n] || []).push(k); });   // only knockdowns on a normal hit
   return Object.keys(groups).map(Number).sort(function (a, b) { return a - b; }).map(function (N) {
     var cols = [0, 1, 2].map(function (d) {
       if (d && fd == null) return null;
@@ -65,7 +65,7 @@ function setupsHTML(slug) {
       if (!c || !c.length) return;
       h += '<div class="setups-row"><span class="setups-lbl">' + B('setups.d' + d, [g.spent[d]]) + '</span><ul class="setups-list">' + c.map(function (e) {
         return '<li>' + setupMoveLabel(e.m) + ' <span class="setups-facts">' + B('setups.fact-active', [e.k, e.A.n]) + (e.A.multi ? ' (m)' : '') +
-          ' · ' + B('setups.fact-block') + ' ' + (e.blk == null ? '—' : fmtAdv(e.blk)) + ' · ' + B('setups.fact-hit') + ' ' + (e.hit == null ? fmtCell(e.m[7]) : fmtAdv(e.hit)) +
+          ' · ' + B('setups.fact-block') + ' ' + (e.blk == null ? '—' : fmtAdv(e.blk)) + ' · ' + B('setups.fact-hit') + ' ' + okiHitCell(e.m[7], e.k) +
           (e.safeFrom == null ? '' : ' · ' + B('setups.fact-safe', [e.safeFrom])) + '</span></li>';
       }).join('') + '</ul></div>';
     });

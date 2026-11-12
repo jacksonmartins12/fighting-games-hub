@@ -41,12 +41,14 @@ function advNeed(slugs, box, done) {   // load fighters, show loading / error in
 function okiKnockdowns(slug) {
   var out = [];
   (FRAMES[slug] ? FRAMES[slug].m : []).forEach(function (m, i) {
-    var hit = String(m[7] == null ? '' : m[7]), kd = hit.match(/\b(H?KD)\s*\+([\d*()~]+)/);
+    // "KD +40", "HKD +12/17/20", "KD + 28". A knockdown that isn't the leading value ("0 (KD +14)", "5 (KD+24~26)",
+    // "Tumble +66 (KD +46~56)") only happens in some situations: it's kept for the calculator, flagged `cond`.
+    var hit = String(m[7] == null ? '' : m[7]).trim(), kd = hit.match(/\b(H?KD)\s*\+\s*([\d*()~\/]+)/);
     if (!kd || /crumple|wall/i.test(hit)) return;
-    var nums = kd[2].match(/\d+/g) || [];
+    var cond = kd.index !== 0, nums = kd[2].match(/\d+/g) || [];
     nums.forEach(function (n, j) {
       if (nums.indexOf(n) !== j) return;
-      out.push({ id: i + ':' + n, m: m, n: +n, hard: kd[1] === 'HKD', raw: hit, alt: nums.length > 1 });
+      out.push({ id: i + ':' + n, m: m, n: +n, hard: kd[1] === 'HKD', raw: hit, alt: nums.length > 1 || cond, cond: cond });
     });
   });
   return out;
@@ -55,6 +57,14 @@ function okiKnockdowns(slug) {
 // `rev` pressed on that first frame is active rev - 1 frames after it. Safe if stuck + 2 <= rev. dood.gg's rule
 // (stuck + 1 <= rev) is one frame more generous; that frame is reported as a doubt until it's tested in game.
 function safeMeaty(stuck, rev) { return stuck + 2 <= rev ? 'safe' : (stuck + 1 <= rev ? 'doubt' : 'unsafe'); }
+// On-hit value of a meaty that hits on active frame k: a plain number or a plain "KD +N" / "HKD +N" also gains k - 1
+// (the knockdown starts that much later in the attacker's move); anything more complex is shown as listed.
+function okiHitCell(v, k) {
+  var n = advNum(v);
+  if (n != null) return fmtAdv(n + k - 1);
+  var kd = String(v == null ? '' : v).trim().match(/^(H?KD) ?\+(\d+)$/);
+  return kd ? '<span class="adv">' + kd[1] + ' +' + (+kd[2] + k - 1) + '</span>' : fmtCell(v);
+}
 function okiMeaty(N, spent, S, A) {
   var pmin = spent + 1, plo = N + 3 - S - A, phi = N + 2 - S;
   if (phi < pmin) return null;
@@ -118,7 +128,7 @@ function okiResults() {
     h += '<tr' + (x.r.delay === 0 ? ' class="adv-easy"' : '') + '><td><b>' + esc(x.m[0]) + '</b><br><span class="inp muted">' + esc(x.m[1] || '') + '</span></td><td class="inp">' + x.S + 'f</td>' +
       '<td>' + (x.r.delay === 0 ? B('adv.oki.asap') : B('adv.oki.wait', [x.r.delay])) + '</td>' +
       '<td class="inp">' + B('adv.oki.active-of', [x.r.k, x.A.n]) + (x.A.multi ? '<br><span class="small muted">' + B('adv.oki.multi') + '</span>' : '') + '</td>' +
-      '<td class="inp">' + (x.blk == null ? '<span class="muted">' + B('mu.no-data') + '</span>' : fmtAdv(x.blk)) + '</td><td class="inp">' + (x.hit == null ? fmtCell(x.m[7]) : fmtAdv(x.hit)) + '</td>' +
+      '<td class="inp">' + (x.blk == null ? '<span class="muted">' + B('mu.no-data') + '</span>' : fmtAdv(x.blk)) + '</td><td class="inp">' + okiHitCell(x.m[7], x.r.k) + '</td>' +
       '<td class="inp">' + (x.stuck == null ? '<span class="muted">' + B('mu.no-data') + '</span>' : x.stuck + 'f' +
         (rev ? '<br><span class="small adv-' + safeMeaty(x.stuck, rev) + '">' + B('adv.oki.' + safeMeaty(x.stuck, rev), [rev]) + '</span>' : '')) + '</td></tr>';
   });

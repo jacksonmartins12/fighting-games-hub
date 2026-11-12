@@ -119,8 +119,18 @@ await test('character sheets: meaties after each knockdown (okiSheet)', async pa
       if (x.m[3] !== 'n' || !(first <= g.n + 1 && g.n + 1 <= first + A - 1) || x.k !== g.n + 2 - first) bad.push(slug + ' +' + g.n + ' ' + x.m[0]);
       if (x.blk != null && x.blk !== advNum(x.m[8]) + x.k - 1) bad.push(slug + ' ' + x.m[0] + ' block');
     }))));
-    return { test, bad: bad.slice(0, 5), n };
+    // a knockdown that isn't the leading on-hit value is conditional: the calculator keeps it, the sheet leaves it out
+    const axe = okiKnockdowns('ryu').filter(k => k.m[0] === 'Axe Kick').map(k => [k.n, k.cond]);
+    const inSheet = okiSheet('ryu').some(g => g.kds.some(k => k.m[0] === 'Axe Kick'));
+    const parsed = [okiKnockdowns('blanka').filter(k => k.m[0] === 'OD Vertical Rolling Attack').map(k => k.n), okiKnockdowns('ingrid').filter(k => k.m[0] === 'Shining Sun').map(k => k.n)];
+    const txt = h => { const d = document.createElement('div'); d.innerHTML = h; return d.textContent.replace('−', '-'); };
+    const hitCells = [txt(okiHitCell('KD +40', 2)), txt(okiHitCell('HKD +14', 3)), txt(okiHitCell(1, 3)), txt(okiHitCell('KD +23*38', 2))];
+    return { test, bad: bad.slice(0, 5), n, axe, inSheet, parsed, hitCells };
   });
+  eq(r.axe, [[14, true]], 'Ryu Axe Kick "0 (KD +14)" is conditional');
+  eq(r.hitCells, ['KD +41', 'HKD +16', '+3', 'KD +23*38'], 'hitting on a later active frame adds k - 1 to the knockdown too');
+  eq(r.inSheet, false, 'conditional knockdowns stay out of the sheet');
+  eq(r.parsed, [[28], [12, 17, 20]], '"KD + 28" and "HKD +12/17/20" are read');
   eq(r.test, [3, -4, true], 'Akuma forward throw > dash > Crouch MK');
   eq(r.bad, [], 'meaties that do not cover frame N + 1');
   ok(r.n > 500, 'the sheets list meaties for the roster (' + r.n + ')');
