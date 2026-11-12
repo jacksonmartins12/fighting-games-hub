@@ -102,6 +102,29 @@ await test('decisions: breakeven = loss / (gain + loss) (breakeven)', async page
   const r = await page.evaluate(() => { const a = breakeven(2000, 1000, 0.5), b = breakeven(1600, 3000, 0.65); return [Math.round(a.need * 1000) / 10, a.ev, Math.round(b.need * 1000) / 10, Math.round(b.ev)]; });
   eq(r, [33.3, 500, 65.2, -10], 'breakeven');
 });
+await test('character sheets: meaties after each knockdown (okiSheet)', async page => {
+  await open(page);
+  const r = await page.evaluate(async () => {
+    await needChar('akuma');
+    // the in-game test of 2026-11-11: forward throw (KD +28), one dash, Crouch MK hits on its 3rd active frame, -4 on block
+    const g = okiSheet('akuma').find(x => x.n === 28), e = g && g.cols[1].find(x => x.m[0] === 'Crouch MK');
+    const test = e ? [e.k, e.blk, g.kds.some(k => k.m[1] === 'LPLK')] : null;
+    // every listed meaty, for every fighter: pressed on the first free frame, its active window covers frame N + 1
+    const slugs = rosterList().map(c => c.slug); await Promise.all(slugs.map(needChar));
+    const bad = [];
+    let n = 0;
+    slugs.forEach(slug => okiSheet(slug).forEach(g => g.cols.forEach((c, d) => (c || []).forEach(x => {
+      n++;
+      const S = suEff(x.m[4]), A = advActive(x.m[5]).n, spent = g.spent[d], first = spent + S;
+      if (x.m[3] !== 'n' || !(first <= g.n + 1 && g.n + 1 <= first + A - 1) || x.k !== g.n + 2 - first) bad.push(slug + ' +' + g.n + ' ' + x.m[0]);
+      if (x.blk != null && x.blk !== advNum(x.m[8]) + x.k - 1) bad.push(slug + ' ' + x.m[0] + ' block');
+    }))));
+    return { test, bad: bad.slice(0, 5), n };
+  });
+  eq(r.test, [3, -4, true], 'Akuma forward throw > dash > Crouch MK');
+  eq(r.bad, [], 'meaties that do not cover frame N + 1');
+  ok(r.n > 500, 'the sheets list meaties for the roster (' + r.n + ')');
+});
 await test('game theory: the solver finds known equilibria (gtSolve, gtLoop, gtHabits)', async page => {
   await open(page);
   const r = await page.evaluate(() => {

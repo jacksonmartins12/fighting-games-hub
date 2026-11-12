@@ -10,7 +10,7 @@ A bilingual (English / Português do Brasil) study guide for fighting games, wit
 - **Avançado:** como achar, medir, calcular e testar sozinho (frame data, okizeme, pressão, decisões e teoria dos jogos), com uma calculadora de okizeme, um verificador de sequências, uma calculadora de risco e um resolvedor de matrizes de payoff (equilíbrio de soma zero, loops e exploração de hábitos).
 - **O Treino:** planos de treino, um plano de 30 dias, exercícios de lab, autodiagnóstico, erros comuns, um tracker de progresso e uma ficha de revisão de replay.
 - **O Arquivo:** famílias de jogos de luta (2D, anime, tag, 3D), jogos 3D, mapa visual, estudo de caso, glossário com 150+ termos e recursos.
-- **Street Fighter 6:** Sistema Drive, ranked, matchups, guias dos 32 personagens, uma calculadora de punish, flashcards de punish e uma ferramenta de matchup (link direto: `#matchup/ryu/ken`).
+- **Street Fighter 6:** Sistema Drive, ranked, matchups, guias dos 32 personagens (cada um com os meaties por knockdown calculados), uma calculadora de punish, flashcards de punish e uma ferramenta de matchup (link direto: `#matchup/ryu/ken`).
 - **Busca:** uma busca única para capítulos, personagens, golpes e glossário (tecla `/`).
 
 ## Como usar
@@ -35,7 +35,7 @@ Acesse a versão publicada no GitHub Pages ou abra `index.html` no navegador. O 
 | `data/chars/<personagem>.js` | Guia e frame data de cada personagem. Só é baixado quando alguém abre o personagem. |
 | `data/plan30.js` | Os 30 dias do plano de treino. |
 | `data/moves-index.js` | Nomes e comandos de todos os golpes, para a busca. **Gerado pelo `build.py`.** |
-| `assets/css/hub.css`, `assets/js/*.js` | Visual e comportamento (navegação, quizzes, tracker, guias, calculadora de punish, resolvedor de matrizes em `games.js`). |
+| `assets/css/hub.css`, `assets/js/*.js` | Visual e comportamento (navegação, quizzes, tracker, guias, calculadora de punish, resolvedor de matrizes em `games.js`, folhas de oki de cada personagem em `setups.js`). |
 | `img/` | Imagens. |
 | `sw.js`, `manifest.webmanifest` | Fazem o hub abrir sem internet e ser instalável no celular. O `sw.js` é **gerado pelo `build.py`** a partir de `src/sw.template.js`. |
 
@@ -76,7 +76,7 @@ npx playwright install chromium
 npm test
 ```
 
-O `tests/run.mjs` sobe um servidor local, abre o site num navegador e confere as fórmulas (meaty, meaty seguro, safe jump, punish, gaps, breakeven, scaling, equilíbrios do resolvedor de matrizes), a integridade dos 32 personagens, a troca de idioma, a busca, a ferramenta de matchup, o buscador de punish, a navegação e a largura da página em celular, tablet e desktop. O GitHub Actions roda a validação, o build e os testes em todo push.
+O `tests/run.mjs` sobe um servidor local, abre o site num navegador e confere as fórmulas (meaty, meaty seguro, safe jump, punish, gaps, breakeven, scaling, equilíbrios do resolvedor de matrizes, folhas de oki dos 32 personagens), a integridade dos 32 personagens, a troca de idioma, a busca, a ferramenta de matchup, o buscador de punish, a navegação e a largura da página em celular, tablet e desktop. O GitHub Actions roda a validação, o build e os testes em todo push.
 
 ## Fontes e créditos
 

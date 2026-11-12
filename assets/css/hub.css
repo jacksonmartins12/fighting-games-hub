@@ -1105,6 +1105,19 @@ h3 .sf6-tag { align-self: center; }
 .gt-bar-t span { display: block; height: 100%; background: var(--tone); }
 .gt-bar b { text-align: right; font-variant-numeric: tabular-nums; }
 .gt-notes { margin: 6px 0 14px; padding-left: 1.2em; }
+.setups-body h5 { margin: 18px 0 6px; font-size: 1.02rem; }
+.setups-body h6 { margin: 14px 0 6px; font-size: 0.92rem; }
+.setups-block { padding: 10px 0 8px; border-top: 1px solid var(--line-strong); }
+.setups-head { margin: 0 0 6px; max-width: none; }
+.setups-head b.inp { font-size: 1.02rem; color: var(--tone); }
+.setups-row { display: grid; grid-template-columns: minmax(0, 9.5em) 1fr; gap: 4px 12px; margin: 2px 0 6px; }
+.setups-lbl { font: 500 0.72rem/1.6 var(--mono); letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-soft); padding-top: 3px; }
+.setups-list { margin: 0; padding: 0; list-style: none; }
+.setups-list li { margin: 0 0 4px; }
+.setups-facts { font-size: 0.86rem; color: var(--ink-soft); }
+.setups-nexts { margin: 0; max-width: none; }
+@media (max-width: 520px) { .setups-row { grid-template-columns: 1fr; } }
+.setups-next { display: inline-block; margin: 0 10px 4px 0; white-space: nowrap; }
 .gt-notes li { margin: 3px 0; }
 .gt-tool .tr-grid.gt-counts { grid-template-columns: repeat(auto-fit, minmax(min(100%, 140px), 1fr)); margin-top: 6px; }
 @media (max-width: 520px) { .gt-matrix input.gt-cell { width: 5.2em; } .gt-matrix input.gt-name { min-width: 6.5em; } }
