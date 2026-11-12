@@ -154,7 +154,7 @@ var GT_PRESETS = {
   oki: {
     rows: [{ en: 'Meaty strike', pt: 'Golpe meaty' }, { en: 'Throw', pt: 'Throw' }, { en: 'Shimmy', pt: 'Shimmy' }, { en: 'Block and bait', pt: 'Defender e esperar' }],
     cols: [{ en: 'Block', pt: 'Defender' }, { en: 'Tech', pt: 'Tech' }, { en: 'Fast button', pt: 'Botão rápido' }, { en: 'OD Shoryuken', pt: 'OD Shoryuken' }],
-    A: [[0, 1800, 1800, -1600], [1200, 0, -1000, -1600], [0, 2500, 1500, -1600], [0, 0, 0, 3000]],
+    A: [[0, 1800, 1800, -1600], [1200, 0, -1000, -1600], [0, 2500, 1500, -1600], [0, -1200, 0, 3000]],
     R: [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]], counts: [5, 3, 1, 1]
   },
   nobait: {

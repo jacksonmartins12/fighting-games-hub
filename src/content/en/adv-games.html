@@ -88,22 +88,22 @@
 
 <h3 id="gt-oki">Worked Example: Oki With Four Options</h3>
 
-<p>Load "Oki: 4 options against 4 answers". Your options are a meaty strike, a throw, a shimmy, and blocking to bait the reversal; theirs are block, tech, a fast button and OD Shoryuken. The relationships follow the hub's <a href="#adv-defense-table">table of defensive options</a>: the fast button beats throws and loses to meaties and shimmies; the reversal beats everything but the bait. Damage that comes from this hub's tables is Ryu's: 1,200 for the throw and 1,600 for OD Shoryuken. The punish on a blocked OD Shoryuken uses the same rough 3,000 as <a href="#adv-defense-bets">Defense Is a Bet Too</a>. The rest (1,800 for a Counter Hit meaty combo, 2,500 for a Punish Counter after a shimmy, 1,500 for whiff-punishing a button, 1,000 for a button that beats your throw) are example values.</p>
+<p>Load "Oki: 4 options against 4 answers". Your options are a meaty strike, a throw, a shimmy, and blocking to bait the reversal; theirs are block, tech, a fast button and OD Shoryuken. The relationships follow the hub's <a href="#adv-defense-table">table of defensive options</a>: the fast button beats throws and loses to meaties and shimmies; the reversal beats everything but the bait. Teching is pressing throw, so against an attacker who stands and blocks, the defender's throw comes out and grabs them. The example is a Ryu mirror, and the damage that comes from this hub's tables is Ryu's: 1,200 for either throw and 1,600 for OD Shoryuken. The punish on a blocked OD Shoryuken uses the same rough 3,000 as <a href="#adv-defense-bets">Defense Is a Bet Too</a>. The rest (1,800 for a Counter Hit meaty combo, 2,500 for a Punish Counter after a shimmy, 1,500 for whiff-punishing a button, 1,000 for a button that beats your throw) are example values.</p>
 
 <div class="table-wrap"><table>
     <tr><th>You ↓ · They →</th><th>Block</th><th>Tech</th><th>Fast button</th><th>OD Shoryuken</th></tr>
     <tr><td><strong>Meaty strike</strong></td><td>0</td><td>1,800</td><td>1,800</td><td>−1,600</td></tr>
     <tr><td><strong>Throw</strong></td><td>1,200</td><td>0</td><td>−1,000</td><td>−1,600</td></tr>
     <tr><td><strong>Shimmy</strong></td><td>0</td><td>2,500</td><td>1,500</td><td>−1,600</td></tr>
-    <tr><td><strong>Block and bait</strong></td><td>0</td><td>0</td><td>0</td><td>3,000</td></tr>
+    <tr><td><strong>Block and bait</strong></td><td>0</td><td>−1,200</td><td>0</td><td>3,000</td></tr>
 </table></div>
 
-<p>The solution: the situation is worth about <strong>315</strong> per knockdown. Your optimal mix is about 32% meaty, 26% throw, 42% bait and <strong>0% shimmy</strong>; the defender's is about 63% block, 27% fast button, 10.5% reversal and <strong>0% tech</strong>. Four things are worth reading out of it:</p>
+<p>The solution: the situation is worth about <strong>295</strong> per knockdown. Your optimal mix is about 9% meaty, 25% throw, 25% shimmy and 41% bait; the defender's is about 59% block, 8% tech, 20% fast button and 13% reversal. Four things are worth reading out of it:</p>
 <ul>
-    <li><strong>The bait is the most frequent option.</strong> It's the only row that beats the reversal, and the reversal is what holds the defender's value up. Even used only one time in ten, the reversal forces you to wait almost half the time.</li>
-    <li><strong>Tech is weakly dominated by the fast button</strong> with these numbers: the button also beats the throw, and loses less to the shimmy (1,500 against 2,500). An equilibrium defender never techs here.</li>
-    <li><strong>That's why the shimmy drops out.</strong> The shimmy's best cell is against tech, which the equilibrium defender never uses; against q* it earns about 235, less than the 315 of the other three, so it's left out.</li>
-    <li><strong>The result depends on your numbers.</strong> If whiff-punishing the button were worth as much as the Punish Counter (2,500 instead of 1,500), the shimmy would enter at about 27% and the meaty would drop out, with the value rising to about 366. If the punish after the bait were only 2,000, you'd bait 52% of the time and the value would fall to about 261. Before trusting a mix, change each estimate you're unsure of and watch whether the answer changes.</li>
+    <li><strong>Every option on both sides is used.</strong> There's no saddle point and no dominated option: each option beats something the others don't. So every option you use earns exactly 295 against their mix, and every answer they use gives up exactly 295 against yours.</li>
+    <li><strong>The bait is your most frequent option.</strong> It's the only row that beats the reversal, and the reversal is what holds the defender's value up. Used only about one time in eight, the reversal still makes you wait about 41% of the time.</li>
+    <li><strong>The meaty is your rarest option.</strong> The shimmy covers the same two answers (tech and fast button) and pays more against the tech; the meaty only stays in the mix because it pays more against the button.</li>
+    <li><strong>The result depends on your numbers.</strong> If a blocked meaty is worth 400 to you because you keep the turn, the meaty jumps to about 46% and the shimmy drops out, with the value rising to about 328. If the punish after the bait is only 2,000, you bait about half the time, the meaty drops out and the value falls to about 208. Before trusting a mix, change each estimate you're unsure of and watch whether the answer changes.</li>
 </ul>
 
 <h3 id="gt-continuation">The Payoff Isn't Just Damage: Continuation Values</h3>
@@ -131,15 +131,15 @@
 
 <div class="card">
     <h4>Example: the ten wakeups</h4>
-    <p><a href="#adv-habits">Reading Habits as Percentages</a> counted ten wakeups: 5 blocks, 3 techs, one button and one reversal. In the four-option oki, with the estimate described in the next section (43%, 29%, 14%, 14%), each option earns: meaty about 543, throw 143, shimmy 700, bait 429. The best response is the shimmy, the option the equilibrium never uses, because this player techs far more than an equilibrium defender would.</p>
+    <p><a href="#adv-habits">Reading Habits as Percentages</a> counted ten wakeups: 5 blocks, 3 techs, one button and one reversal. In the four-option oki, with the estimate described in the next section (43%, 29%, 14%, 14%), each option earns: meaty about 543, throw 143, shimmy 700, bait 86 (this player techs often, and every tech throws you while you wait). The best response is the shimmy, because this player techs far more than an equilibrium defender would (about 29% against 8%).</p>
     <div class="table-wrap"><table>
         <tr><th>Weight moved to the shimmy</th><th>Against these habits</th><th>If they adapt perfectly</th></tr>
-        <tr><td>0% (the equilibrium mix)</td><td>390</td><td>315</td></tr>
-        <tr><td>25%</td><td>468</td><td>−164</td></tr>
-        <tr><td>50%</td><td>545</td><td>−642</td></tr>
+        <tr><td>0% (the equilibrium mix)</td><td>295</td><td>295</td></tr>
+        <tr><td>25%</td><td>396</td><td>−179</td></tr>
+        <tr><td>50%</td><td>498</td><td>−652</td></tr>
         <tr><td>100% (pure shimmy)</td><td>700</td><td>−1,600</td></tr>
     </table></div>
-    <p>Both columns are straight lines in the weight: every point of extra profit against the habit is paid for with exposure if they adapt. The equilibrium mix already earns 390 against this player, more than its guaranteed 315, without any exposure at all.</p>
+    <p>Look at the first row: the equilibrium mix earns exactly 295 against this player, the same as against anyone. When the defender's equilibrium uses every answer, each answer gives up exactly v against p*, so p* earns v whatever they do. The equilibrium protects you, but it never profits from a habit; profit only comes from deviating. In this example both columns change in a straight line: every point of extra profit against the habit is paid for with exposure if they adapt.</p>
 </div>
 
 <p>Two disciplined ways to exploit:</p>
