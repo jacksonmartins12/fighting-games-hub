@@ -102,6 +102,37 @@ await test('decisions: breakeven = loss / (gain + loss) (breakeven)', async page
   const r = await page.evaluate(() => { const a = breakeven(2000, 1000, 0.5), b = breakeven(1600, 3000, 0.65); return [Math.round(a.need * 1000) / 10, a.ev, Math.round(b.need * 1000) / 10, Math.round(b.ev)]; });
   eq(r, [33.3, 500, 65.2, -10], 'breakeven');
 });
+await test('game theory: the solver finds known equilibria (gtSolve, gtLoop, gtHabits)', async page => {
+  await open(page);
+  const r = await page.evaluate(() => {
+    const R = x => Math.round(x * 1000) / 1000, S = s => [R(s.v), s.p.map(R), s.q.map(R)];
+    const rps = gtSolve([[0, -1, 1], [1, 0, -1], [-1, 1, 0]]);
+    const sw = gtSolve([[0, 1800], [1200, 0]]);                      // 2 x 2 formula: p = 0.4, q = 0.6, v = 720
+    const saddle = gtSolve([[3, 5], [1, 2]]);
+    const loop = gtLoop([[0, 1800], [1200, 0]], [[0, 0], [1, 0]]);   // V^2 + 1200 V - 2,160,000 = 0
+    const stuck = gtLoop([[100, 100], [100, 100]], [[1, 1], [1, 1]]);
+    // random games: the two guarantees meet at v (min over columns of pA = max over rows of Aq = v)
+    let gap = 0, seed = 7; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+    for (let t = 0; t < 400; t++) {
+      const m = 2 + Math.floor(rnd() * 4), n = 2 + Math.floor(rnd() * 4);
+      const A = [...Array(m)].map(() => [...Array(n)].map(() => Math.round((rnd() * 2 - 1) * 4000)));
+      const s = gtSolve(A);
+      gap = Math.max(gap, Math.abs(Math.min(...gtColVals(A, s.p)) - s.v), Math.abs(Math.max(...gtRowVals(A, s.q)) - s.v));
+    }
+    const h = gtHabits([5, 3, 1, 1]);
+    return { rps: S(rps), sw: S(sw), saddle: [S(saddle), gtSaddle([[3, 5], [1, 2]]).pure], loop: [R(loop.V), loop.converged, R(loop.sol.p[1])],
+      root: R((-1200 + Math.sqrt(1200 * 1200 + 4 * 2160000)) / 2), stuck: stuck.converged, gap: gap < 1e-6,
+      dom: gtDominated([[2, -1], [1, -2], [-1, 2]]).rows, habits: [h.est.map(R), h.ci[0].map(R)] };
+  });
+  eq(r.rps, [0, [0.333, 0.333, 0.333], [0.333, 0.333, 0.333]], 'rock-paper-scissors');
+  eq(r.sw, [720, [0.4, 0.6], [0.6, 0.4]], 'strike or throw');
+  eq(r.saddle, [[3, [1, 0], [1, 0]], true], 'saddle point');
+  eq(r.loop, [r.root, true, 0.451], 'throw loop value and mix');
+  eq(r.stuck, false, 'a loop with no way out is reported, not given a value');
+  eq(r.gap, true, 'random games: maximin and minimax meet at v');
+  eq(r.dom, [{ which: 1, by: 0, strict: true }], 'strict dominance');
+  eq(r.habits, [[0.429, 0.286, 0.143, 0.143], [0.237, 0.763]], 'Laplace estimate and Wilson interval');
+});
 await test('matchup: the side with the edge (muBetter)', async page => {
   await open(page);
   const r = await page.evaluate(() => [muBetter('11000', '10000', 1), muBetter('22', '19', -1), muBetter('19', '19', -1), muBetter('OD x', 'y', 1), muBetter('+43', '+46', -1)]);
