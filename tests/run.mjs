@@ -139,12 +139,12 @@ await test('character sheets: block strings and frame traps (pressureSheet)', as
       x.list.forEach(y => { if (y.gap !== suEff(y.m[4]) - x.a || y.gap > 3 || y.g !== (y.gap <= 0 ? 'true' : 'trap')) bad.push(slug + ' ' + x.m[0] + ' > ' + y.m[0]); });
     })); });
     // every guide renders the section
-    const missing = slugs.filter(slug => !/class="ft-details setups"/.test(charHTML(CHARS[slug])));
+    const missing = slugs.filter(slug => { const h = charHTML(CHARS[slug]); return !/class="ft-details setups"/.test(h) || !/class="card warning setups-warn"/.test(h) || !/timing, not range/.test(h) || !/o timing, não o alcance/.test(h); });
     return { mp: [mp.a, mp.base, pick('Stand LP'), pick('Crouch MP')], bad: bad.slice(0, 5), missing };
   });
   eq(r.mp, [3, -1, [1, 'trap'], [3, 'trap']], 'Ryu Stand MP out of Drive Rush');
   eq(r.bad, [], 'inconsistent pressure entries');
-  eq(r.missing, [], 'guides without the oki and pressure section');
+  eq(r.missing, [], 'guides without the oki and pressure section or its timing-not-range warning');
 });
 await test('game theory: the solver finds known equilibria (gtSolve, gtLoop, gtHabits)', async page => {
   await open(page);

@@ -501,6 +501,7 @@
   "gt.blend-ev": "Contra os hábitos dele",
   "gt.blend-worst": "Se ele se adaptar perfeitamente",
   "gt.blend-note": "Cada linha passa uma parte do seu mix equilibrado para a melhor opção. Quanto mais você explora, mais ganha se os hábitos se mantiverem e mais perde se ele se adaptar.",
+  "setups.warn": "<strong>Leia antes: estas listas conferem o timing, não o alcance.</strong> O frame data não tem valores de alcance nem de pushback. Um meaty listado aqui pode não alcançar depois do dash, e um link listado como frame trap pode errar se o golpe defendido te empurrou para longe demais. Os valores de knockdown são do golpe isolado: depois de um combo ou de um juggle a vantagem pode ser outra, e depois de um back rise o oponente fica mais longe. Trate cada linha como uma candidata e confirme no training mode, com o frame meter ligado, antes de usar numa partida.",
   "setups.title": "Oki e pressão, calculados",
   "setups.summary": "meaties depois de cada knockdown, block strings e frame traps",
   "setups.oki": "Meaties depois de cada knockdown",

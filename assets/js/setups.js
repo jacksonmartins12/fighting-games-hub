@@ -53,7 +53,8 @@ function setupMoveLabel(m) { return '<b class="inp">' + esc(m[1] || m[0]) + '</b
 function setupsHTML(slug) {
   if (!FRAMES[slug]) return '';
   var st = FRAMES[slug].s || {}, fd = advNum(st.fDash), oki = okiSheet(slug), pr = pressureSheet(slug);
-  var h = '<details class="ft-details setups"><summary><span class="ft-sum-t">' + B('setups.title') + '</span> <span class="muted small">' + B('setups.summary') + '</span></summary><div class="setups-body">';
+  var h = '<details class="ft-details setups"><summary><span class="ft-sum-t">' + B('setups.title') + '</span> <span class="muted small">' + B('setups.summary') + '</span></summary><div class="setups-body">' +
+    '<div class="card warning setups-warn"><p>' + B('setups.warn') + '</p></div>';
   // --- oki ---
   h += '<h5>' + B('setups.oki') + '</h5><p class="small">' + B('setups.oki-how', [fd == null ? '?' : fd]) + '</p>';
   var shown = oki.filter(function (g) { return g.cols.some(function (c) { return c && c.length; }); });

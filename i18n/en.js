@@ -501,6 +501,7 @@
   "gt.blend-ev": "Against their habits",
   "gt.blend-worst": "If they adapt perfectly",
   "gt.blend-note": "Each row moves part of your balanced mix onto the best option. The more you exploit, the more you earn if the habits hold and the more you lose if they adapt.",
+  "setups.warn": "<strong>Read this first: these lists check timing, not range.</strong> The frame data has no range or pushback values. A meaty listed here may not reach after the dash, and a link listed as a frame trap may whiff if the blocked move pushed you too far away. Knockdown values are for the move on its own: after a combo or a juggle the advantage can be different, and after a back rise the opponent lands further away. Treat each line as a candidate and confirm it in training mode, with the frame meter on, before using it in a match.",
   "setups.title": "Oki and pressure, calculated",
   "setups.summary": "meaties after each knockdown, block strings and frame traps",
   "setups.oki": "Meaties after each knockdown",
