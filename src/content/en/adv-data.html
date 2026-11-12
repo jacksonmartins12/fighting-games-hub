@@ -39,6 +39,7 @@
 <p>What this does and doesn't prove: the tables are a faithful copy of FAT, and Capcom agreed with all but 65 of the values compared, and those 65 now follow Capcom. Moves Capcom's page doesn't list in a comparable way still rest on FAT alone. Treat any single number that decides something important as a hypothesis and confirm it with the frame meter.</p>
 <h4>After a balance patch</h4>
 <p>The hub keeps a patch log (<code>data/patches.js</code>) with the old and new value of every change, its source and date, so old numbers are never mistaken for current ones. The script <code>tools/fat_sync.py</code> lists every difference between the hub and a newer FAT file before anything changes, and <code>tools/validate.py</code> checks the data on every build: missing fields, impossible values, duplicate moves and flags that point at moves that don't exist.</p>
+<p>The scripts named in this chapter (<code>build.py</code>, <code>tools/validate.py</code>, <code>tools/fat_sync.py</code>, <code>tools/capcom_compare.py</code> and <code>tools/capcom_add.py</code>), the tests and the full audit log (<code>docs/AUDITORIA.md</code>, in Portuguese) are in the hub's public repository: <a href="https://github.com/jacksonmartins12/fighting-games-hub" target="_blank" rel="noopener">github.com/jacksonmartins12/fighting-games-hub</a>. A copy of the site alone doesn't include them; the site doesn't need them to work, but you need them to repeat the checks.</p>
 
 <h3 id="adv-notation">Reading the Notation</h3>
 

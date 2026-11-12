@@ -39,6 +39,7 @@
 <p>O que isso prova e o que não prova: as tabelas são uma cópia fiel do FAT, e a Capcom concordou com todos os valores comparados menos 65, e esses 65 agora seguem a Capcom. Os golpes que a página da Capcom não lista de forma comparável continuam apoiados só no FAT. Trate qualquer número que decide algo importante como hipótese e confirme com o frame meter.</p>
 <h4>Depois de um balance patch</h4>
 <p>O hub guarda um histórico de patches (<code>data/patches.js</code>) com o valor antigo e o novo de cada mudança, a fonte e a data, para que números antigos nunca sejam confundidos com os atuais. O script <code>tools/fat_sync.py</code> lista todas as diferenças entre o hub e um arquivo do FAT mais novo antes de mudar qualquer coisa, e o <code>tools/validate.py</code> confere os dados a cada build: campos faltando, valores impossíveis, golpes duplicados e marcações que apontam para golpes que não existem.</p>
+<p>Os scripts citados neste capítulo (<code>build.py</code>, <code>tools/validate.py</code>, <code>tools/fat_sync.py</code>, <code>tools/capcom_compare.py</code> e <code>tools/capcom_add.py</code>), os testes e o registro completo da auditoria (<code>docs/AUDITORIA.md</code>) estão no repositório público do hub: <a href="https://github.com/jacksonmartins12/fighting-games-hub" target="_blank" rel="noopener">github.com/jacksonmartins12/fighting-games-hub</a>. Uma cópia só do site não os inclui; o site não precisa deles para funcionar, mas eles são necessários para refazer as conferências.</p>
 
 <h3 id="adv-notation-pt">Lendo a Notação</h3>
 
