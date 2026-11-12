@@ -336,3 +336,16 @@ Feito pelo autor no training mode, com Akuma contra Ken e o frame meter ligado. 
 **Conclusão:** a contagem da fórmula do meaty está certa. O oponente derrubado com KD +N pode ser acertado a partir do frame N + 1, que é o primeiro frame em que ele pode agir, e não antes. A calculadora de oki não muda.
 
 **Meaty seguro:** a regra do hub (preso + 2 ≤ R) parte exatamente dessa suposição, e a regra prática do dood.gg (preso + 1 ≤ R) só coincidiria com ela se o oponente pudesse ser acertado um frame antes de agir, o que o teste descarta. Mesmo assim, a calculadora continua marcando o caso de um frame como "dúvida" até um meaty seguro ser testado direto contra um reversal gravado. O teste foi registrado em `data/sources.js` (`tested`), e os capítulos em inglês e português foram atualizados.
+
+## 16. Revisão de uma auditoria externa (12/11/2026)
+
+Uma auditoria externa, feita sobre um ZIP do site, apontou quatro problemas. Cada um foi conferido contra o repositório antes de qualquer mudança.
+
+**O pacote analisado.** O ZIP tinha os mesmos arquivos da pré-visualização no Claude (101 arquivos): sem `sw.js`, `manifest.webmanifest`, `build.py`, `tools/`, `tests/`, `docs/` e `README.md`. Esses arquivos existem no repositório e no site publicado.
+
+1. **Service worker ausente: não procede para o site.** O `sw.js` está na raiz, é gerado pelo `build.py`, e a verificação do GitHub falha se ele estiver desatualizado. Dentro do Claude o registro nem é tentado (`!window.claude`). Fora dele, sem o arquivo, o registro falha em silêncio de propósito: o aviso "Salvo para uso offline" só aparece quando a cópia offline está pronta, então o site não promete nada que não cumpre. Nada foi alterado.
+2. **Contagens da comparação com a Capcom: procede em parte.** A soma do auditor confere com o `data/patches.js`: 46 valores em 41 golpes na primeira passada, 19 em outros 14 na segunda, 65 valores em 55 golpes no total. As duas passadas são da mesma comparação (mesmas páginas, mesmo dia), e o "nenhuma diferença nova" se referia à terceira etapa (os 50 golpes com outro nome, seção 13), não aos 19. O que estava errado: a nota do FAT em `data/sources.js` ainda dizia 46 em 41, e o capítulo Ler e Medir dava 65 sem dizer que vinham de duas passadas nem que eram 55 golpes. Os dois agora trazem a divisão e o total, e um teste liga essas contagens ao `data/patches.js`.
+3. **Ferramentas fora do pacote: não procede para o repositório.** Todas estão no repositório e rodam na verificação do GitHub. O capítulo, porém, citava os arquivos sem dizer onde encontrá-los. Agora um parágrafo (EN e PT) aponta o repositório público e diz que o site funciona sem eles.
+4. **Texto do Arjun: procede.** O aviso do roster dizia que o Arjun usava só os dados do FAT, e a nota de dados dele dizia que toda a frame data vinha do FAT. Os quatro normais principais do guia (5LP 4/+1/+4, 5MP 11/−2/+4, 2HP 10/−5/−1, 2HK 14/−11/derruba), o Cruel Shoulder (fraco/médio −4, forte +1 no block) e o Indomitable Defense (3f) batem com a página da Capcom salva em 11/11/2026, e o startup do Justice Beyond já seguia a Capcom (11). Os dois textos foram corrigidos e dizem que os combos não foram testados no jogo. Um teste confere que o guia e a tabela dão os mesmos valores.
+
+Os 24 testes passam.
