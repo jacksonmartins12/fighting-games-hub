@@ -133,6 +133,42 @@ await test('game theory: the solver finds known equilibria (gtSolve, gtLoop, gtH
   eq(r.dom, [{ which: 1, by: 0, strict: true }], 'strict dominance');
   eq(r.habits, [[0.429, 0.286, 0.143, 0.143], [0.237, 0.763]], 'Laplace estimate and Wilson interval');
 });
+await test('game theory: the chapter quotes the solver, and the tool works in both languages', async page => {
+  await open(page, '#adv-games');
+  const r = await page.evaluate(() => {
+    const P = GT_PRESETS, R = x => Math.round(x * 10) / 10, s = gtSolve(P.oki.A), L = gtLoop(P.loop.A, P.loop.R);
+    const e = gtExploit(P.oki.A, s, gtHabits([5, 3, 1, 1]).est);
+    const swap = (A, i, j, v) => A.map((row, a) => row.map((x, b) => a === i && b === j ? v : x));
+    const s2 = gtSolve(swap(P.oki.A, 2, 2, 2500)), s3 = gtSolve(swap(P.oki.A, 3, 3, 2000));
+    return { oki: [Math.round(s.v), s.p.map(x => Math.round(x * 100)), s.q.map(x => R(x * 100))], shimmy: Math.round(gtRowVals(P.oki.A, s.q)[2]),
+      loop: [Math.round(L.V), Math.round(L.sol.p[1] * 100), Math.round(L.sol.q[1] * 100), Math.round(L.M[1][0])],
+      blends: e.blends.map(b => [Math.round(b.ev), Math.round(b.worst)]), rows: e.rowVals.map(Math.round),
+      s2: [Math.round(s2.v), Math.round(s2.p[2] * 100), Math.round(s2.p[0] * 100)], s3: [Math.round(s3.v), Math.round(s3.p[3] * 100)],
+      nobait: [gtSolve(P.nobait.A).v, gtSaddle(P.nobait.A).pure],
+      widget: document.querySelector('.gt-out .adv-big b') && document.querySelector('.gt-out .adv-big b').textContent };
+  });
+  eq(r.oki, [315, [32, 26, 0, 42], [62.6, 0, 26.8, 10.5]], 'four-option oki');
+  eq(r.shimmy, 235, 'shimmy against the equilibrium');
+  eq(r.loop, [987, 45, 55, 2187], 'throw loop');
+  eq(r.blends, [[390, 315], [468, -164], [545, -642], [623, -1121], [700, -1600]], 'exploitation table');
+  eq(r.rows, [543, 143, 700, 429], 'each option against the ten wakeups');
+  eq(r.s2, [366, 27, 0], 'shimmy at 2,500 against the button');
+  eq(r.s3, [261, 52], 'punish of 2,000 after the bait');
+  eq(r.nobait, [-1600, true], 'no answer to the reversal');
+  eq(r.widget, '315', 'the tool shows the value');
+  // the numbers above appear in the chapter text in both languages
+  const html = await page.evaluate(() => document.body.innerHTML);
+  for (const s of ['about <strong>315</strong>', 'about 32% meaty, 26% throw, 42% bait', 'about 63% block, 27% fast button, 10.5% reversal', 'about 235', 'about 27%', 'about 366', 'bait 52%', 'about 261',
+    'V ≈ 987', '2,187', '(55% instead of 40%)', '(45% instead of 60%)', 'meaty about 543, throw 143, shimmy 700, bait 429', '<td>−164</td>', '<td>−642</td>', '<td>−1,600</td>',
+    'uns <strong>315</strong>', 'uns 32% de meaty, 26% de throw, 42% de isca', 'uns 63% de defesa, 27% de botão rápido, 10,5% de reversal', 'uns 235', 'uns 27%', 'uns 366', 'esperaria 52%', 'uns 261',
+    'V ≈ 987', '2.187', '(55% em vez de 40%)', '(45% em vez de 60%)', 'meaty uns 543, throw 143, shimmy 700, isca 429', '<td>−1.600</td>'])
+    ok(html.includes(s), 'chapter text is missing "' + s + '"');
+  // the tool reacts: a 2 x 2 preset, then the Portuguese interface
+  await page.selectOption('#gt-preset', 'sw2');
+  eq(await page.textContent('.gt-out .adv-big b'), '720', 'strike-or-throw preset');
+  await page.evaluate(() => setLang('pt'));
+  ok(/Ponto de sela|Sem ponto de sela/.test(await page.textContent('.gt-out')), 'Portuguese notes');
+});
 await test('matchup: the side with the edge (muBetter)', async page => {
   await open(page);
   const r = await page.evaluate(() => [muBetter('11000', '10000', 1), muBetter('22', '19', -1), muBetter('19', '19', -1), muBetter('OD x', 'y', 1), muBetter('+43', '+46', -1)]);

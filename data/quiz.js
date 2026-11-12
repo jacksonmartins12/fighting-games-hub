@@ -4023,6 +4023,153 @@
    }
   }
  ],
+ "adv-games": [
+  {
+   "q": {
+    "en": "In a payoff matrix, the maximin equals the minimax. What does that mean?",
+    "pt": "Numa matriz de payoffs, o maximin é igual ao minimax. O que isso quer dizer?"
+   },
+   "options": [
+    {
+     "en": "There is a saddle point: both sides should make the same choice every time",
+     "pt": "Há um ponto de sela: os dois lados devem fazer a mesma escolha toda vez"
+    },
+    {
+     "en": "Both sides should mix evenly between all their options",
+     "pt": "Os dois lados devem misturar igualmente todas as opções"
+    },
+    {
+     "en": "The situation is worth 0",
+     "pt": "A situação vale 0"
+    },
+    {
+     "en": "One option is strictly dominated",
+     "pt": "Uma opção é estritamente dominada"
+    }
+   ],
+   "answer": 0,
+   "why": {
+    "en": "When max-min equals min-max, the cell where they meet is the smallest in its row and the largest in its column, so neither side gains by deviating or by mixing.",
+    "pt": "Quando o max-min é igual ao min-max, a célula onde eles se encontram é a menor da linha e a maior da coluna, então nenhum lado ganha desviando ou misturando."
+   }
+  },
+  {
+   "q": {
+    "en": "Strike or throw: a blocked meaty is 0, a meaty that catches a tech is 1,800, a throw on a blocking player is 1,200 and a teched throw is 0. How often should you throw at the equilibrium?",
+    "pt": "Golpe ou throw: um meaty defendido vale 0, um meaty que pega um tech vale 1.800, um throw em quem defende vale 1.200 e um throw com tech vale 0. Com que frequência você deve dar throw no equilíbrio?"
+   },
+   "options": [
+    {
+     "en": "40%",
+     "pt": "40%"
+    },
+    {
+     "en": "50%",
+     "pt": "50%"
+    },
+    {
+     "en": "60%",
+     "pt": "60%"
+    },
+    {
+     "en": "Always: the throw is the safer option",
+     "pt": "Sempre: o throw é a opção mais segura"
+    }
+   ],
+   "answer": 2,
+   "why": {
+    "en": "With rows (0, 1,800) and (1,200, 0), D = −3,000 and the strike frequency is (0 − 1,200) / −3,000 = 40%, so you throw 60%. The value is 720.",
+    "pt": "Com as linhas (0, 1.800) e (1.200, 0), D = −3.000 e a frequência do golpe é (0 − 1.200) / −3.000 = 40%, então você dá throw em 60%. O valor é 720."
+   }
+  },
+  {
+   "q": {
+    "en": "Your throw starts leading to the same oki again (a throw loop). What happens to your equilibrium throw frequency in the strike-or-throw example?",
+    "pt": "O seu throw passa a levar ao mesmo oki de novo (um throw loop). O que acontece com a sua frequência de throw no equilíbrio do exemplo de golpe ou throw?"
+   },
+   "options": [
+    {
+     "en": "It goes up, because the throw is worth more",
+     "pt": "Sobe, porque o throw vale mais"
+    },
+    {
+     "en": "It goes down, from 60% to about 45%",
+     "pt": "Cai, de 60% para uns 45%"
+    },
+    {
+     "en": "It stays the same; only the value changes",
+     "pt": "Fica igual; só o valor muda"
+    },
+    {
+     "en": "It goes to 100%",
+     "pt": "Vai para 100%"
+    }
+   ],
+   "answer": 1,
+   "why": {
+    "en": "Your frequencies are set by the defender's payoffs. The throw now costs a blocking defender more, so they must tech more (about 55%), and your mix shifts toward the strike to keep their answers balanced.",
+    "pt": "As suas frequências são definidas pelos payoffs de quem defende. O throw agora custa mais a quem defende, então ele precisa dar mais tech (uns 55%), e o seu mix vai para o golpe para manter as respostas dele equilibradas."
+   }
+  },
+  {
+   "q": {
+    "en": "You saw an answer 1 time in 10 wakeups. With Laplace's rule across 4 possible answers, what is its estimated frequency?",
+    "pt": "Você viu uma resposta 1 vez em 10 wakeups. Com a regra de Laplace e 4 respostas possíveis, qual é a frequência estimada dela?"
+   },
+   "options": [
+    {
+     "en": "10%",
+     "pt": "10%"
+    },
+    {
+     "en": "About 14%",
+     "pt": "Uns 14%"
+    },
+    {
+     "en": "25%",
+     "pt": "25%"
+    },
+    {
+     "en": "About 9%",
+     "pt": "Uns 9%"
+    }
+   ],
+   "answer": 1,
+   "why": {
+    "en": "(n + 1) / (N + k) = (1 + 1) / (10 + 4) = 2/14, about 14%.",
+    "pt": "(n + 1) / (N + k) = (1 + 1) / (10 + 4) = 2/14, uns 14%."
+   }
+  },
+  {
+   "q": {
+    "en": "Moving more of your mix onto the best response to an opponent's habit does what?",
+    "pt": "Passar mais do seu mix para a melhor resposta ao hábito de um oponente faz o quê?"
+   },
+   "options": [
+    {
+     "en": "Raises your gain if the habit holds and lowers your worst case if they adapt",
+     "pt": "Aumenta o seu ganho se o hábito se mantiver e piora o seu pior caso se ele se adaptar"
+    },
+    {
+     "en": "Raises both your gain and your worst case",
+     "pt": "Aumenta o seu ganho e melhora o seu pior caso"
+    },
+    {
+     "en": "Changes nothing as long as the habit is real",
+     "pt": "Não muda nada enquanto o hábito for real"
+    },
+    {
+     "en": "Always lowers your average",
+     "pt": "Sempre baixa a sua média"
+    }
+   ],
+   "answer": 0,
+   "why": {
+    "en": "Both effects grow in a straight line with the weight you move: every extra point against the habit is paid for with exposure if they adapt.",
+    "pt": "Os dois efeitos crescem em linha reta com o peso que você passa: cada ponto extra contra o hábito é pago com exposição se ele se adaptar."
+   }
+  }
+ ],
  "adv-data": [
   {
    "q": {

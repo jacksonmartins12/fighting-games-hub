@@ -1,0 +1,207 @@
+
+<h2>Applied Game Theory</h2>
+
+<p class="scope-note"><span class="scope-badge">Universal</span><span>The theory is the same in any fighting game. The examples use Street Fighter 6 situations; damage taken from this hub's frame data is named as such, and every other number is an example value for you to replace with your own measurements.</span></p>
+
+<p><a href="#adv-decisions">Decisions by the Numbers</a> treated each option on its own: how often it must work to pay off. That's enough when the opponent's behavior is fixed. It isn't when the opponent is also choosing, and choosing against you. This chapter treats a situation the way game theory does: two players, each with a set of options, choosing at the same time, each trying to do best against the other. From that model come exact answers to questions players usually settle by feel: when you should always do the same thing, how often to use each option when you shouldn't, what a situation is worth, how loops change that, and how far you can exploit a habit before it costs you.</p>
+
+<p>The chapter is technical. The formulas are written out so you can check them, and the solver below does the arithmetic for any situation with up to five options on each side.</p>
+
+<h3 id="gt-matrix">The Situation as a Matrix</h3>
+
+<p>Pick a moment that repeats: your opponent wakes up next to you, you're plus after a blocked string, they're at round start. List your options as rows and theirs as columns. Each cell holds the <strong>payoff</strong>: what you gain when that row meets that column. Damage is the natural unit; what you gain, they lose, so a single number per cell is enough. Games like this are called <strong>zero-sum</strong>, and they're the case game theory solves most completely.</p>
+
+<div class="deep-dive">
+    <h4>Notation used in this chapter</h4>
+    <ul>
+        <li><strong>A</strong> is the payoff matrix: <strong>a<sub>ij</sub></strong> is what you (the row player) gain when you pick option i and the opponent picks answer j. You want it large; they want it small.</li>
+        <li>A <strong>mixed strategy</strong> is a list of frequencies. Yours is <strong>p</strong> = (p<sub>1</sub>, …, p<sub>m</sub>), theirs <strong>q</strong> = (q<sub>1</sub>, …, q<sub>n</sub>); each list is non-negative and adds up to 1. Picking one option every time (a pure strategy) is the special case with a single 1.</li>
+        <li>When both sides mix, your average gain is <strong>pᵀAq</strong> = Σ<sub>i</sub> Σ<sub>j</sub> p<sub>i</sub> a<sub>ij</sub> q<sub>j</sub>.</li>
+        <li>(Aq)<sub>i</sub> is what option i earns against their mix q; (pᵀA)<sub>j</sub> is what answer j gives up against your mix p.</li>
+    </ul>
+</div>
+
+<p>Two assumptions hide in that picture. The choices are <strong>simultaneous</strong>: neither side sees the other's choice in time to change their own. And the payoffs are <strong>known to both sides</strong>, at least roughly. When an option can be seen and answered on reaction, the first assumption fails, and <a href="#gt-reaction">Reaction Changes the Game</a> shows how to repair the model.</p>
+
+<h3 id="gt-saddle">Saddle Points: When Not to Mix</h3>
+
+<p>Start with the cautious reading of the matrix. For each of your options, look at its worst cell, the row minimum: that's what the option guarantees whatever they do. The best of those guarantees is your <strong>maximin</strong>. The defender does the same from their side: each column's maximum is the most that answer can cost them, and the smallest of those is their <strong>minimax</strong>.</p>
+
+<p class="formula">maximin = max<sub>i</sub> min<sub>j</sub> a<sub>ij</sub>  ≤  minimax = min<sub>j</sub> max<sub>i</sub> a<sub>ij</sub></p>
+
+<p>The inequality always holds. When the two are equal, the cell where they meet is a <strong>saddle point</strong>: the smallest in its row and the largest in its column. Then neither side can gain by deviating, mixing is pointless, and the correct play is the same every time.</p>
+
+<div class="card">
+    <h4>Example: oki with no answer to the reversal</h4>
+    <p>You have a meaty strike, a throw and a shimmy; the opponent can block, tech or use OD Shoryuken, which Ryu's table in this hub lists at 1,600 damage and fully invincible on frames 1–8. As the hub's <a href="#adv-defense-table">table of defensive options</a> says, the invincible reversal beats strikes, throws and shimmies alike: on wakeup the shimmy is still walking forward when it comes out. So the reversal's column is −1,600 in every row, the worst cell of every row and therefore the maximin, and it is also the column's maximum. It's a saddle point: the defender should reversal every time, and the situation is worth −1,600 to you. No mix of your three options changes that. Load "Oki with no answer to the reversal" in the solver to see it.</p>
+    <p>The fix isn't a better mix of the same options; it's a new row that beats the column. Blocking and waiting (the bait) does: the blocked OD Shoryuken is −40 and gets punished. The next example adds it.</p>
+</div>
+
+<h3 id="gt-dominance">Dominance</h3>
+
+<p>Option i is <strong>strictly dominated</strong> by option k when k does better against every answer: a<sub>kj</sub> &gt; a<sub>ij</sub> for all j. A strictly dominated option never appears in an optimal strategy, so you can delete it, and after deleting it other options may become dominated in turn (<strong>iterated elimination</strong>). For the defender the comparison runs the other way: an answer is dominated when another answer costs them less against every option.</p>
+
+<p><strong>Weak dominance</strong> (never better, worse at least once) is subtler. Deleting weakly dominated options never lowers the value of the game, but it can delete some optimal strategies, and the result can depend on the order of deletion. Treat it as a hint, not a rule. The solver reports both kinds.</p>
+
+<h3 id="gt-minimax">Mixed Strategies and the Minimax Theorem</h3>
+
+<p>When there's no saddle point, every pure choice can be exploited. Allowing mixes closes the gap. John von Neumann proved in 1928 that every finite zero-sum game has a value v and optimal mixes p* and q* such that:</p>
+
+<p class="formula">max<sub>p</sub> min<sub>q</sub> pᵀAq  =  min<sub>q</sub> max<sub>p</sub> pᵀAq  =  v</p>
+
+<p>Read it as two guarantees. With p* you earn at least v on average whatever the defender does; with q* the defender gives up at most v whatever you do. Neither side can do better against a perfect opponent, which is why v is called the <strong>value</strong> of the situation and the pair (p*, q*) its <strong>equilibrium</strong> (in zero-sum games, minimax strategies and Nash equilibria are the same thing).</p>
+
+<h4>The indifference principle</h4>
+
+<p>At the equilibrium, every option you actually use earns exactly v against q*, and every option you leave out earns at most v. The same holds for the defender. That's how mixes are computed by hand: choose your frequencies so that the defender's answers all cost them the same. The consequence surprises most players: <strong>your frequencies are set by the opponent's payoffs, and theirs by yours</strong>. If your throw starts doing more damage, the defender must tech more to stay balanced; your own throw frequency can actually go down. The <a href="#gt-continuation">throw loop</a> below shows exactly that.</p>
+
+<div class="deep-dive">
+    <h4>The 2 × 2 formula</h4>
+    <p>For a 2 × 2 matrix with rows (a, b) and (c, d) and no saddle point, let D = a − b − c + d. Then:</p>
+    <ul>
+        <li>Your frequency of row 1: p = (d − c) / D</li>
+        <li>Their frequency of column 1: q = (d − b) / D</li>
+        <li>The value: v = (ad − bc) / D</li>
+    </ul>
+    <p><strong>Strike or throw.</strong> Rows: meaty strike, throw. Columns: block, tech. A blocked meaty gains nothing here (0); a meaty that catches a tech attempt is a Counter Hit worth an example 1,800; a throw against a blocking player deals 1,200 (Ryu's throws in this hub's table); a teched throw is 0. So a = 0, b = 1,800, c = 1,200, d = 0, and D = −3,000.</p>
+    <ul>
+        <li>p = (0 − 1,200) / −3,000 = 0.4: strike 40% of the time, throw 60%.</li>
+        <li>q = (0 − 1,800) / −3,000 = 0.6: the defender blocks 60% and techs 40%.</li>
+        <li>v = (0 − 1,800 × 1,200) / −3,000 = 720 per attempt.</li>
+    </ul>
+    <p>Check the indifference: against q*, the strike earns 0.4 × 1,800 = 720 and the throw 0.6 × 1,200 = 720. Against p*, blocking gives up 0.6 × 1,200 = 720 and teching 0.4 × 1,800 = 720.</p>
+</div>
+
+<h4>Larger matrices</h4>
+
+<p>Beyond 2 × 2, the standard method is linear programming. Add a constant k to every cell so all entries are at least 1 (this shifts the value by k and changes nothing else), then solve:</p>
+
+<p class="formula">maximize Σ<sub>j</sub> y<sub>j</sub>  subject to  Σ<sub>j</sub> (a<sub>ij</sub> + k) y<sub>j</sub> ≤ 1 for every row i,  y ≥ 0</p>
+
+<p>The defender's mix is q* = y / Σy, the value is v = 1 / Σy − k, and your mix p* comes from the dual of the same program. The solver below uses the simplex method with Bland's rule, which can't cycle. An equilibrium always exists, but it doesn't have to be unique; when another mix is just as good, the solver says so.</p>
+
+<h3 id="gt-tool">The Matrix Solver</h3>
+
+<p>Choose an example or set the size and type your own payoffs. The solver gives the value, both optimal mixes, any saddle point, dominated options and possible ties. Below it, enter what an opponent actually did to see how far their habits can be exploited.</p>
+
+<div class="widget-slot" data-widget="adv-games"></div>
+
+<h3 id="gt-oki">Worked Example: Oki With Four Options</h3>
+
+<p>Load "Oki: 4 options against 4 answers". Your options are a meaty strike, a throw, a shimmy, and blocking to bait the reversal; theirs are block, tech, a fast button and OD Shoryuken. The relationships follow the hub's <a href="#adv-defense-table">table of defensive options</a>: the fast button beats throws and loses to meaties and shimmies; the reversal beats everything but the bait. Damage that comes from this hub's tables is Ryu's: 1,200 for the throw and 1,600 for OD Shoryuken. The punish on a blocked OD Shoryuken uses the same rough 3,000 as <a href="#adv-defense-bets">Defense Is a Bet Too</a>. The rest (1,800 for a Counter Hit meaty combo, 2,500 for a Punish Counter after a shimmy, 1,500 for whiff-punishing a button, 1,000 for a button that beats your throw) are example values.</p>
+
+<div class="table-wrap"><table>
+    <tr><th>You ↓ · They →</th><th>Block</th><th>Tech</th><th>Fast button</th><th>OD Shoryuken</th></tr>
+    <tr><td><strong>Meaty strike</strong></td><td>0</td><td>1,800</td><td>1,800</td><td>−1,600</td></tr>
+    <tr><td><strong>Throw</strong></td><td>1,200</td><td>0</td><td>−1,000</td><td>−1,600</td></tr>
+    <tr><td><strong>Shimmy</strong></td><td>0</td><td>2,500</td><td>1,500</td><td>−1,600</td></tr>
+    <tr><td><strong>Block and bait</strong></td><td>0</td><td>0</td><td>0</td><td>3,000</td></tr>
+</table></div>
+
+<p>The solution: the situation is worth about <strong>315</strong> per knockdown. Your optimal mix is about 32% meaty, 26% throw, 42% bait and <strong>0% shimmy</strong>; the defender's is about 63% block, 27% fast button, 10.5% reversal and <strong>0% tech</strong>. Four things are worth reading out of it:</p>
+<ul>
+    <li><strong>The bait is the most frequent option.</strong> It's the only row that beats the reversal, and the reversal is what holds the defender's value up. Even used only one time in ten, the reversal forces you to wait almost half the time.</li>
+    <li><strong>Tech is weakly dominated by the fast button</strong> with these numbers: the button also beats the throw, and loses less to the shimmy (1,500 against 2,500). An equilibrium defender never techs here.</li>
+    <li><strong>That's why the shimmy drops out.</strong> The shimmy's best cell is against tech, which the equilibrium defender never uses; against q* it earns about 235, less than the 315 of the other three, so it's left out.</li>
+    <li><strong>The result depends on your numbers.</strong> If whiff-punishing the button were worth as much as the Punish Counter (2,500 instead of 1,500), the shimmy would enter at about 27% and the meaty would drop out, with the value rising to about 366. If the punish after the bait were only 2,000, you'd bait 52% of the time and the value would fall to about 261. Before trusting a mix, change each estimate you're unsure of and watch whether the answer changes.</li>
+</ul>
+
+<h3 id="gt-continuation">The Payoff Isn't Just Damage: Continuation Values</h3>
+
+<p>A cell rarely ends the story. A blocked meaty keeps you on offense; a throw gives a knockdown and another oki; a teched throw resets to something close to neutral. The honest payoff is the damage plus the value of the situation that follows:</p>
+
+<p class="formula">a<sub>ij</sub> = damage<sub>ij</sub> + V(next situation<sub>ij</sub>)</p>
+
+<p>Situations connected this way form a <strong>stochastic game</strong> (Lloyd Shapley, 1953): each situation is a matrix game whose cells point to other situations. Shapley showed such games have values too, and that they can be found by <strong>value iteration</strong>: start with every V at 0, solve each matrix with the current values in its cells, replace the values with the results, and repeat until they stop changing. When a cell leads back to the same situation (a loop), its payoff contains the value it's trying to compute, so the value is a fixed point:</p>
+
+<p class="formula">V = val( A + R·V ), where R<sub>ij</sub> = 1 for cells that loop back</p>
+
+<div class="card">
+    <h4>Example: a throw loop</h4>
+    <p>Take the strike-or-throw matrix and suppose your throw leaves the opponent in the same oki again (a throw loop: tick ↻ on the throw-against-block cell, or load "Strike or throw, with a throw loop"). The throw cell becomes 1,200 + V. With the 2 × 2 formula:</p>
+    <p class="formula">V = 1,800 (1,200 + V) / (3,000 + V)  ⇒  V² + 1,200 V − 2,160,000 = 0  ⇒  V ≈ 987</p>
+    <p>The loop raises the situation from 720 to about 987 per knockdown. The mixes move the way the indifference principle predicts, not the way intuition does: the throw is now worth 2,187 against a blocking player, so the defender has to tech more (55% instead of 40%), and you throw <em>less</em> (45% instead of 60%). Your frequencies changed because <em>their</em> payoffs changed.</p>
+</div>
+
+<p>Value iteration converges when every loop has a way out that the defender actually uses. If a cell loops and the defender has no answer that ever ends the loop, the value grows without limit; the solver reports that instead of a number. In a real match the round ends first, which is the subject of <a href="#gt-utility">Damage Isn't Utility</a>.</p>
+
+<h3 id="gt-exploit">Equilibrium or Exploitation</h3>
+
+<p>The equilibrium is a guarantee, not a maximum. Against an opponent who doesn't play q*, you can earn more than v by playing the <strong>best response</strong> to what they actually do: the row with the largest (Aq)<sub>i</sub> for their real q. The price is exposure. A pure best response is exactly what an adapting opponent wants to see, and the most it can lose is its worst cell.</p>
+
+<div class="card">
+    <h4>Example: the ten wakeups</h4>
+    <p><a href="#adv-habits">Reading Habits as Percentages</a> counted ten wakeups: 5 blocks, 3 techs, one button and one reversal. In the four-option oki, with the estimate described in the next section (43%, 29%, 14%, 14%), each option earns: meaty about 543, throw 143, shimmy 700, bait 429. The best response is the shimmy, the option the equilibrium never uses, because this player techs far more than an equilibrium defender would.</p>
+    <div class="table-wrap"><table>
+        <tr><th>Weight moved to the shimmy</th><th>Against these habits</th><th>If they adapt perfectly</th></tr>
+        <tr><td>0% (the equilibrium mix)</td><td>390</td><td>315</td></tr>
+        <tr><td>25%</td><td>468</td><td>−164</td></tr>
+        <tr><td>50%</td><td>545</td><td>−642</td></tr>
+        <tr><td>100% (pure shimmy)</td><td>700</td><td>−1,600</td></tr>
+    </table></div>
+    <p>Both columns are straight lines in the weight: every point of extra profit against the habit is paid for with exposure if they adapt. The equilibrium mix already earns 390 against this player, more than its guaranteed 315, without any exposure at all.</p>
+</div>
+
+<p>Two disciplined ways to exploit:</p>
+<ul>
+    <li><strong>Exploit in proportion to your evidence.</strong> Ten observations is little (next section). Move part of the mix, not all of it, and move more as the count grows.</li>
+    <li><strong>Spend only what you've banked.</strong> Sam Ganzfried and Tuomas Sandholm (<em>Safe Opponent Exploitation</em>, 2015) showed that you can exploit without risking an average below v, as long as the risk you take never exceeds what you've already earned above v against that opponent. In a set: while the habits are paying you more than the situation's value, you can afford to lean further; when they stop, return to the equilibrium mix.</li>
+</ul>
+
+<h3 id="gt-bayes">Estimating Habits From Few Samples</h3>
+
+<p>Counts from a few rounds are noisy, and the raw share can be badly wrong: an answer seen 0 times in 6 isn't an answer they never use. The solver uses two standard tools.</p>
+<ul>
+    <li><strong>Laplace's rule of succession</strong> (the mean of a Dirichlet posterior with one imaginary observation per answer): with n<sub>j</sub> observations of answer j out of N, across k answers, estimate q̂<sub>j</sub> = (n<sub>j</sub> + 1) / (N + k). With 5, 3, 1 and 1 out of 10, that gives 6/14, 4/14, 2/14 and 2/14: about 43%, 29%, 14% and 14%. The estimate pulls small counts toward the middle and never returns 0% or 100%.</li>
+    <li><strong>The Wilson score interval</strong> (E. B. Wilson, 1927) gives a 95% range for each raw share. With 10 observations, 5 blocks means somewhere between about 24% and 76%; one reversal means between about 2% and 40%. Precision grows only with the square root of the sample: quadrupling the count halves the range (5 blocks in 10 and 20 in 40 have the same share, but the range shrinks to about 35%–65%).</li>
+</ul>
+<p>Habits also drift within a set, often right after they cost something. Count by game, not by set, and give the most recent game more weight than the first.</p>
+
+<h3 id="gt-utility">Damage Isn't Utility: Playing for the Round</h3>
+
+<p>Everything above maximizes average damage. What you actually want is to win the round, and the probability of winning is not proportional to damage. Near the end of a round the difference decides the right play.</p>
+<ul>
+    <li><strong>Lethal changes the matrix.</strong> If the opponent has 1,100 health left, a 1,200 throw and a 1,800 combo do the same thing: they win the round. In win-probability units, both cells are worth "round won", and the mix should be recomputed with those cells, not with damage.</li>
+    <li><strong>Behind, variance helps; ahead, it hurts.</strong> When you need more damage than any safe sequence gives, a risky option with a lower average can be the better play because it's the only one that can reach the goal. When you're ahead, prefer the option whose worst case still keeps you ahead.</li>
+    <li><strong>The game is still zero-sum.</strong> Your round win is their round loss, so the minimax theorem applies unchanged; only the unit changes, from damage to the probability of winning. The solver accepts any unit: put an estimated win probability in each cell (for example, 100 for "the round is won", 0 for "the round is lost", something in between otherwise) and the mixes it returns are the ones that maximize your chance of winning the round.</li>
+</ul>
+
+<h3 id="gt-reaction">Reaction Changes the Game</h3>
+
+<p>The matrix assumes that neither side can see the other's choice in time. That's true of a meaty against a wakeup option, which play out in the same few frames, but not of everything. Some options can be seen and answered: the <a href="#drive-impact">Drive System</a> chapter recommends answering a Drive Impact with your own, on reaction. Against an option that's always answered on reaction, the matrix doesn't apply at all; it becomes a sequential game, solved backward: the reacting side picks the best answer to what it saw, and the option is worth whatever that answer leaves it.</p>
+
+<p>Real reactions succeed only part of the time. If you answer a given option correctly a fraction r of the time and otherwise fall back on your guess, its cell becomes a weighted average:</p>
+
+<p class="formula">a<sub>ij</sub> = r · (payoff against the correct reaction) + (1 − r) · (payoff against your guess j)</p>
+
+<p>Measure r in training mode with the dummy set to do the option at random, then put the weighted cell in the matrix. An option whose value depends mostly on the opponent failing to react should be used less as their r goes up, and the solver will show by how much.</p>
+
+<h3 id="gt-limits">Where the Model Stops</h3>
+
+<ul>
+    <li><strong>People aren't random.</strong> An equilibrium mix only protects you if your choices are unpredictable in sequence, not just in proportion. Alternating meaty, throw, meaty, throw has the right frequencies and is fully readable.</li>
+    <li><strong>The game repeats, and players learn.</strong> Across a set, the opponent updates their picture of your mix, and you of theirs. Equilibrium is the right default when you know nothing and the safe place to return to when your reads stop working; it isn't the most you can earn.</li>
+    <li><strong>The numbers are estimates.</strong> Damage depends on spacing, the screen position and your execution; frequencies come from small samples. Check how sensitive the mix is (change each uncertain number and resolve) before relying on its decimals.</li>
+    <li><strong>Few situations are truly isolated.</strong> Drive gauge, Super meter, the corner and the timer change the payoffs of every later situation. Continuation values can carry some of that; the rest is judgment.</li>
+</ul>
+
+<h3 id="gt-reading">Further Reading</h3>
+
+<ul>
+    <li>John von Neumann, "Zur Theorie der Gesellschaftsspiele", <em>Mathematische Annalen</em> 100 (1928): the minimax theorem.</li>
+    <li>John Nash, "Equilibrium points in n-person games", <em>Proceedings of the National Academy of Sciences</em> 36 (1950): equilibrium beyond zero-sum games.</li>
+    <li>Lloyd Shapley, "Stochastic games", <em>Proceedings of the National Academy of Sciences</em> 39 (1953): linked situations and value iteration.</li>
+    <li>Edwin B. Wilson, "Probable inference, the law of succession, and statistical inference", <em>Journal of the American Statistical Association</em> 22 (1927): the score interval.</li>
+    <li>Sam Ganzfried and Tuomas Sandholm, "Safe opponent exploitation", <em>ACM Transactions on Economics and Computation</em> 3(2) (2015).</li>
+</ul>
+
+<div class="card success">
+    <h4>Try This in Your Next Session</h4>
+    <ol>
+        <li>Pick your most common knockdown and write the matrix: your real options as rows, the opponent's wakeup options as columns.</li>
+        <li>Fill the cells with damage you measured in training mode: your combos, theirs, your throw. Mark which cells lead back to the same oki.</li>
+        <li>Solve it. Is there a saddle point? Which of your options gets 0%, and why?</li>
+        <li>Change your two least certain numbers by about 20% each and solve again. If the mix changes a lot, measure those two properly.</li>
+        <li>In your next set, count the opponent's wakeup answers and enter them below the matrix. Move part of your mix toward the best response, and move back as soon as it stops paying.</li>
+    </ol>
+</div>

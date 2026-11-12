@@ -349,3 +349,16 @@ Uma auditoria externa, feita sobre um ZIP do site, apontou quatro problemas. Cad
 4. **Texto do Arjun: procede.** O aviso do roster dizia que o Arjun usava só os dados do FAT, e a nota de dados dele dizia que toda a frame data vinha do FAT. Os quatro normais principais do guia (5LP 4/+1/+4, 5MP 11/−2/+4, 2HP 10/−5/−1, 2HK 14/−11/derruba), o Cruel Shoulder (fraco/médio −4, forte +1 no block) e o Indomitable Defense (3f) batem com a página da Capcom salva em 11/11/2026, e o startup do Justice Beyond já seguia a Capcom (11). Os dois textos foram corrigidos e dizem que os combos não foram testados no jogo. Um teste confere que o guia e a tabela dão os mesmos valores.
 
 Os 24 testes passam.
+
+## 17. Capítulo de teoria dos jogos (12/11/2026)
+
+Capítulo novo no Avançado, "Teoria dos Jogos Aplicada", com o resolvedor de matrizes de payoff (`assets/js/games.js`).
+
+**De onde vêm os números.** O dano tirado das tabelas do hub é o do Ryu: 1.200 dos throws e 1.600 do OD Shoryuken (totalmente invencível nos frames 1–8). O punish de um OD Shoryuken defendido usa os mesmos 3.000 aproximados de Decisões em Números. As relações entre as opções seguem as tabelas de opções do hub (Okizeme em Frames e Pressão e Defesa). Todos os outros números são valores de exemplo, e o texto diz isso em cada caso.
+
+**Como foi conferido.**
+- O resolvedor foi testado contra equilíbrios conhecidos (pedra-papel-tesoura, a fórmula do 2 × 2, um ponto de sela, um caso de dominância estrita), contra a solução fechada do throw loop (V² + 1.200 V − 2.160.000 = 0) e em 400 matrizes aleatórias, onde as duas garantias (maximin e minimax) se encontram no valor.
+- Todos os números citados no capítulo (valores, mixes, a tabela de exploração, a análise de sensibilidade, a estimativa de Laplace e os intervalos de Wilson) são recalculados pelo resolvedor num teste, que também confere que eles aparecem no texto em inglês e em português.
+- As referências (von Neumann 1928, Nash 1950, Shapley 1953, Wilson 1927, Ganzfried e Sandholm 2015) são citadas pelo título e pelo periódico; a de Ganzfried e Sandholm foi conferida na lista de referências de um artigo que a cita (arXiv 2307.12338).
+
+Os 26 testes passam.
