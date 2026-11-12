@@ -235,6 +235,16 @@ await test('regression: values that differed from Capcom follow Capcom and are l
   });
   // two logged updates: the first comparison pass, then moves named differently and cells that list versions
   eq(r, [-36, -39, -31, -42, 6, 43, 5, 2, '-52(-54)', -31, -45, 1], 'Capcom values');
+  // the counts quoted in the methodology and in sources.js are the ones in the patch log
+  const c = await page.evaluate(() => {
+    const per = HUB_DATA.patches.map(p => [p.changes.length, new Set(p.changes.map(x => x.char + '|' + x.move)).size]);
+    const all = new Set(HUB_DATA.patches.flatMap(p => p.changes.map(x => x.char + '|' + x.move))).size;
+    const html = document.body.innerHTML;
+    return [per, all, /46 values in 41 moves[\s\S]*19 more values, in 14 other moves[\s\S]*65 values in 55 moves/.test(html),
+      /46 valores, em 41 golpes[\s\S]*mais 19 valores, em outros 14 golpes[\s\S]*65 valores em 55 golpes/.test(html),
+      /65 values in 55 moves/.test(HUB_DATA.sources.frameData.note)];
+  });
+  eq(c, [[[46, 41], [19, 14]], 55, true, true, true], 'counts match the patch log');
 });
 
 // ---------- features ----------

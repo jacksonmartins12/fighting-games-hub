@@ -10,7 +10,7 @@
   "commit": "a8101eb",
   "commitDate": "2026-10-22",
   "status": "tool",
-  "note": "Every move of the 32 fighters matches this FAT commit in startup, active, recovery, on hit, on block, damage and cancels (checked with tools/fat_sync.py on 2026-11-11). FAT updated existing fighters on 2026-08-10, a week after the 2026-08-03 balance patch, and again on 2026-10-22. On 2026-11-11, 46 values in 41 moves where Capcom's official pages differed from FAT were changed to Capcom's values (listed in data/patches.js and marked in the tables)."
+  "note": "Every move of the 32 fighters matches this FAT commit in startup, active, recovery, on hit, on block, damage and cancels (checked with tools/fat_sync.py on 2026-11-11). FAT updated existing fighters on 2026-08-10, a week after the 2026-08-03 balance patch, and again on 2026-10-22. On 2026-11-11, 65 values in 55 moves where Capcom's official pages differed from FAT were changed to Capcom's values: 46 values in 41 moves found by the first pass of tools/capcom_compare.py and 19 values in 14 other moves found by its second pass (the two entries of data/patches.js; each is marked in the tables)."
  },
  "otherSources": [
   {
