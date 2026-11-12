@@ -145,7 +145,7 @@ await test('regression: Ryu counterplay quotes the Shoryuken block values of the
   eq(r.en, r.want, 'EN'); eq(r.pt, r.want, 'PT'); eq(r.want, '-23 -32 -36 -40', 'table');   // HP Shoryuken -36 per Capcom's official page
   eq(r.sa3, [true, true, '-52(-54)'], 'Shin Shoryuken quoted as in the table (Capcom -52)');
 });
-await test('regression: data notes of Akuma, Dhalsim, JP, Mai, Yasmine and Lily match their tables', async page => {
+await test('regression: data notes of Akuma, Dhalsim, JP, Mai, Yasmine, Lily and Arjun match their tables', async page => {
   await open(page);
   const r = await page.evaluate(async () => {
     const named = { akuma: ['Ashura Senku'], dhalsim: ['Yoga Blast', 'Yoga Teleport'], jp: ['Departure', 'Torbalan', 'Embrace'], mai: ['Kachousen', 'Ryuuenbu', 'Shinobi Bachi'], yasmine: ['Lipad ng Agila', 'Pangil sa Likuran', 'Mukha ng Langit'], lily: ['Stand LK'] };
@@ -164,6 +164,11 @@ await test('regression: data notes of Akuma, Dhalsim, JP, Mai, Yasmine and Lily 
     if ((F.lily['Stand LK'] || {}).status !== 'official' || row[7] !== 5) bad.push('lily 5LK: not marked as confirmed by Capcom at +5');
     if ((F.arjun['(best reversal)'] || {}).status !== 'official') bad.push('arjun best reversal: not marked as confirmed by Capcom');
     ['en', 'pt'].forEach(l => { if (/so check it in training mode|então confira no training mode/i.test(CHARS.lily.data_note[l])) bad.push('lily ' + l + ': note still asks to test 5LK'); });
+    await needChar('arjun');   // checked against Capcom on 2026-11-11: the guide must not say FAT is its only source
+    ['en', 'pt'].forEach(l => { if (/All frame data and combos come from FAT|Toda a frame data e os combos vêm/i.test(CHARS.arjun.data_note[l]) || !/Capcom/.test(CHARS.arjun.data_note[l])) bad.push('arjun ' + l + ': note still says FAT is the only source'); });
+    if (/uses FAT data only|usa só os dados do FAT/.test(document.body.innerHTML)) bad.push('roster: Arjun still described as FAT only');
+    const AN = { '5LP': 'Stand LP', '5MP': 'Stand MP', '2HP': 'Crouch HP', '2HK': 'Crouch HK' };
+    CHARS.arjun.key_normals.forEach(k => { const m = FRAMES.arjun.m.find(x => x[0] === AN[k.move]); if (!m || m[4] !== k.startup || m[8] !== k.on_block) bad.push('arjun ' + k.move + ': guide and table differ'); });
     return bad;
   });
   eq(r, [], 'data note contradictions');
