@@ -362,3 +362,31 @@ Capítulo novo no Avançado, "Teoria dos Jogos Aplicada", com o resolvedor de ma
 - As referências (von Neumann 1928, Nash 1950, Shapley 1953, Wilson 1927, Ganzfried e Sandholm 2015) são citadas pelo título e pelo periódico; a de Ganzfried e Sandholm foi conferida na lista de referências de um artigo que a cita (arXiv 2307.12338).
 
 Os 26 testes passam.
+
+## 18. Oki e pressão por personagem (12/11/2026)
+
+Cada guia de personagem ganhou a seção "Oki e pressão, calculados" (`assets/js/setups.js`).
+
+**Meaties depois de cada knockdown.**
+- Para cada vantagem de knockdown do personagem, a seção lista os normais que acertam meaty sem espera depois de nenhum dash, um ou dois.
+- Para cada um: o frame ativo que acerta, os valores no block e no hit com o bônus do meaty, e o startup de reversal contra o qual o meaty é seguro pela regra do hub (preso + 2).
+- As contas usam as mesmas funções da calculadora de oki (`okiKnockdowns`, `okiMeaty`), cuja contagem foi confirmada no jogo (seção 15).
+
+**Block strings e frame traps.**
+- A partir de cada golpe que deixa o personagem em vantagem no block, com e sem Drive Rush (+4 no primeiro normal), a seção lista os links que formam uma block string verdadeira (gap ≤ 0) e os frame traps contra um normal de 4 frames (gap de 1 a 3).
+- O normal mais rápido de todos os 32 personagens nos dados é de 4 frames.
+- As contas usam a mesma regra do verificador de sequências (`gapGroup`).
+
+**Limites declarados na própria seção:**
+- não confere alcance, pushback, posição depois de back rise nem combos;
+- os valores de knockdown são do golpe isolado;
+- golpes com valor no block que não é um número único ficam de fora;
+- só links, não chains, target combos nem cancels.
+
+**Testes:**
+- O resultado do teste no jogo com o Akuma (throw para frente, dash, Crouch MK no 3º frame ativo, −4) aparece na folha dele.
+- Todo meaty listado, nos 32 personagens, cobre o frame N + 1 quando apertado no primeiro frame livre.
+- O exemplo do capítulo Pressão e Defesa (Stand MP do Ryu depois de Drive Rush: +3; Stand LP com gap 1, Crouch MP com gap 3) sai igual da folha.
+- Toda entrada de pressão é coerente com a regra do gap, e os 32 guias mostram a seção.
+
+Os 28 testes passam.

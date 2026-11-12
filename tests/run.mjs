@@ -125,6 +125,27 @@ await test('character sheets: meaties after each knockdown (okiSheet)', async pa
   eq(r.bad, [], 'meaties that do not cover frame N + 1');
   ok(r.n > 500, 'the sheets list meaties for the roster (' + r.n + ')');
 });
+await test('character sheets: block strings and frame traps (pressureSheet)', async page => {
+  await open(page);
+  const r = await page.evaluate(async () => {
+    await needChar('ryu');
+    // the example in Pressure and Defense: Stand MP out of Drive Rush is +3; Stand LP leaves a gap of 1, Crouch MP a gap of 3
+    const mp = pressureSheet('ryu').dr.find(x => x.m[0] === 'Stand MP');
+    const pick = name => { const y = mp.list.find(z => z.m[0] === name); return y ? [y.gap, y.g] : null; };
+    const slugs = rosterList().map(c => c.slug); await Promise.all(slugs.map(needChar));
+    const bad = [];
+    slugs.forEach(slug => { const p = pressureSheet(slug); ['plain', 'dr'].forEach(k => p[k].forEach(x => {
+      if (x.a !== advNum(x.m[8]) + (k === 'dr' ? 4 : 0) || x.a < 1 || (k === 'dr' && x.m[3] !== 'n')) bad.push(slug + ' ' + x.m[0]);
+      x.list.forEach(y => { if (y.gap !== suEff(y.m[4]) - x.a || y.gap > 3 || y.g !== (y.gap <= 0 ? 'true' : 'trap')) bad.push(slug + ' ' + x.m[0] + ' > ' + y.m[0]); });
+    })); });
+    // every guide renders the section
+    const missing = slugs.filter(slug => !/class="ft-details setups"/.test(charHTML(CHARS[slug])));
+    return { mp: [mp.a, mp.base, pick('Stand LP'), pick('Crouch MP')], bad: bad.slice(0, 5), missing };
+  });
+  eq(r.mp, [3, -1, [1, 'trap'], [3, 'trap']], 'Ryu Stand MP out of Drive Rush');
+  eq(r.bad, [], 'inconsistent pressure entries');
+  eq(r.missing, [], 'guides without the oki and pressure section');
+});
 await test('game theory: the solver finds known equilibria (gtSolve, gtLoop, gtHabits)', async page => {
   await open(page);
   const r = await page.evaluate(() => {
