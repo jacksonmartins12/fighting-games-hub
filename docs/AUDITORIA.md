@@ -126,11 +126,10 @@ Nenhum valor foi alterado sem confirmação da fonte. Cada linha abaixo aparece 
    - se o Drive Reversal no wakeup é uma boa resposta a safe jumps;
    - o nome em português das opções do Replay Takeover;
    - o double tap no link mais apertado de um personagem.
-   - no training mode (seções 22 e 23):
-     - os nomes em português dos menus;
-     - o efeito das diagonais para baixo ao reiniciar;
-     - os três slots de save state (dois relatos de jogadores, nenhum conferido na tela);
-     - o que só uma fonte descreve: oito slots de gravação; três slots para salvar todas as configurações de treino; defesa por número de hits ("Block Count"); o dummy defender com parry ou Perfect Parry; o dummy usar Drive Reversal e dar tech; até 5 frames de atraso de input; deixar o personagem em Burnout pela barra de Drive em Parameter Settings; os indicadores "Cancel Timing Display" e "Action Timing Display"; esconder o aviso de qual gravação vai sair ("Replay Info Display").
+   - no training mode (seções 22 a 24):
+     - os nomes em português das páginas e dos menus;
+     - quem fica encurralado ao reiniciar com esquerda ou direita, e o que faz reiniciar sem direção;
+     - o que só uma fonte descreve: LB + RB voltar para Basic Settings; até 5 frames de atraso de input; o dummy usar Drive Reversal; o reinício restaurar recursos de personagem (latas da Kimberly); a escolha de cenário e de cor no treino; o "Command Completion Display"; um exercício pronto mudar as suas configurações.
 
 ## 8. Recomendações
 
@@ -473,3 +472,23 @@ Duas observações práticas desse relato também entraram:
 O nome do menu de atalhos aparece de dois jeitos nas fontes ("Shortcut Operation Settings" e "Shortcut Settings"), e o texto registra os dois.
 
 O resto, descrito só nesse relato, foi para a lista de testes (Problemas não resolvidos, item 9).
+
+## 24. Training mode: as oito páginas (13/11/2026)
+
+Terceira fonte sobre o training mode, um guia em vídeo resumido pelo usuário. Com ela, vários pontos que só as anotações da seção 23 descreviam passaram a ter duas fontes e entraram numa tabela das oito páginas do menu (Execução):
+- a ordem das páginas;
+- oito slots de gravação;
+- gravação que começa no primeiro input;
+- sorteio com frequência por slot e aviso de slot escondido;
+- defesa por número de hits e com parry ou Perfect Parry;
+- escape de throw;
+- velocidade do jogo e atraso de input simulado;
+- barras fixas e Burnout em Parameter Settings;
+- Action Timing Display e Cancel Timing Display;
+- três slots para salvar todas as configurações.
+
+Os três slots de save state agora têm três relatos.
+
+O reinício com direção foi reescrito só com o que as três fontes compartilham: para baixo, o centro; esquerda e direita, os cantos; para cima, troca de lados; diagonais para baixo, canto com troca de lados. As fontes divergem sobre quem fica encurralado com esquerda e direita, e o texto pede para conferir.
+
+O que só uma fonte descreve ficou na lista de testes (Problemas não resolvidos, item 9).
