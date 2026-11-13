@@ -515,3 +515,9 @@ O que só uma fonte descreve ficou na lista de testes (Problemas não resolvidos
 **Créditos num lugar só.** A pedido do usuário, o crédito ao Iori e ao SF6 Lab fica concentrado na seção "Créditos" do capítulo "SF6 Lab: Guias e Créditos". Cada guia de personagem mostra só as datas, o link da página original e um link para os créditos. Um teste confere que o crédito existe nos dois idiomas e que não se repete nos guias.
 
 **Ferramentas.** A extração foi feita com scripts fora do repositório, a partir de uma cópia do site fornecida pelo usuário; os dados ficaram nos arquivos dos personagens.
+
+## 26. Organização e layout do conteúdo do SF6 Lab (13/11/2026)
+
+Só apresentação; nenhum texto ou número do conteúdo mudou.
+- **Nos guias de personagem:** a seção "SF6 Lab" ganhou uma linha de datas em etiquetas, um aviso curto de que as rotas não foram testadas, e três grupos (o personagem, combos e okizeme, vídeos). Cada parte abre e fecha como um cartão, com a contagem de rotas. Pontos fortes e fracos aparecem lado a lado, e a legenda da notação fica recolhida.
+- **No capítulo "SF6 Lab: Guias e Créditos":** a ordem passou a ser artigos, guias gerais e créditos, com atalhos no topo. Os créditos foram divididos em um quadro (o que veio do site) e uma lista de fatos (versões, o que o hub mudou, traduções, o que não entrou).

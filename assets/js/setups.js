@@ -105,40 +105,59 @@ document.addEventListener('click', function (e) {
 // A text is a string, or [en, pt] when the hub has a Portuguese version. In a route paragraph (k: 'r') each line is a
 // route (r), a label (s) or a note (n); `chk` marks a "+N" that equals this hub's frame table for the last move.
 function labT(x) { return Array.isArray(x) ? x[lang === 'pt' ? 1 : 0] : (x || ''); }
+function labDate(iso) {
+  var p = String(iso || '').split('-');
+  if (p.length !== 3) return iso || '';
+  try { return new Date(+p[0], +p[1] - 1, +p[2]).toLocaleDateString(lang === 'pt' ? 'pt-BR' : 'en-US', { day: 'numeric', month: 'short', year: 'numeric' }); } catch (e) { return iso; }
+}
+function labAcc(title, body, hint) {   // one collapsed part of the SF6 Lab section
+  return '<details class="lab-sec"><summary><span class="lab-sec-t">' + title + '</span>' + (hint ? '<span class="lab-sec-n">' + hint + '</span>' : '') + '</summary><div class="lab-sec-body">' + body + '</div></details>';
+}
+function labOverview(html) {   // strengths and weaknesses side by side, like the hub's own guide
+  return html.replace(/<h5>Strengths<\/h5><ul>([\s\S]*?)<\/ul><h5>Weaknesses<\/h5><ul>([\s\S]*?)<\/ul>/,
+    '<div class="cg-two lab-two"><div><h5>Strengths</h5><ul class="cg-list plus">$1</ul></div><div><h5>Weaknesses</h5><ul class="cg-list minus">$2</ul></div></div>');
+}
 function labHTML(slug) {
   var L = LAB[slug];
   if (!L || !L.secs || !L.secs.length) return '';
-  var src = '<a href="' + esc(L.url) + '" target="_blank" rel="noopener">' + B('lab.source') + '</a>';
+  var chip = function (k, v) { return '<span class="lab-chip"><b>' + B(k) + '</b> ' + esc(v) + '</span>'; };
+  var meta = L.updated ? (L.ovDate ? chip('lab.meta-ov', labDate(L.ovDate)) : '') + chip('lab.meta-combo', labDate(L.updated)) + chip('lab.meta-balance', labDate(L.balance)) : '';
+  var jp = L.jp ? '<p class="lab-jp">' + B('lab.from-jp') + '</p>' : '';
   var h = '<details class="ft-details setups lab-routes"><summary><span class="ft-sum-t">' + B('lab.title') + '</span> <span class="muted small">' + B('lab.summary') + '</span></summary><div class="setups-body">' +
-    '<p class="small muted">' + (L.updated ? B('lab.dates', [esc(L.ovDate || L.updated), esc(L.updated), esc(L.balance || '')]) : esc(labT(L.note))) + ' ' + src + ' · <a href="#sf6lab">' + B('lab.credits') + '</a></p>' +
-    '<p class="small muted">' + B('lab.legend') + '</p>';
-  // overview and video notes: HTML cleaned to a fixed list of tags when the data was built
-  if (L.ov) h += '<details class="lab-sec"><summary>' + B('lab.overview') + '</summary><div class="lab-general">' + (L.jp && !L.updated ? '<p class="small muted">' + B('lab.from-jp') + '</p>' : '') + L.ov + '</div></details>';
-  var jp = L.jp ? '<p class="small muted">' + B('lab.from-jp') + '</p>' : '';
-  if (L.vs) h += '<details class="lab-sec"><summary>' + B('lab.vs') + '</summary><div class="lab-general">' + jp + L.vs + '</div></details>';
-  if (L.moves) h += '<details class="lab-sec"><summary>' + B('lab.moves') + '</summary><div class="lab-general">' + jp + L.moves + '</div></details>';
-  if (L.vid) h += '<details class="lab-sec"><summary>' + B('lab.videos') + '</summary><div class="lab-general">' + L.vid + '</div></details>';
+    '<div class="lab-meta">' + meta + '<span class="lab-links"><a href="' + esc(L.url) + '" target="_blank" rel="noopener">' + B('lab.source') + '</a><a href="#sf6lab">' + B('lab.credits') + '</a></span></div>' +
+    (L.updated ? '' : '<p class="small muted">' + esc(labT(L.note)) + '</p>') +
+    '<p class="lab-note">' + B('lab.untested') + '</p>';
+  // the fighter: overview, matchup guide and move list (HTML cleaned to a fixed list of tags when the data was built)
+  var who = '';
+  if (L.ov) who += labAcc(B('lab.overview'), '<div class="lab-general">' + (L.jp && !L.updated ? jp : '') + labOverview(L.ov) + '</div>');
+  if (L.vs) who += labAcc(B('lab.vs'), '<div class="lab-general">' + jp + L.vs + '</div>');
+  if (L.moves) who += labAcc(B('lab.moves'), '<div class="lab-general">' + jp + L.moves + '</div>');
+  if (who) h += '<p class="lab-group">' + B('lab.g-char') + '</p>' + who;
+  h += '<p class="lab-group">' + B('lab.g-combo') + '</p>' +
+    '<details class="lab-legend"><summary>' + B('lab.notation') + '</summary><p class="small muted">' + B('lab.legend') + '</p></details>';
   L.secs.forEach(function (sec) {
-    h += '<details class="lab-sec"><summary>' + esc(labT(sec.t)) + '</summary>';
+    var body = '', n = 0;
     sec.arts.forEach(function (a) {
-      h += '<div class="setups-block">' + (a.h ? '<p class="setups-head"><b>' + esc(labT(a.h)) + '</b></p>' : '');
+      body += '<div class="setups-block">' + (a.h ? '<p class="setups-head"><b>' + esc(labT(a.h)) + '</b></p>' : '');
       a.ps.forEach(function (p) {
-        if (p.k === 'p') { h += '<p class="lab-prose">' + p.l.map(function (x) { return esc(labT(x)); }).join('<br>') + '</p>'; return; }
-        h += '<div class="lab-row">';
+        if (p.k === 'p') { body += '<p class="lab-prose">' + p.l.map(function (x) { return esc(labT(x)); }).join('<br>') + '</p>'; return; }
+        body += '<div class="lab-row">';
         var notes = [];
-        var flush = function () { if (notes.length) { h += '<ul class="lab-notes">' + notes.join('') + '</ul>'; notes = []; } };
+        var flush = function () { if (notes.length) { body += '<ul class="lab-notes">' + notes.join('') + '</ul>'; notes = []; } };
         p.l.forEach(function (x) {
           if (x.n != null) { notes.push('<li>' + esc(labT(x.n)) + (p.chk && /^\+\d+$/.test(labT(x.n)) ? ' <span class="ft-tag ft-flag-official">' + B('lab.chk') + '</span>' : '') + '</li>'); return; }
           flush();
-          h += x.r != null ? '<p class="lab-route inp">' + esc(x.r) + '</p>' : '<p class="setups-lbl">' + esc(labT(x.s)) + '</p>';
+          if (x.r != null) { n++; body += '<p class="lab-route inp">' + esc(x.r) + '</p>'; }
+          else body += '<p class="setups-lbl">' + esc(labT(x.s)) + '</p>';
         });
         flush();
-        h += '</div>';
+        body += '</div>';
       });
-      h += '</div>';
+      body += '</div>';
     });
-    h += '</details>';
+    h += labAcc(esc(labT(sec.t)), body, n ? B('lab.nroutes', [n]) : '');
   });
+  if (L.vid) h += '<p class="lab-group">' + B('lab.g-video') + '</p>' + labAcc(B('lab.videos'), '<div class="lab-general">' + L.vid + '</div>');
   h += '</div></details>';
   return h;
 }
