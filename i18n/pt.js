@@ -533,6 +533,7 @@
   "lab.credit": "Este guia é do <strong>Iori</strong>, da página Combos &amp; Okizeme do {0}. Guia atualizado em {1}, para a atualização de balanceamento de {2}. As rotas, os números, a ordem e as notas são dele. O texto está em inglês, como na fonte; os rótulos e as notas curtas das rotas essenciais foram traduzidos.",
   "lab.legend": "Notação como na fonte: st. em pé, cr. agachado, j. pulando, L/M/H a força de um especial, OD Overdrive, SA Super Art, DI Drive Impact, DR Drive Rush, PC Punish Counter, CH Counter Hit, TC target combo. \"+N\" é a vantagem depois do knockdown. A etiqueta marca um valor igual ao da tabela de frames deste hub para aquele golpe isolado; depois de um juggle o valor pode ser diferente do da tabela. Este hub não testou estas rotas no jogo: confira no training mode, e a versão do jogo, antes de confiar nelas.",
   "lab.chk": "= tabela de frames",
+  "lab.credit-plain": "Este guia é do <strong>Iori</strong>, da página de combos do {0}. As rotas, os números, a ordem e as notas são dele.",
   "lab.more": "O guia original, com os vídeos e as notas de matchup do Iori, está no {0}.",
   "chapter.adv-data": "Ler e Medir"
 };

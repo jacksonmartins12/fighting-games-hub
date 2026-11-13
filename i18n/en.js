@@ -533,6 +533,7 @@
   "lab.credit": "This guide is by <strong>Iori</strong>, from the Combos &amp; Okizeme page of {0}. Guide updated {1}, for the battle balance update of {2}. Routes, numbers, order and notes are his.",
   "lab.legend": "Notation as in the source: st. standing, cr. crouching, j. jumping, L/M/H the strength of a special, OD Overdrive, SA Super Art, DI Drive Impact, DR Drive Rush, PC Punish Counter, CH Counter Hit, TC target combo. \"+N\" is the advantage after the knockdown. The tag marks a value that equals this hub's frame table for that move on its own; after a juggle the value can differ from the table. This hub hasn't tested these routes in game: check them in training mode, and the game version, before relying on them.",
   "lab.chk": "= frame table",
+  "lab.credit-plain": "This guide is by <strong>Iori</strong>, from the combo page of {0}. Routes, numbers, order and notes are his.",
   "lab.more": "The original guide, with Iori's videos and matchup notes, is at {0}.",
   "chapter.adv-data": "Reading and Measuring"
 };

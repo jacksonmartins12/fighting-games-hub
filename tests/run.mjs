@@ -178,7 +178,7 @@ await test('character guides: the SF6 Lab guide is credited, complete and consis
     let routes = 0, chk = 0, secs = 0;
     withLab.forEach(s => {
       const L = LAB[s], h = charHTML(CHARS[s]);
-      if (!/^https:\/\/sf6-lab\.net\/en\/fighters\/[a-z_]+\/combo$/.test(L.url) || !L.updated || !L.balance) bad.push(s + ': source link or dates missing');
+      if (!/^https:\/\/sf6-lab\.net\/(en\/)?fighters\/[a-z_]+\/combo$/.test(L.url) || !(L.updated && L.balance || L.note)) bad.push(s + ': source link or dates missing');
       if (!/class="ft-details setups lab-routes"/.test(h) || !/<strong>Iori<\/strong>/.test(h) || h.indexOf(L.url) < 0) bad.push(s + ': section or credit missing');
       if (/permission|permissão/i.test(h.slice(h.indexOf('lab-routes')))) bad.push(s + ': permission wording is back');
       L.secs.forEach(sec => { secs++;
@@ -196,12 +196,15 @@ await test('character guides: the SF6 Lab guide is credited, complete and consis
       });
     });
     const p0 = LAB.ryu.secs[0].arts[0].ps[0];
+    const aj = LAB.arjun.secs.flatMap(x => x.arts).flatMap(a => a.ps).filter(p => p.k === 'r').map(p => p.l[0].r), names = FRAMES.arjun.m.map(m => m[0].replace(/^(LP|MP|HP|LK|MK|HK|OD) /, ''));
+    const used = [...new Set(aj.join(' > ').split(' > ').map(x => x.replace(/^(SA\d|OD H|OD|L|M|H) /, '')).filter(x => /^[A-Z][a-z]+('s)? [A-Z]/.test(x) && !/^(Drive|Cancel|Punish)/.test(x)))];
     setLang('pt'); const pt = labHTML('ryu'); setLang('en');
     return { n: withLab.length, without: slugs.filter(s => !LAB[s]), bad: bad.slice(0, 5), routes, chk, secs,
-      ryu: [T(LAB.ryu.secs[0].arts[0].h), p0.l[0].r, T(p0.l[1].n)[0], p0.chk], pt: /Início com golpe fraco/.test(pt) && /dash para frente/.test(pt) };
+      ryu: [T(LAB.ryu.secs[0].arts[0].h), p0.l[0].r, T(p0.l[1].n)[0], p0.chk], arjun: [/japon/.test(T(LAB.arjun.note)[1]), aj.length, used.length > 5 && used.every(u => names.includes(u))], pt: /Início com golpe fraco/.test(pt) && /dash para frente/.test(pt) };
   });
   eq(r.bad, [], 'problems in the SF6 Lab data');
-  eq([r.n, r.without], [31, ['arjun']], 'fighters with the guide (the source has no English page for Arjun)');
+  eq([r.n, r.without], [32, []], 'every fighter has the guide');
+  eq(r.arjun, [true, 12, true], 'Arjun: translated from the Japanese page, 12 routes, moves named as in the frame table');
   eq(r.ryu, [['Jump-in', 'Pulo'], 'j.HP > Short Uppercut > H Shoryuken', '+37', 1], 'Ryu jump-in route');
   eq(r.pt, true, 'Portuguese labels are used where the hub has them');
   ok(r.secs > 500 && r.routes > 2000 && r.chk >= 30, 'sections ' + r.secs + ', routes ' + r.routes + ', tagged ' + r.chk);

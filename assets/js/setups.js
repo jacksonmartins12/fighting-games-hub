@@ -110,7 +110,7 @@ function labHTML(slug) {
   if (!L || !L.secs || !L.secs.length) return '';
   var link = '<a href="' + esc(L.url) + '" target="_blank" rel="noopener">SF6 Lab</a>';
   var h = '<details class="ft-details setups lab-routes"><summary><span class="ft-sum-t">' + B('lab.title') + '</span> <span class="muted small">' + B('lab.summary') + '</span></summary><div class="setups-body">' +
-    '<p class="small">' + B('lab.credit', [link, esc(L.updated || ''), esc(L.balance || '')]) + '</p>' +
+    '<p class="small">' + (L.updated ? B('lab.credit', [link, esc(L.updated), esc(L.balance || '')]) : B('lab.credit-plain', [link]) + ' ' + esc(labT(L.note))) + '</p>' +
     '<p class="small muted">' + B('lab.legend') + '</p>';
   L.secs.forEach(function (sec) {
     h += '<details class="lab-sec"><summary>' + esc(labT(sec.t)) + '</summary>';
