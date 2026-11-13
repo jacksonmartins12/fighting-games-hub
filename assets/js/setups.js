@@ -113,7 +113,10 @@ function labHTML(slug) {
     '<p class="small muted">' + (L.updated ? B('lab.dates', [esc(L.ovDate || L.updated), esc(L.updated), esc(L.balance || '')]) : esc(labT(L.note))) + ' ' + src + ' · <a href="#sf6lab">' + B('lab.credits') + '</a></p>' +
     '<p class="small muted">' + B('lab.legend') + '</p>';
   // overview and video notes: HTML cleaned to a fixed list of tags when the data was built
-  if (L.ov) h += '<details class="lab-sec"><summary>' + B('lab.overview') + '</summary><div class="lab-general">' + L.ov + '</div></details>';
+  if (L.ov) h += '<details class="lab-sec"><summary>' + B('lab.overview') + '</summary><div class="lab-general">' + (L.jp && !L.updated ? '<p class="small muted">' + B('lab.from-jp') + '</p>' : '') + L.ov + '</div></details>';
+  var jp = L.jp ? '<p class="small muted">' + B('lab.from-jp') + '</p>' : '';
+  if (L.vs) h += '<details class="lab-sec"><summary>' + B('lab.vs') + '</summary><div class="lab-general">' + jp + L.vs + '</div></details>';
+  if (L.moves) h += '<details class="lab-sec"><summary>' + B('lab.moves') + '</summary><div class="lab-general">' + jp + L.moves + '</div></details>';
   if (L.vid) h += '<details class="lab-sec"><summary>' + B('lab.videos') + '</summary><div class="lab-general">' + L.vid + '</div></details>';
   L.secs.forEach(function (sec) {
     h += '<details class="lab-sec"><summary>' + esc(labT(sec.t)) + '</summary>';

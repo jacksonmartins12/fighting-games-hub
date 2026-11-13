@@ -1129,6 +1129,8 @@ h3 .sf6-tag { align-self: center; }
 .lab-general p, .lab-general li, .lab-general dd { font-size: 0.94rem; max-width: 78ch; }
 .lab-general dt { font-weight: 600; margin-top: 8px; }
 .lab-general dd { margin: 0 0 4px; }
+.lab-general table { font-size: 0.9rem; }
+.lab-general { overflow-x: auto; }
 .lab-general a { display: inline-block; margin: 2px 0 8px; }
 .lab-row .setups-lbl { margin: 0 0 2px; max-width: none; padding-top: 0; font: 600 0.86rem/1.5 var(--body, inherit); letter-spacing: 0; text-transform: none; color: var(--ink-soft); }
 .lab-route, .lab-route.inp { margin: 0 0 2px; max-width: none; white-space: normal; overflow-wrap: anywhere; }
