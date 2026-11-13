@@ -1119,6 +1119,10 @@ h3 .sf6-tag { align-self: center; }
 .setups-list li { margin: 0 0 4px; }
 .setups-facts { font-size: 0.86rem; color: var(--ink-soft); }
 .setups-nexts { margin: 0; max-width: none; }
+.lab-row { margin: 0 0 10px; }
+.lab-row .setups-lbl { margin: 0 0 2px; max-width: none; }
+.lab-route, .lab-route.inp { margin: 0 0 2px; max-width: none; white-space: normal; overflow-wrap: anywhere; }
+.lab-notes { margin: 2px 0 0; padding-left: 1.3em; font-size: 0.9rem; color: var(--ink-soft); }
 @media (max-width: 520px) { .setups-row { grid-template-columns: 1fr; } }
 .setups-next { display: inline-block; margin: 0 10px 4px 0; white-space: nowrap; }
 .gt-notes li { margin: 3px 0; }

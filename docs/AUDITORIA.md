@@ -126,6 +126,7 @@ Nenhum valor foi alterado sem confirmação da fonte. Cada linha abaixo aparece 
    - se o Drive Reversal no wakeup é uma boa resposta a safe jumps;
    - o nome em português das opções do Replay Takeover;
    - o double tap no link mais apertado de um personagem.
+   - se "H Shoryuken, dash, Solar Plexus Strike" do Ryu é meaty no primeiro frame: o SF6 Lab lista como meaty; pela conta do hub (+37, dash de 19, startup de 20) o golpe acerta um frame depois de o oponente levantar (seção 25);
    - no training mode (seções 22 a 24):
      - os nomes em português das páginas e dos menus;
      - quem fica encurralado ao reiniciar com esquerda ou direita, e o que faz reiniciar sem direção;
@@ -492,3 +493,15 @@ Os três slots de save state agora têm três relatos.
 O reinício com direção foi reescrito só com o que as três fontes compartilham: para baixo, o centro; esquerda e direita, os cantos; para cima, troca de lados; diagonais para baixo, canto com troca de lados. As fontes divergem sobre quem fica encurralado com esquerda e direita, e o texto pede para conferir.
 
 O que só uma fonte descreve ficou na lista de testes (Problemas não resolvidos, item 9).
+
+## 25. Rotas do SF6 Lab nos guias de personagem (13/11/2026)
+
+**Fonte e permissão.** SF6 Lab (sf6-lab.net), site não oficial mantido pelo Iori. O aviso legal do site proíbe redistribuir os textos e o conteúdo estruturado sem autorização. O usuário informou em 13/11/2026 que tem a permissão do autor para usar o conteúdo no hub; a permissão foi dada ao usuário e não foi vista por quem fez a importação. Cada guia credita o Iori, com link para a página de origem, a data do guia (31/08/2026) e a versão do jogo (balanceamento de 03/08/2026).
+
+**O que entrou.** A seção "rotas essenciais" da página Combos & Okizeme de 31 personagens (o site não tem a página em inglês do Arjun): 316 situações e 437 rotas, com a rota como está na fonte, a vantagem de knockdown e a continuação. Fica em `lab`, dentro de `data/chars/<slug>.js`, e aparece no guia como "Rotas de combo e oki do SF6 Lab". O hub traduziu só os rótulos e as notas curtas (350 frases); os comentários longos, as outras seções (setplay, combos adicionais, mudanças do Year 4) e os vídeos ficaram na fonte, com link.
+
+**Conferência com as tabelas do hub.** Das 41 rotas que trazem um "+N" simples, 22 batem com o valor de knockdown da tabela de frames para o golpe final e ganharam a etiqueta "= tabela de frames". Em 17, o golpe final não pôde ser casado pelo nome. Duas não batem com um valor de knockdown, ambas da Kimberly: H Bushin Senpukyaku, +20 na fonte e KD +21 na tabela (a rota termina num juggle, então a diferença pode ser legítima); e L Vagabond Edge, +3 na fonte, que não derruba e bate com o valor no hit da tabela (3). O hub não testou as rotas no jogo, e a seção diz isso.
+
+**Divergência a testar.** Ver Problemas não resolvidos, item 9 (Solar Plexus Strike do Ryu depois do dash).
+
+**Ferramentas.** A extração foi feita com scripts fora do repositório, a partir de uma cópia do site fornecida pelo usuário; os dados ficaram nos arquivos dos personagens.

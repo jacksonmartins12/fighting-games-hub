@@ -7,6 +7,7 @@ var UPCOMING = HUB_DATA.upcoming || [];
 var QUIZ = HUB_DATA.quiz || {};
 var CHARS = {};                           // full guides, filled on demand by needChar()
 var FRAMES = {};                          // full frame data, filled on demand by needChar()
+var LAB = {};                             // combo and oki routes from SF6 Lab (Iori), used with permission; filled by needChar()
 var ORDER = [], GROUP = {};               // chapter order and groups, read from the page
 document.querySelectorAll('#content > section').forEach(function (s) { ORDER.push(s.id); GROUP[s.id] = s.getAttribute('data-group'); });
 
@@ -64,7 +65,7 @@ function needChar(slug) {   // resolves once CHARS[slug] and FRAMES[slug] are av
   return loadScript('data/chars/' + slug + '.js').then(function () {
     var d = (window.HUB_DATA.chars || {})[slug];
     if (!d) throw new Error('no data for ' + slug);
-    CHARS[slug] = d.guide; FRAMES[slug] = d.frames;
+    CHARS[slug] = d.guide; FRAMES[slug] = d.frames; LAB[slug] = d.lab || null;
     return d.guide;
   });
 }

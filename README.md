@@ -35,7 +35,7 @@ Acesse a versão publicada no GitHub Pages ou abra `index.html` no navegador. O 
 | `data/chars/<personagem>.js` | Guia e frame data de cada personagem. Só é baixado quando alguém abre o personagem. |
 | `data/plan30.js` | Os 30 dias do plano de treino. |
 | `data/moves-index.js` | Nomes e comandos de todos os golpes, para a busca. **Gerado pelo `build.py`.** |
-| `assets/css/hub.css`, `assets/js/*.js` | Visual e comportamento (navegação, quizzes, tracker, guias, calculadora de punish, resolvedor de matrizes em `games.js`, folhas de oki e pressão de cada personagem em `setups.js`). |
+| `assets/css/hub.css`, `assets/js/*.js` | Visual e comportamento (navegação, quizzes, tracker, guias, calculadora de punish, resolvedor de matrizes em `games.js`, folhas de oki e pressão de cada personagem e as rotas do SF6 Lab em `setups.js`). |
 | `img/` | Imagens. |
 | `sw.js`, `manifest.webmanifest` | Fazem o hub abrir sem internet e ser instalável no celular. O `sw.js` é **gerado pelo `build.py`** a partir de `src/sw.template.js`. |
 

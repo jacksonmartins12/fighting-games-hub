@@ -80,7 +80,7 @@ function charHTML(c) {
   (c.combos || []).forEach(function (k) {
     h += '<div class="combo"><p class="combo-label">' + BO(k.label) + '</p><div class="route">' + esc(k.route) + '</div><p class="small muted">' + BO(k.notes) + '</p></div>';
   });
-  h += frameSectionHTML(c.slug) + (typeof setupsHTML === 'function' ? setupsHTML(c.slug) : '');
+  h += frameSectionHTML(c.slug) + (typeof setupsHTML === 'function' ? setupsHTML(c.slug) + labHTML(c.slug) : '');
   h += '<h4>' + B('roster.tips') + '</h4><ul>' + li(c.tips) + '</ul>' +
     '<h4>' + B('roster.playing-against') + esc(c.name) + '</h4><p>' + BO(c.counterplay) + '</p>' +
     '<div class="card"><p class="small">' + BO(c.data_note) + '</p><p class="cg-sources">' + B('roster.sources') +

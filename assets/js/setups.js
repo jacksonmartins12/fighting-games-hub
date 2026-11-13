@@ -99,3 +99,27 @@ document.addEventListener('click', function (e) {
   if (o) { adv.okiChar = o.getAttribute('data-oki-char'); adv.okiKd = null; adv.okiDash = 0; adv.okiWalk = 0; advSave(); }
   if (s) { adv.strChar = s.getAttribute('data-str-char'); adv.strA = null; adv.strDr = false; adv.strBo = false; adv.strExtra = 0; advSave(); }
 });
+
+// ---------- routes from SF6 Lab (Iori), used with the author's permission ----------
+// data/chars/<slug>.js carries them in `lab`: the "essential routes" of the fighter's Combos & Okizeme page, with the
+// route as written there, the knockdown advantage and the follow-up. `chk` marks a +N that equals this hub's frame table.
+function labHTML(slug) {
+  var L = LAB[slug];
+  if (!L || !L.items || !L.items.length) return '';
+  var link = '<a href="' + esc(L.url) + '" target="_blank" rel="noopener">SF6 Lab</a>';
+  var h = '<details class="ft-details setups lab-routes"><summary><span class="ft-sum-t">' + B('lab.title') + '</span> <span class="muted small">' + B('lab.summary') + '</span></summary><div class="setups-body">' +
+    '<p class="small">' + B('lab.credit', [link, esc(L.updated || ''), esc(L.balance || '')]) + '</p>' +
+    '<p class="small muted">' + B('lab.legend') + '</p>';
+  L.items.forEach(function (it) {
+    h += '<div class="setups-block"><p class="setups-head"><b>' + esc(BOtext(it.h)) + '</b></p>';
+    it.rows.forEach(function (r) {
+      h += '<div class="lab-row">' + (r.sub ? '<p class="setups-lbl">' + r.sub.map(function (x) { return esc(BOtext(x)); }).join(' · ') + '</p>' : '') +
+        r.route.map(function (x) { return '<p class="lab-route inp">' + esc(x) + '</p>'; }).join('') +
+        (r.notes ? '<ul class="lab-notes">' + r.notes.map(function (x, i) { return '<li>' + esc(BOtext(x)) + (r.chk && /^\+\d+$/.test(x.en) ? ' <span class="ft-tag ft-flag-official">' + B('lab.chk') + '</span>' : '') + '</li>'; }).join('') + '</ul>' : '') + '</div>';
+    });
+    h += '</div>';
+  });
+  h += '<p class="small muted">' + B('lab.more', [link]) + '</p></div></details>';
+  return h;
+}
+function BOtext(o) { return (o && (o[lang] || o.en)) || ''; }

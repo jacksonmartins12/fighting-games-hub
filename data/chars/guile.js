@@ -300,5 +300,6 @@
       "jump": "4+38+3",
       "throwRange": "0.8"
     }
-  }
+  },
+  "lab": {"by":"Iori (SF6 Lab)","url":"https://sf6-lab.net/en/fighters/guile/combo","updated":"2026-08-31","balance":"2026-08-03","items":[{"h":{"en":"cr.LK starter","pt":"Início com cr.LK"},"rows":[{"route":["cr.LK > cr.LP > H Somersault Kick"]},{"route":["If the extra light attack reaches: cr.LK > cr.LP > st.LK > H Somersault Kick"]}]},{"h":{"en":"Basic st.MP route","pt":"Rota básica de st.MP"},"rows":[{"route":["st.MP > cr.MP > H Somersault Kick"]}]},{"h":{"en":"Basic target combo","pt":"Target combo básico"},"rows":[{"route":["st.MP > 4HP > H Somersault Kick"]}]},{"h":{"en":"Single cr.MP starter","pt":"Início com um único cr.MP"},"rows":[{"route":["cr.MP > H Somersault Kick"]}]},{"h":{"en":"cr.HP combo","pt":"Combo de cr.HP"},"rows":[{"route":["cr.HP > H Somersault Kick"]}]},{"h":{"en":"Reliable DR MP route","pt":"Rota confiável de DR MP"},"rows":[{"route":["DR > st.MP > cr.HP > H Somersault Kick"]}]},{"h":{"en":"Higher-damage DR MP route","pt":"Rota de DR MP com mais dano"},"rows":[{"route":["DR > st.MP > st.MP > cr.MP > H Somersault Kick"]}]},{"h":{"en":"Drive Rush overhead","pt":"Overhead com Drive Rush"},"rows":[{"route":["DR > 6MP > cr.MP > H Somersault Kick"]}]},{"h":{"en":"st.HP Punish Counter","pt":"st.HP em Punish Counter"},"rows":[{"route":["st.HP PC > st.MP > 4HP > H Somersault Kick"]}]},{"h":{"en":"6HP Punish Counter","pt":"6HP em Punish Counter"},"rows":[{"route":["6HP PC > st.MP > cr.MP > H Somersault Kick"]}]}]}
 };

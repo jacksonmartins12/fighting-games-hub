@@ -28,6 +28,12 @@
    "status": "community"
   },
   {
+   "name": "SF6 Lab (Iori)",
+   "url": "https://sf6-lab.net/en/",
+   "used": "combo and oki routes in the character guides (the \"essential routes\" of each Combos & Okizeme page, guide of 2026-08-31, balance update of 2026-08-03), used with the author's permission; combo notes in seven guides",
+   "status": "community"
+  },
+  {
    "name": "dood.gg",
    "url": "https://dood.gg/",
    "used": "safe meaty rule, fuzzy guard, option selects; spot check of Ryu's on-block values",

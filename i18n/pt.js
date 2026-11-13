@@ -528,5 +528,11 @@
   "setups.fact-block": "block",
   "setups.fact-hit": "hit",
   "setups.fact-safe": "seguro contra reversal ≥ {0}f",
+  "lab.title": "Rotas de combo e oki do SF6 Lab",
+  "lab.summary": "rotas essenciais do Iori, com a vantagem de knockdown e a continuação",
+  "lab.credit": "Estas rotas são do <strong>Iori</strong>, do guia de Combos &amp; Okizeme do {0}, e estão aqui com a permissão do autor. Guia atualizado em {1}, para a atualização de balanceamento de {2}. As rotas, os números e a ordem são dele; este hub só traduziu os rótulos.",
+  "lab.legend": "Notação como na fonte: st. em pé, cr. agachado, j. pulando, L/M/H a força de um especial, OD Overdrive, SA Super Art, DI Drive Impact, DR Drive Rush, PC Punish Counter, CH Counter Hit, TC target combo. \"+N\" é a vantagem depois do knockdown. A etiqueta marca um valor igual ao da tabela de frames deste hub para aquele golpe isolado; depois de um juggle o valor pode ser diferente do da tabela. Este hub não testou estas rotas no jogo: confira no training mode, e a versão do jogo, antes de confiar nelas.",
+  "lab.chk": "= tabela de frames",
+  "lab.more": "O guia completo, com mais rotas, setplay e as notas e os vídeos do Iori, está no {0}.",
   "chapter.adv-data": "Ler e Medir"
 };

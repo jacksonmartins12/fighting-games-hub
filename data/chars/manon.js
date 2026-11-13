@@ -300,5 +300,6 @@
       "jump": "4+38+3",
       "throwRange": "0.8"
     }
-  }
+  },
+  "lab": {"by":"Iori (SF6 Lab)","url":"https://sf6-lab.net/en/fighters/manon/combo","updated":"2026-08-31","balance":"2026-08-03","items":[{"h":{"en":"st.MP starter / basic","pt":"Início com st.MP / básico"},"rows":[{"route":["st.MP > DR > cr.MP > 4HP > M Renversé"]}]},{"h":{"en":"st.MK starter","pt":"Início com st.MK"},"rows":[{"route":["st.MK > DR > cr.MP > 4HP > M Renversé"]}]},{"h":{"en":"jump attack starter","pt":"Início com ataque de pulo"},"rows":[{"route":["j.MK > cr.LP > cr.LP > H Rond-point"]}]},{"h":{"en":"Jump-in into Medal gain","pt":"Pulo até ganhar Medal"},"rows":[{"route":["j.HP or j.HK > 4HP > M Renversé"]}]},{"h":{"en":"Light starter","pt":"Início com golpe fraco"},"rows":[{"route":["cr.LP > cr.LP > H Rond-point"]}]},{"h":{"en":"DR cr.MP starter","pt":"Início com DR cr.MP"},"rows":[{"route":["DR > cr.MP > 4HP > M Renversé"]}]},{"h":{"en":"Spend OD meter to gain a Medal","pt":"Gaste barra de OD para ganhar uma Medal"},"rows":[{"route":["… > OD Rond-point > 4HP > H Renversé"]}]},{"h":{"en":"Drive Impact Punish Counter","pt":"Drive Impact em Punish Counter"},"rows":[{"route":["DI (Punish Counter) > forward dash > 4HP > OD Rond-point > M Renversé"]}]},{"h":{"en":"Corner DI","pt":"Drive Impact no canto"},"rows":[{"route":["DI (wall splat) > 4HP > M Renversé"]}]},{"h":{"en":"Corner DI / meter","pt":"Drive Impact no canto / barra"},"rows":[{"route":["DI (wall splat) > 4HP > OD Rond-point > 4HP > H Renversé"]}]}]}
 };
