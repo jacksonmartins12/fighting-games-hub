@@ -405,3 +405,7 @@ Revisão do capítulo de teoria dos jogos e das folhas de oki e pressão antes d
 4. **Pressão.** O texto agora diz que um frame trap ainda perde para reversal invencível e para Drive Parry, e quanto custa o Drive Rush (1 barra saindo de um parry, 3 cancelando um golpe), como no capítulo do Sistema Drive.
 
 Os 28 testes passam.
+
+## 20. Teoria dos jogos em linguagem prática (13/11/2026)
+
+O capítulo foi reescrito num nível mais acessível. O texto principal agora usa linguagem de jogador e começa pelos exemplos. As fórmulas, a notação, o programa linear, os jogos estocásticos, a regra de Laplace, o intervalo de Wilson e as referências foram para sete quadros recolhidos, "Para quem quer a matemática", iguais nos dois idiomas. Nenhum número mudou, e o resolvedor ficou igual. O teste do capítulo continua recalculando cada número citado e agora também confere os quadros recolhidos e os dois exemplos novos do texto. Duas perguntas do quiz foram reescritas sem o jargão (maximin/minimax e regra de Laplace).

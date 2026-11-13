@@ -220,6 +220,11 @@ await test('game theory: the chapter quotes the solver, and the tool works in bo
     '<td>−1.200</td>', '2.187', '(55% em vez de 40%)', '(45% em vez de 60%)', 'meaty uns 543, throw 143, shimmy 700, isca 86', '(uns 29% contra 8%)', '<td>−1.600</td>'])
     ok(html.includes(s), 'chapter text is missing "' + s + '"');
   for (const s of ['about <strong>315</strong>', 'uns <strong>315</strong>', '0% tech', '0% de tech']) ok(!html.includes(s), 'stale number in the chapter: "' + s + '"');
+  ok(Math.round((r.blends[0][1] - r.blends[1][1]) / (r.blends[1][0] - r.blends[0][0]) * 10) * 10 === 470 && html.includes('every 100 points of extra profit against the habit cost about 470') && html.includes('cada 100 pontos de lucro extra contra o hábito custam uns 470'), 'cost of exploiting per 100 points');
+  ok(html.includes('strike 40% of the time and throw 60%') && html.includes('golpe em 40% das vezes e throw em 60%'), 'strike-or-throw example');
+  // the math sits in collapsed boxes, the same ones in both languages
+  const boxes = await page.evaluate(() => ['en', 'pt'].map(l => [...document.querySelectorAll('#adv-games > .l-' + l + ' details.gt-math')].filter(d => !d.open).length));
+  eq(boxes, [7, 7], 'seven closed math boxes in each language');
   // the tool reacts: a 2 x 2 preset, then the Portuguese interface
   await page.selectOption('#gt-preset', 'sw2');
   eq(await page.textContent('.gt-out .adv-big b'), '720', 'strike-or-throw preset');

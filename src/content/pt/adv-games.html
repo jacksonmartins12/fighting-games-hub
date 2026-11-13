@@ -1,94 +1,96 @@
 
 <h2>Teoria dos Jogos Aplicada</h2>
 
-<p class="scope-note"><span class="scope-badge">Universal</span><span>A teoria é a mesma em qualquer jogo de luta. Os exemplos usam situações de Street Fighter 6; o dano tirado do frame data deste hub é indicado como tal, e todos os outros números são valores de exemplo para você trocar pelas suas medições.</span></p>
+<p class="scope-note"><span class="scope-badge">Universal</span><span>As ideias valem em qualquer jogo de luta. Os exemplos usam situações de Street Fighter 6; o dano tirado do frame data deste hub é indicado como tal, e todos os outros números são valores de exemplo para você trocar pelas suas medições.</span></p>
 
-<p><a href="#adv-decisions">Decisões em Números</a> tratou cada opção isoladamente: com que frequência ela precisa funcionar para compensar. Isso basta quando o comportamento do oponente é fixo. Não basta quando o oponente também está escolhendo, e escolhendo contra você. Este capítulo trata uma situação do jeito que a teoria dos jogos trata: dois jogadores, cada um com um conjunto de opções, escolhendo ao mesmo tempo, cada um tentando fazer o melhor contra o outro. Desse modelo saem respostas exatas para perguntas que os jogadores costumam decidir no feeling: quando você deve fazer sempre a mesma coisa, com que frequência usar cada opção quando não deve, quanto vale uma situação, como os loops mudam isso e até onde dá para explorar um hábito antes de ele custar caro.</p>
+<p><a href="#adv-decisions">Decisões em Números</a> olhou uma opção por vez: com que frequência ela precisa funcionar para valer a pena. Isso basta quando o oponente faz sempre a mesma coisa. Não basta quando ele também está tentando adivinhar, e tentando adivinhar você. A teoria dos jogos é a ferramenta para esse tipo de situação, e ela responde perguntas que os jogadores costumam decidir no feeling: quando fazer sempre a mesma coisa, com que frequência usar cada opção quando não é o caso, quanto um knockdown vale de verdade e até onde dá para apostar num hábito antes de ele custar caro.</p>
 
-<p>O capítulo é técnico. As fórmulas estão escritas por inteiro para você poder conferir, e o resolvedor abaixo faz as contas para qualquer situação com até cinco opções de cada lado.</p>
+<p>Você não precisa da matemática para usar este capítulo. O resolvedor abaixo faz as contas, e o texto explica o que os resultados querem dizer. Se quiser ver de onde os números saem, abra os quadros "Para quem quer a matemática".</p>
 
-<h3 id="gt-matrix-pt">A Situação como Matriz</h3>
+<h3 id="gt-matrix-pt">Escreva a Situação como Tabela</h3>
 
-<p>Escolha um momento que se repete: o oponente levantando do seu lado, você em vantagem depois de uma sequência defendida, o início do round. Liste as suas opções como linhas e as dele como colunas. Cada célula guarda o <strong>payoff</strong>: o que você ganha quando aquela linha encontra aquela coluna. Dano é a unidade natural; o que você ganha, ele perde, então um número por célula basta. Jogos assim se chamam de <strong>soma zero</strong>, e são o caso que a teoria dos jogos resolve de forma mais completa.</p>
+<p>Escolha um momento que se repete: o oponente levantando do seu lado, você em vantagem depois de uma sequência defendida, o início do round. Escreva as suas opções nas linhas e as dele nas colunas. Em cada célula, ponha o que você ganha quando aquela opção encontra aquela resposta, em dano: positivo quando você sai na frente, negativo quando é ele. Este é o oki mais simples que existe, com os números usados no resto do capítulo:</p>
 
-<div class="deep-dive">
-    <h4>A notação usada neste capítulo</h4>
-    <ul>
-        <li><strong>A</strong> é a matriz de payoffs: <strong>a<sub>ij</sub></strong> é o que você (quem joga nas linhas) ganha quando escolhe a opção i e o oponente escolhe a resposta j. Você quer esse número grande; ele quer pequeno.</li>
-        <li>Uma <strong>estratégia mista</strong> é uma lista de frequências. A sua é <strong>p</strong> = (p<sub>1</sub>, …, p<sub>m</sub>), a dele <strong>q</strong> = (q<sub>1</sub>, …, q<sub>n</sub>); cada lista é não negativa e soma 1. Escolher sempre a mesma opção (uma estratégia pura) é o caso particular com um único 1.</li>
-        <li>Quando os dois misturam, o seu ganho médio é <strong>pᵀAq</strong> = Σ<sub>i</sub> Σ<sub>j</sub> p<sub>i</sub> a<sub>ij</sub> q<sub>j</sub>.</li>
-        <li>(Aq)<sub>i</sub> é o que a opção i rende contra o mix q dele; (pᵀA)<sub>j</sub> é o que a resposta j entrega contra o seu mix p.</li>
-    </ul>
-</div>
+<div class="table-wrap"><table>
+    <tr><th>Você ↓ · Ele →</th><th>Defender</th><th>Tech</th></tr>
+    <tr><td><strong>Golpe meaty</strong></td><td>0</td><td>1.800</td></tr>
+    <tr><td><strong>Throw</strong></td><td>1.200</td><td>0</td></tr>
+</table></div>
 
-<p>Duas suposições se escondem nesse quadro. As escolhas são <strong>simultâneas</strong>: nenhum dos lados vê a escolha do outro a tempo de mudar a sua. E os payoffs são <strong>conhecidos pelos dois lados</strong>, pelo menos aproximadamente. Quando uma opção pode ser vista e respondida na reação, a primeira suposição cai, e <a href="#gt-reaction-pt">A Reação Muda o Jogo</a> mostra como consertar o modelo.</p>
+<p>Um meaty defendido não ganha nada aqui. Um meaty que pega uma tentativa de tech é Counter Hit e vale, como exemplo, 1.800 com o combo. Um throw em quem está defendendo dá 1.200 (os throws do Ryu na tabela deste hub). Um throw com tech não dá nada.</p>
 
-<h3 id="gt-saddle-pt">Pontos de Sela: Quando Não Misturar</h3>
+<p>A tabela supõe duas coisas. Os dois jogadores <strong>escolhem ao mesmo tempo</strong>: nenhum vê a escolha do outro a tempo de mudar a sua. E os dois têm <strong>uma ideia aproximada de quanto vale cada resultado</strong>. Quando uma opção pode ser vista e respondida na reação, a primeira suposição cai; <a href="#gt-reaction-pt">Quando Ele Consegue Reagir</a> mostra o que fazer nesse caso.</p>
 
-<p>Comece pela leitura cautelosa da matriz. Para cada uma das suas opções, olhe a pior célula, o mínimo da linha: é o que a opção garante, faça ele o que fizer. A melhor dessas garantias é o seu <strong>maximin</strong>. Quem defende faz o mesmo do lado dele: o máximo de cada coluna é o mais que aquela resposta pode custar, e o menor deles é o <strong>minimax</strong> dele.</p>
+<details class="ft-details gt-math">
+    <summary><span class="ft-sum-t">Para quem quer a matemática: a notação</span></summary>
+    <div class="gt-math-body">
+        <ul>
+            <li>A tabela é a matriz de payoffs <strong>A</strong>; <strong>a<sub>ij</sub></strong> é o que você (as linhas) ganha quando escolhe a opção i e ele escolhe a resposta j. O que você ganha, ele perde, então é um <strong>jogo de soma zero</strong>.</li>
+            <li>Uma <strong>estratégia mista</strong> é uma lista de frequências que soma 1: a sua é <strong>p</strong> = (p<sub>1</sub>, …, p<sub>m</sub>), a dele <strong>q</strong> = (q<sub>1</sub>, …, q<sub>n</sub>). Fazer sempre a mesma coisa é uma lista com um único 1.</li>
+            <li>Quando os dois misturam, o seu ganho médio é <strong>pᵀAq</strong> = Σ<sub>i</sub> Σ<sub>j</sub> p<sub>i</sub> a<sub>ij</sub> q<sub>j</sub>. (Aq)<sub>i</sub> é o que a opção i rende contra o mix dele; (pᵀA)<sub>j</sub> é o que a resposta j entrega contra o seu.</li>
+        </ul>
+    </div>
+</details>
 
-<p class="formula">maximin = max<sub>i</sub> min<sub>j</sub> a<sub>ij</sub>  ≤  minimax = min<sub>j</sub> max<sub>i</sub> a<sub>ij</sub></p>
+<h3 id="gt-saddle-pt">Quando Não Misturar</h3>
 
-<p>A desigualdade vale sempre. Quando os dois são iguais, a célula onde eles se encontram é um <strong>ponto de sela</strong>: a menor da sua linha e a maior da sua coluna. Aí nenhum dos lados ganha desviando, misturar não adianta, e a jogada certa é sempre a mesma.</p>
+<p>Às vezes a tabela tem uma resposta que é a melhor não importa o que o outro lado faça. Aí não há o que adivinhar: esse lado deve usá-la toda vez, e o outro não resolve misturando. A teoria dos jogos chama essa célula de <strong>ponto de sela</strong>.</p>
 
 <div class="card">
     <h4>Exemplo: oki sem resposta para o reversal</h4>
-    <p>Você tem um golpe meaty, um throw e um shimmy; o oponente pode defender, dar tech ou usar o OD Shoryuken, que a tabela do Ryu neste hub dá com 1.600 de dano e totalmente invencível nos frames 1–8. Como diz a <a href="#adv-defense-table-pt">tabela de opções de defesa</a> do hub, o reversal invencível vence golpes, throws e shimmies: no wakeup, o shimmy ainda está andando para frente quando ele sai. Então a coluna do reversal é −1.600 em todas as linhas, a pior célula de cada linha e portanto o maximin, e também o máximo da coluna. É um ponto de sela: quem defende deve usar o reversal toda vez, e a situação vale −1.600 para você. Nenhum mix das suas três opções muda isso. Carregue "Oki sem resposta para o reversal" no resolvedor para ver.</p>
-    <p>A solução não é um mix melhor das mesmas opções; é uma linha nova que vença a coluna. Defender e esperar (a isca) vence: o OD Shoryuken defendido fica −40 e é punido. O próximo exemplo acrescenta essa opção.</p>
+    <p>Você tem um golpe meaty, um throw e um shimmy. O oponente pode defender, dar tech ou usar o OD Shoryuken, que a tabela do Ryu neste hub dá com 1.600 de dano e totalmente invencível nos frames 1–8. Como diz a <a href="#adv-defense-table-pt">tabela de opções de defesa</a> do hub, um reversal invencível vence golpes, throws e shimmies: no wakeup, o shimmy ainda está andando para frente quando ele sai. Então o reversal te custa 1.600 seja qual for a sua escolha. Quem defende deve usar o reversal toda vez, e nenhum mix das suas três opções muda isso. Carregue "Oki sem resposta para o reversal" no resolvedor para ver.</p>
+    <p>A solução não é um mix melhor das mesmas opções. É uma opção nova que vença o reversal: defender e esperar (a isca). O OD Shoryuken defendido fica −40 e é punido. O exemplo de quatro opções mais abaixo acrescenta essa opção.</p>
 </div>
 
-<h3 id="gt-dominance-pt">Dominância</h3>
+<details class="ft-details gt-math">
+    <summary><span class="ft-sum-t">Para quem quer a matemática: maximin e minimax</span></summary>
+    <div class="gt-math-body">
+        <p>Para cada opção sua, a pior célula (o mínimo da linha) é o que ela garante. A melhor dessas garantias é o seu <strong>maximin</strong>. Para quem defende, o máximo de cada coluna é o mais que aquela resposta pode custar, e o menor deles é o <strong>minimax</strong> dele:</p>
+        <p class="formula">maximin = max<sub>i</sub> min<sub>j</sub> a<sub>ij</sub>  ≤  minimax = min<sub>j</sub> max<sub>i</sub> a<sub>ij</sub></p>
+        <p>Quando os dois são iguais, a célula onde se encontram é a menor da linha e a maior da coluna: um ponto de sela. No exemplo, a pior célula de toda linha é −1.600 (o reversal), e a coluna do reversal nunca passa de −1.600, então os dois lados da desigualdade valem −1.600.</p>
+    </div>
+</details>
 
-<p>A opção i é <strong>estritamente dominada</strong> pela opção k quando k rende mais contra todas as respostas: a<sub>kj</sub> &gt; a<sub>ij</sub> para todo j. Uma opção estritamente dominada nunca aparece numa estratégia ótima, então você pode apagá-la, e depois disso outras opções podem ficar dominadas por sua vez (<strong>eliminação iterada</strong>). Para quem defende a comparação é ao contrário: uma resposta é dominada quando outra custa menos a ele contra todas as opções.</p>
+<h3 id="gt-dominance-pt">Opções que Dá para Riscar</h3>
 
-<p>A <strong>dominância fraca</strong> (nunca rende mais, rende menos pelo menos uma vez) é mais sutil. Apagar opções fracamente dominadas nunca baixa o valor do jogo, mas pode apagar algumas estratégias ótimas, e o resultado pode depender da ordem em que você apaga. Trate como pista, não como regra. O resolvedor mostra os dois tipos.</p>
+<p>Se uma opção sua rende menos que outra contra todas as respostas, não use nunca: ela é <strong>dominada</strong>. Risque. Às vezes riscar uma deixa outra inútil também, então confira de novo. O mesmo vale para quem defende: uma resposta que custa mais a ele que outra contra tudo o que você faz nunca vai fazer parte do melhor jogo dele.</p>
 
-<h3 id="gt-minimax-pt">Estratégias Mistas e o Teorema Minimax</h3>
+<p>Cuidado com as opções que só "nunca rendem mais e às vezes rendem menos" (<strong>fracamente dominadas</strong>). Riscar essas nunca te prejudica, mas pode esconder outra forma de jogar igualmente boa. Trate como pista, não como regra. O resolvedor aponta os dois tipos.</p>
 
-<p>Quando não há ponto de sela, toda escolha pura pode ser explorada. Permitir mixes fecha essa brecha. John von Neumann provou em 1928 que todo jogo de soma zero finito tem um valor v e mixes ótimos p* e q* tais que:</p>
+<h3 id="gt-minimax-pt">Por Que Misturar Funciona (e Quanto)</h3>
 
-<p class="formula">max<sub>p</sub> min<sub>q</sub> pᵀAq  =  min<sub>q</sub> max<sub>p</sub> pᵀAq  =  v</p>
+<p>Quando não há ponto de sela, qualquer coisa que você faça sempre pode ser lida e punida. A saída é misturar, nas proporções certas. O mix certo tem uma propriedade: <strong>ele deixa todas as respostas que o oponente usa igualmente boas para ele.</strong> Aí te ler não adianta nada. Seja qual for a escolha dele, você ganha a mesma média, e essa média é o <strong>valor</strong> da situação: o máximo que você consegue garantir contra um oponente perfeito, e o mínimo a que ele consegue te segurar. O mix certo de quem defende funciona do mesmo jeito do lado dele.</p>
 
-<p>Leia como duas garantias. Com p* você ganha pelo menos v em média, faça quem defende o que fizer; com q* quem defende entrega no máximo v, faça você o que fizer. Nenhum dos lados consegue mais contra um oponente perfeito, por isso v se chama o <strong>valor</strong> da situação, e o par (p*, q*) o seu <strong>equilíbrio</strong> (em jogos de soma zero, estratégias minimax e equilíbrios de Nash são a mesma coisa).</p>
+<p>Disso sai a regra mais surpreendente do capítulo: <strong>a frequência certa de cada opção sua depende dos payoffs do oponente, não dos seus.</strong> O seu mix é o que deixa as respostas dele igualmente boas, então se o seu throw passa a dar mais dano, quem precisa mudar é quem defende (dar mais tech), e a sua própria frequência de throw pode <em>cair</em>. O <a href="#gt-continuation-pt">throw loop</a> abaixo mostra exatamente isso.</p>
 
-<h4>O princípio da indiferença</h4>
-
-<p>No equilíbrio, toda opção que você realmente usa rende exatamente v contra q*, e toda opção que você deixa de fora rende no máximo v. O mesmo vale para quem defende. É assim que se calculam os mixes à mão: escolha as suas frequências de modo que todas as respostas dele custem o mesmo a ele. A consequência surpreende a maioria dos jogadores: <strong>as suas frequências são definidas pelos payoffs do oponente, e as dele pelos seus</strong>. Se o seu throw passa a dar mais dano, quem defende precisa dar mais tech para se manter equilibrado; a sua própria frequência de throw pode até cair. O <a href="#gt-continuation-pt">throw loop</a> abaixo mostra exatamente isso.</p>
-
-<div class="deep-dive">
-    <h4>A fórmula do 2 × 2</h4>
-    <p>Para uma matriz 2 × 2 com linhas (a, b) e (c, d) e sem ponto de sela, seja D = a − b − c + d. Então:</p>
-    <ul>
-        <li>A sua frequência da linha 1: p = (d − c) / D</li>
-        <li>A frequência dele da coluna 1: q = (d − b) / D</li>
-        <li>O valor: v = (ad − bc) / D</li>
-    </ul>
-    <p><strong>Golpe ou throw.</strong> Linhas: golpe meaty, throw. Colunas: defender, tech. Um meaty defendido não ganha nada aqui (0); um meaty que pega uma tentativa de tech é Counter Hit e vale, como exemplo, 1.800; um throw contra quem defende dá 1.200 (os throws do Ryu na tabela deste hub); um throw com tech dá 0. Então a = 0, b = 1.800, c = 1.200, d = 0, e D = −3.000.</p>
-    <ul>
-        <li>p = (0 − 1.200) / −3.000 = 0,4: golpe em 40% das vezes, throw em 60%.</li>
-        <li>q = (0 − 1.800) / −3.000 = 0,6: quem defende defende em 60% e dá tech em 40%.</li>
-        <li>v = (0 − 1.800 × 1.200) / −3.000 = 720 por tentativa.</li>
-    </ul>
-    <p>Confira a indiferença: contra q*, o golpe rende 0,4 × 1.800 = 720 e o throw 0,6 × 1.200 = 720. Contra p*, defender entrega 0,6 × 1.200 = 720 e dar tech 0,4 × 1.800 = 720.</p>
+<div class="card">
+    <h4>Exemplo: golpe ou throw</h4>
+    <p>Na tabela do começo do capítulo, o resolvedor diz: golpe em 40% das vezes e throw em 60%; quem defende deve defender em 60% e dar tech em 40%; e a situação vale <strong>720</strong> por knockdown.</p>
+    <p>Confira contra o mix dele. O seu golpe rende 1.800 sempre que ele dá tech, 40% das vezes: 720 em média. O seu throw rende 1.200 sempre que ele defende, 60% das vezes: também 720. As suas duas opções rendem o mesmo, então nenhuma leitura sua vence o mix dele. A mesma conta do lado dele: contra os seus 40/60, defender entrega 60% × 1.200 = 720, e dar tech entrega 40% × 1.800 = 720.</p>
 </div>
 
-<h4>Matrizes maiores</h4>
-
-<p>Acima de 2 × 2, o método padrão é a programação linear. Some uma constante k a todas as células para que todas fiquem em pelo menos 1 (isso desloca o valor em k e não muda mais nada) e resolva:</p>
-
-<p class="formula">maximizar Σ<sub>j</sub> y<sub>j</sub>  sujeito a  Σ<sub>j</sub> (a<sub>ij</sub> + k) y<sub>j</sub> ≤ 1 para toda linha i,  y ≥ 0</p>
-
-<p>O mix de quem defende é q* = y / Σy, o valor é v = 1 / Σy − k, e o seu mix p* sai do dual do mesmo programa. O resolvedor abaixo usa o método simplex com a regra de Bland, que não entra em ciclo. Um equilíbrio sempre existe, mas não precisa ser único; quando outro mix é igualmente bom, o resolvedor avisa.</p>
+<details class="ft-details gt-math">
+    <summary><span class="ft-sum-t">Para quem quer a matemática: o teorema minimax, a fórmula do 2 × 2 e tabelas maiores</span></summary>
+    <div class="gt-math-body">
+        <p>John von Neumann provou em 1928 que todo jogo de soma zero finito tem um valor v e mixes ótimos p* e q* tais que:</p>
+        <p class="formula">max<sub>p</sub> min<sub>q</sub> pᵀAq  =  min<sub>q</sub> max<sub>p</sub> pᵀAq  =  v</p>
+        <p>Com p* você ganha pelo menos v, faça ele o que fizer; com q* ele entrega no máximo v, faça você o que fizer. Em jogos de soma zero, essas estratégias minimax são a mesma coisa que os equilíbrios de Nash. No equilíbrio, toda opção que você usa rende exatamente v contra q*, e toda opção que você deixa de fora rende no máximo v (o <strong>princípio da indiferença</strong>); o mesmo vale para quem defende.</p>
+        <p><strong>A fórmula do 2 × 2.</strong> Para linhas (a, b) e (c, d) sem ponto de sela, seja D = a − b − c + d. A sua frequência da linha 1 é p = (d − c) / D, a dele da coluna 1 é q = (d − b) / D, e o valor é v = (ad − bc) / D. Na tabela de golpe ou throw, a = 0, b = 1.800, c = 1.200, d = 0 e D = −3.000: p = 0,4, q = 0,6, v = 720.</p>
+        <p><strong>Tabelas maiores.</strong> Some uma constante k a todas as células para que todas fiquem em pelo menos 1 e resolva o programa linear</p>
+        <p class="formula">maximizar Σ<sub>j</sub> y<sub>j</sub>  sujeito a  Σ<sub>j</sub> (a<sub>ij</sub> + k) y<sub>j</sub> ≤ 1 para toda linha i,  y ≥ 0</p>
+        <p>O mix de quem defende é q* = y / Σy, o valor é v = 1 / Σy − k, e o seu mix p* sai do dual do mesmo programa. O resolvedor usa o método simplex com a regra de Bland, que não entra em ciclo. Um equilíbrio sempre existe, mas não precisa ser único; quando outro mix é igualmente bom, o resolvedor avisa.</p>
+    </div>
+</details>
 
 <h3 id="gt-tool-pt">O Resolvedor de Matrizes</h3>
 
-<p>Escolha um exemplo ou defina o tamanho e digite os seus próprios payoffs. O resolvedor dá o valor, os dois mixes ótimos, o ponto de sela se houver, as opções dominadas e os possíveis empates. Embaixo, preencha o que um oponente realmente fez para ver até onde os hábitos dele podem ser explorados.</p>
+<p>Escolha um exemplo ou defina o tamanho e digite os seus números. O resolvedor mostra quanto a situação vale, o melhor mix de cada lado e observações sobre qualquer coisa especial: uma resposta que deve ser usada toda vez, opções que dá para riscar, outros mixes que funcionam igualmente bem. Embaixo, preencha quantas vezes um oponente realmente fez cada coisa para ver quanto os hábitos dele valem para você.</p>
 
 <div class="widget-slot" data-widget="adv-games"></div>
 
 <h3 id="gt-oki-pt">Exemplo Completo: Oki com Quatro Opções</h3>
 
-<p>Carregue "Oki: 4 opções contra 4 respostas". As suas opções são um golpe meaty, um throw, um shimmy e defender para esperar o reversal; as dele são defender, dar tech, apertar um botão rápido e o OD Shoryuken. As relações seguem a <a href="#adv-defense-table-pt">tabela de opções de defesa</a> do hub: o botão rápido vence throws e perde para meaties e shimmies; o reversal vence tudo menos a isca. Dar tech é apertar throw, então contra quem fica parado defendendo, o throw de quem defende sai e agarra. O exemplo é um espelho de Ryu, e o dano tirado das tabelas deste hub é o do Ryu: 1.200 de qualquer um dos throws e 1.600 do OD Shoryuken. O punish de um OD Shoryuken defendido usa os mesmos 3.000 aproximados de <a href="#adv-defense-bets-pt">Defender Também É Apostar</a>. O resto (1.800 de um combo de meaty em Counter Hit, 2.500 de um Punish Counter depois do shimmy, 1.500 de punir um botão que errou, 1.000 de um botão que vence o seu throw) são valores de exemplo.</p>
+<p>Carregue "Oki: 4 opções contra 4 respostas". As suas opções são um golpe meaty, um throw, um shimmy e defender para esperar o reversal; as dele são defender, dar tech, apertar um botão rápido e o OD Shoryuken. Quem vence quem segue a <a href="#adv-defense-table-pt">tabela de opções de defesa</a> do hub: o botão rápido vence throws e perde para meaties e shimmies; o reversal vence tudo menos a isca. Dar tech é apertar throw, então contra quem fica parado defendendo, o throw de quem defende sai e agarra. O exemplo é um espelho de Ryu, e o dano tirado das tabelas deste hub é o do Ryu: 1.200 de qualquer um dos throws e 1.600 do OD Shoryuken. O punish de um OD Shoryuken defendido usa os mesmos 3.000 aproximados de <a href="#adv-defense-bets-pt">Defender Também É Apostar</a>. O resto (1.800 de um combo de meaty em Counter Hit, 2.500 de um Punish Counter depois do shimmy, 1.500 de punir um botão que errou, 1.000 de um botão que vence o seu throw) são valores de exemplo.</p>
 
 <div class="table-wrap"><table>
     <tr><th>Você ↓ · Ele →</th><th>Defender</th><th>Tech</th><th>Botão rápido</th><th>OD Shoryuken</th></tr>
@@ -98,110 +100,129 @@
     <tr><td><strong>Defender e esperar</strong></td><td>0</td><td>−1.200</td><td>0</td><td>3.000</td></tr>
 </table></div>
 
-<p>A solução: a situação vale uns <strong>295</strong> por knockdown. O seu mix ótimo é de uns 9% de meaty, 25% de throw, 25% de shimmy e 41% de isca; o dele é de uns 59% de defesa, 8% de tech, 20% de botão rápido e 13% de reversal. Vale tirar quatro leituras disso:</p>
+<p>A solução: a situação vale uns <strong>295</strong> por knockdown. O seu melhor mix é de uns 9% de meaty, 25% de throw, 25% de shimmy e 41% de isca; o dele é de uns 59% de defesa, 8% de tech, 20% de botão rápido e 13% de reversal. O que isso diz:</p>
 <ul>
-    <li><strong>Todas as opções dos dois lados são usadas.</strong> Não há ponto de sela nem opção dominada: cada opção vence algo que as outras não vencem. Por isso toda opção que você usa rende exatamente 295 contra o mix dele, e toda resposta que ele usa entrega exatamente 295 contra o seu.</li>
-    <li><strong>A isca é a sua opção mais frequente.</strong> É a única linha que vence o reversal, e é o reversal que sustenta o valor de quem defende. Usado só uma vez em oito, mais ou menos, o reversal ainda obriga você a esperar em uns 41% das vezes.</li>
+    <li><strong>Todas as opções dos dois lados são usadas.</strong> Cada opção vence algo que as outras não vencem, então nenhuma pode ser riscada e nenhuma deve ser usada toda vez. Toda opção que você usa rende exatamente 295 contra o mix dele, e toda resposta que ele usa entrega exatamente 295 contra o seu.</li>
+    <li><strong>A isca é a sua opção mais frequente.</strong> É a única que vence o reversal, e é o reversal que mantém quem defende de pé. Usado só uma vez em oito, mais ou menos, o reversal ainda obriga você a esperar em uns 41% das vezes.</li>
     <li><strong>O meaty é a sua opção mais rara.</strong> O shimmy cobre as mesmas duas respostas (tech e botão rápido) e paga mais contra o tech; o meaty só fica no mix porque paga mais contra o botão.</li>
-    <li><strong>O resultado depende dos seus números.</strong> Se um meaty defendido vale 400 para você porque você mantém o turno, o meaty sobe para uns 46% e o shimmy sai, com o valor subindo para uns 328. Se o punish depois da isca der só 2.000, você espera em cerca de metade das vezes, o meaty sai e o valor cai para uns 208. Antes de confiar num mix, mude cada estimativa de que você não tem certeza e veja se a resposta muda.</li>
+    <li><strong>O resultado depende dos seus números.</strong> Se um meaty defendido vale 400 para você porque você mantém o turno, o meaty sobe para uns 46% e o shimmy sai, com o valor subindo para uns 328. Se o punish depois da isca der só 2.000, você espera em cerca de metade das vezes, o meaty sai e o valor cai para uns 208. Antes de confiar num mix, mude cada número de que você não tem certeza e veja se a resposta muda.</li>
 </ul>
 
-<h3 id="gt-continuation-pt">O Payoff Não É Só Dano: Valores de Continuação</h3>
+<h3 id="gt-continuation-pt">O Dano Não É Tudo: o Que Vem Depois</h3>
 
-<p>Uma célula raramente encerra a história. Um meaty defendido mantém você no ataque; um throw dá knockdown e outro oki; um throw com tech volta a algo perto do neutro. O payoff honesto é o dano mais o valor da situação que vem depois:</p>
-
-<p class="formula">a<sub>ij</sub> = dano<sub>ij</sub> + V(próxima situação<sub>ij</sub>)</p>
-
-<p>Situações ligadas desse jeito formam um <strong>jogo estocástico</strong> (Lloyd Shapley, 1953): cada situação é um jogo de matriz cujas células apontam para outras situações. Shapley mostrou que esses jogos também têm valores, e que eles podem ser encontrados por <strong>iteração de valor</strong>: comece com todo V em 0, resolva cada matriz com os valores atuais nas células, troque os valores pelos resultados e repita até eles pararem de mudar. Quando uma célula leva de volta à mesma situação (um loop), o payoff dela contém o próprio valor que se está calculando, então o valor é um ponto fixo:</p>
-
-<p class="formula">V = val( A + R·V ), com R<sub>ij</sub> = 1 nas células que voltam</p>
+<p>Uma célula raramente encerra a troca. Um meaty defendido mantém você no ataque; um throw dá outro knockdown e outro oki; um throw com tech volta a algo perto do neutro. O que uma célula vale de verdade é o dano <strong>mais o que a próxima situação vale</strong>. Quando um resultado leva direto de volta à mesma situação, como um throw que monta o mesmo oki de novo (um throw loop), marque ↻ nessa célula e o resolvedor soma isso para você.</p>
 
 <div class="card">
     <h4>Exemplo: um throw loop</h4>
-    <p>Pegue a matriz de golpe ou throw e suponha que o seu throw deixa o oponente no mesmo oki de novo (um throw loop: marque ↻ na célula throw contra defender, ou carregue "Golpe ou throw, com throw loop"). A célula do throw vira 1.200 + V. Com a fórmula do 2 × 2:</p>
-    <p class="formula">V = 1.800 (1.200 + V) / (3.000 + V)  ⇒  V² + 1.200 V − 2.160.000 = 0  ⇒  V ≈ 987</p>
-    <p>O loop faz a situação subir de 720 para uns 987 por knockdown. Os mixes mudam do jeito que o princípio da indiferença prevê, não do jeito que a intuição espera: o throw agora vale 2.187 contra quem defende, então quem defende precisa dar mais tech (55% em vez de 40%), e você dá <em>menos</em> throw (45% em vez de 60%). As suas frequências mudaram porque os payoffs <em>dele</em> mudaram.</p>
+    <p>Pegue a tabela de golpe ou throw e suponha que o seu throw deixa o oponente de novo no mesmo oki (carregue "Golpe ou throw, com throw loop"). Cada throw que entra agora vale os seus 1.200 mais outra rodada da mesma situação.</p>
+    <p>A situação sobe de 720 para uns <strong>987</strong> por knockdown. E os mixes mudam do jeito que a regra acima prevê, não do jeito que a intuição espera: o throw agora vale uns 2.187 contra quem defende, então quem defende precisa dar mais tech (55% em vez de 40%), e você dá <em>menos</em> throw (45% em vez de 60%). O seu mix mudou porque os payoffs <em>dele</em> mudaram.</p>
 </div>
 
-<p>A iteração de valor converge quando todo loop tem uma saída que quem defende realmente usa. Se uma célula volta e ele não tem nenhuma resposta que encerre o loop, o valor cresce sem limite; o resolvedor avisa isso em vez de dar um número. Numa partida de verdade o round acaba antes, que é o assunto de <a href="#gt-utility-pt">Dano Não É Utilidade</a>.</p>
+<p>Um loop só tem valor finito se quem defende tiver uma saída que realmente use. Se uma célula volta e nada que ele faça encerra o loop, o resolvedor avisa em vez de dar um número. Numa partida de verdade o round acaba antes; <a href="#gt-utility-pt">Jogue pelo Round</a> trata do que isso muda.</p>
 
-<h3 id="gt-exploit-pt">Equilíbrio ou Exploração</h3>
+<details class="ft-details gt-math">
+    <summary><span class="ft-sum-t">Para quem quer a matemática: valores de continuação e loops</span></summary>
+    <div class="gt-math-body">
+        <p>O payoff honesto de uma célula é a<sub>ij</sub> = dano<sub>ij</sub> + V(próxima situação<sub>ij</sub>). Situações ligadas assim formam um <strong>jogo estocástico</strong> (Lloyd Shapley, 1953), que também tem valores, encontrados por <strong>iteração de valor</strong>: comece com todo V em 0, resolva cada tabela com os valores atuais nas células, troque os valores pelos resultados e repita até pararem de mudar. Para uma situação que volta a si mesma, o valor é um ponto fixo:</p>
+        <p class="formula">V = val( A + R·V ), com R<sub>ij</sub> = 1 nas células que voltam</p>
+        <p>No throw loop, a célula do throw é 1.200 + V, e a fórmula do 2 × 2 dá:</p>
+        <p class="formula">V = 1.800 (1.200 + V) / (3.000 + V)  ⇒  V² + 1.200 V − 2.160.000 = 0  ⇒  V ≈ 987</p>
+        <p>A célula do throw fica então em 1.200 + 987 = 2.187.</p>
+    </div>
+</details>
 
-<p>O equilíbrio é uma garantia, não um máximo. Contra um oponente que não joga q*, você pode ganhar mais que v jogando a <strong>melhor resposta</strong> ao que ele realmente faz: a linha com o maior (Aq)<sub>i</sub> para o q real dele. O preço é a exposição. Uma melhor resposta pura é exatamente o que um oponente que se adapta quer ver, e o máximo que ela pode perder é a sua pior célula.</p>
+<h3 id="gt-exploit-pt">Mix Equilibrado ou Explorar Hábitos</h3>
+
+<p>O mix equilibrado é uma garantia, não o máximo que você pode ganhar. Contra um oponente real, que tem hábitos, dá para ganhar mais pendendo para a opção que vence o que ele realmente faz (a <strong>melhor resposta</strong>). O preço é a exposição: quanto mais você pende, mais perde se ele perceber e se adaptar.</p>
 
 <div class="card">
     <h4>Exemplo: os dez wakeups</h4>
-    <p><a href="#adv-habits-pt">Lendo Hábitos como Porcentagens</a> contou dez wakeups: 5 defesas, 3 techs, um botão e um reversal. No oki de quatro opções, com a estimativa descrita na próxima seção (43%, 29%, 14%, 14%), cada opção rende: meaty uns 543, throw 143, shimmy 700, isca 86 (esse jogador dá muito tech, e cada tech te agarra enquanto você espera). A melhor resposta é o shimmy, porque esse jogador dá muito mais tech do que um defensor em equilíbrio daria (uns 29% contra 8%).</p>
+    <p><a href="#adv-habits-pt">Lendo Hábitos como Porcentagens</a> contou dez wakeups: 5 defesas, 3 techs, um botão e um reversal. No oki de quatro opções, usando a estimativa da próxima seção (43%, 29%, 14%, 14%), cada opção rende: meaty uns 543, throw 143, shimmy 700, isca 86 (esse jogador dá muito tech, e cada tech te agarra enquanto você espera). A melhor resposta é o shimmy, porque esse jogador dá muito mais tech do que um defensor equilibrado daria (uns 29% contra 8%).</p>
     <div class="table-wrap"><table>
         <tr><th>Peso passado para o shimmy</th><th>Contra esses hábitos</th><th>Se ele se adaptar perfeitamente</th></tr>
-        <tr><td>0% (o mix de equilíbrio)</td><td>295</td><td>295</td></tr>
+        <tr><td>0% (o mix equilibrado)</td><td>295</td><td>295</td></tr>
         <tr><td>25%</td><td>396</td><td>−179</td></tr>
         <tr><td>50%</td><td>498</td><td>−652</td></tr>
         <tr><td>100% (só shimmy)</td><td>700</td><td>−1.600</td></tr>
     </table></div>
-    <p>Olhe a primeira linha: o mix de equilíbrio rende exatamente 295 contra esse jogador, o mesmo que contra qualquer outro. Quando o equilíbrio de quem defende usa todas as respostas, cada resposta entrega exatamente v contra p*, então p* rende v faça ele o que fizer. O equilíbrio protege você, mas nunca lucra com um hábito; o lucro só vem de desviar. Neste exemplo as duas colunas mudam em linha reta: cada ponto de lucro extra contra o hábito é pago com exposição se ele se adaptar.</p>
+    <p>Olhe a primeira linha: o mix equilibrado rende exatamente 295 contra esse jogador, o mesmo que contra qualquer outro. Quando o melhor mix de quem defende usa todas as respostas, o mix equilibrado rende o mesmo faça ele o que fizer. Ele protege você, mas nunca lucra com um hábito; o lucro só vem de pender para longe dele. Neste exemplo, cada 100 pontos de lucro extra contra o hábito custam uns 470 se ele se adaptar.</p>
 </div>
 
-<p>Duas formas disciplinadas de explorar:</p>
+<p>Duas regras para explorar com disciplina:</p>
 <ul>
-    <li><strong>Explore na proporção das suas evidências.</strong> Dez observações é pouco (próxima seção). Mude parte do mix, não ele inteiro, e mude mais conforme a contagem cresce.</li>
-    <li><strong>Gaste só o que você já guardou.</strong> Sam Ganzfried e Tuomas Sandholm (<em>Safe Opponent Exploitation</em>, 2015) mostraram que dá para explorar sem arriscar uma média abaixo de v, desde que o risco que você assume nunca passe do que você já ganhou acima de v contra aquele oponente. Num set: enquanto os hábitos estão pagando mais que o valor da situação, você pode se inclinar mais; quando param, volte ao mix de equilíbrio.</li>
+    <li><strong>Penda até onde as suas evidências vão.</strong> Dez wakeups é muito pouco (próxima seção). Mude parte do mix, não ele inteiro, e mude mais conforme a contagem cresce.</li>
+    <li><strong>Só arrisque o que você já ganhou.</strong> Enquanto o hábito está pagando mais do que a situação vale, você pode pender mais, desde que o que você arrisca nunca passe desse extra. Quando parar de pagar, volte ao mix equilibrado. É a ideia da "exploração segura" (veja as fontes no fim).</li>
 </ul>
 
-<h3 id="gt-bayes-pt">Estimando Hábitos com Poucas Amostras</h3>
+<h3 id="gt-bayes-pt">Quanto Confiar em Poucos Rounds</h3>
 
-<p>Contagens de poucos rounds têm muito ruído, e a proporção crua pode errar feio: uma resposta vista 0 vez em 6 não é uma resposta que ele nunca usa. O resolvedor usa duas ferramentas padrão.</p>
+<p>Contagens de poucos rounds têm muito ruído. Uma resposta que você viu 0 vez em 6 não é uma resposta que ele nunca usa. Dois hábitos simples te mantêm honesto, e o resolvedor aplica os dois:</p>
 <ul>
-    <li><strong>A regra de sucessão de Laplace</strong> (a média de uma posterior de Dirichlet com uma observação imaginária por resposta): com n<sub>j</sub> observações da resposta j em N, entre k respostas, estime q̂<sub>j</sub> = (n<sub>j</sub> + 1) / (N + k). Com 5, 3, 1 e 1 em 10, isso dá 6/14, 4/14, 2/14 e 2/14: uns 43%, 29%, 14% e 14%. A estimativa puxa contagens pequenas para o meio e nunca devolve 0% ou 100%.</li>
-    <li><strong>O intervalo de score de Wilson</strong> (E. B. Wilson, 1927) dá uma faixa de 95% para cada proporção crua. Com 10 observações, 5 defesas querem dizer algo entre uns 24% e 76%; um reversal, algo entre uns 2% e 40%. A precisão cresce só com a raiz quadrada da amostra: quadruplicar a contagem corta a faixa pela metade (5 defesas em 10 e 20 em 40 dão a mesma proporção, mas a faixa encolhe para uns 35%–65%).</li>
+    <li><strong>Some um a cada contagem antes de virar porcentagem.</strong> Com 5 defesas, 3 techs, um botão e um reversal em 10 wakeups, conte 6, 4, 2 e 2 em 14: uns 43%, 29%, 14% e 14%. Contagens pequenas são puxadas para o meio, e nada nunca aparece como 0% ou 100%.</li>
+    <li><strong>Lembre o tamanho da faixa.</strong> Com 10 observações, 5 defesas querem dizer algo entre uns 24% e 76%; um reversal, algo entre uns 2% e 40%. Para cortar essa faixa pela metade você precisa de quatro vezes mais observações: 20 defesas em 40 dão os mesmos 50%, mas a faixa encolhe para uns 35%–65%.</li>
 </ul>
-<p>Os hábitos também mudam dentro de um set, muitas vezes logo depois de custarem algo. Conte por partida, não por set, e dê mais peso à partida mais recente que à primeira.</p>
+<p>Os hábitos também mudam dentro de um set, muitas vezes logo depois de custarem algo ao jogador. Conte por partida, não por set, e confie mais na partida mais recente que na primeira.</p>
 
-<h3 id="gt-utility-pt">Dano Não É Utilidade: Jogando pelo Round</h3>
+<details class="ft-details gt-math">
+    <summary><span class="ft-sum-t">Para quem quer a matemática: a regra de Laplace e o intervalo de Wilson</span></summary>
+    <div class="gt-math-body">
+        <p>Somar um a cada contagem é a <strong>regra de sucessão de Laplace</strong>, a média de uma posterior de Dirichlet com uma observação imaginária por resposta: com n<sub>j</sub> observações da resposta j em N, entre k respostas, q̂<sub>j</sub> = (n<sub>j</sub> + 1) / (N + k). As faixas são <strong>intervalos de score de Wilson</strong> de 95% (E. B. Wilson, 1927) para cada proporção observada. A largura deles cai com a raiz quadrada do tamanho da amostra, por isso quatro vezes mais dados cortam a faixa pela metade.</p>
+    </div>
+</details>
 
-<p>Tudo acima maximiza o dano médio. O que você quer de verdade é vencer o round, e a probabilidade de vencer não é proporcional ao dano. Perto do fim do round, essa diferença decide a jogada certa.</p>
+<h3 id="gt-utility-pt">Jogue pelo Round, Não pelo Dano</h3>
+
+<p>Tudo acima fala de dano médio. O que você quer de verdade é vencer o round, e perto do fim do round essas duas coisas não são a mesma.</p>
 <ul>
-    <li><strong>O dano letal muda a matriz.</strong> Se o oponente tem 1.100 de vida, um throw de 1.200 e um combo de 1.800 fazem a mesma coisa: vencem o round. Em unidades de probabilidade de vitória, as duas células valem "round ganho", e o mix deve ser recalculado com essas células, não com o dano.</li>
-    <li><strong>Atrás, a variância ajuda; na frente, atrapalha.</strong> Quando você precisa de mais dano do que qualquer sequência segura dá, uma opção arriscada com média menor pode ser a melhor jogada, porque é a única que alcança o objetivo. Quando você está na frente, prefira a opção cujo pior caso ainda te mantém na frente.</li>
-    <li><strong>O jogo continua sendo de soma zero.</strong> A sua vitória no round é a derrota dele, então o teorema minimax continua valendo; só a unidade muda, de dano para probabilidade de vencer. O resolvedor aceita qualquer unidade: ponha uma probabilidade de vitória estimada em cada célula (por exemplo, 100 para "o round está ganho", 0 para "o round está perdido" e algo no meio nos outros casos) e os mixes que ele devolve são os que maximizam a sua chance de vencer o round.</li>
+    <li><strong>O dano letal muda a tabela.</strong> Se o oponente tem 1.100 de vida, um throw de 1.200 e um combo de 1.800 fazem a mesma coisa: vencem o round. Escreva "round ganho" nas duas células, não o dano delas, e resolva de novo.</li>
+    <li><strong>Atrás, arrisque; na frente, evite risco.</strong> Quando você precisa de mais dano do que qualquer sequência segura dá, uma opção arriscada com média menor pode ser a jogada certa, porque é a única que chega lá. Quando você está na frente, prefira a opção cujo pior caso ainda te mantém na frente.</li>
+    <li><strong>O resolvedor continua funcionando.</strong> A sua vitória no round é a derrota dele, então só a unidade muda. Ponha a sua chance estimada de vencer o round em cada célula (por exemplo, 100 para "round ganho", 0 para "round perdido" e algo no meio nos outros casos), e os mixes que ele dá são os que te dão a melhor chance de vencer o round.</li>
 </ul>
 
-<h3 id="gt-reaction-pt">A Reação Muda o Jogo</h3>
+<h3 id="gt-reaction-pt">Quando Ele Consegue Reagir</h3>
 
-<p>A matriz supõe que nenhum dos lados vê a escolha do outro a tempo. Isso vale para um meaty contra uma opção de wakeup, que se resolvem nos mesmos poucos frames, mas não para tudo. Algumas opções podem ser vistas e respondidas: o capítulo do <a href="#drive-impact-pt">Sistema Drive</a> recomenda responder um Drive Impact com o seu, na reação. Contra uma opção que é sempre respondida na reação, a matriz não se aplica; ela vira um jogo sequencial, resolvido de trás para frente: quem reage escolhe a melhor resposta ao que viu, e a opção vale o que essa resposta deixa para ela.</p>
+<p>A tabela supõe que ninguém vê a escolha do outro a tempo. Isso vale para um meaty contra uma opção de wakeup, que se resolvem nos mesmos poucos frames, mas não para tudo. Algumas opções podem ser vistas e respondidas: o capítulo do <a href="#drive-impact-pt">Sistema Drive</a> recomenda responder um Drive Impact com o seu, na reação. Contra uma opção que é sempre respondida na reação, não há adivinhação nenhuma: ela vale o que a reação deixar para ela.</p>
 
-<p>Reações reais funcionam só parte das vezes. Se você responde certo a uma opção numa fração r das vezes e, quando não consegue, fica com o seu chute, a célula dela vira uma média ponderada:</p>
+<p>Reações reais funcionam só parte das vezes. Se você reage certo a uma opção em, digamos, 70% das vezes, a célula dela vale 70% do resultado contra a sua reação mais 30% do resultado contra o que você estava chutando. Meça a sua taxa no training mode, com o dummy fazendo a opção de forma aleatória, e ponha esse número combinado na tabela. Uma opção que só funciona quando o oponente não reage deve ser usada menos conforme ele reage melhor, e o resolvedor mostra quanto menos.</p>
 
-<p class="formula">a<sub>ij</sub> = r · (payoff contra a reação certa) + (1 − r) · (payoff contra o seu chute j)</p>
-
-<p>Meça r no training mode com o dummy fazendo a opção de forma aleatória e ponha a célula ponderada na matriz. Uma opção cujo valor depende principalmente de o oponente não reagir deve ser usada menos conforme o r dele sobe, e o resolvedor mostra quanto.</p>
+<details class="ft-details gt-math">
+    <summary><span class="ft-sum-t">Para quem quer a matemática: a reação como probabilidade</span></summary>
+    <div class="gt-math-body">
+        <p>Com uma taxa de acerto da reação r, a célula vira uma média ponderada:</p>
+        <p class="formula">a<sub>ij</sub> = r · (payoff contra a reação certa) + (1 − r) · (payoff contra o seu chute j)</p>
+        <p>Uma opção respondida na reação toda vez (r = 1) transforma essa parte do jogo num jogo sequencial, resolvido de trás para frente: quem reage escolhe a melhor resposta ao que viu.</p>
+    </div>
+</details>
 
 <h3 id="gt-limits-pt">Onde o Modelo Para</h3>
 
 <ul>
-    <li><strong>Pessoas não são aleatórias.</strong> Um mix de equilíbrio só protege você se as suas escolhas forem imprevisíveis na sequência, não só na proporção. Alternar meaty, throw, meaty, throw tem as frequências certas e é totalmente legível.</li>
-    <li><strong>O jogo se repete, e os jogadores aprendem.</strong> Ao longo de um set, o oponente atualiza a imagem que tem do seu mix, e você a do dele. O equilíbrio é o padrão certo quando você não sabe nada e o lugar seguro para onde voltar quando os seus reads param de funcionar; não é o máximo que você pode ganhar.</li>
-    <li><strong>Os números são estimativas.</strong> O dano depende do espaçamento, da posição na tela e da sua execução; as frequências vêm de amostras pequenas. Veja quanto o mix é sensível (mude cada número incerto e resolva de novo) antes de confiar nas casas decimais.</li>
-    <li><strong>Poucas situações são realmente isoladas.</strong> Drive Gauge, barra de Super, o canto e o tempo mudam os payoffs de todas as situações seguintes. Os valores de continuação levam parte disso; o resto é julgamento.</li>
+    <li><strong>Pessoas não são aleatórias.</strong> Um mix equilibrado só protege você se as suas escolhas forem imprevisíveis na ordem, não só na proporção. Alternar meaty, throw, meaty, throw tem as porcentagens certas e é totalmente legível.</li>
+    <li><strong>O jogo se repete, e os jogadores aprendem.</strong> Ao longo de um set, o oponente atualiza a imagem que tem do seu mix, e você a do dele. O mix equilibrado é o padrão certo quando você não sabe nada e o lugar seguro para onde voltar quando os seus reads param de funcionar; não é o máximo que você pode ganhar.</li>
+    <li><strong>Os números são estimativas.</strong> O dano depende do espaçamento, da posição na tela e da sua execução; as frequências vêm de amostras pequenas. Veja quanto o mix se mexe quando você muda um número incerto antes de confiar nas casas decimais.</li>
+    <li><strong>Poucas situações são isoladas.</strong> Drive Gauge, barra de Super, o canto e o tempo mudam quanto vale cada situação seguinte. Ligar as situações cobre parte disso; o resto é julgamento.</li>
 </ul>
 
-<h3 id="gt-reading-pt">Para Ler Mais</h3>
-
-<ul>
-    <li>John von Neumann, "Zur Theorie der Gesellschaftsspiele", <em>Mathematische Annalen</em> 100 (1928): o teorema minimax.</li>
-    <li>John Nash, "Equilibrium points in n-person games", <em>Proceedings of the National Academy of Sciences</em> 36 (1950): o equilíbrio além dos jogos de soma zero.</li>
-    <li>Lloyd Shapley, "Stochastic games", <em>Proceedings of the National Academy of Sciences</em> 39 (1953): situações ligadas e iteração de valor.</li>
-    <li>Edwin B. Wilson, "Probable inference, the law of succession, and statistical inference", <em>Journal of the American Statistical Association</em> 22 (1927): o intervalo de score.</li>
-    <li>Sam Ganzfried e Tuomas Sandholm, "Safe opponent exploitation", <em>ACM Transactions on Economics and Computation</em> 3(2) (2015).</li>
-</ul>
+<details class="ft-details gt-math" id="gt-reading-pt">
+    <summary><span class="ft-sum-t">Fontes e para ler mais</span></summary>
+    <div class="gt-math-body">
+        <ul>
+            <li>John von Neumann, "Zur Theorie der Gesellschaftsspiele", <em>Mathematische Annalen</em> 100 (1928): o teorema minimax.</li>
+            <li>John Nash, "Equilibrium points in n-person games", <em>Proceedings of the National Academy of Sciences</em> 36 (1950): o equilíbrio além dos jogos de soma zero.</li>
+            <li>Lloyd Shapley, "Stochastic games", <em>Proceedings of the National Academy of Sciences</em> 39 (1953): situações ligadas e iteração de valor.</li>
+            <li>Edwin B. Wilson, "Probable inference, the law of succession, and statistical inference", <em>Journal of the American Statistical Association</em> 22 (1927): o intervalo de score.</li>
+            <li>Sam Ganzfried e Tuomas Sandholm, "Safe opponent exploitation", <em>ACM Transactions on Economics and Computation</em> 3(2) (2015): explorar sem arriscar mais do que você já ganhou.</li>
+        </ul>
+    </div>
+</details>
 
 <div class="card success">
     <h4>Tente Isto na Próxima Sessão</h4>
     <ol>
-        <li>Escolha o seu knockdown mais comum e escreva a matriz: as suas opções reais nas linhas, as opções de wakeup do oponente nas colunas.</li>
+        <li>Escolha o seu knockdown mais comum e escreva a tabela: as suas opções reais nas linhas, as opções de wakeup do oponente nas colunas.</li>
         <li>Preencha as células com o dano que você mediu no training mode: os seus combos, os dele, o seu throw. Marque quais células levam de volta ao mesmo oki.</li>
-        <li>Resolva. Há ponto de sela? Qual das suas opções fica com 0%, e por quê?</li>
+        <li>Resolva. Há uma resposta que ele deveria usar toda vez? Qual das suas opções fica com 0%, e por quê?</li>
         <li>Mude os seus dois números menos certos em uns 20% cada e resolva de novo. Se o mix mudar muito, meça esses dois direito.</li>
-        <li>No próximo set, conte as respostas de wakeup do oponente e preencha embaixo da matriz. Passe parte do seu mix para a melhor resposta e volte assim que parar de compensar.</li>
+        <li>No próximo set, conte as respostas de wakeup do oponente e preencha embaixo da tabela. Passe parte do seu mix para a melhor resposta e volte assim que parar de compensar.</li>
     </ol>
 </div>

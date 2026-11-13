@@ -1105,6 +1105,9 @@ h3 .sf6-tag { align-self: center; }
 .gt-bar-t span { display: block; height: 100%; background: var(--tone); }
 .gt-bar b { text-align: right; font-variant-numeric: tabular-nums; }
 .gt-notes { margin: 6px 0 14px; padding-left: 1.2em; }
+.ft-details.gt-math { margin: 14px 0 26px; }
+.gt-math-body { padding: 2px 18px 14px; }
+.gt-math-body > :first-child { margin-top: 0; }
 .setups-body h5 { margin: 18px 0 6px; font-size: 1.02rem; }
 .setups-body h6 { margin: 14px 0 6px; font-size: 0.92rem; }
 .setups-block { padding: 10px 0 8px; border-top: 1px solid var(--line-strong); }

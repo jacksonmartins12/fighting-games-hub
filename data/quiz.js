@@ -4026,31 +4026,31 @@
  "adv-games": [
   {
    "q": {
-    "en": "In a payoff matrix, the maximin equals the minimax. What does that mean?",
-    "pt": "Numa matriz de payoffs, o maximin é igual ao minimax. O que isso quer dizer?"
+    "en": "One of the defender's answers is the best against every option you have. What follows?",
+    "pt": "Uma das respostas de quem defende é a melhor contra todas as suas opções. O que isso quer dizer?"
    },
    "options": [
     {
-     "en": "There is a saddle point: both sides should make the same choice every time",
-     "pt": "Há um ponto de sela: os dois lados devem fazer a mesma escolha toda vez"
+     "en": "They should use it every time, and you need a new option that beats it",
+     "pt": "Ele deve usá-la toda vez, e você precisa de uma opção nova que a vença"
     },
     {
-     "en": "Both sides should mix evenly between all their options",
-     "pt": "Os dois lados devem misturar igualmente todas as opções"
+     "en": "You should mix your options more evenly",
+     "pt": "Você deve misturar mais as suas opções"
     },
     {
      "en": "The situation is worth 0",
      "pt": "A situação vale 0"
     },
     {
-     "en": "One option is strictly dominated",
-     "pt": "Uma opção é estritamente dominada"
+     "en": "They should mix it with their other answers",
+     "pt": "Ele deve misturá-la com as outras respostas"
     }
    ],
    "answer": 0,
    "why": {
-    "en": "When max-min equals min-max, the cell where they meet is the smallest in its row and the largest in its column, so neither side gains by deviating or by mixing.",
-    "pt": "Quando o max-min é igual ao min-max, a célula onde eles se encontram é a menor da linha e a maior da coluna, então nenhum lado ganha desviando ou misturando."
+    "en": "That's a saddle point: no mix of your current options changes the result, so the defender should always use it. Only an option that beats it, like the bait against a reversal, changes the situation.",
+    "pt": "É um ponto de sela: nenhum mix das suas opções atuais muda o resultado, então quem defende deve usá-la sempre. Só uma opção que a vença, como a isca contra o reversal, muda a situação."
    }
   },
   {
@@ -4113,8 +4113,8 @@
   },
   {
    "q": {
-    "en": "You saw an answer 1 time in 10 wakeups. With Laplace's rule across 4 possible answers, what is its estimated frequency?",
-    "pt": "Você viu uma resposta 1 vez em 10 wakeups. Com a regra de Laplace e 4 respostas possíveis, qual é a frequência estimada dela?"
+    "en": "You saw an answer 1 time in 10 wakeups, out of 4 possible answers. Adding one to each count, what is its estimated frequency?",
+    "pt": "Você viu uma resposta 1 vez em 10 wakeups, entre 4 respostas possíveis. Somando um a cada contagem, qual é a frequência estimada dela?"
    },
    "options": [
     {
@@ -4136,8 +4136,8 @@
    ],
    "answer": 1,
    "why": {
-    "en": "(n + 1) / (N + k) = (1 + 1) / (10 + 4) = 2/14, about 14%.",
-    "pt": "(n + 1) / (N + k) = (1 + 1) / (10 + 4) = 2/14, uns 14%."
+    "en": "Adding one to each of the 4 counts makes 2 out of 14: about 14%.",
+    "pt": "Somar um a cada uma das 4 contagens dá 2 em 14: uns 14%."
    }
   },
   {
