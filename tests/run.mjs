@@ -165,7 +165,7 @@ await test('content: replay takeover, combo enders, double tap and training shor
       /Mudar para controle do jogador/.test(t('lab', 'pt')) && /ainda não foi conferido na tela/.test(t('lab', 'pt')),
       /Does it win the round\?/.test(t('strategy', 'en')) && /Ele vence o round\?/.test(t('strategy', 'pt')),
       /What it doesn't fix:/.test(t('execution', 'en')) && /O que ele não resolve:/.test(t('execution', 'pt')),
-      /Function button/.test(t('execution', 'en')) && /Three answers on block/.test(t('execution', 'en')) && /botão Função/.test(t('execution', 'pt')) && /Três respostas depois de defender/.test(t('execution', 'pt'))
+      /Function button/.test(t('execution', 'en')) && /Three answers on block/.test(t('execution', 'en')) && /botão Função/.test(t('execution', 'pt')) && /Três respostas depois de defender/.test(t('execution', 'pt')) && /stops doing its normal action/.test(t('execution', 'en')) && /deixa de fazer a ação normal dele/.test(t('execution', 'pt'))
     ];
   });
   eq(r, [true, true, true, true, true], 'new blocks');

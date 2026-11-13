@@ -126,7 +126,11 @@ Nenhum valor foi alterado sem confirmação da fonte. Cada linha abaixo aparece 
    - se o Drive Reversal no wakeup é uma boa resposta a safe jumps;
    - o nome em português das opções do Replay Takeover;
    - o double tap no link mais apertado de um personagem.
-   - no training mode: os nomes em português dos menus de atalho, a lista completa de opções de cada configuração do dummy, o número de slots de save state e o efeito das diagonais para baixo ao reiniciar (seção 22).
+   - no training mode (seções 22 e 23):
+     - os nomes em português dos menus;
+     - o efeito das diagonais para baixo ao reiniciar;
+     - os três slots de save state (dois relatos de jogadores, nenhum conferido na tela);
+     - o que só uma fonte descreve: oito slots de gravação; três slots para salvar todas as configurações de treino; defesa por número de hits ("Block Count"); o dummy defender com parry ou Perfect Parry; o dummy usar Drive Reversal e dar tech; até 5 frames de atraso de input; deixar o personagem em Burnout pela barra de Drive em Parameter Settings; os indicadores "Cancel Timing Display" e "Action Timing Display"; esconder o aviso de qual gravação vai sair ("Replay Info Display").
 
 ## 8. Recomendações
 
@@ -452,3 +456,20 @@ Anotações de um vídeo do YouTube sobre atalhos do training mode. Entrou no ca
 **Ficou de fora:** o mapeamento exato do vídeo, que é preferência pessoal, já que todo atalho é mapeável. Também ficaram de fora os "3 slots" de save state, o atalho de pausa e a atribuição do exercício a um jogador específico, por falta de fonte.
 
 **A testar:** ver Problemas não resolvidos, item 9.
+
+## 23. Training mode: segundo relato sobre os menus (13/11/2026)
+
+O usuário trouxe as anotações de um jogador sobre os menus do training mode, escritas ao que tudo indica numa versão de teste ("in this beta", "Battle Hub"). Por isso o texto só incorporou o que outra fonte também descreve:
+- três slots de save state (também no vídeo da seção 22);
+- as opções de defesa, counter hit e levantar (no lugar, back rise, aleatório), também no vídeo;
+- gravações sorteadas com frequência ajustável (também no guia do beta do Infil);
+- o atalho que liga ou desliga todos os reversals (também no vídeo);
+- a posição inicial configurável no menu (também na discussão da Steam).
+
+Duas observações práticas desse relato também entraram:
+- o botão escolhido como Função deixa de fazer a ação normal dele no training mode;
+- escolher um slot de gravação por atalho pode desligar os outros, o que desfaz o sorteio do exercício "Três respostas depois de defender".
+
+O nome do menu de atalhos aparece de dois jeitos nas fontes ("Shortcut Operation Settings" e "Shortcut Settings"), e o texto registra os dois.
+
+O resto, descrito só nesse relato, foi para a lista de testes (Problemas não resolvidos, item 9).
