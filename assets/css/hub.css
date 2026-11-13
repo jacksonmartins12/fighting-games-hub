@@ -1120,6 +1120,7 @@ h3 .sf6-tag { align-self: center; }
 .setups-facts { font-size: 0.86rem; color: var(--ink-soft); }
 .setups-nexts { margin: 0; max-width: none; }
 .setups-body { padding: 4px 18px 18px; }
+.setups-head .inp, .setups-list .inp { white-space: normal; overflow-wrap: anywhere; }
 .lab-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 2px 0 10px; }
 .lab-chip { display: inline-flex; gap: 6px; align-items: baseline; padding: 3px 10px; border: 1px solid var(--line-strong); border-radius: 999px; font-size: 0.8rem; color: var(--ink-soft); white-space: nowrap; }
 .lab-chip b { font: 500 0.68rem var(--mono); letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink); }
