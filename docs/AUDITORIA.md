@@ -119,6 +119,13 @@ Nenhum valor foi alterado sem confirmação da fonte. Cada linha abaixo aparece 
 6. **Counter Hit e Punish Counter** no damage scaling: não verificado.
 7. **Hitstun e blockstun** não aparecem nas tabelas; **notas de invencibilidade** estão em inglês.
 8. **Google Fonts** continua sendo uma dependência externa (o site funciona sem ela).
+9. **Conceitos de vídeos (13/11/2026), a testar no jogo** (seção 21):
+   - quanto da barra de Drive se perde ao ser agarrado durante o Drive Parry (o hub diz "mais uma barra"; o material diz 1,5);
+   - se todo normal que cancela em especial também cancela em Drive Impact;
+   - option selects de pulo pelo hitstop (contra command grab e contra fugas no wakeup);
+   - se o Drive Reversal no wakeup é uma boa resposta a safe jumps;
+   - o nome em português das opções do Replay Takeover;
+   - o double tap no link mais apertado de um personagem.
 
 ## 8. Recomendações
 
@@ -409,3 +416,22 @@ Os 28 testes passam.
 ## 20. Teoria dos jogos em linguagem prática (13/11/2026)
 
 O capítulo foi reescrito num nível mais acessível. O texto principal agora usa linguagem de jogador e começa pelos exemplos. As fórmulas, a notação, o programa linear, os jogos estocásticos, a regra de Laplace, o intervalo de Wilson e as referências foram para sete quadros recolhidos, "Para quem quer a matemática", iguais nos dois idiomas. Nenhum número mudou, e o resolvedor ficou igual. O teste do capítulo continua recalculando cada número citado e agora também confere os quadros recolhidos e os dois exemplos novos do texto. Duas perguntas do quiz foram reescritas sem o jargão (maximin/minimax e regra de Laplace).
+
+## 21. Conceitos de vídeos do YouTube (13/11/2026)
+
+O usuário trouxe anotações de vídeos sobre SF6. Cada afirmação foi comparada com o hub e com fontes; só entrou o que estava confirmado.
+
+**Entraram:**
+- **Replay Takeover** (Laboratório, exercício 8). A Kotaku (outubro de 2024) descreve a função: no replay, pause e escolha "Switch to Player Control"; "Reset Battle" volta ao ponto em que você assumiu; "End Player Control" volta ao replay; só dá para controlar personagens que você tem. A Final Weapon (agosto de 2024) diz que ela veio com a atualização do Terry, e a Dashfight (janeiro de 2025) diz que a atualização da Mai trouxe o replay direto da tela de resultado. O nome em português ("Mudar para controle do jogador") vem do material do usuário e está marcado como não conferido na tela.
+- **Escolha do fim do combo** (Estratégia): vence o round? leva para o canto? deixa oki? Junta regras que o hub já usava.
+- **Double tap** (Execução): apertar o botão do link duas vezes ajuda quando o primeiro aperto sai cedo, não quando sai tarde; o aperto extra é um input de verdade.
+
+**Ficaram de fora por estarem errados ou sem fonte:**
+- "2 horas por dia, 15 dias para automatizar o básico": número sem fonte.
+- "O Drive Parry não gasta barra": o parry drena a barra enquanto é segurado e só devolve quando apara.
+- "Chain combos funcionam naturalmente como frame traps": depende dos golpes.
+- "+42 permite safe jump com qualquer derrubada": vale para o pulo padrão e exige gastar os frames que sobram; o hub já explica.
+- "O backdash deixa o atacante em desvantagem": só contra throw.
+- Os option selects de pulo do material explicam o efeito como "cair mais rápido"; o que muda é o hitstop.
+
+**A testar no jogo:** ver a lista em Problemas não resolvidos, item 9.

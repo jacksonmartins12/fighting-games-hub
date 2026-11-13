@@ -156,6 +156,19 @@ await test('character sheets: block strings and frame traps (pressureSheet)', as
   eq(r.bad, [], 'inconsistent pressure entries');
   eq(r.missing, [], 'guides without the oki and pressure section or its timing-not-range warning');
 });
+await test('content: replay takeover, combo enders and double tap, in both languages', async page => {
+  await open(page);
+  const r = await page.evaluate(() => {
+    const t = (id, l) => (document.querySelector('#' + id + ' > .l-' + l) || { textContent: '' }).textContent;
+    return [
+      /Switch to Player Control/.test(t('lab', 'en')) && /Reset Battle/.test(t('lab', 'en')) && /characters you own/.test(t('lab', 'en')),
+      /Mudar para controle do jogador/.test(t('lab', 'pt')) && /ainda não foi conferido na tela/.test(t('lab', 'pt')),
+      /Does it win the round\?/.test(t('strategy', 'en')) && /Ele vence o round\?/.test(t('strategy', 'pt')),
+      /What it doesn't fix:/.test(t('execution', 'en')) && /O que ele não resolve:/.test(t('execution', 'pt'))
+    ];
+  });
+  eq(r, [true, true, true, true], 'new blocks');
+});
 await test('game theory: the solver finds known equilibria (gtSolve, gtLoop, gtHabits)', async page => {
   await open(page);
   const r = await page.evaluate(() => {
