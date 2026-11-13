@@ -506,4 +506,12 @@ O que só uma fonte descreve ficou na lista de testes (Problemas não resolvidos
 
 **Divergência a testar.** Ver Problemas não resolvidos, item 9 (Solar Plexus Strike do Ryu depois do dash).
 
+**Visões gerais e guias gerais (segunda etapa, 13/11/2026).**
+- Entraram também as páginas de visão geral de 31 personagens (para quem serve, pontos fortes e fracos, plano de jogo, ferramentas, ordem de treino, erros comuns e como jogar contra), de 27/08/2026, e as notas das aulas em vídeo do Ryu. A página de visão geral do Arjun no site não tem conteúdo além da ficha.
+- Os quatro guias gerais em inglês (iniciante, sistemas, frame data e glossário) ficam no capítulo novo "SF6 Lab: Guias e Créditos".
+- O HTML dessas páginas foi reduzido a uma lista fixa de marcações (títulos, parágrafos, listas, tabelas e links para o YouTube) antes de entrar nos dados, e um teste confere isso.
+- Ficaram de fora: as páginas que o site só tem em japonês (quatro artigos, as páginas de matchup e a lista de golpes), a agenda de torneios, as recomendações de equipamento, os pedidos de leitores e as páginas institucionais.
+
+**Créditos num lugar só.** A pedido do usuário, o crédito ao Iori e ao SF6 Lab fica concentrado na seção "Créditos" do capítulo "SF6 Lab: Guias e Créditos". Cada guia de personagem mostra só as datas, o link da página original e um link para os créditos. Um teste confere que o crédito existe nos dois idiomas e que não se repete nos guias.
+
 **Ferramentas.** A extração foi feita com scripts fora do repositório, a partir de uma cópia do site fornecida pelo usuário; os dados ficaram nos arquivos dos personagens.

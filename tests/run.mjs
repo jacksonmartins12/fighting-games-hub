@@ -179,8 +179,11 @@ await test('character guides: the SF6 Lab guide is credited, complete and consis
     withLab.forEach(s => {
       const L = LAB[s], h = charHTML(CHARS[s]);
       if (!/^https:\/\/sf6-lab\.net\/(en\/)?fighters\/[a-z_]+\/combo$/.test(L.url) || !(L.updated && L.balance || L.note)) bad.push(s + ': source link or dates missing');
-      if (!/class="ft-details setups lab-routes"/.test(h) || !/<strong>Iori<\/strong>/.test(h) || h.indexOf(L.url) < 0) bad.push(s + ': section or credit missing');
-      if (/permission|permissão/i.test(h.slice(h.indexOf('lab-routes')))) bad.push(s + ': permission wording is back');
+      if (!/class="ft-details setups lab-routes"/.test(h) || h.indexOf(L.url) < 0 || !/href="#sf6lab"/.test(h)) bad.push(s + ': section, source link or link to the credits missing');
+      if (/<strong>Iori<\/strong>/.test(h)) bad.push(s + ': credit paragraph repeated in the guide');
+      if (s !== 'arjun' && (!L.ov || !L.ovDate)) bad.push(s + ': overview missing');
+      const tags = ((L.ov || '') + (L.vid || '')).match(/<\/?([a-z0-9]+)[^>]*>/g) || [];
+      if (tags.some(x => !/^<\/?(h5|h6|p|ul|ol|li|strong|em|br|dl|dt|dd|table|thead|tbody|tr|th|td)>$/.test(x) && !/^<a href="https:\/\/(www\.youtube\.com|youtu\.be)\/[\w\-?=&;\/%.]+" target="_blank" rel="noopener">$/.test(x) && x !== '</a>')) bad.push(s + ': unexpected markup in the overview');
       L.secs.forEach(sec => { secs++;
         if (!T(sec.t)[0]) bad.push(s + ': section without title');
         sec.arts.forEach(a => a.ps.forEach(p => {
@@ -203,6 +206,9 @@ await test('character guides: the SF6 Lab guide is credited, complete and consis
       ryu: [T(LAB.ryu.secs[0].arts[0].h), p0.l[0].r, T(p0.l[1].n)[0], p0.chk], arjun: [/japon/.test(T(LAB.arjun.note)[1]), aj.length, used.length > 5 && used.every(u => names.includes(u))], pt: /Início com golpe fraco/.test(pt) && /dash para frente/.test(pt) };
   });
   eq(r.bad, [], 'problems in the SF6 Lab data');
+  // one credits section for everything, in its own chapter, in both languages
+  const cr = await page.evaluate(() => ['en', 'pt'].map(l => { const t = document.querySelector('#sf6lab > .l-' + l); return [!!t && /Iori/.test(t.textContent) && /sf6-lab\.net/.test(t.innerHTML) && /iorichannel0611/.test(t.innerHTML), t ? t.querySelectorAll('details').length : 0]; }));
+  eq(cr, [[true, 4], [true, 4]], 'credits chapter');
   eq([r.n, r.without], [32, []], 'every fighter has the guide');
   eq(r.arjun, [true, 12, true], 'Arjun: translated from the Japanese page, 12 routes, moves named as in the frame table');
   eq(r.ryu, [['Jump-in', 'Pulo'], 'j.HP > Short Uppercut > H Shoryuken', '+37', 1], 'Ryu jump-in route');

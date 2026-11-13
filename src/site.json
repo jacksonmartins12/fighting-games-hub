@@ -166,6 +166,10 @@
       "app": "<div id=\"roster-app\" class=\"roster-app\"></div>"
     },
     {
+      "id": "sf6lab",
+      "group": "roster"
+    },
+    {
       "id": "punish",
       "group": "roster",
       "app": "<div id=\"punish-app\" class=\"punish-app\"></div>"

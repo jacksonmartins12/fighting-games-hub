@@ -30,7 +30,7 @@
   {
    "name": "SF6 Lab (Iori)",
    "url": "https://sf6-lab.net/en/",
-   "used": "the Combos & Okizeme guide of each fighter, shown in the character guides (guide of 2026-08-31, balance update of 2026-08-03); combo notes in seven guides",
+   "used": "character overviews (2026-08-27) and Combos & Okizeme guides (2026-08-31, balance update of 2026-08-03) shown in the character guides, the general guides in the SF6 Lab chapter, and combo notes in seven guides; credits in the SF6 Lab chapter",
    "status": "community"
   },
   {

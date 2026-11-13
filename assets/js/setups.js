@@ -108,10 +108,13 @@ function labT(x) { return Array.isArray(x) ? x[lang === 'pt' ? 1 : 0] : (x || ''
 function labHTML(slug) {
   var L = LAB[slug];
   if (!L || !L.secs || !L.secs.length) return '';
-  var link = '<a href="' + esc(L.url) + '" target="_blank" rel="noopener">SF6 Lab</a>';
+  var src = '<a href="' + esc(L.url) + '" target="_blank" rel="noopener">' + B('lab.source') + '</a>';
   var h = '<details class="ft-details setups lab-routes"><summary><span class="ft-sum-t">' + B('lab.title') + '</span> <span class="muted small">' + B('lab.summary') + '</span></summary><div class="setups-body">' +
-    '<p class="small">' + (L.updated ? B('lab.credit', [link, esc(L.updated), esc(L.balance || '')]) : B('lab.credit-plain', [link]) + ' ' + esc(labT(L.note))) + '</p>' +
+    '<p class="small muted">' + (L.updated ? B('lab.dates', [esc(L.ovDate || L.updated), esc(L.updated), esc(L.balance || '')]) : esc(labT(L.note))) + ' ' + src + ' · <a href="#sf6lab">' + B('lab.credits') + '</a></p>' +
     '<p class="small muted">' + B('lab.legend') + '</p>';
+  // overview and video notes: HTML cleaned to a fixed list of tags when the data was built
+  if (L.ov) h += '<details class="lab-sec"><summary>' + B('lab.overview') + '</summary><div class="lab-general">' + L.ov + '</div></details>';
+  if (L.vid) h += '<details class="lab-sec"><summary>' + B('lab.videos') + '</summary><div class="lab-general">' + L.vid + '</div></details>';
   L.secs.forEach(function (sec) {
     h += '<details class="lab-sec"><summary>' + esc(labT(sec.t)) + '</summary>';
     sec.arts.forEach(function (a) {
@@ -133,6 +136,6 @@ function labHTML(slug) {
     });
     h += '</details>';
   });
-  h += '<p class="small muted">' + B('lab.more', [link]) + '</p></div></details>';
+  h += '</div></details>';
   return h;
 }
