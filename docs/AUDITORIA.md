@@ -126,6 +126,7 @@ Nenhum valor foi alterado sem confirmação da fonte. Cada linha abaixo aparece 
    - se o Drive Reversal no wakeup é uma boa resposta a safe jumps;
    - o nome em português das opções do Replay Takeover;
    - o double tap no link mais apertado de um personagem.
+   - no training mode: os nomes em português dos menus de atalho, a lista completa de opções de cada configuração do dummy, o número de slots de save state e o efeito das diagonais para baixo ao reiniciar (seção 22).
 
 ## 8. Recomendações
 
@@ -435,3 +436,19 @@ O usuário trouxe anotações de vídeos sobre SF6. Cada afirmação foi compara
 - Os option selects de pulo do material explicam o efeito como "cair mais rápido"; o que muda é o hitstop.
 
 **A testar no jogo:** ver a lista em Problemas não resolvidos, item 9.
+
+## 22. Training mode: botão Função e atalhos (13/11/2026)
+
+Anotações de um vídeo do YouTube sobre atalhos do training mode. Entrou no capítulo de Execução um quadro sobre o botão Função e os atalhos, e um cartão com dois exercícios.
+
+**Confirmado por fontes:**
+- **Botão Função e atalhos:**
+  - O botão Função funciona como o Ctrl de um teclado, e os atalhos são mapeáveis (Infil, guia do beta, e o guia da Habanero Academy na note.com).
+  - Desde a atualização de 27/09/2023, também dá para criar atalhos sem o botão Função (EventHubs, esports.net).
+  - Há atalho para abrir o matchmaking, além de salvar e carregar estado (Habanero Academy).
+- **Reinício com direção** (discussão na Steam): para frente põe o oponente no canto, para trás usa o outro canto, para baixo começa no centro e para cima troca os lados. As diagonais para baixo dão o canto com troca de lado, segundo um comentário; o texto pede para conferir.
+- **Várias gravações ativas com frequência ajustável** (Infil, beta).
+
+**Ficou de fora:** o mapeamento exato do vídeo, que é preferência pessoal, já que todo atalho é mapeável. Também ficaram de fora os "3 slots" de save state, o atalho de pausa e a atribuição do exercício a um jogador específico, por falta de fonte.
+
+**A testar:** ver Problemas não resolvidos, item 9.
