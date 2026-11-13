@@ -100,26 +100,39 @@ document.addEventListener('click', function (e) {
   if (s) { adv.strChar = s.getAttribute('data-str-char'); adv.strA = null; adv.strDr = false; adv.strBo = false; adv.strExtra = 0; advSave(); }
 });
 
-// ---------- routes from SF6 Lab (Iori), used with the author's permission ----------
-// data/chars/<slug>.js carries them in `lab`: the "essential routes" of the fighter's Combos & Okizeme page, with the
-// route as written there, the knockdown advantage and the follow-up. `chk` marks a +N that equals this hub's frame table.
+// ---------- combo and okizeme guide from SF6 Lab (Iori) ----------
+// data/chars/<slug>.js carries it in `lab`: the sections of the fighter's Combos & Okizeme page, as written in the source.
+// A text is a string, or [en, pt] when the hub has a Portuguese version. In a route paragraph (k: 'r') each line is a
+// route (r), a label (s) or a note (n); `chk` marks a "+N" that equals this hub's frame table for the last move.
+function labT(x) { return Array.isArray(x) ? x[lang === 'pt' ? 1 : 0] : (x || ''); }
 function labHTML(slug) {
   var L = LAB[slug];
-  if (!L || !L.items || !L.items.length) return '';
+  if (!L || !L.secs || !L.secs.length) return '';
   var link = '<a href="' + esc(L.url) + '" target="_blank" rel="noopener">SF6 Lab</a>';
   var h = '<details class="ft-details setups lab-routes"><summary><span class="ft-sum-t">' + B('lab.title') + '</span> <span class="muted small">' + B('lab.summary') + '</span></summary><div class="setups-body">' +
     '<p class="small">' + B('lab.credit', [link, esc(L.updated || ''), esc(L.balance || '')]) + '</p>' +
     '<p class="small muted">' + B('lab.legend') + '</p>';
-  L.items.forEach(function (it) {
-    h += '<div class="setups-block"><p class="setups-head"><b>' + esc(BOtext(it.h)) + '</b></p>';
-    it.rows.forEach(function (r) {
-      h += '<div class="lab-row">' + (r.sub ? '<p class="setups-lbl">' + r.sub.map(function (x) { return esc(BOtext(x)); }).join(' · ') + '</p>' : '') +
-        r.route.map(function (x) { return '<p class="lab-route inp">' + esc(x) + '</p>'; }).join('') +
-        (r.notes ? '<ul class="lab-notes">' + r.notes.map(function (x, i) { return '<li>' + esc(BOtext(x)) + (r.chk && /^\+\d+$/.test(x.en) ? ' <span class="ft-tag ft-flag-official">' + B('lab.chk') + '</span>' : '') + '</li>'; }).join('') + '</ul>' : '') + '</div>';
+  L.secs.forEach(function (sec) {
+    h += '<details class="lab-sec"><summary>' + esc(labT(sec.t)) + '</summary>';
+    sec.arts.forEach(function (a) {
+      h += '<div class="setups-block">' + (a.h ? '<p class="setups-head"><b>' + esc(labT(a.h)) + '</b></p>' : '');
+      a.ps.forEach(function (p) {
+        if (p.k === 'p') { h += '<p class="lab-prose">' + p.l.map(function (x) { return esc(labT(x)); }).join('<br>') + '</p>'; return; }
+        h += '<div class="lab-row">';
+        var notes = [];
+        var flush = function () { if (notes.length) { h += '<ul class="lab-notes">' + notes.join('') + '</ul>'; notes = []; } };
+        p.l.forEach(function (x) {
+          if (x.n != null) { notes.push('<li>' + esc(labT(x.n)) + (p.chk && /^\+\d+$/.test(labT(x.n)) ? ' <span class="ft-tag ft-flag-official">' + B('lab.chk') + '</span>' : '') + '</li>'); return; }
+          flush();
+          h += x.r != null ? '<p class="lab-route inp">' + esc(x.r) + '</p>' : '<p class="setups-lbl">' + esc(labT(x.s)) + '</p>';
+        });
+        flush();
+        h += '</div>';
+      });
+      h += '</div>';
     });
-    h += '</div>';
+    h += '</details>';
   });
   h += '<p class="small muted">' + B('lab.more', [link]) + '</p></div></details>';
   return h;
 }
-function BOtext(o) { return (o && (o[lang] || o.en)) || ''; }

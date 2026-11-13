@@ -494,13 +494,13 @@ O reinício com direção foi reescrito só com o que as três fontes compartilh
 
 O que só uma fonte descreve ficou na lista de testes (Problemas não resolvidos, item 9).
 
-## 25. Rotas do SF6 Lab nos guias de personagem (13/11/2026)
+## 25. Guia de combos e okizeme do SF6 Lab nos guias de personagem (13/11/2026)
 
-**Fonte e permissão.** SF6 Lab (sf6-lab.net), site não oficial mantido pelo Iori. O aviso legal do site proíbe redistribuir os textos e o conteúdo estruturado sem autorização. O usuário informou em 13/11/2026 que tem a permissão do autor para usar o conteúdo no hub; a permissão foi dada ao usuário e não foi vista por quem fez a importação. Cada guia credita o Iori, com link para a página de origem, a data do guia (31/08/2026) e a versão do jogo (balanceamento de 03/08/2026).
+**Fonte.** SF6 Lab (sf6-lab.net), site não oficial mantido pelo Iori. Cada guia de personagem credita o Iori, com link para a página de origem, a data do guia (31/08/2026) e a versão do jogo (balanceamento de 03/08/2026). O site também está em Recursos e na lista de fontes.
 
-**O que entrou.** A seção "rotas essenciais" da página Combos & Okizeme de 31 personagens (o site não tem a página em inglês do Arjun): 316 situações e 437 rotas, com a rota como está na fonte, a vantagem de knockdown e a continuação. Fica em `lab`, dentro de `data/chars/<slug>.js`, e aparece no guia como "Rotas de combo e oki do SF6 Lab". O hub traduziu só os rótulos e as notas curtas (350 frases); os comentários longos, as outras seções (setplay, combos adicionais, mudanças do Year 4) e os vídeos ficaram na fonte, com link.
+**O que entrou.** A página Combos & Okizeme inteira de 31 personagens (o site não tem a página em inglês do Arjun): 555 seções, com as rotas essenciais, os combos adicionais, o setplay, os números importantes, a ordem de treino e as mudanças de versão. Fica em `lab`, dentro de `data/chars/<slug>.js`, e aparece no guia como "Combos e okizeme do SF6 Lab", uma seção recolhida por parte do guia. O texto está em inglês, como na fonte; os rótulos e as notas curtas das rotas essenciais (350 frases) têm tradução, que também é usada onde a mesma frase aparece em outras seções.
 
-**Conferência com as tabelas do hub.** Das 41 rotas que trazem um "+N" simples, 22 batem com o valor de knockdown da tabela de frames para o golpe final e ganharam a etiqueta "= tabela de frames". Em 17, o golpe final não pôde ser casado pelo nome. Duas não batem com um valor de knockdown, ambas da Kimberly: H Bushin Senpukyaku, +20 na fonte e KD +21 na tabela (a rota termina num juggle, então a diferença pode ser legítima); e L Vagabond Edge, +3 na fonte, que não derruba e bate com o valor no hit da tabela (3). O hub não testou as rotas no jogo, e a seção diz isso.
+**Conferência com as tabelas do hub.** Das 68 rotas que trazem um "+N" simples, 38 batem com o valor de knockdown da tabela de frames para o golpe final e ganharam a etiqueta "= tabela de frames". Em 28, o golpe final não pôde ser casado pelo nome. Duas não batem com um valor de knockdown, ambas da Kimberly: H Bushin Senpukyaku, +20 na fonte e KD +21 na tabela (a rota termina num juggle, então a diferença pode ser legítima); e L Vagabond Edge, +3 na fonte, que não derruba e bate com o valor no hit da tabela (3). O hub não testou as rotas no jogo, e a seção diz isso.
 
 **Divergência a testar.** Ver Problemas não resolvidos, item 9 (Solar Plexus Strike do Ryu depois do dash).
 

@@ -528,11 +528,11 @@
   "setups.fact-block": "block",
   "setups.fact-hit": "hit",
   "setups.fact-safe": "safe vs reversals ≥ {0}f",
-  "lab.title": "Combo and oki routes from SF6 Lab",
-  "lab.summary": "essential routes by Iori, with the knockdown advantage and the follow-up",
-  "lab.credit": "These routes are by <strong>Iori</strong>, from the Combos &amp; Okizeme guide of {0}, and are used here with the author's permission. Guide updated {1}, for the battle balance update of {2}. Routes, numbers and order are his; this hub only translated the labels.",
+  "lab.title": "Combos and okizeme from SF6 Lab",
+  "lab.summary": "Iori's full guide: essential routes, more combos, setplay and key numbers",
+  "lab.credit": "This guide is by <strong>Iori</strong>, from the Combos &amp; Okizeme page of {0}. Guide updated {1}, for the battle balance update of {2}. Routes, numbers, order and notes are his.",
   "lab.legend": "Notation as in the source: st. standing, cr. crouching, j. jumping, L/M/H the strength of a special, OD Overdrive, SA Super Art, DI Drive Impact, DR Drive Rush, PC Punish Counter, CH Counter Hit, TC target combo. \"+N\" is the advantage after the knockdown. The tag marks a value that equals this hub's frame table for that move on its own; after a juggle the value can differ from the table. This hub hasn't tested these routes in game: check them in training mode, and the game version, before relying on them.",
   "lab.chk": "= frame table",
-  "lab.more": "The full guide, with more routes, setplay and Iori's notes and videos, is at {0}.",
+  "lab.more": "The original guide, with Iori's videos and matchup notes, is at {0}.",
   "chapter.adv-data": "Reading and Measuring"
 };

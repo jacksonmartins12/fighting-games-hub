@@ -170,32 +170,41 @@ await test('content: replay takeover, combo enders, double tap and training shor
   });
   eq(r, [true, true, true, true, true], 'new blocks');
 });
-await test('character guides: SF6 Lab routes are credited, bilingual and consistent with the frame tables', async page => {
+await test('character guides: the SF6 Lab guide is credited, complete and consistent with the frame tables', async page => {
   await open(page);
   const r = await page.evaluate(async () => {
     const slugs = rosterList().map(c => c.slug); await Promise.all(slugs.map(needChar));
-    const withLab = slugs.filter(s => LAB[s]), bad = [];
-    let rows = 0, chk = 0;
+    const withLab = slugs.filter(s => LAB[s]), bad = [], T = x => Array.isArray(x) ? x : [x, x];
+    let routes = 0, chk = 0, secs = 0;
     withLab.forEach(s => {
       const L = LAB[s], h = charHTML(CHARS[s]);
       if (!/^https:\/\/sf6-lab\.net\/en\/fighters\/[a-z_]+\/combo$/.test(L.url) || !L.updated || !L.balance) bad.push(s + ': source link or dates missing');
       if (!/class="ft-details setups lab-routes"/.test(h) || !/<strong>Iori<\/strong>/.test(h) || h.indexOf(L.url) < 0) bad.push(s + ': section or credit missing');
-      L.items.forEach(it => { if (!it.h.en || !it.h.pt) bad.push(s + ': heading without translation');
-        it.rows.forEach(row => { rows++;
-          if (!row.route.length || !row.route.every(x => x.indexOf(' > ') > 0 || row.route.length === 1)) bad.push(s + ': empty route');
-          (row.sub || []).concat(row.notes || []).forEach(x => { if (!x.en || !x.pt || (x.en.match(/\d+/g) || []).join() !== (x.pt.match(/\d+/g) || []).join()) bad.push(s + ': "' + x.en + '" numbers differ in Portuguese'); });
-          if (row.chk) { chk++;   // the tagged +N must be a knockdown value of the ender in the frame table
-            const n = +row.notes.find(x => /^\+\d+$/.test(x.en)).en.slice(1), end = row.route[row.route.length - 1].split(' > ').pop().replace(/^(L|M|H|OD) /, '').toLowerCase().replace(/[^a-z0-9]/g, '');
+      if (/permission|permissão/i.test(h.slice(h.indexOf('lab-routes')))) bad.push(s + ': permission wording is back');
+      L.secs.forEach(sec => { secs++;
+        if (!T(sec.t)[0]) bad.push(s + ': section without title');
+        sec.arts.forEach(a => a.ps.forEach(p => {
+          const texts = p.k === 'p' ? p.l : p.l.map(x => x.n != null ? x.n : x.s).filter(x => x != null);
+          texts.forEach(x => { const [e, q] = T(x); if (!e || (e.match(/\d+/g) || []).join() !== (q.match(/\d+/g) || []).join()) bad.push(s + ': "' + e + '" numbers differ in Portuguese'); });
+          if (p.k !== 'r') return;
+          const rl = p.l.filter(x => x.r != null).map(x => x.r); routes += rl.length;
+          if (p.chk) { chk++;   // the tagged +N must be a knockdown value of the last move in the frame table
+            const n = +T(p.l.find(x => x.n != null && /^\+\d+$/.test(T(x.n)[0])).n)[0].slice(1), end = rl[rl.length - 1].split(' > ').pop().replace(/^(L|M|H|OD) /, '').toLowerCase().replace(/[^a-z0-9]/g, '');
             if (!FRAMES[s].m.some(m => m[0].toLowerCase().replace(/[^a-z0-9]/g, '').endsWith(end) && /KD/.test(String(m[7])) && (String(m[7]).match(/\d+/g) || []).map(Number).includes(n))) bad.push(s + ': tagged +' + n + ' not in the table');
-          } }); });
+          }
+        }));
+      });
     });
-    const ryu = LAB.ryu.items[0].rows[0];
-    return { n: withLab.length, without: slugs.filter(s => !LAB[s]), bad: bad.slice(0, 5), rows, chk, ryu: [ryu.route[0], ryu.notes[0].en, ryu.chk] };
+    const p0 = LAB.ryu.secs[0].arts[0].ps[0];
+    setLang('pt'); const pt = labHTML('ryu'); setLang('en');
+    return { n: withLab.length, without: slugs.filter(s => !LAB[s]), bad: bad.slice(0, 5), routes, chk, secs,
+      ryu: [T(LAB.ryu.secs[0].arts[0].h), p0.l[0].r, T(p0.l[1].n)[0], p0.chk], pt: /Início com golpe fraco/.test(pt) && /dash para frente/.test(pt) };
   });
   eq(r.bad, [], 'problems in the SF6 Lab data');
-  eq([r.n, r.without], [31, ['arjun']], 'fighters with routes (the source has no English page for Arjun)');
-  eq(r.ryu, ['j.HP > Short Uppercut > H Shoryuken', '+37', 1], 'Ryu jump-in route');
-  ok(r.rows > 400 && r.chk >= 20, 'rows ' + r.rows + ', tagged ' + r.chk);
+  eq([r.n, r.without], [31, ['arjun']], 'fighters with the guide (the source has no English page for Arjun)');
+  eq(r.ryu, [['Jump-in', 'Pulo'], 'j.HP > Short Uppercut > H Shoryuken', '+37', 1], 'Ryu jump-in route');
+  eq(r.pt, true, 'Portuguese labels are used where the hub has them');
+  ok(r.secs > 500 && r.routes > 2000 && r.chk >= 30, 'sections ' + r.secs + ', routes ' + r.routes + ', tagged ' + r.chk);
 });
 await test('game theory: the solver finds known equilibria (gtSolve, gtLoop, gtHabits)', async page => {
   await open(page);

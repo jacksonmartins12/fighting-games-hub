@@ -1120,7 +1120,11 @@ h3 .sf6-tag { align-self: center; }
 .setups-facts { font-size: 0.86rem; color: var(--ink-soft); }
 .setups-nexts { margin: 0; max-width: none; }
 .lab-row { margin: 0 0 10px; }
-.lab-row .setups-lbl { margin: 0 0 2px; max-width: none; }
+.lab-sec { border-top: 1px solid var(--line-strong); }
+.lab-sec > summary { cursor: pointer; padding: 10px 0; font-weight: 600; }
+.lab-sec .setups-block:first-of-type { border-top: 0; }
+.lab-prose { margin: 0 0 8px; font-size: 0.92rem; max-width: none; }
+.lab-row .setups-lbl { margin: 0 0 2px; max-width: none; padding-top: 0; font: 600 0.86rem/1.5 var(--body, inherit); letter-spacing: 0; text-transform: none; color: var(--ink-soft); }
 .lab-route, .lab-route.inp { margin: 0 0 2px; max-width: none; white-space: normal; overflow-wrap: anywhere; }
 .lab-notes { margin: 2px 0 0; padding-left: 1.3em; font-size: 0.9rem; color: var(--ink-soft); }
 @media (max-width: 520px) { .setups-row { grid-template-columns: 1fr; } }

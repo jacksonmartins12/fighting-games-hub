@@ -7,7 +7,7 @@ var UPCOMING = HUB_DATA.upcoming || [];
 var QUIZ = HUB_DATA.quiz || {};
 var CHARS = {};                           // full guides, filled on demand by needChar()
 var FRAMES = {};                          // full frame data, filled on demand by needChar()
-var LAB = {};                             // combo and oki routes from SF6 Lab (Iori), used with permission; filled by needChar()
+var LAB = {};                             // combo and okizeme guide from SF6 Lab (Iori); filled by needChar()
 var ORDER = [], GROUP = {};               // chapter order and groups, read from the page
 document.querySelectorAll('#content > section').forEach(function (s) { ORDER.push(s.id); GROUP[s.id] = s.getAttribute('data-group'); });
 
