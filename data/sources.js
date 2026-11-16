@@ -34,6 +34,12 @@
    "status": "community"
   },
   {
+   "name": "Training Mode Drill Share (higorae, Nexus Mods)",
+   "url": "https://www.nexusmods.com/streetfighter6/mods/3966",
+   "used": "description, installation steps and the author's Training Mode-only statement for the mod and drillcodes.com (version v0.6, 2026-10-25), in the Resources and Lab Exercises chapters",
+   "status": "community"
+  },
+  {
    "name": "dood.gg",
    "url": "https://dood.gg/",
    "used": "safe meaty rule, fuzzy guard, option selects; spot check of Ryu's on-block values",
