@@ -60,6 +60,7 @@ function routeHash(initial) {
 }
 routeHash(true);
 renderResume();
+sideGroups(GROUP[current]);
 window.addEventListener('hashchange', function () { routeHash(false); });
 initCloud();
 

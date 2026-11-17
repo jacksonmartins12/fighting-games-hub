@@ -21,6 +21,7 @@ function show(id, scroll, keepHash) {
     b.setAttribute('aria-current', b.getAttribute('data-go') === id ? 'true' : 'false');
   });
   main.setAttribute('data-group', GROUP[id]);
+  sideGroups(GROUP[id]);
   mTitle.textContent = tr('chapter.' + id);
   LS.set('fgc-last-chapter', id);
   if (!keepHash) { try { history.replaceState(null, '', '#' + id); } catch (e) {} }
@@ -31,6 +32,24 @@ function show(id, scroll, keepHash) {
   closeMenu();
   if (scroll) reader.scrollIntoView({ behavior: behavior, block: 'start' });
 }
+// sidebar: only the current group is open; any group opens on tap, and the current chapter stays in view
+function setGroupOpen(g, on) {
+  g.classList.toggle('collapsed', !on);
+  var h = g.querySelector('.group-head'); if (h) h.setAttribute('aria-expanded', on ? 'true' : 'false');
+}
+function sideGroups(active) {
+  sidebar.querySelectorAll('.group').forEach(function (g) { setGroupOpen(g, g.getAttribute('data-group') === active); });
+  var cur = sidebar.querySelector('.chap[aria-current="true"]');
+  if (!cur) return;
+  var s = sidebar.getBoundingClientRect(), c = cur.getBoundingClientRect();
+  if (c.top < s.top + 8 || c.bottom > s.bottom - 8) sidebar.scrollTop += c.top - s.top - s.height / 3;
+}
+sidebar.querySelectorAll('.group-head').forEach(function (h) {
+  h.setAttribute('role', 'button'); h.setAttribute('tabindex', '0'); h.setAttribute('aria-expanded', 'true');
+  function flip() { var g = h.parentNode; setGroupOpen(g, g.classList.contains('collapsed')); }
+  h.addEventListener('click', flip);
+  h.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); flip(); } });
+});
 function resolveTarget(hash) {
   if (!hash) return null;
   return (lang === 'pt' && document.getElementById(hash + '-pt')) || document.getElementById(hash) ||

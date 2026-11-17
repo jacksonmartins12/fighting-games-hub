@@ -1246,3 +1246,15 @@ h3 .sf6-tag { align-self: center; }
 @media (max-width: 960px) {
   .hero-art { max-width: 280px; }
 }
+
+/* sidebar: collapsed groups */
+.group-head { cursor: pointer; position: relative; padding-right: 22px; }
+.group-head::after {
+  content: ""; position: absolute; right: 6px; top: 50%; width: 7px; height: 7px; margin-top: -6px;
+  border-right: 1.5px solid var(--ink-soft); border-bottom: 1.5px solid var(--ink-soft); transform: rotate(45deg); transition: transform .15s;
+}
+.group.collapsed .group-head::after { transform: rotate(-45deg); margin-top: -3px; }
+.group-head:focus-visible { outline: 2px solid var(--tone); outline-offset: 2px; }
+.group.collapsed > .chap { display: none; }
+.group.collapsed .group-head { border-bottom-color: transparent; }
+.group.collapsed + .group { margin-top: 10px; }
