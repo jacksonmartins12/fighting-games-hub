@@ -986,15 +986,26 @@ footer .credit { color: var(--ink); font-size: 0.95rem; margin-bottom: 10px; }
 }
 /* ---------- v20: universal / SF6 module markers ---------- */
 .scope-note {
-  display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: baseline;
-  font-size: 0.9rem; line-height: 1.6; color: var(--ink-soft);
-  background: var(--panel); border: 1px solid var(--rule); border-radius: 6px;
-  padding: 10px 14px; margin: -12px 0 28px; max-width: none;
+  font-size: 0.88rem; line-height: 1.6; color: var(--ink-soft);
+  margin: -14px 0 26px; max-width: none;
 }
-.scope-note > span:last-child { flex: 1 1 260px; min-width: 0; }
+.scope-note > summary {
+  display: inline-flex; flex-wrap: nowrap; gap: 8px; align-items: center; max-width: 100%;
+  cursor: pointer; list-style: none; padding: 3px 10px 3px 3px;
+  border: 1px solid var(--rule); border-radius: 999px; background: var(--panel);
+}
+.scope-note > summary::-webkit-details-marker { display: none; }
+.scope-note > summary::after { content: '?'; font: 500 0.7rem/1 var(--mono); color: var(--ink-faint, var(--ink-soft)); opacity: 0.8; }
+.scope-note[open] > summary::after { content: '\00d7'; }
+.scope-note > summary:hover, .scope-note > summary:focus-visible { border-color: var(--ink-soft); }
+.scope-hint { font-size: 0.82rem; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.scope-note > p {
+  margin: 8px 0 0; padding: 10px 14px; max-width: none;
+  background: var(--panel); border: 1px solid var(--rule); border-radius: 6px;
+}
 .scope-badge {
   flex: none; font: 500 0.66rem/1.7 var(--mono); letter-spacing: 0.12em; text-transform: uppercase;
-  color: var(--paper); background: var(--ok); padding: 0 8px; border-radius: 3px;
+  color: var(--paper); background: var(--ok); padding: 0 9px; border-radius: 999px;
 }
 .scope-badge.sf6 { background: var(--a-midrange); }
 .sf6-tag {

@@ -209,7 +209,7 @@ await test('character guides: the SF6 Lab guide is credited, complete and consis
   });
   eq(r.bad, [], 'problems in the SF6 Lab data');
   // one credits section for everything, in its own chapter, in both languages
-  const cr = await page.evaluate(() => ['en', 'pt'].map(l => { const t = document.querySelector('#sf6lab > .l-' + l); return [!!t && /Iori/.test(t.textContent) && /sf6-lab\.net/.test(t.innerHTML) && /iorichannel0611/.test(t.innerHTML), t ? t.querySelectorAll('details').length : 0]; }));
+  const cr = await page.evaluate(() => ['en', 'pt'].map(l => { const t = document.querySelector('#sf6lab > .l-' + l); return [!!t && /Iori/.test(t.textContent) && /sf6-lab\.net/.test(t.innerHTML) && /iorichannel0611/.test(t.innerHTML), t ? t.querySelectorAll('details:not(.scope-note)').length : 0]; }));
   eq(cr, [[true, 8], [true, 8]], 'credits chapter, with the four guides and the four translated articles');
   eq([r.n, r.without], [32, []], 'every fighter has the guide');
   eq(r.arjun, [true, 12, true], 'Arjun: translated from the Japanese page, 12 routes, moves named as in the frame table');
