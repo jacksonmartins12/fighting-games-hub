@@ -1258,3 +1258,24 @@ h3 .sf6-tag { align-self: center; }
 .group.collapsed > .chap { display: none; }
 .group.collapsed .group-head { border-bottom-color: transparent; }
 .group.collapsed + .group { margin-top: 10px; }
+
+/* lighter callouts: fewer boxes inside boxes */
+.card.success {
+  background: color-mix(in srgb, var(--ok) 5%, transparent);
+  border: 0; border-left: 3px solid var(--ok); border-radius: 0 6px 6px 0;
+  padding-top: 34px;
+}
+.card.success::before {
+  top: 10px; left: 19px; padding: 0; background: none; color: var(--ok);
+  font-size: 0.64rem;
+}
+/* phones: the chapter sits on the page instead of in a framed card */
+@media (max-width: 760px) {
+  .content { background: none; border: 0; border-radius: 0; box-shadow: none; padding: 8px 0 0; }
+  .content:has(section[data-group]) { box-shadow: none; }
+  .deep-dive { padding: 18px 16px; }
+  .card { padding: 16px; }
+  .card.success, .card.warning, .card.critical { padding-top: 34px; }
+  .card.success::before { left: 16px; }
+  .cg-jump { background: var(--paper); }
+}
