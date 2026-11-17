@@ -59,6 +59,7 @@ function routeHash(initial) {
   }
 }
 routeHash(true);
+renderResume();
 window.addEventListener('hashchange', function () { routeHash(false); });
 initCloud();
 

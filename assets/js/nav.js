@@ -63,3 +63,44 @@ function setLang(l, persist) {
   if (glossaryInput) runGlossarySearch();
   if (rangeEls.input) drawRange();
 }
+
+// ---------- pick up where you left off (this browser only) ----------
+function resumeHeads(id) {
+  var box = document.querySelector('#' + id + ' > .l-' + lang);
+  if (!box) return [];
+  return Array.prototype.filter.call(box.querySelectorAll('h3'), function (h) { return !h.closest('.widget, .toc, details, [hidden]'); });
+}
+var resumeTimer = null;
+function saveSpot() {
+  if (!current || reader.getBoundingClientRect().top > window.innerHeight * 0.5) return;   // still on the cover
+  var spot = { c: current, h: -1, ch: null };
+  if (current === 'roster' && roster.open) spot.ch = roster.open;
+  else resumeHeads(current).forEach(function (h, i) { if (h.getBoundingClientRect().top < 140) spot.h = i; });
+  LS.set('fgc-last-spot', spot);
+}
+window.addEventListener('scroll', function () {
+  if (resumeTimer) clearTimeout(resumeTimer);
+  resumeTimer = setTimeout(function () { resumeTimer = null; saveSpot(); renderResume(); }, 400);
+}, { passive: true });
+function renderResume() {
+  var b = document.querySelector('[data-resume]'); if (!b) return;
+  var s = LS.get('fgc-last-spot');
+  if (!s || ORDER.indexOf(s.c) === -1 || (s.c === 'intro' && s.h < 1)) { b.hidden = true; return; }
+  var t = tr('chapter.' + s.c);
+  if (s.ch && ROSTER[s.ch]) t += ' · ' + ROSTER[s.ch].name;
+  else if (s.h >= 0) { var h = resumeHeads(s.c)[s.h]; if (h) t += ' · ' + h.textContent.replace(/\s+/g, ' ').trim(); }
+  b.querySelector('.resume-t').textContent = t;
+  b.hidden = false;
+}
+document.addEventListener('click', function (e) {
+  if (!e.target.closest('[data-resume]')) return;
+  var s = LS.get('fgc-last-spot'); if (!s) return;
+  if (s.ch && ROSTER[s.ch]) { openChar(s.ch); return; }
+  var h;
+  show(s.c, false);
+  h = resumeHeads(s.c)[s.h];
+  (h || reader).scrollIntoView({ behavior: behavior, block: 'start' });
+});
+onLang.push(renderResume);
+window.addEventListener('pagehide', saveSpot);
+document.addEventListener('visibilitychange', function () { if (document.visibilityState === 'hidden') saveSpot(); });

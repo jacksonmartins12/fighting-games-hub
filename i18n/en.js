@@ -39,6 +39,7 @@
   "ui.close": "Close",
   "ui.from-your-first-blocked-jump-in": "From your first blocked jump-in to reading opponents at a tournament: fundamentals, footsies, frame data, training plans, a guide for every fighter and a full glossary in one place.",
   "ui.1-frame-1-60-s-16": "1 frame = 1/60 s ≈ 16.7 ms",
+  "ui.resume": "Pick up where you left off",
   "ui.choose-your-path": "Choose your path",
   "ui.the-path": "The Path",
   "ui.learn-fighting-games-in-order-from": "Learn fighting games in order, from first principles to footsies and mindset.",
