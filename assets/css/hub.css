@@ -1209,3 +1209,24 @@ h3 .sf6-tag { align-self: center; }
 .tool-help[open] > summary::before { content: "\2212"; }
 .tool-help > summary:hover { color: var(--ink); }
 .tool-help > .card { margin-top: 12px; }
+
+/* character guide: jump bar */
+.cg-jump {
+  position: sticky; top: 0; z-index: 5; display: flex; gap: 6px; flex-wrap: nowrap; overflow-x: auto;
+  margin: 14px -4px 4px; padding: 8px 4px; background: var(--sheet, var(--paper));
+  border-bottom: 1px solid var(--rule); scrollbar-width: none;
+}
+.cg-jump::-webkit-scrollbar { display: none; }
+.cg-jump-b {
+  flex: none; font: 500 0.72rem/1 var(--mono); letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--ink-soft); background: transparent; border: 1px solid var(--rule); border-radius: 999px;
+  padding: 7px 11px; cursor: pointer;
+}
+.cg-jump-b:hover, .cg-jump-b:focus-visible { color: var(--ink); border-color: var(--ink-soft); }
+.cg .cg-head, .cg h4, .cg details { scroll-margin-top: 64px; }
+#roster-app { scroll-margin-top: 16px; }
+@media (max-width: 960px) {
+  .cg-jump { top: 56px; }
+  .cg .cg-head, .cg h4, .cg details { scroll-margin-top: 112px; }
+  #roster-app { scroll-margin-top: 68px; }
+}

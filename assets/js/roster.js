@@ -16,7 +16,7 @@ function renderRoster() {
   if (!rosterApp) return;
   if (roster.open && ROSTER[roster.open]) {
     var slug = roster.open;
-    if (CHARS[slug]) { rosterApp.innerHTML = charHTML(CHARS[slug]); fillFrameTable(rosterApp.querySelector('.ft')); return; }
+    if (CHARS[slug]) { rosterApp.innerHTML = charHTML(CHARS[slug]); fillFrameTable(rosterApp.querySelector('.ft')); pruneJump(rosterApp); return; }
     var back = '<button type="button" class="btn ghost cg-back" data-roster-back>' + B('roster.all-fighters') + '</button>';
     rosterApp.innerHTML = '<div class="cg">' + back + '<h3>' + esc(ROSTER[slug].name) + '</h3>' + loadingHTML() + '</div>';
     needChar(slug).then(function () { if (roster.open === slug) renderRoster(); }, function () {
@@ -62,13 +62,16 @@ function charHTML(c) {
     '<button type="button" class="btn ghost cg-back" data-roster-back>' + B('roster.all-fighters') + '</button>' +
     '<div class="cg-head"><img class="cg-portrait" src="img/fighters/' + c.slug + '.webp" width="160" height="160" alt="' + esc(c.name) + '"><div><h3>' + esc(c.name) + '</h3>' +
     '<div class="cg-meta"><span class="arch">' + B('arch.' + c.archetype) + '</span><span>' + BO(c.release) + '</span><span>' + dots(c.difficulty) + ' ' + B('diff.' + c.difficulty) + '</span></div></div></div>' +
+    '<nav class="cg-jump" aria-label="' + esc(tx(lang, 'roster.jump-label')) + '">' +
+    [['overview', '.cg-head'], ['moves', '.cg-moves'], ['combos', '.cg-combos'], ['frames', '.ft-details:not(.setups)'], ['oki', '.setups:not(.lab-routes)'], ['lab', '.lab-routes'], ['vs', '.cg-vs']]
+      .map(function (j) { return '<button type="button" class="cg-jump-b" data-jump="' + j[1] + '">' + B('roster.jump-' + j[0]) + '</button>'; }).join('') + '</nav>' +
     '<p class="sheet-row"><button type="button" class="btn" data-sheet="' + c.slug + '">' + B('roster.download-pocket-sheet-png') + '</button> <span class="sheet-msg small muted" role="status"></span></p>' +
     '<p style="margin-top:14px">' + BO(c.summary) + '</p>' +
     '<p class="small muted">' + B('roster.difficulty') + BO(c.difficulty_why) + '</p>' +
     '<div class="cg-two"><div><h4>' + B('roster.strengths') + '</h4><ul class="cg-list plus">' + li(c.strengths) + '</ul></div>' +
     '<div><h4>' + B('roster.weaknesses') + '</h4><ul class="cg-list minus">' + li(c.weaknesses) + '</ul></div></div>' +
     '<h4>' + B('roster.gameplan') + '</h4><p>' + BO(c.gameplan) + '</p>' +
-    '<h4>' + B('roster.key-moves') + '</h4><div class="table-wrap"><table><tr><th>' + B('roster.move') + '</th><th>' + B('roster.input') + '</th><th>' + B('roster.classic') + '</th><th>' + B('roster.what-it-s-for') + '</th></tr>';
+    '<h4 class="cg-moves">' + B('roster.key-moves') + '</h4><div class="table-wrap"><table><tr><th>' + B('roster.move') + '</th><th>' + B('roster.input') + '</th><th>' + B('roster.classic') + '</th><th>' + B('roster.what-it-s-for') + '</th></tr>';
   (c.key_moves || []).forEach(function (m) {
     h += '<tr><td><b>' + esc(m.name) + '</b></td><td class="inp">' + esc(m.input) + '</td><td class="inp">' + esc(m.classic) + '</td><td>' + BO(m.role) + '</td></tr>';
   });
@@ -76,17 +79,20 @@ function charHTML(c) {
   (c.key_normals || []).forEach(function (n) {
     h += '<tr><td class="inp"><b>' + esc(n.move) + '</b><br><span class="muted">' + esc(n.classic) + '</span></td><td class="inp">' + (n.startup == null ? '<span class="muted">—</span>' : esc(n.startup) + 'f') + '</td><td class="inp">' + fmtAdv(n.on_block) + '</td><td class="inp">' + fmtAdv(n.on_hit) + '</td><td>' + BO(n.role) + '</td></tr>';
   });
-  h += '</table></div><h4>' + B('roster.anti-air') + '</h4><p>' + BO(c.anti_air) + '</p><h4>' + B('roster.combos-to-start-with') + '</h4>';
+  h += '</table></div><h4>' + B('roster.anti-air') + '</h4><p>' + BO(c.anti_air) + '</p><h4 class="cg-combos">' + B('roster.combos-to-start-with') + '</h4>';
   (c.combos || []).forEach(function (k) {
     h += '<div class="combo"><p class="combo-label">' + BO(k.label) + '</p><div class="route">' + esc(k.route) + '</div><p class="small muted">' + BO(k.notes) + '</p></div>';
   });
   h += frameSectionHTML(c.slug) + (typeof setupsHTML === 'function' ? setupsHTML(c.slug) + labHTML(c.slug) : '');
   h += '<h4>' + B('roster.tips') + '</h4><ul>' + li(c.tips) + '</ul>' +
-    '<h4>' + B('roster.playing-against') + esc(c.name) + '</h4><p>' + BO(c.counterplay) + '</p>' +
+    '<h4 class="cg-vs">' + B('roster.playing-against') + esc(c.name) + '</h4><p>' + BO(c.counterplay) + '</p>' +
     '<div class="card"><p class="small">' + BO(c.data_note) + '</p><p class="cg-sources">' + B('roster.sources') +
     (c.sources || []).map(function (u) { var url = typeof u === 'string' ? u : u.url; return /^https?:\/\//.test(url) ? '<a href="' + esc(url) + '" target="_blank" rel="noopener">' + esc(url.replace(/^https?:\/\/(www\.)?/, '')) + '</a>' : esc(url); }).join(' · ') +
     '</p></div><p><button type="button" class="btn ghost" data-roster-back>' + B('roster.all-fighters') + '</button></p></div>';
   return h;
+}
+function pruneJump(box) {
+  box.querySelectorAll('[data-jump]').forEach(function (b) { if (!box.querySelector('.cg ' + b.getAttribute('data-jump'))) b.remove(); });
 }
 function openChar(slug, scroll) {
   if (!ROSTER[slug]) return;
@@ -94,7 +100,7 @@ function openChar(slug, scroll) {
   show('roster', false, true);
   renderRoster();
   try { history.replaceState(null, '', '#char-' + slug); } catch (e) {}
-  if (scroll !== false) reader.scrollIntoView({ behavior: behavior, block: 'start' });
+  if (scroll !== false) rosterApp.scrollIntoView({ behavior: behavior, block: 'start' });
 }
 document.addEventListener('click', function (e) {
   var c = e.target.closest('[data-char]');
@@ -102,7 +108,13 @@ document.addEventListener('click', function (e) {
   if (e.target.closest('[data-roster-back]')) {
     roster.open = null; renderRoster();
     try { history.replaceState(null, '', '#roster'); } catch (er) {}
-    reader.scrollIntoView({ behavior: behavior, block: 'start' }); return;
+    rosterApp.scrollIntoView({ behavior: behavior, block: 'start' }); return;
+  }
+  var jb = e.target.closest('[data-jump]');
+  if (jb) {
+    var tg = jb.closest('.cg').querySelector(jb.getAttribute('data-jump'));
+    if (tg) { if (tg.tagName === 'DETAILS') tg.open = true; tg.scrollIntoView({ behavior: behavior, block: 'start' }); }
+    return;
   }
   var f = e.target.closest('[data-arch-f]');
   if (f) { roster.filter = f.getAttribute('data-arch-f'); renderRoster(); }
