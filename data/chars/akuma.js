@@ -214,6 +214,18 @@
         "pt": "Respeite a sua barra de vida: evite apostar em Shoryuken no wakeup sem uma leitura forte."
       },
       {
+        "en": "Gou Hadoken vs Ryu's Hadoken (Capcom frame data, point blank): startup is the same (L/M/H 16/14/12 frames), but Akuma's recovers 1 frame sooner, so it is −4/−6/−8 on block against Ryu's −5/−7/−9. On hit, Ryu's leaves 2 more frames (+2/0/−2 against 0/−2/−4). The two fireballs are not identical: Akuma's is slightly safer on block.",
+        "pt": "Gou Hadoken × Hadoken do Ryu (frame data da Capcom, de perto): o startup é igual (L/M/H 16/14/12 frames), mas o do Akuma recupera 1 frame antes e fica −4/−6/−8 no block, contra −5/−7/−9 do Ryu. No hit, o do Ryu deixa 2 frames a mais (+2/0/−2 contra 0/−2/−4). Os dois fireballs não são idênticos: o do Akuma é um pouco mais seguro no block."
+      },
+      {
+        "en": "Corner goal: OD Adamant Flame (214PP > 6P). On hit, the follow-up wall splats with a hard knockdown at +45~63 per Capcom; on block, the follow-up is −18, so don't throw it out blindly. Check the combo routes after the splat in Training Mode before using them in matches.",
+        "pt": "Objetivo no canto: OD Adamant Flame (214PP > 6P). No hit, o follow-up causa Wall Splat com hard knockdown de +45~63 segundo a Capcom; no block, o follow-up fica −18, então não solte no escuro. Teste no Modo Treino as rotas de combo depois do splat antes de usar em partida."
+      },
+      {
+        "en": "A player's view, not data (Nikotarou, note.com, January 2026, before the August balance patch): Ryu wins by reducing the opponent's decisions; Akuma wins by adding them, with fast movement, constantly changing spacing, Demon Raid and Oboro Throw, so the opponent can't decide in time.",
+        "pt": "Uma visão de jogador, não dado (Nikotarou, note.com, janeiro de 2026, antes do patch de agosto): o Ryu ganha reduzindo as decisões do oponente; o Akuma ganha aumentando-as, com movimento rápido, espaçamento sempre mudando, Demon Raid e Oboro Throw, para o oponente não conseguir decidir a tempo."
+      },
+      {
         "en": "Shin Akuma is a hidden Easter egg, not part of his normal kit. Start his back taunt and keep pressing the attack buttons: after roughly 16 seconds he finishes eating a rice ball, gains Super Art gauge with each bite and unlocks Kongou Kokuretsuzan (22PPP) and Misogi (214214K), 2 bars each, plus a double air fireball (214PP during a forward jump). The animation is far too long to do in a real match, so the Punish Finder and the combos here ignore those moves; the frame table tags them \"Shin Akuma only\".",
         "pt": "O Shin Akuma é um easter egg escondido, não faz parte do kit normal. Comece o taunt de costas e continue apertando os botões de ataque: depois de uns 16 segundos ele termina de comer um bolinho de arroz, ganha barra de Super Art a cada mordida e libera o Kongou Kokuretsuzan (22PPP) e o Misogi (214214K), de 2 barras cada, além de um fireball duplo no ar (214PP durante um pulo para frente). A animação é longa demais para fazer numa partida de verdade, então a Calculadora de Punish e os combos daqui ignoram esses golpes; a tabela de frame data marca eles como \"só Shin Akuma\"."
       }
@@ -227,7 +239,8 @@
       "https://www.streetfighter.com/6/en-us/character/gouki_akuma/movelist",
       "https://sf6-lab.net/en/fighters/gouki_akuma",
       "https://sf6-lab.net/en/fighters/gouki_akuma/combo",
-      "https://sf6-lab.net/en/fighters/gouki_akuma/counter"
+      "https://sf6-lab.net/en/fighters/gouki_akuma/counter",
+      "https://note.com/nikotarosun/n/nc6f36642e2d8"
     ],
     "data_note": {
       "en": "Normal frame data (startup / on block / on hit) from the official Capcom frame data page, Classic controls, read twice on 2026-10-02 (after the 2026-08-03 balance patch); both reads matched. Combos from SF6 Lab (updated 2026-08-31, post-patch). Values may change with future patches. Gou Shoryuken values from the official page; H Tatsumaki -59, SA1 -41 and 9000 health from SF6 Lab. The guide text doesn't cover Ashura Senku, because its input couldn't be confirmed on the official command list; the full frame data table lists it with FAT's inputs and values (commit a8101eb, October 22, 2026). Rechecked on October 23, 2026 against FAT's post-patch data (October 22 update): every key normal value matches, and the combos that use moves changed by the August 2026 patch were checked against the new numbers.",

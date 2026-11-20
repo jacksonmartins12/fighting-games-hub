@@ -40,6 +40,12 @@
    "status": "community"
   },
   {
+   "name": "Nikotarou, \"【スト6】豪鬼の立ち回り考察\" (note.com, 2026-01-06)",
+   "url": "https://note.com/nikotarosun/n/nc6f36642e2d8",
+   "used": "a player's view on how Akuma's neutral differs from Ryu's, labeled as opinion in Akuma's tips; its fireball and corner claims were checked against Capcom frame data before use",
+   "status": "community"
+  },
+  {
    "name": "dood.gg",
    "url": "https://dood.gg/",
    "used": "safe meaty rule, fuzzy guard, option selects; spot check of Ryu's on-block values",
